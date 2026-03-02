@@ -1,5 +1,5 @@
 import { IBuildTopics, TThemeTopics, ISidebarTopics } from "docs/types";
-import { getTopicSubtitle } from "docs/utils";
+import { getTopicSubtitle, getThemeMenu } from "docs/utils";
 import { emoji } from "docs/constants";
 
 import { rootPath } from "../../constants";

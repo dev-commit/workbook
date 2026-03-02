@@ -2,11 +2,14 @@
   "name": "workbook",
   "version": "0.0.1",
   "type": "module",
+  "workspaces": [
+    "docs"
+  ],
   "scripts": {
-    "dev": "vitepress dev docs",
-    "build": "vitepress build docs",
+    "dev": "NODE_OPTIONS='--import tsx' vitepress dev docs",
+    "build": "NODE_OPTIONS='--import tsx' vitepress build docs",
     "typecheck": "tsc --noEmit",
-    "preview": "vitepress preview docs",
+    "preview": "NODE_OPTIONS='--import tsx' vitepress preview docs",
     "build-gh-pages": "gh-pages -d docs/.vitepress/dist",
     "commit": "git add . && git commit -m \"Bash Script Commit\" && git push origin head",
     "deploy": "npm run build && npm run build-gh-pages && npm run commit"
@@ -14,6 +17,7 @@
   "devDependencies": {
     "@types/node": "^22.10.1",
     "gh-pages": "^6.1.1",
+    "tsx": "^4.21.0",
     "typescript": "^5.7.2",
     "vitepress": "^1.6.0",
     "vue": "^3.4.0",
