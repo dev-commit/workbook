@@ -22,8 +22,7 @@ export default defineConfig({
   description: AppConfig.Description,
   head: [
     ["link", { rel: "icon", href: BASE + "favicon.svg" }],
-    // FIXME: "theme-color" не работает
-    ["meta", { name: "theme-color", content: AppConfig.ThemeColor }],
+    ["meta", { name: "theme-color", content: AppConfig.ThemeMobileColor }],
     ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
     [
       "meta",

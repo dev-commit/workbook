@@ -5,11 +5,11 @@ interface IProject extends ICommon {
   BasePath: string;
   Title: string;
   Description: string;
-  ThemeColor: string;
 }
 
 interface ICommon {
   RootDir: string;
+  ThemeMobileColor: string;
 }
 
 interface IProjects {
@@ -19,6 +19,7 @@ interface IProjects {
 
 const CommonConfig: ICommon = {
   RootDir: "wiki",
+  ThemeMobileColor: "#265099",
 };
 
 export const Projects: IProjects = {
@@ -29,7 +30,6 @@ export const Projects: IProjects = {
     BasePath: "/workbook/", // FIXME: Поменять на "/" при загрузке на DevCommit
     Title: "DevCommit",
     Description: "Справочник",
-    ThemeColor: "#ff0055",
     ...CommonConfig,
   },
   LetsCode: {
@@ -39,7 +39,6 @@ export const Projects: IProjects = {
     BasePath: "/workbook/",
     Title: "Let's Code Workbook",
     Description: "Методичка и справочные материалы",
-    ThemeColor: "#3eaf7c",
     ...CommonConfig,
   },
 };
