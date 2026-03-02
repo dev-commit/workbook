@@ -14,7 +14,7 @@ import VTree from "../components/v-tree.vue";
 
 import "./styles/variables.css";
 import "./styles/custom.css";
-// import "./styles/elements.css";
+import "./styles/menu.css";
 
 export default {
   extends: DefaultTheme,
