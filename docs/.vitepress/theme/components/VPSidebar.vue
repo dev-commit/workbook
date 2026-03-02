@@ -53,7 +53,7 @@ const showSearchModal = ref(false);
   border-right: 1px solid var(--vp-c-divider);
   background-color: var(--vp-sidebar-bg-color, var(--vp-c-bg-soft));
   font-size: 15px;
-  scrollbar-color: var(--vp-c-brand-1) var(--vp-c-divider);
+  scrollbar-color: var(--vp-c-scrollbar) var(--vp-c-scrollbar-divider);
   scrollbar-width: thin;
   position: relative;
   padding-top: 12px;

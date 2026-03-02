@@ -1,5 +1,17 @@
 /* FIXME: Проверить */
 
+/* Активная ссылка в навбаре (тема по умолчанию использует --vp-c-brand-1) */
+.VPNavBarMenuLink.active {
+  color: var(--vp-c-nav-link-active) !important;
+}
+/* Активный пункт в сайдбаре (переключение тем внутри категории): текст и полоска слева */
+.vp-sidebar .VPSidebarItem.is-active > .item > .indicator {
+  background-color: var(--vp-c-sidebar-link-active) !important;
+}
+.vp-sidebar .VPSidebarItem.is-active > .item > .link > .text {
+  color: var(--vp-c-sidebar-link-active) !important;
+}
+
 .VPDoc .container {
   max-width: 100%;
 }

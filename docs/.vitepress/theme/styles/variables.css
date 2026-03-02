@@ -1,6 +1,11 @@
 :root {
-  --vp-c-brand-1: #bababa;
-  --vp-c-brand-2: #4abf8a;
+  --vp-c-brand-1: #4f4ca7; /* Цвет темы */
+  --vp-c-sidebar-link-active: #0400ff; /* Активная ссылка в SideBar */
+  --vp-c-scrollbar: #9b9b9b; /* Скролл */
+  --vp-c-scrollbar-divider: #e4e4e4; /* Подложка для скролла */
+
+  --vp-c-brand-2: #ff00c3; /* Проверить где применяется */
+  --vp-c-nav-link-active: #9dff00; /* Активная ссылка в NavBar (не используется) */
 }
 
 :root {
