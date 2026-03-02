@@ -1,4 +1,4 @@
-# Шаблон
+# Шаблон для Topics
 
 ```ts
 import { IBuildTopics, TThemeTopics, ISidebarTopics } from "docs/types";

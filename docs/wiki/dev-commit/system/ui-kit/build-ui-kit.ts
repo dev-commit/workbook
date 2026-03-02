@@ -27,36 +27,6 @@ const topics: ISidebarTopics[] = [
     title: "Категории",
     children: [["category/custom-containers", "Custom Containers VitePress"]],
   },
-
-  // Меню
-  {
-    title: "Меню: getThemeMenu",
-    children: [
-      ["/", getThemeMenu("method", ["method"])],
-      ["/", getThemeMenu("accent", ["accent"])],
-      ["/", getThemeMenu("packages", ["packages"])],
-      ["/", getThemeMenu("unactive", ["unactive"])],
-      ["/", getThemeMenu("outline", ["outline"])],
-      ["/", getThemeMenu("error", ["error"])],
-    ],
-  },
-  {
-    title: "Меню: getTopicSubtitle",
-    children: [
-      ["/", getTopicSubtitle("info")],
-      ["/", getTopicSubtitle("install")],
-      ["/", getTopicSubtitle("use")],
-      ["/", getTopicSubtitle("variants")],
-    ],
-  },
-  {
-    title: "Меню",
-    children: [
-      ["/", "Тема проработана", "done"],
-      ["/", "Тема НЕ проработана", "check"],
-      ["/", emoji.fire + "Emoji"],
-    ],
-  },
 ];
 
 export default { topics, path, title, theme } satisfies IBuildTopics;

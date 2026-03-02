@@ -12,8 +12,8 @@ const topics: ISidebarTopics[] = [
   {
     title: "Теги",
     children: [
-      ["tags/fieldset", "fieldset"],
-      ["tags/header", "header, section, ..."],
+      ["tags/fieldset", getThemeMenu("method", ["fieldset"])],
+      ["tags/header", getThemeMenu("method", ["header", "section", "..."])],
     ],
   },
 ];

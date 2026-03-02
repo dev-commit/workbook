@@ -3,6 +3,7 @@ import { getNav } from "../../.vitepress/utils/nav";
 import type { IHeaderMenuNav } from "../../types";
 
 import wikiUiKit from "./system/ui-kit/build-ui-kit";
+import wikiMenu from "./system/menu/build-menu";
 import wikiHtml from "./layout/html/build-html";
 
 export const NAV: IHeaderMenuNav[] = [
@@ -12,8 +13,8 @@ export const NAV: IHeaderMenuNav[] = [
   },
   {
     text: "System",
-    children: getNav([wikiUiKit]),
+    children: getNav([wikiUiKit, wikiMenu]),
   },
 ];
 
-export const SIDEBAR = getSidebar([wikiUiKit, wikiHtml]);
+export const SIDEBAR = getSidebar([wikiUiKit, wikiHtml, wikiMenu]);
