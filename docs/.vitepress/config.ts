@@ -41,6 +41,7 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
+        docs: path.join(__dirname, ".."),
         "mark.js/src/lib/mark": path.join(
           __dirname,
           "..",

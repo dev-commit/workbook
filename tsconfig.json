@@ -14,7 +14,10 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "types": ["node"],
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "docs/*": ["docs/*"]
+    }
   },
   "include": [
     "docs/**/*.ts",

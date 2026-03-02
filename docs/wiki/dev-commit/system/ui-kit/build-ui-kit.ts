@@ -1,8 +1,5 @@
 import { IBuildTopics, TThemeTopics, ISidebarTopics } from "docs/types";
-// import { getTopicSubtitle, getThemeMenu } from "docs/utils";
-
-// FIXME: Алиасы
-import { getTopicSubtitle, getThemeMenu } from "../../../../utils";
+import { getTopicSubtitle, getThemeMenu } from "docs/utils";
 import { emoji } from "docs/constants";
 
 import { rootPath } from "../../constants";
@@ -53,10 +50,11 @@ const topics: ISidebarTopics[] = [
     ],
   },
   {
-    title: "Меню: Статус темы",
+    title: "Меню",
     children: [
       ["/", "Тема проработана", "done"],
       ["/", "Тема НЕ проработана", "check"],
+      ["/", emoji.fire + "Emoji"],
     ],
   },
 ];
