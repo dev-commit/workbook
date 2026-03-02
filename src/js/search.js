@@ -1,38 +1,50 @@
-const inputElement = document.getElementById('search-input')
-const resultElement = document.getElementById('search-result')
-const containerElement = document.getElementById('container')
+const inputElement = document.getElementById("search-input");
+const resultElement = document.getElementById("search-result");
+const containerElement = document.getElementById("container");
 
-inputElement.value = ''
+inputElement.value = "";
 
-inputElement.addEventListener('input', function(event) {
-    const value = event.target.value
-    const resultArr = []
+const checkDomain = () => {
+  const localhost = window.location.hostname === "127.0.0.1";
 
-    searchArr.forEach(element => {
-        element.title.forEach(el => {
-            const a1 = el.toLowerCase()
-            const a2 = value.toLowerCase()
+  if (localhost) {
+    return "";
+  }
 
-            if (a1.includes(a2)) {
-                const title = el
-                    .replace(/->/g, '›')
-                    // .replace(/&lt;(.*?)&gt;/g, '<u-code-light>&lt;$1&gt;</u-code-light>')
-                    // .replace(/<u>(.*?)<\/u>/g, '<em>$1</em>')
-                    .replace(/<u>(.*?)<\/u>/g, '<em>$1</em>')
+  return "/workbook";
+};
 
-                console.log(title)
+console.log("zz");
 
-                resultArr.push({
-                    title,
-                    path: element.path
-                })
-            }
-        })
-    })
+inputElement.addEventListener("input", function (event) {
+  const value = event.target.value;
+  const resultArr = [];
 
-    let html = '';
-    resultArr.forEach(element => {
-        html += `
+  searchArr.forEach((element) => {
+    element.title.forEach((el) => {
+      const a1 = el.toLowerCase();
+      const a2 = value.toLowerCase();
+
+      if (a1.includes(a2)) {
+        const title = el
+          .replace(/->/g, "›")
+          // .replace(/&lt;(.*?)&gt;/g, '<u-code-light>&lt;$1&gt;</u-code-light>')
+          // .replace(/<u>(.*?)<\/u>/g, '<em>$1</em>')
+          .replace(/<u>(.*?)<\/u>/g, "<em>$1</em>");
+
+        console.log(title);
+
+        resultArr.push({
+          title,
+          path: checkDomain() + element.path,
+        });
+      }
+    });
+  });
+
+  let html = "";
+  resultArr.forEach((element) => {
+    html += `
             <button
                 class="search-button"
                 onclick="
@@ -43,17 +55,18 @@ inputElement.addEventListener('input', function(event) {
             >
                 ${element.title}
             </button>
-        `
-    })
+        `;
+  });
 
-    if (value !== '') {
-        resultElement.innerHTML = '<div class="search-result-wrapper">'+html+'<div>'
-    } else {
-        resultElement.innerHTML = ''
-    }
+  if (value !== "") {
+    resultElement.innerHTML =
+      '<div class="search-result-wrapper">' + html + "<div>";
+  } else {
+    resultElement.innerHTML = "";
+  }
 });
 
-containerElement.addEventListener('click', function(event) {
-    resultElement.innerHTML = ''
-    inputElement.value = ''
+containerElement.addEventListener("click", function (event) {
+  resultElement.innerHTML = "";
+  inputElement.value = "";
 });
