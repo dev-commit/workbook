@@ -4,18 +4,6 @@ const containerElement = document.getElementById("container");
 
 inputElement.value = "";
 
-const checkDomain = () => {
-  const localhost = window.location.hostname === "127.0.0.1";
-
-  if (localhost) {
-    return "";
-  }
-
-  return "/workbook";
-};
-
-console.log("zz");
-
 inputElement.addEventListener("input", function (event) {
   const value = event.target.value;
   const resultArr = [];
@@ -32,12 +20,9 @@ inputElement.addEventListener("input", function (event) {
           // .replace(/<u>(.*?)<\/u>/g, '<em>$1</em>')
           .replace(/<u>(.*?)<\/u>/g, "<em>$1</em>");
 
-        console.log(title);
-
         resultArr.push({
           title,
-          // FIXME: Будет работать только после Деплоя
-          path: "/workbook" + element.path,
+          path: element.path,
         });
       }
     });
