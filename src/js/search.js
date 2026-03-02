@@ -36,7 +36,8 @@ inputElement.addEventListener("input", function (event) {
 
         resultArr.push({
           title,
-          path: checkDomain() + element.path,
+          // FIXME: Будет работать только после деплоя
+          path: "/workbook" + element.path,
         });
       }
     });
