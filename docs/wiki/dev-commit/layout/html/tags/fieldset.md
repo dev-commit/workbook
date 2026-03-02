@@ -1,6 +1,6 @@
 # fieldset
 
-# v-badge
+# тест компонента
 
 ```vue
 <v-badge theme="blue">Blue</v-badge>
