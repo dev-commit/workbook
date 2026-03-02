@@ -1,5 +1,6 @@
 # TODO
 
+- Меню. getThemeMenu(). Активная ссылка стилизуется, но плохо видно
 - Добавить HTML в темы. setTheme() из DevCommit
 - Добавить алиасы в Vite
 - Не работает проверка типов у компонентов из docs/.vitepress/components
