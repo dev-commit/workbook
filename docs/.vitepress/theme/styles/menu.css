@@ -1,51 +1,36 @@
 /* FIXME: */
-.menu-method,
-.u-menu-accent,
-.u-menu-code,
-.u-menu-border,
-.u-menu-outline,
-.u-menu-gray,
-.u-menu-error {
-  padding: 3px 5px;
-  color: rgb(var(--color-black));
+.menu-code {
+  padding: 2px 5px;
+  /* color: rgb(var(--color-black)); */
   line-height: 1;
   font-weight: 300;
+  border-radius: 3px;
+  border: 1px solid;
 }
-.menu-method {
+.menu-code-method {
   background-color: rgba(var(--color-yellow), 0.3);
-  border: 1px solid rgb(var(--color-yellow));
-  border-radius: 3px;
+  border-color: rgb(var(--color-yellow));
 }
-.u-menu-accent {
+
+.menu-code-accent {
   background-color: rgba(var(--color-green), 0.35);
-  border: 1px solid rgba(var(--color-green), 0.6);
-  border-radius: 3px;
+  border-color: rgba(var(--color-green), 0.6);
 }
-.u-menu-code {
-  color: rgb(var(--color-crimson)) !important;
-  border: 1px solid rgb(var(--color-crimson)) !important;
-  border-radius: 3px;
-}
-.u-menu-border {
-  background-color: rgba(var(--color-sea-green-light), 0.2);
-  border: 1px solid rgb(var(--color-sea-green-light));
-  border-left: 4px solid rgba(var(--color-blue), 0.4);
-  border-radius: 3px;
-}
-.u-menu-outline {
-  border: 1px solid rgb(var(--color-violet-medium));
-  border-radius: 3px;
-}
-.u-menu-gray {
-  background-color: rgba(var(--color-black), 0.05);
-  border: 1px solid rgba(var(--color-black), 0.15);
-  border-radius: 3px;
-}
-.u-menu-error {
+.menu-code-error {
   background-color: rgba(var(--color-orange), 0.25);
-  border: 1px solid rgba(var(--color-orange), 0.7);
-  border-radius: 3px;
+  border-color: rgba(var(--color-orange), 0.7);
 }
-.u-menu-unactive {
-  text-decoration: underline;
+
+.menu-code-unactive {
+  background-color: rgba(var(--color-black), 0.05);
+  border-color: rgba(var(--color-black), 0.15);
+}
+
+.menu-code-packages {
+  background-color: rgba(var(--color-sea-green-light), 0.2);
+  border-color: rgb(var(--color-sea-green-light));
+  border-left: 4px solid rgba(var(--color-blue), 0.4);
+}
+.menu-code-outline {
+  border-color: rgb(var(--color-violet-medium));
 }

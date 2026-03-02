@@ -2,7 +2,7 @@
 
 ```ts
 import { IBuildTopics, TThemeTopics, ISidebarTopics } from "docs/types";
-import { getTopicSubtitle } from "docs/utils";
+import { getTopicSubtitle, getThemeMenu } from "docs/utils";
 import { emoji } from "docs/constants";
 
 import { rootPath } from "../../constants";
@@ -20,10 +20,13 @@ const topics: ISidebarTopics[] = [
     ],
   },
   {
-    title: "Emoji",
+    title: "Меню",
     children: [
+      // Emoji
       ["dir/file", getTopicSubtitle("info")],
       ["dir/file", emoji.items + "Emoji"],
+      // Код
+      ["dir/file", getThemeMenu("method", ["method"])],
     ],
   },
 ];

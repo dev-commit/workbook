@@ -1,8 +1,8 @@
 import { emoji } from "./constants";
 
-type TCategory = "info" | "install" | "use" | "variants";
+type TSubtitleCategory = "info" | "install" | "use" | "variants";
 
-export const getTopicSubtitle = (category: TCategory) => {
+export const getTopicSubtitle = (category: TSubtitleCategory) => {
   switch (category) {
     case "info":
       return emoji.theory + "Информация";
@@ -13,4 +13,20 @@ export const getTopicSubtitle = (category: TCategory) => {
     case "variants":
       return emoji.code + "Варианты";
   }
+};
+
+type TMenuCategory =
+  | "method"
+  | "accent"
+  | "packages"
+  | "unactive"
+  | "outline"
+  | "error";
+
+export const getThemeMenu = (category: TMenuCategory, data: string[]) => {
+  const result = data.map(
+    (item) => `<span class="menu-code menu-code-${category}">${item}</span>`,
+  );
+
+  return result.join(" ");
 };
