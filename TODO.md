@@ -17,3 +17,6 @@
 
 ## ✌️ Дополнительно
   - Деплой с GitHub Actions https://vuejs.press/guide/deployment.html#github-pages
+
+## 🪲 Bugs
+  - Страница в Ui-Kit. Ошибка на GitHub. При перезагрузке сраницы удаляется загловок h1 и секция с кодом
