@@ -1,12 +1,19 @@
 # fieldset
 
-## Тест компонента
+# v-badge
 
-<v-two>
-<template #first>
-  Lorem Ipsum is simply dummy text of the printing and typesetting industry
-</template>
-<template #last>
-  It has survived not only five centuries, but also the leap into electronic
-</template>
-</v-two>
+```vue
+<v-badge theme="blue">Blue</v-badge>
+<v-badge theme="green">Green</v-badge>
+<v-badge theme="orange">Orange</v-badge>
+<v-badge theme="red">Red</v-badge>
+<v-badge theme="lime">Lime</v-badge>
+<v-badge theme="gray">Gray</v-badge>
+```
+
+- <v-badge theme="blue">Blue</v-badge>
+- <v-badge theme="green">Green</v-badge>
+- <v-badge theme="orange">Orange</v-badge>
+- <v-badge theme="red">Red</v-badge>
+- <v-badge theme="lime">Lime</v-badge>
+- <v-badge theme="gray">Gray</v-badge>
