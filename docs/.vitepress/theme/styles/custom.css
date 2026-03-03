@@ -7,6 +7,7 @@
 /* Активный пункт в сайдбаре (переключение тем внутри категории): текст и полоска слева */
 .vp-sidebar .VPSidebarItem.is-active > .item > .indicator {
   background-color: var(--vp-c-sidebar-link-active) !important;
+  border: 2px solid var(--vp-c-sidebar-link-active) !important;
 }
 .vp-sidebar .VPSidebarItem.is-active > .item > .link > .text {
   color: var(--vp-c-sidebar-link-active) !important;

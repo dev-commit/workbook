@@ -13,8 +13,12 @@ const topics: ISidebarTopics[] = [
     title: "Теги",
     children: [
       ["tags/fieldset", getThemeMenu("method", ["fieldset", "legend"])],
-      ["tags/header", getThemeMenu("method", ["header", "section", "..."])],
+      ["tags/details", getThemeMenu("method", ["details"])],
     ],
+  },
+  {
+    title: "Категории",
+    children: [["category/layout", "Разметка Layout"]],
   },
 ];
 
