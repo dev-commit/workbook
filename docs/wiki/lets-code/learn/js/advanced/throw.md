@@ -1,39 +1,44 @@
 # Обработка исключений
 
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+### Правила
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-### Правила
-<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
 - `catch` или `finally` может отсутствовать
 - если ошибка необработана, скрипт не будет выполняться
 - если ошибка обработана в `catch`, скрипт продолжит выполнение
 
-
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
 ### Конструкция
+
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-```js:no-line-numbers
+
+```js
 try {
-	// Инструкции, которые могут бросить исключение
+  // Инструкции, которые могут бросить исключение
 } catch (идентификатор) {
-	// Инструкции будут выполняться если в try произошло исключение
-	// передается выражение (идентификатор), которое было в throw
+  // Инструкции будут выполняться если в try произошло исключение
+  // передается выражение (идентификатор), которое было в throw
 } finally {
-	// Инструкции будут выполняться независимо от исключения
+  // Инструкции будут выполняться независимо от исключения
 }
 ```
 
-
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
 ### Пример
+
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-```js:no-line-numbers
+
+```js
 try {
-	throw new Error('Panic!');
+  throw new Error("Panic!");
 } catch (e) {
-	console.log(e.message);
+  console.log(e.message);
 } finally {
-	console.log('Код, который нужно выполнить');
+  console.log("Код, который нужно выполнить");
 }
 ```
-

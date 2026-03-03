@@ -17,7 +17,7 @@
 <v-two>
 <template #first>
 
-```js:no-line-numbers
+```js
 // Arrow Function
 const add = (x, y) => x + y;
 ```
@@ -25,10 +25,10 @@ const add = (x, y) => x + y;
 </template>
 <template #last>
 
-```js:no-line-numbers
+```js
 // Function
 function add(x, y) {
-	return x + y;
+  return x + y;
 }
 ```
 
@@ -48,19 +48,19 @@ function add(x, y) {
 <v-two>
 <template #first>
 
-```js:no-line-numbers
+```js
 // Arrow Function
-const square = x => x*x;
+const square = (x) => x * x;
 ```
 
 </template>
 <template #last>
 
-```js:no-line-numbers
+```js
 // Function
-const square = function(x) {
-	return x*x;
-}
+const square = function (x) {
+  return x * x;
+};
 ```
 
 </template>
@@ -76,7 +76,7 @@ const square = function(x) {
 <v-two>
 <template #first>
 
-```js:no-line-numbers
+```js
 // Arrow Function
 const giveMeAnswer = () => 42;
 ```
@@ -84,11 +84,11 @@ const giveMeAnswer = () => 42;
 </template>
 <template #last>
 
-```js:no-line-numbers
+```js
 // Function
-const giveMeAnswer = function() {
-	return 42;
-}
+const giveMeAnswer = function () {
+  return 42;
+};
 ```
 
 </template>
@@ -104,19 +104,19 @@ const giveMeAnswer = function() {
 <v-two>
 <template #first>
 
-```js:no-line-numbers
+```js
 // Arrow Function
-const log = () => console.log('hi');
+const log = () => console.log("hi");
 ```
 
 </template>
 <template #last>
 
-```js:no-line-numbers
+```js
 // Function
-const log = function() {
-	console.log('hi');
-}
+const log = function () {
+  console.log("hi");
+};
 ```
 
 </template>
@@ -135,23 +135,23 @@ const log = function() {
 <v-two>
 <template #first>
 
-```js:no-line-numbers
+```js
 // Arrow Function
 const multiply = (x, y) => {
-	const result = x*y;
-	return result;
-}
+  const result = x * y;
+  return result;
+};
 ```
 
 </template>
 <template #last>
 
-```js:no-line-numbers
+```js
 // Function
-const multiply = function(x, y) {
-	const result = x*y;
-	return result;
-}
+const multiply = function (x, y) {
+  const result = x * y;
+  return result;
+};
 ```
 
 </template>
@@ -170,19 +170,19 @@ const multiply = function(x, y) {
 <v-two>
 <template #first>
 
-```js:no-line-numbers
+```js
 // Arrow Function
-const getPerson = () => ({ name:'Jack' });
+const getPerson = () => ({ name: "Jack" });
 ```
 
 </template>
 <template #last>
 
-```js:no-line-numbers
+```js
 // Function
-const getPerson = function() {
-	return { name:'Jack' }
-}
+const getPerson = function () {
+  return { name: "Jack" };
+};
 ```
 
 </template>

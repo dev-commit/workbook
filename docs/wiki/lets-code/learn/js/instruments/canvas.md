@@ -16,9 +16,9 @@
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
-```html:no-line-numbers
+```html
 <canvas id="canvas" style="display: block; border: 2px solid black;">
-	Your browser is not supported
+  Your browser is not supported
 </canvas>
 ```
 
@@ -34,9 +34,9 @@
 
 <!------------------------------------------------------------->
 
-```js:no-line-numbers
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
+```js
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
 canvas.width = 200;
 canvas.height = 200;
 //canvas.width = window.innerWidth;
@@ -49,9 +49,9 @@ canvas.height = 200;
 
 <!------------------------------------------------------------->
 
-```js:no-line-numbers
-ctx.fillStyle = 'yellowgreen';
-ctx.strokeStyle = 'black';
+```js
+ctx.fillStyle = "yellowgreen";
+ctx.strokeStyle = "black";
 ctx.lineWidth = 4;
 ```
 
@@ -69,9 +69,9 @@ ctx.lineWidth = 4;
 <v-two grow>
 <template #first>
 
-```js:no-line-numbers
-ctx.fillRect(0,0,100,100);   // fill
-ctx.strokeRect(0,0,100,100); // stroke
+```js
+ctx.fillRect(0, 0, 100, 100); // fill
+ctx.strokeRect(0, 0, 100, 100); // stroke
 ```
 
 </template>
@@ -89,11 +89,11 @@ ctx.strokeRect(0,0,100,100); // stroke
 <v-two grow>
 <template #first>
 
-```js:no-line-numbers
+```js
 ctx.beginPath();
-ctx.arc(100, 100, 50, 0, Math.PI*2, false);
+ctx.arc(100, 100, 50, 0, Math.PI * 2, false);
 ctx.closePath();
-ctx.fill();   // fill
+ctx.fill(); // fill
 ctx.stroke(); // stroke
 ```
 
@@ -121,7 +121,7 @@ ctx.stroke(); // stroke
 <v-two grow>
 <template #first>
 
-```js:no-line-numbers
+```js
 ctx.beginPath();
 
 ctx.moveTo(100, 100);
@@ -152,10 +152,10 @@ ctx.stroke();
 <v-two grow>
 <template #first>
 
-```js:no-line-numbers
-ctx.textAlign = 'center';
-ctx.font = '22px Arial';
-ctx.fillText('Hello World', canvas.width/2, canvas.height/2); // По центру
+```js
+ctx.textAlign = "center";
+ctx.font = "22px Arial";
+ctx.fillText("Hello World", canvas.width / 2, canvas.height / 2); // По центру
 ```
 
 </template>

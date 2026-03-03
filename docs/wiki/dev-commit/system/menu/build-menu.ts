@@ -6,7 +6,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "system/menu/";
 const title = "Menu";
-const theme: TThemeTopics = null;
+const theme: TThemeTopics = "secondary";
 
 const topics: ISidebarTopics[] = [
   {

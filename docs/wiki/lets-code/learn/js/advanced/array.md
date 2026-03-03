@@ -1,11 +1,14 @@
 # Методы работы с массивами
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
 ### Методы
+
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
 ### `length` `slice`
-```js:no-line-numbers
+
+```js
 // Длина массива (индекс последнего элемента)
 const a = arr.length;
 
@@ -14,30 +17,33 @@ const arr2 = arr1.slice(1, 7);
 ```
 
 ### `indexOf` `lastIndexOf`
-```js:no-line-numbers
+
+```js
 // Возвращает первый индекс, по которому элемент может быть найден в массиве или -1, если индекса нет
-const a = colors.indexOf('white');
+const a = colors.indexOf("white");
 
 // Возвращает последний индекс, по которому данный элемент может быть найден в массиве или -1, если такого индекса нет
-const a = colors.lastIndexOf('white');
+const a = colors.lastIndexOf("white");
 ```
 
 ### `join` `split`
-```js:no-line-numbers
-// Преобразование массива в строку с заданным разделителем
-const a = arr.join('.');
 
-// Преобразование строки с заданным разделителем в массив 
-const arr = str.split(';');
+```js
+// Преобразование массива в строку с заданным разделителем
+const a = arr.join(".");
+
+// Преобразование строки с заданным разделителем в массив
+const arr = str.split(";");
 ```
 
 ### `push` `unshift` `pop` `shift`
-```js:no-line-numbers
+
+```js
 // Добавление нового элемента в конец массива
-arr.push('Jack');
+arr.push("Jack");
 
 // Добавление нового элемента в начало массива
-arr.unshift('Jack');
+arr.unshift("Jack");
 
 // Удаление элемента из конца массива
 arr.pop();
@@ -47,7 +53,8 @@ arr.shift();
 ```
 
 ### `reverse` `sort` `concat`
-```js:no-line-numbers
+
+```js
 // Реверс (переворот массива)
 arr.reverse();
 
@@ -59,35 +66,38 @@ const arr = arr1.concat(arr2, arr3);
 ```
 
 ### `splice`
-```js:no-line-numbers
+
+```js
 // Удалить с 3 индекса 2 элемента
 arr.splice(3, 2);
 
 // Добавление элементов
-arr.splice(2, 0, 'Алина', 'Марина');
+arr.splice(2, 0, "Алина", "Марина");
 
 // Замена элементов (заменить 2 удаленных элемента на Алексей, Билл)
 arr.splice(1, 2, 'Алексей", "Билл');
 ```
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
 ### Массивы обьектов
+
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-```js:no-line-numbers
+
+```js
 const a = new Array(
-	{
-		name: "Андрей",
-		email:"andry@mail.ru"
-	},
-	{
-		name: "Анна",
-		email:"anna@mail.ru"
-	}
+  {
+    name: "Андрей",
+    email: "andry@mail.ru",
+  },
+  {
+    name: "Анна",
+    email: "anna@mail.ru",
+  },
 );
 
-console.log(a[0].name);  // => "Андрей"
+console.log(a[0].name); // => "Андрей"
 console.log(a[1].email); // => "anna@mail.ru"
 ```
 
 [Массив: перебирающие методы](https://learn.javascript.ru/array-iteration)
-

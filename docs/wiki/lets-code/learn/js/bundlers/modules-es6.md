@@ -4,10 +4,13 @@
 - [export](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/export)
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
 ### import
+
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-```js:no-line-numbers
-// Значение экспортированное по умолчанию  
+
+```js
+// Значение экспортированное по умолчанию
 import MyClass from './modules/lib';
 
 // Одно значение
@@ -33,15 +36,18 @@ import MyClass, { libFunction } from './modules/lib';
 ```
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
 ### export
+
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-```js:no-line-numbers
-export default MyClass;               // Экспорт по умолчанию
-export const a = 22;                  // Одно значение
-export { one, two };                  // Несколько значений (const one, const two)
+
+```js
+export default MyClass; // Экспорт по умолчанию
+export const a = 22; // Одно значение
+export { one, two }; // Несколько значений (const one, const two)
 export { one as once, two as twice }; // Изменение имени значения
 
 export function libFunction() {
-    console.log(libFunction);
+  console.log(libFunction);
 }
 ```

@@ -10,20 +10,20 @@
 <v-two>
 <template #first>
 
-```js:no-line-numbers
+```js
 // Стрелочная
 const foo = async () => {
-    const a = await AsyncFunction();
+  const a = await AsyncFunction();
 };
 ```
 
 </template>
 <template #last>
 
-```js:no-line-numbers
+```js
 // Обычная
 async function foo() {
-    const a = await AsyncFunction();
+  const a = await AsyncFunction();
 }
 ```
 
@@ -35,20 +35,20 @@ async function foo() {
 <v-two>
 <template #first>
 
-```js:no-line-numbers
+```js
 // Стрелочная
 (async () => {
-    const a = await AsyncFunction();
-})()
+  const a = await AsyncFunction();
+})();
 ```
 
 </template>
 <template #last>
 
-```js:no-line-numbers
+```js
 // Обычная
-(async function() {
-    const a = await AsyncFunction();
+(async function () {
+  const a = await AsyncFunction();
 })();
 ```
 
@@ -74,26 +74,25 @@ async function foo() {
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
-```js:no-line-numbers
+```js
 // AJAX-запрос
 const getResource = async (url) => {
-    const res = await fetch(url);
-    return await res.json();
-}
+  const res = await fetch(url);
+  return await res.json();
+};
 
-getResource('https://swapi.co/api/people/1/')
-    .then(body => console.log(body))
+getResource("https://swapi.co/api/people/1/").then((body) => console.log(body));
 ```
 
-```js:no-line-numbers
+```js
 // Асинхронная функция
 async function getUser(id) {
-    return { id:1 };
+  return { id: 1 };
 }
 
 async function main() {
-    let user = await getUser(1);
-    console.log(user);
+  let user = await getUser(1);
+  console.log(user);
 }
 
 main();
@@ -105,29 +104,29 @@ main();
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
-```js:no-line-numbers
+```js
 // Свойство объекта
 const obj = {
-    getUser: async function(id) {
-        //
-    }
-}
+  getUser: async function (id) {
+    //
+  },
+};
 ```
 
-```js:no-line-numbers
+```js
 // Метод объекта
 const obj = {
-    async getName() {
-        return fetch('https://www.example.com');
-    }
-}
+  async getName() {
+    return fetch("https://www.example.com");
+  },
+};
 ```
 
-```js:no-line-numbers
+```js
 // Класс
 class Obj {
-    async getResource() {
-        return fetch('https://www.example.com');
-    }
+  async getResource() {
+    return fetch("https://www.example.com");
+  }
 }
 ```

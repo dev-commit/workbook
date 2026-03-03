@@ -1,27 +1,31 @@
 # Создание элементов
 
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+### Создание
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-### Создание
-<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-```js:no-line-numbers
-const element = document.createElement('div');
-element.innerHTML = 'Go to google';
-element.className = 'class-google';
+
+```js
+const element = document.createElement("div");
+element.innerHTML = "Go to google";
+element.className = "class-google";
 ```
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
 ### Добавление на страницу
+
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-```js:no-line-numbers
-const wrapper = document.querySelector('#wrapper');
+
+```js
+const wrapper = document.querySelector("#wrapper");
 
 // Внутри элемента после контента
 wrapper.appendChild(element);
 
 // Внутри элемента перед контентом
 wrapper.insertBefore(element, wrapper.lastChild);
-
 
 // После элемента
 wrapper.parentNode.insertBefore(element, wrapper);
@@ -36,9 +40,12 @@ wrapper.parentNode.replaceChild(element, wrapper);
 ```
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
 ### Удаление
+
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-```js:no-line-numbers
+
+```js
 // Удаление нового элемента
 wrapper.parentNode.removeChild(element);
 
@@ -48,4 +55,3 @@ wrapper.parentNode.removeChild(wrapper);
 // Удаление нового элемента (если родитель body)
 document.body.removeChild(element);
 ```
-

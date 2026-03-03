@@ -6,13 +6,13 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "layout/html/";
 const title = "HTML";
-const theme: TThemeTopics = null;
+const theme: TThemeTopics = "html";
 
 const topics: ISidebarTopics[] = [
   {
     title: "Теги",
     children: [
-      ["tags/fieldset", getThemeMenu("method", ["fieldset"])],
+      ["tags/fieldset", getThemeMenu("method", ["fieldset", "legend"])],
       ["tags/header", getThemeMenu("method", ["header", "section", "..."])],
     ],
   },

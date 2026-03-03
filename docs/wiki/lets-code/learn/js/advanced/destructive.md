@@ -6,15 +6,15 @@
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
-```js:no-line-numbers
-const languages = ['JavaScript', 'Python', 'Ruby'];
+```js
+const languages = ["JavaScript", "Python", "Ruby"];
 ```
 
 <!-- .............. START ......................... -->
 <v-two>
 <template #first>
 
-```js:no-line-numbers
+```js
 // ES6
 const [js, py, rb] = languages;
 ```
@@ -22,7 +22,7 @@ const [js, py, rb] = languages;
 </template>
 <template #last>
 
-```js:no-line-numbers
+```js
 // ES5
 const js = languages[0]; // JavaScript
 const py = languages[1]; // Python
@@ -39,10 +39,10 @@ const rb = languages[2]; // Ruby
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
-```js:no-line-numbers
+```js
 const person = {
-	firstname: 'John',
-	lastname: 'Doe'
+  firstname: "John",
+  lastname: "Doe",
 };
 ```
 
@@ -50,7 +50,7 @@ const person = {
 <v-two>
 <template #first>
 
-```js:no-line-numbers
+```js
 // ES6
 const { firstname, lastname } = person;
 ```
@@ -58,10 +58,10 @@ const { firstname, lastname } = person;
 </template>
 <template #last>
 
-```js:no-line-numbers
+```js
 // ES5
 const firstname = person.firstname; // John
-const lastname = person.lastname;   // Doe
+const lastname = person.lastname; // Doe
 ```
 
 </template>

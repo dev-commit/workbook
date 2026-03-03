@@ -12,7 +12,7 @@
 <v-two>
 <template #first>
 
-```js:no-line-numbers
+```js
 // Чистая функция
 function sum(a, b) {
 	rerturn a + b;
@@ -22,7 +22,7 @@ function sum(a, b) {
 </template>
 <template #last>
 
-```js:no-line-numbers
+```js
 // Обычная функция
 let current = 77;
 
@@ -43,36 +43,36 @@ function sum(a, b) {
 
 - `Функции первого класса` - функция трактуются как объект, то есть может быть передана другим функциям и ее можно вернуть из функций. Так же ее можно присваивать переменным
 
-```js:no-line-numbers
+```js
 // Передача функции в качестве аргумента
 function getInfo() {
-	console.log('Hello');
+  console.log("Hello");
 }
 
 function foo(functionInfo) {
-	functionInfo();
+  functionInfo();
 }
 
 foo(getInfo);
 ```
 
-```js:no-line-numbers
+```js
 // Возврат функции из функции
 function foo(functionInfo) {
-	return function() {
-		console.log('Hello');
-	}
+  return function () {
+    console.log("Hello");
+  };
 }
 
 const result = foo();
 result();
 ```
 
-```js:no-line-numbers
+```js
 // Присвоение функции в переменную
-const foo = function() {
-	console.log('Hello');
-}
+const foo = function () {
+  console.log("Hello");
+};
 
 foo();
 ```
@@ -93,11 +93,11 @@ foo();
 
 - `map` - создаёт новый массив с результатом вызова указанной функции для каждого элемента массива
 
-```js:no-line-numbers
+```js
 const numbers = [1, 2, 3];
 
 const doubles = numbers.map((num) => {
-	return num * 2;
+  return num * 2;
 });
 
 console.log(numbers); // => [1, 2, 3]
@@ -111,13 +111,13 @@ console.log(doubles); // => [2, 4, 6]
 
 - `push`, `unshift`, `pop`, `shift` изменяют существующий массив
 
-```js:no-line-numbers
-const arr = ['Tony', 'Kate'];
+```js
+const arr = ["Tony", "Kate"];
 
 // Добавление нового элемента в конец массива
-arr.push('Jack');
+arr.push("Jack");
 // Добавление нового элемента в начало массива
-arr.unshift('Jack');
+arr.unshift("Jack");
 // Удаление элемента из конца массива
 arr.pop();
 // Удаление элемента из начала массива
@@ -136,15 +136,15 @@ arr.shift();
 
 - `Каррирование функций` - все функции могут быть от одного аргумента. Преобразование функции от пары аргументов в функцию, берущую свои аргументы по одному
 
-```js:no-line-numbers
+```js
 function multiply(a) {
-    return (b) => {
-        return (c) => {
-            return a * b * c
-        }
-    }
+  return (b) => {
+    return (c) => {
+      return a * b * c;
+    };
+  };
 }
-log(multiply(1)(2)(3)) // 6
+log(multiply(1)(2)(3)); // 6
 
 //const mul1 = multiply(1);
 //const mul2 = mul1(2);
@@ -162,14 +162,14 @@ log(multiply(1)(2)(3)) // 6
 
 ##### Пример возведения в степень через рекурсию
 
-```js:no-line-numbers
+```js
 function pow(x, n) {
-	// пока n != 1, сводить вычисление pow(x,n) к pow(x,n-1)
-	if (n != 1) {
-		return x * pow(x, n - 1);
-	} else {
-		return x;
-	}
+  // пока n != 1, сводить вычисление pow(x,n) к pow(x,n-1)
+  if (n != 1) {
+    return x * pow(x, n - 1);
+  } else {
+    return x;
+  }
 }
 
 console.log(pow(2, 3)); // 8
