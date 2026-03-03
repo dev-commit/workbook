@@ -19,7 +19,6 @@ const topics: ISidebarTopics[] = [
       ["runes/derived-by", getThemeMenu("method", ["$derived.by"]), "check"],
     ],
   },
-
   {
     title: "Layout",
     children: [
@@ -29,7 +28,6 @@ const topics: ISidebarTopics[] = [
       ["layout/snippet", getThemeMenu("method", ["#snippet"]), "check"],
     ],
   },
-
   {
     title: "Общее",
     children: [

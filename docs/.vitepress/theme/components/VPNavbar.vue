@@ -157,9 +157,9 @@ const isActive = (item: { link: string }) => {
   border: 1px solid rgba(62, 178, 127, 0.9);
 }
 .link.theme-html {
-  color: rgb(195, 99, 58);
-  background-color: rgba(208, 90, 39, 0.1);
-  border: 1px solid rgba(222, 96, 42, 0.2);
+  color: rgb(180, 148, 44);
+  background-color: rgba(167, 156, 44, 0.1);
+  border: 1px solid rgba(152, 141, 26, 0.2);
 }
 .link.theme-primary {
   color: rgb(159, 159, 159);
