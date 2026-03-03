@@ -14,6 +14,12 @@ const topics: ISidebarTopics[] = [
     children: [
       ["tags/fieldset", getThemeMenu("method", ["fieldset", "legend"])],
       ["tags/details", getThemeMenu("method", ["details"])],
+      ["tags/iframe", getThemeMenu("method", ["iframe"])],
+      [
+        "tags/datalist",
+        getThemeMenu("method", ["datalist", "option"]),
+        "check",
+      ],
     ],
   },
   {
