@@ -1,3 +1,20 @@
+.vp-doc h1 {
+  font-size: 27px;
+}
+
+.vp-doc h2 {
+  border-top: none;
+  border-bottom: 1px solid var(--vp-c-divider);
+  margin: 10px 0;
+  padding: 10px 0;
+  font-size: 22px;
+}
+.vp-doc h3 {
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
+}
+
 /* FIXME: Проверить */
 
 /* Активная ссылка в навбаре (тема по умолчанию использует --vp-c-brand-1) */

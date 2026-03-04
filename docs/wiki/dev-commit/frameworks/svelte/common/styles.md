@@ -1,6 +1,6 @@
 # CSS-стили
 
-### Подключение файла с CSS-модулями styles.module.css
+## Подключение файла с CSS-модулями styles.module.css
 
 ```html
 <script lang="ts">
@@ -16,7 +16,7 @@
 }
 ```
 
-### Указание стилей в файле .svelte
+## Указание стилей в файле .svelte
 
 ```html
 <script lang="ts">
@@ -32,7 +32,7 @@
 </style>
 ```
 
-### Подключение файла styles.css с глобальными стилями
+## Подключение файла styles.css с глобальными стилями
 
 ```tsx
 <script lang="ts">
@@ -48,7 +48,7 @@
 }
 ```
 
-### Инлайновые стили в style
+## Инлайновые стили в style
 
 ```tsx
 <script lang="ts">

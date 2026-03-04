@@ -1,6 +1,6 @@
 # #snippet
 
-### Структура
+## Структура
 
 ```tsx
 <Tooltip.Trigger>
