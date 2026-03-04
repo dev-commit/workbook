@@ -24,8 +24,11 @@ const topics: ISidebarTopics[] = [
     ],
   },
   {
-    title: "Категории",
-    children: [["category/custom-containers", "Custom Containers VitePress"]],
+    title: "Custom Containers VitePress",
+    children: [
+      ["custom-containers/info", getTopicSubtitle("info")],
+      ["custom-containers/links", "Ссылки"],
+    ],
   },
 ];
 

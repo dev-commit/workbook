@@ -10,6 +10,10 @@ const theme: TThemeTopics = "vue";
 
 const topics: ISidebarTopics[] = [
   {
+    title: "Основное",
+    children: [["main/info", getTopicSubtitle("info")]],
+  },
+  {
     title: "Runes",
     children: [
       ["runes/state", getThemeMenu("method", ["$state"])],
