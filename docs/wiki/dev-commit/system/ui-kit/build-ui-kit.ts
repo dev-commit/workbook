@@ -20,7 +20,7 @@ const topics: ISidebarTopics[] = [
       ["components/v-padding", getThemeMenu("method", ["v-padding"])],
       ["components/v-code", getThemeMenu("method", ["v-code"])],
       ["components/v-badge", getThemeMenu("method", ["v-badge"])],
-      ["components/v-tree", getThemeMenu("method", ["v-tree"])],
+      ["components/v-tree", getThemeMenu("method", ["v-tree"]), "check"],
     ],
   },
   {
