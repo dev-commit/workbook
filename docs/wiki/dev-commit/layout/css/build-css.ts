@@ -13,9 +13,9 @@ const topics: ISidebarTopics[] = [
     title: "Единицы измерения",
     children: [
       ["sizes/info", getTopicSubtitle("info")],
-      ["sizes/px", "px и %"],
-      ["sizes/rem", "em и rem"],
-      ["sizes/viewport", "viewport"],
+      ["sizes/px", getThemeMenu("outline", ["px", "%"])],
+      ["sizes/rem", getThemeMenu("outline", ["em", "rem"])],
+      ["sizes/viewport", getThemeMenu("outline", ["viewport"])],
     ],
   },
   {
