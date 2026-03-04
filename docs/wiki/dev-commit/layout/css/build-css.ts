@@ -25,6 +25,17 @@ const topics: ISidebarTopics[] = [
       ["rules/supports", getThemeMenu("method", ["@supports"])],
     ],
   },
+  {
+    title: "Селекторы",
+    children: [
+      ["selectors/variants", "Варианты селекторов"],
+      ["selectors/tag", getThemeMenu("outline", ["tag", "class", "id", "*"])],
+      ["selectors/attr", getThemeMenu("outline", ["attr"])],
+      ["selectors/tilda", getThemeMenu("outline", [">", "+", "~"])],
+      ["selectors/nesting", "CSS Nesting"],
+      ["selectors/specificity", "Специфичность селекторов", "check"],
+    ],
+  },
 ];
 
 export default { topics, path, title, theme } satisfies IBuildTopics;
