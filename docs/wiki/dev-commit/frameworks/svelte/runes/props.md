@@ -4,11 +4,9 @@
 
 > **$props** - пропсы
 
-## index
+## Структура
 
-### test
-
-**Объявление props в `<Component />`**
+### Объявление props в `<Component />`
 
 ```tsx
 <script lang="ts">
@@ -28,7 +26,7 @@
 
 ```
 
-**Вызов компонента и передача props**
+### Вызов компонента и передача props
 
 ```tsx
 <Component title="Hello" age={23} />

@@ -18,6 +18,13 @@ const topics: ISidebarTopics[] = [
       ["sizes/viewport", "viewport"],
     ],
   },
+  {
+    title: "Правила",
+    children: [
+      ["rules/import", getThemeMenu("method", ["@import"])],
+      ["rules/supports", getThemeMenu("method", ["@supports"])],
+    ],
+  },
 ];
 
 export default { topics, path, title, theme } satisfies IBuildTopics;

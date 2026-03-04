@@ -1,6 +1,6 @@
 # fieldset
 
-### Структура
+## Структура
 
 ```html
 <fieldset>
@@ -9,6 +9,6 @@
 </fieldset>
 ```
 
-### Примеры
+## Примеры
 
 <v-iframe height="350" src="https://codepen.io/LetsCode-Dev/embed/vYwKBNE" />

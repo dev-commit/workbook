@@ -24,12 +24,15 @@ const topics: ISidebarTopics[] = [
     ],
   },
   {
-    title: "Custom Containers VitePress",
+    title: "Элементы",
     children: [
-      ["custom-containers/info", getTopicSubtitle("info")],
-      ["custom-containers/links", "Ссылки"],
+      ["elements/custom-containers", emoji.theory + "Custom Containers"],
+      ["elements/links", "Ссылки"],
+      ["elements/definitions", "Определения"],
     ],
   },
 ];
 
 export default { topics, path, title, theme } satisfies IBuildTopics;
+
+//

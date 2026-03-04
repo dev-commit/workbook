@@ -1,6 +1,6 @@
 # v-two
 
-### Текст
+## Текст
 
 ```vue
 <v-two>
@@ -23,9 +23,7 @@
 </template>
 </v-two>
 
----
-
-### Markdown
+## Markdown
 
 > Для передачи Markdown, нужно чтобы после `<template>` и перед `</template>` была пустая строка
 
@@ -64,9 +62,7 @@ console.log("Hello");
 </template>
 </v-two>
 
----
-
-### Props: `fix`
+## Props: `fix`
 
 ```vue
 <v-two fix>
@@ -83,9 +79,7 @@ console.log("Hello");
 </template>
 </v-two>
 
----
-
-### Props: `compare` и `title`
+## Props: `compare` и `title`
 
 ```vue
 <v-two compare :title="['Vue 3', 'Vue 2']">

@@ -24,7 +24,7 @@ const topics: ISidebarTopics[] = [
   },
   {
     title: "Категории",
-    children: [["category/layout", "Разметка Layout"]],
+    children: [["category/layout", "Элементы разметки Layout"]],
   },
 ];
 
