@@ -112,12 +112,14 @@
   display: none !important;
 }
 
-/* Мобильная версия до 960px включительно: переопределяем брейкпоинт темы (768px → 960px) */
-@media (min-width: 768px) and (max-width: 960px) {
+/* До 960px: только бургер-меню (как с 767px в теме по умолчанию). Скрываем горизонтальное меню навбара. */
+@media (max-width: 960px) {
+  .VPNavBarMenu {
+    display: none !important;
+  }
   .VPNavBarHamburger {
     display: flex !important;
   }
-  /* Перебиваем scoped display:none темы, чтобы drawer открывался по клику на гамбургер */
   #VPNavScreen.VPNavScreen {
     display: block !important;
   }

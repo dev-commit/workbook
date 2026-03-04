@@ -1,7 +1,11 @@
 <script setup lang="ts">
 // FIXME: Проверить файл
 
-import { ref, watch, onMounted, onUnmounted, computed } from "vue";
+// Оба layout (desktop и mobile) рендерятся всегда; видимость только через CSS media,
+// чтобы при SSR/build и при гидрации на клиенте DOM совпадал (нет hydration mismatch).
+// Иначе при прямой загрузке на GitHub Pages пропадали заголовки и блоки кода.
+
+import { watch, computed } from "vue";
 import { useRoute, useData } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import { useSidebar } from "vitepress/theme";
@@ -14,19 +18,6 @@ import VPNavbar from "./VPNavbar.vue";
 import VPSidebar from "./VPSidebar.vue";
 
 const DefaultLayout = DefaultTheme.Layout;
-
-// mobile-first: пока не измерили экран, считаем мобильную версию (< 960px)
-const isDesktop = ref(false);
-
-onMounted(() => {
-  const mq = window.matchMedia("(min-width: 961px)");
-  isDesktop.value = mq.matches;
-  const handler = () => {
-    isDesktop.value = mq.matches;
-  };
-  mq.addEventListener("change", handler);
-  onUnmounted(() => mq.removeEventListener("change", handler));
-});
 
 const { frontmatter, theme: themeConfig } = useData();
 const {
@@ -73,9 +64,9 @@ const containerClass = computed(() => [
 
 <template>
   <template v-if="showLayout">
-    <!-- Десктоп: структура как в VuePress (sidebar | navbar + content) -->
+    <!-- Десктоп: виден только при min-width: 961px (CSS) -->
     <div
-      v-if="isDesktop"
+      class="vp-theme-container--desktop-only"
       :class="containerClass"
       @touchstart.passive="onTouchStart"
       @touchend.passive="onTouchEnd"
@@ -145,55 +136,80 @@ const containerClass = computed(() => [
       <VPFooter />
     </div>
 
-    <!-- Мобильный: базовый layout VitePress -->
-    <DefaultLayout v-else>
-      <template #nav-bar-title-before
-        ><slot name="nav-bar-title-before"
-      /></template>
-      <template #nav-bar-title-after
-        ><slot name="nav-bar-title-after"
-      /></template>
-      <template #nav-bar-content-before
-        ><slot name="nav-bar-content-before"
-      /></template>
-      <template #nav-bar-content-after
-        ><slot name="nav-bar-content-after"
-      /></template>
-      <template #nav-screen-content-before
-        ><slot name="nav-screen-content-before"
-      /></template>
-      <template #nav-screen-content-after
-        ><slot name="nav-screen-content-after"
-      /></template>
-      <template #sidebar-nav-before
-        ><slot name="sidebar-nav-before"
-      /></template>
-      <template #sidebar-nav-after><slot name="sidebar-nav-after" /></template>
-      <template #page-top><slot name="page-top" /></template>
-      <template #page-bottom><slot name="page-bottom" /></template>
-      <template #doc-before><slot name="doc-before" /></template>
-      <template #doc-after><slot name="doc-after" /></template>
-      <template #doc-top><slot name="doc-top" /></template>
-      <template #doc-bottom><slot name="doc-bottom" /></template>
-      <template #doc-footer-before><slot name="doc-footer-before" /></template>
-      <template #aside-top><slot name="aside-top" /></template>
-      <template #aside-bottom><slot name="aside-bottom" /></template>
-      <template #aside-outline-before
-        ><slot name="aside-outline-before"
-      /></template>
-      <template #aside-outline-after
-        ><slot name="aside-outline-after"
-      /></template>
-      <template #layout-top><slot name="layout-top" /></template>
-      <template #layout-bottom><slot name="layout-bottom" /></template>
-    </DefaultLayout>
+    <!-- Мобильный: виден только при max-width: 960px (CSS) -->
+    <div class="vp-theme-container--mobile-only">
+      <DefaultLayout>
+        <template #nav-bar-title-before
+          ><slot name="nav-bar-title-before"
+        /></template>
+        <template #nav-bar-title-after
+          ><slot name="nav-bar-title-after"
+        /></template>
+        <template #nav-bar-content-before
+          ><slot name="nav-bar-content-before"
+        /></template>
+        <template #nav-bar-content-after
+          ><slot name="nav-bar-content-after"
+        /></template>
+        <template #nav-screen-content-before
+          ><slot name="nav-screen-content-before"
+        /></template>
+        <template #nav-screen-content-after
+          ><slot name="nav-screen-content-after"
+        /></template>
+        <template #sidebar-nav-before
+          ><slot name="sidebar-nav-before"
+        /></template>
+        <template #sidebar-nav-after
+          ><slot name="sidebar-nav-after"
+        /></template>
+        <template #page-top><slot name="page-top" /></template>
+        <template #page-bottom><slot name="page-bottom" /></template>
+        <template #doc-before><slot name="doc-before" /></template>
+        <template #doc-after><slot name="doc-after" /></template>
+        <template #doc-top><slot name="doc-top" /></template>
+        <template #doc-bottom><slot name="doc-bottom" /></template>
+        <template #doc-footer-before
+          ><slot name="doc-footer-before"
+        /></template>
+        <template #aside-top><slot name="aside-top" /></template>
+        <template #aside-bottom><slot name="aside-bottom" /></template>
+        <template #aside-outline-before
+          ><slot name="aside-outline-before"
+        /></template>
+        <template #aside-outline-after
+          ><slot name="aside-outline-after"
+        /></template>
+        <template #layout-top><slot name="layout-top" /></template>
+        <template #layout-bottom><slot name="layout-bottom" /></template>
+      </DefaultLayout>
+    </div>
   </template>
   <Content v-else />
 </template>
 
 <style scoped>
+/* Оба layout в DOM всегда; переключение только через media (без v-if), чтобы не было hydration mismatch при прямой загрузке. */
+.vp-theme-container--desktop-only {
+  display: none;
+}
+
+.vp-theme-container--mobile-only {
+  display: block;
+}
+
+@media (min-width: 961px) {
+  .vp-theme-container--desktop-only {
+    display: flex;
+    height: 100vh;
+  }
+
+  .vp-theme-container--mobile-only {
+    display: none !important;
+  }
+}
+
 .vp-theme-container--desktop {
-  display: flex;
   height: 100vh;
 }
 
