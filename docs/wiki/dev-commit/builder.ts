@@ -7,6 +7,7 @@ import wikiMenu from "./system/menu/build-menu";
 import wikiHtml from "./layout/html/build-html";
 import wikiSvelte from "./frameworks/svelte/build-svelte";
 import wikiNetwork from "./theory/network/build-network";
+import wikiCss from "./layout/css/build-css";
 
 export const NAV: IHeaderMenuNav[] = [
   {
@@ -15,7 +16,7 @@ export const NAV: IHeaderMenuNav[] = [
   },
   {
     text: "Вёрстка",
-    children: getNav([wikiHtml]),
+    children: getNav([wikiHtml, wikiCss]),
   },
   {
     text: "Теория",
@@ -33,4 +34,5 @@ export const SIDEBAR = getSidebar([
   wikiMenu,
   wikiSvelte,
   wikiNetwork,
+  wikiCss,
 ]);
