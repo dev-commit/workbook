@@ -26,6 +26,13 @@ const topics: ISidebarTopics[] = [
     title: "Категории",
     children: [["category/layout", "Элементы разметки Layout"]],
   },
+  {
+    title: "Атрибуты",
+    children: [
+      ["attr/aria-label", getThemeMenu("method", ["aria-label"])],
+      ["attr/tabindex", getThemeMenu("method", ["tabindex"])],
+    ],
+  },
 ];
 
 export default { topics, path, title, theme } satisfies IBuildTopics;
