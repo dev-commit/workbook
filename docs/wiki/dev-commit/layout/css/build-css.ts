@@ -36,6 +36,15 @@ const topics: ISidebarTopics[] = [
       ["selectors/specificity", "Специфичность селекторов", "check"],
     ],
   },
+  {
+    title: "События браузера",
+    children: [
+      [
+        "browser-actions/scroll-behavior",
+        getThemeMenu("method", ["scroll-behavior"]),
+      ],
+    ],
+  },
 ];
 
 export default { topics, path, title, theme } satisfies IBuildTopics;

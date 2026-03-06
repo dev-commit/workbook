@@ -40,9 +40,9 @@ const topics: ISidebarTopics[] = [
   {
     title: "Элементы веб-страницы",
     children: [
-      ["elements/img", "Изображения"], // check
+      ["elements/img", "Изображения"],
       ["elements/form", "Элементы формы"],
-      ["elements/link", "Ссылки"], // check
+      ["elements/link", "Ссылки"],
       ["elements/video", "Видео и аудио"],
       ["elements/table", "Таблицы"],
     ],
