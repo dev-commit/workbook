@@ -1,0 +1,51 @@
+# linear-gradient(), conic-gradient()
+
+## Информация
+
+> **Linear Gradient** (линейный градиент) - функция используется для задания фона в виде линейного градиента
+
+> **Conic Gradient** (конический градиент) - функция используется для задания фона в виде конического градиента
+
+## CSS-функции
+
+::: details `linear-gradient()` - линейный градиент
+
+**Значения**
+
+- `0deg` - сверху вниз
+- `90deg` - справа налево
+- `180deg` - снизу вверх
+- `270deg` - слева направо
+
+```css
+div {
+  background-image: linear-gradient(#e66465, #9198e5);
+  background-image: linear-gradient(90deg, #fff, #fff);
+}
+```
+
+:::
+
+::: details `conic-gradient()` - конический градиент
+
+```css
+.element {
+  background-image: conic-gradient(#3590eb, #ee82cf);
+}
+```
+
+:::
+
+## Примеры
+
+::: details Link Underline (CSS linear-gradient)
+<v-iframe height="450" src="https://codepen.io/LetsCode-Dev/embed/abrZQqN" />
+:::
+
+::: details Text Shade (CSS linear-gradient)
+<v-iframe height="450" src="https://codepen.io/LetsCode-Dev/embed/eYazQrY" />
+:::
+
+::: details Pie (CSS conic-gradient)
+<v-iframe height="450" src="https://codepen.io/LetsCode-Dev/embed/yLWJQvd" />
+:::

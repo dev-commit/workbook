@@ -45,6 +45,16 @@ const topics: ISidebarTopics[] = [
       ],
     ],
   },
+  {
+    title: "Функции",
+    children: [
+      ["functions/calc", getThemeMenu("method", ["calc"])],
+      [
+        "functions/linear-gradient",
+        getThemeMenu("method", ["linear-gradient", "conic-gradient"]),
+      ],
+    ],
+  },
 ];
 
 export default { topics, path, title, theme } satisfies IBuildTopics;
