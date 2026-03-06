@@ -45,8 +45,13 @@ const topics: ISidebarTopics[] = [
       ["elements/link", "Ссылки"],
       ["elements/video", "Видео и аудио"],
       ["elements/table", "Таблицы"],
-      ["elements/text", "Текст"],
-      ["elements/fonts", "Шрифты"],
+    ],
+  },
+  {
+    title: "Текст",
+    children: [
+      ["text/text", "Текст"],
+      ["text/fonts", "Шрифты"],
     ],
   },
 ];

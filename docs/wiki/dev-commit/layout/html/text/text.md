@@ -223,10 +223,6 @@ div {
 - `position` - с какой строки он начинается
 
 ```css
-initial-letter: size position;
-```
-
-```css
 p::first-letter {
   initial-letter: 4;
   initial-letter: 4 1;
