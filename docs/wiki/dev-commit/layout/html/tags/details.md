@@ -13,6 +13,6 @@
 
 ## Примеры
 
-### Замена иконки
-
+::: details Замена иконки
 <v-iframe height="450" src="https://codepen.io/LetsCode-Dev/embed/mdYyzKQ" />
+:::

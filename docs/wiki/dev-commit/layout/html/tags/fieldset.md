@@ -11,4 +11,6 @@
 
 ## Примеры
 
+::: details Пример
 <v-iframe height="350" src="https://codepen.io/LetsCode-Dev/embed/vYwKBNE" />
+:::

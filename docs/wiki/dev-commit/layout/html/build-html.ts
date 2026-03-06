@@ -10,6 +10,10 @@ const theme: TThemeTopics = "html";
 
 const topics: ISidebarTopics[] = [
   {
+    title: "Основное",
+    children: [["main/info", getTopicSubtitle("info")]],
+  },
+  {
     title: "Теги",
     children: [
       ["tags/fieldset", getThemeMenu("method", ["fieldset", "legend"])],
@@ -31,6 +35,16 @@ const topics: ISidebarTopics[] = [
     children: [
       ["attr/aria-label", getThemeMenu("method", ["aria-label"])],
       ["attr/tabindex", getThemeMenu("method", ["tabindex"])],
+    ],
+  },
+  {
+    title: "Элементы веб-страницы",
+    children: [
+      ["elements/img", "Изображения"], // check
+      ["elements/form", "Элементы формы"],
+      ["elements/link", "Ссылки"], // check
+      ["elements/video", "Видео и аудио"],
+      ["elements/table", "Таблицы"],
     ],
   },
 ];

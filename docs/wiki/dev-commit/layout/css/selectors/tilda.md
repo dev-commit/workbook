@@ -11,10 +11,10 @@
 
 ## Примеры
 
-### Пример использования селектора `>`
-
+::: details Пример использования селектора `>`
 <v-iframe height="450" src="https://codepen.io/LetsCode-Dev/embed/QWRNNNa" />
-    
-### Custom Checkbox
+:::
 
+::: details Custom Checkbox
 <v-iframe height="450" src="https://codepen.io/LetsCode-Dev/embed/BaezBQp" />
+:::

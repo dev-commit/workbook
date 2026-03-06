@@ -24,12 +24,18 @@ const topics: ISidebarTopics[] = [
     ],
   },
   {
-    title: "Элементы",
+    title: "Custom Containers",
     children: [
-      ["elements/custom-containers", emoji.theory + "Custom Containers"],
-      ["elements/links", "Ссылки"],
-      ["elements/definitions", "Определения"],
+      [
+        "custom-containers/custom-containers",
+        emoji.theory + "Custom Containers",
+      ],
+      ["custom-containers/usage", "Использование"],
     ],
+  },
+  {
+    title: "Cases",
+    children: [["cases/definitions", "Определения"]],
   },
 ];
 
