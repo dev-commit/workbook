@@ -15,7 +15,7 @@ git rebase --skip      # пропустить коммит (вызывается
 git rebase --abort     # отменить rebase (возвращает обратно HEAD - не изменит историю коммитов)
 ```
 
-<v-details title="git rebase --continue">
+::: details `git rebase --continue`
 
 Флаг `--continue` позволяет продолжить rebase после фикса конфликта и перейти к следующему коммиту
 
@@ -35,9 +35,9 @@ git rebase --continue
 # Если следующего коммита нет, то Rebase завершится
 ```
 
-</v-details>
+:::
 
-<v-details title="git rebase --skip">
+::: details `git rebase --skip`
 
 Флаг `--skip` позволяет пропустить коммит из текущей ветки и взять изменения из _develop_
 
@@ -50,9 +50,9 @@ git rebase develop
 git rebase --skip
 ```
 
-</v-details>
+:::
 
-<v-details title="git rebase --abort">
+::: details `git rebase --abort`
 
 Флаг `--abort` позволяет вернусть состояние текушей ветки до rebase.  
 Маркер HEAD, будет перенесен обратно на текущую, а уже добавленные коммиты повиснут в воздухе (на них не будет указывать ни один указатель) и будут вскоре удалены.
@@ -66,7 +66,7 @@ git rebase develop
 git rebase --abort
 ```
 
-</v-details>
+:::
 
 ### Интерактивный rebase
 
@@ -151,7 +151,7 @@ git rebase -i HEAD~3
 
 ### Задание
 
-::: details Пункты
+::: details Алгоритм действий
 
 1. Перейти на ветку **master**
    - `git checkout master`
