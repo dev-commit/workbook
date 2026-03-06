@@ -2,7 +2,8 @@
 
 ## Ссылки
 
-::: info ✈️ W3
+**W3**
+::: info
 
 - https://www.w3.org/TR/html/ - W3: Текущий стандарт HTML
 - https://www.w3.org/TR/html/changes.html#changes - W3: Отличия от предыдущей версии
@@ -10,14 +11,16 @@
 - https://www.w3.org/TR/html/semantics.html#semantics - W3: The elements of HTML
   :::
 
-::: info ✈️ Кодгайды
+**Кодгайды**
+::: info
 
 - http://html-academy.ru/codeguide - Кодгайд от HTML Academy
 - http://mdo.github.io/code-guide - Кодгайд от MDO
 - https://google.github.io/styleguide/htmlcssguide.xml - Кодгайд от Google
   :::
 
-::: info ✈️ Прочее
+**Прочее**
+::: info
 
 - http://validator.w3.org/nu/ - Валидатор
 - https://github.com/yoksel/common-words - Типовые имена классов

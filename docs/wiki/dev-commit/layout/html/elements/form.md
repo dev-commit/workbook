@@ -1,11 +1,11 @@
 # Элементы формы
 
-::: warning 📌 Check
+::: warning
 
 - Наследование свойств `inherit` (размер шрифта, стиль шрифта)
   :::
 
-::: info ✈️ Ссылки
+::: info
 
 - https://developer.mozilla.org/ru/docs/Web/HTML/Element/input/button - MDN. Типы `<input />`
   :::

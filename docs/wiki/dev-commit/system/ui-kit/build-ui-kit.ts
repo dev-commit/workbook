@@ -24,21 +24,12 @@ const topics: ISidebarTopics[] = [
     ],
   },
   {
-    title: "Custom Containers",
-    children: [
-      [
-        "custom-containers/custom-containers",
-        emoji.theory + "Custom Containers",
-      ],
-      ["custom-containers/usage", "Использование"],
-    ],
-  },
-  {
     title: "Cases",
-    children: [["cases/definitions", "Определения"]],
+    children: [
+      ["cases/custom-containers", "Custom Containers"],
+      ["cases/content", "Контент"],
+    ],
   },
 ];
 
 export default { topics, path, title, theme } satisfies IBuildTopics;
-
-//

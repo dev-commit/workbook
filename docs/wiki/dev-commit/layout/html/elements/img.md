@@ -1,19 +1,19 @@
 # Изображения
 
-::: warning 📌 Check
+::: warning
 
 - Атрибуты `srcset` и `sizes`
 - Progressive JPEG
   :::
 
-::: info ✈️ Ссылки
+::: info
 
 - https://tinypng.com/ - Оптимизация изображений
   :::
 
 ## Атрибуты srcset и sizes
 
-::: warning 📌 Check
+::: warning
 
 - Разобрать тему
   :::
