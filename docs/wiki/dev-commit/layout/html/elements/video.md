@@ -98,14 +98,13 @@
 
 ## Примеры
 
-::: details Background Video
-
+<v-details title="Background Video">
 - Применение `object-fit`
 - Применение `filter`
 
 <v-iframe height="550" src="https://codepen.io/LetsCode-Dev/embed/BaezdMo" />
-:::
+</v-details>
 
-::: details YouTube Video
+<v-details title="YouTube Video">
 <v-iframe height="550" src="https://codepen.io/LetsCode-Dev/embed/PoveXLe" />
-:::
+</v-details>

@@ -17,6 +17,10 @@
   padding: 0;
 }
 
+.vp-doc a {
+  color: rgb(var(--color-violet-medium)) !important;
+}
+
 /*------------------------------------------
 ⭐️ VitePress Custom Containers
 ------------------------------------------*/

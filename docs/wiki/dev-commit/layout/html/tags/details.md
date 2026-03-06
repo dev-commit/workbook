@@ -13,6 +13,6 @@
 
 ## Примеры
 
-::: details Замена иконки
+<v-details title="Замена иконки">
 <v-iframe height="450" src="https://codepen.io/LetsCode-Dev/embed/mdYyzKQ" />
-:::
+</v-details>

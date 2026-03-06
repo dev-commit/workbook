@@ -109,8 +109,6 @@ textarea {
 
 :::
 
----
-
 ## HTML-атрибуты
 
 - `placeholder` - подсказка для input
@@ -122,8 +120,8 @@ textarea {
 - `min` - минимальное значение для input type="number"
 - `max` - максимальное значение для input type="number"
 
----
-
 ## Варианты
 
+<v-details title="Пример">
 <v-iframe height="450" src="https://codepen.io/LetsCode-Dev/embed/WNBbEwz" />
+</v-details>

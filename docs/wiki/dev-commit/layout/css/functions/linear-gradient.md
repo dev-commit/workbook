@@ -38,14 +38,14 @@ div {
 
 ## Примеры
 
-::: details Link Underline (CSS linear-gradient)
+<v-details title="Link Underline (CSS linear-gradient)">
 <v-iframe height="450" src="https://codepen.io/LetsCode-Dev/embed/abrZQqN" />
-:::
+</v-details>
 
-::: details Text Shade (CSS linear-gradient)
+<v-details title="Text Shade (CSS linear-gradient)">
 <v-iframe height="450" src="https://codepen.io/LetsCode-Dev/embed/eYazQrY" />
-:::
+</v-details>
 
-::: details Pie (CSS conic-gradient)
+<v-details title="Pie (CSS conic-gradient)">
 <v-iframe height="450" src="https://codepen.io/LetsCode-Dev/embed/yLWJQvd" />
-:::
+</v-details>
