@@ -37,23 +37,6 @@ const topics: ISidebarTopics[] = [
       ["attr/tabindex", getThemeMenu("method", ["tabindex"])],
     ],
   },
-  {
-    title: "Элементы веб-страницы",
-    children: [
-      ["elements/img", "Изображения"],
-      ["elements/form", "Элементы формы"],
-      ["elements/link", "Ссылки"],
-      ["elements/video", "Видео и аудио"],
-      ["elements/table", "Таблицы"],
-    ],
-  },
-  {
-    title: "Текст",
-    children: [
-      ["text/text", "Текст"],
-      ["text/fonts", "Шрифты"],
-    ],
-  },
 ];
 
 export default { topics, path, title, theme } satisfies IBuildTopics;
