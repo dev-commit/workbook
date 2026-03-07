@@ -73,6 +73,9 @@ const titleRight = computed(() => props.title?.[1] ?? "");
 }
 .column-fix {
   width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .title {

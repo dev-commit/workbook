@@ -32,15 +32,18 @@ div::after {
 
 ## Примеры
 
-::: details Добавление блока с изображением
+<v-details title="Добавление блока с изображением">
+
 **Связка свойств**
 
 - `nth-child`
 - `before`
   <v-iframe height="450" src="https://codepen.io/LetsCode-Dev/embed/MWdegoB" />
-  :::
 
-::: details По наведению на изображение добавляется полупрозрачный слой
+</v-details>
+
+<v-details title="По наведению на изображение добавляется полупрозрачный слой">
+
 **Связка свойств**
 
 - `position`
@@ -48,16 +51,19 @@ div::after {
 - `hover`
 - `transition`
   <v-iframe height="450" src="https://codepen.io/LetsCode-Dev/embed/bGyebOL" />
-  :::
 
-::: details CSS Transition Button
+</v-details>
+
+<v-details title="CSS Transition Button">
+
 **Связка свойств**
 
 - `before`
 - `after`
   <v-iframe height="450" src="https://codepen.io/LetsCode-Dev/embed/wvbWvox" />
-  :::
 
-::: details Линия до и после текста
+</v-details>
+
+<v-details title="Линия до и после текста">
 <v-iframe height="450" src="https://codepen.io/LetsCode-Dev/embed/OJYXadB" />
-:::
+</v-details>

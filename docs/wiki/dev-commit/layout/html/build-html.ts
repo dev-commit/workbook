@@ -10,10 +10,6 @@ const theme: TThemeTopics = "html";
 
 const topics: ISidebarTopics[] = [
   {
-    title: "Основное",
-    children: [["main/info", getTopicSubtitle("info")]],
-  },
-  {
     title: "Теги",
     children: [
       ["tags/fieldset", getThemeMenu("method", ["fieldset", "legend"])],
@@ -24,11 +20,8 @@ const topics: ISidebarTopics[] = [
         getThemeMenu("method", ["datalist", "option"]),
         "check",
       ],
+      ["tags/header", getThemeMenu("method", ["header", "main", "nav", "..."])],
     ],
-  },
-  {
-    title: "Категории",
-    children: [["category/layout", "Элементы разметки Layout"]],
   },
   {
     title: "Атрибуты",

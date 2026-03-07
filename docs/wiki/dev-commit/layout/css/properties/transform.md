@@ -1,0 +1,7 @@
+# transform
+
+## CSS-свойства
+
+::: details
+
+:::

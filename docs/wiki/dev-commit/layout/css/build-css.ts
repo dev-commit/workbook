@@ -37,15 +37,6 @@ const topics: ISidebarTopics[] = [
     ],
   },
   {
-    title: "События браузера",
-    children: [
-      [
-        "browser-actions/scroll-behavior",
-        getThemeMenu("method", ["scroll-behavior"]),
-      ],
-    ],
-  },
-  {
     title: "Функции",
     children: [
       ["functions/calc", getThemeMenu("method", ["calc"])],
@@ -83,6 +74,25 @@ const topics: ISidebarTopics[] = [
         "pseudo-elements/before",
         getThemeMenu("method", ["::before", "::after"]),
       ],
+    ],
+  },
+  {
+    title: "Свойства",
+    children: [
+      // TODO: Не добавлено
+      ["properties/transition", getThemeMenu("method", ["transition"])],
+      [
+        "properties/filter",
+        getThemeMenu("method", ["filter", "backdrop-filter"]),
+      ],
+      ["properties/box-shadow", getThemeMenu("method", ["box-shadow"])],
+      [
+        "properties/animation",
+        getThemeMenu("method", ["animation", "@keyframes"]),
+      ],
+      ["properties/clip-path", getThemeMenu("method", ["clip-path"])],
+      ["properties/transform", getThemeMenu("method", ["transform"])],
+      ["properties/overflow", getThemeMenu("method", ["overflow"])],
     ],
   },
 ];

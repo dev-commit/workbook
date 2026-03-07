@@ -1,0 +1,7 @@
+# transition
+
+## CSS-свойства
+
+::: details
+
+:::
