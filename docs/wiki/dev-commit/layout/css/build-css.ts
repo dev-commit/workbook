@@ -55,6 +55,36 @@ const topics: ISidebarTopics[] = [
       ],
     ],
   },
+  {
+    title: "Псевдоклассы",
+    children: [
+      ["pseudo-classes/info", emoji.items + "Псевдоклассы"],
+      [
+        "pseudo-classes/hover",
+        getThemeMenu("method", [
+          ":hover",
+          ":focus",
+          ":active",
+          ":visited",
+          ":link",
+        ]),
+      ],
+      [
+        "pseudo-classes/nth-child",
+        getThemeMenu("method", [":first-child", ":last-child", ":nth-child"]),
+      ],
+    ],
+  },
+  {
+    title: "Псевдоэлементы",
+    children: [
+      ["pseudo-elements/info", emoji.items + "Псевдоэлементы"],
+      [
+        "pseudo-elements/before",
+        getThemeMenu("method", ["::before", "::after"]),
+      ],
+    ],
+  },
 ];
 
 export default { topics, path, title, theme } satisfies IBuildTopics;
