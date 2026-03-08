@@ -28,24 +28,26 @@ const topics: ISidebarTopics[] = [
   {
     title: "Селекторы",
     children: [
-      ["selectors/variants", "Варианты селекторов"],
+      ["selectors/is", getThemeMenu("method", [":is()"]), "check"],
+      ["selectors/has", getThemeMenu("method", [":has()"]), "check"],
+      ["selectors/where", getThemeMenu("method", [":where"]), "check"],
       ["selectors/tag", getThemeMenu("outline", ["tag", "class", "id", "*"])],
       ["selectors/attr", getThemeMenu("outline", ["attr"])],
       ["selectors/tilda", getThemeMenu("outline", [">", "+", "~"])],
+      ["selectors/variants", "Варианты селекторов"],
       ["selectors/nesting", "CSS Nesting"],
       ["selectors/specificity", "Специфичность селекторов", "check"],
-      ["selectors/is", getThemeMenu("outline", [":is()"]), "check"],
-      ["selectors/has", getThemeMenu("outline", [":has()"]), "check"],
     ],
   },
   {
     title: "Функции",
     children: [
-      ["functions/calc", getThemeMenu("method", ["calc"])],
+      ["functions/calc", getThemeMenu("method", ["calc()"])],
       [
         "functions/linear-gradient",
-        getThemeMenu("method", ["linear-gradient", "conic-gradient"]),
+        getThemeMenu("method", ["linear-gradient()", "conic-gradient()"]),
       ],
+      ["functions/attr", getThemeMenu("method", ["attr()"])],
     ],
   },
   {
@@ -84,6 +86,8 @@ const topics: ISidebarTopics[] = [
       ["properties/properties-value", emoji.theory + "Значение свойств"],
       ["properties/box-shadow", getThemeMenu("method", ["box-shadow"])],
       ["properties/overflow", getThemeMenu("method", ["overflow"])],
+      ["properties/scrollbar", getThemeMenu("method", ["::-webkit-scrollbar"])],
+      ["properties/caret-color", getThemeMenu("method", ["caret-color"])],
     ],
   },
 ];

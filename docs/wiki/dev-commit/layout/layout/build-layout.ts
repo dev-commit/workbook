@@ -14,8 +14,11 @@ const topics: ISidebarTopics[] = [
     children: [
       ["text/text", "Текст"],
       ["text/fonts", "Шрифты"],
-      // Изображение на тексте
-      // font-feature-settings
+      ["text/background-clip", getThemeMenu("method", ["background-clip"])],
+      [
+        "text/font-feature-settings",
+        getThemeMenu("method", ["font-feature-settings"]),
+      ],
     ],
   },
   {
@@ -39,10 +42,26 @@ const topics: ISidebarTopics[] = [
         "browser-actions/scroll-behavior",
         getThemeMenu("method", ["scroll-behavior"]),
       ],
-      // will-change
-      // scroll-snap
-      // overscroll-behavior
-      // overflow-anchor
+      [
+        "browser-actions/will-change",
+        getThemeMenu("method", ["will-change"]),
+        "check",
+      ],
+      [
+        "browser-actions/scroll-snap",
+        getThemeMenu("method", ["scroll-snap"]),
+        "check",
+      ],
+      [
+        "browser-actions/overscroll-behavior",
+        getThemeMenu("method", ["overscroll-behavior"]),
+        "check",
+      ],
+      [
+        "browser-actions/overflow-anchor",
+        getThemeMenu("method", ["overflow-anchor"]),
+        "check",
+      ],
     ],
   },
   {
@@ -58,6 +77,34 @@ const topics: ISidebarTopics[] = [
       // CSS Masking / CSS Masks
     ],
   },
+
+  {
+    title: "Изображения",
+    children: [
+      ["images/info", getTopicSubtitle("info")],
+      ["images/srcset", "Атрибуты srcset и sizes", "check"],
+      ["images/progressive-jpeg", "Progressive JPEG"],
+      [
+        "images/img",
+        getThemeMenu("method", [
+          "&lt;img&gt;",
+          "&lt;picture&gt;",
+          "&lt;source&gt;",
+        ]),
+      ],
+      [
+        "images/background",
+        getThemeMenu("method", ["background", "object-fit"]),
+      ],
+      ["images/image-set", getThemeMenu("method", ["image-set()"]), "check"],
+    ],
+  },
+
+  {
+    title: "Адаптивность",
+    children: [["adaptive/browser-mobile", "Стилизация браузера"]],
+  },
+
   {
     title: "Основное",
     children: [
@@ -68,7 +115,6 @@ const topics: ISidebarTopics[] = [
   {
     title: "Элементы веб-страницы",
     children: [
-      ["elements/img", "Изображения"],
       ["elements/form", "Элементы формы"],
       ["elements/link", "Ссылки"],
       ["elements/video", "Видео и аудио"],
