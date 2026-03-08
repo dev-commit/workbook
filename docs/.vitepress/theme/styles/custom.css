@@ -18,7 +18,8 @@
 }
 
 .vp-doc a {
-  color: rgb(var(--color-violet-medium)) !important;
+  color: rgba(var(--color-violet-medium), 0.8) !important;
+  text-decoration: none;
 }
 
 /*------------------------------------------

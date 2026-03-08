@@ -32,7 +32,7 @@ const topics: ISidebarTopics[] = [
     ],
   },
   {
-    title: "Блочная модель и блоки",
+    title: "Блочные элементы и позиционирование",
     children: [
       ["box-model/box-sizing", getThemeMenu("method", ["box-sizing"])],
       ["box-model/display", getThemeMenu("method", ["display"])],

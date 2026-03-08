@@ -86,7 +86,7 @@ console.log(admin); // => Object { name: "Tony" }
 
 > «Один интерфейс, множество реализаций». Интерфейс - метод draw(). У него есть несколько вариантов реализаций
 
-<img src="../@img/polymorphism.png" style="width: 550px" />
+<img src="./@img/polymorphism.png" style="width: 550px" />
 
 ```js
 class Shape {

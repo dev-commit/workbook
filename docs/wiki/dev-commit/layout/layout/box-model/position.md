@@ -45,7 +45,7 @@ div {
 }
 ```
 
-<img src="../@img/z-index.webp" style="width: 350px" />
+<img src="./@img/z-index.webp" style="width: 350px" />
 
 :::
 

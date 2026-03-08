@@ -79,7 +79,6 @@ const topics: ISidebarTopics[] = [
   {
     title: "Свойства",
     children: [
-      // TODO: Не добавлено
       ["properties/transition", getThemeMenu("method", ["transition"])],
       [
         "properties/filter",
@@ -90,6 +89,9 @@ const topics: ISidebarTopics[] = [
         "properties/animation",
         getThemeMenu("method", ["animation", "@keyframes"]),
       ],
+
+      // TODO: Не добавлено
+
       ["properties/clip-path", getThemeMenu("method", ["clip-path"])],
       ["properties/transform", getThemeMenu("method", ["transform"])],
       ["properties/overflow", getThemeMenu("method", ["overflow"])],

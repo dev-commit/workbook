@@ -4,18 +4,14 @@ import { emoji } from "docs/constants";
 
 import { rootPath } from "../../constants";
 
-const path = rootPath + "usage/ide/";
+const path = rootPath + "common/ide/";
 const title = "IDE";
 const theme: TThemeTopics = null;
 
 const topics: ISidebarTopics[] = [
   {
-    title: "IDE",
-    children: [
-      ["common/ide", "IDE"],
-      ["common/online-ide", "Онлайн IDE"],
-      ["common/online-compilers", "Онлайн компиляторы"],
-    ],
+    title: "VSCode",
+    children: [["vscode/plugins", "Плагины"]],
   },
 ];
 

@@ -5,7 +5,7 @@
 ### Архитектура клиент-сервер
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-<img src="../@img/client-server.jpg" style="width: 400px" />
+<img src="./@img/client-server.jpg" style="width: 400px" />
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
@@ -49,7 +49,7 @@
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
-[Fetch](https://learn.javascript.ru/fetch)
+- [Fetch](https://learn.javascript.ru/fetch)
 
 ```js
 // fetch возвращает promise

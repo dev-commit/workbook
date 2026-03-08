@@ -10,6 +10,7 @@ import wikiNetwork from "./theory/network/build-network";
 import wikiCss from "./layout/css/build-css";
 import wikiVue from "./frameworks/vue/build-vue";
 import wikiLayout from "./layout/layout/build-layout";
+import wikiIde from "./common/ide/build-ide";
 
 export const NAV: IHeaderMenuNav[] = [
   {
@@ -23,6 +24,10 @@ export const NAV: IHeaderMenuNav[] = [
   {
     text: "Теория",
     children: getNav([wikiNetwork]),
+  },
+  {
+    text: "Общее",
+    children: getNav([wikiIde]),
   },
   {
     text: "System",
@@ -39,4 +44,5 @@ export const SIDEBAR = getSidebar([
   wikiCss,
   wikiVue,
   wikiLayout,
+  wikiIde,
 ]);

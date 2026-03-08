@@ -16,7 +16,7 @@
 ### Структура DOM документа
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-<img src="../@img/dom.jpg" style="width: 450px" />
+<img src="./@img/dom.jpg" style="width: 450px" />
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 

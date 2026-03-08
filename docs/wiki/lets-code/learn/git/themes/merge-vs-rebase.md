@@ -75,7 +75,7 @@
 
 <v-two>
 <template #first>
-<img src="../@img/commits-order.jpg" style="width: 250px" />
+<img src="./@img/commits-order.jpg" style="width: 250px" />
 </template>
 <template #last>
 
@@ -93,4 +93,4 @@
 - `merge` - (слияние) - хронологический порядок
 - `rebase` - (перемещение) - у новых коммитов изменится хеш и они будут поверх старых
 
-<img src="../@img/rebase-merge.jpg" style="width: 550px" />
+<img src="./@img/rebase-merge.jpg" style="width: 550px" />
