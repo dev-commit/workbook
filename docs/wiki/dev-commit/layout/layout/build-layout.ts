@@ -10,8 +10,60 @@ const theme: TThemeTopics = "html";
 
 const topics: ISidebarTopics[] = [
   {
+    title: "Текст",
+    children: [
+      ["text/text", "Текст"],
+      ["text/fonts", "Шрифты"],
+      // Изображение на тексте
+      // font-feature-settings
+    ],
+  },
+  {
+    title: "Преобразования",
+    children: [
+      ["modification/transition", getThemeMenu("method", ["transition"])],
+      ["modification/transform", getThemeMenu("method", ["transform"])],
+      [
+        "modification/animation",
+        getThemeMenu("method", ["animation", "@keyframes"]),
+      ],
+      // CSS Blend Modes
+      // CSS Shapes
+      // CSS Masking
+    ],
+  },
+  {
+    title: "События браузера",
+    children: [
+      [
+        "browser-actions/scroll-behavior",
+        getThemeMenu("method", ["scroll-behavior"]),
+      ],
+      // will-change
+      // scroll-snap
+      // overscroll-behavior
+      // overflow-anchor
+    ],
+  },
+  {
+    title: "Геометрия и фильтры",
+    children: [
+      [
+        "geometry/filter",
+        getThemeMenu("method", ["filter", "backdrop-filter"]),
+      ],
+      ["geometry/clip-path", getThemeMenu("method", ["clip-path"])],
+      // CSS Blend Modes
+      // CSS Shapes
+      // CSS Masking / CSS Masks
+    ],
+  },
+  {
     title: "Основное",
-    children: [["main/info", getTopicSubtitle("info")]],
+    children: [
+      ["main/info", getTopicSubtitle("info")],
+      ["main/style-priority", emoji.theory + "Приоритетность стилей"],
+    ],
   },
   {
     title: "Элементы веб-страницы",
@@ -25,15 +77,9 @@ const topics: ISidebarTopics[] = [
     ],
   },
   {
-    title: "Текст",
+    title: "Блочная модель и позиционирование",
     children: [
-      ["text/text", "Текст"],
-      ["text/fonts", "Шрифты"],
-    ],
-  },
-  {
-    title: "Блочные элементы и позиционирование",
-    children: [
+      ["box-model/box-modal", "Понятие блочной модели"],
       ["box-model/box-sizing", getThemeMenu("method", ["box-sizing"])],
       ["box-model/display", getThemeMenu("method", ["display"])],
       ["box-model/position", getThemeMenu("method", ["position", "z-index"])],
@@ -44,12 +90,12 @@ const topics: ISidebarTopics[] = [
     ],
   },
   {
-    title: "События браузера",
+    title: "Библиотеки и инструменты",
     children: [
-      [
-        "browser-actions/scroll-behavior",
-        getThemeMenu("method", ["scroll-behavior"]),
-      ],
+      ["libs/pixel-perfect", "Pixel Perfect"],
+      ["libs/bootstrap", "Bootstrap"],
+      ["libs/bem", "БЭМ"],
+      ["libs/emmet", "Плагин Emmet"],
     ],
   },
 ];

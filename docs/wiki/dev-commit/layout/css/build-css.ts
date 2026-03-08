@@ -34,6 +34,8 @@ const topics: ISidebarTopics[] = [
       ["selectors/tilda", getThemeMenu("outline", [">", "+", "~"])],
       ["selectors/nesting", "CSS Nesting"],
       ["selectors/specificity", "Специфичность селекторов", "check"],
+      ["selectors/is", getThemeMenu("outline", [":is()"]), "check"],
+      ["selectors/has", getThemeMenu("outline", [":has()"]), "check"],
     ],
   },
   {
@@ -79,21 +81,8 @@ const topics: ISidebarTopics[] = [
   {
     title: "Свойства",
     children: [
-      ["properties/transition", getThemeMenu("method", ["transition"])],
-      [
-        "properties/filter",
-        getThemeMenu("method", ["filter", "backdrop-filter"]),
-      ],
+      ["properties/properties-value", emoji.theory + "Значение свойств"],
       ["properties/box-shadow", getThemeMenu("method", ["box-shadow"])],
-      [
-        "properties/animation",
-        getThemeMenu("method", ["animation", "@keyframes"]),
-      ],
-
-      // TODO: Не добавлено
-
-      ["properties/clip-path", getThemeMenu("method", ["clip-path"])],
-      ["properties/transform", getThemeMenu("method", ["transform"])],
       ["properties/overflow", getThemeMenu("method", ["overflow"])],
     ],
   },
