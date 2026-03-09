@@ -10,6 +10,61 @@ const theme: TThemeTopics = "html";
 
 const topics: ISidebarTopics[] = [
   {
+    title: "Основное",
+    children: [
+      ["main/info", getTopicSubtitle("info")],
+      ["main/style-priority", emoji.theory + "Приоритетность стилей"],
+      // ["main/", "Custom Properties"],
+    ],
+  },
+
+  // {
+  //   title: "Layout",
+  //   children: [
+  //     ["layout/", emoji.theory + "Информация"],
+  //     ["layout/", "CSS Multi Columns"],
+  //     ["layout/", "CSS Exclusions (IE)"],
+  //   ],
+  // },
+
+  {
+    title: "Геометрия и преобразования",
+    children: [
+      ["geometry/transition", getThemeMenu("method", ["transition"])],
+      ["geometry/transform", getThemeMenu("method", ["transform"])],
+      [
+        "geometry/animation",
+        getThemeMenu("method", ["animation", "@keyframes"]),
+      ],
+      [
+        "geometry/filter",
+        getThemeMenu("method", ["filter", "backdrop-filter"]),
+      ],
+      ["geometry/clip-path", getThemeMenu("method", ["clip-path"])],
+      // ["geometry/", 'CSS Blend Modes'],
+      // ["geometry/", 'CSS Shapes'],
+      // ["geometry/", 'CSS Masking'],
+    ],
+  },
+
+  // {
+  //   title: "Примеры",
+  //   children: [
+  //     ["samplaes/", "Схлопывание внешних отступов"],
+  //     ["samplaes/", "Выпадение внешних отступов"],
+  //     ["samplaes/", "Примеры"],
+  //   ],
+  // },
+
+  // {
+  //   title: "Features",
+  //   children: [
+  //     ["features/", "@custom-selector"],
+  //     ["features/", "CSS Environment Variables"],
+  //   ],
+  // },
+
+  {
     title: "Цвета",
     children: [
       ["colors/color-schemes", "Цветовые схемы"],
@@ -57,20 +112,6 @@ const topics: ISidebarTopics[] = [
   },
 
   {
-    title: "Преобразования",
-    children: [
-      ["modification/transition", getThemeMenu("method", ["transition"])],
-      ["modification/transform", getThemeMenu("method", ["transform"])],
-      [
-        "modification/animation",
-        getThemeMenu("method", ["animation", "@keyframes"]),
-      ],
-      // CSS Blend Modes
-      // CSS Shapes
-      // CSS Masking
-    ],
-  },
-  {
     title: "События браузера",
     children: [
       [
@@ -99,19 +140,6 @@ const topics: ISidebarTopics[] = [
       ],
     ],
   },
-  {
-    title: "Геометрия и фильтры",
-    children: [
-      [
-        "geometry/filter",
-        getThemeMenu("method", ["filter", "backdrop-filter"]),
-      ],
-      ["geometry/clip-path", getThemeMenu("method", ["clip-path"])],
-      // CSS Blend Modes
-      // CSS Shapes
-      // CSS Masking / CSS Masks
-    ],
-  },
 
   {
     title: "Текст",
@@ -126,13 +154,6 @@ const topics: ISidebarTopics[] = [
     ],
   },
 
-  {
-    title: "Основное",
-    children: [
-      ["main/info", getTopicSubtitle("info")],
-      ["main/style-priority", emoji.theory + "Приоритетность стилей"],
-    ],
-  },
   {
     title: "Элементы веб-страницы",
     children: [
