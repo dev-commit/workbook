@@ -14,7 +14,7 @@ const topics: ISidebarTopics[] = [
     children: [
       ["main/info", getTopicSubtitle("info")],
       ["main/style-priority", emoji.theory + "Приоритетность стилей"],
-      // ["main/", "Custom Properties"],
+      ["main/custom-properties", "Custom Properties"],
     ],
   },
 
