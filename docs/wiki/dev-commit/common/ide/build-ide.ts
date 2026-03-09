@@ -10,6 +10,14 @@ const theme: TThemeTopics = null;
 
 const topics: ISidebarTopics[] = [
   {
+    title: "IDE",
+    children: [
+      ["ide/ide", "IDE"],
+      ["ide/ide-online", "Онлайн IDE"],
+      ["ide/online-compilers", "Онлайн компиляторы"],
+    ],
+  },
+  {
     title: "VSCode",
     children: [["vscode/plugins", "Плагины"]],
   },

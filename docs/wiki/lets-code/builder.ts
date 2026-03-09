@@ -5,28 +5,17 @@ import type { IHeaderMenuNav } from "../../types";
 import wikiJs from "./learn/js/build-js";
 import wikiGit from "./learn/git/build-git";
 import wikiBooks from "./references/books/build-books";
-import wikiTech from "./usage/tech/build-tech";
-import wikiIde from "./usage/ide/build-ide";
+import wikiTech from "./references/tech/build-tech";
 
 export const NAV: IHeaderMenuNav[] = [
-  {
-    text: "Usage",
-    children: getNav([wikiTech, wikiIde]),
-  },
   {
     text: "Обучение",
     children: getNav([wikiGit, wikiJs]),
   },
   {
     text: "Ссылки",
-    children: getNav([wikiBooks]),
+    children: getNav([wikiTech, wikiBooks]),
   },
 ];
 
-export const SIDEBAR = getSidebar([
-  wikiJs,
-  wikiGit,
-  wikiBooks,
-  wikiTech,
-  wikiIde,
-]);
+export const SIDEBAR = getSidebar([wikiJs, wikiGit, wikiBooks, wikiTech]);

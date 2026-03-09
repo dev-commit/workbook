@@ -4,7 +4,7 @@ import { emoji } from "docs/constants";
 
 import { rootPath } from "../../constants";
 
-const path = rootPath + "usage/tech/";
+const path = rootPath + "references/tech/";
 const title = "Технологии";
 const theme: TThemeTopics = null;
 

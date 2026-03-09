@@ -43,4 +43,4 @@ export const Projects: IProjects = {
   },
 };
 
-export default Projects.DevCommit;
+export default Projects.LetsCode;
