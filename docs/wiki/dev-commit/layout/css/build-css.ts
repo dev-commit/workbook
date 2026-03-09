@@ -43,10 +43,6 @@ const topics: ISidebarTopics[] = [
     title: "Функции",
     children: [
       ["functions/calc", getThemeMenu("method", ["calc()"])],
-      [
-        "functions/linear-gradient",
-        getThemeMenu("method", ["linear-gradient()", "conic-gradient()"]),
-      ],
       ["functions/attr", getThemeMenu("method", ["attr()"])],
     ],
   },

@@ -10,17 +10,52 @@ const theme: TThemeTopics = "html";
 
 const topics: ISidebarTopics[] = [
   {
-    title: "Текст",
+    title: "Цвета",
     children: [
-      ["text/text", "Текст"],
-      ["text/fonts", "Шрифты"],
-      ["text/background-clip", getThemeMenu("method", ["background-clip"])],
+      // ["colors/color-schemes", "Цветовые схемы"],
+      ["colors/color-functions", "Цветовые функции", "check"],
       [
-        "text/font-feature-settings",
-        getThemeMenu("method", ["font-feature-settings"]),
+        "colors/current-color",
+        getThemeMenu("method", ["currentColor", "transparent"]),
+      ],
+      [
+        "colors/background-color",
+        getThemeMenu("method", ["background-color", "color", "opacity"]),
+      ],
+      [
+        "colors/linear-gradient",
+        getThemeMenu("method", ["linear-gradient()", "conic-gradient()"]),
       ],
     ],
   },
+
+  {
+    title: "Изображения",
+    children: [
+      ["images/info", getTopicSubtitle("info")],
+      ["images/srcset", "Атрибуты srcset и sizes", "check"],
+      ["images/progressive-jpeg", "Progressive JPEG"],
+      [
+        "images/img",
+        getThemeMenu("method", [
+          "&lt;img&gt;",
+          "&lt;picture&gt;",
+          "&lt;source&gt;",
+        ]),
+      ],
+      [
+        "images/background",
+        getThemeMenu("method", ["background", "object-fit"]),
+      ],
+      ["images/image-set", getThemeMenu("method", ["image-set()"]), "check"],
+    ],
+  },
+
+  {
+    title: "Адаптивность",
+    children: [["adaptive/browser-mobile", "Стилизация браузера"]],
+  },
+
   {
     title: "Преобразования",
     children: [
@@ -79,30 +114,16 @@ const topics: ISidebarTopics[] = [
   },
 
   {
-    title: "Изображения",
+    title: "Текст",
     children: [
-      ["images/info", getTopicSubtitle("info")],
-      ["images/srcset", "Атрибуты srcset и sizes", "check"],
-      ["images/progressive-jpeg", "Progressive JPEG"],
+      ["text/text", "Текст"],
+      ["text/fonts", "Шрифты"],
+      ["text/background-clip", getThemeMenu("method", ["background-clip"])],
       [
-        "images/img",
-        getThemeMenu("method", [
-          "&lt;img&gt;",
-          "&lt;picture&gt;",
-          "&lt;source&gt;",
-        ]),
+        "text/font-feature-settings",
+        getThemeMenu("method", ["font-feature-settings"]),
       ],
-      [
-        "images/background",
-        getThemeMenu("method", ["background", "object-fit"]),
-      ],
-      ["images/image-set", getThemeMenu("method", ["image-set()"]), "check"],
     ],
-  },
-
-  {
-    title: "Адаптивность",
-    children: [["adaptive/browser-mobile", "Стилизация браузера"]],
   },
 
   {
