@@ -12,7 +12,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Цвета",
     children: [
-      // ["colors/color-schemes", "Цветовые схемы"],
+      ["colors/color-schemes", "Цветовые схемы"],
       ["colors/color-functions", "Цветовые функции", "check"],
       [
         "colors/current-color",
