@@ -4,17 +4,11 @@ import { emoji } from "docs/constants";
 
 import { rootPath } from "../../constants";
 
-const path = rootPath + "references/tech/";
-const title = "Технологии";
+const path = rootPath + "system/links/";
+const title = "Ссылки";
 const theme: TThemeTopics = null;
 
 const topics: ISidebarTopics[] = [
-  {
-    title: "Roadmaps",
-    children: [
-      ["roadmaps/react-frontend-developer", "React Frontend Developer"],
-    ],
-  },
   {
     title: "Не разработка",
     children: [["other/services", "Сервисы общего назначения"]],

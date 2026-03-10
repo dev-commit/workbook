@@ -12,6 +12,8 @@ import wikiVue from "./frameworks/vue/build-vue";
 import wikiLayout from "./layout/layout/build-layout";
 import wikiIde from "./common/ide/build-ide";
 import wikiSass from "./layout/sass/build-sass";
+import wikiBooks from "./system/books/build-books";
+import wikiLinks from "./system/links/build-links";
 
 export const NAV: IHeaderMenuNav[] = [
   {
@@ -32,7 +34,7 @@ export const NAV: IHeaderMenuNav[] = [
   },
   {
     text: "System",
-    children: getNav([wikiUiKit, wikiMenu]),
+    children: getNav([wikiUiKit, wikiMenu, wikiLinks, wikiBooks]),
   },
 ];
 
@@ -47,4 +49,6 @@ export const SIDEBAR = getSidebar([
   wikiLayout,
   wikiIde,
   wikiSass,
+  wikiBooks,
+  wikiLinks,
 ]);
