@@ -5,7 +5,7 @@
 ### Архитектура клиент-сервер
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-<img src="./@img/client-server.jpg" style="width: 400px" />
+<img src="../@img/client-server.jpg" style="width: 400px" />
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 

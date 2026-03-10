@@ -1,6 +1,6 @@
 # Объекты
 
-<img src="./@img/object.png" style="width: 650px" />
+<img src="../@img/object.png" style="width: 650px" />
 
 ```js
 const user = {

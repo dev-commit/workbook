@@ -21,7 +21,7 @@
 2. `Staging Area` - область подготовленных файлов
 3. `Git Directory` (Repository) - каталог git
 
-<img src="./@img/local-operation.jpg" style="width: 350px" />
+<img src="../@img/local-operation.jpg" style="width: 350px" />
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
@@ -31,4 +31,4 @@
 
 - Файл в Working Directory может находиться под версионным контролем (`unmodified`, `modified`, `staged`) и неотслеживаемые файлы (`untracked`)
 
-<img src="./@img/file-status-lifecycle.jpg" style="width: 400px" />
+<img src="../@img/file-status-lifecycle.jpg" style="width: 400px" />

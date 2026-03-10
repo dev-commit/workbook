@@ -27,7 +27,7 @@ console.log(3);
 // => 1, 3, 2
 ```
 
-<img src="./@img/event-loop.png" style="width: 500px" />
+<img src="../@img/event-loop.png" style="width: 500px" />
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 

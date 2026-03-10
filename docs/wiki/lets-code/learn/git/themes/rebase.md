@@ -143,7 +143,7 @@ git rebase -i HEAD~3
 
 </template>
 <template #last>
-<img src="./@img/rebase.jpg" style="width: 300px" />
+<img src="../@img/rebase.jpg" style="width: 300px" />
 </template>
 </v-two>
 

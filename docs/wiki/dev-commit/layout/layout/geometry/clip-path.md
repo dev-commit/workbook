@@ -13,7 +13,7 @@
 <v-two fix>
   <template #first>
 
-<img src="./@img/clip-path-triangle.webp" style="width: 150px" />
+<img src="../@img/clip-path-triangle.webp" style="width: 150px" />
 
   </template>
 

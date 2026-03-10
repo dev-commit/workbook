@@ -9,7 +9,7 @@
 
 ## Использование
 
-<img src="./@img/before.webp" style="width: 450px" />
+<img src="../@img/before.webp" style="width: 450px" />
 
 ```html
 <div>Содержимое</div>

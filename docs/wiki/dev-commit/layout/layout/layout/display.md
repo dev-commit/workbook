@@ -24,4 +24,4 @@ div {
 }
 ```
 
-<img src="./@img/display.webp" style="width: 450px" />
+<img src="../@img/display.webp" style="width: 450px" />

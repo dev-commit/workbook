@@ -77,7 +77,7 @@ ctx.strokeRect(0, 0, 100, 100); // stroke
 </template>
 <template #last>
 
-<img src="./@img/canvas/rectangle1.png" style="width: 200px" />
+<img src="../@img/canvas/rectangle1.png" style="width: 200px" />
 </template>
 </v-two>
 
@@ -100,7 +100,7 @@ ctx.stroke(); // stroke
 </template>
 <template #last>
 
-<img src="./@img/canvas/arc1.png" style="width: 200px" />
+<img src="../@img/canvas/arc1.png" style="width: 200px" />
 </template>
 </v-two>
 
@@ -140,7 +140,7 @@ ctx.stroke();
 </template>
 <template #last>
 
-<img src="./@img/canvas/path1.png" style="width: 200px" />
+<img src="../@img/canvas/path1.png" style="width: 200px" />
 </template>
 </v-two>
 
@@ -161,6 +161,6 @@ ctx.fillText("Hello World", canvas.width / 2, canvas.height / 2); // По цен
 </template>
 <template #last>
 
-<img src="./@img/canvas/text1.png" style="width: 200px" />
+<img src="../@img/canvas/text1.png" style="width: 200px" />
 </template>
 </v-two>

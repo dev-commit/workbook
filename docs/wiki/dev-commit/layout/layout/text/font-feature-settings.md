@@ -17,4 +17,4 @@ div {
 }
 ```
 
-<img src="./@img/font-feature-settings.png" style="width: 150px" />
+<img src="../@img/font-feature-settings.png" style="width: 150px" />

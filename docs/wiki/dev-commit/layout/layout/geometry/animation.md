@@ -125,7 +125,7 @@ div {
 
 <v-details title="Пример анимации">
 - В примере, блок перемещается по часовой стрелке. Для перемещения используется `transform: translate()`
-<img src="./@img/animation.webp" style="width: 250px" />
+<img src="../@img/animation.webp" style="width: 250px" />
 <v-iframe height="450" src="https://codepen.io/LetsCode-Dev/embed/jOoqQBR" />
 </v-details>
 
