@@ -60,13 +60,21 @@ const topics: ISidebarTopics[] = [
   //   ],
   // },
 
-  // {
-  //   title: "Features",
-  //   children: [
-  //     ["features/", "@custom-selector"],
-  //     ["features/", "CSS Environment Variables"],
-  //   ],
-  // },
+  {
+    title: "Features",
+    children: [
+      [
+        "features/custom-selector",
+        getThemeMenu("method", ["@custom-selector"]),
+        "check",
+      ],
+      [
+        "features/css-environment-variables",
+        "CSS Environment Variables",
+        "check",
+      ],
+    ],
+  },
 
   {
     title: "Цвета",
