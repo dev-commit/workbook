@@ -18,14 +18,18 @@ const topics: ISidebarTopics[] = [
     ],
   },
 
-  // {
-  //   title: "Layout",
-  //   children: [
-  //     ["layout/", emoji.theory + "Информация"],
-  //     ["layout/", "CSS Multi Columns"],
-  //     ["layout/", "CSS Exclusions (IE)"],
-  //   ],
-  // },
+  {
+    title: "Layout",
+    children: [
+      ["layout/info", emoji.theory + "Информация"],
+      ["layout/float", "CSS float"],
+      ["layout/inline-block", "CSS inline-block"],
+      ["layout/css-multi-columns", "CSS Multi Columns"],
+      ["layout/css-exclusions", "CSS Exclusions (IE)"],
+      ["layout/position", getThemeMenu("method", ["position", "z-index"])],
+      ["layout/display", getThemeMenu("method", ["display"])],
+    ],
+  },
 
   {
     title: "Геометрия и преобразования",
@@ -165,12 +169,10 @@ const topics: ISidebarTopics[] = [
     ],
   },
   {
-    title: "Блочная модель и позиционирование",
+    title: "Блочная модель",
     children: [
       ["box-model/box-modal", "Понятие блочной модели"],
       ["box-model/box-sizing", getThemeMenu("method", ["box-sizing"])],
-      ["box-model/display", getThemeMenu("method", ["display"])],
-      ["box-model/position", getThemeMenu("method", ["position", "z-index"])],
       ["box-model/width", getThemeMenu("method", ["width", "height"])],
       ["box-model/margin", getThemeMenu("method", ["margin", "padding"])],
       ["box-model/border", getThemeMenu("method", ["border"])],
