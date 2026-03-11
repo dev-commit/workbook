@@ -1,6 +1,7 @@
 # Школы программирования
 
-### Школы и обучающие программы
+## Школы и обучающие программы
+
 - [https://gb.ru/](https://gb.ru/) GeekBrains
 - [https://netology.ru/https://netology.ru/]() Нетология
 - [https://skillbox.ru/](https://skillbox.ru/) Skillbox
@@ -12,9 +13,10 @@
 - [https://result.school/](https://result.school/) Result School (Владилен Минин)
 - [https://synergyacademy.com/](https://synergyacademy.com/) Synergy Academy
 - [https://learn.epam.com/start](https://learn.epam.com/start) EPAM Learn
-- [https://learn.javascript.ru/courses](https://learn.javascript.ru/courses)  Learn JavaScript Courses
+- [https://learn.javascript.ru/courses](https://learn.javascript.ru/courses) Learn JavaScript Courses
 
-### Сборники курсов
+## Сборники курсов
+
 - [https://www.coursera.org/](https://www.coursera.org/) Coursera
 - [https://www.udemy.com/](https://www.udemy.com/) Udemy
 - [https://coursehunter.net/](https://coursehunter.net/) Coursehunter

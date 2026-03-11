@@ -1,6 +1,7 @@
 # Общее
 
-###  Общее
+## Общее
+
 - [https://www.telerik.com/fiddler](https://www.telerik.com/fiddler) Fiddler (подмена запроса)
 - [https://9elements.com/bem-cheat-sheet/](https://9elements.com/bem-cheat-sheet/) BEM Naming Cheat Sheet
 - [https://github.com/sverweij/dependency-cruiser](https://github.com/sverweij/dependency-cruiser) Дерево зависимостей
@@ -10,10 +11,12 @@
 - [https://git-lfs.com/](https://git-lfs.com/) Git LFS. Скачивание больших файлов
 - [https://www.browserstack.com/](https://www.browserstack.com/) Browserstack. Облачная платформа тестирования
 
-### Терминалы
+## Терминалы
+
 - [https://hyper.is/](https://hyper.is/) Hyper.js
 - [https://terminalsplash.com/](https://terminalsplash.com/) TerminalSplash
 
-### CDN
+## CDN
+
 - [https://www.jsdelivr.com/](https://www.jsdelivr.com/) JS Delivr
 - [https://cdnjs.com/libraries](https://cdnjs.com/libraries) CDN JS

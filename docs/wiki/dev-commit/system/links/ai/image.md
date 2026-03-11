@@ -1,6 +1,6 @@
 # Изображения
 
-### Генерация изображений
+## Генерация изображений
 
 - [https://nanobananaimg.com/](https://nanobananaimg.com/) Nano Banana
 - [https://www.midjourney.com/](https://www.midjourney.com/) Midjourney (Изображения)
@@ -20,13 +20,13 @@
 - [https://www.adobe.com/sensei/generative-ai/firefly.html](https://www.adobe.com/sensei/generative-ai/firefly.html) Adobe Firefly 2
 - [https://creator.nightcafe.studio/](https://creator.nightcafe.studio/) Nightcafe (Генерация изображений и видео)
 
-### Удаление фона с изображения
+## Удаление фона с изображения
 
 - [https://benzin.io/ru/](https://benzin.io/ru/) Benzin
 - [https://www.remove.bg/ru](https://www.remove.bg/ru) Remove bg
 - [https://retoucher.online/ru](https://retoucher.online/ru) Retoucher
 
-### Улучшение качества изображений
+## Улучшение качества изображений
 
 - [https://imglarger.com/](https://imglarger.com/) Imglarger
 - [https://icons8.ru/upscaler](https://icons8.ru/upscaler) Upscaler
@@ -35,7 +35,7 @@
 - [https://bigjpg.com/](https://bigjpg.com/) Bigjpg
 - [https://letsenhance.io/](https://letsenhance.io/) Letsenhance
 
-### Логотипы
+## Логотипы
 
 - [https://looka.com/](https://looka.com/) Looka
 - [https://www.logoai.com/](https://www.logoai.com/) Logo AI

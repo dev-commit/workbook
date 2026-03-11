@@ -1,6 +1,6 @@
 # Общее
 
-### Общее
+## Общее
 
 - [https://caniuse.com](https://caniuse.com/) Проверка поддержки CSS-свойств браузерами
 - [https://www.caniemail.com/](https://www.caniemail.com/) Проверка поддержки CSS-свойств для E-mail
@@ -10,14 +10,14 @@
 - [https://github.com/zalog/placeholder-loading](https://github.com/zalog/placeholder-loading) Placeholder loading
 - [https://colorable.jxnblk.com/](https://colorable.jxnblk.com/) Colorable (Проверяет контрастность цветовых пар на соответствие стандартам WCAG)
 
-### Цвета
+## Цвета
 
 - [https://colorscheme.ru](https://colorscheme.ru/color-converter.html) Конвертер цветов
 - [https://dribbble.com](https://dribbble.com/colors/A0357E) Подбор похожих цветов
 - [https://www.materialpalette.com](https://www.materialpalette.com/) Подбор похожих цветов
 - [https://ru.inettools.net](https://ru.inettools.net/image/opredelit-tsvet-piksela-na-kartinke-onlayn) Определение цвета пикселя по картинке
 
-### Оптимизация изображений
+## Оптимизация изображений
 
 - [https://tinypng.com](https://tinypng.com/) TinyPNG
 - [https://compressjpeg.com](https://compressjpeg.com/ru/) CompressJPEG
@@ -27,12 +27,12 @@
 - [https://www.jpegmini.com/](https://www.jpegmini.com/) JPEGmini (Оптимизирует фото до 80% без потери качества)
 - [https://jakearchibald.github.io/svgomg/](https://jakearchibald.github.io/svgomg/) SVGOMG (Очищает лишний код из SVG, чтобы они весили меньше)
 
-### Изображения
+## Изображения
 
 - [https://imgbb.com](https://imgbb.com/) Хостинг изображений
 - [https://imagemagick.org/script/index.php](https://imagemagick.org/script/index.php) ImageMagick
 
-### Анимации
+## Анимации
 
 - [https://greensock.com/gsap/](https://greensock.com/gsap/) Professional-grade JavaScript animation for the modern web
 - [https://loading.io](https://loading.io/) Библиотека прелоадеров

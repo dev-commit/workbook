@@ -1,6 +1,6 @@
 # Библиотеки
 
-### Ui-библиотеки
+## Ui-библиотеки
 
 **Фреймворки**
 
@@ -29,15 +29,13 @@
 - [https://metroretro.io/](https://metroretro.io/) Metro Retro
 - [https://motion.dev/](https://motion.dev/) Анимации
 
----
+## Общее
 
-### Общее
+**Общее**
 
 - [https://www.mapbox.com/](https://www.mapbox.com/) Maps and location for developers
 
----
-
-### Syntax Highlighting
+**Syntax Highlighting**
 
 - [https://highlightjs.org/](https://highlightjs.org/) Highlight.js
 - [https://prismjs.com/](https://prismjs.com/) Prism.js

@@ -1,16 +1,16 @@
 # Инфографика
 
-### Стоковые изображения
+## Стоковые изображения
 
 - [https://unsplash.com](https://unsplash.com/) Unsplash
 - [https://www.pexels.com](https://www.pexels.com/ru-ru/) Pexels
 - [https://stocksnap.io/](https://stocksnap.io/) StockSnap
 
-### Стоковые видео
+## Стоковые видео
 
 - [https://coverr.co](https://coverr.co/) Стоковые видео
 
-### Общее
+## Общее
 
 - [https://getemoji.com](https://getemoji.com/#animals-nature) Эмодзи
 - [https://www.pngegg.com/](https://www.pngegg.com/) PNG Images
@@ -18,7 +18,7 @@
 - [https://getemoji.com/](https://getemoji.com/) Emoji
 - [https://shields.io/](https://shields.io/) Shields
 
-### Иконки
+## Иконки
 
 - [https://www.flaticon.com](https://www.flaticon.com/) FlatIcon
 - [https://iconbird.com](https://iconbird.com/) IconBird
@@ -35,7 +35,7 @@
 - [https://lordicon.com/](https://lordicon.com/) Lordicon (Библиотека анимированных иконок в SVG)
 - [https://pictogrammers.com/](https://pictogrammers.com/) Pictogrammers
 
-### Шрифты
+## Шрифты
 
 - [https://webfonts.pro](https://webfonts.pro/) WebFonts
 - [https://bestfonts.pro](https://bestfonts.pro/) BestFonts

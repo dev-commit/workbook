@@ -1,15 +1,13 @@
 # Инструменты
 
-### Форматтеры
+## Форматтеры
 
 - [https://prettier.io/](https://prettier.io/) Prettier
 - [https://beautifier.io](https://beautifier.io/) Beautifier
 - [https://www.10bestdesign.com](https://www.10bestdesign.com/dirtymarkup/) DirtyMarkup
 - [http://www.jslint.com/](http://www.jslint.com/) JS Lint
 
----
-
-### Генераторы
+## Генераторы
 
 **Тень**
 
@@ -39,9 +37,7 @@
 - [https://github.com/octref/polacode](https://github.com/octref/polacode) Polaroid for your code
 - [https://csslayout.io/patterns](https://csslayout.io/patterns) CSS Layout
 
----
-
-### Валидаторы
+## Валидаторы
 
 - [http://jigsaw.w3.org](http://jigsaw.w3.org/css-validator/) CSS Validator (W3C)
 - [http://validator.w3.org](http://validator.w3.org/) Markup Validation Service (W3C)

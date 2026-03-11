@@ -1,13 +1,13 @@
 # Сборщики
 
-### Основные
+## Основные
 
 - [https://webpack.js.org/](https://webpack.js.org/) Webpack
 - [https://vitejs.dev/](https://vitejs.dev/) Vite
 - [https://rsbuild.rs/](https://rsbuild.rs/) RSBuild
 - [https://turborepo.com/](https://turborepo.com/) Turbo
 
-### Дополнительно
+## Дополнительно
 
 - [https://gulpjs.com/](https://gulpjs.com/) Gulp
 - [https://www.snowpack.dev/](https://www.snowpack.dev/) SnowPack
