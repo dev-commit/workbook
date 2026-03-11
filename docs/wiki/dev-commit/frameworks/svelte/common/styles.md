@@ -2,7 +2,7 @@
 
 ## Подключение файла с CSS-модулями styles.module.css
 
-```html
+```tsx
 <script lang="ts">
   import styles from "./styles.module.css";
 </script>
@@ -18,7 +18,7 @@
 
 ## Указание стилей в файле .svelte
 
-```html
+```tsx
 <script lang="ts">
   // Code
 </script>
@@ -56,4 +56,29 @@
 </script>
 
 <div style="background-image: url({img});"></div>
+```
+
+## Зависимость класса от props
+
+```tsx
+<script lang="ts">
+  interface Props {
+    collapsed?: boolean;
+  }
+
+  const { collapsed = false }: Props = $props();
+</script>
+
+<div class="container" class:collapsed>
+  Content
+<div>
+
+<style>
+  .container {
+    background-color: red;
+  }
+  .container.collapsed {
+    background-color: blue;
+  }
+</style>
 ```

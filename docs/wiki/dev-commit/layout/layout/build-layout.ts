@@ -51,14 +51,17 @@ const topics: ISidebarTopics[] = [
     ],
   },
 
-  // {
-  //   title: "Примеры",
-  //   children: [
-  //     ["samplaes/", "Схлопывание внешних отступов"],
-  //     ["samplaes/", "Выпадение внешних отступов"],
-  //     ["samplaes/", "Примеры"],
-  //   ],
-  // },
+  {
+    title: "Примеры и особенности",
+    children: [
+      ["samplaes/collapse-margin", emoji.code + "Схлопывание внешних отступов"],
+      [
+        "samplaes/dropping-out-margin",
+        emoji.code + "Выпадение внешних отступов",
+      ],
+      ["samplaes/samplaes", "Примеры"],
+    ],
+  },
 
   {
     title: "Features",
