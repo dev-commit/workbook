@@ -8,7 +8,8 @@
 - https://svelte.dev/ - Svelte
 - https://www.gatsbyjs.com/ - Gatsby
 - https://lerna.js.org/ - Lerna: A tool for managing JavaScript projects with multiple packages
-- https://immerjs.github.io/immer/ - Immer. Работа с Immutable State
+- https://immerjs.github.io/immer/ - Immer (Работа с Immutable State)
+- https://zagjs.com/ - Zag.js (UI components powered by Finite State Machines)
 
 ## UI
 

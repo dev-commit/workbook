@@ -2,21 +2,6 @@
 
 ## UI
 
-::: details Ui-библиотеки
-
-- https://mui.com/ - Material UI
-- https://base-ui.com/ - Base-UI (от Material-UI)
-- https://ant.design/ - Ant Design
-- https://reactstrap.github.io/ - React Strap (Bootstrap for React)
-- https://mantine.dev/ - Mantine UI
-- https://chakra-ui.com/ - Chakra UI
-- https://vercel.com/geist/introduction - Vercel Geist Design System
-- https://ark-ui.com/ - Ark UI
-- https://www.heroui.com/ - HeroUI
-- https://www.radix-ui.com/ - Radix UI
-- https://www.shadcn-form.com/ - Shadcn Form (Ui-Kit для форм)
-  :::
-
 ::: details Анимация
 
 - https://www.react-spring.dev/ - React Spring
@@ -40,10 +25,10 @@
 - https://tanstack.com/table - TanStack Table
   :::
 
-::: details Прочее
+::: details Элементы
 
 - https://react-slick.neostack.com/ - React Slick (слайдер)
-- https://carbondesignsystem.com/ - Carbon Design System
+
   :::
 
 ## Категории
