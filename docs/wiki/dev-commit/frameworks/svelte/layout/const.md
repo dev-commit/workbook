@@ -71,6 +71,6 @@
 {/key}
 ```
 
-#### `<svelte:fragment>` или `<Component>`
+### `<svelte:fragment>` или `<Component>`
 
 - (не проверено)

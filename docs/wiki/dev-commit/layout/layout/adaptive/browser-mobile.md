@@ -1,5 +1,7 @@
 # Стилизация браузера на мобильных устройствах
 
+## Атрибут `theme-color`
+
 ```html
 <!-- Chrome, Firefox OS and Opera -->
 <meta name="theme-color" content="#000" />

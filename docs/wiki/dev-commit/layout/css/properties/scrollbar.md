@@ -1,6 +1,8 @@
-# ::-webkit-scrollbar
+# Скроллбар ::-webkit-scrollbar
 
 ## Свойства
+
+### `scrollbar-color`, `scrollbar-width`
 
 - Синий скролл с зеленой полосой скроллбара
 

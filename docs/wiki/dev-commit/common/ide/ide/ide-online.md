@@ -1,6 +1,6 @@
 # Онлайн редакторы кода
 
-## Разработка приложение для Frontend и Backend
+## Разработка приложений для Frontend и Backend
 
 - https://stackblitz.com/ - StackBlitz
 - https://codesandbox.io/ - CodeSandbox

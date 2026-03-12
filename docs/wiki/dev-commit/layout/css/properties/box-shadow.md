@@ -2,6 +2,8 @@
 
 ## CSS-свойства
 
+### `box-shadow`
+
 ::: details `box-shadow` - тень у блоков
 
 **Параметры**
