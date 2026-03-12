@@ -45,7 +45,7 @@ const topics: ISidebarTopics[] = [
         getThemeMenu("method", ["filter", "backdrop-filter"]),
       ],
       ["geometry/clip-path", getThemeMenu("method", ["clip-path"])],
-      // ["geometry/", 'CSS Blend Modes'],
+      ["geometry/blend-modes", "CSS Blend Modes"],
       // ["geometry/", 'CSS Shapes'],
       // ["geometry/", 'CSS Masking'],
     ],
