@@ -2,6 +2,8 @@
 
 ## HTML-теги
 
+### `<video>`, `<audio>`
+
 ::: details `<video />`
 
 ```html

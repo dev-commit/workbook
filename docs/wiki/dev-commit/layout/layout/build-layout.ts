@@ -15,6 +15,7 @@ const topics: ISidebarTopics[] = [
       ["main/info", getTopicSubtitle("info")],
       ["main/style-priority", emoji.theory + "Приоритетность стилей"],
       ["main/custom-properties", "Custom Properties"],
+      ["main/browser-actions", "События браузера"],
     ],
   },
 
@@ -124,36 +125,6 @@ const topics: ISidebarTopics[] = [
   {
     title: "Адаптивность",
     children: [["adaptive/browser-mobile", "Стилизация браузера"]],
-  },
-
-  {
-    title: "События браузера",
-    children: [
-      [
-        "browser-actions/scroll-behavior",
-        getThemeMenu("method", ["scroll-behavior"]),
-      ],
-      [
-        "browser-actions/will-change",
-        getThemeMenu("method", ["will-change"]),
-        "check",
-      ],
-      [
-        "browser-actions/scroll-snap",
-        getThemeMenu("method", ["scroll-snap"]),
-        "check",
-      ],
-      [
-        "browser-actions/overscroll-behavior",
-        getThemeMenu("method", ["overscroll-behavior"]),
-        "check",
-      ],
-      [
-        "browser-actions/overflow-anchor",
-        getThemeMenu("method", ["overflow-anchor"]),
-        "check",
-      ],
-    ],
   },
 
   {

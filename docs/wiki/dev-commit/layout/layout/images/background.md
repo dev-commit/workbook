@@ -1,6 +1,8 @@
-# CSS свойства: background, object-fit
+# CSS-свойства: background, object-fit
 
-## CSS свойства
+## CSS-свойства
+
+### `object-fit`, `background-*`
 
 ::: details `object-fit`
 | Значение | Описание |

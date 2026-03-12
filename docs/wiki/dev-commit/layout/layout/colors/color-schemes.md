@@ -36,6 +36,8 @@
 
 ## Базовые цветовые схемы
 
+### HEX, RGB, RGBA, HSL, HSLA, HWB
+
 ::: details 1. Hexadecimal Colors (HEX)
 
 > **Hexadecimal Colors (Шестнадцатеричные цвета) -** шестнадцатеричные целые числа определяют компоненты цвета. Все значения должны находиться в диапазоне от 00 до FF
@@ -154,7 +156,9 @@ div {
 
 :::
 
-## Цветовые схемы lab, lch, oklab, oklch
+## Цветовые схемы
+
+### lab, lch, oklab, oklch
 
 ::: warning
 Добавить цветовые схемы `lab`, `lch`, `oklab`, `oklch`

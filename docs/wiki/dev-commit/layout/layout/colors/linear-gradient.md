@@ -8,6 +8,8 @@
 
 ## CSS-функции
 
+### `linear-gradient`, `conic-gradient`
+
 ::: details `linear-gradient()` - линейный градиент
 
 **Значения**

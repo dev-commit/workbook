@@ -35,7 +35,7 @@
 - https://codepen.io/yoksel/pen/kGAsK - background-blend-mode playground (CodePen)
   :::
 
-> **background-blend-mode** - управляет режимами наложения слоев фона, заданного в CSS
+::: details `background-blend-mode` - управляет режимами наложения слоев фона, заданного в CSS
 
 - Слои: backround-color, background-image (несколько), linear-gradient
 
@@ -47,6 +47,8 @@ div {
 }
 ```
 
+:::
+
 ### `mix-blend-mode`
 
 ::: info
@@ -54,7 +56,7 @@ div {
 - https://webref.ru/css/mix-blend-mode - mix-blend-mode
   :::
 
-> **mix-blend-mode** - определяет режим наложения исходного цвета на фоновый цвет или фоновое изображение
+::: details `mix-blend-mode` - определяет режим наложения исходного цвета на фоновый цвет или фоновое изображение
 
 ```css
 h1 {
@@ -63,6 +65,8 @@ h1 {
   mix-blend-mode: multiply;
 }
 ```
+
+:::
 
 ## Пример
 

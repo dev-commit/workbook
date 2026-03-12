@@ -2,6 +2,8 @@
 
 ## CSS-свойства
 
+### `outline`, `outline-width`, `outline-style`, `outline-color`
+
 ::: details `outline` (составное свойство) - обводка
 
 > outline часто используется на элементах формы, чтобы показать фокус при навигации с клавиатуры

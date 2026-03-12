@@ -1,5 +1,9 @@
 # background-clip
 
+## CSS-свойства
+
+### `background-clip`
+
 > **background-clip** - задает изображение на тексте
 
 ```css

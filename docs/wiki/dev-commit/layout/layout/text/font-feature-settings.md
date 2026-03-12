@@ -5,6 +5,10 @@
 - https://ru.w3docs.com/uchebnik-css/css-svoistvo-font-feature-settings.html
   :::
 
+## CSS-свойства
+
+### `font-feature-settings`
+
 > **font-feature-settings** - устранение "прыгающих" букв
 
 ## Пример

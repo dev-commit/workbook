@@ -7,6 +7,8 @@
 
 ## HTML-теги
 
+### `<h1> - <h6>`, `<br>`, `<p>`
+
 ::: details `<h1 /> - <h6 />` - заголовки
 
 ```html
@@ -40,7 +42,7 @@
 
 ## CSS-свойства
 
-### **Основные**
+### Основные: `font-*`, `text-*`
 
 ::: details `font-size` `font-style` `font-weight` - размер, начертание и насыщенность шрифта
 
@@ -99,7 +101,7 @@ p {
 
 :::
 
-### Оформление текста
+### Оформление текста: `text-decoration`
 
 ::: details `text-decoration` (составное свойство) - определяет внешний вид декоративных линий в тексте
 **Состоит из:**
@@ -157,11 +159,11 @@ div {
 
 :::
 
-<v-details title="Пример">
+<v-details title="Пример с text-decoration">
 <v-iframe height="450" src="https://codepen.io/LetsCode-Dev/embed/ZYzRXxB" />
 </v-details>
 
-### **Дополнительные**
+### Отступы: `line-height`, `word-spacing`, `letter-spacing`
 
 ::: details `line-height` `word-spacing` `letter-spacing` - расстояние между строками, словами и буквами
 
@@ -177,6 +179,8 @@ p {
 ```
 
 :::
+
+### Дополнительные: `text-shadow`, `white-space`, `text-overflow`, `initial-letter`
 
 ::: details `text-shadow` - тень для текста
 **Значения:**
@@ -231,7 +235,7 @@ p::first-letter {
 
 :::
 
-### Writing Mode и размеры блока
+### Writing Mode и размеры блока: `writing-mode`, `block-size`, `inline-size`
 
 ::: details `writing-mode` - направление текста
 **Ссылки**

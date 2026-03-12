@@ -2,6 +2,8 @@
 
 ## HTML-теги
 
+### `<img>`, `<picture />`, `<source />`
+
 ::: details `<img />`
 
 ```html

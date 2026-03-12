@@ -2,6 +2,8 @@
 
 ## CSS-свойства
 
+### `column-count`, `column-width`, `column-gap`, `column-rule`
+
 ::: details `column-count` - кол-во колонок
 
 ```css

@@ -2,6 +2,8 @@
 
 ## CSS-свойства
 
+### `animation`
+
 ::: details `animation` (составное свойство) - анимация
 
 **Состоит из:**
@@ -46,6 +48,8 @@ div {
 
 ## CSS-правила
 
+### `@keyframes`
+
 ::: details `@keyframes`
 
 **Пример задания @keyframes**
@@ -80,6 +84,8 @@ div {
 :::
 
 ## CSS-функции
+
+### `steps()`
 
 ::: warning
 

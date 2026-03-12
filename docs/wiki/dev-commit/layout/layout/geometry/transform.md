@@ -9,6 +9,8 @@
 
 ## CSS-свойства
 
+### `transform`, `translate()`, `rotate()`, `scale()`, `skew()`
+
 ::: details `transform`
 
 ```css

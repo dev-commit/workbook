@@ -2,7 +2,7 @@
 
 ## CSS-свойства
 
-## Ширина
+### `width`, `max-width`, `min-width`, `min()`
 
 ::: details `width` - ширина
 
@@ -55,7 +55,7 @@ div {
 
 :::
 
-## Высота
+### `height`, `max-height`, `min-height`
 
 ::: details `height` - высота
 

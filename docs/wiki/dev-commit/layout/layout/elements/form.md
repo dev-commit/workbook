@@ -12,6 +12,8 @@
 
 ## HTML-теги
 
+### `<input>`, `<textarea>`, `<select>,` `<button>`, `<form>`
+
 ::: details `<input type="text" />` - текстовое поле
 
 - Простое текстовое поле
@@ -110,6 +112,8 @@ textarea {
 :::
 
 ## HTML-атрибуты
+
+### `placeholder`, `checked`, `selected`, `autofocus`, `disabled`, `readonly`, `min`, `max`
 
 - `placeholder` - подсказка для input
 - `checked` - нажатый radio или checkbox

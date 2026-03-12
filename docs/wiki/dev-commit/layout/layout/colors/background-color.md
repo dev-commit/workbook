@@ -1,4 +1,8 @@
-# CSS свойства: background-color, color, opacity
+# Цвета
+
+### CSS-свойства
+
+### `background-color`, `color`, `opacity`
 
 ```css
 div {

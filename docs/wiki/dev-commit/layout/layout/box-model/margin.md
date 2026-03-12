@@ -2,7 +2,7 @@
 
 ## CSS-свойства
 
-### margin
+### `margin`, `margin-inline`
 
 ::: details `margin` - внешний отступ
 **Задание внешнего отступа**
@@ -68,7 +68,7 @@ div {
 
 :::
 
-### padding
+### `padding`
 
 ::: details `padding` - внутренний отступ
 **Задание внутреннего отступа**

@@ -23,7 +23,7 @@ const topics: ISidebarTopics[] = [
       ["basic/inner-html", "Методы innerText и innerHTML"],
       ["basic/function", "Функции"],
       ["basic/dom-actions", "События и обработчики событий"],
-      ["basic/style", "Обращение к CSS свойствам и классам"],
+      ["basic/style", "Обращение к CSS-свойствам и классам"],
       ["basic/array-for", "Массивы и циклы"],
       ["basic/increment", "Инкремент и декремент"],
       ["basic/attr", "Атрибуты"],

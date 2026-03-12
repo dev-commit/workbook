@@ -1,5 +1,9 @@
 # Значения для цветов currentColor и transparent
 
+## Значения
+
+### `currentColor`, `transparent`
+
 ::: details `currentColor` - переменная для цвета
 
 > **currentColor** - это ключевое слово CSS, которое подставляет текущее значение свойства color элемента (или его родителя, если у элемента color не задан)

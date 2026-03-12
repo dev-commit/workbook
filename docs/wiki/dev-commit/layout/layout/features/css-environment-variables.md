@@ -1,4 +1,4 @@
-# CSS Environment Variables
+# CSS Environment Variables, env
 
 ## Пример
 
@@ -21,10 +21,12 @@ div {
 
 ## Variable Name
 
+### Данные
+
 - Задаются user-agent браузера
 - Для свойств задания длинны (margin, padding и т.д.)
 
-**Значения**
+### Значения
 
 - `safe-area-inset-top`
 - `safe-area-inset-bottom`

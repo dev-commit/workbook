@@ -2,6 +2,8 @@
 
 ## CSS-свойства
 
+### `border-width`, `border-style`, `border-color`
+
 ::: details `border` (составное свойство) - рамка
 **Свойства**
 
@@ -40,6 +42,8 @@ div {
 
 :::
 
+### `border-top`, `border-bottom`, `border-left`, `border-right`
+
 ::: details `border-top` `border-bottom` `border-left` `border-right` - задание рамки для каждой стороны
 
 - Аналогично свойству border, состоит из: border-width, border-style, border-color
@@ -58,6 +62,8 @@ div {
 ```
 
 :::
+
+### `border-radius`
 
 ::: details `border-radius` - радиус для рамки
 

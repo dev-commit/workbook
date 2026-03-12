@@ -10,6 +10,8 @@
 
 ## CSS-свойства
 
+### `filter`, `backdrop-filter`
+
 ::: details `filter`
 
 | Значение        | Описание                                                  |

@@ -2,6 +2,8 @@
 
 ## HTML-теги
 
+### `<ul>`, `<ol>`
+
 ::: details `<ul />` - маркированный список
 
 ```html
@@ -28,7 +30,7 @@
 
 ## CSS-свойства
 
-### Настройка маркеров
+### Настройка маркеров: `list-style`, `list-style-type`, `list-style-image`, `list-style-position`
 
 `list-style` (составное свойство) - маркеры
 

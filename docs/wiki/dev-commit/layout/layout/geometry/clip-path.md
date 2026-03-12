@@ -10,6 +10,8 @@
 
 ## Фигуры
 
+### `polygon`
+
 <v-two fix>
   <template #first>
 

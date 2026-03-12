@@ -2,6 +2,8 @@
 
 ## CSS-свойства
 
+### `position`, `z-index`, `left`, `right`, `top`, `bottom`
+
 ::: details `position` - позиционирование блочных элементов
 | Значение | Описание |
 | --- | --- |
