@@ -10,6 +10,35 @@ const theme: TThemeTopics = "html";
 
 const topics: ISidebarTopics[] = [
   {
+    title: "Адаптивность",
+    children: [
+      ["adaptive/browser-mobile", "Стилизация браузера"],
+      // ["adaptive/meta-viewport", "Тег Meta Viewport"],
+      // ["adaptive/media-queries", "CSS Media queries"],
+    ],
+  },
+
+  {
+    title: "Геометрия и преобразования",
+    children: [
+      ["geometry/transition", getThemeMenu("method", ["transition"])],
+      ["geometry/transform", getThemeMenu("method", ["transform"])],
+      [
+        "geometry/animation",
+        getThemeMenu("method", ["animation", "@keyframes"]),
+      ],
+      [
+        "geometry/filter",
+        getThemeMenu("method", ["filter", "backdrop-filter"]),
+      ],
+      ["geometry/clip-path", getThemeMenu("method", ["clip-path"])],
+      ["geometry/blend-modes", "CSS Blend Modes"],
+      // ["geometry/shaper", "CSS Shapes"],
+      // ["geometry/masking", "CSS Masking"],
+    ],
+  },
+
+  {
     title: "Основное",
     children: [
       ["main/info", getTopicSubtitle("info")],
@@ -29,26 +58,6 @@ const topics: ISidebarTopics[] = [
       ["layout/css-exclusions", "CSS Exclusions (IE)"],
       ["layout/position", getThemeMenu("method", ["position", "z-index"])],
       ["layout/display", getThemeMenu("method", ["display"])],
-    ],
-  },
-
-  {
-    title: "Геометрия и преобразования",
-    children: [
-      ["geometry/transition", getThemeMenu("method", ["transition"])],
-      ["geometry/transform", getThemeMenu("method", ["transform"])],
-      [
-        "geometry/animation",
-        getThemeMenu("method", ["animation", "@keyframes"]),
-      ],
-      [
-        "geometry/filter",
-        getThemeMenu("method", ["filter", "backdrop-filter"]),
-      ],
-      ["geometry/clip-path", getThemeMenu("method", ["clip-path"])],
-      ["geometry/blend-modes", "CSS Blend Modes"],
-      // ["geometry/", 'CSS Shapes'],
-      // ["geometry/", 'CSS Masking'],
     ],
   },
 
@@ -120,11 +129,6 @@ const topics: ISidebarTopics[] = [
       ],
       ["images/image-set", getThemeMenu("method", ["image-set()"]), "check"],
     ],
-  },
-
-  {
-    title: "Адаптивность",
-    children: [["adaptive/browser-mobile", "Стилизация браузера"]],
   },
 
   {
