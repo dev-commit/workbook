@@ -12,7 +12,7 @@
 
 **Плагины**
 
-- https://code.claude.com/docs/en/vs-code - Claude Code (для VCode и Cursor)
+- https://code.claude.com/docs/ru/vs-code - Claude Code (для VCode и Cursor)
 - https://cline.bot/ - Cline (для VCode и Cursor)
 
 ## Категории

@@ -12,6 +12,7 @@
 
 - [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) - структура коммитов
 - [GitLens — Git supercharged](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) - показывает, кто вносил изменения в код
+- [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory) - история коммитов
 
 ## Markdown
 

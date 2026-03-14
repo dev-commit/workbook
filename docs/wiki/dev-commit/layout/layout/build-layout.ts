@@ -10,36 +10,39 @@ const theme: TThemeTopics = "html";
 
 const topics: ISidebarTopics[] = [
   {
+    title: "Геометрия",
+    children: [
+      ["geometry/transform", getThemeMenu("method", ["transform"])],
+      ["geometry/clip-path", getThemeMenu("method", ["clip-path"])],
+      ["geometry/css-shapes", "CSS Shapes"],
+      ["geometry/css-masking", "CSS Masking", "check"],
+    ],
+  },
+
+  {
+    title: "Эффекты",
+    children: [
+      ["effects/blend-modes", "CSS Blend Modes"],
+      ["effects/transition", getThemeMenu("method", ["transition"])],
+      [
+        "effects/animation",
+        getThemeMenu("method", ["animation", "@keyframes"]),
+      ],
+      ["effects/filter", getThemeMenu("method", ["filter", "backdrop-filter"])],
+    ],
+  },
+
+  {
     title: "Адаптивность",
     children: [
       ["adaptive/browser-mobile", "Стилизация браузера"],
-      // ["adaptive/meta-viewport", "Тег Meta Viewport"],
-      // ["adaptive/media-queries", "CSS Media queries"],
+      ["adaptive/meta-viewport", "Тег Meta Viewport"],
+      ["adaptive/media-queries", "CSS Media queries"],
     ],
   },
 
   {
-    title: "Геометрия и преобразования",
-    children: [
-      ["geometry/transition", getThemeMenu("method", ["transition"])],
-      ["geometry/transform", getThemeMenu("method", ["transform"])],
-      [
-        "geometry/animation",
-        getThemeMenu("method", ["animation", "@keyframes"]),
-      ],
-      [
-        "geometry/filter",
-        getThemeMenu("method", ["filter", "backdrop-filter"]),
-      ],
-      ["geometry/clip-path", getThemeMenu("method", ["clip-path"])],
-      ["geometry/blend-modes", "CSS Blend Modes"],
-      // ["geometry/shaper", "CSS Shapes"],
-      // ["geometry/masking", "CSS Masking"],
-    ],
-  },
-
-  {
-    title: "Основное",
+    title: "Общее",
     children: [
       ["main/info", getTopicSubtitle("info")],
       ["main/style-priority", emoji.theory + "Приоритетность стилей"],

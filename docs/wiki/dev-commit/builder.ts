@@ -15,6 +15,8 @@ import wikiSass from "./layout/sass/build-sass";
 import wikiBooks from "./system/books/build-books";
 import wikiLinks from "./system/links/build-links";
 import wikiSvg from "./layout/svg/build-svg";
+import wikiCssFlexbox from "./layout/css-flexbox/build-css-flexbox";
+import wikiCssGrid from "./layout/css-grid/build-css-grid";
 
 export const NAV: IHeaderMenuNav[] = [
   {
@@ -23,7 +25,15 @@ export const NAV: IHeaderMenuNav[] = [
   },
   {
     text: "Вёрстка",
-    children: getNav([wikiHtml, wikiCss, wikiLayout, wikiSvg, wikiSass]),
+    children: getNav([
+      wikiHtml,
+      wikiCss,
+      wikiLayout,
+      wikiCssFlexbox,
+      wikiCssGrid,
+      wikiSvg,
+      wikiSass,
+    ]),
   },
   {
     text: "Теория",
@@ -53,4 +63,6 @@ export const SIDEBAR = getSidebar([
   wikiBooks,
   wikiLinks,
   wikiSvg,
+  wikiCssFlexbox,
+  wikiCssGrid,
 ]);
