@@ -19,7 +19,8 @@ const topics: ISidebarTopics[] = [
   {
     title: "Flex-контейнер",
     children: [
-      ["flex-container/display", getThemeMenu("method", ["display", "gap"])],
+      ["flex-container/display", getThemeMenu("method", ["display"])],
+      ["flex-container/gap", getThemeMenu("method", ["gap"])],
       [
         "flex-container/flex-flow",
         getThemeMenu("method", ["flex-direction", "flex-wrap"]),
