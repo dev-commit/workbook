@@ -14,18 +14,6 @@ const topics: ISidebarTopics[] = [
     children: [["other/services", "Сервисы общего назначения"]],
   },
   {
-    title: "Нейросети",
-    children: [
-      ["ai/dev", "Разработка"],
-      ["ai/llm", "LLM и платформы"],
-      ["ai/image", "Изображения"],
-      ["ai/video", "Видео"],
-      ["ai/sound", "Звук"],
-      ["ai/3d", "3D модели"],
-      ["ai/common", "Общее"],
-    ],
-  },
-  {
     title: "Фреймворки",
     children: [
       ["frameworks/react", "React"],

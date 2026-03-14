@@ -17,6 +17,7 @@ import wikiLinks from "./system/links/build-links";
 import wikiSvg from "./layout/svg/build-svg";
 import wikiCssFlexbox from "./layout/css-flexbox/build-css-flexbox";
 import wikiCssGrid from "./layout/css-grid/build-css-grid";
+import wikiAi from "./common/ai/build-ai";
 
 export const NAV: IHeaderMenuNav[] = [
   {
@@ -41,7 +42,7 @@ export const NAV: IHeaderMenuNav[] = [
   },
   {
     text: "Общее",
-    children: getNav([wikiIde]),
+    children: getNav([wikiIde, wikiAi]),
   },
   {
     text: "System",
@@ -65,4 +66,5 @@ export const SIDEBAR = getSidebar([
   wikiSvg,
   wikiCssFlexbox,
   wikiCssGrid,
+  wikiAi,
 ]);
