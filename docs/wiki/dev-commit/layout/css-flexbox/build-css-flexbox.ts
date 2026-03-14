@@ -10,10 +10,40 @@ const theme: TThemeTopics = "html";
 
 const topics: ISidebarTopics[] = [
   {
-    title: "",
+    title: "Основное",
     children: [
-      // ["main/info", "Тема"],
-      // ["main/info", "Тема"],
+      ["main/info", getTopicSubtitle("info")],
+      ["main/margin-behavior", "Поведение margin"],
+    ],
+  },
+  {
+    title: "Flex-контейнер",
+    children: [
+      ["flex-container/display", getThemeMenu("method", ["display", "gap"])],
+      [
+        "flex-container/flex-flow",
+        getThemeMenu("method", ["flex-direction", "flex-wrap"]),
+      ],
+      // TODO:
+      // [
+      //   "flex-container/justify-content",
+      //   getThemeMenu("method", [
+      //     "justify-content",
+      //     "align-items",
+      //     "align-content",
+      //   ]),
+      // ],
+    ],
+  },
+  {
+    title: "Flex-элементы",
+    children: [
+      // [
+      //   "flex-elements/flex",
+      //   getThemeMenu("method", ["flex-grow", "flex-shrink", "flex-basis"]),
+      // ],
+      // ["flex-elements/order", getThemeMenu("method", ["order"])],
+      // ["flex-elements/align-self", getThemeMenu("method", ["align-self"])],
     ],
   },
 ];
