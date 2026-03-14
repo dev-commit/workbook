@@ -24,26 +24,25 @@ const topics: ISidebarTopics[] = [
         "flex-container/flex-flow",
         getThemeMenu("method", ["flex-direction", "flex-wrap"]),
       ],
-      // TODO:
-      // [
-      //   "flex-container/justify-content",
-      //   getThemeMenu("method", [
-      //     "justify-content",
-      //     "align-items",
-      //     "align-content",
-      //   ]),
-      // ],
+      [
+        "flex-container/justify-content",
+        getThemeMenu("method", [
+          "justify-content",
+          "align-items",
+          "align-content",
+        ]),
+      ],
     ],
   },
   {
     title: "Flex-элементы",
     children: [
-      // [
-      //   "flex-elements/flex",
-      //   getThemeMenu("method", ["flex-grow", "flex-shrink", "flex-basis"]),
-      // ],
-      // ["flex-elements/order", getThemeMenu("method", ["order"])],
-      // ["flex-elements/align-self", getThemeMenu("method", ["align-self"])],
+      [
+        "flex-elements/flex",
+        getThemeMenu("method", ["flex-grow", "flex-shrink", "flex-basis"]),
+      ],
+      ["flex-elements/order", getThemeMenu("method", ["order"])],
+      ["flex-elements/align-self", getThemeMenu("method", ["align-self"])],
     ],
   },
 ];
