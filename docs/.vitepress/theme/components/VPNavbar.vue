@@ -99,13 +99,14 @@ const isActive = (item: { link: string }) => {
   width: auto;
   padding: 5px 6px;
   line-height: 1;
-  font-size: 14px;
+  font-size: 13px;
   text-decoration: none;
   white-space: nowrap;
   font-weight: 500;
-  border-radius: 5px;
+  border-radius: 3px;
   transition: opacity 0.7s;
   cursor: pointer;
+  font-weight: 400;
 }
 .link:hover {
   opacity: 0.7;
@@ -157,9 +158,9 @@ const isActive = (item: { link: string }) => {
   border: 1px solid rgba(62, 178, 127, 0.9);
 }
 .link.theme-html {
-  color: rgb(180, 148, 44);
-  background-color: rgba(167, 156, 44, 0.1);
-  border: 1px solid rgba(152, 141, 26, 0.2);
+  color: rgb(148, 117, 16);
+  background-color: rgba(197, 191, 117, 0.4);
+  border: 1px solid rgba(158, 147, 17, 0.2);
 }
 .link.theme-primary {
   color: rgb(159, 159, 159);

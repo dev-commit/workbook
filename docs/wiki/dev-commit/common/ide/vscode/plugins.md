@@ -45,7 +45,7 @@
 
 ### Vue.js
 
-- [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) - Vetur (Для Vue 2)
+- [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) - Vetur (Для Vue 2, для Vue 3 нужно отключать)
 - [Vetur](https://marketplace.visualstudio.com/items?itemName=Vue.volar) - Vue (Official) Volar (Для Vue 3)
 
 ## Общее
@@ -55,6 +55,7 @@
 
 ---
 
+- [open in browser](https://marketplace.visualstudio.com/items?itemName=techer.open-in-browser) - open in browser (открывает HTML в браузере)
 - [Batch Runner](https://marketplace.visualstudio.com/items?itemName=NilsSoderman.batch-runner) - запуск Batch скриптов
 - [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) - AI pair programmer
 - [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks) - закладки для частей кода

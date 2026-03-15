@@ -40,22 +40,6 @@ div {
 
 :::
 
-### Примерение к тексту
-
-```css
-.gradient-text {
-  background: -webkit-linear-gradient(
-    right bottom,
-    #162454,
-    #533389,
-    #0a9ed8,
-    #7a359f
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-```
-
 ## Примеры
 
 <v-details title="Link Underline (CSS linear-gradient)">

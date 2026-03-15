@@ -150,7 +150,11 @@ const topics: ISidebarTopics[] = [
     children: [
       ["text/text", "Текст"],
       ["text/fonts", "Шрифты"],
-      ["text/background-clip", getThemeMenu("method", ["background-clip"])],
+      [
+        "text/background-clip",
+        getThemeMenu("method", ["background-clip"]),
+        "check",
+      ],
       [
         "text/font-feature-settings",
         getThemeMenu("method", ["font-feature-settings"]),
