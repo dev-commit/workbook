@@ -93,9 +93,20 @@ const topics: ISidebarTopics[] = [
   },
 
   {
+    title: "Цветовые схемы",
+    children: [
+      ["color-schemes/info", getTopicSubtitle("info")],
+      ["color-schemes/hex", "1. HEX"],
+      ["color-schemes/rgb", "2. RGB"],
+      ["color-schemes/hsl", "3. HSL"],
+      ["color-schemes/hwb", "4. HWB"],
+      ["color-schemes/predefined", "Predefined"],
+    ],
+  },
+
+  {
     title: "Цвета",
     children: [
-      ["colors/color-schemes", "Цветовые схемы"],
       ["colors/color-functions", "Цветовые функции", "check"],
       [
         "colors/current-color",
