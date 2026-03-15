@@ -6,7 +6,7 @@ import wikiUiKit from "./system/ui-kit/build-ui-kit";
 import wikiMenu from "./system/menu/build-menu";
 import wikiHtml from "./layout/html/build-html";
 import wikiSvelte from "./frameworks/svelte/build-svelte";
-import wikiNetwork from "./theory/network/build-network";
+import wikiNetwork from "./network/network/build-network";
 import wikiCss from "./layout/css/build-css";
 import wikiVue from "./frameworks/vue/build-vue";
 import wikiLayout from "./layout/layout/build-layout";
@@ -18,6 +18,7 @@ import wikiSvg from "./layout/svg/build-svg";
 import wikiCssFlexbox from "./layout/css-flexbox/build-css-flexbox";
 import wikiCssGrid from "./layout/css-grid/build-css-grid";
 import wikiAi from "./common/ai/build-ai";
+import wikiDataStructures from "./theory/data-structures/build-data-structures";
 
 export const NAV: IHeaderMenuNav[] = [
   {
@@ -38,6 +39,10 @@ export const NAV: IHeaderMenuNav[] = [
   },
   {
     text: "Теория",
+    children: getNav([wikiDataStructures]),
+  },
+  {
+    text: "Network",
     children: getNav([wikiNetwork]),
   },
   {
@@ -67,4 +72,5 @@ export const SIDEBAR = getSidebar([
   wikiCssFlexbox,
   wikiCssGrid,
   wikiAi,
+  wikiDataStructures,
 ]);

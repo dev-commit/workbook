@@ -9,7 +9,10 @@
 
 ### `font-feature-settings`
 
-> **font-feature-settings** - устранение "прыгающих" букв
+::: tip `font-feature-settings`
+
+- **font-feature-settings** - устранение "прыгающих" букв
+  :::
 
 ## Пример
 

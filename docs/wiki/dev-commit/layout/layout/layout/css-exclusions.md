@@ -1,6 +1,9 @@
 # CSS Exclusions (IE)
 
-> **CSS Exclusions** - обтекание элемента, который находится вне потока и спозиционирован поверх контента с помощью absolute, relative, fixed
+::: tip CSS Exclusions
+
+- **CSS Exclusions** - обтекание элемента, который находится вне потока и спозиционирован поверх контента с помощью absolute, relative, fixed
+  :::
 
 ## CSS-свойства
 

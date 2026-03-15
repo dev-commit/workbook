@@ -62,16 +62,17 @@
 .custom-block.details {
   /* border: 1px solid #ccd6eb; */
   /* padding: 2px 10px; */
-  background-color: #fff;
   padding: 0;
   font-size: 16px;
+  background-color: #f5f5f5;
+  padding: 15px;
 }
 .custom-block.details summary {
   margin: 0;
   font-size: 16px;
   font-weight: 500;
   font-family: var(--vp-font-family-base);
-  color: #217bcf;
+  /* color: #217bcf; */
 }
 /* Отступ между маркером и текстом */
 .custom-block.details summary::before {
@@ -89,6 +90,23 @@
 }
 .custom-block.details code {
   font-size: 14px;
+}
+.custom-block.details pre {
+  font-size: 14px;
+  background-color: #fff;
+}
+
+.custom-block.tip {
+  border: none;
+  background-color: #fff;
+  border: 2px solid rgba(var(--color-violet-blue), 0.4);
+  font-size: 16px;
+}
+.custom-block.tip .custom-block-title {
+  color: rgba(var(--color-violet-blue), 1);
+}
+.custom-block.tip .custom-block-title::before {
+  content: "📑 ";
 }
 
 /* FIXME: Проверить */

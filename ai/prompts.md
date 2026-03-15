@@ -2,13 +2,13 @@
 
 ## Файл
 
-- docs/wiki/dev-commit/common/ai
+- docs/wiki/dev-commit/theory/data-structures
 
 ## Используемые значения
 
-- [build-file]: build-ai.js
-- [path]: 'common/ide/'
-- [title]: 'IDE'
+- [build-file]: build-data-structures.js
+- [path]: 'theory/data-structures/'
+- [title]: 'Структуры данных'
 - [theme]: null
 
 ## Список задач

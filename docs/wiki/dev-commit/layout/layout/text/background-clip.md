@@ -4,7 +4,10 @@
 
 ### `background-clip`
 
-> **background-clip** - задает изображение на тексте
+::: tip `background-clip`
+
+- **background-clip** - задает изображение на тексте
+  :::
 
 ```css
 span {

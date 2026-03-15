@@ -4,7 +4,7 @@ import { emoji } from "docs/constants";
 
 import { rootPath } from "../../constants";
 
-const path = rootPath + "theory/network/";
+const path = rootPath + "network/network/";
 const title = "Network";
 const theme: TThemeTopics = null;
 

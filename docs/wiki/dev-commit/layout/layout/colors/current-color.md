@@ -2,13 +2,17 @@
 
 ## Значения
 
-### `currentColor`, `transparent`
+### `currentColor`
 
-::: details `currentColor` - переменная для цвета
+::: tip `currentColor`
 
-> **currentColor** - это ключевое слово CSS, которое подставляет текущее значение свойства color элемента (или его родителя, если у элемента color не задан)
+- **currentColor** - переменная для цвета
+- Это ключевое слово CSS, которое подставляет текущее значение свойства color элемента (или его родителя, если у элемента color не задан)
+- По сути, это переменная для цвета текста, чтобы его можно было переиспользовать в других свойствах (border, background, box-shadow и т.п.) без дублирования
 
-- По сути, это переменная для цвета текста, чтобы его можно было переиспользовать в других свойствах (border, background, box-shadow и т.п.) без дублирования.
+:::
+
+::: details `currentColor`
 
 **Пример**
 
@@ -19,6 +23,8 @@
 </div>
 ```
 
+---
+
 ```css
 .container {
   /* Задание цвета в элементе-родителе */
@@ -26,12 +32,10 @@
   /* Рамка красного цвета (наследует текущее значение color) */
   border: 1px solid currentColor;
 }
-
 .container h2 {
   /* Рамка красного цвета (наследует значение color родителя) */
   border: 1px solid currentColor;
 }
-
 .container p {
   /* Задание цвета в дочернем элементе */
   color: blue;
@@ -42,17 +46,23 @@
 
 **Где использовать**
 
-- border-color
-- background-color
-- box-shadow
-- outline-color
-- SVG: fill, stroke (чаще всего используется именно в SVG)
+- `border-color`
+- `background-color`
+- `box-shadow`
+- `outline-color`
+- SVG:` fill`,` stroke` (чаще всего используется именно в SVG)
 
 :::
 
-::: details `transparent` - задание прозрачного цвета
+### `transparent`
 
-> **transparent** - ключевое слово CSS, которое задаёт полностью прозрачный цвет. Его можно использовать везде, где допускается цвет: color, background-color, border-color, box-shadow и т.д.
+::: tip `transparent`
+
+- **transparent** - задание прозрачного цвета
+- Ключевое слово CSS, которое задаёт полностью прозрачный цвет. Его можно использовать везде, где допускается цвет: color, background-color, border-color, box-shadow и т.д.
+  :::
+
+::: details `transparent`
 
 **Пример**
 
@@ -65,6 +75,8 @@
 <div class="item1">Element</div>
 <div class="item2">Element</div>
 ```
+
+---
 
 ```css
 .item1 {

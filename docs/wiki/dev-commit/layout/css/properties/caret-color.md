@@ -1,6 +1,9 @@
 # caret-color
 
-> **caret-color** - задает цвет мигающего курсора
+::: tip `caret-color`
+
+- **caret-color** - задает цвет мигающего курсора
+  :::
 
 ```css
 input {

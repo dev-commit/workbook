@@ -1,6 +1,9 @@
 # Custom Properties
 
-> **CSS Custom Properties** - переменные в CSS позволяют вынести повторяющиеся значения
+::: tip CSS Custom Properties
+
+- **CSS Custom Properties** - переменные в CSS позволяют вынести повторяющиеся значения
+  :::
 
 ## Основные операции
 
