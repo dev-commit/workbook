@@ -23,6 +23,7 @@ const topics: ISidebarTopics[] = [
       ["cursor/info", getTopicSubtitle("info")],
       ["cursor/elements", "Элементы"],
       ["cursor/settings", "Настройки"],
+      ["cursor/browser", "Браузер"],
     ],
   },
 

@@ -1,8 +1,7 @@
 <template>
   <div class="wrapper">
     <span v-for="(item, i) in items" :key="i">
-      <v-code v-if="keys" theme="text">{{ item }}</v-code>
-      <v-code v-else theme="light">{{ item }}</v-code>
+      <v-code theme="text">{{ item }}</v-code>
 
       <template v-if="i !== items.length - 1">
         <span v-html="getSymbol()"></span>
@@ -23,12 +22,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const getSymbol = (): string => {
   const symbol = props.keys ? "+" : "➝";
-  return `\u00A0${symbol}\u00A0\u00A0`;
-};
-
-const getTag = (item: string): string => {
-  const className = props.keys ? "u-code-text" : "u-code-light";
-  return `<span class="${className}">${item}</span>`;
+  return `\u00A0${symbol}\u00A0`;
 };
 </script>
 

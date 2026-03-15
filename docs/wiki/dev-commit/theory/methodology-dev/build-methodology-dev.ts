@@ -10,8 +10,12 @@ const theme: TThemeTopics = null;
 
 const topics: ISidebarTopics[] = [
   {
-    title: "Основное",
-    children: [["methodology/atomic-design", "Atomic Design"]],
+    title: "Методологии разработки ПО",
+    children: [["methodology/atomic-design", "Atomic Design", "check"]],
+  },
+  {
+    title: "Принципы",
+    children: [["principles/sdd", "Spec-Driven Development (SDD)"]],
   },
 ];
 

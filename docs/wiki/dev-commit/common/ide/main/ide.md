@@ -4,12 +4,12 @@
 
 **IDE**
 
-- https://cursor.com/ - Cursor
+- https://cursor.com/ - Cursor (Fork VSCode)
 - https://chatgpt.com/codex/ - Codex (GPT)
 - https://windsurf.com/editor - Windsurf Editor
 - https://trypear.ai/ - PearAI
 - https://zed.dev/ - Zed IDE (только под macOS и Linux)
-- https://vibekodik.ru/ - Kodik (российская AI-IDE)
+- https://vibekodik.ru/ - Kodik (Fork VSCode, российская AI-IDE)
 
 **Плагины**
 
