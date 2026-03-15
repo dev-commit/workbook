@@ -120,7 +120,7 @@ const isActive = (item: { link: string }) => {
 .link {
   display: block;
   width: auto;
-  padding: 5px 6px;
+  padding: 6px 8px;
   line-height: 1;
   font-size: 13px;
   text-decoration: none;
@@ -135,9 +135,7 @@ const isActive = (item: { link: string }) => {
   opacity: 0.7;
 }
 .link.route-link-active {
-  outline: 2px solid #fff !important;
   background-color: rgba(0, 0, 0, 0.7) !important;
-  border: 1px solid rgba(0, 0, 0, 0.7) !important;
   color: #fff !important;
 }
 
@@ -158,19 +156,22 @@ const isActive = (item: { link: string }) => {
 .link.theme-default {
   color: rgb(35, 44, 46);
   background-color: rgba(225, 225, 225, 0.3);
-  border: 1px solid rgba(219, 219, 219, 0.9);
+  box-shadow:
+    0 0 0 1px rgba(200, 200, 200, 0.5),
+    0 1px 3px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.03);
 }
 .link.theme-vue {
   color: rgb(34, 83, 61);
   background-color: rgba(62, 178, 127, 0.3);
-  border: 1px solid rgba(62, 178, 127, 0.9);
 }
 .link.theme-html {
   color: oklch(0.5318 0.2399 256.99);
   background-color: oklch(97.32% 0.0141 251.56);
-  border: 1px solid oklch(0.7308 0.1583 248.133);
 }
 
+/* FIXME:Проверить */
 .link.theme-react {
   color: rgb(43, 116, 132);
   background-color: rgba(43, 216, 255, 0.3);
