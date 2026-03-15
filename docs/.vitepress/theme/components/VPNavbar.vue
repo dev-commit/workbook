@@ -157,10 +157,9 @@ const isActive = (item: { link: string }) => {
   color: rgb(35, 44, 46);
   background-color: rgba(225, 225, 225, 0.3);
   box-shadow:
-    0 0 0 1px rgba(200, 200, 200, 0.5),
-    0 1px 3px rgba(0, 0, 0, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.03);
+    0 0 0 1px rgba(180, 180, 180, 0.4),
+    0 0 0 2px rgba(255, 255, 255, 0.6),
+    0 2px 4px rgba(0, 0, 0, 0.05);
 }
 .link.theme-vue {
   color: rgb(34, 83, 61);
@@ -171,7 +170,7 @@ const isActive = (item: { link: string }) => {
   background-color: oklch(97.32% 0.0141 251.56);
 }
 
-/* FIXME:Проверить */
+/* FIXME: Проверить */
 .link.theme-react {
   color: rgb(43, 116, 132);
   background-color: rgba(43, 216, 255, 0.3);
