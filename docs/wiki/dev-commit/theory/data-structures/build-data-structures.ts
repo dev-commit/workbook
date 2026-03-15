@@ -6,7 +6,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "theory/data-structures/";
 const title = "Структуры данных";
-const theme: TThemeTopics = null;
+const theme: TThemeTopics = "theory";
 
 // TODO:
 const topics: ISidebarTopics[] = [

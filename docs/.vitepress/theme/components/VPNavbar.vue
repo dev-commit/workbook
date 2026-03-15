@@ -59,6 +59,29 @@ const isActive = (item: { link: string }) => {
 </template>
 
 <style scoped>
+.colors-test {
+  color: rgb(34, 211, 238);
+  color: rgb(14, 165, 233);
+  color: rgb(45, 212, 191);
+  color: rgb(34, 211, 238);
+  color: rgb(74, 222, 128);
+  color: rgb(6, 182, 212);
+  color: rgb(56, 189, 248);
+  color: rgb(37, 99, 235);
+  color: rgb(56, 189, 248);
+  color: rgb(99, 102, 241);
+  color: rgb(168, 85, 247);
+  color: rgb(99, 102, 241);
+  color: rgb(217, 70, 239);
+  color: rgb(147, 51, 234);
+  color: rgb(252, 211, 77);
+  color: rgb(249, 115, 22);
+  color: rgb(251, 146, 60);
+  color: rgb(219, 39, 119);
+  color: rgb(236, 72, 153);
+  color: rgb(244, 63, 94);
+}
+
 .vp-navbar {
   padding: 10px;
   background-color: #f0f0f0;
@@ -103,7 +126,7 @@ const isActive = (item: { link: string }) => {
   text-decoration: none;
   white-space: nowrap;
   font-weight: 500;
-  border-radius: 3px;
+  border-radius: 6px;
   transition: opacity 0.7s;
   cursor: pointer;
   font-weight: 400;
@@ -137,6 +160,17 @@ const isActive = (item: { link: string }) => {
   background-color: rgba(225, 225, 225, 0.3);
   border: 1px solid rgba(219, 219, 219, 0.9);
 }
+.link.theme-vue {
+  color: rgb(34, 83, 61);
+  background-color: rgba(62, 178, 127, 0.3);
+  border: 1px solid rgba(62, 178, 127, 0.9);
+}
+.link.theme-html {
+  color: oklch(0.5318 0.2399 256.99);
+  background-color: oklch(97.32% 0.0141 251.56);
+  border: 1px solid oklch(0.7308 0.1583 248.133);
+}
+
 .link.theme-react {
   color: rgb(43, 116, 132);
   background-color: rgba(43, 216, 255, 0.3);
@@ -152,23 +186,13 @@ const isActive = (item: { link: string }) => {
   background-color: rgba(232, 212, 77, 0.3);
   border: 1px solid rgba(232, 212, 77, 0.9);
 }
-.link.theme-vue {
-  color: rgb(34, 83, 61);
-  background-color: rgba(62, 178, 127, 0.3);
-  border: 1px solid rgba(62, 178, 127, 0.9);
-}
-.link.theme-html {
-  color: rgb(148, 117, 16);
-  background-color: rgba(197, 191, 117, 0.4);
-  border: 1px solid rgba(158, 147, 17, 0.2);
-}
 .link.theme-primary {
   color: rgb(159, 159, 159);
   background-color: rgba(231, 234, 198, 0.4);
   border: 1px solid #e2e2e2;
 }
 .link.theme-secondary {
-  color: rgb(173, 173, 173);
+  color: rgb(145, 145, 145);
   background-color: #fff;
   border: 1px solid #ededed;
 }
@@ -190,8 +214,5 @@ const isActive = (item: { link: string }) => {
   border: 1px solid #e2e2e2;
 }
 .link.theme-theory {
-  color: rgb(136, 136, 136);
-  background-color: rgba(233, 233, 233, 0.3);
-  border: 1px solid rgb(216, 216, 216);
 }
 </style>
