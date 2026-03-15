@@ -18,15 +18,6 @@ const topics: ISidebarTopics[] = [
     ],
   },
   {
-    title: "Ассистенты",
-    children: [
-      ["assistants/cursor", emoji.items + "Cursor"],
-      ["assistants/cline", emoji.items + "Cline"],
-      ["assistants/copilot", emoji.items + "GitHub Copilot"],
-    ],
-  },
-
-  {
     title: "Ссылки",
     children: [
       ["links/llm", "LLM и платформы"],

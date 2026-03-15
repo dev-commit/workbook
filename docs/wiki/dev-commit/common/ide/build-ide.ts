@@ -10,16 +10,28 @@ const theme: TThemeTopics = null;
 
 const topics: ISidebarTopics[] = [
   {
-    title: "IDE",
-    children: [
-      ["ide/ide", "IDE"],
-      ["ide/ide-online", "Онлайн IDE"],
-      ["ide/online-compilers", "Онлайн компиляторы"],
-    ],
+    title: "Основное",
+    children: [["main/ide", emoji.theory + "IDE"]],
   },
   {
     title: "VSCode",
     children: [["vscode/plugins", "Плагины"]],
+  },
+  {
+    title: "Cursor",
+    children: [
+      ["cursor/info", getTopicSubtitle("info")],
+      ["cursor/elements", "Элементы"],
+      ["cursor/settings", "Настройки"],
+    ],
+  },
+
+  {
+    title: "AI-ассистенты",
+    children: [
+      ["assistants/cline", "Cline"],
+      ["assistants/copilot", "GitHub Copilot"],
+    ],
   },
 ];
 

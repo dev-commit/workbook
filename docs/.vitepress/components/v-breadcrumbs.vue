@@ -1,5 +1,5 @@
 <template>
-  <span>
+  <div class="wrapper">
     <span v-for="(item, i) in items" :key="i">
       <v-code v-if="keys" theme="text">{{ item }}</v-code>
       <v-code v-else theme="light">{{ item }}</v-code>
@@ -8,7 +8,7 @@
         <span v-html="getSymbol()"></span>
       </template>
     </span>
-  </span>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -33,6 +33,13 @@ const getTag = (item: string): string => {
 </script>
 
 <style scoped>
+.wrapper {
+  margin: 16px 0;
+  border-left: 2px solid var(--vp-c-divider);
+  padding-left: 16px;
+  color: var(--vp-c-text-2);
+}
+
 :deep(.u-code-text),
 :deep(.u-code-light) {
   font-family: monospace;

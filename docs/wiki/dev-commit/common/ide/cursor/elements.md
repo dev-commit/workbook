@@ -1,15 +1,4 @@
-# Cursor
-
-::: info
-
-- https://cursor.com/ru/docs/ - Документация
-  :::
-
-## Информация
-
-- Fork VSCode
-
-## Элементы
+# Элементы
 
 ::: info
 

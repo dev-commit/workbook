@@ -9,6 +9,7 @@
 - https://windsurf.com/editor - Windsurf Editor
 - https://trypear.ai/ - PearAI
 - https://zed.dev/ - Zed IDE (только под macOS и Linux)
+- https://vibekodik.ru/ - Kodik (российская AI-IDE)
 
 **Плагины**
 
@@ -31,3 +32,18 @@
 
 - https://www.sublimetext.com/ - Sublime Text
 - https://notepad-plus-plus.org/ - Notepad++
+
+## Онлайн редакторы кода
+
+### Разработка приложений для Frontend и Backend
+
+- https://stackblitz.com/ - StackBlitz
+- https://codesandbox.io/ - CodeSandbox
+- https://firebase.studio/ - Firebase Studio
+
+### Demo для Frontend
+
+- https://codepen.io/ - CodePen
+- https://playcode.io/ - Javascript Playground
+- https://jsbin.com/ - jsBin
+- https://jsfiddle.net/ - jsFiddle

@@ -36,6 +36,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Технологии",
     children: [
+      ["tech/online-compilers", "Онлайн компиляторы"],
       ["tech/api", "Свободное API"],
       ["tech/builders", "Сборщики"],
       ["tech/deploy", "Деплой"],
