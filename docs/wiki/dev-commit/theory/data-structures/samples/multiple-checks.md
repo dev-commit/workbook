@@ -1,21 +1,7 @@
 # Множественные проверки
 
-<v-two :title="['Неоптимально', 'Оптимально']">
+<v-two compare :title="['Оптимально', 'Неоптимально']">
   <template #first>
-
-```js
-if (user.group === "admin") {
-  alert("Hello Admin!");
-} else if (user.group === "editor") {
-  alert("Hello Editor!");
-} else {
-  alert("Hello Iser!");
-}
-```
-
-  </template>
-
-<template #last>
 
 ```js
 let vivas = {
@@ -25,6 +11,20 @@ let vivas = {
 };
 
 alert(`Hello ${user.group}`);
+```
+
+  </template>
+
+<template #last>
+
+```js
+if (user.group === "admin") {
+  alert("Hello Admin!");
+} else if (user.group === "editor") {
+  alert("Hello Editor!");
+} else {
+  alert("Hello Iser!");
+}
 ```
 
   </template>
