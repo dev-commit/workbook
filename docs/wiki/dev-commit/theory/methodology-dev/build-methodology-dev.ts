@@ -14,6 +14,13 @@ const topics: ISidebarTopics[] = [
     children: [["methodology/atomic-design", "Atomic Design", "check"]],
   },
   {
+    title: "Методологии AI",
+    children: [
+      ["ai/clear", "Фреймворк CLEAR", "check"],
+      ["ai/schemes", "Схемы CRISPE, RISEN, APE", "check"],
+    ],
+  },
+  {
     title: "Принципы",
     children: [["principles/sdd", "Spec-Driven Development (SDD)"]],
   },
