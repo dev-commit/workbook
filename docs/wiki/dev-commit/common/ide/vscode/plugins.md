@@ -1,11 +1,46 @@
 # Плагины для VSCode
 
-## Темы
+## Стилизация
 
-- [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) - тема
-- [One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme) - тема
-- [Material Theme Icons](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme-icons) - иконки
-- [Charmed Icons](https://marketplace.visualstudio.com/items?itemName=littensy.charmed-icons) - иконки
+**Темы**
+
+- [One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme)
+
+::: details Список тем
+
+**Top**
+
+- One Dark Pro
+- Duck Mode!
+- Beared Theme
+- Monokai Pro
+- Montexia Theme
+- Tokyo Night
+
+**Хорошие**
+
+- Manjaro Dark
+- Dominvm Theme
+- CyberpunkCygnus Color Theme
+- Mayukai Theme
+- The new andromeda
+
+**Fun**
+
+- Vice City Feels ★
+- Miami Wind VsCode Theme
+- SynthWave '84
+
+:::
+
+**Иконки**
+
+- [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+- [Material Theme Icons](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme-icons)
+- [Charmed Icons](https://marketplace.visualstudio.com/items?itemName=littensy.charmed-icons)
+
+**Общее**
+
 - [Peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock) - изменение цвета для Workspace
 
 ## Git

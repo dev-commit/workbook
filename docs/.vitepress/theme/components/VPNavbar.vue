@@ -169,6 +169,10 @@ const isActive = (item: { link: string }) => {
   color: oklch(0.5318 0.2399 256.99);
   background-color: oklch(97.32% 0.0141 251.56);
 }
+.link.theme-secondary {
+  color: rgb(145, 145, 145);
+  background-color: #fff;
+}
 
 /* FIXME: Проверить */
 .link.theme-react {
@@ -191,11 +195,7 @@ const isActive = (item: { link: string }) => {
   background-color: rgba(231, 234, 198, 0.4);
   border: 1px solid #e2e2e2;
 }
-.link.theme-secondary {
-  color: rgb(145, 145, 145);
-  background-color: #fff;
-  border: 1px solid #ededed;
-}
+
 .link.theme-accent {
   color: rgb(100, 100, 100);
   background-color: #fff;

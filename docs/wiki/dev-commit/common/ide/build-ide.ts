@@ -15,7 +15,10 @@ const topics: ISidebarTopics[] = [
   },
   {
     title: "VSCode",
-    children: [["vscode/plugins", "Плагины"]],
+    children: [
+      ["vscode/plugins", "Плагины"],
+      ["vscode/utils", "Инструменты"],
+    ],
   },
   {
     title: "Cursor",
