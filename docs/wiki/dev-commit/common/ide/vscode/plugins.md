@@ -12,8 +12,7 @@
 
 - One Dark Pro
 - Duck Mode!
-- Beared Theme
-- Monokai Pro
+- Bearded Theme
 - Montexia Theme
 - Tokyo Night
 
