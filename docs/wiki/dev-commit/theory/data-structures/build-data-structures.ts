@@ -15,16 +15,17 @@ const topics: ISidebarTopics[] = [
     children: [
       ["main/info", getTopicSubtitle("info")],
       ["main/big-o-notation", emoji.theory + "Big-O Notation"],
+      ["main/fifo-lifo", emoji.theory + "Методы FIFO и LIFO"],
     ],
   },
-  // {
-  //   title: "Структуры данных: линейные",
-  //   children: [
-  //     ["structures/stack", emoji.items + "Стек"],
-  //     ["structures/queue", emoji.items + "Очередь"],
-  //     ["structures/linked-list", emoji.items + "Связанный список"],
-  //   ],
-  // },
+  {
+    title: "Структуры данных: линейные",
+    children: [
+      ["structures/stack", emoji.items + "Стек"],
+      ["structures/queue", emoji.items + "Очередь"],
+      ["structures/linked-list", emoji.items + "Связанный список"],
+    ],
+  },
   // {
   //   title: "Структуры данных: остальные",
   //   children: [

@@ -15,6 +15,8 @@
 - Bearded Theme
 - Montexia Theme
 - Tokyo Night
+- Atom One Dark Theme
+- Atom One Light Theme
 
 **Хорошие**
 
