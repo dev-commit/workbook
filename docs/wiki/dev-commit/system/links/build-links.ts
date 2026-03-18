@@ -16,9 +16,6 @@ const topics: ISidebarTopics[] = [
   {
     title: "Фреймворки",
     children: [
-      ["frameworks/react", "React"],
-      ["frameworks/react-ui-kit", "React Ui-библиотеки"],
-      ["frameworks/vue", "Vue.js"],
       ["frameworks/node", "Node.js"],
       ["frameworks/frameworks", "Frameworks"],
     ],

@@ -11,6 +11,11 @@ const theme: TThemeTopics = "vue";
 
 const topics: ISidebarTopics[] = [
   {
+    title: "Основное",
+    children: [["main/ecosystem", emoji.theory + "Экосистема"]],
+  },
+
+  {
     title: "Методы",
     children: [
       ["methods/ref", getThemeMenu("method", ["ref"])],

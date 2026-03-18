@@ -20,11 +20,12 @@ import wikiCssGrid from "./layout/css-grid/build-css-grid";
 import wikiAi from "./common/ai/build-ai";
 import wikiDataStructures from "./theory/data-structures/build-data-structures";
 import wikiMethodologyDev from "./theory/methodology-dev/build-methodology-dev";
+import wikiReact from "./frameworks/react/build-react";
 
 export const NAV: IHeaderMenuNav[] = [
   {
     text: "Фреймворки",
-    children: getNav([wikiSvelte, wikiVue]),
+    children: getNav([wikiSvelte, wikiVue, wikiReact]),
   },
   {
     text: "Вёрстка",
@@ -75,4 +76,5 @@ export const SIDEBAR = getSidebar([
   wikiAi,
   wikiDataStructures,
   wikiMethodologyDev,
+  wikiReact,
 ]);
