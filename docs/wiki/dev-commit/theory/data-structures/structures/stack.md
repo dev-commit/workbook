@@ -2,7 +2,7 @@
 
 ## Информация
 
-<img src="../@img/stack1.png" width="250px">
+<img src="../@img/stack1.png" width="250px" />
 
 ::: tip Стек 
 
@@ -18,11 +18,11 @@
 - `peek` - _Чтение головного элемента_
 - `pip` - _Отображение содержимого стека_
 
-<img src="../@img/stack2.png" width="550px">
+<img src="../@img/stack2.png" width="550px" />
 
 - Организация стека в виде одномерного упорядоченного по адресам массива. push и pop
 
-<img src="../@img/stack3.png" width="450px">
+<img src="../@img/stack3.png" width="450px" />
 
 ## Применение
 

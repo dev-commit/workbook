@@ -8,7 +8,6 @@ const path = rootPath + "theory/data-structures/";
 const title = "Структуры данных";
 const theme: TThemeTopics = "theory";
 
-// TODO:
 const topics: ISidebarTopics[] = [
   {
     title: "Основное",
@@ -16,6 +15,7 @@ const topics: ISidebarTopics[] = [
       ["main/info", getTopicSubtitle("info")],
       ["main/big-o-notation", emoji.theory + "Big-O Notation"],
       ["main/fifo-lifo", emoji.theory + "Методы FIFO и LIFO"],
+      ["main/js-structures", "Структуры данных в JS"],
     ],
   },
   {
@@ -26,26 +26,19 @@ const topics: ISidebarTopics[] = [
       ["structures/linked-list", emoji.items + "Связанный список"],
     ],
   },
-  // {
-  //   title: "Структуры данных: остальные",
-  //   children: [
-  //     ["structures/set", emoji.items + "Множество"],
-  //     ["structures/map", emoji.items + "Map"],
-  //     ["structures/hash", emoji.items + "Хэш-таблица"],
-  //     ["structures/list", emoji.items + "Список"],
-  //     ["structures/graph", emoji.items + "Граф"],
-  //     ["structures/tree", emoji.items + "Дерево"],
-  //     ["structures/tree-prefix", emoji.items + "Префиксное дерево"],
-  //     ["structures/heap", emoji.items + "Куча"],
-  //   ],
-  // },
-  // {
-  //   title: "Структуры данных в JS",
-  //   children: [
-  //     ["js/data-structures/map", getThemeMenu("method", ["Map", "WeakMap"])],
-  //     ["js/data-structures/set", getThemeMenu("method", ["Set", "WeakSet"])],
-  //   ],
-  // },
+  {
+    title: "Структуры данных: остальные",
+    children: [
+      ["structures/set", emoji.items + "Множество"],
+      ["structures/map", emoji.items + "Map"],
+      ["structures/hash", emoji.items + "Хэш-таблица"],
+      ["structures/list", emoji.items + "Список"],
+      ["structures/graph", emoji.items + "Граф"],
+      ["structures/tree", emoji.items + "Дерево"],
+      ["structures/tree-prefix", emoji.items + "Префиксное дерево"],
+      ["structures/heap", emoji.items + "Куча"],
+    ],
+  },
   {
     title: "Примеры",
     children: [

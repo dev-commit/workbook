@@ -16,14 +16,15 @@ const topics: ISidebarTopics[] = [
   {
     title: "Методологии AI",
     children: [
+      ["ai/sdd", "Spec-Driven Development (SDD)"],
       ["ai/clear", "Фреймворк CLEAR", "check"],
       ["ai/schemes", "Схемы CRISPE, RISEN, APE", "check"],
     ],
   },
-  {
-    title: "Принципы",
-    children: [["principles/sdd", "Spec-Driven Development (SDD)"]],
-  },
+  // {
+  //   title: "Принципы",
+  //   children: [],
+  // },
 ];
 
 export default { topics, path, title, theme } satisfies IBuildTopics;

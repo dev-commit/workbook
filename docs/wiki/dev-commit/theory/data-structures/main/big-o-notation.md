@@ -2,7 +2,7 @@
 
 ## Информация
 
-<img src="../@img/big-o.png" width="550px">
+<img src="../@img/big-o.png" width="550px" />
 
 ## Назначение
 

@@ -2,7 +2,7 @@
 
 ## Информация
 
-<img src="../@img/list-linked.png" width="350px">
+<img src="../@img/list-linked.png" width="350px" />
 
 ::: tip Связный список
 

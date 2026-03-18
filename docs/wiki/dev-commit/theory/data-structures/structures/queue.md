@@ -2,7 +2,7 @@
 
 ## Информация
 
-<img src="../@img/queue.png" width="300px">
+<img src="../@img/queue.png" width="300px" />
 
 ::: tip Queue
 
