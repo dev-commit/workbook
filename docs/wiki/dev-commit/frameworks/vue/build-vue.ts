@@ -26,8 +26,30 @@ const topics: ISidebarTopics[] = [
     ],
   },
   {
+    title: "Директивы",
+    children: [
+      ["directives/info", emoji.theory + "Информация"],
+      ["directives/v-text", getThemeMenu("method", ["v-text", "v-html"])],
+      [
+        "directives/v-show",
+        getThemeMenu("method", ["v-show", "v-if", "v-else", "v-else-if"]),
+      ],
+      // ["directives/v-for", getThemeMenu("method", ["v-for"])],
+      // ["directives/v-on", getThemeMenu("method", ["v-on:"])],
+      // [
+      //   "directives/v-bind",
+      //   getThemeMenu("method", ["v-bind:"]) + " :class :style",
+      // ],
+      // ["directives/v-model", getThemeMenu("method", ["v-model"])],
+      // ["directives/v-pre", getThemeMenu("method", ["v-pre"])],
+      // ["directives/v-cloak", getThemeMenu("method", ["v-cloak"])],
+      // ["directives/v-once", getThemeMenu("method", ["v-once"])],
+    ],
+  },
+
+  {
     title: "Разметка",
-    children: [["layout/slot", getThemeMenu("method", ["&lt;slot&gt;"])]],
+    children: [["directives/slot", getThemeMenu("method", ["&lt;slot&gt;"])]],
   },
   {
     title: "Категории",

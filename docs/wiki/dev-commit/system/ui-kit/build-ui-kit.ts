@@ -26,6 +26,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Cases",
     children: [
+      ["cases/workflow", emoji.star + "WorkFlow"],
       ["cases/custom-containers", "Custom Containers"],
       ["cases/content", "Контент"],
     ],

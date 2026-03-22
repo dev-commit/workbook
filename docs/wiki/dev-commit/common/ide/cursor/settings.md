@@ -1,8 +1,14 @@
 # Настройки
 
+## Cursor Settings
+
+#### Автокомплит текста в редакторе
+
+<v-breadcrumbs keys :items="['Cursor Settings', 'Tab', 'Cursor Tab']" />
+
 ## Agent Settings
 
-### Индексирование репозитория
+#### Индексирование репозитория
 
 <v-breadcrumbs keys :items="['Agent Settings', 'Indexing & Docs', 'Codebase Indexing', 'Compute Index']" />
 
@@ -12,15 +18,15 @@
 <img src="../@img/cursor/settings-indexing.png" style="width: 650px" />
 :::
 
-### Настройки VSCode
+#### Настройки VSCode
 
 <v-breadcrumbs :items="['Agent Settings', 'General', 'Editor Settings']" />
 
-### Импорт настроек из VSCode
+#### Импорт настроек из VSCode
 
 <v-breadcrumbs :items="['Agent Settings', 'General', 'Import Settings from VS Code']" />
 
-### Правила
+#### Правила
 
 <v-breadcrumbs :items="['Agent Settings', 'Rules, Skills, Subagents', 'Rules']" />
 
