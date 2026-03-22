@@ -49,8 +49,14 @@ const topics: ISidebarTopics[] = [
 
   {
     title: "Разметка",
-    children: [["directives/slot", getThemeMenu("method", ["&lt;slot&gt;"])]],
+    children: [
+      [
+        "layout/template",
+        getThemeMenu("method", ["&lt;template&gt;", "&lt;slot&gt;"]),
+      ],
+    ],
   },
+
   {
     title: "Категории",
     children: [
