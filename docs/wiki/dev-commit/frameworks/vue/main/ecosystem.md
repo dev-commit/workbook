@@ -15,4 +15,5 @@
 
 ## Общее
 
+- https://play.vuejs.org/ - Vue SFC Playground (песочница)
 - https://github.com/vuejs/petite-vue - petite-vue (использование Vue в браузере)

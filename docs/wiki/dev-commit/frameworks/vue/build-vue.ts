@@ -34,7 +34,7 @@ const topics: ISidebarTopics[] = [
         "directives/v-show",
         getThemeMenu("method", ["v-show", "v-if", "v-else", "v-else-if"]),
       ],
-      // ["directives/v-for", getThemeMenu("method", ["v-for"])],
+      ["directives/v-for", getThemeMenu("method", ["v-for"])],
       // ["directives/v-on", getThemeMenu("method", ["v-on:"])],
       // [
       //   "directives/v-bind",

@@ -1,8 +1,12 @@
 # defineComponent, setup
 
-## `<script setup>`
+## Composition API `<script setup>`
 
-> Новый формат
+::: tip Composition API
+
+- **Composition API** - определяет логику компонента, используя импортированные функции API
+- _Новый формат_
+  :::
 
 ```vue
 <script setup lang="ts">
@@ -10,9 +14,13 @@
 </script>
 ```
 
-## `defineComponent`
+## Options API `defineComponent`
 
-> Старый формат
+::: tip Options API
+
+- **Options API** - логика компонентов определяется с помощью объекта опций, таких как data, methods и mounted. Свойства, определённые в опциях, доступны через this внутри функций и указывают на экземпляр компонента
+- _Старый формат_
+  :::
 
 ```vue
 <script lang="ts">
