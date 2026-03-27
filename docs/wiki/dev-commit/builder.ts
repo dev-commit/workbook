@@ -22,6 +22,7 @@ import wikiDataStructures from "./theory/data-structures/build-data-structures";
 import wikiMethodologyDev from "./theory/methodology-dev/build-methodology-dev";
 import wikiReact from "./frameworks/react/build-react";
 import wikiCodeStyle from "./theory/code-style/build-code-style";
+import wikiApproaches from "./theory/approaches/build-approaches";
 
 export const NAV: IHeaderMenuNav[] = [
   {
@@ -42,7 +43,12 @@ export const NAV: IHeaderMenuNav[] = [
   },
   {
     text: "Теория",
-    children: getNav([wikiDataStructures, wikiMethodologyDev, wikiCodeStyle]),
+    children: getNav([
+      wikiDataStructures,
+      wikiMethodologyDev,
+      wikiCodeStyle,
+      wikiApproaches,
+    ]),
   },
   {
     text: "Network",
@@ -79,4 +85,5 @@ export const SIDEBAR = getSidebar([
   wikiMethodologyDev,
   wikiReact,
   wikiCodeStyle,
+  wikiApproaches,
 ]);

@@ -36,14 +36,14 @@ const topics: ISidebarTopics[] = [
       ],
       ["directives/v-for", getThemeMenu("method", ["v-for"])],
       ["directives/v-on", getThemeMenu("method", ["v-on:"])],
-      // [
-      //   "directives/v-bind",
-      //   getThemeMenu("method", ["v-bind:"]) + " :class :style",
-      // ],
-      // ["directives/v-model", getThemeMenu("method", ["v-model"])],
-      // ["directives/v-pre", getThemeMenu("method", ["v-pre"])],
-      // ["directives/v-cloak", getThemeMenu("method", ["v-cloak"])],
-      // ["directives/v-once", getThemeMenu("method", ["v-once"])],
+      [
+        "directives/v-bind",
+        getThemeMenu("method", ["v-bind:"]) + " :class :style",
+      ],
+      ["directives/v-model", getThemeMenu("method", ["v-model"])],
+      ["directives/v-pre", getThemeMenu("method", ["v-pre"])],
+      ["directives/v-cloak", getThemeMenu("method", ["v-cloak"])],
+      ["directives/v-once", getThemeMenu("method", ["v-once"])],
     ],
   },
 
