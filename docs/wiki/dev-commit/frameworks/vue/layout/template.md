@@ -17,32 +17,124 @@
 
 ## Варианты
 
-### Именованный слот
+### 1. Именованный слот
+
+::: tip `v-slot​`
+
+- **v-slot** - обозначение именованного слота или слота, который получает входные параметры
+- _Сокращённая запись_: `#`
+  :::
+
+::: details Пример
+**Вызов компонента**
 
 ```vue
-<!-- Вызов компонента -->
-<v-component>
-  <template #first>Передаваемые данные</template>
-</v-component>
+<script setup lang="ts">
+import Child from "./Child.vue";
+</script>
 
-<!-- Компонент "v-component" -->
+<template>
+  <!-- Полная запись через "v-slot:" -->
+  <Child>
+    <template v-slot:header>Содержимое для заголовка</template>
+  </Child>
+
+  <!-- Сокращенная запись через "#" -->
+  <Child>
+    <template #header>Содержимое для заголовка</template>
+  </Child>
+</template>
+```
+
+**Дочерний компонент**
+
+```vue
 <template>
   <div>
-    <slot name="first">Hello</slot>
+    <slot name="header">Default Data</slot>
   </div>
 </template>
 ```
 
-### Default Slot
+:::
+
+### 2. Default Slot
+
+::: details Пример
+**Вызов компонента**
 
 ```vue
-<!-- Вызов компонента -->
-<v-component>Передаваемые данные</v-component>
+<script setup lang="ts">
+import Child from "./components/Child.vue";
+</script>
 
-<!-- Компонент "v-component" -->
+<template>
+  <Child>Передаваемые данные</Child>
+</template>
+```
+
+**Дочерний компонент**
+
+```vue
 <template>
   <div>
     <slot>Default</slot>
   </div>
 </template>
 ```
+
+:::
+
+### 3. Именованный слот со входными параметрами (scoped slot)
+
+::: tip Определение
+**Именованный слот со входными параметрами (scoped slot)** нужен, когда дочерний компонент контролирует “данные/состояние/поведение”, а родитель хочет контролировать разметку того, как это будет показано
+
+- _Ключевой момент_: slot props — это канал “ребёнок → родитель” (передача контекста для рендера). Если нужно “родитель → ребёнок”, это обычно props/emit (или provide/inject)
+  :::
+
+**Типовые кейсы**
+
+- Рендер‑пропы для UI-китов: Table, List, Select, Dropdown, Calendar — ребёнок знает про выбор, фокус, активный пункт, доступность, а родитель задаёт шаблон строки/опции через слот.
+- Состояния и действия от ребёнка: ребёнок отдаёт в слот isOpen, isLoading, error, toggle(), submit(), close() — родитель сам решает, где и как рисовать кнопку/спиннер/ошибку.
+- Инкапсуляция сложной логики: например, InfiniteScroll, VirtualList, DragAndDrop — ребёнок управляет механикой, а родитель рендерит элементы, получая нужные параметры (позиции, обработчики).
+- Переиспользование без потери гибкости: один и тот же Child (например, “карточка профиля” или “пункт меню”) может быть использован в разных местах с разной вёрсткой, но с общей логикой внутри.
+
+::: details Пример
+**Вызов компонента**
+
+```vue
+<script setup lang="ts">
+import Child from "./components/Child.vue";
+</script>
+
+<template>
+  <Child>
+    <template #item="slotProps">
+      <!-- Если передан контент внутри "template", то орендерит переданный контент -->
+      <u>{{ slotProps.text }}</u>
+    </template>
+  </Child>
+</template>
+```
+
+**Дочерний компонент**
+
+```vue
+<script setup lang="ts">
+const slotData = {
+  text: "Привет из Child",
+};
+</script>
+
+<template>
+  <div>
+    <slot name="item" :text="slotData.text">
+      <!-- Если НЕ передан контент внутри "template" от родителя, то орендерит данные из "slot" -->
+      <i>{{ slotData.text }}</i>
+    </slot>
+  </div>
+</template>
+```
+
+:::

@@ -52,7 +52,7 @@ const topics: ISidebarTopics[] = [
     children: [
       [
         "layout/template",
-        getThemeMenu("method", ["&lt;template&gt;", "&lt;slot&gt;"]),
+        getThemeMenu("method", ["&lt;template&gt;", "&lt;slot&gt;", "v-slot​"]),
       ],
     ],
   },
