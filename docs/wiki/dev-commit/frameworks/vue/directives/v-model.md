@@ -2,28 +2,66 @@
 
 ::: tip `v-model`
 
-- **v-model** - двунаправленное связывание данных с элементами (н-р input и textarea)
+- **v-model** - создает двустороннее связывание с элементом ввода формы или с компонентом
+- Применения для элементов: `<input>`, `<select>`, `<textarea>`, компоненты
 
 :::
 
 ## Варианты
 
-```vue
-<input type="text" v-model="messText" />
-<p>{{ messText }}</p>
+### `input`
 
-<input type="checkbox" v-model="view" />
-<label>{{ view }}</label>
+```vue
+<script setup>
+import { ref } from "vue";
+
+const message = ref("");
+</script>
+
+<template>
+  <p>{{ message }}</p>
+
+  <!-- Ручная привязки значений и обработчиков событий -->
+  <input :value="message" @input="(event) => (message = event.target.value)" />
+
+  <!-- Использование v-model (аналогичный результат)  -->
+  <input v-model="message" />
+</template>
 ```
 
-Аналогично
+### `checkbox`
 
 ```vue
-<input type="text" @input="messText = $event.target.value" />
-<p>{{ messText }}</p>
+<script setup>
+import { ref } from "vue";
+
+const view = ref(false);
+</script>
+
+<template>
+  <label>
+    <input type="checkbox" v-model="view" />
+    {{ view }}
+  </label>
+</template>
 ```
 
 ## Модификаторы
 
-<!-- Удаление пробелов -->
-<input type="text" v-model.trim="messText">
+- `.lazy` - отслеживание события change вместо input
+- `.number` - приведение корректной строки со значением к числу
+- `.trim` - удаление пробелов в начале и в конце строки
+
+```vue
+<script setup>
+import { ref } from "vue";
+
+const message = ref(" Hello ");
+</script>
+
+<template>
+  <p>{{ message }}</p>
+  <!-- Удаление пробелов -->
+  <input type="text" v-model.trim="message" />
+</template>
+```

@@ -12,7 +12,10 @@ const theme: TThemeTopics = "vue";
 const topics: ISidebarTopics[] = [
   {
     title: "Основное",
-    children: [["main/ecosystem", emoji.theory + "Экосистема"]],
+    children: [
+      ["main/ecosystem", emoji.theory + "Экосистема"],
+      ["main/usage", getTopicSubtitle("use")],
+    ],
   },
 
   {
@@ -42,8 +45,9 @@ const topics: ISidebarTopics[] = [
       ],
       ["directives/v-model", getThemeMenu("method", ["v-model"])],
       ["directives/v-pre", getThemeMenu("method", ["v-pre"])],
-      ["directives/v-cloak", getThemeMenu("method", ["v-cloak"])],
       ["directives/v-once", getThemeMenu("method", ["v-once"])],
+      ["directives/v-memo", getThemeMenu("method", ["v-memo"])],
+      ["directives/v-cloak", getThemeMenu("method", ["v-cloak"])],
     ],
   },
 
