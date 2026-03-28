@@ -1,4 +1,4 @@
-# defineComponent, setup
+# defineComponent(), setup
 
 ## Composition API `<script setup>`
 

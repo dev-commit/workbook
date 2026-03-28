@@ -1,4 +1,4 @@
-# watch
+# watch()
 
 ```vue
 <script setup lang="ts">

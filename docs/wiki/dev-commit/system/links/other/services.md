@@ -19,9 +19,10 @@
 
 ## Видеочаты
 
-- https://www.skype.com/ - Skype
 - https://zoom.us/ - Zoom
 - https://talky.io/ - Talky
+- https://telemost.yandex.ru/ - Яндекс Телемост
+- https://meet.google.com/ - Google Meet
 
 ## Для дизайнеров
 

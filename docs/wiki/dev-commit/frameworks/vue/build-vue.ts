@@ -17,14 +17,22 @@ const topics: ISidebarTopics[] = [
       ["main/usage", getTopicSubtitle("use")],
     ],
   },
+  {
+    title: "Реактивность",
+    children: [
+      ["reactivity/info", emoji.theory + "Информация", "check"],
+      ["reactivity/ref", getThemeMenu("method", ["ref()"])],
+      ["reactivity/reactive", getThemeMenu("method", ["reactive()"])],
+      ["reactivity/computed", getThemeMenu("method", ["computed()"])],
+    ],
+  },
 
   {
     title: "Методы",
     children: [
-      ["methods/ref", getThemeMenu("method", ["ref"])],
-      ["methods/defineEmits", getThemeMenu("method", ["defineEmits"])],
-      ["methods/defineProps", getThemeMenu("method", ["defineProps"])],
-      ["methods/watch", getThemeMenu("method", ["watch"])],
+      ["methods/defineEmits", getThemeMenu("method", ["defineEmits()"])],
+      ["methods/defineProps", getThemeMenu("method", ["defineProps()"])],
+      ["methods/watch", getThemeMenu("method", ["watch()"])],
       ["methods/lifecycle", "Жизненный цикл"],
     ],
   },
@@ -66,7 +74,7 @@ const topics: ISidebarTopics[] = [
     children: [
       [
         "category/defineComponent",
-        getThemeMenu("method", ["defineComponent", "setup"]),
+        getThemeMenu("method", ["defineComponent()", "setup"]),
       ],
       ["category/styles", "Стилизация"],
       ["category/typescript", "TypeScript"],

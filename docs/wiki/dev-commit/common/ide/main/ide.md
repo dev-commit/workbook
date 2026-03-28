@@ -10,11 +10,16 @@
 - https://trypear.ai/ - PearAI
 - https://zed.dev/ - Zed IDE (только под macOS и Linux)
 - https://vibekodik.ru/ - Kodik (Fork VSCode, российская AI-IDE)
+- https://www.trae.ai/ - Trae (IDE от TikTok)
 
 **Плагины**
 
 - https://code.claude.com/docs/ru/vs-code - Claude Code (для VCode и Cursor)
 - https://cline.bot/ - Cline (для VCode и Cursor)
+
+**CLI**
+
+- https://geminicli.com/ - Gemini CLI
 
 ## Категории
 

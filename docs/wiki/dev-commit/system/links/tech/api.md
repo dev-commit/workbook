@@ -23,3 +23,4 @@
 - https://randomuser.me/ - Random User Generator
 - https://dog.ceo/dog-api/ - Dog API
 - https://github.com/HackerNews/API - Hacker News API
+- https://www.freetogame.com/api-doc - Free-To-Play Games Database API
