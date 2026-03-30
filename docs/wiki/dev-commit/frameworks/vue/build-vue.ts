@@ -18,28 +18,27 @@ const topics: ISidebarTopics[] = [
   },
 
   {
-    title: "Основное",
+    title: "Общее",
     children: [
-      ["main/ecosystem", emoji.theory + "Экосистема"],
-      ["main/usage", getTopicSubtitle("use")],
+      ["common/nextTick", getThemeMenu("method", ["nextTick()"]), "doit"],
     ],
   },
   {
     title: "Реактивность",
     children: [
-      ["reactivity/info", emoji.theory + "Информация", "check"],
+      ["reactivity/info", emoji.theory + "Информация", "doit"],
       ["reactivity/ref", getThemeMenu("method", ["ref()"])],
       ["reactivity/reactive", getThemeMenu("method", ["reactive()"])],
       ["reactivity/computed", getThemeMenu("method", ["computed()"])],
+      ["reactivity/watch", getThemeMenu("method", ["watch()"]), "doit"],
     ],
   },
 
   {
     title: "Методы",
     children: [
-      ["methods/defineEmits", getThemeMenu("method", ["defineEmits()"])],
       ["methods/defineProps", getThemeMenu("method", ["defineProps()"])],
-      ["methods/watch", getThemeMenu("method", ["watch()"])],
+      ["methods/defineEmits", getThemeMenu("method", ["defineEmits()"])],
       ["methods/lifecycle", "Жизненный цикл"],
     ],
   },
@@ -75,8 +74,13 @@ const topics: ISidebarTopics[] = [
       ],
       [
         "layout/transition",
-        getThemeMenu("method", ["&lt;transition&gt;"]),
-        "check",
+        getThemeMenu("method", ["&lt;Transition&gt;"]),
+        "doit",
+      ],
+      [
+        "layout/transition-group",
+        getThemeMenu("method", ["&lt;TransitionGroup&gt;"]),
+        "doit",
       ],
     ],
   },

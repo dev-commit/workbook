@@ -1,10 +1,57 @@
 # Стилизация
 
+## `<style>`
+
+::: info Документация
+
+- https://ru.vuejs.org/api/sfc-css-features.html#scoped-css - CSS с ограниченной областью действия ы
+- https://ru.vuejs.org/api/sfc-css-features.html#css-modules - CSS модули
+  :::
+
+### Параметры
+
+- `scoped` - стили инкапсулированы внутри компонента
+- `lang="scss"` - использование препроцессора scss
+- `module` - компилируется как CSS модуль и объявляет результирующие CSS-классы компоненту в виде объекта под ключом _$style_
+
+```vue
+<style scoped lang="scss">
+div {}
+<style>
+```
+
+## `v-bind()` внутри CSS
+
+- Фактическое значение будет скомпилировано в хэшированное пользовательское свойство CSS, поэтому CSS остаётся статичным. Пользовательское свойство будет применяться к корневому элементу компонента с помощью inline-стилей и реактивно обновляться при изменении исходного значения.
+
+::: details Пример
+
+```vue
+<script setup>
+import { ref } from "vue";
+const theme = ref({
+  color: "blue",
+});
+</script>
+
+<template>
+  <p>привет</p>
+</template>
+
+<style scoped>
+p {
+  color: v-bind("theme.color");
+}
+</style>
+```
+
+:::
+
 ## `class`
 
-### Задание нескольких классов с вычисленным значением
+### Примеры задания нескольких классов с вычисленным значением
 
-#### Пример 1
+::: details Пример 1
 
 ```vue
 <template>
@@ -29,7 +76,9 @@ defineProps<Props>();
 </style>
 ```
 
-#### Пример 2
+:::
+
+::: details Пример 2
 
 ```vue
 <template>
@@ -53,3 +102,5 @@ defineProps<Props>();
 }
 </style>
 ```
+
+:::

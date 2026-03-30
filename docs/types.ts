@@ -4,7 +4,7 @@ export interface IHeaderMenuNavChildren {
   theme: TThemeTopics;
 }
 
-export type TSidebarTopicsItemStatus = "done" | "check";
+export type TSidebarTopicsItemStatus = "done" | "check" | "doit";
 
 export type TSidebarTopicsItem = [
   path: string,

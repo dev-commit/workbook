@@ -1,11 +1,11 @@
-# transition
+# Transition
 
 ::: warning
 
 - Разобрать тему
   :::
 
-::: tip
+::: info
 
 - https://ru.vuejs.org/guide/built-ins/transition.html
   :::

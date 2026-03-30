@@ -25,8 +25,16 @@ const getSidebarChildren = (
   return children.map(([path, title, status]) => {
     const iconColor = checkIconColor(status);
 
+    const styleBorder =
+      status === "doit"
+        ? "border-radius: 3px; background-color: #c2a3ffff; color: #c2a3ffff"
+        : "";
+
     return {
-      text: `<span style="color: ${iconColor}">•</span> ${title}`,
+      text: `
+        <span style="color: ${iconColor}; ${styleBorder}">•</span>
+        ${title}
+      `,
       link: fullPath + path,
     };
   });
