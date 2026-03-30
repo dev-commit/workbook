@@ -4,12 +4,19 @@ import { emoji } from "docs/constants";
 
 import { rootPath } from "../../constants";
 
-// TODO:
 const path = rootPath + "frameworks/vue/";
 const title = "Vue.js";
 const theme: TThemeTopics = "vue";
 
 const topics: ISidebarTopics[] = [
+  {
+    title: "Основное",
+    children: [
+      ["main/ecosystem", emoji.theory + "Экосистема"],
+      ["main/usage", getTopicSubtitle("use")],
+    ],
+  },
+
   {
     title: "Основное",
     children: [
@@ -65,6 +72,11 @@ const topics: ISidebarTopics[] = [
       [
         "layout/template",
         getThemeMenu("method", ["&lt;template&gt;", "&lt;slot&gt;", "v-slot​"]),
+      ],
+      [
+        "layout/transition",
+        getThemeMenu("method", ["&lt;transition&gt;"]),
+        "check",
       ],
     ],
   },
