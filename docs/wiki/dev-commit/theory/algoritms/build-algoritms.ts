@@ -19,10 +19,6 @@ const topics: ISidebarTopics[] = [
     ],
   },
   {
-    title: "Основное",
-    children: [["main/info", getTopicSubtitle("info")]],
-  },
-  {
     title: "Алгоритмы",
     children: [
       ["algoritms/sort", "Сортировка"],

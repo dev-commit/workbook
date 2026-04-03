@@ -1,3 +1,7 @@
-<img src="../@img/algoritms/common-data-structure-operations.png" width="650px">
+# Структуры данных
 
-<img src="../@img/algoritms/array-sorting-algorithms.png" width="400px">
+## Схемы
+
+<img src="../@img/common-data-structure-operations.png" width="650px">
+
+<img src="../@img/array-sorting-algorithms.png" width="400px">
