@@ -1,0 +1,79 @@
+# Mediator (Посредник)
+
+## Информация
+
+::: tip
+
+:::
+
+- Mediator - поволяет устанавливать плотную и тесную коммуникация между объектами разного типа
+- При этом, паттерн предоставляет центрелизованную абстракцию, которая позволяет взаимодействовать группе объектов через друг друга
+
+## Примеры
+
+### Чат
+
+- Приложение позволяет создавать новых пользователей и присоединять их к чату
+- Каждый сможет отправлять сообщения друг другу
+
+```js
+class User {
+  constructor(name) {
+    this.name = name;
+    this.room = null;
+  }
+  // Отправка сообщения (message - сообщение, to - кому отправить)
+  send(message, to) {
+    // (message - сообщение, this - от кого, to - кому)
+    this.room.send(message, this, to);
+  }
+  // Получение сообщения (message - сообщение, from - от кого)
+  receive(message, from) {
+    console.log(`${from.name} => ${this.name}: ${message}`);
+  }
+}
+
+class ChatRoom {
+  constructor() {
+    this.users = {};
+  }
+  // Регистрация новых пользователей
+  register(user) {
+    this.users[user.name] = user;
+    user.room = this;
+  }
+  send(message, from, to) {
+    if (to) {
+      to.receive(message, from);
+    } else {
+      // Отправить всем пользователем в данной комнате кроме текущего пользователя
+      Object.keys(this.users).forEach((key) => {
+        if (this.users[key] !== from) {
+          this.users[key].receive(message, from);
+        }
+      });
+    }
+  }
+}
+
+const vlad = new User("Vladilen");
+const lena = new User("Elena");
+const igor = new User("Igor");
+
+const room = new ChatRoom();
+
+// Регистрация пользователей в одну комнату
+room.register(vlad);
+room.register(lena);
+room.register(igor);
+
+vlad.send("Hello!", lena);
+lena.send("Hello hello!", vlad);
+igor.send("Vsem privet");
+
+// Output:
+// "Vladilen => Elena: Hello!"
+// "Elena => Vladilen: Hello hello!"
+// "Igor => Vladilen: Vsem privet"
+// "Igor => Elena: Vsem privet"
+```

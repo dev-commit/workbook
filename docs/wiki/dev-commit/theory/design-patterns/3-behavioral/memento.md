@@ -1,0 +1,54 @@
+# Memento (Снимок)
+
+## Информация
+
+::: tip
+
+:::
+
+- Memento - сохранение и восстановление предыдущего состояния объекта
+- Пример: текстовый редактор или фоторедактор
+
+## Примеры
+
+### Memento
+
+```js
+class Memento {
+  constructor(value) {
+    this.value = value;
+  }
+}
+
+// Логика на создание и восстановление снимков
+const creator = {
+  // val - текущее состояние
+  save: (val) => new Memento(val),
+  // memento - все сохраненные состояния
+  restore: (memento) => memento.value,
+};
+
+// Хранение и восстановление предыдущих состояний
+class Caretaker {
+  constructor() {
+    this.values = [];
+  }
+  // Сохранения снимка текущих данных
+  addMemento(memento) {
+    this.values.push(memento);
+  }
+  // Восстановление предыдущего значения
+  // Обращение к элементу массива по index
+  getMemento(index) {
+    return this.values[index];
+  }
+}
+
+const careTaker = new Caretaker();
+
+careTaker.addMemento(creator.save("Hello"));
+careTaker.addMemento(creator.save("Hello World"));
+careTaker.addMemento(creator.save("Hello My World"));
+
+const a1 = creator.restore(careTaker.getMemento(1)); // => "Hello World"
+```

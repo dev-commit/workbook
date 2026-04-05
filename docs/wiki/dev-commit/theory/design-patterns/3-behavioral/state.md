@@ -1,0 +1,96 @@
+# State (Состояние)
+
+## Информация
+
+::: tip
+
+:::
+
+- State
+- Можно создавать отдельные классы, которые будут являться элементами State и можно делегировать изменение состояния этих классов на общий класс, который будет являться State и который будет менять внутренее состояние этих отдельных элементов
+- Пример: реализация роутинга
+
+## Примеры
+
+### Светофор
+
+```js
+class Light {
+  constructor(light) {
+    this.light = light;
+  }
+}
+
+class RedLight extends Light {
+  constructor() {
+    super("red");
+  }
+  sign() {
+    return "СТОП";
+  }
+}
+
+class YellowLight extends Light {
+  constructor() {
+    super("yellow");
+  }
+  sign() {
+    return "ГОТОВЬСЯ";
+  }
+}
+
+class GreenLight extends Light {
+  constructor() {
+    super("green");
+  }
+  sign() {
+    return "ЕДЬ!";
+  }
+}
+
+class TrafficLight {
+  constructor() {
+    // Набор States
+    this.states = [new RedLight(), new YellowLight(), new GreenLight()];
+    // Текущий State
+    this.current = this.states[0];
+  }
+  // Изменение состояние светофора
+  change() {
+    const total = this.states.length;
+    // Найти текущее состояние
+    let index = this.states.findIndex((light) => light === this.current);
+
+    if (index + 1 < total) {
+      // Переключение на следующее состояние State
+      this.current = this.states[index + 1];
+    } else {
+      // Переключиться на первый State
+      this.current = this.states[0];
+    }
+  }
+  // Изменение текущего знака
+  sign() {
+    return this.current.sign();
+  }
+}
+
+const traffic = new TrafficLight();
+console.log(traffic.sign()); // => "СТОП"
+traffic.change();
+
+console.log(traffic.sign()); // => "ГОТОВЬСЯ"
+traffic.change();
+
+console.log(traffic.sign()); // => "ЕДЬ!"
+traffic.change();
+
+console.log(traffic.sign()); // => "СТОП"
+traffic.change();
+
+console.log(traffic.sign()); // => "ГОТОВЬСЯ"
+traffic.change();
+
+console.log(traffic.sign()); // => "ЕДЬ!"
+traffic.change();
+```

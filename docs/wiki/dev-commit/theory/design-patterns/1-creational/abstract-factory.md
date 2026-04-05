@@ -1,0 +1,54 @@
+# Abstract Factory (Абстрактная фабрика)
+
+## Информация
+
+::: tip Abstract Factory
+
+- **Abstract Factory** - создает интерфейс, группирующий другие Factory, которые логически связаны друг с другом
+- Abstract Factory - дополнительная абстракция, которая управляя однотипыными Factory помогает создавать объекты со схожей структурой, но разными данными, причем, делает это не привязываясь к конкретным классам создаваемых объектов
+- У Factories должен быть одинаковый интерфейс создания объектов, чтобы им можно было управлять из Abstract Factory
+  :::
+
+## Примеры
+
+### Фабрика автомобилей
+
+- Есть семейство общих продуктов (автомобили марки BMW)
+
+```js
+// Abstract Factory
+// Производит "Спорткары" или "Семейные aвто"
+function bmwProducer(kind) {
+  return kind === "sport" ? sportCarFactory : familyCarFactory;
+}
+
+// Factories
+// Factory для "Спорткаров"
+function sportCarFactory() {
+  return new Z4();
+}
+// Factory для "Семейных авто"
+function familyCarFactory() {
+  return new I3();
+}
+
+// Производство автомобилей
+class Z4 {
+  info() {
+    return "Z4 is a Sport car";
+  }
+}
+class I3 {
+  info() {
+    return "i3 is a Family car";
+  }
+}
+
+// Инициализация Abstract Factory для "Спорткаров"
+const produce = bmwProducer("sport");
+
+// Инициализация Factory
+const myCar = new produce();
+
+const a1 = myCar.info(); // => "Z4 is a Sport car"
+```

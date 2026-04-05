@@ -24,6 +24,7 @@ import wikiReact from "./frameworks/react/build-react";
 import wikiCodeStyle from "./theory/code-style/build-code-style";
 import wikiApproaches from "./theory/approaches/build-approaches";
 import wikiAlgoritms from "./theory/algoritms/build-algoritms";
+import wikiDesignPatterns from "./theory/design-patterns/build-design-patterns";
 
 export const NAV: IHeaderMenuNav[] = [
   {
@@ -47,6 +48,7 @@ export const NAV: IHeaderMenuNav[] = [
     children: getNav([
       wikiDataStructures,
       wikiAlgoritms,
+      wikiDesignPatterns,
       wikiMethodologyDev,
       wikiCodeStyle,
       wikiApproaches,
@@ -85,6 +87,7 @@ export const SIDEBAR = getSidebar([
   wikiAi,
   wikiDataStructures,
   wikiAlgoritms,
+  wikiDesignPatterns,
   wikiMethodologyDev,
   wikiReact,
   wikiCodeStyle,
