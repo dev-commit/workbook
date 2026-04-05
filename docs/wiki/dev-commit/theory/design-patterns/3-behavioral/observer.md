@@ -2,28 +2,30 @@
 
 ## Информация
 
-::: tip
+::: tip Observer
 
-:::
+- **Observer** - создаёт механизм подписки, позволяющий одним объектам отслеживать и реагировать на события, происходящие в других объектах
 
-- Observer - создаёт механизм подписки, позволяющий одним объектам отслеживать и реагировать на события, происходящие в других объектах
+  :::
+
 - Основан на зависимости один ко многим: при изменении состояния объекта Observable, все зависимые объекты Observer оповещаются об этом
 - Observable - наблюдаемый объект. Содержит список [Observer] и при изменении state, проходит в цикле по всем Observer и оповещает их
 - [Observer] (Подписчики) - наблюдатели за Observable
 
 ## Реализация
 
-- state - свойство, от изменения которого зависит состояние других объектов
-- subscribers - список зависящих от state объектов
-- subscribe() - подписка на изменения state
-- unsubscribe() - отписка от изменений state
-- getState() - метод для получения state
-- setState() - метод для изменения state
-- notify() - метод для оповещения подписчиков об изменении state
+- `state` - свойство, от изменения которого зависит состояние других объектов
+- `subscribers` - список зависящих от state объектов
+- `subscribe()` - подписка на изменения state
+- `unsubscribe()` - отписка от изменений state
+- `getState()` - метод для получения state
+- `setState()` - метод для изменения state
+- `notify()` - метод для оповещения подписчиков об изменении state
 
-### Основная реализация
+### Класс и функция
 
-#### Класс
+<v-two :title="['Класс', 'Функция']">
+  <template #first>
 
 ```js
 class Observable {
@@ -67,7 +69,9 @@ const state = observable.getState();
 console.log("Observable State", state);
 ```
 
-#### Функция
+  </template>
+
+<template #last>
 
 ```js
 // Фабрика для Observable
@@ -115,6 +119,9 @@ observable.setState('New Data')
 const state = observable.getState()
 console.log('Observable State', state)
 ```
+
+</template>
+</v-two>
 
 ### Релизация с action.type
 

@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "NODE_OPTIONS='--import tsx' vitepress dev docs",
     "build": "NODE_OPTIONS='--import tsx' vitepress build docs",
+    "wiki:html-to-md": "python3 ai/wiki-html-to-md.py",
     "typecheck": "tsc --noEmit",
     "preview": "NODE_OPTIONS='--import tsx' vitepress preview docs",
     "build-gh-pages": "gh-pages -d docs/.vitepress/dist",
