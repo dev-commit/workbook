@@ -17,7 +17,7 @@
   - u-text-define → **текст**
   - u-link-wrapper + v-link → список ссылок
   - v-details → ::: details
-  - v-two / v-two-code → два столбца с ---
+  - v-two-border → v-two, затем v-two / v-two-code → два столбца с ---
 
 После конвертации .html удаляются (используйте git / бэкап).
 """
@@ -100,6 +100,17 @@ def replace_v_two_code(html: str) -> str:
     return re.sub(
         r'<v-two-code[^>]*type="([^"]*)"[^>]*comment="([^"]*)"[^>]*>([\s\S]*?)</v-two-code>',
         repl,
+        html,
+        flags=re.IGNORECASE,
+    )
+
+
+def replace_v_two_border(html: str) -> str:
+    """v-two-border → v-two (тот же layout слотов first/last)."""
+
+    return re.sub(
+        r"<v-two-border[^>]*>([\s\S]*?)</v-two-border>",
+        r"<v-two>\1</v-two>",
         html,
         flags=re.IGNORECASE,
     )
@@ -279,6 +290,7 @@ def convert_html_to_md(html: str) -> str:
     html = replace_v_code(html)
     html = replace_v_details(html)
     html = replace_v_two_code(html)
+    html = replace_v_two_border(html)
     html = replace_v_two(html)
     html = replace_u_link_wrapper(html)
     html = strip_u_message(html)

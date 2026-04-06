@@ -2,7 +2,7 @@
 
 ## Информация
 
-::: tip Chain Of Responsibility
+::: tip Определение
 
 - **Chain Of Responsibility** - позволяет последовательно вызывать набор операций у объекта
 - _Пример_: библиотека jQuery
