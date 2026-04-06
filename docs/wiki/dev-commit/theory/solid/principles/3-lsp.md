@@ -32,6 +32,8 @@
 <v-two compare :title="['Хорошо', 'Плохо']">
   <template #first>
 
+**Базовый класс**
+
 - Абстрактный класс
 
 ```js
@@ -41,6 +43,8 @@ class Shape {
   }
 }
 ```
+
+**Наследники**
 
 - Полиморфизм (различная реализация для area)
 
@@ -57,6 +61,8 @@ class Circle extends Shape {
 }
 ```
 
+**Класс для калькуляции**
+
 - Класс AreaCalculator должен одинаково работать со всеми наследниками
 - В данном случае проблем не возникнет, т.к. у каждого класса есть метод "area"
 
@@ -72,6 +78,8 @@ class AreaCalculator {
 }
 ```
 
+**Вызов**
+
 ```js
 const areaCalculator = new AreaCalculator([new Square(), new Circle()]);
 
@@ -80,6 +88,8 @@ areaCalculator.calc(); // => ["Draw Square", "Draw Circle"]
 
   </template>
   <template #last>
+
+**Наследники**
 
 ```js
 class Square {
@@ -93,6 +103,8 @@ class Circle {
   }
 }
 ```
+
+**Класс для калькуляции**
 
 ```js
 class AreaCalculator {
@@ -117,6 +129,8 @@ class AreaCalculator {
   }
 }
 ```
+
+**Вызов**
 
 ```js
 const areaCalculator = new AreaCalculator([new Square(), new Circle()]);

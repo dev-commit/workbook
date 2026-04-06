@@ -29,8 +29,6 @@ class Vehicle {
 - `js{8-10}` - диапазон строк
 - `js{8-10,19-22}` - несколько диапазонов строк
 
----
-
 </template>
 </v-two>
 
@@ -60,8 +58,6 @@ export default {
 - `// [!code warning]`
 - `// [!code error]`
 - `// [!code focus]`
-
----
 
 </template>
 </v-two>
