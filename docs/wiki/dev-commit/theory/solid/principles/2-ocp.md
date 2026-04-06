@@ -55,7 +55,7 @@
 <v-two compare :title="['Хорошо', 'Плохо']">
   <template #first>
 
-```js
+```js{8-10,19-22}
 class Vehicle {
   constructor(fuelCapacity, fuelEfficiency) {
     this.fuelCapacity = fuelCapacity;
