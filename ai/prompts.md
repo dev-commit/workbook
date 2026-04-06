@@ -2,10 +2,10 @@
 
 ## Используемые значения
 
-- [full-path]: docs/wiki/dev-commit/theory/solid
-- [build-file]: build-solid
-- [path]: 'theory/solid/'
-- [title]: 'SOLID'
+- [full-path]: docs/wiki/dev-commit/theory/refactoring
+- [build-file]: build-refactoring
+- [path]: 'theory/refactoring/'
+- [title]: 'Рефакторинг'
 - [theme]: null
 
 ## Список задач

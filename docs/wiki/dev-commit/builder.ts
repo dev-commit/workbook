@@ -21,11 +21,11 @@ import wikiAi from "./common/ai/build-ai";
 import wikiDataStructures from "./theory/data-structures/build-data-structures";
 import wikiMethodologyDev from "./theory/methodology-dev/build-methodology-dev";
 import wikiReact from "./frameworks/react/build-react";
-import wikiCodeStyle from "./theory/code-style/build-code-style";
 import wikiApproaches from "./theory/approaches/build-approaches";
 import wikiAlgoritms from "./theory/algoritms/build-algoritms";
 import wikiDesignPatterns from "./theory/design-patterns/build-design-patterns";
 import wikiSolid from "./theory/solid/build-solid";
+import wikiRefactoring from "./theory/refactoring/build-refactoring";
 
 export const NAV: IHeaderMenuNav[] = [
   {
@@ -52,7 +52,7 @@ export const NAV: IHeaderMenuNav[] = [
       wikiDesignPatterns,
       wikiSolid,
       wikiMethodologyDev,
-      wikiCodeStyle,
+      wikiRefactoring,
       wikiApproaches,
     ]),
   },
@@ -93,6 +93,6 @@ export const SIDEBAR = getSidebar([
   wikiSolid,
   wikiMethodologyDev,
   wikiReact,
-  wikiCodeStyle,
+  wikiRefactoring,
   wikiApproaches,
 ]);
