@@ -5,9 +5,9 @@
 ::: tip Определение
 
 - **The Liskóv Substitution Principle** - Принцип подстановки Барбары Лиско́в
-- Если модуль корректно работает с SuperClass, он также должен корректно работать с его наследником ChildClass: если заменить SuperClass на ChildClass, в приложении не должно быть ошибок
-- ChildClass должен дополнять, а не изменять SuperClass и не должен противоречить поведению, заданному SuperClass
-- Если ChildClass не способен выполнять те же действия, что и класс-родитель, возникает риск ошибок
+- Если модуль корректно работает с _SuperClass_, он также должен корректно работать с его наследником _ChildClass_: если заменить _SuperClass_ на _ChildClass_, в приложении не должно быть ошибок
+- _ChildClass_ должен дополнять, а не изменять _SuperClass_ и не должен противоречить поведению, заданному _SuperClass_
+- Если _ChildClass_ не способен выполнять те же действия, что и класс-родитель, возникает риск ошибок
   :::
 
 ### Результат применения
@@ -31,12 +31,6 @@
 
 <v-two compare :title="['Хорошо', 'Плохо']">
   <template #first>
-
-  </template>
-  <template #last>
-
-  </template>
-</v-two>
 
 - Абстрактный класс
 
@@ -84,7 +78,8 @@ const areaCalculator = new AreaCalculator([new Square(), new Circle()]);
 areaCalculator.calc(); // => ["Draw Square", "Draw Circle"]
 ```
 
----
+  </template>
+  <template #last>
 
 ```js
 class Square {
@@ -128,6 +123,9 @@ const areaCalculator = new AreaCalculator([new Square(), new Circle()]);
 
 areaCalculator.calc(); // => ["Draw Square", "Draw Circle"]
 ```
+
+  </template>
+</v-two>
 
 ## Применение в React
 
