@@ -4,8 +4,8 @@ import { emoji } from "docs/constants";
 import { rootPath } from "../../constants";
 
 const path = rootPath + "network/network/";
-const title = "Network";
-const theme: TThemeTopics = "actual";
+const title = "HTTP | Протоколы";
+const theme: TThemeTopics = null;
 
 const topics: ISidebarTopics[] = [
   {
