@@ -22,6 +22,7 @@ import wikiDataStructures from "./theory/data-structures/build-data-structures";
 import wikiMethodologyDev from "./theory/methodology-dev/build-methodology-dev";
 import wikiReact from "./frameworks/react/build-react";
 import wikiApproaches from "./theory/approaches/build-approaches";
+import wikiArchitecture from "./theory/architecture/build-architecture";
 import wikiAlgoritms from "./theory/algoritms/build-algoritms";
 import wikiDesignPatterns from "./theory/design-patterns/build-design-patterns";
 import wikiSolid from "./theory/solid/build-solid";
@@ -53,6 +54,7 @@ export const NAV: IHeaderMenuNav[] = [
       wikiSolid,
       wikiMethodologyDev,
       wikiRefactoring,
+      wikiArchitecture,
       wikiApproaches,
     ]),
   },
@@ -94,5 +96,6 @@ export const SIDEBAR = getSidebar([
   wikiMethodologyDev,
   wikiReact,
   wikiRefactoring,
+  wikiArchitecture,
   wikiApproaches,
 ]);
