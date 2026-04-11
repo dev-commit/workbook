@@ -12,24 +12,24 @@ const topics: ISidebarTopics[] = [
   {
     title: "ООП",
     children: [
-      ["oop/info", `${emoji.theory}Информация`],
+      ["oop/info", emoji.theory + "Информация"],
       ["oop/access-modifiers", "Модификаторы доступа"],
     ],
   },
   {
     title: "Принципы ООП",
     children: [
-      ["oop/principles/encapsulation", `${emoji.items}1. Инкапсуляция`],
-      ["oop/principles/inheritance", `${emoji.items}2. Наследование`],
-      ["oop/principles/polymorphism", `${emoji.items}3. Полиморфизм`],
-      ["oop/principles/abstraction", `${emoji.items}4. Абстракция`],
+      ["oop-principles/encapsulation", "1. Инкапсуляция"],
+      ["oop-principles/inheritance", "2. Наследование"],
+      ["oop-principles/polymorphism", "3. Полиморфизм"],
+      ["oop-principles/abstraction", "4. Абстракция"],
     ],
   },
   {
     title: "ФП",
     children: [
-      ["fp/functional", `${emoji.theory}Информация`],
-      ["fp/concept", `${emoji.fire}Концепции`],
+      ["fp/info", emoji.theory + "Информация"],
+      ["fp/concept", "Концепции"],
       ["fp/currying", "Каррирование"],
     ],
   },
@@ -43,9 +43,9 @@ const topics: ISidebarTopics[] = [
   {
     title: "Виды программирования",
     children: [
-      ["types/imperative", `${emoji.items}Императивное`],
-      ["types/declarative", `${emoji.items}Декларативное`],
-      ["types/reactive", `${emoji.items}Реактивное`],
+      ["types/imperative", "Императивное"],
+      ["types/declarative", "Декларативное"],
+      ["types/reactive", "Реактивное"],
     ],
   },
 ];

@@ -18,7 +18,7 @@ const topics: ISidebarTopics[] = [
       ["http/http", emoji.fire + "HTTP / TCP"],
       ["http/http2", "HTTP/2"],
       ["http/https", "HTTPS"],
-      ["http/http-vs-https", "HTTP и HTTPS"],
+      ["http/http-vs-https", "HTTP vs HTTPS"],
       ["http/1-http-structure", emoji.star + "1. Структура протокола"],
       ["http/2-http-methods", emoji.star + "2. HTTP Methods"],
       ["http/3-http-headers", emoji.star + "3. HTTP Headers"],
