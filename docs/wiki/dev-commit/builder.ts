@@ -23,6 +23,8 @@ import wikiMethodologyDev from "./theory/methodology-dev/build-methodology-dev";
 import wikiReact from "./frameworks/react/build-react";
 import wikiApproaches from "./theory/approaches/build-approaches";
 import wikiArchitecture from "./theory/architecture/build-architecture";
+import wikiAgile from "./theory/agile/build-agile";
+import wikiProgramming from "./theory/programming/build-programming";
 import wikiAlgoritms from "./theory/algoritms/build-algoritms";
 import wikiDesignPatterns from "./theory/design-patterns/build-design-patterns";
 import wikiSolid from "./theory/solid/build-solid";
@@ -56,6 +58,8 @@ export const NAV: IHeaderMenuNav[] = [
       wikiRefactoring,
       wikiArchitecture,
       wikiApproaches,
+      wikiProgramming,
+      wikiAgile,
     ]),
   },
   {
@@ -98,4 +102,6 @@ export const SIDEBAR = getSidebar([
   wikiRefactoring,
   wikiArchitecture,
   wikiApproaches,
+  wikiProgramming,
+  wikiAgile,
 ]);

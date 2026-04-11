@@ -2,10 +2,10 @@
 
 ## Используемые значения
 
-- [full-path]: docs/wiki/dev-commit/theory/architecture
-- [build-file]: build-architecture
-- [path]: 'theory/architecture/'
-- [title]: 'Архитектура'
+- [full-path]: docs/wiki/dev-commit/network/network
+- [build-file]: build-network
+- [path]: 'theory/network/'
+- [title]: 'Agile | Jira'
 - [theme]: null
 
 ## Список задач

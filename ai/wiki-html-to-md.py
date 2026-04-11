@@ -15,7 +15,7 @@
   - v-code → fenced code, lang из атрибута (первое слово)
   - удаление <!-- TODO: ... --> и <f-search>...</f-search>
   - u-text-define → **текст**
-  - u-link-wrapper + v-link → список ссылок
+  - u-link-wrapper + v-link → ::: info … ::: с URL построчно (без [text](url))
   - v-details → ::: details
   - v-two-border → v-two, затем v-two / v-two-code → два столбца с ---
 
@@ -133,14 +133,15 @@ def replace_v_two(html: str) -> str:
 
 
 def replace_u_link_wrapper(html: str) -> str:
+    """По ai/prompts.md: только URL внутри ::: info (без markdown-ссылок)."""
+
     def repl(m: re.Match[str]) -> str:
         block = m.group(1)
-        links = re.findall(
-            r'<v-link\s+url="([^"]+)"\s+text="([^"]*)"[^/]*/>',
-            block,
-        )
-        lines = [f"- [{text}]({url})" for url, text in links]
-        return "\n\n" + "\n".join(lines) + "\n\n"
+        urls = re.findall(r'<v-link[^>]*\surl="([^"]+)"', block, flags=re.IGNORECASE)
+        if not urls:
+            urls = re.findall(r'<v-link[^>]*url="([^"]+)"', block, flags=re.IGNORECASE)
+        body = "\n".join(urls)
+        return f"\n\n::: info\n{body}\n:::\n\n"
 
     return re.sub(
         r"<u-link-wrapper>([\s\S]*?)</u-link-wrapper>",

@@ -1,0 +1,50 @@
+# HTTP Headers
+
+- **Заголовки HTTP** - строки в HTTP-сообщении, содержащие разделённую двоеточием пару параметр-значение
+
+- 1. General Headers («Основные заголовки») - основные заголовки для запросов клиента и ответов сервера
+- 2. Request Headers («Заголовки запроса») - используются только в запросах клиента
+- 3. Response Headers («Заголовки ответа») - только для ответов от сервера
+- 4. Entity Headers («Заголовки сущности») - заголовки, сопровождающие каждую сущность как в запросах клиента, так и в ответах сервера
+
+### 1. General Headers
+
+- Request URL : https://api.project.com/api/user
+- Request Method : POST
+- Status Code : 200 OK
+- Remote Address : 107.22.174.243:443
+- Referrer Policy : strict-origin-when-cross-origin Определяет, сколько информации о referrer (отправляемой с заголовком Referer) должно быть включено в запросы
+
+### 2. Request Headers
+
+- Accept : text/plain Список допустимых форматов ресурса
+- Accept-Encoding : <compress | gzip | deflate | sdch | identity> Перечень поддерживаемых способов кодирования содержимого сущности при передаче
+- Accept-Language : ru,en Список поддерживаемых естественных языков
+- Authorization : Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ== Данные для авторизации
+- Connection : close | keep-alive Сведения о проведении соединения
+- Host : api.project.com Доменное имя и порт хоста запрашиваемого ресурса. Необходимо для поддержки виртуального хостинга на серверах
+- Origin : http://localhost:3000
+- Referer : http://localhost:3000/ Полный или относительный URI ресурса, с которого клиент сделал текущий запрос
+- User-Agent : Mozilla/5.0 (X11; Linux i686; rv:2.0.1) Gecko/20100101 Firefox/4.0.1 Список названий и версий клиента и его компонентов с комментариями
+
+### 3. Response Headers
+
+- Allow : OPTIONS, GET, HEAD Список поддерживаемых методов
+- Cache-Control : no-cache ... Директивы для управления кэшированием
+- Connection : close | keep-alive Сведения о проведении соединения
+- Content-Length : 1348 Размер содержимого сущности в октетах (байтах)
+- Content-Type : text/html;charset=utf-8 Формат и способ представления сущности
+- Date : Tue, 15 Nov 1994 08:12:31 GMT Дата генерации отклика
+
+### 4. Entity Headers
+
+- Content-Language : en, ru Один или несколько естественных языков содержимого сущности
+
+### Неизвестно
+
+- Accept-Charset : utf-8 Перечень поддерживаемых кодировок для предоставления пользователю
+- Expires : Tue, 31 Jan 2012 15:02:53 GMT Дата предполагаемого истечения срока актуальности сущности
+- Location : http://example.com/about URI по которому клиенту следует перейти или URI созданного ресурса
+- Proxy-Authorization : Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ== Информация для авторизации на прокси-сервере
+- Server : Apache/2.2.17 (Win32) PHP/5.3.5 Список названий и версий веб-сервера и его компонентов с комментариями
+- Title Заголовок сущности
