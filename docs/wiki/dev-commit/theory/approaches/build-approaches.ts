@@ -18,7 +18,6 @@ const topics: ISidebarTopics[] = [
         "main/02-modular-architecture-and-configuration",
         "Модульная архитектура + конфигурация",
       ],
-      ["main/03-dependency-injection", "DI и IoC"],
       ["main/04-tokens-and-providers", "Токены и провайдеры"],
       ["main/05-scopes-and-lifetimes", "Скоупы и жизненный цикл"],
       ["main/06-viewmodel-mvvm", "ViewModel / MVVM"],

@@ -56,10 +56,10 @@ export const NAV: IHeaderMenuNav[] = [
       wikiSolid,
       wikiMethodologyDev,
       wikiRefactoring,
-      wikiArchitecture,
-      wikiApproaches,
       wikiProgramming,
+      wikiArchitecture,
       wikiAgile,
+      wikiApproaches,
     ]),
   },
   {

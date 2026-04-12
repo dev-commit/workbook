@@ -9,6 +9,15 @@ const theme: TThemeTopics = null;
 
 const topics: ISidebarTopics[] = [
   {
+    title: "Подходы",
+    children: [
+      ["approaches/CQRS", "CQRS"],
+      ["approaches/event-sourcing", "Event Sourcing"],
+      ["approaches/dependency-injection", "Dependency Injection"],
+      ["approaches/composition", "Композиция и Агрегация"],
+    ],
+  },
+  {
     title: "Архитектурные концепции",
     children: [
       ["concepts/monolith", "Монолит"],
@@ -17,18 +26,20 @@ const topics: ISidebarTopics[] = [
     ],
   },
   {
-    title: "MVC",
+    title: "Парадигмы программирования",
     children: [
-      ["mvc/variants", `${emoji.theory}Разновидности`],
-      ["mvc/mvc", `${emoji.items}MVC`],
-      ["mvc/mvvm", `${emoji.items}MVVM`],
+      ["programming-paradigms/info", emoji.theory + "Информация"],
+      ["programming-paradigms/imperative", "Императивное"],
+      ["programming-paradigms/declarative", "Декларативное"],
+      ["programming-paradigms/reactive", "Реактивное"],
     ],
   },
   {
-    title: "Подходы",
+    title: "Шаблоны проектирования",
     children: [
-      ["approaches/CQRS", `${emoji.items}CQRS`],
-      ["approaches/event-sourcing", `${emoji.items}Event Sourcing`],
+      ["mvc/variants", emoji.theory + "Информация"],
+      ["mvc/mvc", "MVC"],
+      ["mvc/mvvm", "MVVM"],
     ],
   },
 ];

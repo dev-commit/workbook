@@ -5,8 +5,8 @@ import { emoji } from "docs/constants";
 import { rootPath } from "../../constants";
 
 const path = rootPath + "theory/programming/";
-const title = "Программирование";
-const theme: TThemeTopics = "actual";
+const title = "ООП | ФП";
+const theme: TThemeTopics = null;
 
 const topics: ISidebarTopics[] = [
   {
@@ -25,27 +25,22 @@ const topics: ISidebarTopics[] = [
       ["oop-principles/abstraction", "4. Абстракция"],
     ],
   },
+
   {
     title: "ФП",
-    children: [
-      ["fp/info", emoji.theory + "Информация"],
-      ["fp/concept", "Концепции"],
-      ["fp/currying", "Каррирование"],
-    ],
+    children: [["fp/info", emoji.theory + "Информация"]],
   },
+
   {
-    title: "Теория",
+    title: "Концепции ФП",
     children: [
-      ["main/info", getTopicSubtitle("info")],
-      ["main/composition", "Композиция"],
-    ],
-  },
-  {
-    title: "Виды программирования",
-    children: [
-      ["types/imperative", "Императивное"],
-      ["types/declarative", "Декларативное"],
-      ["types/reactive", "Реактивное"],
+      ["fp-concept/currying", "Каррирование"],
+      ["fp-concept/pure-functions", "Чистые функции"],
+      ["fp-concept/higher-order-functions", "Функции высшего порядка"],
+      ["fp-concept/immutability", "Иммутабельность"],
+      ["fp-concept/first-class-functions", "Функции первого класса"],
+      ["fp-concept/recursion", "Рекурсия"],
+      ["fp-concept/lambda-calculus", "Лямбда-исчисление"],
     ],
   },
 ];
