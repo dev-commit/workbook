@@ -1,0 +1,29 @@
+import{_ as a,o as n,c as l,aw as p}from"./chunks/framework.DLufY-ao.js";const m=JSON.parse('{"title":"👿 Написать функцию, которая отменяет все таймауты которые есть","description":"","frontmatter":{},"headers":[],"relativePath":"wiki/dev-commit/js/js-task/algoritms/cancel-timeout.md","filePath":"wiki/dev-commit/js/js-task/algoritms/cancel-timeout.md"}'),o={name:"wiki/dev-commit/js/js-task/algoritms/cancel-timeout.md"};function e(t,s,c,r,i,y){return n(),l("div",null,[...s[0]||(s[0]=[p(`<h1 id="👿-написать-функцию-которая-отменяет-все-таимауты-которые-есть" tabindex="-1">👿 Написать функцию, которая отменяет все таймауты которые есть <a class="header-anchor" href="#👿-написать-функцию-которая-отменяет-все-таимауты-которые-есть" aria-label="Permalink to &quot;👿 Написать функцию, которая отменяет все таймауты которые есть&quot;">​</a></h1><div class="language-js"><button title="Copy Code" class="copy"></button><span class="lang">js</span><pre class="shiki one-light vp-code" tabindex="0"><code><span class="line"><span style="color:#A626A4;">const</span><span style="color:#986801;"> mySetTimeout</span><span style="color:#0184BC;"> =</span><span style="color:#383A42;"> setTimeout;</span></span>
+<span class="line"><span style="color:#A626A4;">const</span><span style="color:#986801;"> timeoutIds</span><span style="color:#0184BC;"> =</span><span style="color:#383A42;"> [];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#4078F2;">setTimeout</span><span style="color:#0184BC;"> =</span><span style="color:#A626A4;"> function</span><span style="color:#383A42;">(cb, ms, </span><span style="color:#0184BC;">...</span><span style="color:#383A42;">arg) {</span></span>
+<span class="line"><span style="color:#A626A4;">	const</span><span style="color:#986801;"> timerId</span><span style="color:#0184BC;"> =</span><span style="color:#4078F2;"> mySetTimeout</span><span style="color:#383A42;">(cb, ms, </span><span style="color:#0184BC;">...</span><span style="color:#383A42;">arg);</span></span>
+<span class="line"><span style="color:#383A42;">	timeoutIds.</span><span style="color:#4078F2;">push</span><span style="color:#383A42;">(timerId);</span></span>
+<span class="line"><span style="color:#A626A4;">	return</span><span style="color:#383A42;"> timerId;</span></span>
+<span class="line"><span style="color:#383A42;">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;">function</span><span style="color:#4078F2;"> clearAllTimeouts</span><span style="color:#383A42;">() {</span></span>
+<span class="line"><span style="color:#383A42;">	timeoutIds.</span><span style="color:#4078F2;">forEach</span><span style="color:#383A42;">(id </span><span style="color:#A626A4;">=&gt;</span><span style="color:#383A42;"> {</span></span>
+<span class="line"><span style="color:#4078F2;">		clearTimeout</span><span style="color:#383A42;">(id);</span></span>
+<span class="line"><span style="color:#383A42;">	})</span></span>
+<span class="line"><span style="color:#383A42;">}</span></span>
+<span class="line"><span style="color:#4078F2;">clearAllTimeouts</span><span style="color:#383A42;">();</span></span></code></pre></div><h3 id="вариант-с-callback" tabindex="-1">Вариант с callback <a class="header-anchor" href="#вариант-с-callback" aria-label="Permalink to &quot;Вариант с callback&quot;">​</a></h3><div class="language-js"><button title="Copy Code" class="copy"></button><span class="lang">js</span><pre class="shiki one-light vp-code" tabindex="0"><code><span class="line"><span style="color:#A626A4;">const</span><span style="color:#986801;"> mySetTimeout</span><span style="color:#0184BC;"> =</span><span style="color:#383A42;"> setTimeout;</span></span>
+<span class="line"><span style="color:#A626A4;">const</span><span style="color:#986801;"> timeoutIds</span><span style="color:#0184BC;"> =</span><span style="color:#A626A4;"> new</span><span style="color:#4078F2;"> Set</span><span style="color:#383A42;">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#4078F2;">setTimeout</span><span style="color:#0184BC;"> =</span><span style="color:#A626A4;"> function</span><span style="color:#383A42;">(cb, ms, </span><span style="color:#0184BC;">...</span><span style="color:#383A42;">arg) {</span></span>
+<span class="line"><span style="color:#A626A4;">	const</span><span style="color:#986801;"> timerId</span><span style="color:#383A42;">;</span></span>
+<span class="line"><span style="color:#A626A4;">	const</span><span style="color:#4078F2;"> callback</span><span style="color:#0184BC;"> =</span><span style="color:#A626A4;"> function</span><span style="color:#383A42;">() {</span></span>
+<span class="line"><span style="color:#4078F2;">		cb</span><span style="color:#383A42;">(</span><span style="color:#0184BC;">...</span><span style="color:#383A42;">arg);</span></span>
+<span class="line"><span style="color:#383A42;">		timeoutIds.</span><span style="color:#4078F2;">delete</span><span style="color:#383A42;">(timerId);</span></span>
+<span class="line"><span style="color:#383A42;">	}</span></span>
+<span class="line"><span style="color:#383A42;">	</span></span>
+<span class="line"><span style="color:#383A42;">	timerId </span><span style="color:#0184BC;">=</span><span style="color:#4078F2;"> mySetTimeout</span><span style="color:#383A42;">(callback, ms);</span></span>
+<span class="line"><span style="color:#383A42;">	timeoutIds.</span><span style="color:#4078F2;">add</span><span style="color:#383A42;">(timeoutIds);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;">	return</span><span style="color:#383A42;"> timerId;</span></span>
+<span class="line"><span style="color:#383A42;">}</span></span></code></pre></div>`,4)])])}const d=a(o,[["render",e]]);export{m as __pageData,d as default};
