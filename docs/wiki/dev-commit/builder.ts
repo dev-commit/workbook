@@ -31,6 +31,8 @@ import wikiSolid from "./theory/solid/build-solid";
 import wikiRefactoring from "./theory/refactoring/build-refactoring";
 import wikiNetwork from "./network/network/build-network";
 import wikiAuth from "./network/auth/build-auth";
+import wikiCanvas from "./js/canvas/build-canvas";
+import wikiDayjs from "./js/dayjs/build-dayjs";
 
 export const NAV: IHeaderMenuNav[] = [
   {
@@ -53,6 +55,10 @@ export const NAV: IHeaderMenuNav[] = [
   {
     text: "Network",
     children: getNav([wikiHttp, wikiNetwork, wikiAuth]),
+  },
+  {
+    text: "JS",
+    children: getNav([wikiCanvas, wikiDayjs]),
   },
   {
     text: "Фреймворки",
@@ -88,6 +94,8 @@ export const SIDEBAR = getSidebar([
   wikiHttp,
   wikiNetwork,
   wikiAuth,
+  wikiCanvas,
+  wikiDayjs,
   wikiCss,
   wikiVue,
   wikiLayout,

@@ -42,6 +42,7 @@ export type TThemeTopics =
   | "actual"
   | "tech"
   | "theory"
+  | "svelte"
   | null;
 
 export type IThemeConfigNav = {

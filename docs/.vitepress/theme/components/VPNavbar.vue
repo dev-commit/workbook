@@ -206,6 +206,11 @@ const isActive = (item: { link: string } | null) => {
   background-color: rgba(212, 15, 230, 0.1);
   border: 1px solid #e2e2e2;
 }
+.link.theme-svelte {
+  color: rgb(248, 58, 13, 0.8);
+  background-color: rgba(248, 58, 13, 0.1);
+  border: 1px solid rgba(248, 58, 13, 0.1);
+}
 
 .link.theme-accent {
   color: rgb(100, 100, 100);
@@ -219,10 +224,6 @@ const isActive = (item: { link: string } | null) => {
   border: 1px solid rgba(245, 224, 66, 1);
   outline: 1px solid rgba(245, 224, 66, 1);
 }
-
-/* .link.theme-theory:before {
-  content: "📑 ";
-} */
 
 /* FIXME: Проверить */
 .link.theme-node {

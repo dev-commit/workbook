@@ -6,7 +6,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "frameworks/svelte/";
 const title = "Svelte";
-const theme: TThemeTopics = "vue";
+const theme: TThemeTopics = "svelte";
 
 const topics: ISidebarTopics[] = [
   {

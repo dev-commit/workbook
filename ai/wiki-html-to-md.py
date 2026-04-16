@@ -241,8 +241,9 @@ def element_to_md(el: Tag, heading_base: int) -> str:
         t = t.strip()
         return f"\n\n{t}\n\n" if t else ""
     if name == "img":
-        # По правилу из ai/prompts.md: <img> оставляем HTML-тегом (src уже переписан в fix_imgs).
-        return f"\n\n{str(el)}\n\n"
+        # По правилу из ai/prompts.md: <img> оставляем HTML-тегом, но комментируем.
+        # src уже переписан в fix_imgs.
+        return f"\n\n<!-- {str(el)} -->\n\n"
     if name == "table":
         return table_to_md(el, heading_base)
     if name in ("ul", "ol"):
