@@ -81,11 +81,13 @@ export default defineConfig({
     logo: "/logo.png",
     nav: NAV.map((group) => ({
       text: group.text,
-      items: group.children.map((c: IHeaderMenuNavChildren) => ({
-        text: c.text,
-        link: c.link,
-        theme: c.theme,
-      })),
+      items: group.children
+        .filter((c): c is IHeaderMenuNavChildren => Boolean(c))
+        .map((c) => ({
+          text: c.text,
+          link: c.link,
+          theme: c.theme,
+        })),
     })) satisfies IThemeConfigNav[],
     sidebar: SIDEBAR,
     outline: { level: [2, 3] },

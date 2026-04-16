@@ -4,6 +4,7 @@
 import { useData } from "vitepress";
 import { VPLink } from "vitepress/theme";
 import type { IThemeConfigNav } from "../../../types";
+import { NAV as RAW_NAV } from "../../../wiki/builder";
 
 const { theme: themeConfig, page } = useData();
 
@@ -12,6 +13,11 @@ const nav: IThemeConfigNav[] = themeConfig.value?.nav ?? [];
 const groups: IThemeConfigNav[] = nav.filter(
   (item) => "items" in item && Array.isArray(item.items),
 );
+
+const rawGroups = RAW_NAV.map((group) => ({
+  text: group.text,
+  items: group.children,
+}));
 
 const currentPath = () =>
   "/" + page.value.relativePath.replace(/\.md$/, "").replace(/\/index$/, "");
@@ -22,7 +28,8 @@ const norm = (p: string) =>
     .replace(/(?:(^|\/)index)?\.(?:md|html)$/, "$1")
     .replace(/\/$/, "") || "/";
 
-const isActive = (item: { link: string }) => {
+const isActive = (item: { link: string } | null) => {
+  if (!item) return false;
   const current = currentPath();
   const n = norm(item.link);
   return current === n || (n !== "/" && current.startsWith(n + "/"));
@@ -36,22 +43,24 @@ const isActive = (item: { link: string }) => {
       aria-labelledby="main-nav-aria-label"
       class="navbar"
     >
-      <fieldset v-for="(group, gKey) in groups" :key="gKey" class="fieldset">
+      <fieldset v-for="(group, gKey) in rawGroups" :key="gKey" class="fieldset">
         <legend class="legend">{{ group.text }}</legend>
         <div class="link-wrapper">
-          <VPLink
-            v-for="(item, key) in group.items"
-            :key="key"
-            :href="item.link"
-            :class="[
-              'link',
-              'theme-default',
-              item.theme && 'theme-' + item.theme,
-              isActive(item) && 'route-link-active',
-            ]"
-          >
-            {{ item.text }}
-          </VPLink>
+          <template v-for="(item, key) in group.items" :key="key">
+            <div v-if="item === null" class="link-splitter"></div>
+            <VPLink
+              v-else
+              :href="item.link"
+              :class="[
+                'link',
+                'theme-default',
+                item.theme && 'theme-' + item.theme,
+                isActive(item) && 'route-link-active',
+              ]"
+            >
+              {{ item.text }}
+            </VPLink>
+          </template>
         </div>
       </fieldset>
     </nav>
@@ -115,6 +124,11 @@ const isActive = (item: { link: string }) => {
   flex-wrap: wrap;
   align-items: center;
   gap: 5px;
+}
+
+.link-splitter {
+  width: 100%;
+  height: 0;
 }
 
 .link {

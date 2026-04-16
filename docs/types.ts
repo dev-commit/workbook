@@ -19,7 +19,7 @@ export interface ISidebarTopics {
 
 export interface IHeaderMenuNav {
   text: string;
-  children: IHeaderMenuNavChildren[];
+  children: Array<IHeaderMenuNavChildren | null>;
 }
 
 export interface IBuildTopics {

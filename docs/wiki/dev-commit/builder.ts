@@ -34,8 +34,29 @@ import wikiAuth from "./network/auth/build-auth";
 
 export const NAV: IHeaderMenuNav[] = [
   {
+    text: "Теория",
+    children: getNav([
+      wikiAlgoritms,
+      wikiDataStructures,
+      wikiProgramming,
+      wikiArchitecture,
+      wikiApproaches,
+      null,
+      wikiDesignPatterns,
+      wikiSolid,
+      wikiRefactoring,
+      null,
+      wikiMethodologyDev,
+      wikiAgile,
+    ]),
+  },
+  {
+    text: "Network",
+    children: getNav([wikiHttp, wikiNetwork, wikiAuth]),
+  },
+  {
     text: "Фреймворки",
-    children: getNav([wikiSvelte, wikiVue, wikiReact]),
+    children: getNav([wikiReact, null, wikiVue, null, wikiSvelte]),
   },
   {
     text: "Вёрстка",
@@ -48,25 +69,6 @@ export const NAV: IHeaderMenuNav[] = [
       wikiSvg,
       wikiSass,
     ]),
-  },
-  {
-    text: "Теория",
-    children: getNav([
-      wikiDataStructures,
-      wikiAlgoritms,
-      wikiDesignPatterns,
-      wikiSolid,
-      wikiMethodologyDev,
-      wikiRefactoring,
-      wikiProgramming,
-      wikiArchitecture,
-      wikiApproaches,
-      wikiAgile,
-    ]),
-  },
-  {
-    text: "Network",
-    children: getNav([wikiHttp, wikiNetwork, wikiAuth]),
   },
   {
     text: "Общее",
