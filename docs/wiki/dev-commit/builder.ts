@@ -9,6 +9,8 @@ import wikiSvelte from "./frameworks/svelte/build-svelte";
 import wikiHttp from "./network/http/build-http";
 import wikiCss from "./layout/css/build-css";
 import wikiVue from "./frameworks/vue/build-vue";
+import wikiVueRouter from "./frameworks/vue-router/build-vue-router";
+import wikiVueVuex from "./frameworks/vue-vuex/build-vue-vuex";
 import wikiLayout from "./layout/layout/build-layout";
 import wikiIde from "./common/ide/build-ide";
 import wikiSass from "./layout/sass/build-sass";
@@ -114,7 +116,16 @@ export const NAV: IHeaderMenuNav[] = [
   },
   {
     text: "Фреймворки",
-    children: getNav([wikiReact, wikiFormik, null, wikiVue, null, wikiSvelte]),
+    children: getNav([
+      wikiReact,
+      wikiFormik,
+      null,
+      wikiVue,
+      wikiVueVuex,
+      wikiVueRouter,
+      null,
+      wikiSvelte,
+    ]),
   },
   {
     text: "Utils",
@@ -171,6 +182,8 @@ export const SIDEBAR = getSidebar([
   wikiWebComponents,
   wikiCss,
   wikiVue,
+  wikiVueRouter,
+  wikiVueVuex,
   wikiLayout,
   wikiIde,
   wikiSass,
