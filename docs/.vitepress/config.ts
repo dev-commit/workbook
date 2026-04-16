@@ -95,5 +95,6 @@ export default defineConfig({
   },
   markdown: {
     theme: "one-light",
+    html: true,
   },
 });

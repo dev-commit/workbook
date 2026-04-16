@@ -1,0 +1,16 @@
+# Сумма последовательности
+
+```js
+console.log(sumSequence(1, 3)); // 1 + 2 + 3 = 6
+console.log(sumSequence(2, 3)); // 2 + 3 = 5
+console.log(sumSequence(2, 2)); // 2 = 2
+console.log(sumSequence(1, 2)); // 1 + 2 = 3
+
+function sumSequence(start, end) {
+	if (start === end) {
+		return end;
+	} else {
+		return end + sumSequence(start, end - 1);
+	}
+}
+```

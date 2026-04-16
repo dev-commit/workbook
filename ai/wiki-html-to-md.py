@@ -233,6 +233,10 @@ def element_to_md(el: Tag, heading_base: int) -> str:
         level = int(name[1]) - heading_base + 1
         level = max(1, min(6, level))
         text = inline_to_md(el.get_text(strip=True))
+        # В vitepress markdown рендерится через Vue, и "голые" <Tag ...> в заголовках
+        # приводят к ошибкам парсинга. Если встречаем уголки — выводим как код.
+        if "<" in text and ">" in text:
+            text = f"`{text}`"
         return f"\n\n{'#' * level} {text}\n\n"
     if name == "hr":
         return "\n\n---\n\n"
@@ -322,6 +326,10 @@ def soup_body_to_md(soup: BeautifulSoup) -> str:
 
 def postprocess_md(md: str) -> str:
     """Убирает типичные склейки после смешения HTML и markdown в одном потоке."""
+    # Нормализация контейнеров (иногда в контенте встречаются 4 двоеточия).
+    md = re.sub(r"(?m)^::::\s", "::: ", md)
+    md = re.sub(r"(?m)^::::\s*$", ":::",
+                md)
     # ``` сразу перед кириллицей / звёздочкой / двоеточием (конец fence + текст)
     md = re.sub(r"\n```([А-Яа-яЁё*#:])", r"\n```\n\n\1", md)
     # проза или ** сразу перед открытием блока кода ```lang

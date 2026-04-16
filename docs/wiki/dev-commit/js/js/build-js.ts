@@ -33,7 +33,10 @@ const topics: ISidebarTopics[] = [
     children: [
       ["data-structures/number", getThemeMenu("method", ["Number"])],
       ["data-structures/json", getThemeMenu("method", ["JSON"])],
-      ["data-structures/iterators", getThemeMenu("method", ["Iterators (ES6)"])],
+      [
+        "data-structures/iterators",
+        getThemeMenu("method", ["Iterators (ES6)"]),
+      ],
       ["data-structures/map", getThemeMenu("method", ["Map", "WeakMap"])],
       ["data-structures/set", getThemeMenu("method", ["Set", "WeakSet"])],
       ["data-structures/date-time", getThemeMenu("method", ["Date"])],
@@ -95,4 +98,3 @@ const topics: ISidebarTopics[] = [
 ];
 
 export default { topics, path, title, theme } satisfies IBuildTopics;
-

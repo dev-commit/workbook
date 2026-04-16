@@ -37,7 +37,23 @@ import wikiEventLoop from "./js/event-loop/build-event-loop";
 import wikiFormik from "./frameworks/react-formik/build-react-formik";
 import wikiJavaScript from "./js/js/build-js";
 import wikiAjax from "./js/js-ajax/build-js-ajax";
+import wikiAxios from "./network/axios/build-axios";
+import wikiSwr from "./network/swr/build-swr";
+import wikiTanStackQuery from "./network/tan-stack-query/build-tan-stack-query";
 import wikiArray from "./js/js-array/build-js-array";
+import wikiAsync from "./js/js-async/build-js-async";
+import wikiClass from "./js/js-class/build-js-class";
+import wikiFunction from "./js/js-function/build-js-function";
+import wikiObject from "./js/js-object/build-js-object";
+import wikiPromise from "./js/js-promise/build-js-promise";
+import wikiRegExp from "./js/js-regexp/build-js-regexp";
+import wikiString from "./js/js-string/build-js-string";
+import wikiTask from "./js/js-task/build-js-task";
+import wikiWebApi from "./js/js-web-api/build-js-web-api";
+import wikiLodash from "./js/lodash/build-lodash";
+import wikiRamda from "./js/ramda/build-ramda";
+import wikiV8 from "./js/v8/build-v8";
+import wikiWebComponents from "./js/web-components/build-web-components";
 
 export const NAV: IHeaderMenuNav[] = [
   {
@@ -59,17 +75,41 @@ export const NAV: IHeaderMenuNav[] = [
   },
   {
     text: "Network",
-    children: getNav([wikiHttp, wikiNetwork, wikiAuth]),
+    children: getNav([
+      wikiHttp,
+      wikiNetwork,
+      wikiAuth,
+      wikiAxios,
+      wikiSwr,
+      wikiTanStackQuery,
+    ]),
   },
   {
     text: "JavaScript",
     children: getNav([
-      wikiCanvas,
-      wikiDayjs,
       wikiEventLoop,
+      wikiV8,
+      wikiTask,
+      null,
       wikiJavaScript,
-      wikiAjax,
+      wikiObject,
       wikiArray,
+      wikiString,
+      wikiFunction,
+      wikiClass,
+      null,
+      wikiAsync,
+      wikiPromise,
+      wikiAjax,
+      null,
+      wikiRegExp,
+      wikiWebApi,
+      null,
+      wikiCanvas,
+      wikiWebComponents,
+      wikiDayjs,
+      wikiLodash,
+      wikiRamda,
     ]),
   },
   {
@@ -109,10 +149,26 @@ export const SIDEBAR = getSidebar([
   wikiCanvas,
   wikiDayjs,
   wikiEventLoop,
+  wikiAsync,
   wikiFormik,
   wikiJavaScript,
   wikiAjax,
+  wikiAxios,
+  wikiSwr,
+  wikiTanStackQuery,
   wikiArray,
+  wikiClass,
+  wikiFunction,
+  wikiObject,
+  wikiPromise,
+  wikiRegExp,
+  wikiString,
+  wikiTask,
+  wikiWebApi,
+  wikiLodash,
+  wikiRamda,
+  wikiV8,
+  wikiWebComponents,
   wikiCss,
   wikiVue,
   wikiLayout,

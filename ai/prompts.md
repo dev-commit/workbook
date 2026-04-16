@@ -2,10 +2,10 @@
 
 ## Используемые значения
 
-- [full-path]: docs/wiki/dev-commit/network/auth
-- [build-file]: build-auth
-- [path]: 'network/auth/'
-- [title]: 'Авторизация'
+- [full-path]: docs/wiki/dev-commit/js/swr
+- [build-file]: build-swr
+- [path]: 'js/swr/'
+- [title]: 'SWR'
 - [theme]: 'actual'
 
 ## Список задач

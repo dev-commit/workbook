@@ -1,0 +1,187 @@
+# 👿 EventEmitter
+
+### Мой вариант
+
+```js
+const ee = {
+    listeners = Object.create({});
+    on(event, hundler) {
+        if (event in this.listeners) {
+            this.listeners[event] = [...this.listeners[event], hundler]; 
+        } else {
+            this.listeners[event] = [hundler]; 
+        }
+
+    }
+    emit(event) {
+        if (this.listeners[event] && this.listeners.hasOwnProperties(event)) { //
+            this.listeners[event].forEach(hundler => {
+                hundler();
+            })
+        }
+    }
+}
+
+ee.on('myEvent', () => console.log("hello"))
+ee.on('myEvent', () => console.log("hello 2"))
+ee.emit('myEvent',) // hello hello 2
+ee.emit('myEvent') // hello hello 2
+
+ee.emit('blabla')
+ee.emit('toString')
+```
+
+### Вариант из системы
+
+```js
+const EventEmitter {
+    events: {},
+
+    on(event, listener) {
+        if (!this.events[event]) {
+            this.events[event] = { listeners: [] };
+        }
+        this.events[event].listeners.push(listener);
+    },
+
+    off(event) {
+        delete this.events[event];
+    },
+
+    emit(name, ...payload) {
+        const listeners = this.events[name].listeners ? this.events[name].listeners : [];
+
+        for (const listener of listeners) {
+            listener.apply(this, payload);
+        }
+    },
+};
+```
+
+### #1
+
+```js
+function EventEmitter() {
+	this.listeners = Object.create(null);
+}
+
+EventEmitter.prototype.emit = function(event) {
+	if (this.listeners[event]) {
+		for (let i=0; i < this.listeners[event].length; i++) {
+			this.listeners[event][i]();	
+		}
+	}
+}
+
+EventEmitter.prototype.addEventListener = function(event, hundler) {
+	this.listeners[event] = this.listeners[event] ? [...this.listeners[event], hundler] : [hundler];
+}
+
+EventEmitter.prototype.removeEventListener = function(event, hundler) {
+	if (this.listeners[event]) {
+		delete this.listeners[event];
+	}
+}
+
+const emitter = new EventEmitter();
+emitter.emit('zzz');
+emitter.addEventListener('click', () => {});
+
+// .emit('zzz');
+// .addEventListener('zzz', listener);
+// .removeEventListener('zzz', listener);
+```
+
+### #2
+
+```js
+class EventEmitter {
+    on(type: string, listener: Function)
+    off(type: string, listener: Function)
+    emit(type: string)
+    constuctor() {
+        this.events = Object.create(null)
+    }
+    
+     on(type, listener) {
+        if(!this.event[type]]) {
+            this.events[type] = [];
+        }
+        this[events].push(listener);
+    }
+     off(type, listener) {
+        this.events[type] = this.events[type].filter(item => item !== listener); 
+    }
+    
+    emit(type) {
+        if(!this.events[type]) return;
+        for(let func of this.events[type]) {
+            func();
+        }
+    }
+}
+
+e.emit('toString');
+```
+
+### #3
+
+```js
+class EventEmitter {
+    constructor() {
+        this.map = Object.create(null);
+    }
+
+    on(event, fn) {
+        if (typeof tn === 'function') {
+            this.map[event] ? this.map[event].push(fn) : this.map[event] = [fn];
+        } else {
+            console.log('Нужно больше функций');
+        }
+    }
+
+    emit(event) {
+        if (this.map[event]) {
+            this.map[event].forEach(fn => fn())
+        }
+    }
+}
+
+const eventEmitter = new EventEmitter();
+
+eventEmitter.on('someEvent', () => console.log('abc'));
+eventEmitter.on('someEvent', () => console.log('def'));
+eventEmitter.on('someEvent', 'Hello');
+
+eventEmitter.emit('toString');
+eventEmitter.emit('someEvent'); // abc, def
+eventEmitter.emit('no-event');
+```
+
+### #4
+
+```js
+function Emitter() {
+    this.listeners = Object.create(null);
+}
+
+Emitter.prototype.on = function(event, cb) {
+    if (typeof cb !== 'function') {
+        return;
+    }
+    if (!this.listeners[event]) {
+        this.listeners[event] = [];
+    }
+    this.listeners[event].push(cb);
+}
+Emitter.prototype.emit = function(event, ...rest) {
+    if (!this.listeners[event]) {
+        return;
+    }
+    for(let func of this.listeners[event]) {
+        func(...rest);
+    }
+}
+
+const a = new Emitter();
+```
