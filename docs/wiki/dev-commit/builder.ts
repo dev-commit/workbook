@@ -33,6 +33,11 @@ import wikiNetwork from "./network/network/build-network";
 import wikiAuth from "./network/auth/build-auth";
 import wikiCanvas from "./js/canvas/build-canvas";
 import wikiDayjs from "./js/dayjs/build-dayjs";
+import wikiEventLoop from "./js/event-loop/build-event-loop";
+import wikiFormik from "./frameworks/react-formik/build-react-formik";
+import wikiJavaScript from "./js/js/build-js";
+import wikiAjax from "./js/js-ajax/build-js-ajax";
+import wikiArray from "./js/js-array/build-js-array";
 
 export const NAV: IHeaderMenuNav[] = [
   {
@@ -58,11 +63,18 @@ export const NAV: IHeaderMenuNav[] = [
   },
   {
     text: "JS",
-    children: getNav([wikiCanvas, wikiDayjs]),
+    children: getNav([
+      wikiCanvas,
+      wikiDayjs,
+      wikiEventLoop,
+      wikiJavaScript,
+      wikiAjax,
+      wikiArray,
+    ]),
   },
   {
     text: "Фреймворки",
-    children: getNav([wikiReact, null, wikiVue, null, wikiSvelte]),
+    children: getNav([wikiReact, wikiFormik, null, wikiVue, null, wikiSvelte]),
   },
   {
     text: "Utils",
@@ -96,6 +108,11 @@ export const SIDEBAR = getSidebar([
   wikiAuth,
   wikiCanvas,
   wikiDayjs,
+  wikiEventLoop,
+  wikiFormik,
+  wikiJavaScript,
+  wikiAjax,
+  wikiArray,
   wikiCss,
   wikiVue,
   wikiLayout,
