@@ -27,7 +27,7 @@ const getSidebarChildren = (
 
     const styleBorder =
       status === "doit"
-        ? "border-radius: 3px; background-color: #c2a3ffff; color: #c2a3ffff"
+        ? "border-radius: 2px; background-color: #d0bdf6ff; color: #d0bdf6ff"
         : "";
 
     return {

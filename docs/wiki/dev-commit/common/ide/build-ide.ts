@@ -6,7 +6,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "common/ide/";
 const title = "IDE";
-const theme: TThemeTopics = null;
+const theme: TThemeTopics = "tech";
 
 const topics: ISidebarTopics[] = [
   {

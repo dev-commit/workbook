@@ -48,18 +48,19 @@ const isActive = (item: { link: string } | null) => {
         <div class="link-wrapper">
           <template v-for="(item, key) in group.items" :key="key">
             <div v-if="item === null" class="link-splitter"></div>
-            <VPLink
-              v-else
-              :href="item.link"
-              :class="[
-                'link',
-                'theme-default',
-                item.theme && 'theme-' + item.theme,
-                isActive(item) && 'route-link-active',
-              ]"
-            >
-              {{ item.text }}
-            </VPLink>
+            <span v-else class="item-link-wrapper">
+              <VPLink
+                :href="item.link"
+                :class="[
+                  'link',
+                  'theme-default',
+                  item.theme && 'theme-' + item.theme,
+                  isActive(item) && 'route-link-active',
+                ]"
+              >
+                {{ item.text }}
+              </VPLink>
+            </span>
           </template>
         </div>
       </fieldset>
@@ -106,11 +107,8 @@ const isActive = (item: { link: string } | null) => {
 
 .fieldset {
   margin: 0;
-  padding: 10px;
-  padding-top: 0;
-  border: 1px solid #e8e8e8;
-  border-radius: 5px;
-  background-color: #fff;
+  padding: 0 10px;
+  border-width: 0px;
 }
 
 .legend {
@@ -123,7 +121,6 @@ const isActive = (item: { link: string } | null) => {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 5px;
 }
 
 .link-splitter {
@@ -167,30 +164,47 @@ const isActive = (item: { link: string } | null) => {
 </style>
 
 <style scoped>
+.item-link-wrapper {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 4px;
+}
+
 .link.theme-default {
   color: rgba(35, 44, 46, 1);
   background-color: rgba(225, 225, 225, 0.3);
   border: 1px solid rgba(225, 225, 225, 0.3);
 }
+.link.theme-primary {
+  color: rgba(0, 95, 242, 1);
+  background-color: rgba(240, 247, 255, 0.7);
+  border: 1px solid rgba(199, 218, 240, 0.7);
+}
+
 .link.theme-vue {
   color: rgba(34, 83, 61, 1);
   background-color: rgba(62, 178, 127, 0.3);
   border: 1px solid rgba(62, 178, 127, 0.3);
 }
 .link.theme-html {
-  color: rgba(0, 95, 242, 1);
-  background-color: rgba(240, 247, 255, 0.7);
-  border: 1px solid rgba(199, 218, 240, 0.7);
+  color: rgb(233, 98, 40);
+  background-color: rgba(233, 98, 40, 0.1);
+  border: 1px solid rgba(233, 98, 40, 0.1);
 }
 .link.theme-secondary {
   color: rgba(145, 145, 145, 1);
   background-color: #fff;
   border: 1px solid rgba(225, 225, 225, 0.3);
 }
-.link.theme-primary {
-  color: rgb(90, 90, 90);
-  background-color: rgba(235, 239, 175, 0.6);
-  border: 1px solid rgb(224, 227, 172);
+.link.theme-react {
+  color: rgb(43, 116, 132);
+  background-color: rgba(43, 216, 255, 0.3);
+  border: 1px solid rgba(43, 216, 255, 0.9);
+}
+.link.theme-tech {
+  color: rgb(199, 90, 209);
+  background-color: rgba(212, 15, 230, 0.1);
+  border: 1px solid #e2e2e2;
 }
 
 .link.theme-accent {
@@ -206,12 +220,11 @@ const isActive = (item: { link: string } | null) => {
   outline: 1px solid rgba(245, 224, 66, 1);
 }
 
+/* .link.theme-theory:before {
+  content: "📑 ";
+} */
+
 /* FIXME: Проверить */
-.link.theme-react {
-  color: rgb(43, 116, 132);
-  background-color: rgba(43, 216, 255, 0.3);
-  border: 1px solid rgba(43, 216, 255, 0.9);
-}
 .link.theme-node {
   color: rgb(85, 103, 45);
   background-color: rgba(133, 190, 5, 0.3);
@@ -222,12 +235,6 @@ const isActive = (item: { link: string } | null) => {
   background-color: rgba(232, 212, 77, 0.3);
   border: 1px solid rgba(232, 212, 77, 0.9);
 }
-.link.theme-tech {
-  color: rgb(199, 90, 209);
-  background-color: rgba(212, 15, 230, 0.1);
-  border: 1px solid #e2e2e2;
-}
-.link.theme-theory:before {
-  content: "📑 ";
-}
+
+/* Не используется */
 </style>

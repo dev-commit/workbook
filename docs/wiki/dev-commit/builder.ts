@@ -59,6 +59,10 @@ export const NAV: IHeaderMenuNav[] = [
     children: getNav([wikiReact, null, wikiVue, null, wikiSvelte]),
   },
   {
+    text: "Utils",
+    children: getNav([wikiIde, wikiAi]),
+  },
+  {
     text: "Вёрстка",
     children: getNav([
       wikiHtml,
@@ -69,10 +73,6 @@ export const NAV: IHeaderMenuNav[] = [
       wikiSvg,
       wikiSass,
     ]),
-  },
-  {
-    text: "Общее",
-    children: getNav([wikiIde, wikiAi]),
   },
   {
     text: "System",
