@@ -62,7 +62,7 @@ export const NAV: IHeaderMenuNav[] = [
     children: getNav([wikiHttp, wikiNetwork, wikiAuth]),
   },
   {
-    text: "JS",
+    text: "JavaScript",
     children: getNav([
       wikiCanvas,
       wikiDayjs,
