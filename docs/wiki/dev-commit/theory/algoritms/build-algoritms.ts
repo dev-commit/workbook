@@ -6,7 +6,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "theory/algoritms/";
 const title = "Алгоритмы";
-const theme: TThemeTopics = null;
+const theme: TThemeTopics = "theory";
 
 const topics: ISidebarTopics[] = [
   {

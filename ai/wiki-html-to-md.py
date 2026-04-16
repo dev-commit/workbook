@@ -183,6 +183,50 @@ def fix_imgs(soup: BeautifulSoup) -> None:
         img["src"] = f"../@img/{name}"
 
 
+def table_to_md(el: Tag, heading_base: int) -> str:
+    def cell_text(cell: Tag) -> str:
+        raw = "".join(fragment_to_md(c, heading_base) for c in cell.children).strip()
+        raw = re.sub(r"\s+", " ", raw).strip()
+        raw = raw.replace("\n", "<br>")
+        raw = raw.replace("|", r"\|")
+        return raw
+
+    rows: list[list[str]] = []
+    has_th_in_first_row = False
+
+    trs = el.find_all("tr", recursive=True)
+    for i, tr in enumerate(trs):
+        cells = tr.find_all(["th", "td"], recursive=False)
+        if not cells:
+            continue
+        if i == 0:
+            has_th_in_first_row = any(c.name and c.name.lower() == "th" for c in cells)
+        rows.append([cell_text(c) for c in cells])
+
+    if not rows:
+        return ""
+
+    # Нормализуем ширину строк до максимального числа колонок.
+    cols = max(len(r) for r in rows)
+    rows = [r + [""] * (cols - len(r)) for r in rows]
+
+    header = rows[0]
+    body = rows[1:]
+    if not has_th_in_first_row and len(rows) > 1:
+        # Если заголовок не размечен th, всё равно делаем первую строку "шапкой" таблицы.
+        pass
+
+    sep = ["---"] * cols
+    out_lines = [
+        "| " + " | ".join(header) + " |",
+        "| " + " | ".join(sep) + " |",
+    ]
+    for r in body:
+        out_lines.append("| " + " | ".join(r) + " |")
+
+    return "\n\n" + "\n".join(out_lines) + "\n\n"
+
+
 def element_to_md(el: Tag, heading_base: int) -> str:
     name = el.name.lower()
     if name in ("h1", "h2", "h3", "h4", "h5", "h6"):
@@ -196,6 +240,11 @@ def element_to_md(el: Tag, heading_base: int) -> str:
         t = "".join(fragment_to_md(c, heading_base) for c in el.children)
         t = t.strip()
         return f"\n\n{t}\n\n" if t else ""
+    if name == "img":
+        # По правилу из ai/prompts.md: <img> оставляем HTML-тегом (src уже переписан в fix_imgs).
+        return f"\n\n{str(el)}\n\n"
+    if name == "table":
+        return table_to_md(el, heading_base)
     if name in ("ul", "ol"):
         return list_to_md(el, heading_base, ordered=name == "ol")
     if name == "br":
@@ -245,7 +294,7 @@ def fragment_to_md(node: NavigableString | Tag, heading_base: int) -> str:
     if name == "u-text-define":
         inner = "".join(fragment_to_md(c, heading_base) for c in node.children)
         return f"**{inner}**"
-    if name in ("ul", "ol", "h1", "h2", "h3", "h4", "h5", "h6", "hr", "p"):
+    if name in ("ul", "ol", "h1", "h2", "h3", "h4", "h5", "h6", "hr", "p", "img", "table"):
         return element_to_md(node, heading_base)
     if name == "li":
         inner = "".join(fragment_to_md(c, heading_base) for c in node.children)

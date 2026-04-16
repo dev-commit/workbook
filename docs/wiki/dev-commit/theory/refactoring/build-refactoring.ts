@@ -5,7 +5,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "theory/refactoring/";
 const title = "Рефакторинг";
-const theme: TThemeTopics = null;
+const theme: TThemeTopics = "theory";
 
 const topics: ISidebarTopics[] = [
   {

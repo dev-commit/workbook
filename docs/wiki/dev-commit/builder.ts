@@ -6,7 +6,7 @@ import wikiUiKit from "./system/ui-kit/build-ui-kit";
 import wikiMenu from "./system/menu/build-menu";
 import wikiHtml from "./layout/html/build-html";
 import wikiSvelte from "./frameworks/svelte/build-svelte";
-import wikiNetwork from "./network/network/build-network";
+import wikiHttp from "./network/http/build-http";
 import wikiCss from "./layout/css/build-css";
 import wikiVue from "./frameworks/vue/build-vue";
 import wikiLayout from "./layout/layout/build-layout";
@@ -29,6 +29,8 @@ import wikiAlgoritms from "./theory/algoritms/build-algoritms";
 import wikiDesignPatterns from "./theory/design-patterns/build-design-patterns";
 import wikiSolid from "./theory/solid/build-solid";
 import wikiRefactoring from "./theory/refactoring/build-refactoring";
+import wikiNetwork from "./network/network/build-network";
+import wikiAuth from "./network/auth/build-auth";
 
 export const NAV: IHeaderMenuNav[] = [
   {
@@ -58,13 +60,13 @@ export const NAV: IHeaderMenuNav[] = [
       wikiRefactoring,
       wikiProgramming,
       wikiArchitecture,
-      wikiAgile,
       wikiApproaches,
+      wikiAgile,
     ]),
   },
   {
     text: "Network",
-    children: getNav([wikiNetwork]),
+    children: getNav([wikiHttp, wikiNetwork, wikiAuth]),
   },
   {
     text: "Общее",
@@ -81,7 +83,9 @@ export const SIDEBAR = getSidebar([
   wikiHtml,
   wikiMenu,
   wikiSvelte,
+  wikiHttp,
   wikiNetwork,
+  wikiAuth,
   wikiCss,
   wikiVue,
   wikiLayout,

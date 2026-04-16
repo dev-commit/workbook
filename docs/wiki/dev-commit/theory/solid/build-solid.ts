@@ -5,7 +5,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "theory/solid/";
 const title = "SOLID";
-const theme: TThemeTopics = null;
+const theme: TThemeTopics = "theory";
 
 const topics: ISidebarTopics[] = [
   {

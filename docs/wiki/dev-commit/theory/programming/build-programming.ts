@@ -6,7 +6,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "theory/programming/";
 const title = "ООП | ФП";
-const theme: TThemeTopics = null;
+const theme: TThemeTopics = "theory";
 
 const topics: ISidebarTopics[] = [
   {

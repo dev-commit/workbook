@@ -154,24 +154,42 @@ const isActive = (item: { link: string }) => {
 
 <style scoped>
 .link.theme-default {
-  color: rgb(35, 44, 46);
+  color: rgba(35, 44, 46, 1);
   background-color: rgba(225, 225, 225, 0.3);
-  box-shadow:
-    0 0 0 1px rgba(180, 180, 180, 0.4),
-    0 0 0 2px rgba(255, 255, 255, 0.6),
-    0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(225, 225, 225, 0.3);
 }
 .link.theme-vue {
-  color: rgb(34, 83, 61);
+  color: rgba(34, 83, 61, 1);
   background-color: rgba(62, 178, 127, 0.3);
+  border: 1px solid rgba(62, 178, 127, 0.3);
 }
 .link.theme-html {
-  color: oklch(0.5318 0.2399 256.99);
-  background-color: oklch(97.32% 0.0141 251.56);
+  color: rgba(0, 95, 242, 1);
+  background-color: rgba(240, 247, 255, 0.7);
+  border: 1px solid rgba(199, 218, 240, 0.7);
 }
 .link.theme-secondary {
-  color: rgb(145, 145, 145);
+  color: rgba(145, 145, 145, 1);
   background-color: #fff;
+  border: 1px solid rgba(225, 225, 225, 0.3);
+}
+.link.theme-primary {
+  color: rgb(90, 90, 90);
+  background-color: rgba(235, 239, 175, 0.6);
+  border: 1px solid rgb(224, 227, 172);
+}
+
+.link.theme-accent {
+  color: rgb(100, 100, 100);
+  background-color: #fff;
+  border: 1px solid rgba(0, 201, 167, 0.6);
+  outline: 1px solid rgba(0, 201, 167, 0.6);
+}
+.link.theme-actual {
+  color: rgb(100, 100, 100);
+  background-color: #fff;
+  border: 1px solid rgba(245, 224, 66, 1);
+  outline: 1px solid rgba(245, 224, 66, 1);
 }
 
 /* FIXME: Проверить */
@@ -190,29 +208,12 @@ const isActive = (item: { link: string }) => {
   background-color: rgba(232, 212, 77, 0.3);
   border: 1px solid rgba(232, 212, 77, 0.9);
 }
-.link.theme-primary {
-  color: rgb(159, 159, 159);
-  background-color: rgba(231, 234, 198, 0.4);
-  border: 1px solid #e2e2e2;
-}
-
-.link.theme-accent {
-  color: rgb(100, 100, 100);
-  background-color: #fff;
-  border: 1px solid rgba(0, 201, 167, 0.6);
-  outline: 1px solid rgba(0, 201, 167, 0.6);
-}
-.link.theme-actual {
-  color: rgb(100, 100, 100);
-  background-color: #fff;
-  border: 1px solid rgba(245, 224, 66, 1);
-  outline: 1px solid rgba(245, 224, 66, 1);
-}
 .link.theme-tech {
   color: rgb(199, 90, 209);
   background-color: rgba(212, 15, 230, 0.1);
   border: 1px solid #e2e2e2;
 }
-.link.theme-theory {
+.link.theme-theory:before {
+  content: "📑 ";
 }
 </style>

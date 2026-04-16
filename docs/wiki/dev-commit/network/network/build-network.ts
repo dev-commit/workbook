@@ -4,33 +4,44 @@ import { emoji } from "docs/constants";
 import { rootPath } from "../../constants";
 
 const path = rootPath + "network/network/";
-const title = "HTTP | Протоколы";
-const theme: TThemeTopics = null;
+const title = "Сеть";
+const theme: TThemeTopics = "actual";
 
 const topics: ISidebarTopics[] = [
   {
-    title: "API",
-    children: [["api/request", "Варианты Request"]],
-  },
-  {
-    title: "HTTP",
+    title: "Теория",
     children: [
-      ["http/http", emoji.fire + "HTTP / TCP"],
-      ["http/http2", "HTTP/2"],
-      ["http/https", "HTTPS"],
-      ["http/http-vs-https", "HTTP vs HTTPS"],
-      ["http/1-http-structure", emoji.star + "1. Структура протокола"],
-      ["http/2-http-methods", emoji.star + "2. HTTP Methods"],
-      ["http/3-http-headers", emoji.star + "3. HTTP Headers"],
-      ["http/4-http-status-codes", emoji.star + "4. HTTP Status Codes"],
+      ["theory/client-server", emoji.theory + "Client-Server"],
+      ["theory/url", emoji.theory + "URL и URI"],
     ],
   },
   {
-    title: "Протоколы",
+    title: "Технологии",
     children: [
-      ["protocols/osi", emoji.theory + "Сетевая модель OSI"],
-      ["protocols/tcp", "TCP"],
-      ["protocols/udp", "UDP"],
+      ["tech/websocket", emoji.star + "WebSocket"],
+      ["tech/graphql", emoji.star + "GraphQL"],
+      ["tech/webrtc", emoji.star + "WebRTC"],
+      ["tech/long-polling", "Long Polling"],
+      ["tech/sse", "SSE (Server Sent Events)"],
+      ["tech/cors", emoji.items + "CORS"],
+      ["tech/comet", "Comet"],
+      ["tech/jsonp", "JSONP"],
+    ],
+  },
+  {
+    title: "Работа с API",
+    children: [
+      ["api/api", emoji.theory + "API"],
+      ["api/rest-vs-soap", emoji.theory + "REST vs SOAP"],
+      ["api/rest", emoji.fire + "REST API"],
+      ["api/soap", "SOAP"],
+    ],
+  },
+  {
+    title: "Hacking",
+    children: [
+      ["hacking/xss", "XSS"],
+      ["hacking/sql-injection", "SQL инъекции"],
     ],
   },
 ];

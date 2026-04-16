@@ -5,7 +5,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "theory/design-patterns/";
 const title = "Паттерны проектирования";
-const theme: TThemeTopics = null;
+const theme: TThemeTopics = "theory";
 
 const topics: ISidebarTopics[] = [
   {

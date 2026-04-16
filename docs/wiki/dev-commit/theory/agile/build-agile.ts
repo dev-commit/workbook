@@ -5,7 +5,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "theory/agile/";
 const title = "Agile | Jira";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = "theory";
 
 const topics: ISidebarTopics[] = [
   {
