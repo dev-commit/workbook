@@ -3,7 +3,7 @@ import { getTopicSubtitle } from "docs/utils";
 
 import { rootPath } from "../../constants";
 
-const path = rootPath + "frameworks/vue-router/";
+const path = rootPath + "framework-vue/vue-router/";
 const title = "Vue Router";
 const theme: TThemeTopics = "actual";
 

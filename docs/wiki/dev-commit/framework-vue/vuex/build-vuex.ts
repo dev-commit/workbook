@@ -3,16 +3,14 @@ import { getTopicSubtitle } from "docs/utils";
 
 import { rootPath } from "../../constants";
 
-const path = rootPath + "frameworks/vue-vuex/";
+const path = rootPath + "framework-vue/vuex/";
 const title = "Vuex";
 const theme: TThemeTopics = "actual";
 
 const topics: ISidebarTopics[] = [
   {
     title: "Основное",
-    children: [
-      ["main/info", getTopicSubtitle("info")],
-    ],
+    children: [["main/info", getTopicSubtitle("info")]],
   },
   {
     title: "Элементы",
@@ -27,9 +25,7 @@ const topics: ISidebarTopics[] = [
   },
   {
     title: "Примеры",
-    children: [
-      ["samples/samples", "Примеры"],
-    ],
+    children: [["samples/samples", "Примеры"]],
   },
 ];
 

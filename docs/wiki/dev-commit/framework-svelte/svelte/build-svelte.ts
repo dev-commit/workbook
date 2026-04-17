@@ -4,7 +4,7 @@ import { emoji } from "docs/constants";
 
 import { rootPath } from "../../constants";
 
-const path = rootPath + "frameworks/svelte/";
+const path = rootPath + "framework-svelte/svelte/";
 const title = "Svelte";
 const theme: TThemeTopics = "svelte";
 

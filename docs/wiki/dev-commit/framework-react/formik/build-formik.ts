@@ -4,7 +4,7 @@ import { emoji } from "docs/constants";
 
 import { rootPath } from "../../constants";
 
-const path = rootPath + "frameworks/react-formik/";
+const path = rootPath + "framework-react/formik/";
 const title = "Formik";
 const theme: TThemeTopics = "actual";
 

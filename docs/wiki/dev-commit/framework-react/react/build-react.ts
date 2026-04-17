@@ -5,7 +5,7 @@ import { emoji } from "docs/constants";
 import { rootPath } from "../../constants";
 
 // TODO:
-const path = rootPath + "frameworks/react/";
+const path = rootPath + "framework-react/react/";
 const title = "React";
 const theme: TThemeTopics = "react";
 

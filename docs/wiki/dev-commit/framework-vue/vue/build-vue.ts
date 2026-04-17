@@ -4,7 +4,7 @@ import { emoji } from "docs/constants";
 
 import { rootPath } from "../../constants";
 
-const path = rootPath + "frameworks/vue/";
+const path = rootPath + "framework-vue/vue/";
 const title = "Vue.js";
 const theme: TThemeTopics = "vue";
 

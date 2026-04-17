@@ -5,12 +5,12 @@ import type { IHeaderMenuNav } from "../../types";
 import wikiUiKit from "./system/ui-kit/build-ui-kit";
 import wikiMenu from "./system/menu/build-menu";
 import wikiHtml from "./layout/html/build-html";
-import wikiSvelte from "./frameworks/svelte/build-svelte";
+import wikiSvelte from "./framework-svelte/svelte/build-svelte";
 import wikiHttp from "./network/http/build-http";
 import wikiCss from "./layout/css/build-css";
-import wikiVue from "./frameworks/vue/build-vue";
-import wikiVueRouter from "./frameworks/vue-router/build-vue-router";
-import wikiVueVuex from "./frameworks/vue-vuex/build-vue-vuex";
+import wikiVue from "./framework-vue/vue/build-vue";
+import wikiVueRouter from "./framework-vue/vue-router/build-vue-router";
+import wikiVuex from "./framework-vue/vuex/build-vuex";
 import wikiLayout from "./layout/layout/build-layout";
 import wikiIde from "./common/ide/build-ide";
 import wikiSass from "./layout/sass/build-sass";
@@ -22,7 +22,7 @@ import wikiCssGrid from "./layout/css-grid/build-css-grid";
 import wikiAi from "./common/ai/build-ai";
 import wikiDataStructures from "./theory/data-structures/build-data-structures";
 import wikiMethodologyDev from "./theory/methodology-dev/build-methodology-dev";
-import wikiReact from "./frameworks/react/build-react";
+import wikiReact from "./framework-react/react/build-react";
 import wikiApproaches from "./theory/approaches/build-approaches";
 import wikiArchitecture from "./theory/architecture/build-architecture";
 import wikiAgile from "./theory/agile/build-agile";
@@ -39,7 +39,7 @@ import wikiPython from "./backend/python/build-python";
 import wikiCanvas from "./js/canvas/build-canvas";
 import wikiDayjs from "./js/dayjs/build-dayjs";
 import wikiEventLoop from "./js/event-loop/build-event-loop";
-import wikiFormik from "./frameworks/react-formik/build-react-formik";
+import wikiFormik from "./framework-react/formik/build-formik";
 import wikiJavaScript from "./js/js/build-js";
 import wikiAjax from "./js/js-ajax/build-js-ajax";
 import wikiAxios from "./network/axios/build-axios";
@@ -90,10 +90,6 @@ export const NAV: IHeaderMenuNav[] = [
     ]),
   },
   {
-    text: "Backend",
-    children: getNav([wikiPython, wikiPhp, wikiMysql]),
-  },
-  {
     text: "JavaScript",
     children: getNav([
       wikiEventLoop,
@@ -122,17 +118,16 @@ export const NAV: IHeaderMenuNav[] = [
     ]),
   },
   {
-    text: "Фреймворки",
-    children: getNav([
-      wikiReact,
-      wikiFormik,
-      null,
-      wikiVue,
-      wikiVueVuex,
-      wikiVueRouter,
-      null,
-      wikiSvelte,
-    ]),
+    text: "React",
+    children: getNav([wikiReact, wikiFormik]),
+  },
+  {
+    text: "Vue.js",
+    children: getNav([wikiVue, wikiVuex, wikiVueRouter]),
+  },
+  {
+    text: "Svelte",
+    children: getNav([wikiSvelte]),
   },
   {
     text: "Utils",
@@ -149,6 +144,10 @@ export const NAV: IHeaderMenuNav[] = [
       wikiSvg,
       wikiSass,
     ]),
+  },
+  {
+    text: "Backend",
+    children: getNav([wikiPython, wikiPhp, wikiMysql]),
   },
   {
     text: "System",
@@ -193,7 +192,7 @@ export const SIDEBAR = getSidebar([
   wikiCss,
   wikiVue,
   wikiVueRouter,
-  wikiVueVuex,
+  wikiVuex,
   wikiLayout,
   wikiIde,
   wikiSass,
