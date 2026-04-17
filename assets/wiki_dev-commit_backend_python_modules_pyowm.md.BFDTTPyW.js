@@ -1,0 +1,10 @@
+import{_ as a,o as n,c as e,aw as o}from"./chunks/framework.DLufY-ao.js";const y=JSON.parse('{"title":"Модуль определения погоды (pyowm)","description":"","frontmatter":{},"headers":[],"relativePath":"wiki/dev-commit/backend/python/modules/pyowm.md","filePath":"wiki/dev-commit/backend/python/modules/pyowm.md"}'),p={name:"wiki/dev-commit/backend/python/modules/pyowm.md"};function t(l,s,c,r,i,d){return n(),e("div",null,[...s[0]||(s[0]=[o(`<h1 id="модуль-определения-погоды-pyowm" tabindex="-1">Модуль определения погоды (pyowm) <a class="header-anchor" href="#модуль-определения-погоды-pyowm" aria-label="Permalink to &quot;Модуль определения погоды (pyowm)&quot;">​</a></h1><div class="language-python"><button title="Copy Code" class="copy"></button><span class="lang">python</span><pre class="shiki one-light vp-code" tabindex="0"><code><span class="line"><span style="color:#A626A4;">import</span><span style="color:#383A42;"> pyowm</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#383A42;">owm = pyowm.OWM(</span><span style="color:#50A14F;">&#39;6d00d1d4e704068d70191bad2673e0cc&#39;</span><span style="color:#383A42;">)</span></span>
+<span class="line"><span style="color:#383A42;">observation = owm.weather_at_place(</span><span style="color:#50A14F;">&#39;London&#39;</span><span style="color:#383A42;">)</span></span>
+<span class="line"><span style="color:#383A42;">w = observation.get_weather()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#383A42;">temperature = w.get_temperature(</span><span style="color:#50A14F;">&#39;celsius&#39;</span><span style="color:#383A42;">)[</span><span style="color:#50A14F;">&#39;temp&#39;</span><span style="color:#383A42;">]</span><span style="color:#000000;">;</span></span>
+<span class="line"><span style="color:#383A42;">status = w.get_detailed_status()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#0184BC;">print</span><span style="color:#383A42;">(temperature, status)</span></span></code></pre></div>`,2)])])}const _=a(p,[["render",t]]);export{y as __pageData,_ as default};
