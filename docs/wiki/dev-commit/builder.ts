@@ -33,6 +33,9 @@ import wikiSolid from "./theory/solid/build-solid";
 import wikiRefactoring from "./theory/refactoring/build-refactoring";
 import wikiNetwork from "./network/network/build-network";
 import wikiAuth from "./network/auth/build-auth";
+import wikiMysql from "./backend/mysql/build-mysql";
+import wikiPhp from "./backend/php/build-php";
+import wikiPython from "./backend/python/build-python";
 import wikiCanvas from "./js/canvas/build-canvas";
 import wikiDayjs from "./js/dayjs/build-dayjs";
 import wikiEventLoop from "./js/event-loop/build-event-loop";
@@ -85,6 +88,10 @@ export const NAV: IHeaderMenuNav[] = [
       wikiSwr,
       wikiTanStackQuery,
     ]),
+  },
+  {
+    text: "Backend",
+    children: getNav([wikiPython, wikiPhp, wikiMysql]),
   },
   {
     text: "JavaScript",
@@ -157,6 +164,9 @@ export const SIDEBAR = getSidebar([
   wikiHttp,
   wikiNetwork,
   wikiAuth,
+  wikiMysql,
+  wikiPhp,
+  wikiPython,
   wikiCanvas,
   wikiDayjs,
   wikiEventLoop,

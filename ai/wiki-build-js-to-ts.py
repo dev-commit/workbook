@@ -131,8 +131,17 @@ def _render_child_title(v: Any) -> str:
         key = v.split(":", 1)[1]
         return f'getTopicSubtitle("{_ts_string(key)}")'
     if isinstance(v, str) and v.startswith("emoji."):
-        # уже в виде: emoji.star + "..."
-        return v
+        # После exec() часто получаем "emoji.star + Текст" (без кавычек на Текст).
+        # Приводим к валидному TS: emoji.star + "Текст"
+        m = re.match(r"^(emoji\\.[A-Za-z0-9_]+)\\s*\\+\\s*(.*)$", v.strip())
+        if not m:
+            return v
+        left, right = m.group(1), m.group(2).strip()
+        if not right:
+            return f'{left} + ""'
+        if (right[0] in ('"', "'") and right[-1] == right[0]) or right.startswith("`"):
+            return f"{left} + {right}"
+        return f'{left} + "{_ts_string(right)}"'
     return f'"{_ts_string(str(v))}"'
 
 

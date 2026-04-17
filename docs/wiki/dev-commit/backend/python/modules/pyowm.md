@@ -1,0 +1,14 @@
+# Модуль определения погоды (pyowm)
+
+```python
+import pyowm
+
+owm = pyowm.OWM('6d00d1d4e704068d70191bad2673e0cc')
+observation = owm.weather_at_place('London')
+w = observation.get_weather()
+
+temperature = w.get_temperature('celsius')['temp'];
+status = w.get_detailed_status()
+
+print(temperature, status)
+```

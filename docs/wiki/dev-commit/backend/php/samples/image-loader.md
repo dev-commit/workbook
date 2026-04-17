@@ -1,0 +1,29 @@
+# Изображения
+
+## Сохранение изображения
+
+```php
+<?php
+	$picture   = $_POST[picture];   // изображение в base64
+	$file      = $_POST[file];      // путь без расширения
+	$extension = $_POST[extension]; // расширение
+	$path      = $file.$extension;
+
+	// конвертирование base64 в изображение
+	$picture = base64_decode($picture);
+	$picture = imagecreatefromstring($picture);
+
+	// проверка расширения
+	if ($extension == '.png') {
+	    imagealphablending($picture, false); // выключение альфа сопряжения
+	    imagesavealpha($picture, true);      // установка альфа флага
+	    header('Content-Type: image/png');   // header
+	    imagepng($picture, $path);           // сохранение изображения
+	} else {
+	    imagejpeg($picture, $path, 100);
+	}
+
+	// освобождение памяти
+	imagedestroy($picture);
+?>
+```
