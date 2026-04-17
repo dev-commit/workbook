@@ -52,6 +52,7 @@ import wikiTanStackQuery from "./network/tan-stack-query/build-tan-stack-query";
 import wikiCypress from "./testing/cypress/build-cypress";
 import wikiEnzyme from "./testing/enzyme/build-enzyme";
 import wikiJest from "./testing/jest/build-jest";
+import wikiReactTesting from "./testing/react-testing/build-react-testing";
 import wikiTesting from "./testing/testing/build-testing";
 import wikiVitest from "./testing/vitest/build-vitest";
 import wikiArray from "./js/js-array/build-js-array";
@@ -170,6 +171,7 @@ export const NAV: IHeaderMenuNav[] = [
       wikiEnzyme,
       wikiVitest,
       wikiCypress,
+      wikiReactTesting,
     ]),
   },
   {
@@ -198,6 +200,7 @@ export const SIDEBAR = getSidebar([
   wikiVitest,
   wikiCypress,
   wikiEnzyme,
+  wikiReactTesting,
   wikiCanvas,
   wikiDayjs,
   wikiEventLoop,

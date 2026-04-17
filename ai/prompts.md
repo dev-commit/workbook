@@ -2,10 +2,10 @@
 
 ## Используемые значения
 
-- [full-path]: docs/wiki/dev-commit/js/swr
-- [build-file]: build-swr
-- [path]: 'js/swr/'
-- [title]: 'SWR'
+- [full-path]: docs/wiki/dev-commit/testing/react-testing
+- [build-file]: build-react-testing
+- [path]: 'testing/react-testing/'
+- [title]: 'React Testing'
 - [theme]: 'actual'
 
 ## Список задач
