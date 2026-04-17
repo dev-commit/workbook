@@ -51,6 +51,12 @@ import wikiMacos from "./common2/macos/build-macos";
 import wikiNpm from "./common2/npm/build-npm";
 import wikiWebpack from "./common2/webpack/build-webpack";
 import wikiWindows from "./common2/windows/build-windows";
+import wikiGit from "./main/git/build-git";
+import wikiGitRepo from "./main/git-repo/build-git-repo";
+import wikiIde2 from "./main/ide2/build-ide2";
+import wikiLinters from "./main/linters/build-linters";
+import wikiTypeScript from "./main/typescript/build-typescript";
+import wikiVite from "./main/vite/build-vite";
 import wikiCanvas from "./js/canvas/build-canvas";
 import wikiDayjs from "./js/dayjs/build-dayjs";
 import wikiEventLoop from "./js/event-loop/build-event-loop";
@@ -189,6 +195,19 @@ export const NAV: IHeaderMenuNav[] = [
     text: "System",
     children: getNav([wikiUiKit, wikiMenu, wikiLinks, wikiBooks]),
   },
+
+  {
+    text: "Main",
+    children: getNav([
+      wikiGit,
+      wikiGitRepo,
+      wikiTypeScript,
+      wikiIde2,
+      wikiLinters,
+      wikiVite,
+    ]),
+  },
+
   {
     text: "Common",
     children: getNav([
@@ -224,6 +243,12 @@ export const SIDEBAR = getSidebar([
   wikiExpress,
   wikiNestJs,
   wikiMongodb,
+  wikiGit,
+  wikiGitRepo,
+  wikiIde2,
+  wikiLinters,
+  wikiTypeScript,
+  wikiVite,
   wikiCmd,
   wikiNpm,
   wikiWebpack,
