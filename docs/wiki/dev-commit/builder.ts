@@ -49,6 +49,11 @@ import wikiAjax from "./js/js-ajax/build-js-ajax";
 import wikiAxios from "./network/axios/build-axios";
 import wikiSwr from "./network/swr/build-swr";
 import wikiTanStackQuery from "./network/tan-stack-query/build-tan-stack-query";
+import wikiCypress from "./testing/cypress/build-cypress";
+import wikiEnzyme from "./testing/enzyme/build-enzyme";
+import wikiJest from "./testing/jest/build-jest";
+import wikiTesting from "./testing/testing/build-testing";
+import wikiVitest from "./testing/vitest/build-vitest";
 import wikiArray from "./js/js-array/build-js-array";
 import wikiAsync from "./js/js-async/build-js-async";
 import wikiClass from "./js/js-class/build-js-class";
@@ -158,6 +163,16 @@ export const NAV: IHeaderMenuNav[] = [
     children: getNav([wikiPython, wikiPhp, wikiMysql]),
   },
   {
+    text: "Testing",
+    children: getNav([
+      wikiTesting,
+      wikiJest,
+      wikiEnzyme,
+      wikiVitest,
+      wikiCypress,
+    ]),
+  },
+  {
     text: "System",
     children: getNav([wikiUiKit, wikiMenu, wikiLinks, wikiBooks]),
   },
@@ -178,6 +193,11 @@ export const SIDEBAR = getSidebar([
   wikiExpress,
   wikiNestJs,
   wikiMongodb,
+  wikiTesting,
+  wikiJest,
+  wikiVitest,
+  wikiCypress,
+  wikiEnzyme,
   wikiCanvas,
   wikiDayjs,
   wikiEventLoop,
