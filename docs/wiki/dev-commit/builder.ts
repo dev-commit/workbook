@@ -40,6 +40,17 @@ import wikiNodeJs from "./node-js/node-js/build-node-js";
 import wikiExpress from "./node-js/express/build-express";
 import wikiNestJs from "./node-js/nest-js/build-nest-js";
 import wikiMongodb from "./node-js/mongodb/build-mongodb";
+import wikiBlockchain from "./common2/blockchain/build-blockchain";
+import wikiCiCd from "./common2/ci-cd/build-ci-cd";
+import wikiCmd from "./common2/cmd/build-cmd";
+import wikiCompilation from "./common2/compilation/build-compilation";
+import wikiEnglish from "./common2/english/build-english";
+import wikiHeroku from "./common2/heroku/build-heroku";
+import wikiLinux from "./common2/linux/build-linux";
+import wikiMacos from "./common2/macos/build-macos";
+import wikiNpm from "./common2/npm/build-npm";
+import wikiWebpack from "./common2/webpack/build-webpack";
+import wikiWindows from "./common2/windows/build-windows";
 import wikiCanvas from "./js/canvas/build-canvas";
 import wikiDayjs from "./js/dayjs/build-dayjs";
 import wikiEventLoop from "./js/event-loop/build-event-loop";
@@ -178,6 +189,24 @@ export const NAV: IHeaderMenuNav[] = [
     text: "System",
     children: getNav([wikiUiKit, wikiMenu, wikiLinks, wikiBooks]),
   },
+  {
+    text: "Common",
+    children: getNav([
+      wikiCiCd,
+      wikiWebpack,
+      wikiNpm,
+      wikiCmd,
+      wikiCompilation,
+      wikiBlockchain,
+      null,
+      wikiMacos,
+      wikiWindows,
+      wikiLinux,
+      null,
+      wikiHeroku,
+      wikiEnglish,
+    ]),
+  },
 ];
 
 export const SIDEBAR = getSidebar([
@@ -195,6 +224,17 @@ export const SIDEBAR = getSidebar([
   wikiExpress,
   wikiNestJs,
   wikiMongodb,
+  wikiCmd,
+  wikiNpm,
+  wikiWebpack,
+  wikiCiCd,
+  wikiHeroku,
+  wikiLinux,
+  wikiMacos,
+  wikiWindows,
+  wikiEnglish,
+  wikiCompilation,
+  wikiBlockchain,
   wikiTesting,
   wikiJest,
   wikiVitest,
