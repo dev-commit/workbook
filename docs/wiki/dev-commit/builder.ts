@@ -36,6 +36,10 @@ import wikiAuth from "./network/auth/build-auth";
 import wikiMysql from "./backend/mysql/build-mysql";
 import wikiPhp from "./backend/php/build-php";
 import wikiPython from "./backend/python/build-python";
+import wikiNodeJs from "./node-js/node-js/build-node-js";
+import wikiExpress from "./node-js/express/build-express";
+import wikiNestJs from "./node-js/nest-js/build-nest-js";
+import wikiMongodb from "./node-js/mongodb/build-mongodb";
 import wikiCanvas from "./js/canvas/build-canvas";
 import wikiDayjs from "./js/dayjs/build-dayjs";
 import wikiEventLoop from "./js/event-loop/build-event-loop";
@@ -146,6 +150,10 @@ export const NAV: IHeaderMenuNav[] = [
     ]),
   },
   {
+    text: "Node.js",
+    children: getNav([wikiNodeJs, wikiExpress, wikiNestJs, wikiMongodb]),
+  },
+  {
     text: "Backend",
     children: getNav([wikiPython, wikiPhp, wikiMysql]),
   },
@@ -166,6 +174,10 @@ export const SIDEBAR = getSidebar([
   wikiMysql,
   wikiPhp,
   wikiPython,
+  wikiNodeJs,
+  wikiExpress,
+  wikiNestJs,
+  wikiMongodb,
   wikiCanvas,
   wikiDayjs,
   wikiEventLoop,

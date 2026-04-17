@@ -133,7 +133,7 @@ def _render_child_title(v: Any) -> str:
     if isinstance(v, str) and v.startswith("emoji."):
         # После exec() часто получаем "emoji.star + Текст" (без кавычек на Текст).
         # Приводим к валидному TS: emoji.star + "Текст"
-        m = re.match(r"^(emoji\\.[A-Za-z0-9_]+)\\s*\\+\\s*(.*)$", v.strip())
+        m = re.match(r"^(emoji\.[A-Za-z0-9_]+)\s*\+\s*(.*)$", v.strip())
         if not m:
             return v
         left, right = m.group(1), m.group(2).strip()
