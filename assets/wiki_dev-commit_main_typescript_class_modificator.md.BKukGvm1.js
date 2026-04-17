@@ -1,0 +1,23 @@
+import{_ as a,o as n,c as l,aw as p}from"./chunks/framework.DLufY-ao.js";const d=JSON.parse('{"title":"Модификаторы полей","description":"","frontmatter":{},"headers":[],"relativePath":"wiki/dev-commit/main/typescript/class/modificator.md","filePath":"wiki/dev-commit/main/typescript/class/modificator.md"}'),o={name:"wiki/dev-commit/main/typescript/class/modificator.md"};function e(t,s,c,r,i,y){return n(),l("div",null,[...s[0]||(s[0]=[p(`<h1 id="модификаторы-полеи" tabindex="-1">Модификаторы полей <a class="header-anchor" href="#модификаторы-полеи" aria-label="Permalink to &quot;Модификаторы полей&quot;">​</a></h1><h2 id="виды-модификаторов" tabindex="-1">Виды модификаторов <a class="header-anchor" href="#виды-модификаторов" aria-label="Permalink to &quot;Виды модификаторов&quot;">​</a></h2><ul><li>protected - внутри класса и в наследниках</li><li>public - внутри класса и для всех инстансов (задан по умолчанию)</li><li>private - внутри класса</li></ul><div class="language-js"><button title="Copy Code" class="copy"></button><span class="lang">js</span><pre class="shiki one-light vp-code" tabindex="0"><code><span class="line"><span style="color:#A626A4;">class</span><span style="color:#C18401;"> Animal</span><span style="color:#383A42;"> {</span></span>
+<span class="line"><span style="color:#A626A4;">	protected</span><span style="color:#383A42;"> voice</span><span style="color:#0184BC;">:</span><span style="color:#0184BC;"> string</span><span style="color:#0184BC;"> =</span><span style="color:#50A14F;"> &#39;&#39;</span></span>
+<span class="line"><span style="color:#A626A4;">	public</span><span style="color:#383A42;"> color</span><span style="color:#0184BC;">:</span><span style="color:#0184BC;"> string</span><span style="color:#0184BC;"> =</span><span style="color:#50A14F;"> &#39;black&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;">	constructor</span><span style="color:#383A42;">() {</span></span>
+<span class="line"><span style="color:#E45649;">		this</span><span style="color:#383A42;">.</span><span style="color:#4078F2;">go</span><span style="color:#383A42;">()</span></span>
+<span class="line"><span style="color:#383A42;">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;">	private</span><span style="color:#4078F2;"> go</span><span style="color:#383A42;">() {</span></span>
+<span class="line"><span style="color:#383A42;">		console.</span><span style="color:#4078F2;">log</span><span style="color:#383A42;">(</span><span style="color:#50A14F;">&#39;Go&#39;</span><span style="color:#383A42;">)</span></span>
+<span class="line"><span style="color:#383A42;">	}</span></span>
+<span class="line"><span style="color:#383A42;">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;">class</span><span style="color:#C18401;"> Cat</span><span style="color:#A626A4;"> extends</span><span style="color:#C18401;"> Animal</span><span style="color:#383A42;"> {</span></span>
+<span class="line"><span style="color:#A626A4;">	public</span><span style="color:#4078F2;"> setVoice</span><span style="color:#383A42;">(voice</span><span style="color:#0184BC;">:</span><span style="color:#0184BC;"> string</span><span style="color:#383A42;">)</span><span style="color:#0184BC;">:</span><span style="color:#0184BC;"> void</span><span style="color:#383A42;"> {</span></span>
+<span class="line"><span style="color:#E45649;">		this</span><span style="color:#383A42;">.</span><span style="color:#E45649;">voice</span><span style="color:#0184BC;"> =</span><span style="color:#383A42;"> voice</span></span>
+<span class="line"><span style="color:#383A42;">	}</span></span>
+<span class="line"><span style="color:#383A42;">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;">const</span><span style="color:#986801;"> cat</span><span style="color:#0184BC;"> =</span><span style="color:#A626A4;"> new</span><span style="color:#4078F2;"> Cat</span><span style="color:#383A42;">()</span></span>
+<span class="line"><span style="color:#383A42;">cat.</span><span style="color:#4078F2;">setVoice</span><span style="color:#383A42;">(</span><span style="color:#50A14F;">&#39;test&#39;</span><span style="color:#383A42;">)</span></span>
+<span class="line"><span style="color:#383A42;">console.</span><span style="color:#4078F2;">log</span><span style="color:#383A42;">(cat.</span><span style="color:#E45649;">color</span><span style="color:#383A42;">)</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;">// cat.voice</span></span></code></pre></div>`,4)])])}const m=a(o,[["render",e]]);export{d as __pageData,m as default};

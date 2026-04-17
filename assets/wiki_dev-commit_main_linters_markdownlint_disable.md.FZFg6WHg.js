@@ -1,0 +1,6 @@
+import{_ as s,o as n,c as e,aw as l}from"./chunks/framework.DLufY-ao.js";const _=JSON.parse('{"title":"Disable","description":"","frontmatter":{},"headers":[],"relativePath":"wiki/dev-commit/main/linters/markdownlint/disable.md","filePath":"wiki/dev-commit/main/linters/markdownlint/disable.md"}'),i={name:"wiki/dev-commit/main/linters/markdownlint/disable.md"};function t(o,a,p,r,c,d){return n(),e("div",null,[...a[0]||(a[0]=[l(`<h1 id="disable" tabindex="-1">Disable <a class="header-anchor" href="#disable" aria-label="Permalink to &quot;Disable&quot;">​</a></h1><ul><li>Файл с расширемнием .md</li></ul><div class="language-markdown"><button title="Copy Code" class="copy"></button><span class="lang">markdown</span><pre class="shiki one-light vp-code" tabindex="0"><code><span class="line"><span style="color:#A0A1A7;font-style:italic;">&lt;!-- markdownlint-disable MD032 MD022 --&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E45649;"># List</span></span>
+<span class="line"><span style="color:#383A42;">- 1</span></span>
+<span class="line"><span style="color:#383A42;">- 2</span></span>
+<span class="line"><span style="color:#383A42;">- 3</span></span></code></pre></div>`,3)])])}const b=s(i,[["render",t]]);export{_ as __pageData,b as default};
