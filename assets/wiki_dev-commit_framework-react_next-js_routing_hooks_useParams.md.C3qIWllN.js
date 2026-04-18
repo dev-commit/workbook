@@ -1,0 +1,15 @@
+import{_ as a,o as n,c as e,aw as o}from"./chunks/framework.DLufY-ao.js";const y=JSON.parse('{"title":"useParams","description":"","frontmatter":{},"headers":[],"relativePath":"wiki/dev-commit/framework-react/next-js/routing/hooks/useParams.md","filePath":"wiki/dev-commit/framework-react/next-js/routing/hooks/useParams.md"}'),p={name:"wiki/dev-commit/framework-react/next-js/routing/hooks/useParams.md"};function l(t,s,r,c,i,m){return n(),e("div",null,[...s[0]||(s[0]=[o(`<h1 id="useparams" tabindex="-1">useParams <a class="header-anchor" href="#useparams" aria-label="Permalink to &quot;useParams&quot;">​</a></h1><div class="info custom-block"><p class="custom-block-title">INFO</p><p><a href="https://nextjs.org/docs/app/api-reference/functions/use-params" target="_blank" rel="noreferrer">https://nextjs.org/docs/app/api-reference/functions/use-params</a></p></div><pre><code>Client Component hook, который позволяет получить динамические параметры маршрута, заполненные текущим URL-адресом
+</code></pre><div class="language-js"><button title="Copy Code" class="copy"></button><span class="lang">js</span><pre class="shiki one-light vp-code" tabindex="0"><code><span class="line"><span style="color:#50A14F;">&#39;use client&#39;</span></span>
+<span class="line"><span style="color:#383A42;"> </span></span>
+<span class="line"><span style="color:#A626A4;">import</span><span style="color:#383A42;"> { </span><span style="color:#E45649;">useParams</span><span style="color:#383A42;"> } </span><span style="color:#A626A4;">from</span><span style="color:#50A14F;"> &#39;next/navigation&#39;</span><span style="color:#383A42;">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;">const</span><span style="color:#4078F2;"> App</span><span style="color:#0184BC;"> =</span><span style="color:#383A42;"> () </span><span style="color:#A626A4;">=&gt;</span><span style="color:#383A42;"> {</span></span>
+<span class="line"><span style="color:#A626A4;">    const</span><span style="color:#986801;"> params</span><span style="color:#0184BC;"> =</span><span style="color:#4078F2;">useParams</span><span style="color:#383A42;">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;">    // Route -&gt; /shop/[tag]/[item]</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;">    // URL -&gt; /shop/shoes/nike-air-max-97</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;">    // \`params\` -&gt; { tag: &#39;shoes&#39;, item: &#39;nike-air-max-97&#39; }</span></span>
+<span class="line"><span style="color:#383A42;">    console.</span><span style="color:#4078F2;">log</span><span style="color:#383A42;">(params);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;">    return</span><span style="color:#383A42;"> &lt;&gt;&lt;/&gt;</span></span>
+<span class="line"><span style="color:#383A42;">}</span></span></code></pre></div>`,4)])])}const u=a(p,[["render",l]]);export{y as __pageData,u as default};

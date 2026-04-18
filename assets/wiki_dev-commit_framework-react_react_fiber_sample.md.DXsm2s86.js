@@ -1,0 +1,10 @@
+import{_ as a,o as e,c as n,aw as l}from"./chunks/framework.DLufY-ao.js";const A=JSON.parse('{"title":"Пример","description":"","frontmatter":{},"headers":[],"relativePath":"wiki/dev-commit/framework-react/react/fiber/sample.md","filePath":"wiki/dev-commit/framework-react/react/fiber/sample.md"}'),t={name:"wiki/dev-commit/framework-react/react/fiber/sample.md"};function i(p,s,o,c,r,d){return e(),n("div",null,[...s[0]||(s[0]=[l(`<h1 id="пример" tabindex="-1">Пример <a class="header-anchor" href="#пример" aria-label="Permalink to &quot;Пример&quot;">​</a></h1><ul><li>Задача: в компоненте List есть кнопка и список с цифрами. При нажатии на кнопку, каждое число возводится в квадрат.</li></ul><ul><li>Fiber - объект</li><li>У каждого компонента есть свой Fiber</li></ul><div class="language-js"><button title="Copy Code" class="copy"></button><span class="lang">js</span><pre class="shiki one-light vp-code" tabindex="0"><code><span class="line"><span style="color:#A0A1A7;font-style:italic;">// Для связи с инстансом</span></span>
+<span class="line"><span style="color:#383A42;">{</span></span>
+<span class="line"><span style="color:#383A42;">	stateNode</span></span>
+<span class="line"><span style="color:#383A42;">}</span></span></code></pre></div><div class="language-js"><button title="Copy Code" class="copy"></button><span class="lang">js</span><pre class="shiki one-light vp-code" tabindex="0"><code><span class="line"><span style="color:#A0A1A7;font-style:italic;">// Fiber знает про другие Fibers в дереве</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;">// Отношения, которые отслеживает Fiber</span></span>
+<span class="line"><span style="color:#383A42;">{</span></span>
+<span class="line"><span style="color:#383A42;">	child</span></span>
+<span class="line"><span style="color:#A626A4;">	return</span></span>
+<span class="line"><span style="color:#383A42;">	sibling</span></span>
+<span class="line"><span style="color:#383A42;">}</span></span></code></pre></div>`,5)])])}const _=a(t,[["render",i]]);export{A as __pageData,_ as default};
