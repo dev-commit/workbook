@@ -72,6 +72,24 @@ import wikiJest from "./testing/jest/build-jest";
 import wikiReactTesting from "./testing/react-testing/build-react-testing";
 import wikiTesting from "./testing/testing/build-testing";
 import wikiVitest from "./testing/vitest/build-vitest";
+import wikiMaterialUi from "./framework-react/material-ui/build-material-ui";
+import wikiNextJs from "./framework-react/next-js/build-next-js";
+import wikiReactApi from "./framework-react/react-api/build-react-api";
+import wikiReactApp from "./framework-react/react-app/build-react-app";
+import wikiReactFinalForm from "./framework-react/react-final-form/build-react-final-form";
+import wikiReactFlow from "./framework-react/react-flow/build-react-flow";
+import wikiReactHookForm from "./framework-react/react-hook-form/build-react-hook-form";
+import wikiReactHooks from "./framework-react/react-hooks/build-react-hooks";
+import wikiReactNative from "./framework-react/react-native/build-react-native";
+import wikiReactRedux from "./framework-react/react-redux/build-react-redux";
+import wikiReactRouter from "./framework-react/react-router/build-react-router";
+import wikiReactUse from "./framework-react/react-use/build-react-use";
+import wikiRedux from "./framework-react/redux/build-redux";
+import wikiReduxSaga from "./framework-react/redux-saga/build-redux-saga";
+import wikiReduxToolkit from "./framework-react/redux-toolkit/build-redux-toolkit";
+import wikiReselect from "./framework-react/reselect/build-reselect";
+import wikiYup from "./framework-react/yup/build-yup";
+import wikiZustand from "./framework-react/zustand/build-zustand";
 import wikiArray from "./js/js-array/build-js-array";
 import wikiAsync from "./js/js-async/build-js-async";
 import wikiClass from "./js/js-class/build-js-class";
@@ -146,7 +164,31 @@ export const NAV: IHeaderMenuNav[] = [
   },
   {
     text: "React",
-    children: getNav([wikiReact, wikiFormik]),
+    children: getNav([
+      wikiReact,
+      wikiReactApp,
+      wikiReactHooks,
+      wikiReactApi,
+      wikiReactRouter,
+      null,
+      wikiNextJs,
+      wikiReactNative,
+      wikiMaterialUi,
+      wikiReactFlow,
+      wikiReactUse,
+      null,
+      wikiReactHookForm,
+      wikiFormik,
+      wikiYup,
+      wikiReactFinalForm,
+      null,
+      wikiRedux,
+      wikiReactRedux,
+      wikiReduxToolkit,
+      wikiReduxSaga,
+      wikiReselect,
+      wikiZustand,
+    ]),
   },
   {
     text: "Vue.js",
@@ -266,6 +308,24 @@ export const SIDEBAR = getSidebar([
   wikiCypress,
   wikiEnzyme,
   wikiReactTesting,
+  wikiMaterialUi,
+  wikiNextJs,
+  wikiReactApi,
+  wikiReactApp,
+  wikiReactFinalForm,
+  wikiReactFlow,
+  wikiReactHookForm,
+  wikiReactHooks,
+  wikiReactNative,
+  wikiReactRedux,
+  wikiReactRouter,
+  wikiReactUse,
+  wikiRedux,
+  wikiReduxSaga,
+  wikiReduxToolkit,
+  wikiReselect,
+  wikiYup,
+  wikiZustand,
   wikiCanvas,
   wikiDayjs,
   wikiEventLoop,

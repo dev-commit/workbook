@@ -54,6 +54,11 @@ class Config:
 def _normalize_source(src: str) -> str:
     # Часто build-*.js выглядят как python-подобный синтаксис с "false" и т.п.
     src = src.replace("\r\n", "\n").replace("\r", "\n")
+    # Удаляем JS-комментарии вида // ... (иначе exec() падает с SyntaxError).
+    # Делаем это построчно, чтобы не затронуть содержимое строковых литералов.
+    src = "\n".join(
+        line for line in src.split("\n") if not line.lstrip().startswith("//")
+    )
     src = re.sub(r"\bfalse\b", "False", src)
     src = re.sub(r"\btrue\b", "True", src)
     src = re.sub(r"\bnull\b", "None", src)
@@ -92,8 +97,9 @@ def _exec_arr_module(src: str) -> list[dict[str, Any]]:
     def setTheme(_n: int, data: list[str]) -> _ThemeMenu:
         return _ThemeMenu(data)
 
-    def getLink(root: str, key: str) -> tuple[str, str]:
+    def getLink(root: str, key: str, *_: object) -> tuple[str, str]:
         # getLink(root,'info') -> ("main/info", "__SUBTITLE__:info")
+        # В некоторых build-*.js встречается 3-й аргумент (например, true/'done') — игнорируем.
         return (f"main/{key}", f"__SUBTITLE__:{key}")
 
     g.update(
