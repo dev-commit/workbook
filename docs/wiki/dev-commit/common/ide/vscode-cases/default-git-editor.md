@@ -2,12 +2,12 @@
 
 ## Задача
 
-- При выполнении команд “git rebase -i” и прочих, открываются файлы для редактирования
+- При выполнении команд `git rebase -i` и прочих, открываются файлы для редактирования
 - По-умолчанию - это редактор Vim в Терминале, но можно изменить на то чтобы файлы открывались в VSCode
 
 ## Windows .gitconfig
 
-C:\Users\Anton\.gitconfig
+> C:\Users\Anton\.gitconfig
 
 ```bash
 [core]
@@ -24,11 +24,12 @@ C:\Users\Anton\.gitconfig
 # Выдаст пусть к VSCode для WSL
 which code
 ```
+
 - После этого перейти в .gitconfig на WSL и добавить путь
 
 ## WSL (Linux) .gitconfig
 
-\\wsl.localhost\Ubuntu\home\anton\.gitconfig
+> \\wsl.localhost\Ubuntu\home\anton\.gitconfig
 
 ```js
 [core]

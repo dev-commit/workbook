@@ -53,7 +53,6 @@ import wikiWebpack from "./common2/webpack/build-webpack";
 import wikiWindows from "./common2/windows/build-windows";
 import wikiGit from "./main/git/build-git";
 import wikiGitRepo from "./main/git-repo/build-git-repo";
-import wikiIde2 from "./main/ide2/build-ide2";
 import wikiLinters from "./main/linters/build-linters";
 import wikiTypeScript from "./main/typescript/build-typescript";
 import wikiVite from "./main/vite/build-vite";
@@ -244,7 +243,6 @@ export const NAV: IHeaderMenuNav[] = [
       wikiGit,
       wikiGitRepo,
       wikiTypeScript,
-      wikiIde2,
       wikiLinters,
       wikiVite,
     ]),
@@ -287,7 +285,6 @@ export const SIDEBAR = getSidebar([
   wikiMongodb,
   wikiGit,
   wikiGitRepo,
-  wikiIde2,
   wikiLinters,
   wikiTypeScript,
   wikiVite,

@@ -16,8 +16,21 @@ const topics: ISidebarTopics[] = [
   {
     title: "VSCode",
     children: [
-      ["vscode/plugins", "Плагины"],
+      ["vscode/plugins", emoji.star + "Плагины"],
+      ["vscode/settings", emoji.star + "Настройки"],
+      ["vscode/snippets", "Сниппеты"],
+      ["vscode/shortcuts", "Shortcuts"],
       ["vscode/utils", "Инструменты"],
+    ],
+  },
+  {
+    title: "VSCode Cases",
+    children: [
+      ["vscode-cases/workspases", emoji.star + "Несколько Workspaces"],
+      ["vscode-cases/profile-editor", "Редактор профилей"],
+      ["vscode-cases/open-vscode-with-url", "Opening VS Code with URLs"],
+      ["vscode-cases/default-git-editor", "Default editor for Git"],
+      ["vscode-cases/linter-onsave", "Linter OnSave"],
     ],
   },
   {

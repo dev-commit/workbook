@@ -3,35 +3,41 @@
 ## VSCode Extensions
 
 ::: info
-https://marketplace.visualstudio.com/items?itemName=tomsaunders-code.workspace-explorer
-https://marketplace.visualstudio.com/search?term=workspace⌖=VSCode&category=All%20categories&sortBy=Relevance
-:::
+
+- https://marketplace.visualstudio.com/items?itemName=tomsaunders-code.workspace-explorer - Workspace Explorer (не проверял)
+- https://marketplace.visualstudio.com/search?term=workspace&target=VSCode&category=All%20categories&sortBy=Relevance - Поиск по расширениям
+  :::
 
 ## VSCode расширение Workspace Sidebar
 
 ### 1. Сохранить Workspase
 
 - Открыть рабочее Workspase в VSCode
-- Сохранить Workspases в отдельный файл: File -> Save Workspace as.... У меня путь D:\Workspaces
+- Сохранить Workspases в отдельный файл: <v-breadcrumbs :items="['File', 'Save Workspace as...']" />
+- У меня путь "D:\Workspaces"
 
 #### Структура файла
 
+> workspaceName.code-workspace
+
 ```js
 {
-	"folders": [
-		{
-			"name": "Name Workspace 1",
-			"path": "C:/Users/UserName/Desktop/Repo/repo1"
-		},
-		{
-			"name": "Name Workspace 2",
-			"path": "C:/Users/UserName/Desktop/Repo/repo2"
-		},
-	]
+  "folders": [
+    {
+      "name": "Name Workspace 1",
+      "path": "C:/Users/UserName/Desktop/Repo/repo1"
+    },
+    {
+      "name": "Name Workspace 2",
+      "path": "C:/Users/UserName/Desktop/Repo/repo2"
+    },
+  ]
 }
 ```
 
 ::: details Настройка colorCustomizations
+
+> workspaceName.code-workspace
 
 ```js
 {
@@ -76,13 +82,16 @@ https://marketplace.visualstudio.com/search?term=workspace⌖=VSCode&category=Al
 
 ### 2. Установить расширение Workspace Sidebar
 
-- Workspace Sidebar
+::: info
 
-### 3. Конфиг
+- https://marketplace.visualstudio.com/items?itemName=sketchbuch.vsc-workspace-sidebar - Workspace Sidebar
+  :::
+
+### 3. Конфигурация
 
 - Отукрыть файл конфига и указать путь к сохраненным Workspaces
 
-C:\Users\UserName\AppData\Roaming\Code\User\settings.json
+> C:\Users\UserName\AppData\Roaming\Code\User\settings.json
 
 ```json
 {
@@ -98,22 +107,18 @@ C:\Users\UserName\AppData\Roaming\Code\User\settings.json
 ### 4. Настройка иконок
 
 ::: info
-https://github.com/sketchbuch/vsc-workspace-sidebar
-https://github.com/sketchbuch/vsc-workspace-sidebar/blob/master/docs/File%20Icon%20Themes.md
-:::
 
-#### Значения
+- https://github.com/sketchbuch/vsc-workspace-sidebar - GitHub
+- https://github.com/sketchbuch/vsc-workspace-sidebar/blob/master/docs/File%20Icon%20Themes.md - GitHub. File Icon Themes
+  :::
 
-- dart
-- java
-- javascript
-- md
-- typescript
-- tsx
-- jsx
-- yaml
+**Значения**
 
-#### Пример названия
+- `dart`, `java`, `md`, `yaml`
+- `javascript`, `typescript`
+- `tsx`, `jsx`
+
+**Пример названия**
 
 - Name.yaml.code-workspace
 - Name.vue.code-workspace
@@ -122,4 +127,4 @@ https://github.com/sketchbuch/vsc-workspace-sidebar/blob/master/docs/File%20Icon
 
 - В VSCode появится вкладка "Workspaces"
 
-<!-- <img src="../@img/workspace-sidebar.png" width="400px"/> -->
+<img src="../@img/vscode/workspace-sidebar.png" width="400px"/>
