@@ -3,7 +3,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "backend/mysql/";
 const title = "MySQL";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = null;
 
 const topics: ISidebarTopics[] = [
   {

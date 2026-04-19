@@ -40,22 +40,22 @@ import wikiNodeJs from "./node-js/node-js/build-node-js";
 import wikiExpress from "./node-js/express/build-express";
 import wikiNestJs from "./node-js/nest-js/build-nest-js";
 import wikiMongodb from "./node-js/mongodb/build-mongodb";
-import wikiBlockchain from "./common2/blockchain/build-blockchain";
-import wikiCiCd from "./common2/ci-cd/build-ci-cd";
-import wikiCmd from "./common2/cmd/build-cmd";
-import wikiCompilation from "./common2/compilation/build-compilation";
-import wikiEnglish from "./common2/english/build-english";
-import wikiHeroku from "./common2/heroku/build-heroku";
-import wikiLinux from "./common2/linux/build-linux";
-import wikiMacos from "./common2/macos/build-macos";
-import wikiNpm from "./common2/npm/build-npm";
-import wikiWebpack from "./common2/webpack/build-webpack";
-import wikiWindows from "./common2/windows/build-windows";
-import wikiGit from "./main/git/build-git";
-import wikiGitRepo from "./main/git-repo/build-git-repo";
-import wikiLinters from "./main/linters/build-linters";
-import wikiTypeScript from "./main/typescript/build-typescript";
-import wikiVite from "./main/vite/build-vite";
+import wikiBlockchain from "./common/blockchain/build-blockchain";
+import wikiCiCd from "./common/ci-cd/build-ci-cd";
+import wikiCmd from "./common/cmd/build-cmd";
+import wikiCompilation from "./common/compilation/build-compilation";
+import wikiEnglish from "./system/english/build-english";
+import wikiHeroku from "./common/heroku/build-heroku";
+import wikiLinux from "./common/linux/build-linux";
+import wikiMacos from "./common/macos/build-macos";
+import wikiNpm from "./common/npm/build-npm";
+import wikiWebpack from "./common/webpack/build-webpack";
+import wikiWindows from "./common/windows/build-windows";
+import wikiGit from "./common/git/build-git";
+import wikiGitRepo from "./common/git-repo/build-git-repo";
+import wikiLinters from "./common/linters/build-linters";
+import wikiTypeScript from "./common/typescript/build-typescript";
+import wikiVite from "./common/vite/build-vite";
 import wikiCanvas from "./js/canvas/build-canvas";
 import wikiDayjs from "./js/dayjs/build-dayjs";
 import wikiEventLoop from "./js/event-loop/build-event-loop";
@@ -113,7 +113,6 @@ export const NAV: IHeaderMenuNav[] = [
       wikiProgramming,
       wikiArchitecture,
       wikiApproaches,
-      null,
       wikiDesignPatterns,
       wikiSolid,
       wikiRefactoring,
@@ -199,7 +198,28 @@ export const NAV: IHeaderMenuNav[] = [
   },
   {
     text: "Utils",
-    children: getNav([wikiIde, wikiAi]),
+    children: getNav([
+      wikiIde,
+      wikiAi,
+      wikiCiCd,
+      wikiCmd,
+      wikiGit,
+      wikiGitRepo,
+      wikiTypeScript,
+      wikiLinters,
+      null,
+      wikiVite,
+      wikiWebpack,
+      wikiNpm,
+      wikiBlockchain,
+      wikiHeroku,
+      wikiCompilation,
+      null,
+      wikiMacos,
+      wikiWindows,
+      wikiLinux,
+      null,
+    ]),
   },
   {
     text: "Вёрстка",
@@ -234,37 +254,7 @@ export const NAV: IHeaderMenuNav[] = [
   },
   {
     text: "System",
-    children: getNav([wikiUiKit, wikiMenu, wikiLinks, wikiBooks]),
-  },
-
-  {
-    text: "Main",
-    children: getNav([
-      wikiGit,
-      wikiGitRepo,
-      wikiTypeScript,
-      wikiLinters,
-      wikiVite,
-    ]),
-  },
-
-  {
-    text: "Common",
-    children: getNav([
-      wikiCiCd,
-      wikiWebpack,
-      wikiNpm,
-      wikiCmd,
-      wikiCompilation,
-      wikiBlockchain,
-      null,
-      wikiMacos,
-      wikiWindows,
-      wikiLinux,
-      null,
-      wikiHeroku,
-      wikiEnglish,
-    ]),
+    children: getNav([wikiUiKit, wikiMenu, wikiLinks, wikiBooks, wikiEnglish]),
   },
 ];
 

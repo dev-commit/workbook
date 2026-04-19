@@ -1,6 +1,8 @@
 # Информация
 
 ::: info
-https://vitest.dev/
-:::
+
+- https://vitest.dev/
+  :::
+
 Синтаксис практически такой же как в Jest

@@ -3,14 +3,17 @@ import { getTopicSubtitle, getThemeMenu } from "docs/utils";
 
 import { rootPath } from "../../constants";
 
-const path = rootPath + "testing/vitest/";
-const title = "Vitest";
+const path = rootPath + "common/vite/";
+const title = "Vite";
 const theme: TThemeTopics = null;
 
 const topics: ISidebarTopics[] = [
   {
-    title: "Основное",
-    children: [["main/info", getTopicSubtitle("info")]],
+    title: "Основы",
+    children: [
+      ["main/info", getTopicSubtitle("info")],
+      ["main/install", getTopicSubtitle("install")],
+    ],
   },
 ];
 
