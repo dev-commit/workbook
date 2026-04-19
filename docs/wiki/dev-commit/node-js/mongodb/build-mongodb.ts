@@ -5,20 +5,16 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "node-js/mongodb/";
 const title = "MongoDB";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = null;
 
 const topics: ISidebarTopics[] = [
   {
     title: "Основы",
-    children: [
-      ["main/info", getTopicSubtitle("info")],
-    ],
+    children: [["main/info", getTopicSubtitle("info")]],
   },
   {
     title: "Пакеты",
-    children: [
-      ["packages/mongoose", getThemeMenu("method", ["Mongoose"])],
-    ],
+    children: [["packages/mongoose", getThemeMenu("method", ["Mongoose"])]],
   },
 ];
 
