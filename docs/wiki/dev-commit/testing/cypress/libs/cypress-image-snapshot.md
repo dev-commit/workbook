@@ -6,12 +6,16 @@
 - Прогнать тесты и получить скриншоты и видео
 
 ::: info
-https://github.com/jaredpalmer/cypress-image-snapshot
-:::
+
+- https://github.com/jaredpalmer/cypress-image-snapshot
+  :::
 
 ## Установка и настройка
 
+```bash
 npm i --save-dev cypress cypress-image-snapshot
+```
+
 cypress.json
 
 ```js
@@ -22,9 +26,10 @@ cypress.json
     "projectId": "vo3e1i"
 }
 ```
+
 - Для последней версии Cypress, ключ blacklistHosts нужно переименовать в blockHosts
 
-```bash
+````bash
 npx cypress open
     npx cypress run
 ```./cypress/snapshots./cypress/videos
@@ -35,3 +40,4 @@ npx cypress open
 - Firefox 82
 - Edge 86
 - Electron 85
+````

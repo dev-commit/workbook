@@ -54,7 +54,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Layout",
     children: [
-      ["layout/info", emoji.theory + "Информация"],
+      ["layout/info", getTopicSubtitle("info")],
       ["layout/float", "CSS float"],
       ["layout/inline-block", "CSS inline-block"],
       ["layout/css-multi-columns", "CSS Multi Columns"],

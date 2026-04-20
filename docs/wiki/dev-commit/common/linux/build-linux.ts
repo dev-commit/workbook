@@ -12,7 +12,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "WSL",
     children: [
-      ["wsl/info", emoji.theory + "Информация"],
+      ["wsl/info", getTopicSubtitle("info")],
       ["wsl/nvm", emoji.code + "Установка NVM"],
     ],
   },

@@ -26,7 +26,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Артикли",
     children: [
-      ["articles/info", emoji.theory + "Информация"],
+      ["articles/info", getTopicSubtitle("info")],
       ["articles/an", getThemeMenu("method", ["a", "an"])],
       ["articles/some", getThemeMenu("method", ["some", "any"])],
       ["articles/the", getThemeMenu("method", ["the"])],

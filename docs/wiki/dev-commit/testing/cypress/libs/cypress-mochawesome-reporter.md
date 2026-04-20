@@ -12,10 +12,13 @@ https://github.com/LironEr/cypress-mochawesome-reporter
 
 ## Установка и настройка
 
+```bash
 npm i --save-dev cypress cypress-mochawesome-reporter
+```
+
 cypress.json
 
-```js
+````js
 {
   "reporter": "cypress-mochawesome-reporter"
 }
@@ -34,7 +37,7 @@ import 'cypress-mochawesome-reporter/register';
 	// скрипт на очистку
     "cy:report:remove": "rm -rf cypress/screenshots cypress/results cypress/reports/accessibility"
 }
-```
+````
 
 ## Файлы
 

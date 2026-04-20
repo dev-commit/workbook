@@ -12,7 +12,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "NPM",
     children: [
-      ["npm/info", emoji.theory + "Информация"],
+      ["npm/info", getTopicSubtitle("info")],
       ["npm/command", emoji.code + "Команды"],
       ["npm/package-version", emoji.code + "Установка версии пакета"],
       ["npm/nvm", "Node Version Manager"],
@@ -42,16 +42,16 @@ const topics: ISidebarTopics[] = [
   {
     title: "Yarn",
     children: [
-      ["yarn/info", emoji.theory + "Информация"],
-      ["yarn/install", emoji.code + "Установка и настройка"],
+      ["yarn/info", getTopicSubtitle("info")],
+      ["yarn/install", getTopicSubtitle("install")],
       ["yarn/commands", "Команды"],
     ],
   },
   {
     title: "Pnpm",
     children: [
-      ["pnpm/info", emoji.theory + "Информация"],
-      ["pnpm/install", emoji.code + "Установка и настройка"],
+      ["pnpm/info", getTopicSubtitle("info")],
+      ["pnpm/install", getTopicSubtitle("install")],
     ],
   },
 ];

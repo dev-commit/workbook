@@ -2,68 +2,68 @@
 
 Доступность
 ::: info
-https://github.com/avanslaars/cypress-axe
-:::
+
+- https://github.com/avanslaars/cypress-axe
+  :::
 
 ## Установка и настройка
 
+```bash
 npm i --save-dev cypress axe-core cypress-axe
+```
+
 ./cypress/support/index.js
 
 ```js
-import 'cypress-axe'
+import "cypress-axe";
 ```
 
 ## Пример
 
 ```html
 <div id="root" role="main">
-    <h1>Hello</h1>
-    <div class="container">
-        <h2>Container</h2>
-    </div>
+  <h1>Hello</h1>
+  <div class="container">
+    <h2>Container</h2>
+  </div>
 </div>
 ```
-
-    
 
 ```js
 /// <reference types="cypress" />
 
 const A11YOptions = {
-    runOnly: {
-        type: 'tag',
-        values: ['wcag2a', 'wcag2aa', 'section508']
-    }
-}
+  runOnly: {
+    type: "tag",
+    values: ["wcag2a", "wcag2aa", "section508"],
+  },
+};
 
-describe('Starter', () => {
-    beforeEach(() => {
-        cy.visit('http://localhost:8081/index');
-        // 1. inject
-        cy.injectAxe();
-        
-        // 2. configure
-        // cy.configureAxe({
-        //     reporter: 'v2',
-        //     iframes: true
-        // })
-    });
+describe("Starter", () => {
+  beforeEach(() => {
+    cy.visit("http://localhost:8081/index");
+    // 1. inject
+    cy.injectAxe();
 
-    it('Starter', function () {
-        cy.contains('Hello');
+    // 2. configure
+    // cy.configureAxe({
+    //     reporter: 'v2',
+    //     iframes: true
+    // })
+  });
 
-        // 3. check all
-        cy.checkA11y();
-        // 4. check from element
-        cy.checkA11y('div.container');
-        // 5. check from element and options
-        cy.checkA11y('h1', A11YOptions);
-    });
+  it("Starter", function () {
+    cy.contains("Hello");
+
+    // 3. check all
+    cy.checkA11y();
+    // 4. check from element
+    cy.checkA11y("div.container");
+    // 5. check from element and options
+    cy.checkA11y("h1", A11YOptions);
+  });
 });
 ```
-
-    
 
 <!-- <img src="../@img/cypress-axe-1.png" width="700px"/> -->
 
@@ -78,65 +78,65 @@ describe('Starter', () => {
 ```js
 // exclude a specific button
 cy.checkA11y({
-    exclude: ['.article-action'],
-})
+  exclude: [".article-action"],
+});
 ```
 
 ```js
 cy.checkA11y(
-    {
-        exclude: ['.article-action'],
+  {
+    exclude: [".article-action"],
+  },
+  {
+    rules: {
+      "empty-heading": { enabled: false },
     },
-    {
-        rules: {
-            'empty-heading': { enabled: false },
-        },
-    },
-)
+  },
+);
 ```
 
 ```js
-cy.checkA11y('.example-class', {
-    runOnly: {
-        type: 'tag',
-        values: ['wcag2a']
-    }
-})
+cy.checkA11y(".example-class", {
+  runOnly: {
+    type: "tag",
+    values: ["wcag2a"],
+  },
+});
 ```
 
 ```js
 cy.checkA11y(null, {
-    includedImpacts: ['critical']
-})
+  includedImpacts: ["critical"],
+});
 ```
 
 ### 2. configureAxe
 
 ```js
 cy.configureAxe({
-    branding: {
-        brand: String,
-        application: String,
-    },
-    reporter: 'option',
-    checks: [Object],
-    rules: [Object],
-    locale: Object,
-})
+  branding: {
+    brand: String,
+    application: String,
+  },
+  reporter: "option",
+  checks: [Object],
+  rules: [Object],
+  locale: Object,
+});
 ```
 
 ```js
 cy.configureAxe({
-    reporter: 'v2',
-    iframes: true
-})
+  reporter: "v2",
+  iframes: true,
+});
 ```
 
 ## Кастомизация вывода ошибок доступности в консоль
 
 - Chrome Dev Tools -> Console
-- 
-- 
+-
+-
 
 <!-- <img src="../@img/cypress-axe-2.png" width="750px"/> -->
 
@@ -146,20 +146,20 @@ cy.configureAxe({
 /// <reference types="cypress" />
 
 module.exports = (on, config) => {
-    // `on` is used to hook into various events Cypress emits
-    // `config` is the resolved Cypress config
+  // `on` is used to hook into various events Cypress emits
+  // `config` is the resolved Cypress config
 
-    on('task', {
-        log(message) {
-            console.log(message)
-            return null
-        },
-        table(message) {
-            console.table(message)
-            return null
-        }
-    })
-}
+  on("task", {
+    log(message) {
+      console.log(message);
+      return null;
+    },
+    table(message) {
+      console.table(message);
+      return null;
+    },
+  });
+};
 ```
 
 ### Минимальный вариант использования
@@ -167,8 +167,8 @@ module.exports = (on, config) => {
 ./cypress/integration/starter.spec.js
 
 ```js
-it('Starter', function () {
-    cy.task('log', 'This will be output to the terminal')
+it("Starter", function () {
+  cy.task("log", "This will be output to the terminal");
 });
 ```
 
@@ -179,40 +179,40 @@ it('Starter', function () {
 
 // Define at the top of the spec file or just import it
 function terminalLog(violations) {
-    const dataLog = `
-        ${violations.length} accessibility violation${ violations.length === 1 ? '' : 's' }
-        ${violations.length === 1 ? 'was' : 'were'} detected`
+  const dataLog = `
+        ${violations.length} accessibility violation${violations.length === 1 ? "" : "s"}
+        ${violations.length === 1 ? "was" : "were"} detected`;
 
-    cy.task('log', dataLog)
+  cy.task("log", dataLog);
 
-    // pluck specific keys to keep the table readable
-    const violationData = violations.map(
-        ({ id, impact, description, nodes }) => ({
-            id,
-            impact,
-            description,
-            nodes: nodes.length
-        })
-    )
+  // pluck specific keys to keep the table readable
+  const violationData = violations.map(
+    ({ id, impact, description, nodes }) => ({
+      id,
+      impact,
+      description,
+      nodes: nodes.length,
+    }),
+  );
 
-    cy.task('table', violationData)
+  cy.task("table", violationData);
 }
 
-describe('Starter', () => {
-    beforeEach(() => {
-        cy.visit('http://localhost:8081/index');
-        cy.injectAxe();
-    });
+describe("Starter", () => {
+  beforeEach(() => {
+    cy.visit("http://localhost:8081/index");
+    cy.injectAxe();
+  });
 
-    // Then in your test...
-    it('Logs violations to the terminal', () => {
-        cy.checkA11y(null, null, terminalLog)
-    })
+  // Then in your test...
+  it("Logs violations to the terminal", () => {
+    cy.checkA11y(null, null, terminalLog);
+  });
 
-    it('Starter', function () {
-        cy.contains('Hello');
-        cy.checkA11y();
-    });
+  it("Starter", function () {
+    cy.contains("Hello");
+    cy.checkA11y();
+  });
 });
 ```
 
@@ -233,97 +233,98 @@ https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#axe-core-tags
 - WCAG 2.0
 - Section 508
 
-### У Cypress есть  собственные стандарты
+### У Cypress есть собственные стандарты
 
 - best-practices
 - experimental
 - cat
 
 ```js
-// стандарты, которые используем: 
+// стандарты, которые используем:
 // WCAG 2.0 Level A, WCAG 2.0 Level AA, Section-508
 
 const A11YOptions = {
-    runOnly: {
-        type: 'tag',
-        values: ['wcag2a', 'wcag2aa', 'section508']
-    }
-}
+  runOnly: {
+    type: "tag",
+    values: ["wcag2a", "wcag2aa", "section508"],
+  },
+};
 
-it('Check', () => {
-    // Test the page at initial load
-    cy.checkA11y(null, A11YOptions)
-})
+it("Check", () => {
+  // Test the page at initial load
+  cy.checkA11y(null, A11YOptions);
+});
 ```
+
 - Поскольку мы передали A11YOptions методу cy.checkA11y (), он проверяет соответствие заданным стандартам. Если параметры не переданы, он будет сверяться со всеми доступными стандартами, включая: best-practices, cat and experimental
 
 ```js
 // пример с заданием контейнера и списка опций
 const options = {
-    runOnly: {
-        type: 'tag',
-        values: ['wcag2a'],
-    },
+  runOnly: {
+    type: "tag",
+    values: ["wcag2a"],
+  },
 };
-cy.checkA11y('.cypress-wrapper', options);
+cy.checkA11y(".cypress-wrapper", options);
 ```
 
 ## Шаблон
 
 ```js
 const A11YOptions = {
-    runOnly: {
-        type: 'tag',
-        values: [
-            'wcag2a',
-            'wcag2aa',
-            'wcag21a',
-            'wcag21aa',
-            'wcag***',
-            'ACT',
-            'section508',
-            // 'best-practice',
-            // 'section508.*.*',
-            // 'experimental',
-            // 'cat.*',
-        ]
-    }
-}
+  runOnly: {
+    type: "tag",
+    values: [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21a",
+      "wcag21aa",
+      "wcag***",
+      "ACT",
+      "section508",
+      // 'best-practice',
+      // 'section508.*.*',
+      // 'experimental',
+      // 'cat.*',
+    ],
+  },
+};
 ```
 
 ```js
 const A11YOptions = {
-    runOnly: {
-        type: 'tag',
-        values: ['wcag2a']
-    }
-}
+  runOnly: {
+    type: "tag",
+    values: ["wcag2a"],
+  },
+};
 
-describe('...', () => {
-    before(() => {
-        // cy.visitWorkflowPage('...')
-        cy.injectAxe()
-    })
+describe("...", () => {
+  before(() => {
+    // cy.visitWorkflowPage('...')
+    cy.injectAxe();
+  });
 
-    // it('Визуальный регресс', () => {
-    //     cy.matchPageSnapshots()
-    // })
+  // it('Визуальный регресс', () => {
+  //     cy.matchPageSnapshots()
+  // })
 
-    it('Проверка доступности', () => {
-        cy.checkA11y(null, A11YOptions)
-    })
-})
+  it("Проверка доступности", () => {
+    cy.checkA11y(null, A11YOptions);
+  });
+});
 ```
 
 ```js
-describe('', () => {
-    before(() => {
-        // cy.visitWorkflowPage('reissue-process/reissue')
-        cy.injectAxe()
-    })
+describe("", () => {
+  before(() => {
+    // cy.visitWorkflowPage('reissue-process/reissue')
+    cy.injectAxe();
+  });
 
-    it('Проверка доступности', () => {
-        cy.checkA11y('[class$="src-grid-style--grid--1fbB"]')
-    })
-})
+  it("Проверка доступности", () => {
+    cy.checkA11y('[class$="src-grid-style--grid--1fbB"]');
+  });
+});
 ```

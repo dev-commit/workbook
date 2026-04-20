@@ -211,6 +211,16 @@ const isActive = (item: { link: string } | null) => {
   background-color: rgba(248, 58, 13, 0.1);
   border: 1px solid rgba(248, 58, 13, 0.1);
 }
+.link.theme-node {
+  color: rgb(85, 103, 45);
+  background-color: rgba(133, 190, 5, 0.3);
+  border: 1px solid rgba(133, 190, 5, 0.9);
+}
+.link.theme-js {
+  color: rgb(104, 95, 43);
+  background-color: rgba(232, 212, 77, 0.3);
+  border: 1px solid rgba(232, 212, 77, 0.9);
+}
 
 .link.theme-accent {
   color: rgb(100, 100, 100);
@@ -224,18 +234,4 @@ const isActive = (item: { link: string } | null) => {
   border: 1px solid rgba(245, 224, 66, 1);
   outline: 1px solid rgba(245, 224, 66, 1);
 }
-
-/* FIXME: Проверить */
-.link.theme-node {
-  color: rgb(85, 103, 45);
-  background-color: rgba(133, 190, 5, 0.3);
-  border: 1px solid rgba(133, 190, 5, 0.9);
-}
-.link.theme-js {
-  color: rgb(104, 95, 43);
-  background-color: rgba(232, 212, 77, 0.3);
-  border: 1px solid rgba(232, 212, 77, 0.9);
-}
-
-/* Не используется */
 </style>

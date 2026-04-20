@@ -20,7 +20,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Циклы",
     children: [
-      ["cycles/info", emoji.theory + "Информация"],
+      ["cycles/info", getTopicSubtitle("info")],
       ["cycles/map", getThemeMenu("method", ["map"])],
       ["cycles/forEach", getThemeMenu("method", ["forEach"])],
       ["cycles/reduce", getThemeMenu("method", ["reduce", "reduceRight"])],
@@ -32,8 +32,14 @@ const topics: ISidebarTopics[] = [
   {
     title: "Методы",
     children: [
-      ["methods/push", getThemeMenu("method", ["push", "pop", "unshift", "shift"])],
-      ["methods/length", getThemeMenu("method", ["length", "reverse", "concat"])],
+      [
+        "methods/push",
+        getThemeMenu("method", ["push", "pop", "unshift", "shift"]),
+      ],
+      [
+        "methods/length",
+        getThemeMenu("method", ["length", "reverse", "concat"]),
+      ],
       ["methods/sort", getThemeMenu("method", ["sort", "toSorted"])],
       ["methods/join", getThemeMenu("method", ["join"])],
       ["methods/slice", getThemeMenu("method", ["slice", "splice"])],
@@ -55,4 +61,3 @@ const topics: ISidebarTopics[] = [
 ];
 
 export default { topics, path, title, theme } satisfies IBuildTopics;
-

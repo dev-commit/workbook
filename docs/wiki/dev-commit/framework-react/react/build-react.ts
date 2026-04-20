@@ -6,7 +6,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "framework-react/react/";
 const title = "React";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = "js";
 
 const topics: ISidebarTopics[] = [
   {
@@ -16,7 +16,7 @@ const topics: ISidebarTopics[] = [
       ["main/ecosystem-ui-kit", emoji.theory + "UI-библиотеки"],
       ["main/install", getTopicSubtitle("install")],
       ["main/create-react-app", getThemeMenu("method", ["create-react-app"])],
-      ["main/info", emoji.theory + "Информация"],
+      ["main/info", getTopicSubtitle("info")],
       ["main/patterns", emoji.theory + "Шаблоны проектирования"],
       ["main/handlers-name", emoji.star + "Название обработчиков"],
       ["main/version", "Версии"],
@@ -42,7 +42,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Lifecycle",
     children: [
-      ["lifecycle/info", emoji.theory + "Информация"],
+      ["lifecycle/info", getTopicSubtitle("info")],
       ["lifecycle/constructor", getThemeMenu("method", ["constructor"])],
       [
         "lifecycle/get-derived-state-from-props",

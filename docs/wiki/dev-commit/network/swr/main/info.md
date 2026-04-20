@@ -1,5 +1,6 @@
 # Информация
 
 ::: info
-https://swr.vercel.app/ru/docs/
-:::
+
+- https://swr.vercel.app/ru/docs/
+  :::

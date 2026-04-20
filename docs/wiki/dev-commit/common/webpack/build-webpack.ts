@@ -20,7 +20,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Module Federation",
     children: [
-      ["module-federation/info", emoji.theory + "Информация"],
+      ["module-federation/info", getTopicSubtitle("info")],
       ["module-federation/semver", emoji.theory + "Semver"],
       ["module-federation/code", emoji.code + "Код"],
       ["module-federation/server", emoji.code + "Сервер"],

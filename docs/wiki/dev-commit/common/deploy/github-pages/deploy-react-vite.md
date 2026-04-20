@@ -3,18 +3,22 @@
 ### React приложение на vite-template-redux
 
 - https://github.com/reduxjs/redux-templates/tree/master/packages/vite-template-redux
-- Для шаблона "vite-template-redux" нужно задать base в vite.config.ts
-- При этом не нужно указывать homepage в package.json
+- Для шаблона "vite-template-redux" нужно задать `base` в _vite.config.ts_
+- При этом не нужно указывать `homepage` в package.json
 
 ## Файлы
 
+> vite.config.ts
+
 ```js
-import { defineConfig } from "vitest/config"
+import { defineConfig } from "vitest/config";
 
 export default defineConfig({
   base: "/repo-name/",
-})
+});
 ```
+
+> package.json
 
 ```js
 {

@@ -3,12 +3,15 @@
 ### 1. Установить Node.js
 
 ::: info
-https://nodejs.org/en/
-:::
+
+- https://nodejs.org/en/
+  :::
 
 ### 2. Установить глобально NestJS
 
+```bash
 npm i --g @nestjs/cli
+```
 
 ### 3. Создать проект
 

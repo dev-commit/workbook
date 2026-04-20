@@ -54,22 +54,15 @@ const topics: ISidebarTopics[] = [
   {
     title: "TypeScript",
     children: [
-      ["typescript/install", emoji.code + "Установка и настройка"],
+      ["typescript/install", getTopicSubtitle("install")],
       ["typescript/tsconfig", "tsconfig.json"],
       ["typescript/custom-types", "Пользовательские типы"],
     ],
   },
   {
-    title: "Деплой",
-    children: [
-      ["deploy/vercel", "Vercel (SSR)"],
-      ["deploy/github-pages", "Github Pages (SSG)"],
-    ],
-  },
-  {
     title: "Запросы на сервер",
     children: [
-      ["fetch/info", emoji.theory + "Информация", "check"],
+      ["fetch/info", getTopicSubtitle("info"), "check"],
       [
         "fetch/getInitialProps",
         getThemeMenu("method", ["getInitialProps"]),

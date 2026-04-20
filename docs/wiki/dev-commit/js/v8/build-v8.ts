@@ -11,16 +11,20 @@ const theme: TThemeTopics = "actual";
 const topics: ISidebarTopics[] = [
   {
     title: "Движок V8",
-    children: [
-      ["v8/info", emoji.theory + "Информация"],
-    ],
+    children: [["v8/info", getTopicSubtitle("info")]],
   },
   {
     title: "Рендеринг",
     children: [
-      ["rendering/critical-rendering-path", emoji.fire + "Critical Rendering Path"],
+      [
+        "rendering/critical-rendering-path",
+        emoji.fire + "Critical Rendering Path",
+      ],
       ["rendering/repaint-and-reflow", emoji.fire + "Repaint & Reflow"],
-      ["rendering/requestAnimationFrame", getThemeMenu("method", ["requestAnimationFrame"])],
+      [
+        "rendering/requestAnimationFrame",
+        getThemeMenu("method", ["requestAnimationFrame"]),
+      ],
     ],
   },
   {

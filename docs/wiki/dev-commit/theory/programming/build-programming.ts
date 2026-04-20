@@ -12,7 +12,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "ООП",
     children: [
-      ["oop/info", emoji.theory + "Информация"],
+      ["oop/info", getTopicSubtitle("info")],
       ["oop/access-modifiers", "Модификаторы доступа"],
     ],
   },
@@ -28,7 +28,7 @@ const topics: ISidebarTopics[] = [
 
   {
     title: "ФП",
-    children: [["fp/info", emoji.theory + "Информация"]],
+    children: [["fp/info", getTopicSubtitle("info")]],
   },
 
   {

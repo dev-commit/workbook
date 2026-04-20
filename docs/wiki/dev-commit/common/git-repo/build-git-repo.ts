@@ -23,16 +23,6 @@ const topics: ISidebarTopics[] = [
     ],
   },
   {
-    title: "Github Pages",
-    children: [
-      ["github-pages/info", emoji.theory + "Информация"],
-      ["github-pages/install", emoji.code + "Установка и настройка"],
-      ["github-pages/deploy", "Деплой"],
-      ["github-pages/deploy-react-cra", "Деплой React + Webpack (CRA)"],
-      ["github-pages/deploy-react-vite", "Деплой React + Vite (Vite Template)"],
-    ],
-  },
-  {
     title: "Bitbucket",
     children: [["bitbucket/ssh", emoji.code + "Подключение по SSH"]],
   },

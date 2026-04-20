@@ -16,7 +16,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Prettier",
     children: [
-      ["prettier/info", emoji.theory + "Информация"],
+      ["prettier/info", getTopicSubtitle("info")],
       ["prettier/vscode-plugin", "Плагин для VSCode"],
       ["prettier/prettierrc", getThemeMenu("method", [".prettierrc.json"])],
       ["prettier/prettierignore", getThemeMenu("method", [".prettierignore"])],
@@ -26,7 +26,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "ESLint",
     children: [
-      ["eslint/info", emoji.theory + "Информация"],
+      ["eslint/info", getTopicSubtitle("info")],
       ["eslint/main", "Основное"],
       ["eslint/disable", "Disable"],
       ["eslint/import-order", "Настройка порядка импортов"],
@@ -37,25 +37,25 @@ const topics: ISidebarTopics[] = [
   {
     title: "Stylelint",
     children: [
-      ["stylelint/info", emoji.theory + "Информация"],
-      ["stylelint/install", emoji.theory + "Установка и настройка"],
+      ["stylelint/info", getTopicSubtitle("info")],
+      ["stylelint/install", getTopicSubtitle("install")],
     ],
   },
   {
     title: "TSLint",
-    children: [["tslint/info", emoji.theory + "Информация"]],
+    children: [["tslint/info", getTopicSubtitle("info")]],
   },
   {
     title: "Husky",
     children: [
-      ["husky/info", emoji.theory + "Информация"],
-      ["husky/install", emoji.code + "Установка и настройка"],
+      ["husky/info", getTopicSubtitle("info")],
+      ["husky/install", getTopicSubtitle("install")],
     ],
   },
   {
     title: "MarkdownLint (VSCode Extension)",
     children: [
-      ["markdownlint/info", emoji.theory + "Информация"],
+      ["markdownlint/info", getTopicSubtitle("info")],
       ["markdownlint/disable", "Disable"],
     ],
   },

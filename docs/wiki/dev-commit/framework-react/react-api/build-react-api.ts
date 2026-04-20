@@ -27,7 +27,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Оптимизация",
     children: [
-      ["optimization/info", emoji.theory + "Информация"],
+      ["optimization/info", getTopicSubtitle("info")],
       ["optimization/react-memo", getThemeMenu("method", ["React.memo"])],
       [
         "optimization/react-lazy",

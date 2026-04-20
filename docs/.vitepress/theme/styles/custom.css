@@ -165,7 +165,7 @@
   border-radius: 8px;
   font-family: Roboto-Medium;
   padding: 4px 10px;
-  margin-bottom: 4px;
+  margin-bottom: 10px;
 }
 
 .VPSidebarItem {
@@ -175,6 +175,7 @@
 }
 
 .VPSidebarItem .items .VPSidebarItem {
+  padding-left: 10px !important;
 }
 
 .VPSidebarItem .items .VPSidebarItem.has-active {

@@ -45,7 +45,6 @@ import wikiCiCd from "./common/ci-cd/build-ci-cd";
 import wikiCmd from "./common/cmd/build-cmd";
 import wikiCompilation from "./common/compilation/build-compilation";
 import wikiEnglish from "./system/english/build-english";
-import wikiHeroku from "./common/heroku/build-heroku";
 import wikiLinux from "./common/linux/build-linux";
 import wikiMacos from "./common/macos/build-macos";
 import wikiNpm from "./common/npm/build-npm";
@@ -103,6 +102,7 @@ import wikiLodash from "./js/lodash/build-lodash";
 import wikiRamda from "./js/ramda/build-ramda";
 import wikiV8 from "./js/v8/build-v8";
 import wikiWebComponents from "./js/web-components/build-web-components";
+import wikiDeploy from "./common/deploy/build-deploy";
 
 export const NAV: IHeaderMenuNav[] = [
   {
@@ -201,6 +201,7 @@ export const NAV: IHeaderMenuNav[] = [
     children: getNav([
       wikiIde,
       wikiAi,
+      wikiDeploy,
       wikiCiCd,
       wikiCmd,
       wikiGit,
@@ -212,7 +213,6 @@ export const NAV: IHeaderMenuNav[] = [
       wikiWebpack,
       wikiNpm,
       wikiBlockchain,
-      wikiHeroku,
       wikiCompilation,
       null,
       wikiMacos,
@@ -282,7 +282,6 @@ export const SIDEBAR = getSidebar([
   wikiNpm,
   wikiWebpack,
   wikiCiCd,
-  wikiHeroku,
   wikiLinux,
   wikiMacos,
   wikiWindows,
@@ -360,4 +359,5 @@ export const SIDEBAR = getSidebar([
   wikiApproaches,
   wikiProgramming,
   wikiAgile,
+  wikiDeploy,
 ]);

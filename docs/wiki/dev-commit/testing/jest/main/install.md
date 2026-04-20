@@ -2,18 +2,20 @@
 
 ## Установка
 
+```bash
 npm i --save-dev jest
+```
 
 ```json
 {
-	"name": "app-jest",
-	"main": "index.js",
-	"scripts": {
-	"test": "jest"
-},
-	"devDependencies": {
-		"jest": "^25.2.7"
-	}
+  "name": "app-jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^25.2.7"
+  }
 }
 ```
 
@@ -21,15 +23,15 @@ npm i --save-dev jest
 
 ```js
 function expect(value) {
-	return {
-		toBe: exp => {
-			if (value === exp) {
-				console.log('Success');
-			} else {
-				console.error('Error', value, exp);
-			}
-		}
-	}	
+  return {
+    toBe: (exp) => {
+      if (value === exp) {
+        console.log("Success");
+      } else {
+        console.error("Error", value, exp);
+      }
+    },
+  };
 }
 
 const sum = (a, b) => a + b;

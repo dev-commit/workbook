@@ -1,4 +1,5 @@
 import { IBuildTopics, TThemeTopics, ISidebarTopics } from "docs/types";
+import { getTopicSubtitle, getThemeMenu } from "docs/utils";
 import { emoji } from "docs/constants";
 
 import { rootPath } from "../../constants";
@@ -21,7 +22,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Agile",
     children: [
-      ["agile/info", emoji.theory + "Информация"],
+      ["agile/info", getTopicSubtitle("info")],
       ["agile/tasks", "Задачи и Backlog"],
       ["agile/sprint", "Спринты"],
       ["agile/story-points", "Story Points"],

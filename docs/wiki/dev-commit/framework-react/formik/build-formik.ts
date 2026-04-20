@@ -32,7 +32,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Валидиция",
     children: [
-      ["validation/info", emoji.theory + "Информация"],
+      ["validation/info", getTopicSubtitle("info")],
       ["validation/validate", getThemeMenu("method", ["validate"])],
       [
         "validation/validation-schema",

@@ -20,7 +20,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Функции",
     children: [
-      ["function/info", emoji.theory + "Информация"],
+      ["function/info", getTopicSubtitle("info")],
       ["function/announcement", emoji.star + "Объявление"],
       ["function/arrow", emoji.star + "Стрелочные функции (ES6)"],
       ["function/parameters", emoji.star + "Параметры функции (ES6)"],

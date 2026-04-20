@@ -27,15 +27,13 @@ const topics: ISidebarTopics[] = [
   },
   {
     title: "Элементы",
-    children: [
-      ["elements/middleware", "Middleware"],
-    ],
+    children: [["elements/middleware", "Middleware"]],
   },
   {
     title: "Шаблонизатор EJS",
     children: [
-      ["template-ejs/info", emoji.theory + "Информация"],
-      ["template-ejs/install", emoji.code + "Установка и настройка"],
+      ["template-ejs/info", getTopicSubtitle("info")],
+      ["template-ejs/install", getTopicSubtitle("install")],
       ["template-ejs/structure", emoji.fire + "Структура"],
       ["template-ejs/tags", emoji.star + "Tags"],
       ["template-ejs/static-files", emoji.star + "Статичные файлы (CSS, etc.)"],
@@ -44,8 +42,8 @@ const topics: ISidebarTopics[] = [
   {
     title: "Шаблонизатор Express Handlebars",
     children: [
-      ["template-express-handlebars/info", emoji.theory + "Информация"],
-      ["template-express-handlebars/install", emoji.code + "Установка и настройка"],
+      ["template-express-handlebars/info", getTopicSubtitle("info")],
+      ["template-express-handlebars/install", getTopicSubtitle("install")],
     ],
   },
 ];

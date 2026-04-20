@@ -65,7 +65,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Теория",
     children: [
-      ["theory/info", emoji.theory + "Информация"],
+      ["theory/info", getTopicSubtitle("info")],
       ["theory/principle", emoji.code + "Принцип работы"],
       ["theory/gitflow", emoji.code + "Gitflow"],
       ["theory/vcs", "Системы управления версиями"],
@@ -73,10 +73,7 @@ const topics: ISidebarTopics[] = [
   },
   {
     title: "Технологии",
-    children: [
-      ["tech/git-submodules", "Git Submodules"],
-      ["tech/smart-git", "SmartGit"],
-    ],
+    children: [["tech/git-submodules", "Git Submodules"]],
   },
 ];
 

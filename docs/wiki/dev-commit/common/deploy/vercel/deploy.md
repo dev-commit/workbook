@@ -1,4 +1,4 @@
-# Деплой на Vercel
+# Деплой
 
 1. Залить на Github
 2. На сайт Vercel https://vercel.com/solutions/nextjs

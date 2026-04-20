@@ -19,7 +19,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Zustand",
     children: [
-      ["zustand/info", emoji.theory + "Информация"],
+      ["zustand/info", getTopicSubtitle("info")],
       ["zustand/usestate-vs-zustand", emoji.star + "useState vs Zustand"],
       ["zustand/useStore", getThemeMenu("method", ["useStore"])],
     ],
@@ -27,8 +27,8 @@ const topics: ISidebarTopics[] = [
   {
     title: "Dagre",
     children: [
-      ["dagre/info", emoji.theory + "Информация"],
-      ["dagre/install", emoji.code + "Установка и настройка"],
+      ["dagre/info", getTopicSubtitle("info")],
+      ["dagre/install", getTopicSubtitle("install")],
       ["dagre/use", emoji.fire + "Использование"],
     ],
   },

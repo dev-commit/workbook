@@ -12,7 +12,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Big-O Notation",
     children: [
-      ["big-o/info", emoji.theory + "Информация"],
+      ["big-o/info", getTopicSubtitle("info")],
       ["big-o/variants", emoji.star + "Варианты"],
       ["big-o/structure", "Структуры данных"],
       ["big-o/samples", "Примеры"],

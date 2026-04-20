@@ -1,6 +1,14 @@
 # Установка и настройка
 
+## Установка
+
+```bash
 npm i --save-dev gh-pages
+```
+
+## Настройка
+
+> package.json
 
 ```js
 {

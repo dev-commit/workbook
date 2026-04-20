@@ -1,4 +1,5 @@
 import { IBuildTopics, TThemeTopics, ISidebarTopics } from "docs/types";
+import { getTopicSubtitle, getThemeMenu } from "docs/utils";
 import { emoji } from "docs/constants";
 
 import { rootPath } from "../../constants";
@@ -28,7 +29,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Парадигмы программирования",
     children: [
-      ["programming-paradigms/info", emoji.theory + "Информация"],
+      ["programming-paradigms/info", getTopicSubtitle("info")],
       ["programming-paradigms/imperative", "Императивное"],
       ["programming-paradigms/declarative", "Декларативное"],
       ["programming-paradigms/reactive", "Реактивное"],
@@ -37,7 +38,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Шаблоны проектирования",
     children: [
-      ["mvc/variants", emoji.theory + "Информация"],
+      ["mvc/variants", getTopicSubtitle("info")],
       ["mvc/mvc", "MVC"],
       ["mvc/mvvm", "MVVM"],
     ],

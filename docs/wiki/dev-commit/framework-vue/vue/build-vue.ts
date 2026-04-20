@@ -26,7 +26,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Реактивность",
     children: [
-      ["reactivity/info", emoji.theory + "Информация", "doit"],
+      ["reactivity/info", getTopicSubtitle("info"), "doit"],
       ["reactivity/ref", getThemeMenu("method", ["ref()"])],
       ["reactivity/reactive", getThemeMenu("method", ["reactive()"])],
       ["reactivity/computed", getThemeMenu("method", ["computed()"])],
@@ -45,7 +45,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Директивы",
     children: [
-      ["directives/info", emoji.theory + "Информация"],
+      ["directives/info", getTopicSubtitle("info")],
       ["directives/v-text", getThemeMenu("method", ["v-text", "v-html"])],
       [
         "directives/v-show",

@@ -50,7 +50,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Generics",
     children: [
-      ["generics/info", emoji.theory + "Информация"],
+      ["generics/info", getTopicSubtitle("info")],
       ["generics/main", emoji.fire + "Основное"],
       ["generics/function", "Стрелочная функция"],
       ["generics/object", "Дженерик для объекта"],

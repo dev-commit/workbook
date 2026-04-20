@@ -4,7 +4,13 @@
 
 ## Установка и настройка
 
-npm i --save-dev cypress mochawesome mochawesome-merge mochawesome-report-generator
+```bash
+npm i --save-dev
+  cypress
+  mochawesome
+  mochawesome-merge
+  mochawesome-report-generator
+```
 
 ## package.json
 
@@ -48,6 +54,7 @@ npm i --save-dev cypress mochawesome mochawesome-merge mochawesome-report-genera
     }
 }
 ```
+
 - Для последней версии Cypress, ключ blacklistHosts нужно переименовать в blockHosts
 
 ## Последовательность
@@ -60,17 +67,17 @@ npm i --save-dev cypress mochawesome mochawesome-merge mochawesome-report-genera
 
 ### 1. mochawesome
 
-- 
+-
 - Mochawesome - настраиваемый репортер для использования со средой тестирования Javascript, mocha. Работает вместе с mochawesome-report-generator для создания автономного отчета HTML / CSS для визуализации ваших тестовых прогонов
 
 ### 2. mochawesome-report-generator
 
-- 
+-
 - Marge (mochawesome-report-generator) является аналогом mochawesome, настраиваемого репортера для использования со средой тестирования Javascript, mocha. Мардж берет выходные данные JSON от mochawesome и генерирует полноценный отчет HTML / CSS, который помогает визуализировать ваши наборы тестов
 
 ### 3. mochawesome-merge
 
-- 
+-
 - Объедините несколько отчетов Mochawesome JSON
 
 ## Дополнительные библиотеки (не устанавливал)

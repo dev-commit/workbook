@@ -12,7 +12,10 @@ const topics: ISidebarTopics[] = [
   {
     title: "Клиентское хранилище",
     children: [
-      ["client-storage/web-storage", getThemeMenu("method", ["localStorage", "sessionStorage"])],
+      [
+        "client-storage/web-storage",
+        getThemeMenu("method", ["localStorage", "sessionStorage"]),
+      ],
       ["client-storage/indexed-db", getThemeMenu("method", ["IndexedDB"])],
       ["client-storage/cookie", getThemeMenu("method", ["cookie"])],
     ],
@@ -20,7 +23,10 @@ const topics: ISidebarTopics[] = [
   {
     title: "События",
     children: [
-      ["dom-events/propagation-model", emoji.theory + "Модель распространения событий"],
+      [
+        "dom-events/propagation-model",
+        emoji.theory + "Модель распространения событий",
+      ],
       ["dom-events/propagation-capturing", emoji.star + "1. Фаза погружения"],
       ["dom-events/propagation-target", emoji.star + "2. Фаза цели"],
       ["dom-events/propagation-bubbling", emoji.star + "3. Фаза всплытия"],
@@ -33,16 +39,31 @@ const topics: ISidebarTopics[] = [
   {
     title: "Методы событий",
     children: [
-      ["dom-events-methods/preventDefault", getThemeMenu("method", ["event.preventDefault"])],
-      ["dom-events-methods/stopPropagation", getThemeMenu("method", ["event.stopPropagation"])],
-      ["dom-events-methods/stopImmediatePropagation", getThemeMenu("method", ["event.stopImmediatePropagation"])],
-      ["dom-events-methods/addEventListener", getThemeMenu("method", ["addEventListener", "onclick", "..."])],
+      [
+        "dom-events-methods/preventDefault",
+        getThemeMenu("method", ["event.preventDefault"]),
+      ],
+      [
+        "dom-events-methods/stopPropagation",
+        getThemeMenu("method", ["event.stopPropagation"]),
+      ],
+      [
+        "dom-events-methods/stopImmediatePropagation",
+        getThemeMenu("method", ["event.stopImmediatePropagation"]),
+      ],
+      [
+        "dom-events-methods/addEventListener",
+        getThemeMenu("method", ["addEventListener", "onclick", "..."]),
+      ],
     ],
   },
   {
     title: "Элементы формы",
     children: [
-      ["form/input", getThemeMenu("method", ["&lt;input&gt;", "&lt;select&gt;"])],
+      [
+        "form/input",
+        getThemeMenu("method", ["&lt;input&gt;", "&lt;select&gt;"]),
+      ],
     ],
   },
   {
@@ -50,8 +71,14 @@ const topics: ISidebarTopics[] = [
     children: [
       ["dom-methods/attribute", getThemeMenu("method", ["attributes"])],
       ["dom-methods/class-list", getThemeMenu("method", ["classList"])],
-      ["dom-methods/css", getThemeMenu("method", ["style", "getComputedStyle"])],
-      ["dom-methods/contains", getThemeMenu("method", ["contains", "compareDocumentPosition"])],
+      [
+        "dom-methods/css",
+        getThemeMenu("method", ["style", "getComputedStyle"]),
+      ],
+      [
+        "dom-methods/contains",
+        getThemeMenu("method", ["contains", "compareDocumentPosition"]),
+      ],
       ["dom-methods/media-queries", getThemeMenu("method", ["matchMedia"])],
       ["dom-methods/location", getThemeMenu("method", ["open", "location"])],
     ],
@@ -59,7 +86,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Документ и объекты страницы",
     children: [
-      ["dom/info", emoji.theory + "Информация"],
+      ["dom/info", getTopicSubtitle("info")],
       ["dom/dom", emoji.theory + "DOM"],
       ["dom/bom", emoji.theory + "BOM"],
       ["dom/node", getThemeMenu("method", ["nodeType", "nodeName", "tagName"])],
