@@ -1,22 +1,29 @@
 # Приоритизация
 
+::: tip
+
 - **Приоритизация (Prioritizing)** - выстраивание задач по приоритетам
+  :::
 
-### 6 типов приоритетов
+## 6 типов приоритетов
 
-- 0 - NoWork
-- 1 - SynchronousPriority. Пользовательский ввод. Аналогично с Call Stack V8
-- 2 - TaskPriority. Before Next Tiock
-- 3 - AnimationPriority. Before Next Frame
-- 4 - HighPriority. Наивысший приоритет
-- 5 - LowPriority. Минимальный приоритет
-- 6 - OffscreenPriority. Объекты за пределами экрана
+- `0` - NoWork
+- `1` - SynchronousPriority. Пользовательский ввод. Аналогично с Call Stack V8
+- `2` - TaskPriority. Before Next Tiock
+- `3` - AnimationPriority. Before Next Frame
+- `4` - HighPriority. Наивысший приоритет
+- `5` - LowPriority. Минимальный приоритет
+- `6` - OffscreenPriority. Объекты за пределами экрана
 
-Важные приоритеты
+## Важность приоритетов
+
+**Важные приоритеты**
+
 - Пользовательский ввод
 - Взаимодействие с UI
 - Скроллинг
 - Анимации пользовательских действий
 
-Менее важные приоритеты
+**Менее важные приоритеты**
+
 - Отображение большой части контента, загруженной по сети

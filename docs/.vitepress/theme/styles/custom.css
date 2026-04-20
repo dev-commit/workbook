@@ -117,6 +117,38 @@
   content: "📑 ";
 }
 
+/*------------------------------------------
+⭐️ Левое меню
+------------------------------------------*/
+.vp-sidebar {
+  padding: 0 !important;
+}
+.vp-sidebar-search {
+  background-color: #fff;
+  padding: 10px !important;
+  margin: 0 !important;
+}
+
+.vp-sidebar-items {
+  background-color: #fff;
+}
+.vp-sidebar-items .group {
+  width: 100%;
+  padding: 0 !important;
+}
+
+.VPSidebarItem {
+  padding: 0 !important;
+  margin: 0;
+  width: 100%;
+}
+
+.VPSidebarItem .items .VPSidebarItem.has-active {
+  outline: 1px solid blue;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+}
+
 /* FIXME: Проверить */
 
 /* Активная ссылка в навбаре (тема по умолчанию использует --vp-c-brand-1) */

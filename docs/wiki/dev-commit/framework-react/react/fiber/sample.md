@@ -1,16 +1,18 @@
 # Пример
 
+## Постановка задачи
+
 - Задача: в компоненте List есть кнопка и список с цифрами. При нажатии на кнопку, каждое число возводится в квадрат.
 
-<!-- <img src="../@img/reconciler.png" width="650px"/> -->
+<img src="../@img/fiber-reconciler.png" width="650px"/>
 
-- Fiber - объект
+- _Fiber - объект_
 - У каждого компонента есть свой Fiber
 
 ```js
 // Для связи с инстансом
 {
-	stateNode
+  stateNode;
 }
 ```
 
@@ -18,8 +20,8 @@
 // Fiber знает про другие Fibers в дереве
 // Отношения, которые отслеживает Fiber
 {
-	child
-	return
-	sibling
+  child;
+  return;
+  sibling;
 }
 ```
