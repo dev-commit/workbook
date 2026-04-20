@@ -1,3 +1,16 @@
+@font-face {
+  font-family: "Roboto-Light";
+  src: url("../fonts/Roboto/Roboto-Light.ttf");
+}
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("../fonts/Roboto/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "Roboto-Medium";
+  src: url("../fonts/Roboto/Roboto-Medium.ttf");
+}
+
 /*------------------------------------------
 ⭐️ Контент на странице
 ------------------------------------------*/
@@ -122,6 +135,9 @@
 ------------------------------------------*/
 .vp-sidebar {
   padding: 0 !important;
+  font-family: Roboto-Regular;
+  color: #000;
+  font-weight: 300;
 }
 .vp-sidebar-search {
   background-color: #fff;
@@ -131,10 +147,25 @@
 
 .vp-sidebar-items {
   background-color: #fff;
+  padding: 10px !important;
 }
 .vp-sidebar-items .group {
   width: 100%;
   padding: 0 !important;
+  border: none !important;
+  margin-bottom: 10px;
+}
+
+.vp-sidebar-items .group:last-child {
+  margin-bottom: 0;
+}
+
+.vp-sidebar-items .group h2 {
+  background-color: rgb(248, 248, 248);
+  border-radius: 8px;
+  font-family: Roboto-Medium;
+  padding: 4px 10px;
+  margin-bottom: 4px;
 }
 
 .VPSidebarItem {
@@ -143,8 +174,11 @@
   width: 100%;
 }
 
+.VPSidebarItem .items .VPSidebarItem {
+}
+
 .VPSidebarItem .items .VPSidebarItem.has-active {
-  outline: 1px solid blue;
+  outline: 1px solid #8e8ed8;
   border-radius: 5px;
   background-color: #f4f4f4;
 }
