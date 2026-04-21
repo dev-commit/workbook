@@ -4,8 +4,8 @@ import { emoji } from "docs/constants";
 
 import { rootPath } from "../../constants";
 
-const path = rootPath + "common/git-repo/";
-const title = "Git Repo";
+const path = rootPath + "common/git-providers/";
+const title = "Git Providers";
 const theme: TThemeTopics = "actual";
 
 const topics: ISidebarTopics[] = [

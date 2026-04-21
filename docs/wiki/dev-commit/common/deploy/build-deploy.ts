@@ -13,7 +13,7 @@ const topics: ISidebarTopics[] = [
     title: "Vercel",
     children: [
       ["vercel/info", getTopicSubtitle("info")],
-      ["vercel/deploy", "Деплой"],
+      ["vercel/deploy", emoji.star + "Деплой"],
     ],
   },
   {
@@ -21,7 +21,7 @@ const topics: ISidebarTopics[] = [
     children: [
       ["github-pages/info", getTopicSubtitle("info")],
       ["github-pages/install", getTopicSubtitle("install")],
-      ["github-pages/deploy", "Деплой"],
+      ["github-pages/deploy", emoji.star + "Деплой"],
       ["github-pages/deploy-react-cra", "Деплой React + Webpack (CRA)"],
       ["github-pages/deploy-react-vite", "Деплой React + Vite (Vite Template)"],
     ],
@@ -30,7 +30,7 @@ const topics: ISidebarTopics[] = [
     title: "Heroku",
     children: [
       ["heroku/info", getTopicSubtitle("info")],
-      ["heroku/algoritm", "Алгоритм"],
+      ["heroku/deploy", emoji.star + "Деплой"],
       ["heroku/use", getTopicSubtitle("use")],
     ],
   },
