@@ -63,6 +63,6 @@
 **`constructor(props)`** - вызывается при создании компонента
 
 > - `props` - props
-> - _return_ null
+> - _return_ - null
 
 :::

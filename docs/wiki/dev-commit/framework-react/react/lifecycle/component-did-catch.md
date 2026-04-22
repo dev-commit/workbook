@@ -1,7 +1,15 @@
 # componentDidCatch()
 
+::: danger
+
+**`name`** - comment
+
+> - `props` - props
+
+:::
+
 ОБРАБОТКА ОШИБОК если произошла ошибка в процессе рендеринга, методе жизненного цикла или конструкторе любого дочернего компонента
-    
+
 перехваченная ошибка
 объект с ключом componentStack, содержащий информацию о компоненте, в котором произошла ошибка
 
@@ -12,15 +20,15 @@
 - В случае ошибки можно рендерить запасной интерфейс с помощью getDerivedStateFromError()
 
 ```js
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default class App extends Component {
-	componentDidCatch(error, info) {
-		// Можно также сохранить информацию об ошибке в соответствующую службу журнала ошибок
-		logErrorToMyService(error, info);
-	}
-	render() {
-		//
-	}
+  componentDidCatch(error, info) {
+    // Можно также сохранить информацию об ошибке в соответствующую службу журнала ошибок
+    logErrorToMyService(error, info);
+  }
+  render() {
+    //
+  }
 }
 ```
