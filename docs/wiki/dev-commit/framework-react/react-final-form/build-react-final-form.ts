@@ -5,7 +5,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "framework-react/react-final-form/";
 const title = "React Final Form";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = "react";
 
 const topics: ISidebarTopics[] = [
   {

@@ -2,7 +2,9 @@
 
 ## Установка
 
+```bash
 npm i --save final-form react-final-form
+```
 
 ## Пакеты
 
@@ -10,14 +12,14 @@ npm i --save final-form react-final-form
 
 ```js
 {
-    "dependencies": {
-        "final-form": "4.20.2",
-        "final-form-arrays": "3.0.2",
-        "final-form-calculate": "1.3.2",
-        "final-form-set-field-data": "1.0.2",
+  "dependencies": {
+    "final-form": "4.20.2",
+    "final-form-arrays": "3.0.2",
+    "final-form-calculate": "1.3.2",
+    "final-form-set-field-data": "1.0.2",
 
-        "react-final-form": "6.5.3",
-        "react-final-form-arrays": "3.1.3",
-    }
+    "react-final-form": "6.5.3",
+    "react-final-form-arrays": "3.1.3",
+  }
 }
 ```

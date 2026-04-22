@@ -5,7 +5,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "framework-react/reselect/";
 const title = "Reselect";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = "react";
 
 const topics: ISidebarTopics[] = [
   {

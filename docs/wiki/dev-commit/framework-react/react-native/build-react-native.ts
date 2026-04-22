@@ -5,7 +5,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "framework-react/react-native/";
 const title = "React Native";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = null;
 
 const topics: ISidebarTopics[] = [
   {

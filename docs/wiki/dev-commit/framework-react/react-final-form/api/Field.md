@@ -1,79 +1,76 @@
 # `<Field />`
 
-## `Оборачивание компонента в<Field />`
+## Оборачивание компонента в `<Field />`
 
 ### Код
 
-```js
+```jsx
 import { Field } from 'react-final-form';
 
 const App = () = {
-    return (
-        <Field name={name}>
-            {(fieldProps) => {
-                // eslint-disable-next-line no-console
-                console.log('fieldProps', fieldProps);
-
-                return (
-                    <Component />
-                );
-            }}
-        </Field>
-    );
+  return (
+    <Field name={name}>
+      {(fieldProps) => {
+        // eslint-disable-next-line no-console
+        console.log('fieldProps', fieldProps);
+        return <Component />;
+      }}
+    </Field>
+  );
 }
 ```
 
-### СтруктураfieldProps
+::: details Структура fieldProps
 
 ```js
 {
-    "input": {
-        "name": "documentIds",
-        "value": ""
-    },
-    "meta": {
-        "active": false,
-        "data": {},
-        "dirty": false,
-        "dirtySinceLastSubmit": false,
-        "invalid": false,
-        "modified": false,
-        "modifiedSinceLastSubmit": false,
-        "pristine": true,
-        "submitFailed": false,
-        "submitSucceeded": false,
-        "submitting": false,
-        "touched": false,
-        "valid": true,
-        "validating": false,
-        "visited": false
-    }
+  "input": {
+    "name": "documentIds",
+    "value": ""
+  },
+  "meta": {
+    "active": false,
+    "data": {},
+    "dirty": false,
+    "dirtySinceLastSubmit": false,
+    "invalid": false,
+    "modified": false,
+    "modifiedSinceLastSubmit": false,
+    "pristine": true,
+    "submitFailed": false,
+    "submitSucceeded": false,
+    "submitting": false,
+    "touched": false,
+    "valid": true,
+    "validating": false,
+    "visited": false
+  }
 }
 ```
 
+:::
+
 ### Пример
 
-```js
+```jsx
 import { Field } from 'react-final-form';
 
 const App = () = > {
-    return (
-        <Field name={name}>
-            {(fieldProps) => {
-                const { input } = fieldProps;
-                const { onChange } = input;
+  return (
+    <Field name={name}>
+      {(fieldProps) => {
+        const { input } = fieldProps;
+        const { onChange } = input;
 
-                // Если необходимо добавить собственную логику
-                const handleChange = (e) => {
-                    const result = e.target.value;
-                    onChange(result);
-                };
+        // Если необходимо добавить собственную логику
+        const handleChange = (e) => {
+          const result = e.target.value;
+          onChange(result);
+        };
 
-                return (
-                    <input onChange={handleChange} />
-                );
-            
-        </Field>
-    );
+        return <input onChange={handleChange} />;
+      }}
+    </Field>
+  );
 }
 ```

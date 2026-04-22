@@ -5,7 +5,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "framework-react/react-hook-form/";
 const title = "React Hook Form";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = "react";
 
 const topics: ISidebarTopics[] = [
   {

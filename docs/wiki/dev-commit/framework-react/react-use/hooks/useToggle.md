@@ -1,18 +1,17 @@
 # useToggle
 
+## Пример
+
 ```js
-import { useToggle } from 'react-use';
+import { useToggle } from "react-use";
 
 const App = () => {
-    const [isOpened, toggle] = useToggle(false);
+  const [isOpened, toggle] = useToggle(false);
 
-    return (
-        <Modal
-            isOpen={isOpened}
-            onClick={toggle}
-        >
-            Hello
-        </Modal>
-    )
-}
+  return (
+    <Modal isOpen={isOpened} onClick={toggle}>
+      Hello
+    </Modal>
+  );
+};
 ```
