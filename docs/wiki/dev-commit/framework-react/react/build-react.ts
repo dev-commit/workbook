@@ -43,7 +43,11 @@ const topics: ISidebarTopics[] = [
     title: "Lifecycle",
     children: [
       ["lifecycle/info", getTopicSubtitle("info")],
-      ["lifecycle/constructor", getThemeMenu("method", ["constructor"])],
+      [
+        "lifecycle/constructor",
+        getThemeMenu("method", ["constructor"]),
+        "check",
+      ],
       [
         "lifecycle/get-derived-state-from-props",
         getThemeMenu("method", ["getDerivedStateFromProps"]),

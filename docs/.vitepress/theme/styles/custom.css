@@ -130,6 +130,25 @@
   content: "📑 ";
 }
 
+.custom-block.danger {
+  border: none;
+  background-color: #fff;
+  border-left: 4px solid rgba(var(--color-violet-blue), 0.5);
+  background-color: rgba(var(--color-violet-blue), 0.07);
+  border-radius: 0;
+  font-size: 16px;
+  color: var(--vp-c-text-1);
+}
+.custom-block.danger .custom-block-title {
+  display: none;
+}
+.custom-block.danger code {
+  background-color: #fff;
+  color: rgba(var(--color-violet-medium), 0.92);
+  border: 1px solid rgba(var(--color-violet-medium), 0.28);
+  border-radius: 6px;
+}
+
 /*------------------------------------------
 ⭐️ Левое меню
 ------------------------------------------*/
