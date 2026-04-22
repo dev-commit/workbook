@@ -34,6 +34,10 @@ const topics: ISidebarTopics[] = [
       ["heroku/use", getTopicSubtitle("use")],
     ],
   },
+  {
+    title: "Chromatic",
+    children: [["chromatic/info", getTopicSubtitle("info")]],
+  },
 ];
 
 export default { topics, path, title, theme } satisfies IBuildTopics;

@@ -5,10 +5,14 @@ import { emoji } from "docs/constants";
 import { rootPath } from "../../constants";
 
 const path = rootPath + "common/npm/";
-const title = "NPM | Yarn";
+const title = "NPM | Yarn ...";
 const theme: TThemeTopics = "actual";
 
 const topics: ISidebarTopics[] = [
+  {
+    title: "Основное",
+    children: [["main/compare", "Таблица сравнения"]],
+  },
   {
     title: "NPM",
     children: [

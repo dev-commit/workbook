@@ -1,8 +1,8 @@
 # Деплой
 
-## 1. GitHub + Vercel Dashboard
+## Интеграция
 
-### Алгоритм
+### 1. GitHub + Vercel Dashboard
 
 1. Загрузить проект на GitHub / GitLab / Bitbucket
 2. Авторизоваться в Vercel и перейти на _"Projects"_
@@ -12,50 +12,48 @@
 6. Запустится процесс деплоя -> Сообщение об успешном деплое -> Кнопка "Continue to Dashboard"
 7. При каждом push в main ветку репозитория, будет пересобираться проект
 
-### Настройки билда (Шаг 5)
+### 2. Vercel CLI
+
+**Установка Vercel**
+
+```bash
+npm i -g vercel
+sudo npm i -g vercel # Для MacOS
+```
+
+**Авторизация и деплой**
+
+> Из корня проекта
+
+```bash
+vercel login # Открывает сайт для авторазации
+vercel # Деплой (будет несколько вопросов по настройке, деплой будет с текущей ветки)
+vercel --prod # Для продакшн-деплоя
+```
+
+## Настройки
+
+### Настройки билда из Dashboard
+
+<v-breadcrumbs :items="['Выбрать проект', 'Settings', 'Build and Deploymant']" />
 
 - _Build Command_: `npm run build`
 - _Output Directory_: `dist`
 
-## 2. Vercel CLI
+### Переменные окружения из Dashboard
 
-### Команды
+<v-breadcrumbs :items="['Выбрать проект', 'Settings', 'Environment Variables']" />
+- Добавить все ключи из .env
+- После изменения env нужен *Redeploy*
 
-В корне проекта:
+### SPA-роутинг (React Router)
 
-```bash
-npm i -g vercel
-vercel login
-vercel
-```
-
-Для продакшн-деплоя:
-
-```bash
-vercel --prod
-```
-
----
-
-## Важное для SPA-роутинга (React Router)
-
-Если у тебя client-side routes (например, `/about`), при прямом открытии URL может быть 404 — нужно правило “всё на `index.html`”.
-
-### Как сделать на Vercel
-
-- Обычно Vercel сам справляется для многих шаблонов, но если нет — добавь `vercel.json`:
+- Если в проекте client-side routes (например, `/about`), при прямом открытии URL может быть 404 — нужно правило “всё на `index.html`”.
+- Обычно Vercel сам справляется для многих шаблонов, но если нет — нужно добавить`vercel.json`
+- Файл кладётся в корень проекта, рядом с `package.json`
 
 ```json
 {
   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
 ```
-
-Файл кладётся **в корень** проекта, рядом с `package.json`
-
----
-
-## Переменные окружения
-
-- В Vercel Project → **Settings → Environment Variables**
-- После изменения env обычно нужен **Redeploy**.
