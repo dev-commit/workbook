@@ -5,14 +5,12 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "js/ramda/";
 const title = "Ramda";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = null;
 
 const topics: ISidebarTopics[] = [
   {
     title: "Методы",
-    children: [
-      ["methods/path", getThemeMenu("method", ["path", "pathOr"])],
-    ],
+    children: [["methods/path", getThemeMenu("method", ["path", "pathOr"])]],
   },
 ];
 

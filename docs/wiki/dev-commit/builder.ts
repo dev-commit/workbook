@@ -41,13 +41,12 @@ import wikiExpress from "./node-js/express/build-express";
 import wikiNestJs from "./node-js/nest-js/build-nest-js";
 import wikiMongodb from "./node-js/mongodb/build-mongodb";
 import wikiBlockchain from "./common/blockchain/build-blockchain";
-import wikiCiCd from "./common/ci-cd/build-ci-cd";
 import wikiCmd from "./common/cmd/build-cmd";
 import wikiCompilation from "./common/compilation/build-compilation";
 import wikiEnglish from "./system/english/build-english";
 import wikiLinux from "./common/linux/build-linux";
 import wikiMacos from "./common/macos/build-macos";
-import wikiNpm from "./common/npm/build-npm";
+import wikiPackageManagers from "./common/package-managers/build-package-managers";
 import wikiWebpack from "./common/webpack/build-webpack";
 import wikiWindows from "./common/windows/build-windows";
 import wikiGit from "./common/git/build-git";
@@ -56,7 +55,7 @@ import wikiLinters from "./common/linters/build-linters";
 import wikiTypeScript from "./common/typescript/build-typescript";
 import wikiVite from "./common/vite/build-vite";
 import wikiCanvas from "./js/canvas/build-canvas";
-import wikiDayjs from "./js/dayjs/build-dayjs";
+import wikiDayJs from "./js/day-js/build-day-js";
 import wikiEventLoop from "./js/event-loop/build-event-loop";
 import wikiFormik from "./framework-react/formik/build-formik";
 import wikiJavaScript from "./js/js/build-js";
@@ -155,7 +154,7 @@ export const NAV: IHeaderMenuNav[] = [
       null,
       wikiCanvas,
       wikiWebComponents,
-      wikiDayjs,
+      wikiDayJs,
       wikiLodash,
       wikiRamda,
     ]),
@@ -201,17 +200,17 @@ export const NAV: IHeaderMenuNav[] = [
     children: getNav([
       wikiIde,
       wikiAi,
-      wikiDeploy,
-      wikiCiCd,
-      wikiCmd,
-      wikiGit,
-      wikiGitProviders,
       wikiTypeScript,
       wikiLinters,
       null,
+      wikiDeploy,
+      wikiPackageManagers,
+      wikiCmd,
+      wikiGit,
+      wikiGitProviders,
+      null,
       wikiVite,
       wikiWebpack,
-      wikiNpm,
       wikiBlockchain,
       wikiCompilation,
       null,
@@ -279,9 +278,8 @@ export const SIDEBAR = getSidebar([
   wikiTypeScript,
   wikiVite,
   wikiCmd,
-  wikiNpm,
+  wikiPackageManagers,
   wikiWebpack,
-  wikiCiCd,
   wikiLinux,
   wikiMacos,
   wikiWindows,
@@ -313,7 +311,7 @@ export const SIDEBAR = getSidebar([
   wikiYup,
   wikiZustand,
   wikiCanvas,
-  wikiDayjs,
+  wikiDayJs,
   wikiEventLoop,
   wikiAsync,
   wikiFormik,

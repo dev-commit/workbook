@@ -6,7 +6,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "framework-react/react/";
 const title = "React";
-const theme: TThemeTopics = null;
+const theme: TThemeTopics = "actual";
 
 const topics: ISidebarTopics[] = [
   {

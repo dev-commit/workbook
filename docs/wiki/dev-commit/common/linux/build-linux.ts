@@ -6,7 +6,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "common/linux/";
 const title = "Linux";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = null;
 
 const topics: ISidebarTopics[] = [
   {
@@ -24,7 +24,6 @@ const topics: ISidebarTopics[] = [
       ["ubuntu/nodejs", emoji.libs + "Node.js"],
       ["ubuntu/npm", emoji.libs + "NPM"],
       ["ubuntu/setting", "Настройка"],
-      ["ubuntu/other", "Прочее"],
     ],
   },
 ];

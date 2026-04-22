@@ -10,6 +10,16 @@ const theme: TThemeTopics = "tech";
 
 const topics: ISidebarTopics[] = [
   {
+    title: "Основы",
+    children: [
+      ["ci-cd/info", getTopicSubtitle("info")],
+      ["ci-cd/continuous-integration", "1. Continuous Integration"],
+      ["ci-cd/continuous-delivery", "2. Continuous Delivery"],
+      ["ci-cd/continuous-deployment", "3. Continuous Deployment"],
+      ["ci-cd/software-deployment", "Software Deployment"],
+    ],
+  },
+  {
     title: "Vercel",
     children: [
       ["vercel/info", getTopicSubtitle("info")],

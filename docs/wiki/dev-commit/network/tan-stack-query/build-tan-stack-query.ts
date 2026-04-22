@@ -5,7 +5,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "network/tan-stack-query/";
 const title = "TanStack Query";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = null;
 
 const topics: ISidebarTopics[] = [
   {

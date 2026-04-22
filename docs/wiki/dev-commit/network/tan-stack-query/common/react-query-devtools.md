@@ -1,11 +1,9 @@
 # ReactQuery Devtools
 
-```js
-import { ReactQueryDevtools } from 'react-query/devtools';
+```js{4}
+import { ReactQueryDevtools } from "react-query/devtools";
 
 const App = () => {
-    return (
-        <ReactQueryDevtools initialIsOpen />
-    )
-}
+  return <ReactQueryDevtools initialIsOpen />;
+};
 ```

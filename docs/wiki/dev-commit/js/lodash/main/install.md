@@ -2,16 +2,21 @@
 
 ## Установка
 
+```bash
 npm i --save lodash
+```
 
-## TypeScript типы для пакетов
+## TypeScript
 
-#### Все типы
+**Все типы**
 
+```bash
 npm i --save-dev @types/lodash
+```
 
-#### Типы для конкретного метода
+**Типы для конкретного метода**
 
+```bash
 npm i --save-dev @types/lodash.debounce
 npm i --save-dev @types/lodash.difference
 npm i --save-dev @types/lodash.flow
@@ -22,3 +27,4 @@ npm i --save-dev @types/lodash.merge
 npm i --save-dev @types/lodash.omit
 npm i --save-dev @types/lodash.snakecase
 npm i --save-dev @types/lodash.throttle
+```
