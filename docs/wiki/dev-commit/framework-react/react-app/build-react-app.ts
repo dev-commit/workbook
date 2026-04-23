@@ -20,10 +20,6 @@ const topics: ISidebarTopics[] = [
       ["file-structure/services", "📂 src › 📂 services"],
     ],
   },
-  {
-    title: "Libs",
-    children: [["libs/markdown", "Markdown"]],
-  },
 ];
 
 export default { topics, path, title, theme } satisfies IBuildTopics;

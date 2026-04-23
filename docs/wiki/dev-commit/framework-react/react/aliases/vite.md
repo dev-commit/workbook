@@ -1,14 +1,16 @@
 # Vite
 
-## Vite Config
+## Код
 
-vite.config.ts
+### Vite Config
 
-```js
-import path from "path"
+> vite.config.ts
 
-import { defineConfig } from "vite"
-import react from "@vitejs/plugin-react"
+```js{8-12}
+import path from "path";
+
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
@@ -17,17 +19,20 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-
-})
+});
 ```
-Если в проекте есть TypeScript, то попросит установить @types/node для path
 
+- Если в проекте есть TypeScript, то попросит установить @types/node для path
+
+```bash
 npm i --save-dev @types/node
+```
 
-## TS Config
+### TS Config
 
-Если есть файл tsconfig.app.json, то настройки нужно указать в нем
-tsconfig.json
+- Если есть файл tsconfig.app.json, то настройки нужно указать в нем
+
+> tsconfig.json
 
 ```json
 {
@@ -37,6 +42,6 @@ tsconfig.json
       "@/src/*": ["src/*"],
       "@/components/*": ["src/components/*"]
     }
-  },
+  }
 }
 ```

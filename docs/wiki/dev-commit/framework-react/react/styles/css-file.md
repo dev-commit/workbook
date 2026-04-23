@@ -1,9 +1,11 @@
 # Отдельный CSS файл
 
-```js
-import './index.css';
+## Пример
 
-render() {
-	return (<div className="header"></div>);
-}
+```js
+import "./index.css";
+
+const App = () => {
+  return <div className="header"></div>;
+};
 ```

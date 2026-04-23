@@ -1,38 +1,33 @@
 # classnames
 
+## Установка
+
+```bash
 npm i --save classnames
-
-## Импорт
-
-```js
-import cn from 'classnames';
 ```
 
-## Примеры
+## Использование
 
-### Простой пример
+### Базовый пример
 
-```js
-<div className={cn(classes.first, classes.second)}</div>
-```
+```jsx
+import cn from "classnames";
 
-### Использование CSS-in-JS
+import styles from "./App.module.css";
 
-```js
-import { withStyles } from '@material-ui/core/styles';
-import styles from './styles';
-
-const App = ({ classes }) => (
-    <div className={classes.container}></div>
-);
-
-export default withStyles(styles)(App);
+const App = () => {
+  return <div className={cn(styles.first, styles.second)}></div>;
+};
 ```
 
 ### Применение условий
 
-```js
-const isError = true
+```jsx
+const App = () => {
+  const isError = true;
 
-<div className={cn(classes.first, { [classes.error]: isError })}></div>
+  return (
+    <div className={cn(classes.first, { [classes.error]: isError })}></div>
+  );
+};
 ```

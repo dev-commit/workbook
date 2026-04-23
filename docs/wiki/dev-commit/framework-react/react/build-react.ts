@@ -6,7 +6,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "framework-react/react/";
 const title = "React";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = "react";
 
 const topics: ISidebarTopics[] = [
   {
@@ -131,7 +131,13 @@ const topics: ISidebarTopics[] = [
   },
   {
     title: "Libs",
-    children: [["libs/classnames", getThemeMenu("packages", ["classnames"])]],
+    children: [
+      ["libs/classnames", getThemeMenu("packages", ["classnames"])],
+      [
+        "libs/markdown",
+        getThemeMenu("packages", ["react-markdown", "markdown-to-jsx"]),
+      ],
+    ],
   },
 ];
 
