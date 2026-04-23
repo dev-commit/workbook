@@ -2,23 +2,19 @@
 
 ::: danger
 
-**`name`** - comment
+**`componentDidUpdate(prevProps, prevState, snapshot)`** - _обновление_ (update) вызывается сразу после обновления (изменение пропсов или состояния: setState). Не вызывается при первом рендере. Позволяет работать с DOM при обновлении компонента
 
-> - `props` - props
+> - `prevProps` - предыдущий prop
+> - `prevState` - предыдущий state
+> - `snapshot` - snapshot
 
 :::
 
-ОБНОВЛЕНИЕ вызывается сразу после обновления (изменение пропсов или состояния: setState). Не вызывается при первом рендере. Позволяет работать с DOM при обновлении компонента
-
-предыдущий prop
-предыдущий state
-snapshot
-
-- Необходимо делать сравнение пропсов: если не сделать - будет бесконечный цикл: render -> componentDidUpdate -> render ...
+- Необходимо делать сравнение пропсов: если не сделать - будет бесконечный цикл: `render` -> `componentDidUpdate` -> `render` ...
 
 ```js
 componentDidUpdate(prevProps) {
-	// сравнение пропсов
+	// Сравнение пропсов
 	if (this.props.userID !== prevProps.userID) {
 		this.fetchData(this.props.userID);
 	}

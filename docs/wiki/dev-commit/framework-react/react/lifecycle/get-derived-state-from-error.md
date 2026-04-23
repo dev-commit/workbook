@@ -2,18 +2,16 @@
 
 ::: danger
 
-**`name`** - comment
+**`getDerivedStateFromError(error)`** - вызывается после возникновения ошибки у компонента-потомка
 
-> - `props` - props
+> - `error` - ошибка
+> - _return_ - значение для обновления состояния
 
 :::
 
-    вызывается после возникновения ошибки у компонента-потомка
+## Пример
 
-ошибка
-Возвращает значение для обновления состояния
-
-```js
+```js{8}
 import React, { Component } from "react";
 
 export default class App extends Component {

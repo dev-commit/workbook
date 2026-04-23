@@ -4,8 +4,8 @@
 
 **`getSnapshotBeforeUpdate(prevProps, prevState)`** - вызывается прямо перед этапом «фиксирования» (например, перед добавлением в DOM). Он позволяет компоненту брать некоторую информацию из DOM (например, положение прокрутки) перед её возможным изменением
 
-> - `prevProps` - prevProps
-> - `prevState` - prevState
+> - `prevProps` - предыдущий prop
+> - `prevState` - предыдущий state
 
 :::
 
