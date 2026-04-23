@@ -103,7 +103,6 @@ const topics: ISidebarTopics[] = [
       ],
       ["processing-data-output/conditional-rendering", "Условный рендеринг"],
       ["processing-data-output/lists-and-keys", "Списки и ключи"],
-      ["processing-data-output/error-boundaries", "Предохранители"],
     ],
   },
   {
@@ -132,7 +131,7 @@ const topics: ISidebarTopics[] = [
   },
   {
     title: "Libs",
-    children: [["libs/classnames", getThemeMenu("method", ["classnames"])]],
+    children: [["libs/classnames", getThemeMenu("packages", ["classnames"])]],
   },
 ];
 
