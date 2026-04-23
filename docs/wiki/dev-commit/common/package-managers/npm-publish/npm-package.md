@@ -1,57 +1,6 @@
-# Публикация пакета
+# Настройки NPM-пакета
 
-## Команды
-
-```bash
-npm init    # Инициализация проекта
-npm login   # Вход в аккаунт (при наборе пароля, он не будет показан)
-npm whoami  # Проверить текущий логин
-npm publish # Публикация проекта
-```
-
-## Использование в проекте
-
-**Установка**
-
-```bash
-npm i @tony/ui-kit@0.0.1
-```
-
-**Код**
-
-::: code-group
-
-```tsx{1} [src/App.tsx]
-import { UiButton } from "@tony/ui-kit";
-
-const App = () => {
-  return <UiButton title="Hello" />;
-};
-```
-
-```json{3} [package.json]
-{
-  "dependencies": {
-    "@tony/ui-kit": "^0.0.1"
-  }
-}
-```
-
-```ts{4-6} [vite.config.ts]
-export default defineConfig({
-  plugins: [react()],
-  // Новая секция (для работы CSS-модулей)
-  optimizeDeps: {
-    exclude: ["@tony/ui-kit"],
-  },
-});
-```
-
-:::
-
-## Настройки NPM-пакета
-
-### Конфиги
+## Конфиги
 
 ::: code-group
 
@@ -92,6 +41,7 @@ export default defineConfig({
   },
   // Осталось без изменений
   "devDependencies": {
+    // Оставить "react" и "react-dom" если есть Dev-сборка/Тесты/StoryBook
     // [!code --]
     "react": "^19.2.5",
     // [!code --]
@@ -144,38 +94,48 @@ export default defineConfig({
 ```
 
 ```ts [tsconfig.build.json]
+// Новый конфиг, который вызывается при "build"
 {
   "compilerOptions": {
+    // Целевая версия JS
     "target": "ES2023",
+    // Набор встроенных lib-типов
     "lib": ["ES2023", "DOM"],
+    // Тип модулей для анализа импорта/экспорта при генерации деклараций
     "module": "ESNext",
+    // Резолвинг модулей в стиле бандлера
     "moduleResolution": "Bundler",
+    // Подмешивает типы Vite (например, для импорта *.module.css и import.meta.env)
+    "types": ["vite/client"],
+    // JSX-трансформ React 17+ (автоматический runtime), чтобы TS корректно типизировал TSX
     "jsx": "react-jsx",
+    // Включает генерацию .d.ts для публикации типов пакета
     "declaration": true,
+    // Генерирует только .d.ts (JS собирает Vite), чтобы не получать второй “JS билд” от tsc
     "emitDeclarationOnly": true,
+    // Генерирует .d.ts.map для удобства навигации по типам в IDE
     "declarationMap": true,
+    // Корневая папка исходников — фиксирует структуру путей в выходных .d.ts
     "rootDir": "src",
+    // Куда складывать выходные .d.ts
     "outDir": "dist",
+    // Удаляет из .d.ts символы, помеченные /** @internal */
     "stripInternal": true,
+    // Ускоряет сборку: не проверяет типы зависимостей в node_modules
     "skipLibCheck": true
   },
   "include": ["src"],
   "exclude": ["src/**/*.test.*", "src/**/*.stories.*"]
 }
-
 ```
 
 :::
 
-### Директория src
+## Директория src
 
 > src/
 
 ::: code-group
-
-```ts [ite-env.d.ts]
-/// <reference types="vite/client" />
-```
 
 ```ts [index.ts]
 export { UiButton } from "./ui/UiButton/UiButton";
@@ -184,7 +144,9 @@ export type { UiButtonProps } from "./ui/UiButton/UiButton";
 
 :::
 
-### Директория src/ui/UiButton
+## Директория src/ui/UiButton
+
+- Реализован обычный компонент
 
 > src/ui/UiButton/
 
