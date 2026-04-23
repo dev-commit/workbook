@@ -126,19 +126,13 @@ const topics: ISidebarTopics[] = [
   {
     title: "Прочее",
     children: [
-      ["common/props", getThemeMenu("method", ["props"])],
-      ["common/components", "Компоненты"],
       ["common/jsx", "JSX"],
       ["common/react-developer-tools", "React Developer Tools"],
-      ["common/component-class", emoji.code + "Структура на Class"],
-      ["common/samples", emoji.code + "Примеры"],
     ],
   },
   {
-    title: "React Plugins",
-    children: [
-      ["react-plugins/classnames", getThemeMenu("method", ["classnames"])],
-    ],
+    title: "Libs",
+    children: [["libs/classnames", getThemeMenu("method", ["classnames"])]],
   },
 ];
 

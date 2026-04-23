@@ -61,10 +61,6 @@ const topics: ISidebarTopics[] = [
       ],
     ],
   },
-  {
-    title: "Прочее",
-    children: [["other/questions", emoji.theory + "Вопросы"]],
-  },
 ];
 
 export default { topics, path, title, theme } satisfies IBuildTopics;
