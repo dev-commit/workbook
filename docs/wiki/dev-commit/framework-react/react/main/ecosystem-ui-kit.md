@@ -2,12 +2,12 @@
 
 ## Готовые компоненты
 
-- https://mantine.dev/ - Mantine UI (можно использовать и как headless)
-- https://chakra-ui.com/ - Chakra UI
+- https://mui.com/ - Material UI (styling-система CSS-in-JS `@emotion`) ✅
+- https://chakra-ui.com/ - Chakra UI (styling-система CSS-in-JS `@emotion`) ✅
+- https://mantine.dev/ - Mantine UI (styling-система CSS Modules + CSS variables, можно использовать и как Headless) ✅
 - https://www.heroui.com/ - HeroUI
 - https://park-ui.com/ - Park UI (основана на Ark UI, связан с Chakra UI)
 - https://vercel.com/geist/i - Vercel Geist Design System (стильно, не так много компонентов)
-- https://mui.com/ - Material UI (заточена под CSS-in-JS)
 - https://ant.design/ - Ant Design (были проблемы с производительностью)
 - https://www.radix-ui.com/ - Radix UI (раздел “themes” - стилизованный компоненты, раздел “primitives” - unstyled)
 

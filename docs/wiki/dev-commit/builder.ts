@@ -101,6 +101,8 @@ import wikiRamda from "./js/ramda/build-ramda";
 import wikiV8 from "./js/v8/build-v8";
 import wikiWebComponents from "./js/web-components/build-web-components";
 import wikiDeploy from "./common/deploy/build-deploy";
+import wikiChakraUi from "./framework-react/chakra-ui/build-chakra-ui";
+import wikiMantineUi from "./framework-react/mantine-ui/build-mantine-ui";
 
 export const NAV: IHeaderMenuNav[] = [
   {
@@ -166,11 +168,9 @@ export const NAV: IHeaderMenuNav[] = [
       wikiReactApi,
       wikiReactRouter,
       null,
-      wikiNextJs,
-      wikiReactNative,
+      wikiMantineUi,
+      wikiChakraUi,
       wikiMaterialUi,
-      wikiReactFlow,
-      wikiReactUse,
       null,
       wikiReactHookForm,
       wikiFormik,
@@ -183,6 +183,11 @@ export const NAV: IHeaderMenuNav[] = [
       wikiReduxSaga,
       wikiReselect,
       wikiZustand,
+      null,
+      wikiNextJs,
+      wikiReactNative,
+      wikiReactFlow,
+      wikiReactUse,
     ]),
   },
   {
@@ -355,4 +360,6 @@ export const SIDEBAR = getSidebar([
   wikiProgramming,
   wikiAgile,
   wikiDeploy,
+  wikiChakraUi,
+  wikiMantineUi,
 ]);

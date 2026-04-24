@@ -4,7 +4,7 @@ import { getTopicSubtitle, getThemeMenu } from "docs/utils";
 import { rootPath } from "../../constants";
 
 const path = rootPath + "framework-react/material-ui/";
-const title = "Material-UI";
+const title = "Material UI";
 const theme: TThemeTopics = "actual";
 
 const topics: ISidebarTopics[] = [

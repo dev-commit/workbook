@@ -56,6 +56,18 @@
 
 :::
 
+::: tip Паттерн
+
+```js
+import { useCallback } from "react";
+
+const memoizedCallback = useCallback(() => {
+  doSomething(a, b);
+}, [a, b]);
+```
+
+:::
+
 ### Методы `danger`
 
 ::: danger
