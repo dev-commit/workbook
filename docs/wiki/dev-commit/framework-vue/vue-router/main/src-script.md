@@ -1,5 +1,9 @@
 # Подключение через `<script>`
 
+## Код
+
+### Подключение
+
 ```html
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
@@ -13,6 +17,7 @@
   <router-link to="/about">About</router-link>
   <router-view></router-view>
 </div>
+
 <script src="index.js"></script>
 ```
 

@@ -14,6 +14,7 @@ const topics: ISidebarTopics[] = [
     children: [
       ["main/ecosystem", emoji.theory + "Экосистема"],
       ["main/ecosystem-ui-kit", emoji.theory + "UI-библиотеки"],
+      ["main/new-project", emoji.star + "Новый проект"],
       ["main/install", getTopicSubtitle("install")],
       ["main/create-react-app", getThemeMenu("method", ["create-react-app"])],
       ["main/info", getTopicSubtitle("info")],

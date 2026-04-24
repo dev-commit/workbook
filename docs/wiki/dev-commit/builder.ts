@@ -72,7 +72,6 @@ import wikiVitest from "./testing/vitest/build-vitest";
 import wikiMaterialUi from "./framework-react/material-ui/build-material-ui";
 import wikiNextJs from "./framework-react/next-js/build-next-js";
 import wikiReactApi from "./framework-react/react-api/build-react-api";
-import wikiReactApp from "./framework-react/react-app/build-react-app";
 import wikiReactFinalForm from "./framework-react/react-final-form/build-react-final-form";
 import wikiReactFlow from "./framework-react/react-flow/build-react-flow";
 import wikiReactHookForm from "./framework-react/react-hook-form/build-react-hook-form";
@@ -163,7 +162,6 @@ export const NAV: IHeaderMenuNav[] = [
     text: "React",
     children: getNav([
       wikiReact,
-      wikiReactApp,
       wikiReactHooks,
       wikiReactApi,
       wikiReactRouter,
@@ -295,7 +293,6 @@ export const SIDEBAR = getSidebar([
   wikiMaterialUi,
   wikiNextJs,
   wikiReactApi,
-  wikiReactApp,
   wikiReactFinalForm,
   wikiReactFlow,
   wikiReactHookForm,

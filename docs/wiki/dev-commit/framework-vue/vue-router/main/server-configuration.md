@@ -1,8 +1,9 @@
 # Конфигурование сервера
 
 ::: info
-https://router.vuejs.org/ru/guide/essentials/history-mode.html#примеры-конфигурирования-серверов
-:::
+
+- https://router.vuejs.org/ru/guide/essentials/history-mode.html#примеры-конфигурирования-серверов - Примеры конфигурирования серверов
+  :::
 
 ## Apache (.htaccess)
 

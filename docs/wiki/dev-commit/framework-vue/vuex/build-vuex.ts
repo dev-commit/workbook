@@ -5,7 +5,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "framework-vue/vuex/";
 const title = "Vuex";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = "secondary";
 
 const topics: ISidebarTopics[] = [
   {

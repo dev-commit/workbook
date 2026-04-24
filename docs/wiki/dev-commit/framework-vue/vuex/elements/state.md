@@ -1,62 +1,71 @@
 # Состояние (state)
 
-## state
+## Код
 
-```js
+### Store
+
+```js{2-5}
 const store = new Vuex.Store({
-    state: {
-        count: 0,
-        name: null
+  state: {
+    count: 0,
+    name: null,
+  },
+  mutations: {
+    changeStore(state, payload) {
+      state.count = payload.count;
+      state.name = payload.name;
     },
-    mutations: {
-        changeStore(state, payload) {
-            state.count = payload.count;
-            state.name = payload.name;
-        }
-    }
-})
+  },
+});
 ```
 
-## HTML
+### Component
 
 ```html
-<div id="app">{{count}} {{name}}<button @click="change">Изменить состояние</button>
-	<component-child></component-child>
+<div id="app">
+  {{count}} {{name}}
+  <button @click="change">Изменить состояние</button>
+  <component-child></component-child>
 </div>
 ```
 
-## Дочерний компонент
+### Дочерний компонент
 
-```js
+```js{6}
 const ComponentChild = {
-    template: `<div>{{ count }}</div>`,
-    computed: {
-        count() {
-            return this.$store.state.count; // получение доступа к объекту состояния из дочернего элемента
-        }
-    }
-}
+  template: `<div>{{ count }}</div>`,
+  computed: {
+    count() {
+      // Получение доступа к объекту состояния из дочернего элемента
+      return this.$store.state.count;
+    },
+  },
+};
 ```
 
-## Родительский компонент
+### Родительский компонент
 
-```js
+```js{5}
 const app = new Vue({
-	el: '#app',
-    // указание хранилища в опции «store» обеспечивает
-    // доступ к нему также и во всех дочерних компонентах через this.$store
-	store,
-	components: { 
-        'component-child': ComponentChild 
+  el: "#app",
+  // Указание хранилища в опции «store» обеспечивает
+  // Доступ к нему также и во всех дочерних компонентах через this.$store
+  store,
+  components: {
+    "component-child": ComponentChild,
+  },
+  methods: {
+    change() {
+      store.commit("changeStore", { count: 77, name: "Tony" }); // Изменение состояния
     },
-	methods: {
-		change() {
-			store.commit('changeStore', {count:77, name:'Tony'}); // изменение состояния
-		}
-	},
-	computed: {
-		count() { return store.state.count; }, // получение доступа к объекту состояния
-		name()  { return store.state.name; }   // получение доступа к объекту состояния
-	}
+  },
+  computed: {
+    count() {
+      return store.state.count; // Получение доступа к объекту состояния
+    },
+    name() {
+      return store.state.name; // Получение доступа к объекту состояния
+    },
+  },
 });
 ```

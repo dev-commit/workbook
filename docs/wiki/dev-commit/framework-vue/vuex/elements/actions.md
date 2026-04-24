@@ -4,100 +4,98 @@
 - Действия могут использоваться для асинхронных операций
 - mapActions создает локальные псевдонимы для действий в виде методов компонента
 
-## Диспетчеризация действий
+## Код
+
+### Диспетчеризация действий
 
 ```js
 export const store = new Vuex.Store({
-    state: {
-        count: 0
+  state: {
+    count: 0,
+  },
+  mutations: {
+    changeCount(state, payload) {
+      state.count = payload.count;
     },
-    mutations: {
-        changeCount(state, payload) {
-            state.count = payload.count;
-        }
+  },
+  actions: {
+    changeCount(context, payload) {
+      context.commit("changeCount", { count: payload.count });
     },
-    actions: {
-        changeCount(context, payload) {
-            context.commit('changeCount', {count:payload.count});
-        }
-    }
+  },
 });
 ```
 
 ```html
 <div id="app">
-	<button @click="changeCount">ChangeState</button>
+  <button @click="changeCount">ChangeState</button>
 </div>
 ```
 
 ```js
-import {store} from './vuex.js'
+import { store } from "./vuex.js";
 
 export default {
-    methods: {
-        changeCount() {
-            store.dispatch('changeCount', {count: 77});
-        }
-    }
-}
+  methods: {
+    changeCount() {
+      store.dispatch("changeCount", { count: 77 });
+    },
+  },
+};
 ```
 
-## mapActions
+### mapActions
 
 ```js
-import { mapActions } from 'vuex'
+import { mapActions } from "vuex";
 
 export default {
-    methods: {
-        ...mapActions([
-            'changeCount'
-        ])
-    }
-}
+  methods: {
+    ...mapActions(["changeCount"]),
+  },
+};
 ```
 
-## mapActions с нагрузкой
+### mapActions с нагрузкой
 
 ```html
 <div id="app">
-    <button @click="changeCount(77)">ChangeState</button>
+  <button @click="changeCount(77)">ChangeState</button>
 </div>
 ```
 
 ```js
 store = new Vuex.Store({
-    actions: {
-        changeCount({ commit }, count) {
-            commit('changeCount', {count:count});
-        }
-    }
+  actions: {
+    changeCount({ commit }, count) {
+      commit("changeCount", { count: count });
+    },
+  },
 });
 ```
 
-## Вернуть значение из actions
+### Вернуть значение из actions
 
 ```js
 store = new Vuex.Store({
-    actions: {
-    	addProductId({ commit }, id) {
-	        commit('addProductId', {count:id});
-	        return true;
-	    }
-    }
+  actions: {
+    addProductId({ commit }, id) {
+      commit("addProductId", { count: id });
+      return true;
+    },
+  },
 });
 ```
 
 ```js
 export default {
-    methods: {
-		...mapActions([
-			'addProductId'
-		]),
-        chooseProduct(id) {
-            this.addProductId(id).then(response => {
-            	console.log(response);
-            });
-        }
-    }
-}
+  methods: {
+    ...mapActions(["addProductId"]),
+    chooseProduct(id) {
+      this.addProductId(id).then((response) => {
+        console.log(response);
+      });
+    },
+  },
+};
 ```

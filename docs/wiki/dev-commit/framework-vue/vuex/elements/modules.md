@@ -1,23 +1,29 @@
 # Модули (modules)
 
+::: tip Модули
+
 - **Модули** - каждый модуль может содержать собственное состояние, мутации, действия, геттеры и даже встроенные подмодули
+  :::
+
 - Из-за использования единого дерева состояния, все глобальные данные приложения оказываются помещены в один большой объект. По мере роста приложения, хранилище может существенно раздуться
+
+## Пример
 
 ```js
 const moduleA = {
-	state: { ... },
-	mutations: { ... }
+  state: { ... },
+  mutations: { ... }
 }
 const moduleB = {
-	state: { ... },
-	mutations: { ... }
+  state: { ... },
+  mutations: { ... }
 }
 const store = new Vuex.Store({
-	modules: {
-		a: moduleA,
-		b: moduleB
-	}
+  modules: {
+    a: moduleA,
+    b: moduleB
+  }
 })
-store.state.a // -> состояние модуля `moduleA`
-store.state.b // -> состояние модуля `moduleB`
+store.state.a // -> Состояние модуля `moduleA`
+store.state.b // -> Состояние модуля `moduleB`
 ```

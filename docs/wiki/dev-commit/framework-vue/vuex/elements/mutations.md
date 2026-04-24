@@ -1,42 +1,48 @@
 # Мутации (mutations)
 
+::: tip Мутации
+
 - **Мутации** являются единственным способом изменения состояния хранилища во Vuex
+  :::
+
 - Обработчики мутаций обязаны быть синхронными. Во Vuex мутации — это синхронные транзакции
 
-## Простые мутации
+## Варианты
+
+### Простые мутации
 
 ```js
 const store = new Vuex.Store({
-	state: {
-		count: 1
-	},
-	mutations: {
-		changeStore(state) {
-			state.count++;
-		}
-	}
+  state: {
+    count: 1,
+  },
+  mutations: {
+    changeStore(state) {
+      state.count++;
+    },
+  },
 });
 ```
 
 ```js
 const app = new Vue({
-	el: '#app',
-	methods: {
-		change() {
-			store.commit('changeStore');
-		}
-	}
+  el: "#app",
+  methods: {
+    change() {
+      store.commit("changeStore");
+    },
+  },
 });
 ```
 
-## Мутации с нагрузкой
+### Мутации с нагрузкой
 
 ```js
 mutations: {
-    changeStore(state, payload) {
-        state.count = payload.count;
-        state.name = payload.name;
-    }
+  changeStore(state, payload) {
+    state.count = payload.count;
+    state.name = payload.name;
+  }
 }
 
 methods: {
@@ -46,12 +52,12 @@ methods: {
 }
 ```
 
-## Объектный синтаксис
+### Объектный синтаксис
 
 ```js
 store.commit({
-	type: 'changeStore',
-	count: 77
+  type: "changeStore",
+  count: 77,
 });
 ```
 
