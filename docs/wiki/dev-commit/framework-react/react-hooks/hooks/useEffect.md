@@ -1,108 +1,130 @@
 # Хук эффекта useEffect()
 
 ::: info
-https://react.dev/reference/react/useEffect
+
+- https://react.dev/reference/react/useEffect
+  :::
+
+::: danger
+
+**`useEffect(effect, deps)`** - необходим для выполнения Side Effects (побочных эффектов)
+
+> - `effect` - коллбэк
+> - `deps` (dependencies) - массив, с указанием от чего зависит useEffectэк
+> - _return_ - function
+
 :::
 
-    необходим для выполнения Side Effects (побочных эффектов)
-    
-коллбэк
-dependencies - массив, с указанием от чего зависит useEffect
+::: tip Паттерн
 
 ```js
-import { useEffect } from 'react';
+import { useEffect } from "react";
 ```
+
+:::
 
 ## Варианты
 
-#### componentDidMountcomponentDidUpdate
+### `componentDidMount` `componentDidUpdate`
 
 - Отсделить каждый рендеринг компонента. Выполняется после каждого рендера и обновления
 
 ```js
 useEffect(() => {
-	document.title = 'Заголовок';
+  document.title = "Заголовок";
 });
 ```
 
-#### componentDidMount
+### `componentDidMount`
 
 ```js
 useEffect(() => {
-	document.title = 'Заголовок';
+  document.title = "Заголовок";
 }, []);
 ```
 
-#### componentDidUpdate
+### `componentDidUpdate`
 
 - Выполнит эффект, только если count изменился при отрисовке
 
 ```js
 useEffect(() => {
-	document.title = `Вы нажали ${this.state.count} раз`;
+  document.title = `Вы нажали ${this.state.count} раз`;
 }, [count]);
 ```
 
-#### componentWillUnmount
+### `componentWillUnmount`
 
 ```js
-useEffect(() => () => {
-	window.removeEventListener('resize', onResize);
-}, []);
+useEffect(
+  () => () => {
+    window.removeEventListener("resize", onResize);
+  },
+  [],
+);
 ```
 
-#### componentDidMountcomponentWillUnmount
+### `componentDidMount` `componentWillUnmount`
 
 ```js
 useEffect(() => {
-    // componentDidMount
-    window.addEventListener('resize', onResize, false);
-    // componentWillUnmount
-    return () => {
-		window.removeEventListener('resize', onResize);
-	}
+  // componentDidMount
+  window.addEventListener("resize", onResize, false);
+  // componentWillUnmount
+  return () => {
+    window.removeEventListener("resize", onResize);
+  };
 }, []);
 ```
 
-## Кейсы
+## Варианты
 
 ### Async в useEffect
 
-- Почему нельзя использовать async внутри useEffect?
+**Почему нельзя использовать async внутри useEffect**
 
 - useEffect может вернуть Callback Function (componentWillUnmount) или undefined
 - Асинхронная функция вернет Promise, что будет некорректно
 - Вместо этого можно написать асинхронную анонимную самовызывающуюся функцию внутри useEffect
 
+<v-two compare :title="['Верно', 'Ошибка']">
+  <template #first>
+
 ```js
 // Обычная функция
 useEffect(() => {
-    (async function () {
-        console.log("Hello");
-    })();
+  (async function () {
+    console.log("Hello");
+  })();
 }, []);
 
 // Стрелочная функция
 useEffect(() => {
-    (async () => {
-        console.log("Hello");
-    })();
+  (async () => {
+    console.log("Hello");
+  })();
 }, []);
 ```
 
----
+  </template>
+  <template #last>
 
 ```js
 useEffect(async () => {
-    console.log("Hello");
+  console.log("Hello");
 }, []);
 ```
 
-- Ошибка: "useEffect не должен возвращать ничего, кроме функции, которая используется для очистки. Похоже, вы написали useEffect(async () => ...) или вернули Promise"
+Ошибка: "useEffect не должен возвращать ничего, кроме функции, которая используется для очистки. Похоже, вы написали useEffect(async () => ...) или вернули Promise"
+
+  </template>
+</v-two>
 
 ### useEffect и очередность при монтировании
 
-- Какой console.log раньше выведется?
+**Какой console.log раньше выведется?**
+
+- _Ответ_: "Child", "Parent"
 
 ```js
 const App = () => {
@@ -123,115 +145,27 @@ const Child = () => {
   return <h1>Child</h1>;
 };
 ```
-- 1. Child
-- 2. Parent
 
 ### Return и Dependencies
 
-- Если в useEffect есть return и указанные зависимости в массиве зависимостей [counter], то функция из return будет выполняться при каждом update из массива зависимостей перед следующем ренедером
+- Если в useEffect есть return и указанные зависимости в массиве зависимостей [counter], то функция из return будет выполняться при каждом update из массива зависимостей _перед следующем ренедером_
 
 ```js
 useEffect(() => {
-    return () => {
-		console.log('Hello);
-	}
+  return () => {
+    console.log('Hello);
+  }
 }, [counter]);
 ```
 
-## Переписывание на Хуки
-
-::: details Примеры
-
-### async await
-
-#### useEffect
-
-```js
-useEffect(() => {
-    (async () => {
-        await myAsyncFunction();
-        myFunction();
-    })();
-}, []);
-```
-
-#### componentDidMount
-
-```js
-async componentDidMount() {
-    await myAsyncFunction();
-    myFunction();
-}
-```
-
-### getDerivedStateFromProps
-
-#### useEffect
-
-```js
-const CompanySelect = ({ company }: Props) => {
-    const [value, setValue] = useState(null);
-
-    useEffect(() => {
-        if (company && isNil(value)) {
-            setValue(company);
-        }
-    });
-};
-```
-
-#### getDerivedStateFromProps
-
-```js
-type State = { value: ?string }
-type Props = { company: string }
-
-class CompanySelect extends PureComponent<Props, State> {
-    state = { value: null };
-
-    static getDerivedStateFromProps(nextProps: Props, prevState: State) {
-        if (nextProps.company && isNil(prevState.value)) {
-            return {
-                value: nextProps.company,
-            };
-        }
-
-        return null;
-    }
-}
-```
-
----
-
-#### useEffect
-
-```js
-useEffect(() => {
-    if (!isEditRow) {
-        setTypesActivityState(typesActivity);
-    }
-});
-```
-
-#### getDerivedStateFromProps
-
-```js
-static getDerivedStateFromProps(nextProps, prevState) {
-    if (!prevState.isEditRow) {
-        return {
-            typesActivity: nextProps.typesActivity,
-        };
-    }
-    return null;
-}
-```
-
-:::
-
 ## Теория
 
-::: details Данные
+### Информация
+
+::: tip Побочные эффекты
+
 - **Побочные эффекты** - операции, которые могут влиять на работу других компонентов и их нельзя выполнить во время рендера. Н-р: запрашивать данные, делать подписки или вручную менять DOM из React-компонента
+  :::
 
 ### Виды эффектов
 
@@ -245,10 +179,9 @@ static getDerivedStateFromProps(nextProps, prevState) {
 - В отличие от componentDidMount или componentDidUpdate, эффекты, запланированные с помощью useEffect, не блокируют браузер, чтобы обновить экран
 
 ---
+
 - При вызове useEffect, React получает указание запустить вашу функцию с «эффектом» после того, как он отправил изменения в DOM. Поскольку эффекты объявляются внутри компонента, у них есть доступ к его пропсам и состоянию. По умолчанию, React запускает эффекты после каждого рендера, включая первый рендер
 - Хуки позволяют разделить код на основе того, что он делает, а не на основании имён методов жизненного цикла
 - Если вы хотите запустить эффект и очистить его только один раз (при монтировании и демонтировании), вы можете передать пустой массив [] в качестве второго аргумента. Это укажет React, что ваш эффект не зависит от каких-либо значений из props или state, поэтому его не нужно повторно выполнять
 - React будет сбрасывать эффект перед тем, как компонент размонтируется. Однако, как мы уже знаем, эффекты выполняются не один раз, а при каждом рендере. Вот почему React также сбрасывает эффект из предыдущего рендера, перед тем, как запустить следующий
 - React будет выполнять каждый используемый эффект в компоненте, согласно порядку их объявления
-
-:::

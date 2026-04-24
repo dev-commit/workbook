@@ -1,7 +1,17 @@
 # Хук useReducer()
 
 ::: info
-https://react.dev/reference/react/useReducer
+
+- https://react.dev/reference/react/useReducer
+  :::
+
+::: danger
+
+**`name`** -
+
+> - `props` - props
+> - _return_ - null
+
 :::
 
     Даёт возможность управлять внутренним состоянием более сложного компонента с помощью редюсера. Альтернатива для useState
@@ -15,7 +25,7 @@ init
 - useReducer позволяет оптимизировать производительность компонентов, которые запускают глубокие обновления, поскольку можно передавать dispatch вместо колбэков
 
 ```js
-import { useReducer } from 'react';
+import { useReducer } from "react";
 
 const [state, dispatch] = useReducer(reducer, initialArg, init);
 ```
@@ -29,45 +39,50 @@ import { useReducer } from "react";
 ```
 
 ```js
-const SHOW_ALERT = 'show'
-const HIDE_ALERT = 'hide'
+const SHOW_ALERT = "show";
+const HIDE_ALERT = "hide";
 ```
 
 ```js
 const reducer = (state, action) => {
-    switch (action.type) {
-        case SHOW_ALERT: return {
-            ...state,
-            visible: true,
-            text: action.text
-        }
-        case HIDE_ALERT: return {
-            ...state,
-            visible: false
-        }
-        default: return state
-    }
-}
+  switch (action.type) {
+    case SHOW_ALERT:
+      return {
+        ...state,
+        visible: true,
+        text: action.text,
+      };
+    case HIDE_ALERT:
+      return {
+        ...state,
+        visible: false,
+      };
+    default:
+      return state;
+  }
+};
 ```
 
 ```js
 const App = () => {
-    const [state, dispatch] = useReducer(reducer, {
-        visible: false,
-        text: ''
-    })
+  const [state, dispatch] = useReducer(reducer, {
+    visible: false,
+    text: "",
+  });
 
-    const show = text => dispatch({ type: SHOW_ALERT, text })
-    const hide = () => dispatch({ type: HIDE_ALERT })
+  const show = (text) => dispatch({ type: SHOW_ALERT, text });
+  const hide = () => dispatch({ type: HIDE_ALERT });
 
-    return (
-        <>
-            <pre><code>{JSON.stringify(state, '', 4)}</code></pre>
-            <button onClick={() => show('Some Text')}>Show</button>
-            <button onClick={hide}>Hide</button>
-        </>
-    )
-}
+  return (
+    <>
+      <pre>
+        <code>{JSON.stringify(state, "", 4)}</code>
+      </pre>
+      <button onClick={() => show("Some Text")}>Show</button>
+      <button onClick={hide}>Hide</button>
+    </>
+  );
+};
 ```
 
 ```js

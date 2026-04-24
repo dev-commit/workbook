@@ -1,22 +1,31 @@
 # Хук useCallback()
 
 ::: info
-https://react.dev/reference/react/useCallback
+
+- https://react.dev/reference/react/useCallback
+  :::
+
+::: danger
+
+**`useCallback(factory, deps)`** - оборачивает коллбэк и его полностью возвращает. Необходим, чтобы функция не изменялась при новом рендере - кэшировалась, а также чтобы не было рекурсивных вызовов
+
+> - `factory` - коллбэк
+> - `deps` (dependencies) - массив, с указанием от чего зависит useCallback
+> - _return_ - мемоизированный коллбэк
+
 :::
 
-	Оборачивает коллбэк и его полностью возвращает. Необходим, чтобы функция не изменялась при новом рендере - кэшировалась, а также чтобы не было рекурсивных вызовов.
-    
-коллбэк
-dependencies - массив, с указанием от чего зависит useCallback
-Возвращает мемоизированный колбэк
+::: tip Паттерн
 
 ```js
-import { useCallback } from 'react';
+import { useCallback } from "react";
 
 const memoizedCallback = useCallback(() => {
-	doSomething(a, b);
+  doSomething(a, b);
 }, [a, b]);
 ```
+
+:::
 
 ## useMemo vs useCallback
 
@@ -25,7 +34,7 @@ const memoizedCallback = useCallback(() => {
 ```js
 // Возвращает саму функцию
 const memoizedCallback = useCallback(() => {
-	doSomething(a, b);
+  doSomething(a, b);
 }, [a, b]);
 ```
 
@@ -34,7 +43,7 @@ const memoizedCallback = useCallback(() => {
 ```js
 // Возвращает результат выполнения функции
 const memoizedValue = useMemo(() => {
-    return doSomething(a, b);
+  return doSomething(a, b);
 }, [a, b]);
 ```
 
@@ -61,20 +70,18 @@ const memoizedValue = useMemo(() => {
 import { useState, useEffect, useCallback } from "react";
 
 const App = () => {
-    const [value, setValue] = useState("");
+  const [value, setValue] = useState("");
 
-    const onChange = (e) => setValue(e.target.value);
-    const foo = useCallback(() => {}, []);
+  const onChange = (e) => setValue(e.target.value);
+  const foo = useCallback(() => {}, []);
 
-useEffect(() => {
-        console.log("Effect");
-    }, [foo]);
+  useEffect(() => {
+    console.log("Effect");
+  }, [foo]);
 
-    console.log("Render");
+  console.log("Render");
 
-    return <input
-        type="text" value={value} onChange={onChange}
-    />;
+  return <input type="text" value={value} onChange={onChange} />;
 };
 ```
 
@@ -89,20 +96,18 @@ Output
 import { useState, useEffect } from "react";
 
 const App = () => {
-    const [value, setValue] = useState("");
+  const [value, setValue] = useState("");
 
-    const onChange = (e) => setValue(e.target.value);
-    const foo = () => {};
+  const onChange = (e) => setValue(e.target.value);
+  const foo = () => {};
 
-useEffect(() => {
-        console.log("Effect");
-    }, [foo]);
+  useEffect(() => {
+    console.log("Effect");
+  }, [foo]);
 
-    console.log("Render");
+  console.log("Render");
 
-    return <input
-        type="text" value={value} onChange={onChange}
-    />;
+  return <input type="text" value={value} onChange={onChange} />;
 };
 ```
 
@@ -118,10 +123,10 @@ Output
 Не проверено
 
 ```js
-import { memo, useState, useCallback } from 'react';
+import { memo, useState, useCallback } from "react";
 
 const HookModalComponent = (props) => {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
 
   // В зависимости не нужно передавать setInput, потому что setInput не меняет свою ссылку
   // (не точно, проверить!)
@@ -129,7 +134,7 @@ const HookModalComponent = (props) => {
     setInput(event.currentTarget.value);
   }, []);
 
-  return (<input onInput={handleInput} />);
+  return <input onInput={handleInput} />;
 };
 
 export const HookModal = memo(HookModalComponent, () => true);

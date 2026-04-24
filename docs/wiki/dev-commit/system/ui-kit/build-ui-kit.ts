@@ -10,6 +10,10 @@ const theme: TThemeTopics = null;
 
 const topics: ISidebarTopics[] = [
   {
+    title: "Основное",
+    children: [["main/symbols", "Символы"]],
+  },
+  {
     title: "Компоненты",
     children: [
       ["components/v-details", getThemeMenu("method", ["v-details"])],
@@ -21,6 +25,7 @@ const topics: ISidebarTopics[] = [
       ["components/v-code", getThemeMenu("method", ["v-code"])],
       ["components/v-badge", getThemeMenu("method", ["v-badge"])],
       ["components/v-tree", getThemeMenu("method", ["v-tree"]), "check"],
+      ["components/v-sandbox", getThemeMenu("method", ["v-sandbox"])],
     ],
   },
   {

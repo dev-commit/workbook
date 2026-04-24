@@ -11,6 +11,7 @@ import VBreadcrumbs from "../components/v-breadcrumbs.vue";
 import VCode from "../components/v-code.vue";
 import VBadge from "../components/v-badge.vue";
 import VTree from "../components/v-tree.vue";
+import VSandbox from "../components/v-sandbox.vue";
 
 import "./styles/variables.css";
 import "./styles/custom.css";
@@ -29,5 +30,6 @@ export default {
     app.component("v-code", VCode);
     app.component("v-badge", VBadge);
     app.component("v-tree", VTree);
+    app.component("v-sandbox", VSandbox);
   },
 } satisfies Theme;

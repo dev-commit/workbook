@@ -1,18 +1,28 @@
 # Хук контекста useContext()
 
 ::: info
-https://react.dev/reference/react/useContext
+
+- https://react.dev/reference/react/useContext
+  :::
+
+::: danger
+
+**`name`** -
+
+> - `props` - props
+> - _return_ - null
+
 :::
 
-	Можно подписаться на контекст React без использования каких-либо вложений
-    
+    Можно подписаться на контекст React без использования каких-либо вложений
+
 объект контекста (значение, возвращённое из React.createContext)
 Возвращает текущее значение контекста для принятого контекста
 
 - Текущее значение контекста определяется пропом value ближайшего &lt;MyContext.Provider> над вызывающим компонентом в дереве
 
 ```js
-import { useContext } from 'react';
+import { useContext } from "react";
 
 const value = useContext(MyContext);
 ```
@@ -26,28 +36,24 @@ const value = useContext(MyContext);
 #### ThemeProvider.jsx
 
 ```js
-import { useState, useContext } from 'react';
+import { useState, useContext } from "react";
 
-const ThemeContext =React.createContext();
+const ThemeContext = React.createContext();
 
 const ThemeProvider = ({ children }) => {
-    const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState("light");
 
-    const change = (name) => setTheme(name);
+  const change = (name) => setTheme(name);
 
-    return (
-		<ThemeContext.Provider
-            value={{theme,
-                change
-            }}
-		>
-            {children}
-        </ThemeContext.Provider>
-    )
-}
+  return (
+    <ThemeContext.Provider value={{ theme, change }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
 
 export default ThemeProvider;
-export const useTheme = () =>useContext(ThemeContext);
+export const useTheme = () => useContext(ThemeContext);
 ```
 
 #### ThemeProvider.tsx
@@ -95,14 +101,14 @@ export const useTheme = () => useContext(ThemeContext);
 - Просто обернуть в ThemeProvider
 
 ```js
-import ThemeProvider from './ThemeProvider';
-import { View, Change } from './Components';
+import ThemeProvider from "./ThemeProvider";
+import { View, Change } from "./Components";
 
 const App = () => (
-    <ThemeProvider>
-        <View />
-        <Change />
-    </ThemeProvider>
+  <ThemeProvider>
+    <View />
+    <Change />
+  </ThemeProvider>
 );
 
 export default App;
@@ -113,20 +119,20 @@ export default App;
 - Можно использовать хук useTheme для доступа к значению текущей темы и функции изменения темы
 
 ```js
-import { useTheme } from './ThemeProvider';
+import { useTheme } from "./ThemeProvider";
 
 const View = () => {
-    const isTheme = useTheme();
-    return isTheme.theme;
+  const isTheme = useTheme();
+  return isTheme.theme;
 };
 
 const Change = () => {
-    const isTheme = useTheme();
-    return (
-        <>
-            <button onClick={() => isTheme.change('dark')}>Dark</button>
-            <button onClick={() => isTheme.change('light')}>Light</button>
-        </>
-    )
+  const isTheme = useTheme();
+  return (
+    <>
+      <button onClick={() => isTheme.change("dark")}>Dark</button>
+      <button onClick={() => isTheme.change("light")}>Light</button>
+    </>
+  );
 };
 ```
