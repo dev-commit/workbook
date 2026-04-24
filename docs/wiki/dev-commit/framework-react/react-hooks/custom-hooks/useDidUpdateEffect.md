@@ -1,52 +1,54 @@
 # useDidUpdateEffect()
 
-- Данные: useEffect в примере будет вызван на как при Монтировании, так и при Обновлении. По итогу в console.log будет 2 записи "useEffect"
-- Задача: выполянть код в useEffect только при обновлении (в примере должна быть 1 запись "useEffect")
+## Исходные данные
+
+- **Данные**: useEffect в примере будет вызван на как при _Монтировании_, так и при Обновлении. По итогу в console.log будет 2 записи "useEffect"
+- **Задача**: выполянть код в useEffect только при обновлении (в примере должна быть 1 запись "useEffect")
 
 ```js
 import React, { useState, useEffect } from "react";
 
 const App = () => {
-    const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0);
 
-    // Выполнится при монтировании и при обновлении
-    useEffect(() => {
-        console.log("useEffect");
-    }, [count]);
+  // Выполнится при монтировании и при обновлении
+  useEffect(() => {
+    console.log("useEffect");
+  }, [count]);
 
-    return null;
+  return null;
 };
 ```
 
-### Реализация
+## Реализация
+
+**Хук**
 
 ```js
 import React, { useEffect, useRef } from "react";
 
 // Выполнится только при обновлении
 export const useDidUpdateEffect = (callback, deps) => {
-    const didMountRef = useRef(false);
+  const didMountRef = useRef(false);
 
-    useEffect(() => {
-        didMountRef.current && callback();
-        didMountRef.current = true;
-    }, deps);
+  useEffect(() => {
+    didMountRef.current && callback();
+    didMountRef.current = true;
+  }, deps);
 
-    return true;
+  return true;
 };
 ```
 
-### Использование
+**Использование**
 
 ```js
 import React, { useState } from "react";
 
 const App = () => {
-    const [count, setCount] = useState(0);useDidUpdateEffect(
-        () => console.log("useDidUpdateEffect"),
-        [count]
-    );
+  const [count, setCount] = useState(0);
+  useDidUpdateEffect(() => console.log("useDidUpdateEffect"), [count]);
 
-    return null;
+  return null;
 };
 ```

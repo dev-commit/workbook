@@ -29,7 +29,8 @@ const memoizedCallback = useCallback(() => {
 
 ## useMemo vs useCallback
 
-#### useCallback
+<v-two :title="['useCallback', 'useMemo']">
+  <template #first>
 
 ```js
 // Возвращает саму функцию
@@ -38,7 +39,8 @@ const memoizedCallback = useCallback(() => {
 }, [a, b]);
 ```
 
-#### useMemo
+  </template>
+  <template #last>
 
 ```js
 // Возвращает результат выполнения функции
@@ -47,26 +49,39 @@ const memoizedValue = useMemo(() => {
 }, [a, b]);
 ```
 
-## Проблематика и решение
+  </template>
+</v-two>
+
+## Проблематика с ререндерами
+
+### Проблематика
 
 - В обычном состоянии при каждом ререндере компонента создается новая ссылка на функцию
 - React использует неглубокое сравнение объектов (функции тоже объекты), чтобы определить, обновляется ли значение или нет
 - Если функция используется в качестве dependencies в useEffect, то будет перерендер
 - Если функция передается в качестве props в дочерний компонент, то будет перерендер дочернего компонента - даже с React.memo, т.к. каждый раз будет приходить новая ссылка
 
-#### Решение через useCallback
+### Решение через useCallback
 
-- useCallback - мемоизирует ссылку на функцию, чтобы она НЕ пересоздавалась каждый раз при перерендере
-- Мемоизированную ссылку можно прокинуть в дочерний компонент, обернутый в React.memo, при этом, у дочернего компонента не будет перерендера при перерендере родительского компонента (конечно, если не изменились другие props)
+- `useCallback` - мемоизирует _ссылку на функцию_, чтобы она НЕ пересоздавалась каждый раз при перерендере
+- Мемоизированную ссылку можно прокинуть в дочерний компонент, обернутый в `React.memo`, при этом, у дочернего компонента не будет перерендера при перерендере родительского компонента (конечно, если не изменились другие props)
 
 ## Варианты
 
 ### Передача function в виде dependencies для useEffect
 
+::: warning
+
 - Непонятен алгоритм, когда нужно передавать function в виде dependencies для useEffect
 - Возможно, необходимо определить не передали ли новую функцию - если не поместить в dependencies, то вызовется не та
+  :::
 
-```js
+<v-sandbox url="https://codesandbox.io/s/usecallback-with-useeffect-8y5xd8" codesandbox />
+
+<v-two compare :title="['useCallback', 'Basic']">
+  <template #first>
+
+```js{7,11}
 import { useState, useEffect, useCallback } from "react";
 
 const App = () => {
@@ -90,9 +105,10 @@ Output
 1. Монтирование: "Render", "Effect"
 2. Обновление (вызов setValue): "Render"
 
----
+  </template>
+  <template #last>
 
-```js
+```js{7,11}
 import { useState, useEffect } from "react";
 
 const App = () => {
@@ -116,11 +132,20 @@ Output
 1. Монтирование: "Render", "Effect"
 2. Обновление (вызов setValue): "Render", "Effect"
 
-### Примеры
+  </template>
+</v-two>
+
+## Примеры
+
+<v-sandbox url="https://codesandbox.io/s/usecallback-peredacha-funkcii-v-dependencies-yos1o" title="useCallback - передача функции в dependencies" codesandbox />
+<v-sandbox url="https://codesandbox.io/s/usecallback-vs-usememo-qcdm7q" title="useCallback vs useMemo" codesandbox />
 
 ### useCallback и useState
 
-Не проверено
+::: warning
+
+- Не проверено
+  :::
 
 ```js
 import { memo, useState, useCallback } from "react";

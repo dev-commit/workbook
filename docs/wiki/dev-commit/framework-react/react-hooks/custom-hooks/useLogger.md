@@ -1,30 +1,33 @@
 # useLogger()
 
-### Реализация
+## Реализация
+
+**Хук**
 
 ```js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 export const useLogger = (value) => {
-	useEffect(() => {
-		console.log('Value changed: ', value);
-	}, [value]);
-}
+  useEffect(() => {
+    console.log("Value changed: ", value);
+  }, [value]);
+};
 ```
 
-### Использование
+**Использование**
 
 ```js
 const App = () => {
-	const [value, setValue] = useState('');useLogger(value);
+  const [value, setValue] = useState("");
+  useLogger(value);
 
-	const onChange = e => setValue(e.target.value);
+  const onChange = (e) => setValue(e.target.value);
 
-	return (
-		<>
-			<input type="text" value={value} onChange={onChange} />
-			<h1>{value}</h1>
-		</>
-	)
-}
+  return (
+    <>
+      <input type="text" value={value} onChange={onChange} />
+      <h1>{value}</h1>
+    </>
+  );
+};
 ```

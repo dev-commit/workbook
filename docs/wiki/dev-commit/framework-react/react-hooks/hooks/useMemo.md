@@ -7,18 +7,15 @@
 
 ::: danger
 
-**`name`** -
+**`useMemo(factory, deps)`** - мемоизация
 
-> - `props` - props
-> - _return_ - null
+> - `factory` - коллбэк
+> - `deps` (dependencies) - массив, с указанием от чего зависит useMemo
+> - _return_ - мемоизированное значение
 
 :::
 
-    Мемоизация
-
-коллбэк
-dependencies - массив, с указанием от чего зависит useMemo
-Возвращает мемоизированное значение
+::: tip Паттерн
 
 ```js
 import { useMemo } from "react";
@@ -28,9 +25,11 @@ const memoizedValue = useMemo(() => {
 }, [a, b]);
 ```
 
-## Пример
+:::
 
-### Пример #1. Базовое использование
+## Примеры
+
+::: details Пример #1. Базовое использование
 
 ```js
 import { useMemo, useState } from "react";
@@ -44,7 +43,9 @@ const App = () => {
 };
 ```
 
-### Пример #2. Функция со сложными вычислениями
+:::
+
+::: details Пример #2. Функция со сложными вычислениями
 
 ```js
 const complexCompute = (number) => {
@@ -52,6 +53,8 @@ const complexCompute = (number) => {
   return number;
 };
 ```
+
+---
 
 ```js
 const App = () => {
@@ -74,7 +77,9 @@ const App = () => {
 };
 ```
 
-### Пример #3. Использование объекта в state
+:::
+
+::: details Пример #3. Использование объекта в state
 
 ```js
 const App = () => {
@@ -107,7 +112,9 @@ const App = () => {
 };
 ```
 
-### Пример #4
+:::
+
+::: details Пример #4. props
 
 ```js
 const Component = ({ classes, checked }) => {
@@ -120,10 +127,14 @@ const Component = ({ classes, checked }) => {
 };
 ```
 
-## useMemoкак заменаuseState
+:::
 
-- Для логики переключения состояния кнопки лучше использовать useMemo, чтобы вручную не менять через useState
-- useMemo полностью заменяет useState
+## useMemo как замена useState
+
+<v-sandbox url="https://codesandbox.io/s/usememo-kak-zamena-usestate-ujxvx" codesandbox />
+
+- Для логики переключения состояния кнопки лучше использовать `useMemo`, чтобы вручную не менять через `useState`
+- useMemo полностью заменяет `useState`
 
 ```js
 import { useState, useMemo } from "react";

@@ -7,19 +7,16 @@
 
 ::: danger
 
-**`name`** -
+**`useContext()`** - можно подписаться на контекст React без использования каких-либо вложений
 
-> - `props` - props
-> - _return_ - null
+> - `obj` - объект контекста (значение, возвращённое из React.createContext)
+> - _return_ - текущее значение контекста для принятого контекста
 
 :::
 
-    Можно подписаться на контекст React без использования каких-либо вложений
-
-объект контекста (значение, возвращённое из React.createContext)
-Возвращает текущее значение контекста для принятого контекста
-
 - Текущее значение контекста определяется пропом value ближайшего &lt;MyContext.Provider> над вызывающим компонентом в дереве
+
+::: tip Паттерн
 
 ```js
 import { useContext } from "react";
@@ -27,26 +24,41 @@ import { useContext } from "react";
 const value = useContext(MyContext);
 ```
 
-## Пример: Смена темы
+:::
 
-#### Создание Provider и Hook
+## Примеры
 
-- Вариант для JavaScript и TypeScript
+### Смена темы
 
-#### ThemeProvider.jsx
+::: code-group
 
-```js
-import { useState, useContext } from "react";
+```tsx [ThemeProvider.jsx]
+import React, { useState, useContext, useMemo } from "react";
 
-const ThemeContext = React.createContext();
+// const ThemeContext = React.createContext({
+//     theme: 'light',
+//     change: (_: string) => {},
+// });
 
-const ThemeProvider = ({ children }) => {
+const ThemeContext = React.createContext<Object>(false);
+
+interface Props {
+  children: React.ReactNode;
+}
+
+export const ThemeProvider = ({ children }: Props) => {
   const [theme, setTheme] = useState("light");
 
-  const change = (name) => setTheme(name);
+  const change = (value: string) => setTheme(value);
+
+  // Можно обернуть в useMemo
+  const preparedProviderValue = useMemo(
+    () => ({ theme, change }),
+    [theme, change],
+  );
 
   return (
-    <ThemeContext.Provider value={{ theme, change }}>
+    <ThemeContext.Provider value={preparedProviderValue}>
       {children}
     </ThemeContext.Provider>
   );
@@ -56,51 +68,10 @@ export default ThemeProvider;
 export const useTheme = () => useContext(ThemeContext);
 ```
 
-#### ThemeProvider.tsx
+```js [index.jsx]
+// Корневой компонент
+// Просто обернуть в ThemeProvider
 
-```js
-import React, { useState, useContext, useMemo } from 'react';
-
-// const ThemeContext = React.createContext({
-//     theme: 'light',
-//     change: (_: string) => {},
-// });
-
-const ThemeContext =React.createContext<Object>(false);
-
-interface Props {
-    children: React.ReactNode;
-};
-
-export const ThemeProvider = ({ children }: Props) => {
-    const [theme, setTheme] = useState('light');
-
-    const change = (value: string) => setTheme(value);
-
-    // Можно обернуть в useMemo
-    const preparedProviderValue = useMemo(
-        () => ({ theme, change }),
-        [theme, change]
-    );
-
-    return (
-		<ThemeContext.Provider
-            value={preparedProviderValue}
-        >
-            {children}
-        </ThemeContext.Provider>
-    )
-}
-
-export default ThemeProvider;
-export const useTheme = () => useContext(ThemeContext);
-```
-
-#### Корневой компонент
-
-- Просто обернуть в ThemeProvider
-
-```js
 import ThemeProvider from "./ThemeProvider";
 import { View, Change } from "./Components";
 
@@ -114,11 +85,10 @@ const App = () => (
 export default App;
 ```
 
-#### Дочерние компоненты
+```js [Components.jsx]
+// Дочерние компоненты
+// Можно использовать хук useTheme для доступа к значению текущей темы и функции изменения темы
 
-- Можно использовать хук useTheme для доступа к значению текущей темы и функции изменения темы
-
-```js
 import { useTheme } from "./ThemeProvider";
 
 const View = () => {
@@ -136,3 +106,5 @@ const Change = () => {
   );
 };
 ```
+
+:::

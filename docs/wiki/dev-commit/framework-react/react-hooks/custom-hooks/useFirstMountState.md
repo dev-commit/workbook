@@ -1,6 +1,8 @@
 # useFirstMountState()
 
-### Реализация
+## Реализация
+
+**Хук**
 
 ```js
 import React, { useRef, useEffect } from 'react';
@@ -25,10 +27,4 @@ const App = () => {
     }
   }, [isFirstMount]);
 }
-```
-
-### Использование
-
-```js
-//
 ```

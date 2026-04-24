@@ -6,7 +6,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "framework-react/react-hooks/";
 const title = "React Hooks";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = "react";
 
 const topics: ISidebarTopics[] = [
   {

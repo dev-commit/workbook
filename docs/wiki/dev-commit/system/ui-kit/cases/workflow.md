@@ -18,7 +18,7 @@
 :::
 ```
 
-# Demo Samples
+## Demo Samples
 
 ```html
 <v-details title="">
@@ -26,9 +26,9 @@
 </v-details>
 ```
 
-# Code Compare
+## Code Compare
 
-```
+```vue
 <v-two compare :title="['Sass', 'CSS']">
   <template #first>
     Code 1
