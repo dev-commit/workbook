@@ -1,0 +1,22 @@
+import{_ as a,o as n,c as o,aw as l}from"./chunks/framework.DLufY-ao.js";const u=JSON.parse('{"title":"useFirstMountState()","description":"","frontmatter":{},"headers":[],"relativePath":"wiki/dev-commit/framework-react/react-hooks/custom-hooks/useFirstMountState.md","filePath":"wiki/dev-commit/framework-react/react-hooks/custom-hooks/useFirstMountState.md"}'),p={name:"wiki/dev-commit/framework-react/react-hooks/custom-hooks/useFirstMountState.md"};function t(e,s,r,c,i,y){return n(),o("div",null,[...s[0]||(s[0]=[l(`<h1 id="usefirstmountstate" tabindex="-1">useFirstMountState() <a class="header-anchor" href="#usefirstmountstate" aria-label="Permalink to &quot;useFirstMountState()&quot;">​</a></h1><h2 id="реализация" tabindex="-1">Реализация <a class="header-anchor" href="#реализация" aria-label="Permalink to &quot;Реализация&quot;">​</a></h2><p><strong>Хук</strong></p><div class="language-js"><button title="Copy Code" class="copy"></button><span class="lang">js</span><pre class="shiki one-light vp-code" tabindex="0"><code><span class="line"><span style="color:#A626A4;">import</span><span style="color:#E45649;"> React</span><span style="color:#383A42;">, { </span><span style="color:#E45649;">useRef</span><span style="color:#383A42;">, </span><span style="color:#E45649;">useEffect</span><span style="color:#383A42;"> } </span><span style="color:#A626A4;">from</span><span style="color:#50A14F;"> &#39;react&#39;</span><span style="color:#383A42;">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;">const</span><span style="color:#4078F2;"> useFirstMountState</span><span style="color:#0184BC;"> =</span><span style="color:#383A42;"> ()</span><span style="color:#0184BC;">:</span><span style="color:#0184BC;"> boolean</span><span style="color:#A626A4;"> =&gt;</span><span style="color:#383A42;"> {</span></span>
+<span class="line"><span style="color:#A626A4;">  const</span><span style="color:#986801;"> isFirst</span><span style="color:#0184BC;"> =</span><span style="color:#4078F2;"> useRef</span><span style="color:#383A42;">(</span><span style="color:#986801;">true</span><span style="color:#383A42;">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;">  if</span><span style="color:#383A42;"> (isFirst.</span><span style="color:#E45649;">current</span><span style="color:#383A42;">) {</span></span>
+<span class="line"><span style="color:#383A42;">    isFirst.</span><span style="color:#E45649;">current</span><span style="color:#0184BC;"> =</span><span style="color:#986801;"> false</span><span style="color:#383A42;">;</span></span>
+<span class="line"><span style="color:#A626A4;">    return</span><span style="color:#986801;"> true</span><span style="color:#383A42;">;</span></span>
+<span class="line"><span style="color:#383A42;">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;">  return</span><span style="color:#986801;"> false</span><span style="color:#383A42;">;</span></span>
+<span class="line"><span style="color:#383A42;">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;">const</span><span style="color:#4078F2;"> App</span><span style="color:#0184BC;"> =</span><span style="color:#383A42;"> () </span><span style="color:#A626A4;">=&gt;</span><span style="color:#383A42;"> {</span></span>
+<span class="line"><span style="color:#A626A4;">  const</span><span style="color:#986801;"> isFirstMount</span><span style="color:#0184BC;"> =</span><span style="color:#4078F2;"> useFirstMountState</span><span style="color:#383A42;">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#4078F2;">  useEffect</span><span style="color:#383A42;">(() </span><span style="color:#A626A4;">=&gt;</span><span style="color:#383A42;"> {</span></span>
+<span class="line"><span style="color:#A626A4;">    if</span><span style="color:#383A42;"> (</span><span style="color:#0184BC;">!</span><span style="color:#383A42;">isFirstMount) {</span></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;">      //</span></span>
+<span class="line"><span style="color:#383A42;">    }</span></span>
+<span class="line"><span style="color:#383A42;">  }, [isFirstMount]);</span></span>
+<span class="line"><span style="color:#383A42;">}</span></span></code></pre></div>`,4)])])}const d=a(p,[["render",t]]);export{u as __pageData,d as default};
