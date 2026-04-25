@@ -15,7 +15,6 @@ const topics: ISidebarTopics[] = [
       ["github/ssh", emoji.code + "Подключение по SSH"],
       ["github/github-cli", emoji.star + "GitHub CLI"],
       ["github/github-desktop", "GitHub Desktop"],
-      ["github/github-api", "Github API"],
       [
         "github/github-readme-stats",
         getThemeMenu("method", ["github-readme-stats"]),

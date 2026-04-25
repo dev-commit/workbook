@@ -1,4 +1,5 @@
 export const emoji = {
+  // Main
   fire: "🔥 ",
   star: "⭐️ ",
   theory: "📑 ",
@@ -6,4 +7,15 @@ export const emoji = {
   code: "💎 ",
   libs: "🎲 ",
   items: "⚡️ ",
+  // Numbers
+  n0: "0️⃣ ",
+  n1: "1️⃣ ",
+  n2: "2️⃣ ",
+  n3: "3️⃣ ",
+  n4: "4️⃣ ",
+  n5: "5️⃣ ",
+  n6: "6️⃣ ",
+  n7: "7️⃣ ",
+  n8: "8️⃣ ",
+  n9: "9️⃣ ",
 };

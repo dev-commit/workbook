@@ -65,11 +65,12 @@ const topics: ISidebarTopics[] = [
   {
     title: "Публикация NPM-пакета",
     children: [
-      ["npm-publish/command", "Команды"],
-      ["npm-publish/use-in-project", "Использование в проекте"],
-      ["npm-publish/npm-package", "Настройки NPM-пакета"],
-      ["npm-publish/vite-library-mode", "Vite Library Mode"],
-      ["npm-publish/issue-css-modules", "[issue] Обработка CSS Modules"],
+      ["npm-publish/command", emoji.star + "Команды NPM"],
+      ["npm-publish/use-in-project", emoji.n1 + "Использование в проекте"],
+      ["npm-publish/npm-package-ui-kit", emoji.n2 + "NPM-пакет: Ui Components"],
+      ["npm-publish/npm-package-config", emoji.n3 + "NPM-пакет: конфигурация"],
+      ["npm-publish/vite-library-mode", emoji.theory + "Vite Library Mode"],
+      ["npm-publish/github-packages", "GitHub Packages", "check"],
     ],
   },
 ];

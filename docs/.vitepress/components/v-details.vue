@@ -22,33 +22,44 @@ defineProps<Props>();
 }
 
 .v-details {
-  --color: rgba(var(--color-violet-medium), 0.5);
-
-  border: 1px solid rgba(var(--color-brown), 0.4);
-  overflow: auto;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  background-color: rgba(var(--color-brown), 0.1);
-  cursor: pointer;
+  font-size: 16px;
+  background-color: #f5f5f5;
+  padding: 15px;
+  margin: 16px 0;
+  border-color: var(--vp-custom-block-details-border);
+  color: var(--vp-custom-block-details-text);
+  border-radius: 0px 8px 8px 0px;
+  border-left: 4px solid #bc8bf9;
 }
 
 .v-summary {
   margin: 0;
-  padding: 10px;
-  background-color: rgb(var(--color-violet-medium), 0.1);
+  font-size: 16px;
   font-weight: 500;
-  color: var(--color);
-}
-.v-summary::-webkit-details-marker {
-  margin-right: 10px;
-  color: var(--color);
-}
-.v-summary::marker {
-  margin-right: 10px;
-  color: var(--color);
+  font-family: var(--vp-font-family-base);
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
 }
 
 .v-content {
   padding: 10px;
+}
+
+.v-content :deep(pre) {
+  /* font-size: 14px; */
+  background-color: #fff;
+}
+
+.v-content :deep(.vp-code-group .tabs) {
+  --color: #fafafa;
+  background-color: var(--color);
+  border-top: 1px solid var(--color);
+  border-left: 1px solid var(--color);
+  border-right: 1px solid var(--color);
+}
+
+.v-summary::marker {
+  color: #a96ceb;
 }
 </style>
