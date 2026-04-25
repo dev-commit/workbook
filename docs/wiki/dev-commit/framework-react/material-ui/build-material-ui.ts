@@ -5,7 +5,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "framework-react/material-ui/";
 const title = "Material UI";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = "react";
 
 const topics: ISidebarTopics[] = [
   {
@@ -14,13 +14,7 @@ const topics: ISidebarTopics[] = [
       ["main/info", getTopicSubtitle("info")],
       ["main/install", getTopicSubtitle("install")],
       ["main/use", getTopicSubtitle("use")],
-    ],
-  },
-  {
-    title: "Компоненты",
-    children: [
-      ["components/Stepper", getThemeMenu("method", ["Stepper"])],
-      ["components/Table", getThemeMenu("method", ["Table"])],
+      ["main/components", "Компоненты"],
     ],
   },
   {
@@ -29,8 +23,8 @@ const topics: ISidebarTopics[] = [
       ["styling/stylization", "Стилизация", "done"],
       ["styling/with-styles", getThemeMenu("method", ["withStyles"]), "check"],
       ["styling/make-styles", getThemeMenu("method", ["makeStyles"]), "check"],
-      ["styling/spacing", getThemeMenu("method", ["spacing"]), "check"],
-      ["styling/variants", "Варианты CSS in JS", "check"],
+      ["styling/spacing", getThemeMenu("outline", ["spacing"]), "check"],
+      ["styling/css-in-js-variants", "Варианты CSS in JS", "check"],
     ],
   },
 ];

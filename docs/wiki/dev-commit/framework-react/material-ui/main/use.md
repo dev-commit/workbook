@@ -1,22 +1,20 @@
 # Использование
 
-#### Варианты импортов
+## Варианты импортов
 
 ```js
-import { Button } from "@mui/material"
-import Button from "@mui/material/Button"
-```
+// Аналогичные импорты
+import { Button } from "@mui/material";
+import Button from "@mui/material/Button";
 
-#### TypeScript
-
-```js
-import { ButtonProps } from "@mui/material"
+// Импорт типов TypeScript
+import { ButtonProps } from "@mui/material";
 ```
 
 ## Простой пример
 
 ```js
-import { Button } from "@mui/material"
+import { Button } from "@mui/material";
 
 const App = () => {
   return (
@@ -24,7 +22,5 @@ const App = () => {
       Click
     </Button>
   );
-}
-
-export default App
+};
 ```

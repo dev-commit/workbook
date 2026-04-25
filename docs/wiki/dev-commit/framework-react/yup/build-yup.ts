@@ -6,7 +6,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "framework-react/yup/";
 const title = "Yup";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = "react";
 
 const topics: ISidebarTopics[] = [
   {
@@ -20,11 +20,11 @@ const topics: ISidebarTopics[] = [
   {
     title: "Методы",
     children: [
-      ["methods/types", emoji.fire + "Типы"],
-      ["methods/methods", emoji.fire + "Методы"],
+      ["methods/types", emoji.star + "Типы"],
+      ["methods/methods", emoji.star + "Методы"],
       ["methods/test", getThemeMenu("method", [".test"])],
-      ["methods/chain-values", emoji.code + "Связанные значения"],
-      ["methods/reg-exp", emoji.code + "RegExp"],
+      ["methods/chain-values", "Связанные значения"],
+      ["methods/reg-exp", "RegExp"],
     ],
   },
 ];

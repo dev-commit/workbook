@@ -2,5 +2,5 @@
 
 ```bash
 npm i --save yup
-npm i --save yup @types/yup # for TypeScript
+npm i --save yup @types/yup # Для TypeScript
 ```

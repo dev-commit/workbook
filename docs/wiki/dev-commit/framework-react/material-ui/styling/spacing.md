@@ -1,5 +1,7 @@
 # Spacing
 
+## Отступы
+
 ```bash
 spacing() == spacing(1)
 ```
