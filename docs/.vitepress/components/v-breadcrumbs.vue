@@ -1,12 +1,14 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper"">
     <span v-for="(item, i) in items" :key="i">
       <span class="code">{{ item }}</span>
 
       <template v-if="i !== items.length - 1">
         <span v-html="getSymbol()"></span>
-      </template>
+      </template>      
     </span>
+
+    <span v-if="text"> - {{text}}</span>
   </div>
 </template>
 
@@ -14,10 +16,12 @@
 interface Props {
   items: string[];
   keys?: boolean;
+  text?: string | null;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   keys: false,
+  text: null,
 });
 
 const getSymbol = (): string => {

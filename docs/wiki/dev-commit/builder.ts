@@ -103,6 +103,7 @@ import wikiWebComponents from "./js/web-components/build-web-components";
 import wikiDeploy from "./common/deploy/build-deploy";
 import wikiChakraUi from "./framework-react/chakra-ui/build-chakra-ui";
 import wikiMantineUi from "./framework-react/mantine-ui/build-mantine-ui";
+import wikiStoryBook from "./framework-react/storybook/build-storybook";
 
 export const NAV: IHeaderMenuNav[] = [
   {
@@ -171,6 +172,7 @@ export const NAV: IHeaderMenuNav[] = [
       wikiMantineUi,
       wikiChakraUi,
       wikiMaterialUi,
+      wikiStoryBook,
       null,
       wikiReactHookForm,
       wikiFormik,
@@ -362,4 +364,5 @@ export const SIDEBAR = getSidebar([
   wikiDeploy,
   wikiChakraUi,
   wikiMantineUi,
+  wikiStoryBook,
 ]);

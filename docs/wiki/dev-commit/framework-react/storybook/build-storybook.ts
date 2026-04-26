@@ -4,25 +4,23 @@ import { emoji } from "docs/constants";
 
 import { rootPath } from "../../constants";
 
-const path = rootPath + "common/macos/";
-const title = "MacOS";
-const theme: TThemeTopics = null;
+const path = rootPath + "framework-react/storybook/";
+const title = "StoryBook";
+const theme: TThemeTopics = "react";
 
 const topics: ISidebarTopics[] = [
   {
     title: "Основное",
     children: [
       ["main/info", getTopicSubtitle("info")],
-      ["main/shortcuts", "Keyboard shortcuts"],
-      ["main/flash-cards", "Flash Cards"],
+      ["main/install", getTopicSubtitle("install")],
     ],
   },
   {
-    title: "Cases",
+    title: "Использование",
     children: [
-      ["cases/dot-folder", "Директория с точки"],
-      ["cases/pass-zip", "Установка пароля на Zip-архив"],
-      ["cases/time-zone", "Смена часового пояса"],
+      ["use/basic", emoji.star + "Базовый пример"],
+      ["use/decorators", "Декораторы"],
     ],
   },
 ];

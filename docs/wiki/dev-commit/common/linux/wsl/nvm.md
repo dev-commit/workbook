@@ -1,6 +1,16 @@
 # Установка NVM
 
-## Установка NVM
+## Установка
+
+### 1. Установка cURL
+
+- Утилита cURL нужна для загрузки контента по URL
+
+```bash
+sudo apt-get install curl
+```
+
+### 2. Установка NVM
 
 ::: info
 
@@ -8,7 +18,7 @@
   :::
 
 ```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh
+curl -o- <https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh> | bash
 ```
 
 - Скопировать последние 3 строчки после установки и выполнить
@@ -17,6 +27,12 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+```
+
+**Проверка корректной установки**
+
+```bash
+command -v nvm # => nvm
 ```
 
 ## Команды
