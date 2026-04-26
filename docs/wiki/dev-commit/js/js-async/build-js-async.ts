@@ -5,7 +5,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "js/js-async/";
 const title = "Async";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = "js";
 
 const topics: ISidebarTopics[] = [
   {
@@ -19,10 +19,12 @@ const topics: ISidebarTopics[] = [
   {
     title: "Таймеры",
     children: [
-      ["timers/setTimeout", getThemeMenu("method", ["setTimeout", "setInterval"])],
+      [
+        "timers/setTimeout",
+        getThemeMenu("method", ["setTimeout", "setInterval"]),
+      ],
     ],
   },
 ];
 
 export default { topics, path, title, theme } satisfies IBuildTopics;
-

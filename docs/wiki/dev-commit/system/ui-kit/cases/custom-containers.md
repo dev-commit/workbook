@@ -72,7 +72,7 @@ const memoizedCallback = useCallback(() => {
 
 ::: danger
 
-**`constructor(props)`** - вызывается при создании компонента
+**`constructor(props)`** - описание api
 
 > - `props` - props
 > - _return_ - null

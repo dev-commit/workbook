@@ -1,117 +1,98 @@
 # Async Function (ES2017)
 
+## Информация
+
+::: tip Async Function
+
+- **Async Function** - асинхронная функция (Promise + Generator)
+- Асинхронная функция возвращает Promise, для получения значения используется then
+- Если в асинхронной функции специально вернуть Promise, он не оборачивается в другой Promise
+  :::
+
+- `await` дожидается выполнения Promise, вытаскивает значение и возвращает его
+- Код после `await` выполнится только после выполнения функции
+- `await` можно использовать только внутри асинхронной функции
+- `await` необязательно ставить перед вызовом асинхронной фунцкии. это может быть любая функция, возвращающая Promise
+
 ## Объявление
 
-#### Стрелочная
+### Функция
 
-```js
+<v-two :title="['Стрелочная', 'Обычная']">
+  <template #first>
+ 
+ ```js
 const foo = async () => {
     const a = await AsyncFunction();
 };
 ```
 
-#### Обычная
+  </template>
+  <template #last>
 
 ```js
 async function foo() {
-    const a = await AsyncFunction();  
+  const a = await AsyncFunction();
 }
 ```
 
-#### Стрелочная
+  </template>
+</v-two>
+
+### Анонимная самовызывающаяся функция
+
+<v-two :title="['Стрелочная', 'Обычная']">
+  <template #first>
 
 ```js
 (async () => {
-    const a = await AsyncFunction();
+  const a = await AsyncFunction();
 })();
 ```
 
-#### Обычная
+  </template>
+  <template #last>
 
 ```js
-(async function() {
-    const a = await AsyncFunction();
+(async function () {
+  const a = await AsyncFunction();
 })();
 ```
-- Async Function - асинхронная функция (Promise + Generator)
-- Асинхронная функция возвращает Promise, для получения значения используется then
-- Если в асинхронной функции специально вернуть Promise, он не оборачивается в другой Promise
+
+  </template>
+</v-two>
+
+## Варианты объявления
 
 ```js
-async function getUser(id) {
-    return { id:1 };   
-}
-getUser(1).then(user => console.log(user));
-```
-- await дожидается выполнения Promise, вытаскивает значение и возвращает его
-- код после await выполнится только после выполнения функции
-- await можно использовать только внутри асинхронной функции
-- await необязательно ставить перед вызовом асинхронной фунцкии. это может быть любая функция, возвращающая Promise
+// Обычная функция
+const getUser = async function (id) {
+  //
+};
 
-```js
-async function getUser(id) {
-    return { id:1 };   
-}
-async function main() {
-    let user = await getUser(1);
-    console.log(user);
-}
-main();
-```
-
-```js
-async function getUser(id) {
-    let response = await fetch('url');
-    let data = await response.json();
-    return data;
-}
-
-async function main() {
-    try {
-        let user = await getUser(1);
-        console.log(user);
-    } catch(error) {
-        console.log(error);
-    }
-}
-
-main();
-```
-
-### Варианты объявления
-
-```js
-const getUser = async function(id) {
-    //
-}
-```
-
-```js
+// Стрелочная функция
 const getUser = async (id) => {
+  //
+};
+
+// Свойство объекта
+const obj = {
+  getUser: async function (id) {
     //
-}
-```
+  },
+};
 
-```js
+// Метод объекта
 const obj = {
-    getUser: async function(id) {
-        //
-    }
-}
-```
+  async getName() {
+    return fetch("https://www.example.com");
+  },
+};
 
-```js
-const obj = {
-    async getName() {
-        return fetch('https://www.example.com');
-    }
-}
-```
-
-```js
+// Класс
 class Obj {
-    async getResource() {
-        return fetch('https://www.example.com');
-    }
+  async getResource() {
+    return fetch("https://www.example.com");
+  }
 }
 ```
