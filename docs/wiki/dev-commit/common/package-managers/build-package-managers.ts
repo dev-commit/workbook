@@ -65,7 +65,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Публикация NPM-пакета",
     children: [
-      ["npm-publish/command", emoji.star + "Команды NPM"],
+      ["npm-publish/command", emoji.star + "Команды и информация"],
       ["npm-publish/use-in-project", emoji.n1 + "Использование в проекте"],
       ["npm-publish/npm-package-ui-kit", emoji.n2 + "NPM-пакет: Ui Components"],
       ["npm-publish/npm-package-config", emoji.n3 + "NPM-пакет: конфигурация"],

@@ -3,6 +3,7 @@
 ::: info
 
 - https://docs.github.com/en/packages - Документация
+- https://docs.github.com/ru/packages/working-with-a-github-packages-registry/working-with-the-npm-registry - Работа с реестром npm
   :::
 
 ::: tip GitHub Packages
