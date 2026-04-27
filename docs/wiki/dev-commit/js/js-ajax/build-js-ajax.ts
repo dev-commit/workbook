@@ -5,7 +5,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "js/js-ajax/";
 const title = "Ajax";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = "js";
 
 const topics: ISidebarTopics[] = [
   {
@@ -23,4 +23,3 @@ const topics: ISidebarTopics[] = [
 ];
 
 export default { topics, path, title, theme } satisfies IBuildTopics;
-

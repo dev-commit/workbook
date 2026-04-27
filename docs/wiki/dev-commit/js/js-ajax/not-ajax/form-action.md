@@ -33,14 +33,12 @@ form.addEventListener("submit", function (e) {
 </form>
 ```
 
-```html
-http://test1.ru/script.php?name=myname&message=my+message
-```
+- http://test1.ru/script.php?name=myname&message=my+message
 
 ```php
 <?php
-	$name    = $_GET[name];
-	$message = $_GET[message];
+  $name    = $_GET[name];
+  $message = $_GET[message];
 ?>
 ```
 
@@ -50,42 +48,30 @@ http://test1.ru/script.php?name=myname&message=my+message
 
 ```php
 <?php
-	$content = file_get_contents("php://input"); // чтение данных
-	$decoded = json_decode($content, true);      // если передан json
-	echo $decoded[name];                         // вывод значения "name"
+  $content = file_get_contents("php://input"); // Чтение данных
+  $decoded = json_decode($content, true);      // Если передан json
+  echo $decoded[name];                         // Вывод значения "name"
 ?>
 ```
 
 ### Передача нескольких значений из PHP
 
-####
-
 ```php
 <?php
-    $arr = array("Tony", 25);
-    $json = json_encode($arr);
-    echo $json
+  $arr = array("Tony", 25);
+  $json = json_encode($arr);
+  echo $json
+
+  // response.data; // ['Tony', 25]
 ?>
 ```
 
-####
-
-```php
-response.data; // ['Tony', 25]
-```
-
-####
-
 ```php
 <?php
-    $arr = array("name" => "Tony", "age" => 25);
-    $json = json_encode($arr);
-    echo $json
+  $arr = array("name" => "Tony", "age" => 25);
+  $json = json_encode($arr);
+  echo $json
+
+  // response.data; // {name: "Tony", age: "25"}
 ?>
-```
-
-####
-
-```php
-response.data; // {name: "Tony", age: "25"}
 ```
