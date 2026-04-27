@@ -1,26 +1,15 @@
 # Команды
 
-## Команды
+## Основные
 
 - `npm init` - Инициализация проекта и создание package.json (если еще нет проекта)
 - `npm login` - Вход в аккаунт. Откроется браузер для авторизации
 - `npm whoami` - Проверить текущий логин (не обязательно). Покажет название аккаунта
 - `npm publish` - Публикация проекта. Откроется браузер для авторизации
-- `npm unpublish` - Снятие пакета с публикации. Повторно можно будет загрузить пакет с таким же именем после 24 часов
+- `npm unpublish <package-name> --force` - Удаление пакета (доступно в течении 72 часов)
 
-## Алгоритм обновления пакета
+## Deprecated
 
-1. Обновился кода пакета
-2. Изменить `"version"` в package.json
-3. Опубликовать через `npm publish`
-4. Подключить к приложению через `npm i PackageName`
-
-## Варианты названия пакета
-
-1. `@scope/package-name`
-
-- @scope должен совпадать с Username на NPM
-
-2. `package-name`
-
-- Без @scope, нет привязки к Username
+- `npm deprecate <package-name> "Deprecated: use <new-package> instead"` - Пометить пакет deprecated
+- `npm deprecate <package-name> ""` - Убрать deprecated у пакета
+- `npm view <package-name> deprecated` - Проверить deprecated пакета
