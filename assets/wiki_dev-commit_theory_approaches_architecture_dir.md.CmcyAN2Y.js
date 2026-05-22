@@ -1,0 +1,35 @@
+import{_ as a,o as n,c as p,aw as e}from"./chunks/framework.DLufY-ao.js";const m=JSON.parse('{"title":"Структура директорий","description":"","frontmatter":{},"headers":[],"relativePath":"wiki/dev-commit/theory/approaches/architecture/dir.md","filePath":"wiki/dev-commit/theory/approaches/architecture/dir.md"}'),l={name:"wiki/dev-commit/theory/approaches/architecture/dir.md"};function t(i,s,c,r,o,d){return n(),p("div",null,[...s[0]||(s[0]=[e(`<h1 id="структура-директории" tabindex="-1">Структура директорий <a class="header-anchor" href="#структура-директории" aria-label="Permalink to &quot;Структура директорий&quot;">​</a></h1><div class="language-text"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki one-light vp-code" tabindex="0"><code><span class="line"><span>src/</span></span>
+<span class="line"><span>  app/</span></span>
+<span class="line"><span>    providers/</span></span>
+<span class="line"><span>    workflows/</span></span>
+<span class="line"><span>    effects/</span></span>
+<span class="line"><span>    services/</span></span>
+<span class="line"><span>    policies/</span></span>
+<span class="line"><span>  domains/</span></span>
+<span class="line"><span>    &lt;feature-a&gt;/</span></span>
+<span class="line"><span>      &lt;feature-a&gt;-repository.ts</span></span>
+<span class="line"><span>      &lt;FeatureAStore&gt;.ts</span></span>
+<span class="line"><span>      errors.ts</span></span>
+<span class="line"><span>      validators.ts</span></span>
+<span class="line"><span>      *.test.ts</span></span>
+<span class="line"><span>    &lt;feature-b&gt;/</span></span>
+<span class="line"><span>  views/</span></span>
+<span class="line"><span>    &lt;page-or-flow&gt;/</span></span>
+<span class="line"><span>      &lt;PageView&gt;.&lt;ui-file&gt;</span></span>
+<span class="line"><span>      &lt;Section&gt;.&lt;ui-file&gt;</span></span>
+<span class="line"><span>      *.validation.ts</span></span>
+<span class="line"><span>  components/</span></span>
+<span class="line"><span>    &lt;composed-ui-blocks&gt;/</span></span>
+<span class="line"><span>  ui-kit/</span></span>
+<span class="line"><span>    &lt;design-system-primitives&gt;/</span></span>
+<span class="line"><span>  shared/</span></span>
+<span class="line"><span>    utils/</span></span>
+<span class="line"><span>    formatters/</span></span>
+<span class="line"><span>    platform/</span></span>
+<span class="line"><span>routes/</span></span>
+<span class="line"><span>  &lt;route&gt;/</span></span>
+<span class="line"><span>    page</span></span>
+<span class="line"><span>    load/guard</span></span>
+<span class="line"><span>e2e/</span></span>
+<span class="line"><span>  domains/</span></span>
+<span class="line"><span>docs/</span></span></code></pre></div>`,2)])])}const g=a(l,[["render",t]]);export{m as __pageData,g as default};
