@@ -1,19 +1,25 @@
 # useSWR()
 
-Запускается автоматически
+## Информация
 
-URL для запроса
-Асинхронная функция, в которой происходит запрос. Принимает URL, переданный первым аргументом в useSWR
-(опционально) объект со свойствами
-`{ data, error, isLoading, mutate }`
+::: danger
 
-#### Return
+**`useSWR (url, fetcher)`** - Запускается автоматически
 
-- data - данные, возвращенные от API (или undefined, если не загружено)
-- error - ошибка, выданная fetcher (или undefined)
-- isLoading - статус загрузки: при совершении запроса будет true, после завершения запроса - false. Если есть текущий запрос и нет «загруженных данных». Резервные данные и предыдущие данные не считаются «загруженными данными»
-- isValidating - если запрос или ревалидация загружается
-- mutate(data?, options?) - функция для мутации закешированных данных
+> - `key` - URL для запроса
+> - `fetcher(key, { arg })` - Асинхронная функция, в которой происходит запрос. Принимает URL, переданный первым аргументом в useSWR
+> - `options` - (опционально) объект со свойствами (https://swr.vercel.app/ru/docs/api#options)
+> - _return_ - <span v-pre>{ data, error, isLoading, mutate }</span>
+
+:::
+
+**Возвращаемый объект**
+
+- `data` - данные, возвращенные от API (или undefined, если не загружено)
+- `error` - ошибка, выданная fetcher (или undefined)
+- `isLoading` - статус загрузки: при совершении запроса будет true, после завершения запроса - false. Если есть текущий запрос и нет «загруженных данных». Резервные данные и предыдущие данные не считаются «загруженными данными»
+- `isValidating` - если запрос или ревалидация загружается
+- `mutate(data?, options?)` - функция для мутации закешированных данных
 
 ## Аргументы
 
@@ -35,32 +41,34 @@ useSWR("/api/user", fetcher);
 
 ### Базовый пример
 
-```js
+::: code-group
+
+```ts [api/sample.ts]
 interface ISampleModel {
-  userId: number
-  id: number
-  title: string
-  completed: boolean
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
 }
 
 export const useSample = () => {
   const { data, error, isLoading } = useSWR(
     "https://jsonplaceholder.typicode.com/todos/1",
     async (url): Promise<ISampleModel> => {
-      const res = await fetch(url)
-      return await res.json()
+      const res = await fetch(url);
+      return await res.json();
     },
-  )
+  );
 
   return {
     data,
     error,
     isLoading,
-  }
-}
+  };
+};
 ```
 
-```js
+```tsx [App.tsx]
 import { useSample } from "./api/sample";
 
 const App = () => {
@@ -71,14 +79,14 @@ const App = () => {
 
   return <div>Hi, {data.title}</div>;
 };
+
+console.log(data);
+// {
+//   "userId": 1,
+//   "id": 1,
+//   "title": "delectus aut autem",
+//   "completed": false
+// }
 ```
 
-```js
-console.log(data)
-{
-    "userId": 1,
-    "id": 1,
-    "title": "delectus aut autem",
-    "completed": false
-}
-```
+:::

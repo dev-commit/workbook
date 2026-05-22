@@ -1,11 +1,12 @@
 import { IBuildTopics, TThemeTopics, ISidebarTopics } from "docs/types";
 import { getTopicSubtitle, getThemeMenu } from "docs/utils";
+import { emoji } from "docs/constants";
 
 import { rootPath } from "../../constants";
 
 const path = rootPath + "network/swr/";
 const title = "SWR";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = "primary";
 
 const topics: ISidebarTopics[] = [
   {
@@ -13,7 +14,7 @@ const topics: ISidebarTopics[] = [
     children: [
       ["main/info", getTopicSubtitle("info")],
       ["main/install", getTopicSubtitle("install")],
-      ["main/peculiarities", "Особенности"],
+      ["main/peculiarities", emoji.star + "Особенности"],
     ],
   },
   {
@@ -21,14 +22,17 @@ const topics: ISidebarTopics[] = [
     children: [
       ["api/useSWR", getThemeMenu("method", ["useSWR"])],
       ["api/useSWRMutation", getThemeMenu("method", ["useSWRMutation"])],
-      ["api/mutate", getThemeMenu("method", ["mutate"])],
-      ["api/useSWRInfinite", getThemeMenu("method", ["useSWRInfinite"])],
+      ["api/mutate", getThemeMenu("unactive", ["mutate"])],
+      ["api/useSWRInfinite", getThemeMenu("unactive", ["useSWRInfinite"])],
       [
         "api/useSWRSubscription",
-        getThemeMenu("method", ["useSWRSubscription"]),
+        getThemeMenu("unactive", ["useSWRSubscription"]),
       ],
-      ["api/SWRConfig", getThemeMenu("method", ["SWRConfig", "useSWRConfig"])],
-      ["api/useSWRImmutable", getThemeMenu("method", ["useSWRImmutable"])],
+      [
+        "api/useSWRConfig",
+        getThemeMenu("unactive", ["useSWRConfig", "SWRConfig"]),
+      ],
+      ["api/useSWRImmutable", getThemeMenu("unactive", ["useSWRImmutable"])],
     ],
   },
 ];

@@ -1,14 +1,22 @@
 # useSWRImmutable()
 
+## Информация
+
 ::: info
-https://swr.vercel.app/ru/docs/revalidation#disable-automatic-revalidations
+
+- https://swr.vercel.app/ru/docs/revalidation#disable-automatic-revalidations
+  :::
+
+::: danger
+
+**`useSWRImmutable()`** - Хук помечает ресурс как неизменяемый. Он имеет тот же API-интерфейс, что и обычный хук useSWR
+
 :::
-- Хук помечает ресурс как неизменяемый
-- Он имеет тот же API-интерфейс, что и обычный хук useSWR
+
+## Пример
 
 ```js
-import useSWRImmutable from 'swr/immutable'
+import useSWRImmutable from "swr/immutable";
 
-// ...
-useSWRImmutable(key, fetcher, options)
+useSWRImmutable(key, fetcher, options);
 ```
