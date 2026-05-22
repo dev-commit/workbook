@@ -10,6 +10,16 @@ const theme: TThemeTopics = "accent";
 
 const topics: ISidebarTopics[] = [
   {
+    title: "Архитектура",
+    children: [
+      ["architecture/info", "Информация"],
+      ["architecture/layers", "Слои"],
+      ["architecture/patterns", "Паттерны"],
+      ["architecture/dir", "Структура директорий"],
+    ],
+  },
+
+  {
     title: "Подходы и паттерны",
     children: [
       ["main/00-introduction", "Обзор"],

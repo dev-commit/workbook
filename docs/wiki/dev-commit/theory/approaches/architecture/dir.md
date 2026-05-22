@@ -1,0 +1,39 @@
+# Структура директорий
+
+```text
+src/
+  app/
+    providers/
+    workflows/
+    effects/
+    services/
+    policies/
+  domains/
+    <feature-a>/
+      <feature-a>-repository.ts
+      <FeatureAStore>.ts
+      errors.ts
+      validators.ts
+      *.test.ts
+    <feature-b>/
+  views/
+    <page-or-flow>/
+      <PageView>.<ui-file>
+      <Section>.<ui-file>
+      *.validation.ts
+  components/
+    <composed-ui-blocks>/
+  ui-kit/
+    <design-system-primitives>/
+  shared/
+    utils/
+    formatters/
+    platform/
+routes/
+  <route>/
+    page
+    load/guard
+e2e/
+  domains/
+docs/
+```
