@@ -11,6 +11,8 @@ import wikiCss from "./layout/css/build-css";
 import wikiVue from "./framework-vue/vue/build-vue";
 import wikiVueRouter from "./framework-vue/vue-router/build-vue-router";
 import wikiVuex from "./framework-vue/vuex/build-vuex";
+import wikiPinia from "./framework-vue/pinia/build-pinia";
+import wikiNuxt from "./framework-vue/nuxt/build-nuxt";
 import wikiLayout from "./layout/layout/build-layout";
 import wikiIde from "./common/ide/build-ide";
 import wikiSass from "./layout/sass/build-sass";
@@ -98,7 +100,7 @@ import wikiTask from "./js/js-task/build-js-task";
 import wikiWebApi from "./js/js-web-api/build-js-web-api";
 import wikiLodash from "./js/lodash/build-lodash";
 import wikiRamda from "./js/ramda/build-ramda";
-import wikiV8 from "./js/v8/build-v8";
+import wikiCriticalRenderingPath from "./js/critical-rendering-path/build-critical-rendering-path";
 import wikiWebComponents from "./js/web-components/build-web-components";
 import wikiDeploy from "./common/deploy/build-deploy";
 import wikiChakraUi from "./framework-react/chakra-ui/build-chakra-ui";
@@ -137,7 +139,7 @@ export const NAV: IHeaderMenuNav[] = [
     text: "JavaScript",
     children: getNav([
       wikiEventLoop,
-      wikiV8,
+      wikiCriticalRenderingPath,
       wikiTask,
       null,
       wikiJavaScript,
@@ -194,7 +196,7 @@ export const NAV: IHeaderMenuNav[] = [
   },
   {
     text: "Vue.js",
-    children: getNav([wikiVue, wikiVuex, wikiVueRouter]),
+    children: getNav([wikiVue, wikiPinia, wikiNuxt, wikiVuex, wikiVueRouter]),
   },
   {
     text: "Svelte",
@@ -335,10 +337,12 @@ export const SIDEBAR = getSidebar([
   wikiWebApi,
   wikiLodash,
   wikiRamda,
-  wikiV8,
+  wikiCriticalRenderingPath,
   wikiWebComponents,
   wikiCss,
   wikiVue,
+  wikiPinia,
+  wikiNuxt,
   wikiVueRouter,
   wikiVuex,
   wikiLayout,

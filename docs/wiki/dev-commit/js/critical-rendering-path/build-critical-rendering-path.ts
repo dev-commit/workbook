@@ -4,15 +4,11 @@ import { emoji } from "docs/constants";
 
 import { rootPath } from "../../constants";
 
-const path = rootPath + "js/v8/";
-const title = "V8 | Rendering | Optimize";
+const path = rootPath + "js/critical-rendering-path/";
+const title = "Rendering | Optimize";
 const theme: TThemeTopics = "actual";
 
 const topics: ISidebarTopics[] = [
-  {
-    title: "Движок V8",
-    children: [["v8/info", getTopicSubtitle("info")]],
-  },
   {
     title: "Рендеринг",
     children: [

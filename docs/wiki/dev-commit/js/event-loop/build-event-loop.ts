@@ -5,7 +5,7 @@ import { emoji } from "docs/constants";
 import { rootPath } from "../../constants";
 
 const path = rootPath + "js/event-loop/";
-const title = "Event Loop";
+const title = "V8 | Event Loop";
 const theme: TThemeTopics = "actual";
 
 const topics: ISidebarTopics[] = [
@@ -13,14 +13,17 @@ const topics: ISidebarTopics[] = [
     title: "Event Loop",
     children: [
       ["main/info", getTopicSubtitle("info")],
-      ["main/runtime", emoji.star + "Архитектура среды выполнения"],
+      ["main/runtime", emoji.star + "Движок V8"],
       ["main/tasks", emoji.star + "Виды задач"],
     ],
   },
   {
     title: "Примеры на Event Loop",
     children: [
-      ["samples/addEventListener", getThemeMenu("method", ["addEventListener"])],
+      [
+        "samples/addEventListener",
+        getThemeMenu("method", ["addEventListener"]),
+      ],
       ["samples/onClick", getThemeMenu("method", ["onClick"])],
       ["samples/other", "Прочее"],
     ],
@@ -28,4 +31,3 @@ const topics: ISidebarTopics[] = [
 ];
 
 export default { topics, path, title, theme } satisfies IBuildTopics;
-
