@@ -6,7 +6,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "js/critical-rendering-path/";
 const title = "Rendering | Optimize";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = "accent";
 
 const topics: ISidebarTopics[] = [
   {
@@ -26,7 +26,7 @@ const topics: ISidebarTopics[] = [
   {
     title: "Оптимизация",
     children: [
-      ["optimization/info", emoji.fire + "Оптимизация загрузки"],
+      ["optimization/optimization", emoji.fire + "Оптимизация загрузки"],
       ["optimization/website-loading", emoji.theory + "Загрузка веб-страницы"],
       ["optimization/caching", "Кэширование"],
       ["optimization/tree-shaking", "Tree shaking"],

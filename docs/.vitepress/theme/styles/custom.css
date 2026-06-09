@@ -122,12 +122,20 @@
   background-color: #fff;
   border: 2px solid rgba(var(--color-violet-blue), 0.4);
   font-size: 16px;
+  padding: 0px 12px;
 }
 .custom-block.tip .custom-block-title {
   color: rgba(var(--color-violet-blue), 1);
+  display: none;
 }
-.custom-block.tip .custom-block-title::before {
+/* .custom-block.tip .custom-block-title::before {
   content: "📑 ";
+} */
+.custom-block.tip strong {
+  background-color: rgba(var(--color-blue-light), 0.7);
+  border-radius: 4px;
+  display: inline-block;
+  padding: 0 4px;
 }
 
 .custom-block.danger {

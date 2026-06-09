@@ -6,7 +6,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "js/event-loop/";
 const title = "V8 | Event Loop";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = "accent";
 
 const topics: ISidebarTopics[] = [
   {
