@@ -4,16 +4,16 @@
 
 ```js
 export const getList = async () => {
-  const promise = instance.get("url")
+  const promise = instance.get("url");
 
   promise
     .then((response) => {
-      console.log(response.data)
+      console.log(response.data);
     })
     .catch((error) => {
-      console.log(error)
-    })
-}
+      console.log(error);
+    });
+};
 ```
 
 ## Async Function. Try / Catch
@@ -21,22 +21,22 @@ export const getList = async () => {
 ```js
 export const getList = async () => {
   try {
-    const { data } = await instance.get("url")
-    return data
+    const { data } = await instance.get("url");
+    return data;
   } catch (error) {
     // @ts-ignore
-    return error.message
+    return error.message;
   }
-}
+};
 ```
 
 ## Async Function. Функция-обертка
 
 ```js
 export const getList = async () => {
-  const { data } = await instance.get("url")
-  return data
-}
+  const { data } = await instance.get("url");
+  return data;
+};
 
 export const catchApiErrors = async (responseFunction) => {
   try {
@@ -45,10 +45,10 @@ export const catchApiErrors = async (responseFunction) => {
     // @ts-ignore
     return error;
   }
-}
+};
 
 const getData = async () => {
-  const data = await catchApiErrors(getList)
-  console.log(data)
-}
+  const data = await catchApiErrors(getList);
+  console.log(data);
+};
 ```

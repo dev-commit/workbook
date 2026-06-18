@@ -1,11 +1,18 @@
 # Создание instance
 
+## Директории
+
+```bash
 📂 services
-	› init.ts
-services/init.ts
+  › init.ts
+```
+
+## Пример
+
+> services/init.ts
 
 ```js
-import axios from "axios"
+import axios from "axios";
 
 export const instance = axios.create({
   baseURL: "https://website/api/",
@@ -13,12 +20,12 @@ export const instance = axios.create({
   // headers: {
   //   "Access-Control-Allow-Origin": "*",
   // },
-})
+});
 ```
 
 ## Init Function
 
-init.ts
+> init.ts
 
 ```js
 const init = (): AxiosInstance => {

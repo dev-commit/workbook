@@ -5,7 +5,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "network/axios/";
 const title = "Axios";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = "primary";
 
 const topics: ISidebarTopics[] = [
   {
