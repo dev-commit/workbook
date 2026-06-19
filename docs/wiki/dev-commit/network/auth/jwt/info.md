@@ -1,6 +1,11 @@
 # Информация
 
 ::: info
-https://jwt.io/
-:::
+
+- https://jwt.io/
+  :::
+
+::: tip
+
 - **JWT** - JSON Web Tokens
+  :::

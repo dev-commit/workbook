@@ -6,7 +6,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "network/auth/";
 const title = "Авторизация";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = "primary";
 
 const topics: ISidebarTopics[] = [
   {
@@ -33,4 +33,3 @@ const topics: ISidebarTopics[] = [
 ];
 
 export default { topics, path, title, theme } satisfies IBuildTopics;
-

@@ -10,4 +10,4 @@
 4. Каждый запрос к Серверу Клиент подписывает полученным ID
 5. Сервер смотрит в хранилище и если все хорошо, то работает с пользователем
 
-<!-- <img class="xl test" src="../@img/session-cookie.png" width="800px"/> -->
+<img src="../img/session-cookie.png" width="800px"/>
