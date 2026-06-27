@@ -2,32 +2,29 @@
 
 ## Cursor Settings
 
-#### Автокомплит текста в редакторе
+<v-breadcrumbs :items="['Cursor', 'Preferences', 'Cursor Settings']" />
 
-<v-breadcrumbs keys :items="['Cursor Settings', 'Tab', 'Cursor Tab']" />
+::: details Автокомплит текста в редакторе
+<v-breadcrumbs :items="['Tab', 'Cursor Tab']" />
+:::
 
-## Agent Settings
+::: details Открыть ссылки Localhost из Терминала в Браузере
 
-#### Индексирование репозитория
+- Клик из Терминала по-умолчанию открывает браузер Cursor. Нужно, чтобы открывал внешний браузер
 
-<v-breadcrumbs keys :items="['Agent Settings', 'Indexing & Docs', 'Codebase Indexing', 'Compute Index']" />
+<v-breadcrumbs :items="['Tools & MCPs', 'Browser', 'Show Localhost Links in Browser']" />
+
+:::
+
+::: details Индексирование репозитория
+
+<v-breadcrumbs :items="['Indexing & Docs', 'Indexing & Docs', 'Codebase Indexing', 'Compute Index']" />
 
 - После индексирования будет указано 100%
 
-::: details Скрин
 <img src="../@img/cursor/settings-indexing.png" style="width: 650px" />
 :::
 
-#### Настройки VSCode
-
-<v-breadcrumbs :items="['Agent Settings', 'General', 'Editor Settings']" />
-
-#### Импорт настроек из VSCode
-
-<v-breadcrumbs :items="['Agent Settings', 'General', 'Import Settings from VS Code']" />
-
-#### Правила
-
-<v-breadcrumbs :items="['Agent Settings', 'Rules, Skills, Subagents', 'Rules']" />
-
-- Правила для работы агентов
+::: details Правила для работы агентов
+<v-breadcrumbs :items="['Rules, Skills, Subagents', 'Rules']" />
+:::

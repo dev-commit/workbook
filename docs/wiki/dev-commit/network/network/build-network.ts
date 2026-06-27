@@ -5,7 +5,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "network/network/";
 const title = "Сеть";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = "primary";
 
 const topics: ISidebarTopics[] = [
   {
@@ -24,8 +24,6 @@ const topics: ISidebarTopics[] = [
       ["tech/long-polling", "Long Polling"],
       ["tech/sse", "SSE (Server Sent Events)"],
       ["tech/cors", emoji.items + "CORS"],
-      ["tech/comet", "Comet"],
-      ["tech/jsonp", "JSONP"],
     ],
   },
   {

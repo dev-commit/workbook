@@ -37,8 +37,8 @@ const topics: ISidebarTopics[] = [
     title: "Cursor",
     children: [
       ["cursor/info", getTopicSubtitle("info")],
+      ["cursor/settings", emoji.star + "Настройки"],
       ["cursor/elements", "Элементы"],
-      ["cursor/settings", "Настройки"],
       ["cursor/browser", "Браузер"],
     ],
   },
