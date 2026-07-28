@@ -1,45 +1,47 @@
 # Async Await / Promise / setTimeout
 
-## Event Loop
+::: details Event Loop
 
 ```js
 // синхронный код
 console.log(1);
 
 const promise = new Promise((res, rej) => {
-    // это обычная функция, внутри которой синхронный код
-    console.log(2);
-    res(4);
-})
+  // это обычная функция, внутри которой синхронный код
+  console.log(2);
+  res(4);
+});
 
 // синхронный код
 console.log(3);
 
-promise.then(value => console.log(value))
+promise.then((value) => console.log(value));
 
 // => 1, 2, 3, 4
 ```
 
-## Promise и setTimeout
+:::
+
+::: details Promise и setTimeout
 
 ```js
 // 1 - синхронный код
 console.log(1);
 
 Promise.resolve().then(() => {
-	// 3 - микротаска
-	console.log(3);
-	
-	// 5 - макротаска, поставится в очеред после setTimeout(() => { console.log(2); })
-	setTimeout(() => {
-		console.log(4);
-	})
-})
+  // 3 - микротаска
+  console.log(3);
+
+  // 5 - макротаска, поставится в очеред после setTimeout(() => { console.log(2); })
+  setTimeout(() => {
+    console.log(4);
+  });
+});
 
 // 4 - макротаска
 setTimeout(() => {
-	console.log(2);
-})
+  console.log(2);
+});
 
 // 2 - синхронный код
 console.log(5);
@@ -47,17 +49,19 @@ console.log(5);
 // => 1, 5, 3, 2, 4
 ```
 
-## Бесконечный Promise и setTimeout
+:::
+
+::: details Бесконечный Promise и setTimeout
 
 ```js
 function a() {
-	console.log('a');
-	Promise.resolve().then(a);
+  console.log("a");
+  Promise.resolve().then(a);
 }
 
 function b() {
-	console.log('b');
-	setTimeout(b, 0);
+  console.log("b");
+  setTimeout(b, 0);
 }
 
 a();
@@ -66,73 +70,79 @@ b();
 // => a, b, a (бесконечно)
 ```
 
-## Async Await + Promise + setTimeout
+:::
+
+::: details Async Await + Promise + setTimeout
 
 ```js
 const a = 1;
 
-const fn = async function() {
-    setTimeout(() => {
-        console.log('Пятый', a); // => 6
-        a = 2;
-    }, 0);
+const fn = async function () {
+  setTimeout(() => {
+    console.log("Пятый", a); // => 6
+    a = 2;
+  }, 0);
 
-    const promise = new Promise(function(resolve, reject) {
-        console.log('Первый', a); // => 1
-        a = 3;
-        resolve();
+  const promise = new Promise(function (resolve, reject) {
+    console.log("Первый", a); // => 1
+    a = 3;
+    resolve();
+  });
+
+  promise
+    .then(() => {
+      console.log("Второй", a); // => 3
+      a = 4;
+    })
+    .catch(() => {
+      console.log("Не выведет", a);
+      a = 5;
+    })
+    .then(() => {
+      console.log("Четвертый", a); // => 4
+      a = 6;
     });
 
-    promise
-        .then(() => {
-            console.log('Второй', a); // => 3
-            a = 4;
-        })
-        .catch(() => {
-            console.log('Не выведет', a);
-            a = 5;  
-        })
-        .then(() => {
-            console.log('Четвертый', a); // => 4
-            a = 6;
-        });
+  await promise;
 
-    await promise;
-
-    console.log('Третий', a); // => 4 
-}
+  console.log("Третий", a); // => 4
+};
 
 fn();
 ```
 
-## Использование async await вместо Promise.all()
+:::
+
+::: details Использование async await вместо Promise.all()
 
 - Использовать async await, но 2 запроса "foo1()" и "foo2()" должны работать асинхронно
 
 ```js
 async function foo1() {
-	return 1;
+  return 1;
 }
 
 async function foo2() {
-	return 2;
+  return 2;
 }
 
 async function all() {
   const value1 = foo1(); // Promise
   const value2 = foo2(); // Promise
-  
+
   // 1 request and 2 request
   const result1 = await value1;
   const result2 = await value2;
-  
+
   return [result1, result2];
 }
 
 async function result() {
-	const res = await all();
-	console.log(res);  // => (2) [1, 2]
+  const res = await all();
+  console.log(res); // => (2) [1, 2]
 }
 
 result();
 ```
+
+:::

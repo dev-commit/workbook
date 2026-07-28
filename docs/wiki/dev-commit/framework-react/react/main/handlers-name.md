@@ -6,10 +6,10 @@
 ```js
 const App = () => {
   // Используется внутри компонента
-  constonChange = () => null;
+  const onChange = () => null;
 
   // Передается в props другого компонента
-  consthandleClick = () => null;
+  const handleClick = () => null;
 
   return (
     <>
