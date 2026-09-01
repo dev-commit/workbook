@@ -1,5 +1,6 @@
 import { IBuildTopics, TThemeTopics, ISidebarTopics } from "docs/types";
 import { getThemeMenu } from "docs/utils";
+import { emoji } from "docs/constants";
 
 import { rootPath } from "../../constants";
 
@@ -8,6 +9,19 @@ const title = "Async";
 const theme: TThemeTopics = "js";
 
 const topics: ISidebarTopics[] = [
+  {
+    title: "Ajax",
+    children: [
+      ["ajax/info", emoji.theory + "Описание"],
+      ["ajax/xmlhttprequest", "1. XMLHttpRequest"],
+      ["ajax/fetch", "2. Fetch"],
+      ["ajax/AbortController", getThemeMenu("method", ["AbortController"])],
+    ],
+  },
+  {
+    title: "Not Ajax",
+    children: [["not-ajax/form-action", "Form Action"]],
+  },
   {
     title: "Асинхронный код",
     children: [

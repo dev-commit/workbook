@@ -61,7 +61,6 @@ import wikiDayJs from "./js/day-js/build-day-js";
 import wikiEventLoop from "./js/event-loop/build-event-loop";
 import wikiFormik from "./framework-react/formik/build-formik";
 import wikiJavaScript from "./js/js/build-js";
-import wikiAjax from "./js/js-ajax/build-js-ajax";
 import wikiAxios from "./network/axios/build-axios";
 import wikiSwr from "./network/swr/build-swr";
 import wikiTanStackQuery from "./network/tan-stack-query/build-tan-stack-query";
@@ -151,7 +150,6 @@ export const NAV: IHeaderMenuNav[] = [
       null,
       wikiAsync,
       wikiPromise,
-      wikiAjax,
       null,
       wikiRegExp,
       wikiWebApi,
@@ -322,7 +320,6 @@ export const SIDEBAR = getSidebar([
   wikiAsync,
   wikiFormik,
   wikiJavaScript,
-  wikiAjax,
   wikiAxios,
   wikiSwr,
   wikiTanStackQuery,
