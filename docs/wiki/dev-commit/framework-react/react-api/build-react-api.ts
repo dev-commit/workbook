@@ -6,7 +6,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "framework-react/react-api/";
 const title = "React API";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = "react";
 
 const topics: ISidebarTopics[] = [
   {
@@ -40,7 +40,7 @@ const topics: ISidebarTopics[] = [
     children: [
       [
         "common/dangerously-set-inner-html",
-        getThemeMenu("method", ["dangerouslySetInnerHTML"]),
+        getThemeMenu("outline", ["dangerouslySetInnerHTML"]),
       ],
       ["common/forwardRef", getThemeMenu("method", ["forwardRef"])],
     ],
