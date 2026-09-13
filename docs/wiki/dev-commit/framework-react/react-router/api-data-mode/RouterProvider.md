@@ -1,15 +1,28 @@
-# `<RouterProvider />createBrowserRouter()`
+# `<RouterProvider />`, `createBrowserRouter()`
+
+## Информация
 
 ::: info
-https://reactrouter.com/api/data-routers/RouterProvider
-https://reactrouter.com/api/data-routers/createBrowserRouter
-:::
-Отобразить пользовательский интерфейс для заданного компонента DataRouter
-  
-Массив роутов
 
-Создание нового маршрутизатора данных, который будет управлять путем приложения через history.pushState и history.replaceState
-Список роутов
+- https://reactrouter.com/api/data-routers/RouterProvider
+- https://reactrouter.com/api/data-routers/createBrowserRouter
+  :::
+
+::: danger
+
+**`<RouterProvider />`** - отобразить пользовательский интерфейс для заданного компонента DataRouter
+
+> - `router` - массив роутов
+
+:::
+
+::: danger
+
+**`createBrowserRouter []`** - создание нового маршрутизатора данных, который будет управлять путем приложения через _history.pushState_ и _history.replaceState_
+
+> - `router` - массив роутов
+
+:::
 
 ## `<RouterProvider />`
 
@@ -27,7 +40,7 @@ ReactDOM.createRoot(root).render(<RouterProvider router={router} />)
 
 ### Параметры "element" и "Component"
 
-- В параметрах может быть element или Component
+- В параметрах может быть `element` или `Component`
 
 ```ts
 import { createBrowserRouter } from "react-router/dom"
@@ -71,17 +84,17 @@ export const router = createBrowserRouter([
       },
     ],
   },
-])
+]);
 ```
 
 ```js
-import { Outlet } from "react-router"
+import { Outlet } from "react-router";
 
 const App = () => {
   return (
     <div>
       <Outlet />
     </div>
-  )
-}
+  );
+};
 ```

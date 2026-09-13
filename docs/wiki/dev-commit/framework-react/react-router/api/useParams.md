@@ -1,10 +1,20 @@
 # useParams()
 
+## Информация
+
 ::: info
-https://reactrouter.com/api/hooks/useParams
+
+- https://reactrouter.com/api/hooks/useParams
+
 :::
 
-  Чтение параметров URL
+::: danger
+
+**`cuseParams()`** - чтение параметров URL
+
+:::
+
+## Пример
 
 ```js
 import { BrowserRouter, Link, Routes, Route, useParams } from "react-router"

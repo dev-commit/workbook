@@ -1,23 +1,34 @@
 # `<Routes /><Route />`
 
+## Информация
+
 ::: info
-https://reactrouter.com/api/components/Routes
-https://reactrouter.com/api/components/Route
+
+- https://reactrouter.com/api/components/Routes
+- https://reactrouter.com/api/components/Route
+
 :::
 
-  Группировка роутов
-  
-Список &lt;Route&gt;
+::: danger
 
-  Отображение UI, следит чтобы совпадали пути между компонентом и адресной строкой.
-  Route технически является компонентом, но не создаёт DOM-элемента
-  
-Любой действительный URL-путь или массив путей
-Компонент React для рендеринга только при совпадении местоположения
+**`<Routes />`** - группировка роутов
 
-## Примеры
+> - `children` - Список `<Route>`
 
-```js
+:::
+
+::: danger
+
+**`<Route />`** - отображение UI, следит чтобы совпадали пути между компонентом и адресной строкой. Route технически является компонентом, но не создаёт DOM-элемента
+
+> - `path` - любой действительный URL-путь или массив путей
+> - `element` - компонент React для рендеринга только при совпадении местоположения
+
+:::
+
+## Пример
+
+```jsx
 import { Routes, Route } from "react-router"
 
 const App = () = (

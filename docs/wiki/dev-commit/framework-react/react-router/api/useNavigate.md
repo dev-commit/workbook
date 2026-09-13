@@ -1,16 +1,28 @@
 # useNavigate()
 
+## Информация
+
 ::: info
-https://reactrouter.com/api/hooks/useNavigate
+
+- https://reactrouter.com/api/hooks/useNavigate
+
 :::
 
-  Программная навигация по странице
+::: danger
+
+**`useNavigate()`** - программная навигация по странице
+
+:::
+
+## Варианты
 
 ```js
-navigate('/about') // на конкретную страницу (about)
-navigate(-1)       // на 1 страницу назад
-navigate(-2)       // на 2 страницы назад
+navigate("/about"); // на конкретную страницу (about)
+navigate(-1); // на 1 страницу назад
+navigate(-2); // на 2 страницы назад
 ```
+
+## Пример
 
 ```js
 import { BrowserRouter, Link, Routes, Route, useNavigate } from "react-router"

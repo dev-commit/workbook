@@ -1,20 +1,30 @@
 # useSearchParams()
 
+## Информация
+
 ::: info
-https://reactrouter.com/api/hooks/useSearchParams
+
+- https://reactrouter.com/api/hooks/useSearchParams
+
 :::
 
-  Предоставляет доступ к параметрам поиска (значение, следующее за символом ? в URL-адресе)
+::: danger
+
+**`useSearchParams()`** - предоставляет доступ к параметрам поиска (значение, следующее за символом ? в URL-адресе)
+
+:::
+
+## Пример
 
 ```js
-import { useSearchParams } from "react-router"
+import { useSearchParams } from "react-router";
 
 const App = () => {
-  const [searchParams, setSearchParams] = useSearchParams()
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  setSearchParams("?tab=1")
-  const tab = searchParams.get("tab")
+  setSearchParams("?tab=1");
+  const tab = searchParams.get("tab");
 
-  return null
-}
+  return null;
+};
 ```

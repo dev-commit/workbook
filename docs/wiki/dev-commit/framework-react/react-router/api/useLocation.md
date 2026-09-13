@@ -1,17 +1,27 @@
 # useLocation()
 
+## Информация
+
 ::: info
-https://reactrouter.com/api/hooks/useLocation
+
+- https://reactrouter.com/api/hooks/useLocation
+
 :::
 
-  Возвращает текущее значение Location. Это может быть полезно, если вы хотите выполнить какой-либо Side Effect при каждом изменении значения
+::: danger
+
+**`useLocation()`** - Возвращает текущее значение `Location`. Это может быть полезно, если вы хотите выполнить какой-либо Side Effect при каждом изменении значения
+
+:::
+
+## Пример
 
 ```js
-import { useLocation } from "react-router"
+import { useLocation } from "react-router";
 
 const App = () => {
-  let location = useLocation()
+  let location = useLocation();
 
-  return null
-}
+  return null;
+};
 ```
