@@ -21,6 +21,7 @@ const topics: ISidebarTopics[] = [
     children: [
       ["use/basic", emoji.star + "Базовый пример"],
       ["use/decorators", "Декораторы"],
+      ["use/mdx", "Документация на MDX"],
     ],
   },
 ];
