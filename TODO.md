@@ -22,6 +22,8 @@
 ## ✌️ Дополнительно
   - Деплой с GitHub Actions https://vuejs.press/guide/deployment.html#github-pages
   - Генерировать различный контент в файле docs/index.md в зависимости от того, какая методичка выбрана в docs/app-config.ts: Projects.DevCommit или Projects.LetsCode
+  - Изменить Bash-скрипты под MacOS
+  - `v-sandbox` чекнуть `needcheck`
 
 ---
 
