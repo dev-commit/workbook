@@ -11,6 +11,10 @@ const theme: TThemeTopics = "actual";
 const topics: ISidebarTopics[] = [
   {
     title: "Теория",
+    children: [["net", "Net"]],
+  },
+  {
+    title: "Теория",
     children: [
       ["theory/data", emoji.theory + "Данные"],
       ["theory/levels", emoji.theory + "Уровни английского"],
