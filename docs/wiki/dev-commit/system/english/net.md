@@ -15,7 +15,9 @@
 - `useContext()`
 
 ```tsx
-import { createContext, useContext, useState } from "react";
+import {
+  createContext, useContext, useState
+} from "react";
 
 export type UiTheme = "light" | "dark";
 
@@ -24,32 +26,43 @@ interface IThemeContext {
   toggleTheme: () => void;
 }
 
-const ThemeContext = createContext<IThemeContext | null>(null);
+const ThemeContext = createContext<IThemeContext | null>
+  (null);
 
-export const ThemeProvider = (props: { children: React.ReactNode }) => {
+export const ThemeProvider = (
+  props: { children: React.ReactNode }
+) => {
   const { children } = props;
 
   const [theme, setTheme] = useState<UiTheme>("light");
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    setTheme((prevTheme) => (
+      prevTheme === "light" ? "dark" : "light")
+    );
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider
+      value={{ theme, toggleTheme }}
+    >
       {children}
     </ThemeContext.Provider>
   );
 };
 
-// Хук-обёртка, чтобы не писать useContext(ThemeContext) в каждом компоненте
+// Хук-обёртка, чтобы не писать useContext(ThemeContext)
+// в каждом компоненте
 // eslint-disable-next-line react-refresh/only-export-components
 export const useTheme = () => {
   const context = useContext(ThemeContext);
 
-  // Проверка убирает null из типа — после неё доступны theme и toggleTheme
+  // Проверка убирает null из типа — после неё доступны
+  // theme и toggleTheme
   if (!context) {
-    throw new Error("useTheme нужно использовать внутри <ThemeProvider>");
+    throw new Error(
+      "useTheme нужно использовать внутри <ThemeProvider>"
+    );
   }
 
   return context;
@@ -64,7 +77,8 @@ import { ThemeProvider } from "./ui-kit";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    {/* Провайдер темы приходит из ui-kit, как ThemeProvider в MUI */}
+    {/* Провайдер темы приходит из ui-kit,
+    как ThemeProvider в MUI */}
     <ThemeProvider>
       <App />
     </ThemeProvider>
@@ -82,7 +96,10 @@ import { UiButton, useTheme } from "../ui-kit";
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
 
-  return <UiButton onClick={toggleTheme}>Тема: {theme}</UiButton>;
+  return
+    <UiButton onClick={toggleTheme}>
+      Тема: {theme}
+    </UiButton>;
 };
 
 export default ThemeToggle;
@@ -107,10 +124,14 @@ export default App;
 - Обёртка с data-ui-theme — от неё наследуются переменные всем вложенным компонентам
 
 ```tsx
-export const ThemeProvider = (props: { children: React.ReactNode }) => {
+export const ThemeProvider = (
+  props: { children: React.ReactNode }
+) => {
   ...
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider
+      value={{ theme, toggleTheme }}
+    >
       <div data-ui-theme={theme}>
         {children}
       </div>
@@ -139,7 +160,8 @@ const App = () => {
 - Префикс --ui- защищает от коллизий, когда библиотеку подключат как npm-пакет
 
 ```css
-/* Светлая тема — значения по умолчанию, работают даже без провайдера */
+/* Светлая тема — значения по умолчанию,
+работают даже без провайдера */
 :root {
   --ui-color-bg: #fff;
   --ui-color-text: #000;
@@ -155,7 +177,8 @@ const App = () => {
 **Приложение**
 
 ```css
-/* Приложение использует те же токены, что и компоненты ui-kit */
+/* Приложение использует те же токены,
+что и компоненты ui-kit */
 .app {
   padding: 20px;
   background: var(--ui-color-bg);
@@ -194,8 +217,10 @@ import "./tokens.css";
 
 ```css
 .wrapper {
-  --color-primary: #424242; /* Основной цвет */
-  --color-on-primary: #ffffff; /* Цвет того, что лежит на поверхности */
+  /* Основной цвет */
+  --color-primary: #424242;
+  /* Цвет того, что лежит на поверхности */
+  --color-on-primary: #ffffff;
   --color-link: #2f2fc0;
 
   padding: 6px 10px;
@@ -224,7 +249,8 @@ import type { Preview } from "@storybook/react-vite";
 import { ThemeProvider } from "../src/ui-kit";
 
 const preview: Preview = {
-  // Провайдер нужен всем историям: он подключает токены темы
+  // Провайдер нужен всем историям:
+  // он подключает токены темы
   decorators: [
     (Story) => (
       <ThemeProvider>
