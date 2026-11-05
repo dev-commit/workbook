@@ -1,294 +1,330 @@
 # Net
 
-### Рефакторинг App
+## Компоненты
 
-- `UiModal` из src/App.tsx вынести в `components`
-- Добавить кнопку
-- App по итогу должен остаться пустым
+**Общее**
 
-### 1. Theme Provider
+- Chip
+- Tabs
+- Alert
+- Notification
+- Modal
+- Accordion
+- Badge
+- Timeline
+- Blockquote
+- Table
 
-> `src/ui-kit/theme/ThemeProvider.tsx`
+**Форма**
 
-- `createContext()`
-- `<ThemeContext.Provider>`
-- `useContext()`
+- Checkbox
+- Input
+- Radio
+- Switch
+- Textarea
+- Select
 
-```tsx
-import {
-  createContext, useContext, useState
-} from "react";
+---
 
-export type UiTheme = "light" | "dark";
+## 1. Подключение библиотеки UI-компонентов Mantine UI
 
-interface IThemeContext {
-  theme: UiTheme;
-  toggleTheme: () => void;
-}
+### Установка зависимостей
 
-const ThemeContext = createContext<IThemeContext | null>
-  (null);
-
-export const ThemeProvider = (
-  props: { children: React.ReactNode }
-) => {
-  const { children } = props;
-
-  const [theme, setTheme] = useState<UiTheme>("light");
-
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (
-      prevTheme === "light" ? "dark" : "light")
-    );
-  };
-
-  return (
-    <ThemeContext.Provider
-      value={{ theme, toggleTheme }}
-    >
-      {children}
-    </ThemeContext.Provider>
-  );
-};
-
-// Хук-обёртка, чтобы не писать useContext(ThemeContext)
-// в каждом компоненте
-// eslint-disable-next-line react-refresh/only-export-components
-export const useTheme = () => {
-  const context = useContext(ThemeContext);
-
-  // Проверка убирает null из типа — после неё доступны
-  // theme и toggleTheme
-  if (!context) {
-    throw new Error(
-      "useTheme нужно использовать внутри <ThemeProvider>"
-    );
-  }
-
-  return context;
-};
+```bash
+npm install @mantine/core @mantine/hooks
 ```
 
-> `src/main.tsx`
+### Настройка и подключение компонентов
+
+**Корень приложения**
+
+> src/main.tsx
+
+- Добавление MantineProvider и Styles
 
 ```tsx
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+// [!code ++]
+import { MantineProvider } from "@mantine/core";
+
+// [!code ++]
+import "@mantine/core/styles.css";
+import "./index.css";
+
+import App from "./App.tsx";
 import { ThemeProvider } from "./ui-kit";
-...
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    {/* Провайдер темы приходит из ui-kit,
-    как ThemeProvider в MUI */}
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
+    // [!code ++]
+    <MantineProvider>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+      // [!code ++]
+    </MantineProvider>
   </StrictMode>,
 );
 ```
 
-### 2. Theme Toggle
-
-> `src/components/ThemeToggle.tsx`
+> src/App.tsx
 
 ```tsx
-import { UiButton, useTheme } from "../ui-kit";
-
-const ThemeToggle = () => {
-  const { theme, toggleTheme } = useTheme();
-
-  return
-    <UiButton onClick={toggleTheme}>
-      Тема: {theme}
-    </UiButton>;
-};
-
-export default ThemeToggle;
-```
-
-> `src/App.tsx`
-
-```tsx
+// [!code ++]
+import { Button } from "@mantine/core";
 import ThemeToggle from "./components/ThemeToggle";
 
 const App = () => {
-  return <ThemeToggle />;
+  // [!code ++]
+  const handleClick = () => {
+    // [!code ++]
+    console.log("Click");
+    // [!code ++]
+  };
+
+  return (
+    <div className="app">
+      <ThemeToggle />
+      // [!code ++]
+      <Button onClick={handleClick}>Кнопка Mantine</Button>
+    </div>
+  );
 };
 
 export default App;
 ```
 
-### 3. CSS токены темы
+---
 
-> `src/ui-kit/theme/ThemeProvider.tsx`
+## 2. Использование иконок
 
-- Обёртка с data-ui-theme — от неё наследуются переменные всем вложенным компонентам
+## Информация
 
-```tsx
-export const ThemeProvider = (
-  props: { children: React.ReactNode }
-) => {
-  ...
-  return (
-    <ThemeContext.Provider
-      value={{ theme, toggleTheme }}
-    >
-      <div data-ui-theme={theme}>
-        {children}
-      </div>
-    </ThemeContext.Provider>
-  );
-};
+> Mantine в своих демо использует Phosphor как рекомендуемый набор, потому что `ActionIcon`, `Button` и другие слоты принимают любой React-узел. Внутрь можно положить Phosphor, Tabler, Lucide, свою SVG — библиотека к иконкам не привязана.
+
+## Подключение
+
+**Настройка**
+
+1. Описание из документации https://mantine.dev/guides/icons/
+2. Ссылка на проект “Phosphor Icons” https://phosphoricons.com/ → Get started
+3. Переход на GitHub “Phosphor Icons” https://github.com/phosphor-icons/homepage#phosphor-icons
+4. Раздел GitHub “Phosphor Icons” для React https://github.com/phosphor-icons/react
+
+**Установка библиотеки**
+
+```bash
+npm i @phosphor-icons/react
 ```
 
-> `src/App.tsx`
+**Использование**
+
+- https://mantine.dev/core/button/#left-and-right-sections - Buttons
+
+**Корень приложения**
+
+- `src/App.tsx`
 
 ```tsx
+import { Button } from "@mantine/core";
+// [!code ++]
+import { AirplaneIcon } from "@phosphor-icons/react";
+import ThemeToggle from "./components/ThemeToggle";
+
 const App = () => {
   return (
     <div className="app">
       <ThemeToggle />
+      <hr />
+      // [!code ++]
+      <AirplaneIcon size={40} color="#4a13ae" weight="duotone" />
+      // [!code ++]
+      <Button
+        // [!code ++]
+        leftSection={
+          // [!code ++]
+          <AirplaneIcon color="#4a13ae" weight="duotone" size={14} />
+          // [!code ++]
+        }
+        // [!code ++]
+        variant="default"
+        // [!code ++]
+      >
+        Кнопка с иконкой
+      </Button>
     </div>
   );
 };
+
+export default App;
 ```
 
-> `src/index.css`
+---
 
-**Ui-Kit**
+## 3. Смена темы для компонентов Mantine UI через MantineProvider
 
-- Дизайн-токены ui-kit — только то, что нужно всем компонентам сразу
-- Префикс --ui- защищает от коллизий, когда библиотеку подключат как npm-пакет
+### Ссылки
 
-```css
-/* Светлая тема — значения по умолчанию,
-работают даже без провайдера */
-:root {
-  --ui-color-bg: #fff;
-  --ui-color-text: #000;
-}
+- https://mantine.dev/theming/color-schemes/#force-color-scheme
+- https://mantine.dev/theming/color-schemes/
 
-/* Тёмная тема — только переопределения */
-[data-ui-theme="dark"] {
-  --ui-color-bg: #000;
-  --ui-color-text: #fff;
-}
-```
+### Смена темы
 
-**Приложение**
+**MantineProvider**
 
-```css
-/* Приложение использует те же токены,
-что и компоненты ui-kit */
-.app {
-  padding: 20px;
-  background: var(--ui-color-bg);
-  color: var(--ui-color-text);
-}
+> src/main.tsx
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-```
-
-> `src/main.tsx`
+- Нельзя напрямую вызывать хук useTheme - он доступен только внутри компонента, обернутого в ThemeProvider
 
 ```tsx
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+
+// [!code --]
+import { MantineProvider } from "@mantine/core";
+// [!code ++]
+import MantineWithUiTheme from "./components/MantineWithUiTheme";
+
+import "@mantine/core/styles.css";
 import "./index.css";
+
+import App from "./App.tsx";
+import { ThemeProvider } from "./ui-kit";
+import MantineWithUiTheme from "./components/MantineWithUiTheme";
+
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    // [!code --]
+    <MantineProvider>
+      <ThemeProvider>
+        // [!code ++]
+        <MantineWithUiTheme>
+          <App />
+          // [!code ++]
+        </MantineWithUiTheme>
+      </ThemeProvider>
+      // [!code --]
+    </MantineProvider>
+  </StrictMode>,
+);
 ```
 
-### 4. Рефакторинг CSS токенов
-
-> `src/ui-kit/theme/tokens.css`
-
-- Вынести переменные для Ui-Kit из `src/index.css`
-
-> `src/ui-kit/theme/ThemeProvider.tsx`
+- `src/components/MantineWithUiTheme.tsx`
 
 ```tsx
-// Токены приезжают вместе с провайдером — как в реальных ui-библиотеках
-import "./tokens.css";
+import { MantineProvider } from "@mantine/core";
+
+import { useTheme } from "../ui-kit";
+
+const MantineWithUiTheme = (props: { children: React.ReactNode }) => {
+  const { theme } = useTheme();
+
+  return (
+    <MantineProvider defaultColorScheme="light" forceColorScheme={theme}>
+      {props.children}
+    </MantineProvider>
+  );
+};
+
+export default MantineWithUiTheme;
 ```
 
-### 5. Добавление темы в Ui-Kit и StoryBook
+**Иконки**
 
-> `src/ui-kit/UiButton/styles.module.css`
+- `src/App.tsx`
+
+- currentColor - иконка берёт цвет текста родителя, он меняется вместе с темой
+
+```tsx
+import { Button } from "@mantine/core";
+import { AirplaneIcon } from "@phosphor-icons/react";
+import ThemeToggle from "./components/ThemeToggle";
+
+const App = () => {
+  return (
+    <div className="app">
+      <ThemeToggle />
+      <hr />
+      // [!code ++]
+      <AirplaneIcon size={40} color="currentColor" weight="duotone" />
+      <Button
+        leftSection={
+          // [!code ++]
+          <AirplaneIcon color="currentColor" weight="duotone" size={14} />
+        }
+        variant="default"
+      >
+        Кнопка с иконкой
+      </Button>
+    </div>
+  );
+};
+
+export default App;
+```
+
+---
+
+## 4. Стилизация компонентов из Mantine UI
+
+### Ссылки
+
+- https://mantine.dev/styles/css-modules/ - Styling. CSS modules
+- https://mantine.dev/core/badge/ - Компонт Badge
+
+### Код
+
+**Корень приложения**
+
+- `src/App.tsx`
+
+```tsx
+import UiBadge from "./ui-kit/UiBadge";
+
+const App = () => {
+  return <UiBadge>Badge</UiBadge>;
+};
+```
+
+**UiBadge**
+
+> src/ui-kit/UiBadge/
+
+> `UiBadge.tsx`
+
+```tsx
+import { Badge } from "@mantine/core";
+import styles from "./styles.module.css";
+
+interface IProps {
+  color?: string;
+  children: React.ReactNode;
+}
+
+const UiBadge = (props: IProps) => {
+  const { color, children } = props;
+
+  return (
+    <Badge color={color} className={styles.wrapper}>
+      {children}
+    </Badge>
+  );
+};
+
+export default UiBadge;
+```
+
+> `styles.module.css`
 
 ```css
 .wrapper {
-  /* Основной цвет */
-  --color-primary: #424242;
-  /* Цвет того, что лежит на поверхности */
-  --color-on-primary: #ffffff;
-  --color-link: #2f2fc0;
-
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  background: none;
+  border: 1px solid #4343db;
 }
-
-/* Те же переменные, но для тёмной темы:
-селектор смотрит на атрибут от ThemeProvider */
-[data-ui-theme="dark"] .wrapper {
-  --color-primary: #eeeeee;
-  --color-on-primary: #222222;
-  --color-link: #9fd1ff;
-}
-
-...
 ```
 
-> `.storybook/preview.tsx`
+> `index.ts`
 
 ```tsx
-import type { Preview } from "@storybook/react-vite";
-
-import { ThemeProvider } from "../src/ui-kit";
-
-const preview: Preview = {
-  // Провайдер нужен всем историям:
-  // он подключает токены темы
-  decorators: [
-    (Story) => (
-      <ThemeProvider>
-        <Story />
-      </ThemeProvider>
-    ),
-  ],
-
-  parameters: {
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
-    },
-
-    a11y: {
-      // 'todo' - show a11y violations in the test UI only
-      // 'error' - fail CI on a11y violations
-      // 'off' - skip a11y checks entirely
-      test: "todo",
-    },
-  },
-};
-
-export default preview;
-```
-
-### 6. Добавление index-файла в Ui-Kit
-
-> `src/ui-kit/index.ts`
-
-```tsx
-// Точка входа библиотеки — то, что будет публичным API npm-пакета
-export { default as UiButton } from "./UiButton";
-export { default as UiInput } from "./UiInput";
-export { default as UiModal } from "./UiModal";
-
-export { ThemeProvider, useTheme } from "./theme/ThemeProvider";
-export type { UiTheme } from "./theme/ThemeProvider";
+export { default } from "./UiBadge";
 ```
