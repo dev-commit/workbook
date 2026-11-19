@@ -1,16 +1,24 @@
 # Преобразование типов
 
+## Варианты
+
+**Явное преобразование**
+
 ```js
 String(77);
-Number('77');
+Number("77");
 Boolean(77);
 ```
 
+**Строка**
+
 ```js
-77 + ''; // string
-+'77';   // number
-!!'77';  // boolean
+77 + ""; // string
++"77"; // number
+!!"77"; // boolean
 ```
+
+**Вспомогательные функции**
 
 ```js
 77.toString();
@@ -18,10 +26,10 @@ parseInt('77px');
 parseFloat('77.2px')
 ```
 
-### Пример
+## Пример
 
 ```js
-const a = 'Hello';
+const a = "Hello";
 const b1 = Boolean(a); // => true
 const b2 = !!a; // => true
 ```

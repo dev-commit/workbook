@@ -11,6 +11,7 @@
 - Назначение: Защитить свойство объекта от прямого доступа
 
 ---
+
 1. Есть сторонняя библиотека, в которой есть объект
 2. В объект необходимо добавить новое свойство, но при этом не затронуть свойства, которые там уже есть
 3. Symbol защищает объект от непредвиденных изменений
@@ -23,11 +24,11 @@
 ## Методы
 
     Ищет существующие символы по заданному ключу и возвращает его, если он найден. В противном случае создается новый символ для данного ключа в глобальном реестре символов
-    
+
 заданный ключ
 
     Получает по разделямому символу его ключ из глобального реестра символов
-    
+
 разделямый символ
 
 ## Примеры
@@ -39,7 +40,7 @@ const symbol1 = Symbol();
 
 ```js
 // создание символа
-const symbol2 = Symbol.for('name');
+const symbol2 = Symbol.for("name");
 ```
 
 ```js
@@ -50,17 +51,17 @@ const name = Symbol.keyFor(symbol2);
 ```js
 // задание необязательного аргумента, в котором указывается имя для символа
 // имя можно использовать описания символа (полезно для отладки)
-const symbol3 = Symbol('name');
+const symbol3 = Symbol("name");
 ```
 
 ```js
 // задание свойства объекта
 const user = {
-	username: 'r2d2',
-	[Symbol.for('password')]: 'c3po'
+  username: "r2d2",
+  [Symbol.for("password")]: "c3po",
 };
 
-const password = user[Symbol.for('password')];
+const password = user[Symbol.for("password")];
 console.log(password);
 // просмотреть символы у объекта
 console.log(Object.getOwnPropertySymbols(user));
@@ -70,9 +71,9 @@ console.log(Object.getOwnPropertySymbols(user));
 // встроенные символы
 // хорошо известные символы
 const obj = {
-	iterator: 0,
-	[Symbol.iterator]() {}
-}
+  iterator: 0,
+  [Symbol.iterator]() {},
+};
 // Symbol.iterator используется конструкцией for...of
 // благодаря которой можно перебирать (итерировать) объект
 ```
