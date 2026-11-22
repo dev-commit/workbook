@@ -1,15 +1,17 @@
 # Способы создания переменных
 
-## 1. Литеральная форма
+## Варианты
+
+### 1. Литеральная форма
 
 ```js
-const a = 'string';
+const a = "string";
 ```
 
-## 2. Конструктор
+### 2. Конструктор
 
 ```js
-const a = new String('string');
+const a = new String("string");
 const a = new Number(77);
 const a = new Boolean(true);
 ```

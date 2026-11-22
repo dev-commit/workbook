@@ -1,7 +1,9 @@
 # isArray()
 
+## Информация
+
 ```js
-// проверка на массив
-const a = Array.isArray([1, 2, 3]);   // true
-const b = Array.isArray('Not Array'); // false
+// Проверка на массив
+const a = Array.isArray([1, 2, 3]); // true
+const b = Array.isArray("Not Array"); // false
 ```

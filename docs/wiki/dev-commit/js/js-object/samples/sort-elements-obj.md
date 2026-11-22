@@ -4,12 +4,12 @@
 
 ```js
 const arr = [
-    { key: 7, name: '' },
-    { key: 1, name: '' },
-    { key: 2, name: '' },
+  { key: 7, name: "" },
+  { key: 1, name: "" },
+  { key: 2, name: "" },
 ];
 
-arr.sort((a,z) => a.key - z.key);
+arr.sort((a, z) => a.key - z.key);
 
 console.log(arr);
 // [

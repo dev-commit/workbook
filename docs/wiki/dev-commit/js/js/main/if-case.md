@@ -3,33 +3,46 @@
 ## Условный оператор case()
 
 ```js
+// Использование цифр в виде аргумента
 const id = 3;
 
 switch (id) {
-	case 1: alert(id); break;
-	case 2: alert(id); break;
-	case 3: alert(id); break;
-	default: alert('default');
+  case 1:
+    alert(id);
+    break;
+  case 2:
+    alert(id);
+    break;
+  case 3:
+    alert(id);
+    break;
+  default:
+    alert("default");
 }
-```
 
-```js
-const name = 'name2';
+// Использование строк в виде аргумента
+const name = "name2";
 
 switch (name) {
-	case 'name1': alert(name); break;
-	case 'name2': alert(name); break;
-	case 'name3': alert(name); break;
-	default: alert('default');
+  case "name1":
+    alert(name);
+    break;
+  case "name2":
+    alert(name);
+    break;
+  case "name3":
+    alert(name);
+    break;
+  default:
+    alert("default");
 }
-```
 
-```js
+// Комбинирование case
 switch (name) {
-	case 'name1':
-	case 'name2':
-	case 'name3': 
-	return false;
+  case "name1":
+  case "name2":
+  case "name3":
+    return false;
 }
 ```
 
@@ -37,10 +50,10 @@ switch (name) {
 
 ```js
 if (year < 2011) {
-	alert('Это слишком рано..');
+  alert("Это слишком рано..");
 } else if (year > 2011) {
-	alert('Это поздновато..');
+  alert("Это поздновато..");
 } else {
-	alert('Да, точно в этом году!');
+  alert("Да, точно в этом году!");
 }
 ```

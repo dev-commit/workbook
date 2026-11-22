@@ -1,11 +1,15 @@
 # Array.prototype.at()
 
+## Информация
+
 ::: info
-https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/at
+
+- https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/at
+
 :::
 
 ```js
-const arr = ['apple', 'banana', 'orange'];
+const arr = ["apple", "banana", "orange"];
 
 // Выборка с начала массива
 const a1 = arr.at(0); // => "apple" (первый элемент)

@@ -1,18 +1,25 @@
 # Object.observe()
 
+## Информация
+
+::: tip Определение
+
 - **Object.observe()** - позволяет асинхронно отслеживать изменения состояния JavaScript объектов во времени
-- С помощью Object.observe можно реализовать двухсторонний дата-биндинг без необходимости использовать фреймворк
+
+:::
+
+- С помощью Object.observe можно реализовать _двухсторонний дата-биндинг_ без необходимости использовать фреймворк
 
 ```js
 // Модель с данными
 const model = {};
 
 // Отслеживание изменений в модели
-Object.observe(model, function(changes){
-    // Вызод коллбэка
-    changes.forEach(function(change) {
-        console.log(change.type, change.name, change.oldValue);
-    });
+Object.observe(model, function (changes) {
+  // Вызов коллбэка
+  changes.forEach(function (change) {
+    console.log(change.type, change.name, change.oldValue);
+  });
 });
 ```
 

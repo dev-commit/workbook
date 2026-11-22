@@ -1,53 +1,61 @@
 # Spread-оператор объектов
 
-- Работает как Object.assign()
+## Информация
+
+- Работает как `Object.assign()`
 
 ## Пример
 
 ```js
 const defaults = {
-	host: 'localhost',
-	user: 'admin'
+  host: "localhost",
+  user: "admin",
 };
 
-// более высокий приоритет
+// Более высокий приоритет
 const options = {
-	user: 'Tony',
-	password: 'qwerty'
-}
+  user: "Tony",
+  password: "qwerty",
+};
 ```
 
-#### Spread
+<v-two :title="['Spread', 'Object.assign']">
+<template #first>
 
 ```js
-const result ={ ...defaults, ...options };
+const result = { ...defaults, ...options };
 ```
 
-#### Object.assign
+</template>
+<template #last>
 
 ```js
 const result = Object.assign({}, defaults, options);
 ```
 
+</template>
+</v-two>
+
 ```js
+// Result
 // user из options перезапишет user из defaults
 // =>
 {
-	host: 'localhost',
-	user: 'Tony',
-	password: 'qwerty'
+  host: 'localhost',
+  user: 'Tony',
+  password: 'qwerty'
 }
 ```
 
 ```js
-// комбинация свойств
+// Комбинация свойств
 const port = 8080;
 const result = {
-	...defaults,
-	...options,
-	port, 
-	connect() {
-		//
-	}
+  ...defaults,
+  ...options,
+  port,
+  connect() {
+    //
+  },
 };
 ```

@@ -9,11 +9,9 @@
  * @return {Boolean} - true показать, false скрыть
  */
 const foo = (id) => {
-    return true;
-}
-```
+  return true;
+};
 
-```js
 /** В одну строчку */
 ```
 
@@ -22,13 +20,14 @@ const foo = (id) => {
 ```js
 // TODO: найти лучшее решение
 ```
-- TODO
-- FIXME
-- BUG
-- NOTE
-- OPTIMIZE
-- HACK
-- XXX
+
+- _TODO_
+- _FIXME_
+- _BUG_
+- _NOTE_
+- _OPTIMIZE_
+- _HACK_
+- _XXX_
 
 ## Примеры
 
@@ -39,7 +38,7 @@ const foo = (id) => {
  * @param {number} n Показатель степени, натуральное число.
  * @return {number} x в степени n.
  */
- function pow(x, n) {
-	...
+function pow(x, n) {
+  ...
 }
 ```

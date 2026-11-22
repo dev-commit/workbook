@@ -3,8 +3,8 @@
 ## Цикл for
 
 ```js
-for (let i = 1; i < 10; i++) {  
-    console.log(i); 
+for (let i = 1; i < 10; i++) {
+  console.log(i);
 }
 ```
 
@@ -13,9 +13,9 @@ for (let i = 1; i < 10; i++) {
 ```js
 let i = 0;
 
-while (i < 10) {  
-    console.log(i); 
-    i++;  
+while (i < 10) {
+  console.log(i);
+  i++;
 }
 ```
 
@@ -24,13 +24,13 @@ while (i < 10) {
 ```js
 let i = 0;
 
-do {  
-    console.log(i); 
-    i++;  
+do {
+  console.log(i);
+  i++;
 } while (i < 10);
 ```
 
 ```js
-break    // выход из цикла
-continue // прекращает выполнение текущей итерации цикла и переходит на следующую
+break; // Выход из цикла
+continue; // Прекращает выполнение текущей итерации цикла и переходит на следующую
 ```
