@@ -16,7 +16,7 @@
 :::
 
 ```js
-array.reduceRight((previousValue, currentValue, index, array) => {
+arr.reduce((accumulator, currentValue, index, array) => {
   // ...
 });
 ```

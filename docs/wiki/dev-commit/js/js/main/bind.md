@@ -51,7 +51,7 @@ func.bind(person, "HelloZ", "WorldZ")(); // bind с аргументами
 
 ## Примеры
 
-### Потеря контекста
+::: details Потеря контекста
 
 ```js
 const user = {
@@ -71,7 +71,9 @@ const func = newUser.bind(user);
 func(); // => "Hi Tony"
 ```
 
-### Привязать всё
+:::
+
+::: details Привязать всё
 
 ```js
 for (let prop in user) {
@@ -81,7 +83,9 @@ for (let prop in user) {
 }
 ```
 
-### Вызов функции
+:::
+
+::: details Вызов функции
 
 ```js
 function showFullName() {
@@ -94,7 +98,9 @@ const user = {
 showFullName.call(user); // => "Василий Петров" (функция вызовется с this=user)
 ```
 
-### Максимальный элемент массива
+:::
+
+::: details Максимальный элемент массива
 
 ```js
 const arr = [1, 2, 3, 77, 4];
@@ -104,7 +110,9 @@ const max = Math.max.apply(Math, arr); // 77 (контекстом будет о
 // поскольку в своей внутренней реализации метод Math.max не использует this
 ```
 
-### call/apply передают this «как есть»
+:::
+
+::: details call/apply передают this «как есть»
 
 ```js
 function f() {
@@ -112,3 +120,5 @@ function f() {
 }
 f.call(null);
 ```
+
+:::

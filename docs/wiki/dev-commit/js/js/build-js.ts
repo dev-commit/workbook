@@ -5,8 +5,8 @@ import { emoji } from "docs/constants";
 import { rootPath } from "../../constants";
 
 const path = rootPath + "js/js/";
-const title = "✅ JavaScript";
-const theme: TThemeTopics = "actual";
+const title = "JavaScript";
+const theme: TThemeTopics = "js";
 
 const topics: ISidebarTopics[] = [
   {
@@ -90,9 +90,7 @@ const topics: ISidebarTopics[] = [
       ["other/proxy", "Proxy (ES6)"],
       ["other/web-workers", "Web Workers"],
       ["other/asynchronous-scripts", "Асинхронные скрипты: defer/async"],
-      ["other/method-chaining", "Цепные вызовы методов"],
       ["other/strict-mode", "Strict Mode"],
-      ["other/samples", "Примеры"],
     ],
   },
 ];

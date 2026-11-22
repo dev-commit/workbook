@@ -2,8 +2,9 @@
 
 ## Условный оператор case()
 
+**Использование цифр в виде аргумента**
+
 ```js
-// Использование цифр в виде аргумента
 const id = 3;
 
 switch (id) {
@@ -19,8 +20,11 @@ switch (id) {
   default:
     alert("default");
 }
+```
 
-// Использование строк в виде аргумента
+**Использование строк в виде аргумента**
+
+```js
 const name = "name2";
 
 switch (name) {
@@ -36,8 +40,11 @@ switch (name) {
   default:
     alert("default");
 }
+```
 
-// Комбинирование case
+**Комбинирование case**
+
+```js
 switch (name) {
   case "name1":
   case "name2":

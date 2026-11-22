@@ -13,9 +13,7 @@
 const arr = ["Jack", "Kate", "Tony"];
 
 const result = arr.find((element) => {
-  if (element === "Tony") {
-    return element;
-  }
+  return element === "Tony";
 });
 
 console.log(result); // => Tony
@@ -25,9 +23,7 @@ console.log(result); // => Tony
 const arr = ["Jack", "Kate", "Tony"];
 
 const result = arr.findIndex((element) => {
-  if (element === "Tony") {
-    return element;
-  }
+  return element === "Tony";
 });
 
 console.log(result); // => 2

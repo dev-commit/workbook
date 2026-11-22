@@ -4,10 +4,10 @@
 
 ```js
 // Копировать с 1 до 7 не включая, если не указан второй аргумент, то до конца
-const arr2 = arr1.slice(1, 7);
+const arr2 = arr.slice(1, 7);
 
 // Копировать с 1 до конца
-const arr2 = arr1.slice(1);
+const arr2 = arr.slice(1);
 
 // Копировать с 2 элемента с конца и дальше
 const arr2 = arr.slice(-2);

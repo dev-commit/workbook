@@ -1,6 +1,6 @@
 # Math
 
-## Округление
+## `round`, `ceil`, `floor` - округление
 
 ```js
 // Округляет число к ближайшему целому (5 округляется вверх)
@@ -12,15 +12,15 @@ const a2 = Math.ceil(5.1); // => 6, округляет число в больш�
 const a3 = Math.floor(5.9); // => 5, округляет число в меньшую сторону
 ```
 
-## Random
+## `random` - генерация случайного дробного числа
+
+- Генерация случайного дробного числа от 0 (включительно) до 1 (не включая). Н-р: 0.27647450465282075
 
 ```js
-// Генерация случайного дробного числа от 0 (включительно) до 1 (не включая).
-// Н-р: 0.27647450465282075
 const a = Math.random();
 ```
 
-### Варианты диапазонов
+**Варианты диапазонов**
 
 - Значение, на которое умножается, должно быть на 1 больше нужного
 
@@ -38,7 +38,16 @@ const a = Math.floor(Math.random() * 10); // 0 - 9
 const a = Math.floor(Math.random() * 101); // 0 - 100
 ```
 
-## Методы
+**Пример Random(min, max)**
+
+```js
+const mtRand = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+  //return Math.random() * (max - min) + min;
+};
+```
+
+## Математические методы
 
 ```js
 const a1 = Math.pow(4, 2); // Степень 4 в 2
@@ -58,15 +67,4 @@ const a3 = Math.tan(1); // Тангенс
 const a4 = Math.atan(1); // Арктангенс
 const a5 = Math.asin(1); // Арксинус
 const a6 = Math.acos(1); // Арккосинус
-```
-
-## Примеры
-
-### Random(min, max)
-
-```js
-const mtRand = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-  //return Math.random() * (max - min) + min;
-};
 ```

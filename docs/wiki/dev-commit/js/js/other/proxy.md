@@ -21,7 +21,11 @@
 
 :::
 
-## get/set
+## Методы
+
+### Основные
+
+<v-details title="get и set">
 
 ::: danger
 
@@ -66,9 +70,11 @@ proxy.firstName; // Чтение
 console.log(user.firstName); // => 'Tony'
 ```
 
-## has
+</v-details>
 
-- Ловушка has срабатывает в операторе in и некоторых других случаях, когда проверяется наличие свойства
+<v-details title="has">
+
+- Ловушка `has` срабатывает в операторе `in` и некоторых других случаях, когда проверяется наличие свойства
 
 ```js
 // dictionary будет всегда возвращать true для любой in-проверки:
@@ -85,6 +91,8 @@ dictionary = new Proxy(dictionary, {
 alert("BlaBlaBla" in dictionary); // true
 ```
 
+<v-details title="">
+</v-details>
 ## deleteProperty
 
 - Ловушка deleteProperty по синтаксису аналогична get/has. Срабатывает при операции delete, должна вернуть true, если удаление было успешным
@@ -112,7 +120,9 @@ alert("Hello" in dictionary); // true
 alert("Hello" in proxy); // true
 ```
 
-## apply
+</v-details>
+
+<v-details title="apply">
 
 - Если аргумент target прокси – функция, то становится доступна ловушка apply для её вызова
 
@@ -145,7 +155,9 @@ let proxy = new Proxy(sum, {
 alert(proxy(1, 2));
 ```
 
-## construct
+</v-details>
+
+<v-details title="construct">
 
 - Ловушка construct(target, argumentsList) перехватывает вызовы при помощи new. Она получает исходный объект target и список аргументов argumentsList
 
@@ -170,7 +182,9 @@ let user = new UserProxy("Tony", "Smith");
 alert(user.name); // Tony
 ```
 
-## Полный список возможных функций-перехватчиков, которые может задавать handler
+</v-details>
+
+### Полный список возможных функций-перехватчиков, которые может задавать handler
 
 - [getPrototypeOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/getPrototypeOf) - перехватывает обращение к методу `getPrototypeOf`
 - [setPrototypeOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/setPrototypeOf) - перехватывает обращение к методу `setPrototypeOf`
@@ -187,6 +201,8 @@ alert(user.name); // Tony
 - [apply](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/apply) - перехватывает вызовы `target()`
 - [construct](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/construct) - перехватывает вызовы new `target()`
 
-* Каждый перехватчик запускается с `handler` в качестве `this`. Это означает, что `handler` кроме ловушек может содержать и другие полезные свойства и методы
-* Каждый перехватчик получает в аргументах `target` и дополнительные параметры в зависимости от типа
-* Если перехватчик в `handler` не указан, то операция совершается, как если бы была вызвана прямо на `target`
+### Комментарии
+
+- Каждый перехватчик запускается с `handler` в качестве `this`. Это означает, что `handler` кроме ловушек может содержать и другие полезные свойства и методы
+- Каждый перехватчик получает в аргументах `target` и дополнительные параметры в зависимости от типа
+- Если перехватчик в `handler` не указан, то операция совершается, как если бы была вызвана прямо на `target`

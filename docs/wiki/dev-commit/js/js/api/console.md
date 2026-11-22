@@ -1,6 +1,6 @@
 # Console
 
-## Информация
+## Методы
 
 ```js
 console.log("Сообщение");
@@ -9,11 +9,11 @@ console.warn("Предупреждение");
 console.error("Ошибка");
 ```
 
-## console.log
+## Стилизация console.log
 
 - `%c%s` - позволяет стилизовать элементы
 
-### Один элемент
+**Один элемент**
 
 <img src="../@img/console/console-styled1.png" />
 
@@ -25,7 +25,7 @@ console.log(
 );
 ```
 
-### Два элемента
+**Два элемента**
 
 <img src="../@img/console/console-styled2.png" />
 

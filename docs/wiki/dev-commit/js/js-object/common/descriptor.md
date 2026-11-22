@@ -37,6 +37,7 @@ Object.defineProperty(obj, prop, descriptor)
 
 ```js
 // 1-объект, 2-свойство, 3-дескриптор
+// Перечислены все поля дескриптора. value/writable и get/set вместе указывать нельзя: будет TypeError
 Object.defineProperty(person, "name", {
   value: "Jack", // Значение свойства (по умолчанию undefined)
   writable: false, // Значение свойства можно менять (по умолчанию false)
