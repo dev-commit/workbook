@@ -45,7 +45,6 @@ import wikiMongodb from "./node-js/mongodb/build-mongodb";
 import wikiBlockchain from "./common/blockchain/build-blockchain";
 import wikiCmd from "./common/cmd/build-cmd";
 import wikiCompilation from "./common/compilation/build-compilation";
-import wikiEnglish from "./system/english/build-english";
 import wikiLinux from "./common/linux/build-linux";
 import wikiMacos from "./common/macos/build-macos";
 import wikiPackageManagers from "./common/package-managers/build-package-managers";
@@ -258,7 +257,7 @@ export const NAV: IHeaderMenuNav[] = [
   },
   {
     text: "System",
-    children: getNav([wikiUiKit, wikiMenu, wikiLinks, wikiBooks, wikiEnglish]),
+    children: getNav([wikiUiKit, wikiMenu, wikiLinks, wikiBooks]),
   },
 ];
 
@@ -288,7 +287,6 @@ export const SIDEBAR = getSidebar([
   wikiLinux,
   wikiMacos,
   wikiWindows,
-  wikiEnglish,
   wikiCompilation,
   wikiBlockchain,
   wikiTesting,
