@@ -13,7 +13,7 @@
 - Является итерируемой структурой данных, можно перебрать с помощью for...of
 - Сохраняет порядок элементов в котором они были добавлены
 
-### Отличия WeakSet от Set
+**Отличия WeakSet от Set**
 
 - Могут храниться только объекты
 - Нет свойства size
@@ -21,11 +21,13 @@
 - Не является итерируемым
 - Если на объект, который хранится в WeakSet, нет ни одной внешней ссылки, то сборщик мусора удалит этот объект
 
-### Алгоритм проверки
+**Алгоритм проверки**
 
 - Каждый раз получая значение, генерирует хэш-функцию. Если она не совпадает с существующей, то это уникальный элемент
 
-## Объявление
+## Варианты
+
+### Объявление
 
 ```js
 const set = new Set(); // Set(0) {}
@@ -44,7 +46,7 @@ const set1 = new Set(["button"]); // Set(1) {"button"}
 const set2 = new Set(set1); // Set(1) {"button"}
 ```
 
-## Добавление нового элемента
+### Добавление нового элемента
 
 ```js
 const set = new Set();
@@ -57,16 +59,21 @@ const set = new Set();
 set.add("button").add("active").add("active");
 ```
 
-## Методы
+### Перебор set
 
 ```js
-const a = set.size; // Кол-во элементов в set
-const a = set.has("button"); // Проверка наличия значения
-set.delete("active"); // Удаление элемента
-set.clear(); // Очистка set
+for (let item of set) {
+  console.log(item);
+}
+// button
+// active
+
+set.forEach((item, item2, set) => console.log(item, item2, set));
+// button button Set(2) {"button", "active"}
+// active active Set(2) {"button", "active"}
 ```
 
-## Set и объекты
+### Set и объекты
 
 ```js
 const set = new Set();
@@ -81,7 +88,24 @@ set.add(buttonRef);
 const a = set.has(buttonRef); // true
 ```
 
-## values, keys, entries
+### Деструктуризация
+
+```js
+const [element1, element2] = set; // Получить первый и второй элемент set
+```
+
+## Методы
+
+### `size`, `has()`, `delete()`, `clear()`
+
+```js
+const a = set.size; // Кол-во элементов в set
+const a = set.has("button"); // Проверка наличия значения
+set.delete("active"); // Удаление элемента
+set.clear(); // Очистка set
+```
+
+## `values()`, `keys()`, `entries()`
 
 ```js
 // Нет метода для получения доступа к конкретному элементу.
@@ -94,26 +118,6 @@ console.log(set.values()); // SetIterator {"button", "active"}
 console.log(...set.values()); // button active
 console.log(...set.keys()); // button active
 console.log(...set.entries()); // (2) ["button", "button"] (2) ["active", "active"]
-```
-
-### Деструктуризация
-
-```js
-const [element1, element2] = set; // Получить первый и второй элемент set
-```
-
-## Перебор set
-
-```js
-for (let item of set) {
-  console.log(item);
-}
-// button
-// active
-
-set.forEach((item, item2, set) => console.log(item, item2, set));
-// button button Set(2) {"button", "active"}
-// active active Set(2) {"button", "active"}
 ```
 
 ## Операции над множествами

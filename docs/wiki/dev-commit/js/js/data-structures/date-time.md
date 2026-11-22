@@ -8,7 +8,9 @@
 
 :::
 
-## Создание
+## Варианты
+
+### Создание
 
 ```js
 new Date(year, month, date, hours, minutes, seconds, ms);
@@ -17,7 +19,7 @@ const selectDate = new Date(2012, 0, 1, 0, 0, 0); // Объявление для
 const nowDate = new Date(); // Текущие дата и время на компьютере пользователя
 ```
 
-## Установка значений
+### Установка значений
 
 ```js
 const selectDate = new Date(2012, 0, 1, 0, 0, 0);
@@ -27,7 +29,7 @@ selectDate.setSeconds(25); // Установка секунд
 ...
 ```
 
-## Получение значений
+### Получение значений
 
 ```js
 const nowDate = new Date();
@@ -42,16 +44,16 @@ const seconds = nowDate.getSeconds(); // Секунды
 const mseconds = nowDate.getMilliseconds(); // Миллисекунды
 ```
 
-## Date.parse
+## Метод `Date.parse`
 
-### Формат представления даты `YYYY-MM-DDTHH:mm:ss.sss`
+**Формат представления даты `YYYY-MM-DDTHH:mm:ss.sss`**
 
 - `YYYY-MM-DD` - дата в формате год-месяц-день
 - Обычный символ `T` используется как разделитель
 - `HH:mm:ss.sss` – время: часы-минуты-секунды-миллисекунды
 - Часть `'Z'` обозначает временную зону – в формате `+-hh:mm`, либо символ `Z`, обозначающий UTC
 
-### Date.parse(str)
+**Date.parse(str)**
 
 - Метод `Date.parse(str)` разбирает строку str в таком формате и возвращает соответствующее ей количество миллисекунд. Если это невозможно, `Date.parse` возвращает NaN
 
@@ -63,14 +65,14 @@ const ms = Date.parse("2012-01-26T13:51:50.417-07:00"); // С таймзоной
 alert(ms); // 1327611110417 (число миллисекунд)
 ```
 
-### Строковое и численное преобразование
+**Строковое и численное преобразование**
 
 ```js
 alert(new Date()); // toString: Дата в виде читаемой строки
 alert(+new Date()); // valueOf: кол-во миллисекунд, прошедших с 01.01.1970
 ```
 
-## toLocaleString
+## Метод `toLocaleString`
 
 ```js
 const date = new Date(Date.UTC(2014, 11, 31, 12, 30, 0));
@@ -115,12 +117,14 @@ const a = nowDate.getUTCHours(); // Время в формате UTC
 const a = nowDate.getTimezoneOffset(); // Возвращает разницу между местным и UTC-временем, в минутах.
 ```
 
-## Другие методы
+## Методы `toTimeString()`, `toDateString()`
 
 ```js
 const a = nowDate.toTimeString(); // Вывод времени в виде строки
 const a = nowDate.toDateString(); // Вывод даты в виде строки
 ```
+
+## Методы `getTime()`, `now()`
 
 ```js
 const selectDate = new Date(2012, 0, 1, 0, 0, 0);
@@ -133,7 +137,7 @@ const timeInMs = Date.now(); // Возвращает количество мил
 
 ## Примеры
 
-### Вывод текущей даты
+::: details Вывод текущей даты
 
 ```js
 const weekday = [
@@ -166,7 +170,9 @@ const nowDayOfMonth = nowDate.getDate();
 const nowMonth = month[nowDate.getMonth()];
 ```
 
-### Разность дат
+:::
+
+::: details Разность дат
 
 ```js
 const start = new Date(); // Засекли время
@@ -179,3 +185,5 @@ for (let i = 0; i < 100000; i++) {
 const end = new Date(); // Конец измерения
 console.log("Цикл занял " + (end - start) + " ms");
 ```
+
+:::

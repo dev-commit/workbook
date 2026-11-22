@@ -5,7 +5,7 @@ import { emoji } from "docs/constants";
 import { rootPath } from "../../constants";
 
 const path = rootPath + "js/js/";
-const title = "JavaScript";
+const title = "✅ JavaScript";
 const theme: TThemeTopics = "actual";
 
 const topics: ISidebarTopics[] = [
