@@ -1,25 +1,29 @@
 # Web Forms
 
+## Информация
+
 ::: info
-https://developer.mozilla.org/ru/docs/Web/API/File/Using_files_from_web_applications
+
+- https://developer.mozilla.org/ru/docs/Web/API/File/Using_files_from_web_applications - File API
+
 :::
 
 ## input type="text"
 
 ```js
 const a = element.value;
-element.value = 'new value';
+element.value = "new value";
 ```
 
 ## input type="checkbox"
 
 ```js
-const a = element.checked; 
+const a = element.checked;
 element.checked = true;
 ```
 
 ```html
-<input type="checkbox" onchange="func();"> 
+<input type="checkbox" onchange="func();" />
 <!-- onchange - изменение состояния -->
 ```
 
@@ -28,11 +32,11 @@ element.checked = true;
 ```js
 const radio = document.querySelectorAll('input[type="radio"]');
 
-for(let i=0; i<=radio.length-1; i++) {
-	if(radio[i].checked) {
-		const value = radio[i].getAttribute('value');
-		console.log(value);
-	}
+for (let i = 0; i <= radio.length - 1; i++) {
+  if (radio[i].checked) {
+    const value = radio[i].getAttribute("value");
+    console.log(value);
+  }
 }
 ```
 
@@ -43,7 +47,7 @@ radio.disabled = true;
 ## select
 
 ```js
-const select = document.querySelector('select');
+const select = document.querySelector("select");
 
 const a = select.value;
 const a = select.options[select.selectedIndex].value;

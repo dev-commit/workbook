@@ -4,23 +4,24 @@
 var a;
 
 if (a === undefined) {
-	console.log('Undefined');
+  console.log("Undefined");
 } else {
-	console.log('Not undefined');
+  console.log("Not undefined");
 }
 
 if (typeof a == "undefined") {
-	console.log('Undefined');
+  console.log("Undefined");
 } else {
-	console.log('Not undefined');
+  console.log("Not undefined");
 }
 
 if (!!a) {
-	console.log('Not undefined');
+  console.log("Not undefined");
 } else {
-	console.log('Undefined');
+  console.log("Undefined");
 }
 ```
-- !! - является проверкой как определена ли переменная и является истиной
-- !!! - как определена переменная и является ложью
-- При этом если переменная является undefined, то всегда вернется false
+
+- `!!` - является проверкой как определена ли переменная и является истиной
+- `!!!` - как определена переменная и является ложью
+- При этом если переменная является _undefined_, то всегда вернется _false_

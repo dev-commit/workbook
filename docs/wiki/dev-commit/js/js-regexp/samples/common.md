@@ -10,5 +10,5 @@ console.log(regexp.test(str));
 ## Шаблоны
 
 ```bash
-(\b\w+)@(\w+\.\w+\b) # поиск email
+(\b\w+)@(\w+\.\w+\b) # Поиск email
 ```

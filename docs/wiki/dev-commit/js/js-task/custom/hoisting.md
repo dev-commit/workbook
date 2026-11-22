@@ -7,15 +7,15 @@
 ```js
 var a = 1;
 
-(function() {
-    console.log(a); // => undefined
-    var a = 2;      // всплывает и инициализируется значением "undefined"
+(function () {
+  console.log(a); // => undefined
+  var a = 2; // Всплывает и инициализируется значением "undefined"
 })();
 
-// "function а" имеет максимальный приоритет, но "var a" проинициализирована
+// "function a" имеет максимальный приоритет, но "var a" проинициализирована
 // поэтому "a == 1"
 function a() {
-    console.log(this);
+  console.log(this);
 }
 
 a.call(null); // => Uncaught TypeError: a.call is not a function
@@ -25,18 +25,18 @@ a.call(null); // => Uncaught TypeError: a.call is not a function
 
 ```js
 (function () {
-    f(); // 2
-    f = function () {
-    	console.log(1);
-    };
+  f(); // 2
+  f = function () {
+    console.log(1);
+  };
 })();
 
 f(); // 1
 var f = 10;
 f(); // f is not a function
 
-function f () {
-	console.log(2);
+function f() {
+  console.log(2);
 }
 ```
 
@@ -46,11 +46,11 @@ function f () {
 let a = 1;
 
 function b() {
-    // перезаписывается не глобальная переменная, а локальная функция
-    a = 10;
-    return 20;
-    // функция всплывает
-    function a() {}
+  // Перезаписывается не глобальная переменная, а локальная функция
+  a = 10;
+  return 20;
+  // Функция всплывает
+  function a() {}
 }
 
 b();
@@ -62,8 +62,8 @@ console.log(a); // 1
 
 ```js
 var x = function a(arg) {
-    console.log(x === arg);
-}
+  console.log(x === arg);
+};
 
 x(a); // => Uncaught ReferenceError: a is not defined
 ```
@@ -74,12 +74,12 @@ x(a); // => Uncaught ReferenceError: a is not defined
 var a = 5;
 
 function foo() {
-    if (a) {
-        console.log(a);
-        var a = 10;
-    } else {
-        console.log('No');
-    }
+  if (a) {
+    console.log(a);
+    var a = 10;
+  } else {
+    console.log("No");
+  }
 }
 
 foo(); // => "No"
@@ -92,8 +92,8 @@ foo(); // => "No"
 ```js
 var a = [];
 function clear(arr) {
-    arr.push(2);
-    arr = null;
+  arr.push(2);
+  arr = null;
 }
 clear(a);
 console.log(a); // [2]
@@ -103,12 +103,12 @@ console.log(a); // [2]
 
 ```js
 function foo(a) {
-    if (a > 0) {
-        // a во временной dead zone
-        let a = a + 10;
-        return a;
-    }
+  if (a > 0) {
+    // a во временной dead zone
+    let a = a + 10;
     return a;
+  }
+  return a;
 }
 
 console.log(foo(20));
@@ -118,44 +118,49 @@ console.log(foo(20));
 
 ## this
 
-#### comment
+<v-two>
+<template #first>
 
 ```js
 var a = 1;
 function b() {
-    a = 10;
-    return;
-    function a() {}
+  a = 10;
+  return;
+  function a() {}
 }
 b();
 console.log(a); // => 1
 ```
 
-#### comment
+</template>
+<template #last>
 
 ```js
 var a = 1;
 function b() {
-    a = 10;
-    return;
-    let a;
+  a = 10;
+  return;
+  let a;
 }
 b();
 console.log(a); // => Uncaught ReferenceError: Cannot access 'a' before initialization
 ```
+
+</template>
+</v-two>
 
 ## Переменная
 
 ```js
 var a = 5;
 function someFunction() {
-    // "3" запишется не в глобальную, а в локальную, потому что она всплыла
-    a = 3;
+  // "3" запишется не в глобальную, а в локальную, потому что она всплыла
+  a = 3;
 
-    // условие не выполнится но "a" всплывет
-    if (false) {
-        var a = 10;
-    }
+  // Условие не выполнится, но "a" всплывет
+  if (false) {
+    var a = 10;
+  }
 }
 
 someFunction();

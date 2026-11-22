@@ -1,5 +1,8 @@
 # Line, Path
 
+<v-two>
+<template #first>
+
 ```js
 ctx.beginPath();
 
@@ -16,4 +19,10 @@ ctx.fill();
 ctx.stroke();
 ```
 
-<!-- <img class="img200" src="../@img/path1.png"/> -->
+</template>
+<template #last>
+
+<img src="../@img/line-path/path1.png" style="width: 200px" />
+
+</template>
+</v-two>

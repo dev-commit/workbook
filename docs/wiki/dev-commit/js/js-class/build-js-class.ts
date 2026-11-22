@@ -5,7 +5,7 @@ import { emoji } from "docs/constants";
 import { rootPath } from "../../constants";
 
 const path = rootPath + "js/js-class/";
-const title = "Class";
+const title = "✅ Class";
 const theme: TThemeTopics = "actual";
 
 const topics: ISidebarTopics[] = [
@@ -13,10 +13,7 @@ const topics: ISidebarTopics[] = [
     title: "Основное",
     children: [
       ["main/inheritance", emoji.fire + "Наследование"],
-      [
-        "main/prototype",
-        getThemeMenu("method", ["__proto__", "prototype"]),
-      ],
+      ["main/prototype", getThemeMenu("method", ["__proto__", "prototype"])],
       ["main/new", getThemeMenu("method", ["new"])],
       ["main/constructor", getThemeMenu("method", ["constructor"])],
       ["main/return", getThemeMenu("method", ["return"])],
@@ -43,10 +40,7 @@ const topics: ISidebarTopics[] = [
     children: [
       ["class-es5-functional/create", "Объявление"],
       ["class-es5-functional/methods-private", "Приватный метод"],
-      [
-        "class-es5-functional/getters-and-setters",
-        "Геттеры и сеттеры",
-      ],
+      ["class-es5-functional/getters-and-setters", "Геттеры и сеттеры"],
       ["class-es5-functional/inherit", "Наследование"],
     ],
   },

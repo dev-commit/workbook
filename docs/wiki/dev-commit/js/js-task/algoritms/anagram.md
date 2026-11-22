@@ -1,59 +1,70 @@
 # Анаграмма
 
+## Информация
+
+::: tip Определение
+
 - **Анаграмма** - перестановка букв или звуков определённого слова, что в результате даёт другое слово или словосочетание
 
-### Постановка задачи
+:::
+
+## Постановка задачи
 
 ```js
 const input = [
-   "вертикаль", "кильватер", "апельсин", "спаниель", "австралопитек",
-   "ватерполистка", "кластер", "сталкер", "стрелка"
+  "вертикаль",
+  "кильватер",
+  "апельсин",
+  "спаниель",
+  "австралопитек",
+  "ватерполистка",
+  "кластер",
+  "сталкер",
+  "стрелка",
 ];
 
 // Результат:
 [
-   ["вертикаль", "кильватер"],
-   ["апельсин", "спаниель"],
-   ["австралопитек", "ватерполистка"],
-   ["кластер", "сталкер", "стрелка"]
-]
+  ["вертикаль", "кильватер"],
+  ["апельсин", "спаниель"],
+  ["австралопитек", "ватерполистка"],
+  ["кластер", "сталкер", "стрелка"],
+];
 ```
 
-### Простое решение
+## Простое решение
 
 - Сложность: O(N в квадрате)
 
 ```js
-console.log(anagram('finder', 'Friend')); // true
-console.log(anagram('bla', 'broom'));     // false
-
-const sortWordASC = word => word
-    .split('')
-    .sort()
-    .join('');
+const sortWordASC = (word) => word.split("").sort().join("");
 
 const anagram = (word1, word2) => {
-    if (word1.length !== word2.length) {
-        return false;
-    }
+  if (word1.length !== word2.length) {
+    return false;
+  }
 
-    return sortWordASC(word1.toLowerCase()) === sortWordASC(word2.toLowerCase());
+  return sortWordASC(word1.toLowerCase()) === sortWordASC(word2.toLowerCase());
 };
+
+console.log(anagram("finder", "Friend")); // true
+console.log(anagram("bla", "broom")); // false
 ```
 
-### Решение 2
+## Решение 2
 
 ```js
-const findAnagramms = (arr) => Object.values(
-	arr.reduce((a, b) => {
-		let key = b.split('').sort().join('');
-		a[key] = [...a[key] || '', b];
-		return a
-	}, {})
-)
+const findAnagrams = (arr) =>
+  Object.values(
+    arr.reduce((a, b) => {
+      let key = b.split("").sort().join("");
+      a[key] = [...(a[key] || ""), b];
+      return a;
+    }, {}),
+  );
 ```
 
-### Решение 3
+## Решение 3
 
 - Хэшом может выступать объект, его ключи
 - Есть цикл, в котором формируется hash (сплит в массив, сортировка, собрать) - отсортированная строка
@@ -64,28 +75,28 @@ const findAnagramms = (arr) => Object.values(
 
 ```js
 (function findAnagram(arr) {
-    const output = {},
-        i = 0,
-        length = arr.length,
-        hash;
+  let output = {},
+    i = 0,
+    length = arr.length,
+    hash;
 
-    for (i = 0; i < length; i++) {
-        hash = arr[i].split('').sort().join('');
+  for (i = 0; i < length; i++) {
+    hash = arr[i].split("").sort().join("");
 
-        if (!output[hash]) {
-            output[hash] = [];
-        }
-        output[hash].push(arr[i]);
+    if (!output[hash]) {
+      output[hash] = [];
     }
+    output[hash].push(arr[i]);
+  }
 
-    arr = [];
+  arr = [];
 
-    for (key in output) {
-        if (obj[key].length > 1) {
-            arr.push(output[key]);
-        }
+  for (key in output) {
+    if (output[key].length > 1) {
+      arr.push(output[key]);
     }
+  }
 
-    return arr;
+  return arr;
 })(input);
 ```

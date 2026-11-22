@@ -1,18 +1,18 @@
 # Сумма произвольного количества скобок
 
-### #1
+## #1
 
 ```js
 function sum() {
-    let total = 0;
-    let f = function (val) {
-        if (typeof val === "undefined") {
-            return total;
-        }
-        total += val;
-        return f
+  let total = 0;
+  let f = function (val) {
+    if (typeof val === "undefined") {
+      return total;
     }
-    return f.apply(null, arguments)
+    total += val;
+    return f;
+  };
+  return f.apply(null, arguments);
 }
 
 console.log(sum() === 0);
@@ -21,75 +21,72 @@ console.log(sum(10)(5)(5)(80)() === 100);
 console.log(typeof sum(100) === "function");
 ```
 
-### #2 Learn.Javascript.Ru
+## #2 Learn.Javascript.Ru
 
 ```js
 function sum(a) {
-	const currentSum = a;
-	function f(b) {
-		currentSum += b;
-		return f;
-	}
-	f.toString = function() {
-		return currentSum;
-	};
-	return f;
+  let currentSum = a;
+  function f(b) {
+    currentSum += b;
+    return f;
+  }
+  f.toString = function () {
+    return currentSum;
+  };
+  return f;
 }
 
-console.log(sum(1)(2));             // 3
-console.log(sum(5)(-1)(2));         // 6
-console.log(sum(6)(-1)(-2)(-3));    // 0
+console.log(sum(1)(2)); // 3
+console.log(sum(5)(-1)(2)); // 6
+console.log(sum(6)(-1)(-2)(-3)); // 0
 console.log(sum(0)(1)(2)(3)(4)(5)); // 15
 ```
 
-### #3 Фиксированное окончание пустым значением
+## #3 Фиксированное окончание пустым значением
 
 ```js
 console.log(sum(1)(2)(3)()); // 6
 function sum(arg) {
-    let result = arg;
-    let f = function(value) {
-        if(value === indefined) {
-            return result;
-        }
-        result += value;
-        return f;
+  let result = arg;
+  let f = function (value) {
+    if (value === undefined) {
+      return result;
     }
+    result += value;
     return f;
+  };
+  return f;
 }
 ```
 
-### #4 Добавление числа
+## #4 Добавление числа
 
 ```js
 console.log(sum(1)(2)(3) + 5); // 11
 
 function sum(arg) {
-    let result = arg;
-    let f = function(value) {
-
-        if(value === indefined) {
-            return result;
-        }
-        result += value;
-        return f;
+  let result = arg;
+  let f = function (value) {
+    if (value === undefined) {
+      return result;
     }
-
-    f.toString = function() {
-        return result;
-    }
+    result += value;
     return f;
-}
-```
+  };
 
-```js
-// разбор
+  f.toString = function () {
+    return result;
+  };
+  return f;
+}
+
+// Разбор
 // let a = sum(1);
 // let a1 = a(2);
 // let a2 = a1(3);
 // let result = 6;
 // a2 = function(value) {
-//         if(value === indefined) {
+//         if(value === undefined) {
 //             return result;
 //         }
 //         result += value;
@@ -98,21 +95,24 @@ function sum(arg) {
 // a2.valueOf() + 5
 ```
 
-### #5
+## #5
+
+<!-- Матвеев -->
 
 ```js
 function sum(num) {
-    let result = num || 0;
+  let result = num || 0;
 
-    function sum2(n) {
-        if (typeof n === 'undefined') {
-            return result;
-        }
-        result += n;
-        return sum2;
+  function sum2(n) {
+    if (typeof n === "undefined") {
+      return result;
     }
+    result += n;
+    return sum2;
+  }
 
-    sum2.toString = () => result;
+  sum2.toString = () => result;
+  return sum2;
 }
 
 console.log(sum(1)(2)(3)); // 6

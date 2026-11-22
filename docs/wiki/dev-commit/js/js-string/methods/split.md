@@ -1,17 +1,19 @@
 # split()
 
-arr.join() - обратное преобразование
+## Информация
+
+- `arr.join()` - обратное преобразование
 
 ## Базовое использование
 
 ```js
 // Преобразование строки с заданным разделителем в массив
-const arr = str.split(';');
+const arr = str.split(";");
 ```
 
-## ReqExp
+## RegExp
 
 ```js
 const pattern = /[\s,]+/;
-const result = text.split(pattern); // разделитель пробел
+const result = text.split(pattern); // Разделитель пробел
 ```

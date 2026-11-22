@@ -5,7 +5,7 @@ import { emoji } from "docs/constants";
 import { rootPath } from "../../constants";
 
 const path = rootPath + "theory/approaches/";
-const title = "Подходы +";
+const title = "📌 Подходы +";
 const theme: TThemeTopics = "actual";
 
 const topics: ISidebarTopics[] = [

@@ -1,11 +1,20 @@
 # Gradient
 
+<v-two>
+<template #first>
+
 ```js
 const grad = ctx.createLinearGradient(0, 100, 100, 0);
-grad.addColorStop(0, 'green');
-grad.addColorStop(1, 'blue');
+grad.addColorStop(0, "green");
+grad.addColorStop(1, "blue");
 ctx.fillStyle = grad;
 ctx.fillRect(50, 50, 100, 100);
 ```
 
-<!-- <img class="img200" src="../@img/gradient1.png"/> -->
+</template>
+<template #last>
+
+<img src="../@img/gradient/gradient1.png" style="width: 200px" />
+
+</template>
+</v-two>

@@ -12,12 +12,12 @@
 
 ```js
 function pow(x, n) {
-	// пока n != 1, сводить вычисление pow(x,n) к pow(x,n-1)
-	if (n != 1) {
-		return x * pow(x, n - 1);
-	} else {
-		return x;
-	}
+  // Пока n != 1, сводить вычисление pow(x,n) к pow(x,n-1)
+  if (n != 1) {
+    return x * pow(x, n - 1);
+  } else {
+    return x;
+  }
 }
-alert( pow(2, 3) ); // 8
+alert(pow(2, 3)); // 8
 ```

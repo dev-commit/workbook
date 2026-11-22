@@ -1,42 +1,43 @@
 # Примеры
 
-### Перебор строки
+## Перебор строки
 
 ```js
-for (let i=0; i <= str.length-1; i++) {
-	console.log(str[i]);
+for (let i = 0; i <= str.length - 1; i++) {
+  console.log(str[i]);
 }
 ```
 
-### Длина числа
+## Длина числа
 
 ```js
 const id = 100;
 const a = id.toString().length;
 ```
 
-### Сложение строки и чисел
+## Сложение строки и чисел
 
 ```js
-"Blink" + 181 + 1;   // "Blink1811"
+"Blink" + 181 + 1; // "Blink1811"
 "Blink" + (181 + 1); // "Blink182"
 ```
 
-### Экранирование кавычек
+## Экранирование кавычек
 
+<!-- prettier-ignore -->
 ```js
-'\n'                     // перенос строки
-alert('привет \n мир');  // вывод переноса строки
-"call me \"ziggy\" now"; // экранирование кавычек
+"\n"; // Перенос строки
+alert("привет \n мир"); // Вывод переноса строки
+"call me \"ziggy\" now"; // Экранирование кавычек
 ```
 
-### Проверка на заполненное поле
+## Проверка на заполненное поле
 
 ```js
-const login = '';
-const password = '';
+const login = "";
+const password = "";
 
-isFormValid() {
-	return login.length > 0 && password.length > 0;
+function isFormValid() {
+  return login.length > 0 && password.length > 0;
 }
 ```

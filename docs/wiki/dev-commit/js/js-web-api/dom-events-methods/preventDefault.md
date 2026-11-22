@@ -1,11 +1,17 @@
 # preventDefault
 
-	Отключение действия события по умолчанию
+## Информация
+
+::: danger
+
+**`event.preventDefault()`** - отключение действия события по умолчанию
+
+:::
 
 ```js
-element.onclick = function(event) {
-	event.preventDefault();
-	// аналогично preventDefault(), но дальнейший код не выполняется
-	// return false;
+element.onclick = function (event) {
+  event.preventDefault();
+  // Аналогично preventDefault(), но дальнейший код не выполняется
+  // return false;
 };
 ```

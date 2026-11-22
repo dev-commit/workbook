@@ -2,13 +2,11 @@
 
 ```js
 const arr = [1, 2, 3, 77, 4];
-const max = Math.max.apply(null, arr); // 77 (контекстом будет объект Math)
+const max = Math.max.apply(null, arr); // 77 (контекстом будет null)
 const max = Math.max.apply(Math, arr); // 77 (контекстом будет объект Math) - аналогично
-// в данном случае в качестве контекста можно передавать что угодно, 
+// В данном случае в качестве контекста можно передавать что угодно,
 // поскольку в своей внутренней реализации метод Math.max не использует this
-```
 
-```js
-const numbers = [1,2,3,4];
+const numbers = [1, 2, 3, 4];
 Math.max(...numbers);
 ```

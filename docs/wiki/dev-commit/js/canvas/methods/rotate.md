@@ -1,5 +1,5 @@
 # rotate()
 
 ```js
-ctx.rotate(10 * Math.PI/180); // поворот на 10deg
+ctx.rotate((10 * Math.PI) / 180); // Поворот на 10deg
 ```

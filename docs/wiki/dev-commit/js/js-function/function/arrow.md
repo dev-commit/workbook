@@ -1,6 +1,10 @@
 # Стрелочные функции (ES6)
 
+## Информация
+
 ::: info
+
+- https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Arrow_functions - MDN
 
 :::
 
@@ -8,172 +12,211 @@
 
 ### 1. Контекст
 
-- Стрелочная функция не имеет своего контекста this
+- Стрелочная функция не имеет своего контекста _this_
 - this берется из контекста (окружения) в котором функция объявлена в независимости от того где эта функция будет выполнена
-- Нельзя использовать .bind() .call() .apply(), т.к. нельзя изменить this, который берется из контекста
+- Нельзя использовать _.bind()_ _.call()_ _.apply()_, т.к. нельзя изменить _this_, который берется из контекста
 
-#### arrow function
-
-```js
-const person = {
-	name: 'Tony',
-	greet: () => {
-		// this - объект из контекста window
-		console.log('Hello' + this.name);
-	}
-}
-person.greet();
-```
-
-#### function
+<v-two :title="['arrow function', 'function']">
+<template #first>
 
 ```js
 const person = {
-	name: 'Tony',
-	greet: function() {
-		// this - это person
-		console.log('Hello' + this.name);
-	}
-}
+  name: "Tony",
+  greet: () => {
+    // this - объект из контекста window
+    console.log("Hello" + this.name);
+  },
+};
 person.greet();
 ```
+
+</template>
+<template #last>
+
+```js
+const person = {
+  name: "Tony",
+  greet: function () {
+    // this - это person
+    console.log("Hello" + this.name);
+  },
+};
+person.greet();
+```
+
+</template>
+</v-two>
 
 ### 2. Prototype
 
-- Нет свойства prototype
-- Нельзя использовать как конструкторы объектов (c new) и вызовут ошибку при использовании с new
+- Нет свойства _prototype_
+- Нельзя использовать как конструкторы объектов (с _new_) и вызовут ошибку при использовании с new
 
 ### 3. Arguments
 
-- Псевдомассив arguments недоступен. Берется родительский arguments
+- Псевдомассив _arguments_ недоступен. Берется родительский arguments
 
 ### 4. Генераторы
 
-- Ключевое слово yield не может быть использовано в теле стрелочной функции
+- Ключевое слово _yield_ не может быть использовано в теле стрелочной функции
 - Как следствие стрелочные функции не могут быть использованы как генераторы
-
----
 
 ## Варианты
 
 ### 2 аргумента
 
-#### arrow function
+<v-two :title="['arrow function', 'function']">
+<template #first>
 
 ```js
 const add = (x, y) => x + y;
 ```
 
-#### function
+</template>
+<template #last>
 
 ```js
 function add(x, y) {
-	return x + y;
+  return x + y;
 }
 ```
 
-### 1 агрумент
+</template>
+</v-two>
+
+### 1 аргумент
 
 - Если функция принимает 1 параметр, не нужно заключать его в скобки
 
-#### arrow function
+<v-two :title="['arrow function', 'function']">
+<template #first>
 
+<!-- prettier-ignore -->
 ```js
-const square = x => x*x;
+const square = x => x * x;
 ```
 
-#### function
+</template>
+<template #last>
 
 ```js
-const square = function(x) {
-	return x*x;
-}
+const square = function (x) {
+  return x * x;
+};
 ```
+
+</template>
+</v-two>
 
 ### Без аргументов
 
-#### arrow function
+<v-two :title="['arrow function', 'function']">
+<template #first>
 
 ```js
 const giveMeAnswer = () => 42;
 ```
 
-#### function
+</template>
+<template #last>
 
 ```js
-const giveMeAnswer = function() {
-	return 42;
-}
+const giveMeAnswer = function () {
+  return 42;
+};
 ```
+
+</template>
+</v-two>
 
 ### Не возвращает значение
 
-#### arrow function
+<v-two :title="['arrow function', 'function']">
+<template #first>
 
 ```js
-const log = () => console.log('hi');
+const log = () => console.log("hi");
 ```
 
-#### function
+</template>
+<template #last>
 
 ```js
-const log = function() {
-	console.log('hi');
-}
+const log = function () {
+  console.log("hi");
+};
 ```
+
+</template>
+</v-two>
 
 ### Состоит из двух строк
 
-- Если в стрелочной функции несколько строк, то используются фигурные скобки и return
+- Если в стрелочной функции несколько строк, то используются фигурные скобки и `return`
 
-#### arrow function
+<v-two :title="['arrow function', 'function']">
+<template #first>
 
 ```js
 const multiply = (x, y) => {
-	const result = x*y;
-	return result;
-}
+  const result = x * y;
+  return result;
+};
 ```
 
-#### function
+</template>
+<template #last>
 
 ```js
-const multiply = function(x, y) {
-	const result = x*y;
-	return result;
-}
+const multiply = function (x, y) {
+  const result = x * y;
+  return result;
+};
 ```
+
+</template>
+</v-two>
 
 ### Возвращает объект
 
 - Возвращаемый объект оборачивается в круглые скобки
 
-#### arrow function
+<v-two :title="['arrow function', 'function']">
+<template #first>
 
 ```js
-const getPerson = () => ({ name:'Jack' });
+const getPerson = () => ({ name: "Jack" });
 ```
 
-#### function
+</template>
+<template #last>
 
 ```js
-const getPerson = function() {
-	return { name:'Jack' }
-}
+const getPerson = function () {
+  return { name: "Jack" };
+};
 ```
+
+</template>
+</v-two>
 
 ### Самовызывающаяся функция (IIFE)
 
-#### arrow function
+<v-two :title="['arrow function', 'function']">
+<template #first>
 
 ```js
-(() => console.log('IIFE'))();
+(() => console.log("IIFE"))();
 ```
 
-#### function
+</template>
+<template #last>
 
 ```js
-(function(){
-	console.log('IIFE');
+(function () {
+  console.log("IIFE");
 })();
 ```
+
+</template>
+</v-two>

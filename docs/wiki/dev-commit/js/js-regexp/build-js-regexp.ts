@@ -5,7 +5,7 @@ import { emoji } from "docs/constants";
 import { rootPath } from "../../constants";
 
 const path = rootPath + "js/js-regexp/";
-const title = "RegExp";
+const title = "✅ RegExp";
 const theme: TThemeTopics = "actual";
 
 const topics: ISidebarTopics[] = [

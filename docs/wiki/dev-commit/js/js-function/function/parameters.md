@@ -2,11 +2,11 @@
 
 ## Параметры по умолчанию (default parameters)
 
-- Параметры по умолчанию будут срабатывать если параметр не передан или параметр равен undefined
+- Параметры по умолчанию будут срабатывать если параметр _не передан_ или параметр равен _undefined_
 
 ```js
-function greet(greeting='Hello', name='Friend') {
-	console.log(greeting + ' ' + name);
+function greet(greeting = "Hello", name = "Friend") {
+  console.log(greeting + " " + name);
 }
 greet();
 ```
@@ -14,41 +14,43 @@ greet();
 ## Псевдомассив аргументов arguments (ES5)
 
 ```js
-// arguments в ES5 - псевдо-массив, содержащий переданные агрументы
+// arguments в ES5 - псевдо-массив, содержащий переданные аргументы
 [object Arguments] {
-	0: arg1,
-	1: arg2, 
-	2: arg3
+  0: arg1,
+  1: arg2,
+  2: arg3
 }
 ```
 
 ```js
 function my() {
-	// конвертация в обычный массив
-	let arr = Array.prototype.slice.call(arguments);
-	console.log(arr); // => [1, 2, 3]
+  // Конвертация в обычный массив
+  let arr = Array.prototype.slice.call(arguments);
+  console.log(arr); // => [1, 2, 3]
 }
 my(1, 2, 3);
 ```
 
 ## Оставшиеся параметры (rest parameters)
 
-- Синтаксис отдельных параметров превращает отдельные элементы в масссив
-- Ограничение 1: Rest-параметр обязан идти последним в функции
-- Ограничение 2: Нельзя иметь больше одного rest-параметра
+- Синтаксис отдельных параметров превращает отдельные элементы в массив
+- **Ограничение 1:** Rest-параметр обязан идти _последним_ в функции
+- **Ограничение 2:** Нельзя иметь больше одного rest-параметра
 
 ```js
+// Только rest-параметры
 function my(...numbers) {
-	console.log(numbers); // => [1, 2, 3]
+  console.log(numbers); // => [1, 2, 3]
 }
 my(1, 2, 3);
 ```
 
 ```js
+// Rest с обычными параметрами
 function my(a, b, ...numbers) {
-	console.log(a);       // => 1
-	console.log(b);       // => 2
-	console.log(numbers); // => [3, 4]
+  console.log(a); // => 1
+  console.log(b); // => 2
+  console.log(numbers); // => [3, 4]
 }
 my(1, 2, 3, 4);
 ```

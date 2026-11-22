@@ -1,14 +1,23 @@
 # Arc
 
+<v-two>
+<template #first>
+
 ```js
 ctx.beginPath();
-ctx.arc(100, 100, 50, 0, Math.PI*2, false);
+ctx.arc(100, 100, 50, 0, Math.PI * 2, false);
 ctx.closePath();
-ctx.fill();   // fill
+ctx.fill(); // fill
 ctx.stroke(); // stroke
 ```
 
-<!-- <img class="img200" src="../@img/arc1.png"/> -->
+</template>
+<template #last>
+
+<img src="../@img/arc/arc1.png" style="width: 200px" />
+
+</template>
+</v-two>
 
 ```js
 arc();

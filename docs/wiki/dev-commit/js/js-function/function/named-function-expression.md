@@ -1,6 +1,13 @@
 # Named Function Expression
 
+## Информация
+
+::: tip Определение
+
 - **Named Function Expression (NFE)** - именованные функциональные выражения
+
+:::
+
 - Имя NFE используется для единственной цели – позволить изнутри функции вызвать саму себя
 - Если функция задана как Function Expression, ей можно дать имя
 - Оно будет доступно только внутри функции
@@ -10,36 +17,41 @@
 
 ```js
 const f = function sayHi(name) {
-  alert( sayHi ); // изнутри функции - видно (выведет код функции)
+  alert(sayHi); // Изнутри функции - видно (выведет код функции)
 };
 
-alert( sayHi ); // снаружи - не видно (ошибка: undefined variable 'sayHi')
+alert(sayHi); // Снаружи - не видно (ошибка: undefined variable 'sayHi')
 ```
 
-#### js
+<v-two>
+<template #first>
 
 ```js
 function f(n) {
   return n ? n * f(n - 1) : 1;
-};
+}
 
 const g = f;
 f = null;
 
-alert( g(5) ); // запуск функции с новым именем - ошибка при выполнении!
-// функция из своего кода обращается к своему старому имени f
-// этой функции уже нет, f = null
+alert(g(5)); // Запуск функции с новым именем - ошибка при выполнении!
+// Функция из своего кода обращается к своему старому имени f.
+// Этой функции уже нет, f = null
 ```
 
-#### js
+</template>
+<template #last>
 
 ```js
-const f = function factorial(n) {
-	return n ? n*factorial(n-1) : 1;
+let f = function factorial(n) {
+  return n ? n * factorial(n - 1) : 1;
 };
 
-const g = f;  // скопировали ссылку на функцию-факториал в g
+const g = f; // Скопировали ссылку на функцию-факториал в g
 f = null;
 
-alert( g(5) ); // 120, работает!
+alert(g(5)); // 120, работает!
 ```
+
+</template>
+</v-two>

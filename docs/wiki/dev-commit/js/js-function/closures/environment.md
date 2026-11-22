@@ -1,29 +1,37 @@
 # Лексическая и динамическая область видимости
 
-- **Лексическая (статическая) область видимости** - при создании функции, она запоминает Lexical Environment в котором была СОЗДАНА
+## Информация
+
+::: tip Определение
+
+- **Лексическая (статическая) область видимости** - при создании функции, она запоминает Lexical Environment в котором была _СОЗДАНА_
 - Функция запоминает внешний Scope по месту создания, а не по месту вызова
 - Используется в JavaScript
-- **Динамическая область видимости** - при создании функции, она запоминает Lexical Environment в котором была ВЫЗВАНА
+- **Динамическая область видимости** - при создании функции, она запоминает Lexical Environment в котором была _ВЫЗВАНА_
+
+:::
 
 ## Пример
 
 - 20 берется по месту создания, а не по месту вызова функции
-- Внутрення переменая bar - [[Evironment]] хранит ссылку на Lexical Environment foo, где существует локальная переменная a
+- Внутренняя переменная `bar` - _[[Environment]]_ хранит ссылку на _Lexical Environment_ `foo`, где существует локальная переменная `a`
 - Функция создалась и ссылка закреплена за функцией
-- Когда вызывается функция bar, создаеся Контекст исполнения (Execution Cintext), вместе с ним создается Lexical Environment и Environment Record
-- У Environment Record есть свойство outer куда помещается ссылка bar.[[Evironment]]
+- Когда вызывается функция `bar`, создается _Контекст исполнения (Execution Context)_, вместе с ним создается _Lexical Environment_ и _Environment Record_
+- У _Environment Record_ есть свойство _outer_ куда помещается ссылка _bar.[[Environment]]_
 
 ```js
-function foo() { // a
-	const a = 20
-	return function bar() { // bar.[[Evironment]] = LE foo
-		console.log(a); // a 
-	}
+function foo() {
+  // a
+  const a = 20;
+  return function bar() {
+    // bar.[[Environment]] = LE foo
+    console.log(a); // a
+  };
 }
 
-const a = 10
-const bar = foo()
-bar(); // EC - LE ER.outer - bar.[[Evironment]]
+const a = 10;
+const bar = foo();
+bar(); // EC - LE ER.outer - bar.[[Environment]]
 
 // => 20
 ```

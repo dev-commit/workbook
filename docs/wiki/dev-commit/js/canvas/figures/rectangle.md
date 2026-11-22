@@ -1,8 +1,17 @@
 # Rectangle
 
+<v-two>
+<template #first>
+
 ```js
-ctx.fillRect(0,0,100,100);   // fill
-ctx.strokeRect(0,0,100,100); // stroke
+ctx.fillRect(0, 0, 100, 100); // fill
+ctx.strokeRect(0, 0, 100, 100); // stroke
 ```
 
-<!-- <img class="img200" src="../@img/rectangle1.png"/> -->
+</template>
+<template #last>
+
+<img src="../@img/rectangle/rectangle1.png" style="width: 200px" />
+
+</template>
+</v-two>

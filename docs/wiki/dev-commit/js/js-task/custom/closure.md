@@ -6,9 +6,9 @@
 let makeCount = 0;
 
 function makeCounter() {
-	return function () {
-		return makeCount++;
-	};
+  return function () {
+    return makeCount++;
+  };
 }
 
 var counter = makeCounter();
@@ -25,35 +25,40 @@ console.log(counter2()); // 3
 
 ```js
 function closure() {
-	return (function() {
-		const arr = [];
-		
-		for (var i=0; i < 10; i++) {
-			arr.push(function() {
-				return i
-			});
-		}
-		
-		return arr;
-	})();
+  return (function () {
+    const arr = [];
+
+    for (var i = 0; i < 10; i++) {
+      arr.push(function () {
+        return i;
+      });
+    }
+
+    return arr;
+  })();
 }
 
 console.log(closure()[3]() === 3); // => должно быть "true"
 ```
-- Решение 1: поменять "var" на "let"
-- Решение 2: добавить "bind"
+
+- _Решение 1_: поменять "var" на "let"
+- _Решение 2_: добавить "bind"
+
+```js
+arr.push(function() {...}.bind(this, i))
+```
 
 ## const a = 20 в замыкании
 
 ```js
 function foo() {
-	const a = 20
-	return function() {
-		console.log(a);
-	}
+  const a = 20;
+  return function () {
+    console.log(a);
+  };
 }
 
-const a = 10
-const bar = foo()
+const a = 10;
+const bar = foo();
 bar(); // 20
 ```

@@ -1,6 +1,6 @@
 # Мемоизация
 
-### Мемоизация
+## Мемоизация
 
 ```js
 const add = (a, b) => a + b;
@@ -11,44 +11,44 @@ console.log(memoAdd(2, 2)); // 4
 console.log(memoAdd(2, 2)); // 4, console.log('returned cached value');
 
 function memo(add) {
-	const data = {};
+  const data = {};
 
-	return function(...arg) {
-		const key = JSON.stringify(arg);
+  return function (...arg) {
+    const key = JSON.stringify(arg);
 
-		if (data[key]) {
-			console.log('returned cached value');
-		} else {
-			data[key] = add.apply(null, arg);
-		}
+    if (data[key]) {
+      console.log("returned cached value");
+    } else {
+      data[key] = add.apply(null, arg);
+    }
 
-		return data[key];
-	}
+    return data[key];
+  };
 }
 ```
 
-### Мемоизация с 1 аргументом
+## Мемоизация с 1 аргументом
 
 ```js
-function memoize(fn){
-    const cache = {}
-    return function(param){
-        if(cache[param]){
-            console.log('cached')
-            return cache[param]
-        } else{
-            let result = fn(param)
-            cache[param] = result
-            console.log('not cached')
-            return result
-        }
+function memoize(fn) {
+  const cache = {};
+  return function (param) {
+    if (cache[param]) {
+      console.log("cached");
+      return cache[param];
+    } else {
+      let result = fn(param);
+      cache[param] = result;
+      console.log("not cached");
+      return result;
     }
+  };
 }
 
-const toUpper = (str = '') => str.toUpperCase()
+const toUpper = (str = "") => str.toUpperCase();
 
-const toUpperMemoized = memoize(toUpper)
+const toUpperMemoized = memoize(toUpper);
 
-toUpperMemoized('abcdef')
-toUpperMemoized('abcdef') // не выполнится
+toUpperMemoized("abcdef");
+toUpperMemoized("abcdef"); // Не выполнится
 ```

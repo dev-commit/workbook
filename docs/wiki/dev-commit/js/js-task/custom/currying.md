@@ -4,19 +4,19 @@
 
 ```js
 function sum(a, b) {
-	return a + b;
+  return a + b;
 }
 
 function mul(a, b) {
-    return a * b;
+  return a * b;
 }
 
 function myFunc(func) {
-    return function(a) {
-    	return function(b) {
-      		return func(a, b);
-      	}
-    }
+  return function (a) {
+    return function (b) {
+      return func(a, b);
+    };
+  };
 }
 
 // const myFunc = func => (a) => (b) => func(a, b);

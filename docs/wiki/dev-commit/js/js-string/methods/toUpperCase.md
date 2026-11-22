@@ -1,8 +1,10 @@
 # toUpperCase(), toLowerCase() - работа с регистром
 
+## Информация
+
 ```js
 // Верхний регистр
-const name = name.toUpperCase();
-// Нижний регистр 
-const name = name.toLowerCase();
+name = name.toUpperCase();
+// Нижний регистр
+name = name.toLowerCase();
 ```

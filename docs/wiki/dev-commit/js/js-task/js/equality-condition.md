@@ -1,34 +1,36 @@
 # Условие равенства
 
-### Постановка задачи
+## Постановка задачи
 
 ```js
-// Необходимо чтобы было "true"
+// Необходимо, чтобы было "true"
 console.log(a == true && a == false);
 ```
 
-### Решение 1
+## Решение 1
 
 ```js
 let c = 0;
-const a = Object.create({ [Symbol.toPrimitive]: () => {
+const a = Object.create({
+  [Symbol.toPrimitive]: () => {
     if (c === 0) {
-        c++;
-        return true;
+      c++;
+      return true;
     }
     return false;
-}});
+  },
+});
 ```
 
-### Решение 2
+## Решение 2
 
 ```js
 let a = {
-    toggler: false,
-}
-a.valueOf = function() {
-    this.toggler = !this.toggler;
-    return this.toggler
-}
-console.log(a == true && a == false)
+  toggler: false,
+};
+a.valueOf = function () {
+  this.toggler = !this.toggler;
+  return this.toggler;
+};
+console.log(a == true && a == false);
 ```

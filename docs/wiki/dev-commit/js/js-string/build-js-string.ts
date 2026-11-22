@@ -4,15 +4,13 @@ import { getTopicSubtitle, getThemeMenu } from "docs/utils";
 import { rootPath } from "../../constants";
 
 const path = rootPath + "js/js-string/";
-const title = "String";
+const title = "✅ String";
 const theme: TThemeTopics = "actual";
 
 const topics: ISidebarTopics[] = [
   {
     title: "Основное",
-    children: [
-      ["main/info", getTopicSubtitle("info")],
-    ],
+    children: [["main/info", getTopicSubtitle("info")]],
   },
   {
     title: "Методы",
@@ -20,10 +18,16 @@ const topics: ISidebarTopics[] = [
       ["methods/length", getThemeMenu("method", ["length"])],
       ["methods/trim", getThemeMenu("method", ["trim"])],
       ["methods/toString", getThemeMenu("method", ["toString"])],
-      ["methods/toUpperCase", getThemeMenu("method", ["toUpperCase", "toLowerCase"])],
+      [
+        "methods/toUpperCase",
+        getThemeMenu("method", ["toUpperCase", "toLowerCase"]),
+      ],
       ["methods/indexOf", getThemeMenu("method", ["indexOf", "lastIndexOf"])],
       ["methods/split", getThemeMenu("method", ["split"])],
-      ["methods/substring", getThemeMenu("method", ["substring", "substr", "slice"])],
+      [
+        "methods/substring",
+        getThemeMenu("method", ["substring", "substr", "slice"]),
+      ],
       ["methods/charAt", getThemeMenu("method", ["charAt", "charCodeAt"])],
       ["methods/startsWith", getThemeMenu("method", ["startsWith"])],
     ],
@@ -39,9 +43,7 @@ const topics: ISidebarTopics[] = [
   },
   {
     title: "Прочее",
-    children: [
-      ["other/samples", "Примеры"],
-    ],
+    children: [["other/samples", "Примеры"]],
   },
 ];
 

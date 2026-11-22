@@ -1,15 +1,17 @@
 # Класс RegExp
 
+## Информация
+
 ```js
-const pattern = new RegExp('\w+', 'g'); // конструктор
-const pattern = /\w+/g;                 // литерал
+const pattern = new RegExp("\\w+", "g"); // Конструктор
+const pattern = /\w+/g; // Литерал
 ```
 
-### Свойства, доступные для чтение
+## Свойства, доступные для чтения
 
 ```js
 pattern.global;
 pattern.ignoreCase;
-pattern.mutiline;
-pattern.lastIndex; // индекс последнего результата
+pattern.multiline;
+pattern.lastIndex; // Индекс последнего результата
 ```

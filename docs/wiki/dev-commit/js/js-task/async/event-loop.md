@@ -1,12 +1,12 @@
 # Event Loop
 
-### Async Await/Promise/setTimeout
+## _Async Await_ / _Promise_ / _setTimeout_
 
 ```js
-setTimeout(() => console.log('setTimeout'), 0);
+setTimeout(() => console.log("setTimeout"), 0);
 
 async function foo() {
-  console.log('some');
+  console.log("some");
   let data = await Promise.resolve(10); // => then(() => {})
   console.log(data);
 }
@@ -21,17 +21,17 @@ console.log(20);
 // setTimeout
 ```
 
-### Promise/setTimeout
+## _Promise_ / _setTimeout_
 
 ```js
 function a() {
-    console.log(1);
-    Promise.resolve().then(a);
+  console.log(1);
+  Promise.resolve().then(a);
 }
 
 function b() {
-    console.log(2);
-    setTimeout(b);
+  console.log(2);
+  setTimeout(b);
 }
 
 b();

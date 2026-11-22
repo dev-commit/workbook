@@ -5,7 +5,7 @@ import { emoji } from "docs/constants";
 import { rootPath } from "../../constants";
 
 const path = rootPath + "js/js-web-api/";
-const title = "Web API";
+const title = "✅ Web API";
 const theme: TThemeTopics = "actual";
 
 const topics: ISidebarTopics[] = [
