@@ -15,7 +15,7 @@
 
 ```js
 const sort = (arr) => {
-  let arrOdd = arr.filter((element) => element % 2 !== 0).sort();
+  let arrOdd = arr.filter((element) => element % 2 !== 0).sort((a, b) => a - b);
 
   const result = arr.map((element) => {
     if (element % 2 !== 0) {
@@ -36,7 +36,7 @@ const sort = (arr) => {
 
 ```js
 const sort = (arr) => {
-  const oddArr = arr.filter((item) => item % 2).sort();
+  const oddArr = arr.filter((item) => item % 2).sort((a, b) => a - b);
   return arr.map((item) => (item % 2 ? oddArr.shift() : item));
 };
 ```

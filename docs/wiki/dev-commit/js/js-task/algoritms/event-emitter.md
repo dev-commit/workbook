@@ -95,8 +95,6 @@ emitter.addEventListener("click", () => {});
 
 ## #2
 
-<!-- Гришанович -->
-
 ```js
 class EventEmitter {
   // on(type: string, listener: Function)
@@ -129,8 +127,6 @@ e.emit("toString");
 ```
 
 ## #3
-
-<!-- Кара -->
 
 ```js
 class EventEmitter {
@@ -165,8 +161,6 @@ eventEmitter.emit("no-event");
 ```
 
 ## #4
-
-<!-- Матвеев -->
 
 ```js
 function Emitter() {

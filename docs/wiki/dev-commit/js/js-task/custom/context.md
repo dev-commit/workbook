@@ -71,8 +71,11 @@ function foo() {
   };
 }
 
+const bar = foo().call({ x: 10 });
+bar.call({ y: 20 }); // => { x: 10 } - call не меняет this у стрелки
+
 // Если foo вызвана обычным способом, this ссылается на window или undefined в строгом режиме
-function foo() {
+function foo2() {
   // Если bar стрелка,
   // стрелка создавалась в тот момент, когда у foo this == window, поэтому у стрелки тоже window
   return () => {
@@ -81,6 +84,6 @@ function foo() {
   };
 }
 
-const bar = foo().call();
-bar.call({ y: 20 }); // call вызывает bar
+const bar2 = foo2().call({ x: 10 });
+bar2.call({ y: 20 }); // => window
 ```

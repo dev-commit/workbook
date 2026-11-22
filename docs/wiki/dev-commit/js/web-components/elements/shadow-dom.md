@@ -18,7 +18,11 @@ element.shadowRoot.querySelector("strong").textContent = "Hello!";
 // => Hello! People
 ```
 
+::: warning
+
 Element.createShadowRoot => Element.attachShadow (устаревшая конструкция)
+
+:::
 
 ::: tip Определение
 
@@ -40,7 +44,7 @@ Element.createShadowRoot => Element.attachShadow (устаревшая конс�
 ```js
 // JavaScript
 createShadowRoot();  // Создание Shadow DOM
-shadowRoot();        // Корень
+element.shadowRoot;  // Корень
 
 // HTML
 <content></content> // Замена содержимого

@@ -141,7 +141,7 @@ const checkValidBrackets = (expression) => {
     "(": ")",
   };
 
-  strArr.forEach((bracket) => {
+  for (const bracket of strArr) {
     if (bracket === ")" || bracket === "(") {
       if (stack.length === 0 && bracket === ")") {
         return false;
@@ -153,7 +153,7 @@ const checkValidBrackets = (expression) => {
         stack.pop();
       }
     }
-  });
+  }
 
   return !stack.length;
 };

@@ -13,7 +13,7 @@ function retrier(url, n) {
   if (n > 0) {
     return fetch(url)
       .then((data) => {
-        if (data.statusCode >= 200 && data.statusCode < 300) {
+        if (data.status >= 200 && data.status < 300) {
           return data;
         } else {
           return retrier(url, n - 1);
@@ -34,12 +34,14 @@ function retrier(url, n) {
 function retrier(url: string, times: number) {
   let count = 0;
 
+  // Внимание: number не объявлен
   if (count === number) {
     return;
   }
 
   return new Promise(function (resolve, reject) {
     function request(url) {
+      // Внимание: data не объявлен - в then нужно передать функцию
       fetch(url).then(data, (error) => {
         if (data) {
           resolve(data);
@@ -53,6 +55,7 @@ function retrier(url: string, times: number) {
     }
   });
 
+  // Внимание: код после return недостижим, а request объявлена внутри Promise
   for (let i = 0; i < times; i++) {
     request(url);
   }
@@ -60,8 +63,6 @@ function retrier(url: string, times: number) {
 ```
 
 ## #3
-
-<!-- Гришанович -->
 
 ```js
 // retrier(url, retryCount): Promise
@@ -87,8 +88,6 @@ function retrier(url, retryCount) {
 ```
 
 ## #4
-
-<!-- Кара -->
 
 ```js
 const retrier = (url, retryCount) =>
@@ -117,8 +116,6 @@ retrier("https://some.api", 5) // url
 
 ## #5
 
-<!-- Матвеев -->
-
 ```ts
 function retrier(url, retryCount): Promise {
   if (typeof retryCount === "number" && retryCount > 0) {
@@ -133,5 +130,5 @@ function retrier(url, retryCount): Promise {
   }
 }
 
-retrier("https://ya.ru", 123).then((data) => ...);
+retrier("https://ya.ru", 123).then((data) => console.log(data));
 ```

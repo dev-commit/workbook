@@ -70,11 +70,11 @@ const returnObj = JSON.parse(localStorage.getItem("key"));
 
 ```js
 // Браузеры выделяют 5MB под localStorage
-// При превышении исключение QUOTA_EXCEEDED_ERR
+// При превышении исключение QuotaExceededError
 try {
   localStorage.setItem("ключ", "значение");
 } catch (e) {
-  if (e == QUOTA_EXCEEDED_ERR) {
+  if (e.name === "QuotaExceededError") {
     console.log("Превышен лимит");
   }
 }

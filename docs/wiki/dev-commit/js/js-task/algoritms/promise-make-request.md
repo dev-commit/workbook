@@ -4,7 +4,7 @@
 
 ### Постановка задачи
 
-- Написать функцию makeRequest, получающую на вход массив ссылок
+- Написать функцию makeConcurrentRequest, получающую на вход массив ссылок
 
 ### _Решение 1_
 
@@ -13,7 +13,7 @@
 
 ---
 
-- Делаем параллельно запросы и в итоге мы учитываем последовательность, которая будет у нас в итоге.
+- Делаем запросы по очереди (следующий - после ответа на предыдущий) и в итоге мы учитываем последовательность, которая будет у нас в итоге.
 - Т.е. не путаем местами приходящие элементы.
 
 ---
@@ -89,6 +89,7 @@ const PersonItemFilms = ({ films }) => {
 
   useEffect(() => {
     (async () => {
+      // Внимание: forEach не ждёт await - запросы идут без ожидания
       await films.forEach(async (item) => {
         const response = await fetch(item);
         const body = await response.json();
@@ -128,7 +129,7 @@ const PersonItemFilms = ({ films }) => {
 
 ### Постановка задачи
 
-- Написать функцию makeRequest, получающую на вход массив ссылок и число, указывающее максимальное количество одновременных запросов.
+- Написать функцию makeConcurrentCall, получающую на вход массив ссылок и число, указывающее максимальное количество одновременных запросов.
 - Одновременно должно выполняться не более указанного числа запросов. Должен возвращаться массив результатов в той же последовательности, что и адреса запросов.
 - Нельзя делать повторные запросы на дублирующиеся адреса (при этом результат всё равно должен присутствовать в результирующем массиве).
 
@@ -192,10 +193,11 @@ function makeConcurrentCall(urls, total) {
         .then((response) => response.json())
         .then((response) => {
           res[index] = response;
-          if (res.length === urls.length) {
+          // res.length не подходит - он растёт и при записи по последнему индексу
+          if (Object.keys(res).length === urls.length) {
             resolve(res);
           }
-          request(countIndex++);
+          if (countIndex < urls.length) request(countIndex++);
         });
     }
     for (let i = 0; i < total; i++) {
@@ -226,7 +228,7 @@ function makeConcurrentCall(urls, maxCount) {
           if (count === urls.length) {
             resolve(res);
           }
-          request(index + maxCount);
+          if (index + maxCount < urls.length) request(index + maxCount);
         });
     }
     for (let i = 0; i < maxCount; i++) {

@@ -54,7 +54,7 @@ if (!Object.create) {
 ```
 
 ```js
-const o = Object.create(object);
+const o = Object.create({ name: "Tony" });
 
 // Получить доступ к prototype
 o.__proto__;

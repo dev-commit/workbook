@@ -13,7 +13,11 @@ customElements.define("custom-element", CustomElement);
 // => Hello World
 ```
 
+::: warning
+
 document.registerElement => window.customElements.define (устаревшая конструкция)
+
+:::
 
 - Стандарт Custom Elements позволяет описывать для новых элементов свои свойства, методы, объявлять свой DOM, подобие конструктора и многое другое
 - Использовать новый элемент в HTML можно и до его объявления через _registerElement_

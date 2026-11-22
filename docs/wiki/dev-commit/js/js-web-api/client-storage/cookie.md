@@ -70,12 +70,9 @@ authRouter.get("/logout", (req, res) => {
 ## Атрибуты cookie
 
 ```js
-document.cookie = `
-  info=123;
-  expires=Fri, 31 Dec 2018 23:59:59 GMT;
-  path=/;
-  domain=.example.org
-`;
+// Одно присваивание - одна cookie, атрибуты в одной строке через ;
+document.cookie =
+  "info=123; expires=Fri, 31 Dec 2018 23:59:59 GMT; path=/; domain=.example.org";
 ```
 
 ### Обязательные

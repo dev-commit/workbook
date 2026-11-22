@@ -2,7 +2,7 @@
 
 ## Информация
 
-<img src="../@img/proto.png" style="height: 450px" />
+<img src="../@img/info/proto.png" style="height: 450px" />
 
 ### Хранение и копирование
 

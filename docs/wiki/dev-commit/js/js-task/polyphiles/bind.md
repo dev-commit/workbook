@@ -48,7 +48,7 @@ Function.prototype.bind = function (context) {
   const arg1 = Array.prototype.slice.call(arguments, 1);
   return function () {
     const arg2 = Array.prototype.slice.call(arguments);
-    return fun.call(context, arg1.concat(arg2));
+    return fun.call(context, ...arg1.concat(arg2));
   };
 };
 

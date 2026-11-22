@@ -68,7 +68,7 @@ let elems = document.documentElement.childNodes;
 elems = Array.prototype.slice.call(elems); // Теперь elems - массив
 
 elems.forEach(function (elem) {
-  alert(elem.tagName); // HEAD, текст, BODY
+  alert(elem.tagName); // HEAD, undefined, BODY
 });
 ```
 

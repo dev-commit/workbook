@@ -20,11 +20,11 @@ let a = window.innerWidth; // Вся ширина окна
 <img src="../@img/metrics-window/document-client-width.png" style="width: 450px" />
 
 ```js
-const a = document.body.clientWidth; // Ширина документа (если body margin:0, совпадает с innerWidth)
+const a = document.body.clientWidth; // Ширина документа (если body margin:0, совпадает с innerWidth без прокрутки)
 const a = document.body.clientHeight; // Высота документа (по контенту body)
 
-const a = document.documentElement.clientWidth; // Ширина документа (совпадает с innerWidth)
-const a = document.documentElement.clientHeight; // Высота документа (совпадает с innerHeight)
+const a = document.documentElement.clientWidth; // Ширина документа (innerWidth без прокрутки)
+const a = document.documentElement.clientHeight; // Высота документа (innerHeight без прокрутки)
 ```
 
 ### `innerWidth` и `innerHeight`

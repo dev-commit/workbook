@@ -11,7 +11,7 @@ if (screen.matches) {
 }
 
 const screen = window.matchMedia("(max-width:500px)");
-screen.addListener(changes);
+screen.addEventListener("change", changes); // addListener устарел
 changes(screen);
 
 function changes(screen) {

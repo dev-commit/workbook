@@ -23,7 +23,7 @@ btn.addEventListener("click", (event) => console.log(event));
 - `event.target` - инициатор события
 - `event.currentTarget` - элемент на котором сработал обработчик. Значение – обычно такое же, как и у this, но если обработчик является функцией-стрелкой или при помощи bind привязан другой объект в качестве this, то мы можем получить элемент из event.currentTarget
 - `event.eventPhase` - номер фазы, на которой событие было поймано (Event.CAPTURING_PHASE=1, Event.AT_TARGET=2, Event.BUBBLING_PHASE=3)
-- `event.timeStamp` - объект Date, указывающий, когда произошло событие
+- `event.timeStamp` - число (миллисекунды, DOMHighResTimeStamp), указывающее, когда произошло событие
 - `event.bubbles` - true если событие может всплывать по дереву элементов. События blur, focus, load, unload не всплывают
 - `event.cancelable` - true если с этим событием связано действие по умолчанию и его можно отменить preventDefault
 - `event.clientX` - координата X курсора в момент клика относительно окна, для событий мыши

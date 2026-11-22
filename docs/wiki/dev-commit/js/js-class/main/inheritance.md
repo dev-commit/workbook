@@ -32,7 +32,7 @@ Admin.prototype = Object.create(User.prototype);
 const admin = new Admin("Tony");
 
 admin.getName(); // => "Tony"
-console.log(admin); // => Object { getName() {}, name: "Tony" }
+console.log(admin); // => Object { name: "Tony" }, getName в прототипе
 ```
 
 ## Установка прототипа

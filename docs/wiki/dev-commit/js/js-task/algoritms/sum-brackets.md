@@ -36,10 +36,11 @@ function sum(a) {
   return f;
 }
 
-console.log(sum(1)(2)); // 3
-console.log(sum(5)(-1)(2)); // 6
-console.log(sum(6)(-1)(-2)(-3)); // 0
-console.log(sum(0)(1)(2)(3)(4)(5)); // 15
+// console.log не вызывает toString, поэтому приводим к числу через +
+console.log(+sum(1)(2)); // 3
+console.log(+sum(5)(-1)(2)); // 6
+console.log(+sum(6)(-1)(-2)(-3)); // 0
+console.log(+sum(0)(1)(2)(3)(4)(5)); // 15
 ```
 
 ## #3 Фиксированное окончание пустым значением
@@ -92,12 +93,10 @@ function sum(arg) {
 //         result += value;
 //         return f;
 //     }
-// a2.valueOf() + 5
+// a2.toString() + 5 - valueOf вернет саму функцию, поэтому вызывается toString
 ```
 
 ## #5
-
-<!-- Матвеев -->
 
 ```js
 function sum(num) {
@@ -115,5 +114,5 @@ function sum(num) {
   return sum2;
 }
 
-console.log(sum(1)(2)(3)); // 6
+console.log(+sum(1)(2)(3)); // 6
 ```

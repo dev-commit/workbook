@@ -14,6 +14,11 @@ const promiseAll = (promises) => {
     let results = [];
     let remaining = promises.length;
 
+    // Пустой массив - сразу возвращаем пустой результат
+    if (remaining === 0) {
+      return resolve(results);
+    }
+
     // Обработчик успешного выполнения каждого промиса
     function handleResolve(index, value) {
       results[index] = value;

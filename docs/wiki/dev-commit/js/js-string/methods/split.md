@@ -15,5 +15,5 @@ const arr = str.split(";");
 
 ```js
 const pattern = /[\s,]+/;
-const result = text.split(pattern); // Разделитель пробел
+const result = text.split(pattern); // Разделитель - пробелы и запятые
 ```

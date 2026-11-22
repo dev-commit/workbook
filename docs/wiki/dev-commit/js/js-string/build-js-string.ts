@@ -33,12 +33,12 @@ const topics: ISidebarTopics[] = [
     ],
   },
   {
-    title: "ReqExp",
+    title: "RegExp",
     children: [
-      ["reqexp/replace", getThemeMenu("method", ["replace"])],
-      ["reqexp/match", getThemeMenu("method", ["match", "exec"])],
-      ["reqexp/search", getThemeMenu("method", ["search"])],
-      ["reqexp/test", getThemeMenu("method", ["test"])],
+      ["regexp/replace", getThemeMenu("method", ["replace"])],
+      ["regexp/match", getThemeMenu("method", ["match", "exec"])],
+      ["regexp/search", getThemeMenu("method", ["search"])],
+      ["regexp/test", getThemeMenu("method", ["test"])],
     ],
   },
   {

@@ -13,5 +13,5 @@ const pattern = /\w+/g; // Литерал
 pattern.global;
 pattern.ignoreCase;
 pattern.multiline;
-pattern.lastIndex; // Индекс последнего результата
+pattern.lastIndex; // Позиция, с которой начнётся следующий поиск
 ```

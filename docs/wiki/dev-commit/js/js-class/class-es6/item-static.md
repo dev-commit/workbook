@@ -57,7 +57,7 @@ class Task {
 
     // Сохранит лексический this конструктора
     this.increment = () => {
-      this.count++;
+      this.constructor.count++;
     };
   }
 }

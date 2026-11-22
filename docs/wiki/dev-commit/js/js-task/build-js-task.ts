@@ -105,7 +105,7 @@ const topics: ISidebarTopics[] = [
       ["js/data-types", emoji.star + "Типы данных"],
       ["js/strangeness", emoji.star + "Особенности"],
       ["js/map", "map"],
-      ["js/floating-point", "Плавающая запятая"],
+      ["js/comma-operator", "Оператор запятая"],
       ["js/undefined-check", 'Проверка на "undefined"'],
       [
         "js/equality-condition",

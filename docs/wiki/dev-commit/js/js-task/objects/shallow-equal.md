@@ -23,7 +23,7 @@ const a2 = shallowEqual(obj1, obj2); // => true
 
 ```js
 const shallowEqual = (obj1, obj2) => {
-  // Передали не объекты
+  // Одна и та же ссылка (или равные примитивы)
   if (obj1 === obj2) {
     return true;
   }

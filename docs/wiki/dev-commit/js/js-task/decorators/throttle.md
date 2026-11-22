@@ -14,11 +14,11 @@
 - Декоратор эффективен для обработки быстро повторяющихся событий
 
 ```js
-function throttle(fn, interval) {
+function throttle(fn, wait) {
   let lastTime;
   return function throttled() {
     let timeSinceLastExecution = Date.now() - lastTime;
-    if (!lastTime || timeSinceLastExecution >= interval) {
+    if (!lastTime || timeSinceLastExecution >= wait) {
       fn.apply(this, arguments);
       lastTime = Date.now();
     }

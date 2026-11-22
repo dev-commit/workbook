@@ -18,11 +18,11 @@
 
 ::: tip Определение
 
-- **DocumentFragment** - DOM-объект, который похож на обычный DOM-узел, но им не является
+- **DocumentFragment** - лёгкий DOM-узел, который не входит в дерево документа
 
 :::
 
-- У DocumentFragment нет обычных свойств DOM-узлов, таких как innerHTML, tagName и т.п. Это не узел
+- У DocumentFragment нет обычных свойств элементов, таких как innerHTML, tagName и т.п. Это узел, но не элемент
 - Когда DocumentFragment вставляется в DOM, то он исчезает, а вместо него вставляются его дети. Это свойство является особенностью DocumentFragment
 - DocumentFragment, в отличие от insertAdjacent*, работает с коллекцией DOM-узлов
 

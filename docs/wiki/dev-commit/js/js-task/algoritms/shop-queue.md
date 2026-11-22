@@ -24,7 +24,7 @@ console.log(getTime([1, 2, 3, 4, 5]));
 function getTime(times) {
   let queue = [times[0], times[1], times[2]];
 
-  for (let i = 3; i <= times.length; i++) {
+  for (let i = 3; i < times.length; i++) {
     const min = Math.min.apply(null, queue);
     const pos = queue.indexOf(min);
     queue[pos] += times[i];

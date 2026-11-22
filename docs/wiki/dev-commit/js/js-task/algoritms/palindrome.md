@@ -12,8 +12,8 @@
 
 ```js
 function isPalindrome(str) {
-  // Преобразуем строку в нижний регистр и удаляем все пробелы
-  str = str.toLowerCase().replace(/[\W_]/g, "");
+  // Преобразуем строку в нижний регистр и удаляем всё, кроме букв и цифр
+  str = str.toLowerCase().replace(/[^a-zа-яё0-9]/g, "");
 
   // Переворачиваем строку
   let reversed = str.split("").reverse().join("");
@@ -24,10 +24,10 @@ function isPalindrome(str) {
 ```
 
 ```js
-console.log(isPalindrom("ротор")); // true
-console.log(isPalindrom("ротор1")); // false
-console.log(isPalindrom("дом")); // false
-console.log(isPalindrom("А луна канула")); // true
+console.log(isPalindrome("ротор")); // true
+console.log(isPalindrome("ротор1")); // false
+console.log(isPalindrome("дом")); // false
+console.log(isPalindrome("А луна канула")); // true
 ```
 
 ## Решение 2

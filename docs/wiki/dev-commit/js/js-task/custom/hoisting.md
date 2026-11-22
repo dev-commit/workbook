@@ -116,7 +116,7 @@ console.log(foo(20));
 // => ReferenceError: Cannot access 'a' before initialization
 ```
 
-## this
+## Функция и let
 
 <v-two>
 <template #first>
@@ -138,12 +138,12 @@ console.log(a); // => 1
 ```js
 var a = 1;
 function b() {
-  a = 10;
+  a = 10; // => Uncaught ReferenceError: Cannot access 'a' before initialization
   return;
   let a;
 }
 b();
-console.log(a); // => Uncaught ReferenceError: Cannot access 'a' before initialization
+console.log(a); // Не выполнится
 ```
 
 </template>

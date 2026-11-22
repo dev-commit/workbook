@@ -19,12 +19,11 @@ function Foo(Constructor, ...props) {
   // 2. Модифицируется this (т.е. этот новый объект) и инициализируются методы и свойства
   // Применяет функцию-класс к нашему новосозданному объекту
   // instance.name = 'Tony';
-  Constructor.apply(instance, props);
+  const result = Constructor.apply(instance, props);
 
   // 3. Неявно возвращается this без вызова return
   // Если в return объект, то вернется он
-  // return (typeof instance === 'object' && instance !== null) ? instance : {};
-  return instance instanceof Object ? instance : {};
+  return result instanceof Object ? result : instance;
 }
 
 const foo = Foo(Person, "Tony");

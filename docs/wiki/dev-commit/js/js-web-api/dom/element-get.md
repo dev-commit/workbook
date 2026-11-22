@@ -59,7 +59,14 @@ let a = document.body.childNodes[0]; // Первый элемент
 
 ## Поиск элементов DOM (6 основных методов)
 
-<img src="../@img/element-get/element-get.jpg" style="width: 450px" />
+| Метод                    | Ищет по...    | Ищет внутри элемента? |
+| ------------------------ | ------------- | --------------------- |
+| `getElementById`         | `id`          | -                     |
+| `getElementsByName`      | `name`        | -                     |
+| `getElementsByTagName`   | тег или `'*'` | ✓                     |
+| `getElementsByClassName` | классу        | ✓                     |
+| `querySelector`          | CSS-селектор  | ✓                     |
+| `querySelectorAll`       | CSS-селектор  | ✓                     |
 
 ```js
 let a = document.getElementById("item"); // По id

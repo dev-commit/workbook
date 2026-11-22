@@ -15,7 +15,7 @@
 - Функция _debounce()_ часто используется вместе с событиями _scroll_, _resize_, _mousemove_ и _keypress_
 
 ```js
-function debounce(fn, interval) {
+function debounce(fn, wait) {
   let timer;
   return function debounced() {
     clearTimeout(timer);
@@ -23,7 +23,7 @@ function debounce(fn, interval) {
     let that = this;
     timer = setTimeout(function callOriginalFn() {
       fn.apply(that, args);
-    }, interval);
+    }, wait);
   };
 }
 

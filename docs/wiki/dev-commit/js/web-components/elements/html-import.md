@@ -11,7 +11,11 @@ const link = document.querySelector('link[rel="import"]');
 const importedElement = link.import.querySelector("span");
 ```
 
+::: warning
+
 HTML Imports => ES modules (устаревшая конструкция)
+
+:::
 
 - Спецификация HTML Imports описывает, как вставить один документ в другой при помощи HTML-тега `<link rel="import">`
 - HTML, загруженный через `<link rel="import">`, имеет отдельный DOM документа, но скрипты в нём выполняются в общем контексте страницы
