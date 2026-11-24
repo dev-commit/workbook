@@ -30,11 +30,20 @@ const lastname = person.lastname;
 ## Варианты
 
 ```js
-const { firstname, lastname } = person; // Имена переменных должны совпадать с именами свойств объекта
-const { firstname: first, lastname: last } = person; // Изменение имен переменных
-const { firstname, lastname, age = 25 } = person; // Значение по умолчанию (если age нет, присвоится 25)
-const { address: { flat = 77 } = {} } = person; // Значение по умолчанию (если address нет, присвоится {})
-const { ["first" + "name"]: first, lastname } = person; // Динамическое определение имен свойств с помощью выражения в []
+// Имена переменных должны совпадать с именами свойств объекта
+const { firstname, lastname } = person;
+
+// Изменение имен переменных
+const { firstname: first, lastname: last } = person;
+
+// Значение по умолчанию (если age нет, присвоится 25)
+const { firstname, lastname, age = 25 } = person;
+
+// Значение по умолчанию (если address нет, присвоится {})
+const { address: { flat = 77 } = {} } = person;
+
+// Динамическое определение имен свойств с помощью выражения в []
+const { ["first" + "name"]: first, lastname } = person;
 ```
 
 ## Извлечение свойств вложенных объектов
@@ -60,7 +69,7 @@ console.log(id); // => 77
 
 ## Функция
 
-### Использование в качестве параметра функции
+::: details Использование в качестве параметра функции
 
 ```js
 const user = {
@@ -73,7 +82,9 @@ function post(url, { data: { firstname, lastname }, cache }) {
 const result = post("api/users", { data: user, cache: false });
 ```
 
-### Указание значения по умолчанию
+:::
+
+::: details Указание значения по умолчанию
 
 ```js
 function connect({ host = "localhost", port = 1234, user = "guest" }) {
@@ -83,7 +94,9 @@ function connect({ host = "localhost", port = 1234, user = "guest" }) {
 connect({ host: "port" });
 ```
 
-### Возврат нескольких значений из функции
+:::
+
+::: details Возврат нескольких значений из функции
 
 ```js
 function getUser() {
@@ -94,6 +107,8 @@ function getUser() {
 }
 const { firstname, lastname } = getUser();
 ```
+
+:::
 
 ## Rest-элемент
 

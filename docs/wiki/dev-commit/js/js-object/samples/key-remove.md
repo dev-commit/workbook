@@ -32,7 +32,7 @@ const a = _.omit(obj, "Cow");
 
 ## Чистый JavaScript
 
-### Использование delete (не иммутабельно)
+::: details Использование delete (не иммутабельно)
 
 ```js
 const thisIsObject = {
@@ -44,7 +44,9 @@ const thisIsObject = {
 delete thisIsObject["Cow"];
 ```
 
-### Использование Object.entries
+:::
+
+::: details Использование Object.entries
 
 ```js
 const obj = {
@@ -72,7 +74,9 @@ Object.entries(obj).reduce(
 Object.fromEntries(Object.entries(obj).filter((n) => n[1] !== "value1"));
 ```
 
-### Использование деструктуризации
+:::
+
+::: details Использование деструктуризации
 
 ```js
 const myObject = {
@@ -83,3 +87,5 @@ const myObject = {
 
 const { a, ...noA } = myObject;
 ```
+
+:::

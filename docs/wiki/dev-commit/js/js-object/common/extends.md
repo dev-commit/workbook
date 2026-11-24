@@ -15,23 +15,34 @@ const person = {
 };
 ```
 
+## Методы
+
+### `preventExtensions()`
+
+- Запрещает добавление свойств в объект (применяется только к самому объекту)
+
 ```js
-// Запрещает добавление свойств в объект (применяется только к самому объекту)
 Object.preventExtensions(person);
-// Проверяет применение preventExtensions
+// Проверяет применение метода
 const a = Object.isExtensible(person);
 ```
 
+### `seal()`
+
+- Аналогичен preventExtensions, дополнительно задает атрибут configurable:false для всех свойств
+
 ```js
-// Аналогичен preventExtensions, дополнительно задает атрибут configurable:false для всех свойств
 Object.seal(person);
-// Проверяет применение seal
+// Проверяет применение метода
 const a = Object.isSealed(person);
 ```
 
+### `freeze()`
+
+- Аналогичен seal, дополнительно делает все свойства доступными только для чтения (configurable:false, writable:false)
+
 ```js
-// Аналогичен seal, дополнительно делает все свойства доступными только для чтения (configurable:false, writable:false)
 Object.freeze(person);
-// Проверяет применение freeze
+// Проверяет применение метода
 const a = Object.isFrozen(person);
 ```

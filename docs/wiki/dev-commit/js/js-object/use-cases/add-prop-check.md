@@ -4,7 +4,9 @@
 
 - Добавлять свойство только в том случае, если оно передано
 
-## Основной пример
+## Варианты
+
+### Основной пример
 
 ```js
 const age = 23;
@@ -15,7 +17,7 @@ const obj = {
 };
 ```
 
-## Пример с флагом
+### Пример с флагом
 
 ```js
 const flag = true;
@@ -38,7 +40,7 @@ const obj = {
 console.log(obj);
 ```
 
-## React Component
+### React Component
 
 ```js
 const flag = true;

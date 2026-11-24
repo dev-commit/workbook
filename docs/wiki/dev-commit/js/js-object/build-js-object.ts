@@ -5,8 +5,8 @@ import { emoji } from "docs/constants";
 import { rootPath } from "../../constants";
 
 const path = rootPath + "js/js-object/";
-const title = "✅ Object";
-const theme: TThemeTopics = "actual";
+const title = "Object";
+const theme: TThemeTopics = "js";
 
 const topics: ISidebarTopics[] = [
   {
@@ -98,8 +98,8 @@ const topics: ISidebarTopics[] = [
   {
     title: "Прочее",
     children: [
-      ["other/literal-notation", emoji.code + "Литеральная нотация"],
-      ["other/compare", emoji.items + "Сравнение объектов"],
+      ["other/literal-notation", "Литеральная нотация"],
+      ["other/compare", "Сравнение объектов"],
       ["other/constructor", "Конструктор создания объекта"],
       ["other/prototype", "Прототип"],
     ],

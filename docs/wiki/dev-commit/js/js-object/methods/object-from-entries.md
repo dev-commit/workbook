@@ -8,7 +8,9 @@
 
 :::
 
-## Преобразование Map в Object
+## Варианты
+
+### Преобразование Map в Object
 
 ```js
 const map = new Map([
@@ -19,7 +21,7 @@ const obj = Object.fromEntries(map);
 console.log(obj); // { foo: "bar", baz: 42 }
 ```
 
-## Преобразование Array в Object
+### Преобразование Array в Object
 
 ```js
 const arr = [
@@ -31,7 +33,7 @@ const obj = Object.fromEntries(arr);
 console.log(obj); // { 0: "a", 1: "b", 2: "c" }
 ```
 
-## Трансформации объектов
+### Трансформации объектов
 
 - С `Object.fromEntries()`, обратным ему методом `Object.entries()` и методами манипулирования массивами вы можете преобразовывать объекты следующим образом:
 
