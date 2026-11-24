@@ -2,7 +2,7 @@
 
 ## Информация
 
-<v-two>
+<v-two text>
 <template #first>
 
 **offset**

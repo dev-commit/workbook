@@ -22,7 +22,7 @@
 
 ## Определения
 
-<v-two fix>
+<v-two fix-left text-right>
   <template #first>
     <img src="../@img/tree1.png" width="200px" />
   </template>

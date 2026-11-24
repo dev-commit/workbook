@@ -1,6 +1,6 @@
 # Text Gradient
 
-<v-two>
+<v-two fix-right>
 <template #first>
 
 ```js
@@ -17,7 +17,7 @@ ctx.fillText("Hello World", 20, 35);
 </template>
 <template #last>
 
-<img src="../@img/text-gradient/text2.png" style="width: 200px" />
+<img src="../@img/text-gradient/text2.png" style="width: 100%" />
 
 </template>
 </v-two>

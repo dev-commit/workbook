@@ -1,6 +1,6 @@
 # Arc
 
-<v-two>
+<v-two fix-right>
 <template #first>
 
 ```js
@@ -14,7 +14,7 @@ ctx.stroke(); // stroke
 </template>
 <template #last>
 
-<img src="../@img/arc/arc1.png" style="width: 200px" />
+<img src="../@img/arc/arc1.png" style="width: 100%" />
 
 </template>
 </v-two>

@@ -73,7 +73,7 @@ div {
 
 - Радиус для всех четырёх углов - 20px
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
   <div style="width: 100px; height: 100px; background: #6095e5; border-radius: 20px;"></div>
   </template>
@@ -94,7 +94,7 @@ div {
 - Радиус верхнего левого и нижнего правого углов - 20px
 - Радиус верхнего правого и нижнего левого углов - 50px
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
   <div style="width: 100px; height: 100px; background: #6095e5; border-radius: 20px 50px;"></div>
   </template>
@@ -114,7 +114,7 @@ div {
 
 - По очереди устанавливает радиус для верхнего левого (20px), верхнего правого (50px), нижнего правого (70px) и нижнего левого углов (10px)
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
   <div style="width: 100px; height: 100px; background: #6095e5; border-radius: 20px 50px 70px 10px;"></div>
   </template>
@@ -134,7 +134,7 @@ div {
 
 Визуально блок с одинаковой width и height можно представить в виде окружности. Для экого в border-radius в качестве значения нужно указать 50%
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
   <div style="width: 100px; height: 100px; background: #6095e5; border-radius: 50%;"></div>
   </template>

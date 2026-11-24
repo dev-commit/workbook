@@ -6,7 +6,8 @@
 
 <script setup lang="ts">
 interface Props {
-  theme: "text" | "light" | "important" | "accent" | "flat" | "item" | "commet";
+  theme:
+    "text" | "light" | "important" | "accent" | "flat" | "item" | "comment";
 }
 
 defineProps<Props>();

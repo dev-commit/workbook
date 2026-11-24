@@ -2,7 +2,7 @@
 
 ## Данные
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/background.png" style="width: 150px" />
   </template>

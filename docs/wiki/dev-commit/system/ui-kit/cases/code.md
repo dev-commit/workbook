@@ -2,7 +2,7 @@
 
 ## Подсветка линий
 
-<v-two>
+<v-two text-right>
   <template #first>
 
 ```ts{2-5,8-10}
@@ -34,7 +34,7 @@ class Vehicle {
 
 ## Подстветка линий по типу
 
-<v-two>
+<v-two text-right>
   <template #first>
 
 ```ts

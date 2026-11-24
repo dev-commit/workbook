@@ -1,6 +1,6 @@
 # Text
 
-<v-two>
+<v-two fix-right>
 <template #first>
 
 ```js
@@ -12,7 +12,7 @@ ctx.fillText("Hello World", canvas.width / 2, canvas.height / 2); // По цен
 </template>
 <template #last>
 
-<img src="../@img/text/text1.png" style="width: 200px" />
+<img src="../@img/text/text1.png" style="width: 100%" />
 
 </template>
 </v-two>

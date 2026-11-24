@@ -1,6 +1,6 @@
 # Rectangle
 
-<v-two>
+<v-two fix-right>
 <template #first>
 
 ```js
@@ -11,7 +11,7 @@ ctx.strokeRect(0, 0, 100, 100); // stroke
 </template>
 <template #last>
 
-<img src="../@img/rectangle/rectangle1.png" style="width: 200px" />
+<img src="../@img/rectangle/rectangle1.png" style="width: 100%" />
 
 </template>
 </v-two>

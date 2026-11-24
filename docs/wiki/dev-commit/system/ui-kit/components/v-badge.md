@@ -1,5 +1,13 @@
 # v-badge
 
+## Props
+
+- `theme="blue"` - цвет: `blue`, `green`, `orange`, `red`, `lime`, `gray`
+
+## Варианты
+
+### Цвета
+
 ```vue
 <v-badge theme="blue">Blue</v-badge>
 <v-badge theme="green">Green</v-badge>

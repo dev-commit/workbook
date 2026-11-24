@@ -4,7 +4,7 @@
 
 ### Linear Gradient: `<linearGradient>`
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/gradient/gradient1.png" style="width: 150px" />
   </template>
@@ -26,7 +26,7 @@
 </template>
 </v-two>
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/gradient/gradient2.png" style="width: 150px" />
   </template>
@@ -50,7 +50,7 @@
 
 ### Radial Gradient: `<radialGradient>`
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/gradient/gradient3.png" style="width: 150px" />
   </template>
@@ -72,7 +72,7 @@
 </template>
 </v-two>
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/gradient/gradient4.png" style="width: 150px" />
   </template>

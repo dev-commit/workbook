@@ -4,7 +4,7 @@
 
 ### `<filter>`, `<feGaussianBlur>`, `<feOffset>`, `<feBlend>`, `<feColorMatrix>`
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/filter/filter1.png" style="width: 150px" />
   </template>
@@ -25,7 +25,7 @@
 </template>
 </v-two>
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/filter/filter2.png" style="width: 150px" />
   </template>
@@ -48,7 +48,7 @@
 </template>
 </v-two>
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/filter/filter3.png" style="width: 150px" />
   </template>
@@ -71,7 +71,7 @@
 </template>
 </v-two>
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/filter/filter4.png" style="width: 150px" />
   </template>
@@ -94,7 +94,7 @@
 </template>
 </v-two>
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/filter/filter5.png" style="width: 150px" />
   </template>

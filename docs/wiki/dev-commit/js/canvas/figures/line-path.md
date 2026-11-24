@@ -1,6 +1,6 @@
 # Line, Path
 
-<v-two>
+<v-two fix-right>
 <template #first>
 
 ```js
@@ -22,7 +22,7 @@ ctx.stroke();
 </template>
 <template #last>
 
-<img src="../@img/line-path/path1.png" style="width: 200px" />
+<img src="../@img/line-path/path1.png" style="width: 100%" />
 
 </template>
 </v-two>

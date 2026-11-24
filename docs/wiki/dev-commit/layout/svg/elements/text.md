@@ -4,7 +4,7 @@
 
 ### `<text>`, `<tspan>`, `<a>`
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/text/text1.png" style="width: 150px" />
   </template>
@@ -21,7 +21,7 @@
 </template>
 </v-two>
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/text/text2.png" style="width: 150px" />
   </template>
@@ -41,7 +41,7 @@
 </template>
 </v-two>
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/text/text3.png" style="width: 150px" />
   </template>

@@ -6,7 +6,7 @@
 
 - `preserveAspectRatio="xMinYMin slice"` аналог cover
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/image1.png" style="width: 150px" />
   </template>

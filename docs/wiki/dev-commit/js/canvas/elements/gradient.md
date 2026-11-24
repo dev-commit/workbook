@@ -1,6 +1,6 @@
 # Gradient
 
-<v-two>
+<v-two fix-right>
 <template #first>
 
 ```js
@@ -14,7 +14,7 @@ ctx.fillRect(50, 50, 100, 100);
 </template>
 <template #last>
 
-<img src="../@img/gradient/gradient1.png" style="width: 200px" />
+<img src="../@img/gradient/gradient1.png" style="width: 100%" />
 
 </template>
 </v-two>

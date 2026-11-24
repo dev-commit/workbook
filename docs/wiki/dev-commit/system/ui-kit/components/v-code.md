@@ -1,5 +1,13 @@
 # v-code
 
+## Props
+
+- `theme="text"` - стиль: `text`, `light`, `important`, `accent`, `flat`, `item`, `comment`
+
+## Варианты
+
+### Стили
+
 ```vue
 <v-code theme="text">Text</v-code>
 <v-code theme="light">Light</v-code>

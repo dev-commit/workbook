@@ -4,7 +4,7 @@
 
 ### `<rect />` - прямоугольник
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/rect/rect1.png" style="width: 150px" />
   </template>
@@ -20,7 +20,7 @@
 </template>
 </v-two>
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/rect/rect2.png" style="width: 150px" />
   </template>
@@ -38,7 +38,7 @@
 
 ### `<circle />` `<ellipse />` - окружность
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/circle/circle1.png" style="width: 150px" />
   </template>
@@ -54,7 +54,7 @@
 </template>
 </v-two>
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/circle/circle2.png" style="width: 150px" />
   </template>
@@ -73,7 +73,7 @@
 </template>
 </v-two>
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/circle/ellipse1.png" style="width: 150px" />
   </template>
@@ -91,7 +91,7 @@
 
 ### `<line />` `<polyline />` - линия
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/line1.png" style="width: 150px" />
   </template>
@@ -107,7 +107,7 @@
 </template>
 </v-two>
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/polyline1.png" style="width: 150px" />
   </template>
@@ -125,7 +125,7 @@
 
 ### `<polygon />` - полигон
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/polygon1.png" style="width: 150px" />
   </template>
@@ -156,7 +156,7 @@
 - `A` - elliptical Arc
 - `Z` - closepath
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/path/path1.png" style="width: 150px" />
   </template>
@@ -172,7 +172,7 @@
 </template>
 </v-two>
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/path/path2.png" style="width: 150px" />
   </template>
@@ -188,7 +188,7 @@
 </template>
 </v-two>
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/path/path4.png" style="width: 150px" />
   </template>
@@ -204,7 +204,7 @@
 </template>
 </v-two>
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
     <img src="../@img/path/path3.png" style="width: 150px" />
   </template>

@@ -12,7 +12,7 @@
 
 ### `polygon`
 
-<v-two fix>
+<v-two fix-left>
   <template #first>
 
 <img src="../@img/clip-path-triangle.webp" style="width: 150px" />
