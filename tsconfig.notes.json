@@ -1,0 +1,21 @@
+// Заметки (TODO.md, @notes) - без проверки типов.
+// Расширение Vue в редакторе передаёт в TypeScript все .md-файлы. Файл, который не входит
+// ни в один tsconfig, попадает во «временный» проект без vitePressExtensions, и его текст
+// разбирается как TS-код (ошибки вида «Cannot find name ...»). Этот проект забирает
+// заметки себе: .md разбирается как markdown, шаблоны не проверяются (skipTemplateCodegen).
+// Подключается через references в tsconfig.json, npm run typecheck его не проверяет
+{
+  "compilerOptions": {
+    // Обязательно для проекта, на который ссылается references
+    "composite": true,
+    "skipLibCheck": true
+  },
+  "vueCompilerOptions": {
+    "vitePressExtensions": [".md"],
+    "skipTemplateCodegen": true
+  },
+  // Служебный пустой .d.ts: без TS-файла TypeScript выдаёт ошибку «No inputs were found»
+  // (.md-файлы он видит только после загрузки Vue-плагина)
+  "files": ["docs/.vitepress/types/notes.d.ts"],
+  "include": ["TODO.md", "@notes/**/*.md"]
+}

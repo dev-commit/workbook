@@ -9,7 +9,7 @@
     "dev": "NODE_OPTIONS='--import tsx' vitepress dev docs",
     "build": "NODE_OPTIONS='--import tsx' vitepress build docs",
     "wiki:html-to-md": "python3 ai/wiki-html-to-md.py",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "vue-tsc --noEmit",
     "preview": "NODE_OPTIONS='--import tsx' vitepress preview docs",
     "build-gh-pages": "gh-pages -d docs/.vitepress/dist",
     "commit": "git add . && git commit -m \"Bash Script Commit\" && git push origin head",
@@ -22,6 +22,7 @@
     "typescript": "^5.7.2",
     "vitepress": "^1.6.0",
     "vue": "^3.4.0",
-    "vue-router": "^5.0.3"
+    "vue-router": "^5.0.3",
+    "vue-tsc": "^3.3.14"
   }
 }

@@ -13,15 +13,44 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "types": ["node"],
+    // vite/client - типы import.meta.env, import.meta.hot
+    "types": ["node", "vite/client"],
     "baseUrl": ".",
     "paths": {
-      "docs/*": ["docs/*"]
+      "docs/*": ["docs/*"],
+      // Внутренние компоненты темы VitePress (импортируются в Layout.vue, VPSidebar.vue):
+      // без заглушки vue-tsc проверяет их исходники в node_modules и выдаёт ошибки
+      "vitepress/dist/client/theme-default/components/*": [
+        "docs/.vitepress/types/vitepress-theme-components.d.ts"
+      ]
     }
   },
+  // .md - страницы справочника: проверка компонентов и пропсов в разметке.
+  // checkUnknownProps - ошибка на несуществующий проп (по умолчанию уходит в атрибуты без ошибки),
+  // checkUnknownComponents - ошибка на незарегистрированный компонент (н-р, опечатка <v-tow>)
+  "vueCompilerOptions": {
+    "vitePressExtensions": [".md"],
+    "checkUnknownProps": true,
+    "checkUnknownComponents": true
+  },
+  // .vitepress указана явно: ** в include не заходит в папки, начинающиеся с точки
   "include": [
     "docs/**/*.ts",
-    "docs/**/*.vue"
-, "docs/app-config.ts"  ],
-  "exclude": ["node_modules", "docs/.vitepress/dist", "docs/.vitepress/cache"]
+    "docs/**/*.vue",
+    "docs/**/*.md",
+    "docs/.vitepress/**/*.ts",
+    "docs/.vitepress/**/*.vue",
+    "docs/app-config.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "docs/.vitepress/dist",
+    "docs/.vitepress/cache",
+    // Страницы ui-kit названы как компоненты (v-badge.md и т.д.): проверка типов
+    // принимает <v-badge> на странице v-badge.md за ссылку на саму страницу, а не
+    // на глобальный компонент, и выдаёт ложные ошибки пропсов
+    "docs/wiki/dev-commit/system/ui-kit/components/v-*.md"
+  ],
+  // Заметки (TODO.md, @notes) - отдельный проект без проверки, см. tsconfig.notes.json
+  "references": [{ "path": "./tsconfig.notes.json" }]
 }

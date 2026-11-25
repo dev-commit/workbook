@@ -66,7 +66,7 @@ ctx.lineWidth = 4;
 #### `Rectangle`
 
 <!------------------------------------------------------------->
-<v-two grow>
+<v-two fix-right>
 <template #first>
 
 ```js
@@ -86,7 +86,7 @@ ctx.strokeRect(0, 0, 100, 100); // stroke
 #### `Arc`
 
 <!------------------------------------------------------------->
-<v-two grow>
+<v-two fix-right>
 <template #first>
 
 ```js
@@ -118,7 +118,7 @@ ctx.stroke(); // stroke
 #### `Line`, `Path`
 
 <!------------------------------------------------------------->
-<v-two grow>
+<v-two fix-right>
 <template #first>
 
 ```js
@@ -149,7 +149,7 @@ ctx.stroke();
 #### `Text`
 
 <!------------------------------------------------------------->
-<v-two grow>
+<v-two fix-right>
 <template #first>
 
 ```js

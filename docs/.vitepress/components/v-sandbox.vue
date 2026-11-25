@@ -15,9 +15,9 @@
 <script setup lang="ts">
 interface Props {
   url: string;
-  title: string;
-  codepen: boolean;
-  codesandbox: boolean;
+  title?: string;
+  codepen?: boolean;
+  codesandbox?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {

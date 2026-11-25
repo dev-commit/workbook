@@ -1,10 +1,21 @@
 <script lang="ts" setup>
 // FIXME: Проверить файл
 
+import type { DefineComponent } from "vue";
 import { useData } from "vitepress";
-import { VPLink } from "vitepress/theme";
+import { VPLink as VPLinkUntyped } from "vitepress/theme";
 import type { IThemeConfigNav } from "../../../types";
 import { NAV as RAW_NAV } from "../../../wiki/builder";
+
+// В типах VitePress VPLink объявлен без пропсов: описываем их по VPLink.vue,
+// иначе проверка типов (checkUnknownProps) считает href неизвестным пропом
+const VPLink = VPLinkUntyped as DefineComponent<{
+  tag?: string;
+  href?: string;
+  noIcon?: boolean;
+  target?: string;
+  rel?: string;
+}>;
 
 const { theme: themeConfig, page } = useData();
 

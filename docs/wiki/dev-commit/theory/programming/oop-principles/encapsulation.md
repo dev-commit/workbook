@@ -59,14 +59,14 @@ let name = user.name; // => Jack
 
 ```java
 public class User {
-    private String name;
+  private String name;
 
-    public String getName() {
-        return name;
-    }
-    public String setName(String name) {
-        this.name = name;
-    }
+  public String getName() {
+    return name;
+  }
+  public String setName(String name) {
+    this.name = name;
+  }
 }
 ```
 

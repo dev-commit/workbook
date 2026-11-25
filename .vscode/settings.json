@@ -1,4 +1,6 @@
 {
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // Расширение Vue проверяет компоненты и пропсы и в .md (vitePressExtensions в tsconfig.json)
+  "vue.server.includeLanguages": ["vue", "markdown"]
 }
