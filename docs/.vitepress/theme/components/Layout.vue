@@ -5,7 +5,7 @@
 // чтобы при SSR/build и при гидрации на клиенте DOM совпадал (нет hydration mismatch).
 // Иначе при прямой загрузке на GitHub Pages пропадали заголовки и блоки кода.
 
-import { watch, computed } from "vue";
+import { watch, computed, nextTick, onMounted, onBeforeUnmount } from "vue";
 import { useRoute, useData } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import { useSidebar } from "vitepress/theme";
@@ -44,6 +44,59 @@ function onTouchEnd(e: TouchEvent) {
 }
 
 watch(() => route.path, closeSidebar);
+
+// Переход к разделу по хэшу (#id).
+// Встроенный scrollTo VitePress не работает в этом layout:
+// 1. на десктопе прокручивается не window, а .vp-content (overflow: auto);
+// 2. оба layout в DOM, поэтому id заголовков дублируются и getElementById
+//    находит первую копию, которая на мобильном скрыта.
+// Поэтому ищем видимую копию заголовка и прокручиваем к ней через scrollIntoView -
+// он сам находит нужный прокручиваемый контейнер.
+function findVisibleTarget(hash: string): HTMLElement | null {
+  if (!hash || hash === "#") return null;
+  let id: string;
+  try {
+    id = decodeURIComponent(hash.slice(1));
+  } catch {
+    return null;
+  }
+  const elements = document.querySelectorAll<HTMLElement>(
+    `[id="${CSS.escape(id)}"]`,
+  );
+  return [...elements].find((el) => el.offsetParent !== null) ?? null;
+}
+
+function scrollToHash(smooth = false) {
+  const target = findVisibleTarget(window.location.hash);
+  target?.scrollIntoView({
+    block: "start",
+    behavior: smooth ? "smooth" : "auto",
+  });
+}
+
+// Двойной requestAnimationFrame: выполняемся после встроенного scrollTo VitePress,
+// который тоже вызывается через requestAnimationFrame и иначе сбил бы позицию на мобильном
+function scrollToHashAfterRender(smooth = false) {
+  nextTick(() =>
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => scrollToHash(smooth)),
+    ),
+  );
+}
+
+const onHashChange = () => scrollToHashAfterRender(true);
+
+onMounted(() => {
+  scrollToHashAfterRender();
+  window.addEventListener("hashchange", onHashChange);
+});
+onBeforeUnmount(() => window.removeEventListener("hashchange", onHashChange));
+
+// Переход на другую страницу сразу к разделу (н-р, ссылка page.html#id)
+watch(
+  () => route.path,
+  () => scrollToHashAfterRender(),
+);
 
 const showLayout = computed(() => frontmatter.value.layout !== false);
 const shouldShowNavbar = computed(

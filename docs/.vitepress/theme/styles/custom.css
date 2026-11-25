@@ -24,10 +24,23 @@
   padding: 10px 0;
   font-size: 22px;
 }
+/* Знак # по наведению: VitePress ставит top: 24px под свой padding-top у h2, у нас padding-top 10px */
+.vp-doc h2 .header-anchor {
+  top: 10px;
+}
 .vp-doc h3 {
   margin: 0;
   margin-top: 20px;
   padding: 0;
+}
+
+/* Переход к разделу по хэшу (Layout.vue, scrollIntoView): отступ заголовка от верха.
+   На мобильном шапка фиксированная (навбар 64px + локальная навигация 48px) */
+.vp-doc :is(h1, h2, h3, h4, h5, h6) {
+  scroll-margin-top: 16px;
+}
+.vp-theme-container--mobile-only .vp-doc :is(h1, h2, h3, h4, h5, h6) {
+  scroll-margin-top: 128px;
 }
 
 .vp-doc a {
