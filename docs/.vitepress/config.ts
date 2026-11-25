@@ -38,6 +38,10 @@ export default defineConfig({
   cacheDir: ".vitepress/cache",
   ignoreDeadLinks: true,
   vite: {
+    define: {
+      // Абсолютный путь папки docs: для ссылки «открыть файл в редакторе» (OpenInEditor.vue)
+      __DOCS_ROOT__: JSON.stringify(path.resolve(__dirname, "..")),
+    },
     resolve: {
       alias: {
         docs: path.join(__dirname, ".."),

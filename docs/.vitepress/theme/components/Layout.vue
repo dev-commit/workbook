@@ -16,6 +16,7 @@ import VPFooter from "vitepress/dist/client/theme-default/components/VPFooter.vu
 
 import VPNavbar from "./VPNavbar.vue";
 import VPSidebar from "./VPSidebar.vue";
+import OpenInEditor from "./OpenInEditor.vue";
 
 const DefaultLayout = DefaultTheme.Layout;
 
@@ -115,7 +116,11 @@ const containerClass = computed(() => [
           <template #doc-footer-before
             ><slot name="doc-footer-before"
           /></template>
-          <template #doc-before><slot name="doc-before" /></template>
+          <template #doc-before>
+            <!-- Кнопка «открыть файл страницы в редакторе» (только dev) -->
+            <OpenInEditor />
+            <slot name="doc-before" />
+          </template>
           <template #doc-after><slot name="doc-after" /></template>
           <template #doc-top><slot name="doc-top" /></template>
           <template #doc-bottom><slot name="doc-bottom" /></template>
