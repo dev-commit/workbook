@@ -167,6 +167,8 @@ const hasDefaultTitle = computed(
   margin-bottom: 0;
 }
 
+/* Узкий экран: колонки встают друг под другом. Обычные колонки растягиваются на всю ширину,
+   фиксированная (fix-left / fix-right) остаётся 200px */
 @media screen and (max-width: 1070px) {
   .wrapper {
     flex-wrap: wrap;
@@ -175,9 +177,6 @@ const hasDefaultTitle = computed(
     width: 100%;
   }
   .column-grow {
-    width: 100%;
-  }
-  .column-fix {
     width: 100%;
   }
 }

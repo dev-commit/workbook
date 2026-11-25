@@ -1,6 +1,6 @@
 # Шаблоны `<template>`
 
-## Информация
+## Код
 
 ```html
 <template>
@@ -17,7 +17,9 @@ console.log(templateContent); // => <strong>Hello</strong>
 
 - Элемент `<template>` предназначен для хранения «образца» разметки, невидимого и предназначенного для вставки куда-либо. Содержимое читается находящимся вообще «вне документа»
 
-## Пример 1
+## Примеры
+
+### Пример 1
 
 ```js
 element.appendChild(template.content.cloneNode(true)); // => Hi Template
@@ -28,7 +30,7 @@ element.appendChild(template.content.cloneNode(true)); // => Hi Template
 <template id="template">Template</template>
 ```
 
-## Пример 2
+### Пример 2
 
 ```html
 <div class="main">

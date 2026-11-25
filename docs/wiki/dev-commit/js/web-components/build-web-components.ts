@@ -4,8 +4,8 @@ import { getTopicSubtitle, getThemeMenu } from "docs/utils";
 import { rootPath } from "../../constants";
 
 const path = rootPath + "js/web-components/";
-const title = "✅ Web Components";
-const theme: TThemeTopics = "actual";
+const title = "Web Components";
+const theme: TThemeTopics = "secondary";
 
 const topics: ISidebarTopics[] = [
   {

@@ -96,5 +96,22 @@ export default defineConfig({
   markdown: {
     theme: "one-light",
     html: true,
+    codeTransformers: [
+      // В теме one-light «недопустимые» токены (н-р, неизвестный HTML-тег <content>)
+      // - белый текст на красном фоне. Фон VitePress не выводит, и текст не виден.
+      // Красим их в цвет обычных тегов темы
+      {
+        name: "visible-invalid-tokens",
+        span(node) {
+          const style = node.properties.style;
+          if (typeof style === "string" && /color:\s*white/i.test(style)) {
+            node.properties.style = style.replace(
+              /color:\s*white/i,
+              "color:#E45649",
+            );
+          }
+        },
+      },
+    ],
   },
 });

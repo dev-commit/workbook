@@ -1,6 +1,6 @@
 # Custom Elements
 
-## Информация
+## Код
 
 ```js
 class CustomElement extends HTMLElement {
@@ -13,6 +13,8 @@ customElements.define("custom-element", CustomElement);
 // => Hello World
 ```
 
+## Информация
+
 ::: warning
 
 document.registerElement => window.customElements.define (устаревшая конструкция)
@@ -22,9 +24,15 @@ document.registerElement => window.customElements.define (устаревшая �
 - Стандарт Custom Elements позволяет описывать для новых элементов свои свойства, методы, объявлять свой DOM, подобие конструктора и многое другое
 - Использовать новый элемент в HTML можно и до его объявления через _registerElement_
 - Для этого в браузере предусмотрен специальный режим «обновления» существующих элементов
-- Если браузер видит элемент с неизвестным именем, в котором есть дефис - (такие элементы называются _«unresolved»_), то
-  - Он ставит такому элементу специальный CSS-псевдокласс _:unresolved_, для того, чтобы через CSS можно было показать, что он ещё «не подгрузился»
-  - При вызове _registerElement_ такие элементы автоматически обновятся до нужного класса
+
+### Неизвестное имя с дефисом
+
+> Если браузер видит элемент с неизвестным именем, в котором есть дефис (такие элементы называются _«unresolved»_), то
+
+- Он ставит такому элементу специальный CSS-псевдокласс _:unresolved_, для того, чтобы через CSS можно было показать, что он ещё «не подгрузился»
+- При вызове _registerElement_ такие элементы автоматически обновятся до нужного класса
+
+### `registerElement()`
 
 ::: danger
 
@@ -42,12 +50,15 @@ document.registerElement => window.customElements.define (устаревшая �
 
 ```js
 const element = Object.create(HTMLElement.prototype);
+
 element.action = function (content) {
   this.innerHTML = content;
 };
+
 document.registerElement("my-element", {
   prototype: element,
 });
+
 document.querySelector("my-element").action("zzz");
 ```
 
@@ -64,7 +75,9 @@ document.registerElement("my-element", {
     value: 77,
   },
 });
+
 document.querySelector("my-element").action("zzz");
+
 const a = document.querySelector("my-element").value;
 ```
 
@@ -95,12 +108,10 @@ document.querySelector("button").action("zzz");
 
 ## Жизненный цикл
 
-```bash
-createdCallback                                     # Элемент создан
-attachedCallback                                    # Элемент добавлен в документ
-detachedCallback                                    # Элемент удалён из документа
-attributeChangedCallback(name, prevValue, newValue) # Атрибут добавлен, изменён или удалён
-```
+- `createdCallback` - элемент создан
+- `attachedCallback` - элемент добавлен в документ
+- `detachedCallback` - элемент удалён из документа
+- `attributeChangedCallback(name, prevValue, newValue)` - атрибут добавлен, изменён или удалён
 
 ```js
 element.createdCallback = function () {
@@ -110,7 +121,7 @@ element.createdCallback = function () {
 
 ## Примеры
 
-### 1. Элемент таймер
+::: details Элемент таймер
 
 ```js
 // Прототип с методами для нового элемента
@@ -135,7 +146,9 @@ setInterval(function () {
 <my-timer id="timer">0</my-timer>
 ```
 
-### 2. Элемент hello-world с таймером
+:::
+
+::: details Элемент hello-world с таймером
 
 ```js
 // Регистрация произойдёт через 2 сек
@@ -165,3 +178,5 @@ hello-world {
 ```html
 <hello-world id="hello">Hello, world!</hello-world>
 ```
+
+:::

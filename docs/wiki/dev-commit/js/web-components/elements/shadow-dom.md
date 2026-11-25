@@ -1,6 +1,6 @@
 # Shadow DOM
 
-## Информация
+## Код
 
 ```html
 <div id="root"></div>
@@ -18,6 +18,8 @@ element.shadowRoot.querySelector("strong").textContent = "Hello!";
 // => Hello! People
 ```
 
+## Информация
+
 ::: warning
 
 Element.createShadowRoot => Element.attachShadow (устаревшая конструкция)
@@ -34,27 +36,39 @@ Element.createShadowRoot => Element.attachShadow (устаревшая конс�
 - Shadow DOM можно создать внутри любого элемента
 - С момента создания Shadow DOM обычное содержимое (дети) элемента не отображается, а показывается только Shadow DOM
 
-**`<content>`**
+## `<content>`
+
+### Информация
 
 - Тег `<content>` влияет только на отображение, он не перемещает узлы физически. Внутри `<content>` показывается не элемент целиком, а только его содержимое
 - Внутри Shadow DOM можно использовать `<content>` много раз с разными значениями select, указывая таким образом, где конкретно какие части исходного содержимого разместить. Но при этом дублирование узлов невозможно. Если узел показан в одном `<content>`, то в следующем он будет пропущен
 - Например, если сначала идёт `<content select="h3.title">`, а затем `<content select="h3">`, то в первом `<content>` будут показаны заголовки `<h3>` с классом title, а во втором – все остальные, кроме уже показанных
 - Если в теге `<content></content>` есть содержимое, оно будет показано только в том случае, если узлов для вставки нет
 
+### Код
+
 ```js
 // JavaScript
-createShadowRoot();  // Создание Shadow DOM
-element.shadowRoot;  // Корень
 
-// HTML
-<content></content> // Замена содержимого
-
-// CSS
-::shadow  // Выбирает корень Shadow DOM
->>>       // Полностью игнорирует границы между DOM'ами
+createShadowRoot(); // Создание Shadow DOM
+element.shadowRoot; // Корень
 ```
 
-## Создание createShadowRoot
+```html
+<!-- HTML -->
+
+<content></content>
+<!-- Замена содержимого -->
+```
+
+```css
+/* CSS */
+
+::shadow/* Выбирает корень Shadow DOM */
+>>>; /* Полностью игнорирует границы между DOM'ами */
+```
+
+### Создание createShadowRoot
 
 ```js
 const root = document.querySelector("#element").createShadowRoot();
@@ -64,7 +78,7 @@ const root = document.querySelector("#element").createShadowRoot();
 <div id="element">Hi</div>
 ```
 
-## Замена содержимого `<content></content>`
+### Замена содержимого `<content></content>`
 
 ```js
 // => Shadow - заменяет содержимое в "element"
@@ -84,7 +98,7 @@ root.innerHTML = '<h1><content select="h3"></content></h1> <p>Shadow</p>';
 </div>
 ```
 
-## Корень shadowRoot
+### Корень shadowRoot
 
 ```js
 const rootElement = document.querySelector("#element").shadowRoot;

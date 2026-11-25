@@ -1,6 +1,6 @@
 # HTML Import
 
-## Информация
+## Код
 
 ```html
 <link rel="import" href="file.html" />
@@ -10,6 +10,8 @@
 const link = document.querySelector('link[rel="import"]');
 const importedElement = link.import.querySelector("span");
 ```
+
+## Информация
 
 ::: warning
 
@@ -21,7 +23,7 @@ HTML Imports => ES modules (устаревшая конструкция)
 - HTML, загруженный через `<link rel="import">`, имеет отдельный DOM документа, но скрипты в нём выполняются в общем контексте страницы
 - Файл, загруженный через `<link rel="import">`, обрабатывается, выполняются скрипты, строится DOM документа, но не показывается, а записывается в свойство link.import
 
-Запускать на сервере
+> Запускать на сервере
 
 ```js
 link.import; // Доступ снаружи

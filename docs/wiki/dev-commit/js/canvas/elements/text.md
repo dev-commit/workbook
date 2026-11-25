@@ -1,12 +1,15 @@
 # Text
 
+## Элемент
+
 <v-two fix-right>
 <template #first>
 
 ```js
 ctx.textAlign = "center";
 ctx.font = "22px Arial";
-ctx.fillText("Hello World", canvas.width / 2, canvas.height / 2); // По центру
+// По центру
+ctx.fillText("Hello World", canvas.width / 2, canvas.height / 2);
 ```
 
 </template>

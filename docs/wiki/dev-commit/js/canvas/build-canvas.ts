@@ -5,8 +5,8 @@ import { emoji } from "docs/constants";
 import { rootPath } from "../../constants";
 
 const path = rootPath + "js/canvas/";
-const title = "✅ Canvas";
-const theme: TThemeTopics = "actual";
+const title = "Canvas";
+const theme: TThemeTopics = null;
 
 const topics: ISidebarTopics[] = [
   {
