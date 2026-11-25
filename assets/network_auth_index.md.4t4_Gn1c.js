@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a}from"./chunks/framework.DLufY-ao.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"network/auth/index.md","filePath":"wiki/dev-commit/network/auth/index.md"}'),n={name:"network/auth/index.md"};function o(r,i,c,s,d,m){return t(),a("div")}const f=e(n,[["render",o]]);export{_ as __pageData,f as default};

@@ -1,0 +1,1 @@
+import{_ as e,o as a,c as t}from"./chunks/framework.DLufY-ao.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"js/ramda/index.md","filePath":"wiki/dev-commit/js/ramda/index.md"}'),r={name:"js/ramda/index.md"};function n(s,d,o,i,c,m){return a(),t("div")}const f=e(r,[["render",n]]);export{_ as __pageData,f as default};

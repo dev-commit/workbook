@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a}from"./chunks/framework.DLufY-ao.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"layout/svg/index.md","filePath":"wiki/dev-commit/layout/svg/index.md"}'),o={name:"layout/svg/index.md"};function n(s,r,i,c,d,m){return t(),a("div")}const l=e(o,[["render",n]]);export{_ as __pageData,l as default};

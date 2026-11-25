@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a}from"./chunks/framework.DLufY-ao.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"js/lodash/index.md","filePath":"wiki/dev-commit/js/lodash/index.md"}'),s={name:"js/lodash/index.md"};function o(n,d,r,i,c,m){return t(),a("div")}const l=e(s,[["render",o]]);export{_ as __pageData,l as default};

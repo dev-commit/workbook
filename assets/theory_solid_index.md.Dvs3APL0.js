@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as o}from"./chunks/framework.DLufY-ao.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"theory/solid/index.md","filePath":"wiki/dev-commit/theory/solid/index.md"}'),r={name:"theory/solid/index.md"};function a(i,n,s,d,c,m){return t(),o("div")}const l=e(r,[["render",a]]);export{_ as __pageData,l as default};

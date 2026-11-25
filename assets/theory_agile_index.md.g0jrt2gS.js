@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a}from"./chunks/framework.DLufY-ao.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"theory/agile/index.md","filePath":"wiki/dev-commit/theory/agile/index.md"}'),o={name:"theory/agile/index.md"};function r(i,n,c,s,d,m){return t(),a("div")}const l=e(o,[["render",r]]);export{_ as __pageData,l as default};

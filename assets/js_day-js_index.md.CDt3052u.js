@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a}from"./chunks/framework.DLufY-ao.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"js/day-js/index.md","filePath":"wiki/dev-commit/js/day-js/index.md"}'),s={name:"js/day-js/index.md"};function n(d,o,r,i,c,m){return t(),a("div")}const f=e(s,[["render",n]]);export{_ as __pageData,f as default};

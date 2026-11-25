@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a}from"./chunks/framework.DLufY-ao.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"backend/php/index.md","filePath":"wiki/dev-commit/backend/php/index.md"}'),n={name:"backend/php/index.md"};function c(d,o,r,i,p,s){return t(),a("div")}const f=e(n,[["render",c]]);export{_ as __pageData,f as default};

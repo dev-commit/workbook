@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as o}from"./chunks/framework.DLufY-ao.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"network/axios/index.md","filePath":"wiki/dev-commit/network/axios/index.md"}'),a={name:"network/axios/index.md"};function n(r,i,s,c,d,m){return t(),o("div")}const x=e(a,[["render",n]]);export{_ as __pageData,x as default};

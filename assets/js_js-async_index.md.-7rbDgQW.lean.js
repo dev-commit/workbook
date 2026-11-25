@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as s}from"./chunks/framework.DLufY-ao.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"js/js-async/index.md","filePath":"wiki/dev-commit/js/js-async/index.md"}'),a={name:"js/js-async/index.md"};function n(c,o,r,i,d,m){return t(),s("div")}const f=e(a,[["render",n]]);export{_ as __pageData,f as default};
