@@ -11,17 +11,13 @@
   - Удалить неиспользуемые изображения
 
 ## ✅ AI Fix
-  - Страница. Скрыть нижние виджеты с навигациям по страницам (Previous page, Next page)
-  - Формирование адреса страницы. Сейчас в конец страницы добавляется .html. Не нужно добавлять .html
   - Левое меню. Сворачивать разделы
 
 ## ✅ TODO
   - Компонент `v-sandbox`, проверить `needcheck`
 
 ## Общее
+  - Роутинг. Удалить "wiki" из путей в методичике: "wiki/dev-commit" и "wiki/lets-code"
   - Добавить алиасы в Vite
   - Не работает проверка типов у компонентов из docs/.vitepress/components
-  - Деплой с GitHub Actions https://vuejs.press/guide/deployment.html#github-pages
   - Генерировать различный контент в файле docs/index.md в зависимости от того, какая методичка выбрана в docs/app-config.ts: Projects.DevCommit или Projects.LetsCode
-  - Изменить Bash-скрипты под MacOS
-  - Роутинг. Удалить "wiki/dev-commit" и "wiki/lets-code" из путей в методичике (?)

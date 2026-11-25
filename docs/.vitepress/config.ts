@@ -37,6 +37,8 @@ export default defineConfig({
   outDir: ".vitepress/dist",
   cacheDir: ".vitepress/cache",
   ignoreDeadLinks: true,
+  // Адреса страниц без .html (GitHub Pages отдаёт /page как /page.html)
+  cleanUrls: true,
   vite: {
     define: {
       // Абсолютный путь папки docs: для ссылки «открыть файл в редакторе» (OpenInEditor.vue)
@@ -96,6 +98,8 @@ export default defineConfig({
     sidebar: SIDEBAR,
     outline: { level: [2, 3] },
     search: { provider: "local" },
+    // Скрыть внизу страницы ссылки на предыдущую / следующую страницу
+    docFooter: { prev: false, next: false },
   },
   markdown: {
     theme: "one-light",
