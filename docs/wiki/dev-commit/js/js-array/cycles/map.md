@@ -15,6 +15,8 @@
 
 :::
 
+## Пример
+
 ```js
 const newArray = arr.map((currentValue, index, array) => {
   // Возвращает элемент для newArray

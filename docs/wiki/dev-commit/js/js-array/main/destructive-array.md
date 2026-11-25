@@ -1,12 +1,12 @@
 # Деструктивное присваивание массивов (ES6) - деструктуризация
 
-## Информация
+## Код
 
 ```js
 const languages = ["JavaScript", "Python", "Ruby"];
 ```
 
-<v-two :title="['ES6', 'ES5']">
+<v-two compare :title="['ES6', 'ES5']">
 <template #first>
 
 ```js
@@ -26,6 +26,8 @@ const rb = languages[2];
 </v-two>
 
 ## Варианты
+
+### Общее
 
 ```js
 const scores = [3, 4, 5];
@@ -80,7 +82,7 @@ console.log(startX, startY); // => 22, 77
 
 ## Примеры
 
-### Быстрый обмен значений переменных
+::: details Быстрый обмен значений переменных
 
 ```js
 let yes = "Yes";
@@ -88,3 +90,5 @@ let no = "No";
 
 [yes, no] = [no, yes];
 ```
+
+:::

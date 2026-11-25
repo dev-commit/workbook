@@ -1,6 +1,8 @@
-# toUpperCase(), toLowerCase() - работа с регистром
+# toUpperCase(), toLowerCase()
 
 ## Информация
+
+- Работа с регистром
 
 ```js
 // Верхний регистр

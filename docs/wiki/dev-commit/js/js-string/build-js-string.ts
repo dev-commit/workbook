@@ -4,8 +4,8 @@ import { getTopicSubtitle, getThemeMenu } from "docs/utils";
 import { rootPath } from "../../constants";
 
 const path = rootPath + "js/js-string/";
-const title = "✅ String";
-const theme: TThemeTopics = "actual";
+const title = "String";
+const theme: TThemeTopics = "js";
 
 const topics: ISidebarTopics[] = [
   {

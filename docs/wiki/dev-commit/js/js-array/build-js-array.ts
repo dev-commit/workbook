@@ -5,8 +5,8 @@ import { emoji } from "docs/constants";
 import { rootPath } from "../../constants";
 
 const path = rootPath + "js/js-array/";
-const title = "✅ Array";
-const theme: TThemeTopics = "actual";
+const title = "Array";
+const theme: TThemeTopics = "js";
 
 const topics: ISidebarTopics[] = [
   {
@@ -26,7 +26,7 @@ const topics: ISidebarTopics[] = [
       ["cycles/reduce", getThemeMenu("method", ["reduce", "reduceRight"])],
       ["cycles/filter", getThemeMenu("method", ["filter"])],
       ["cycles/every", getThemeMenu("method", ["every", "some"])],
-      ["cycles/for-while", getThemeMenu("method", ["for", "while"])],
+      ["cycles/for-while", getThemeMenu("outline", ["for", "while"])],
     ],
   },
   {
@@ -53,10 +53,6 @@ const topics: ISidebarTopics[] = [
       ["methods/fill", getThemeMenu("method", ["fill"])],
       ["methods/at", getThemeMenu("method", ["at"])],
     ],
-  },
-  {
-    title: "Примеры",
-    children: [["samples/samples", "Примеры"]],
   },
 ];
 

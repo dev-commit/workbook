@@ -14,6 +14,8 @@
 
 :::
 
+## Пример
+
 ```js
 arr.forEach((currentValue, index, array) => {
   // Your iterator

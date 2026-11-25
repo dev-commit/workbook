@@ -16,10 +16,12 @@
 :::
 
 - Используется для проверки массива
-- Метод «arr.every(callback[, thisArg])» возвращает true, если вызов callback вернёт true для каждого элемента arr
-- Метод «arr.some(callback[, thisArg])» возвращает true, если вызов callback вернёт true для какого-нибудь элемента arr
+- Метод `arr.every(callback[, thisArg])` возвращает true, если вызов callback вернёт true для каждого элемента arr
+- Метод `arr.some(callback[, thisArg])` возвращает true, если вызов callback вернёт true для какого-нибудь элемента arr
 
-## Пример 1: Использование callback-функции
+## Примеры
+
+::: details Использование callback-функции
 
 ```js
 const arr = [1, -1, 2, -2, 3];
@@ -35,7 +37,9 @@ const result = arr.some((number) => {
 });
 ```
 
-## Пример 2: Вынесение callback-функции
+:::
+
+::: details Вынесение callback-функции
 
 ```js
 const arr = [1, -1, 2, -2, 3];
@@ -47,3 +51,5 @@ const isPositive = (number) => {
 const result = arr.every(isPositive);
 const result = arr.some(isPositive);
 ```
+
+:::

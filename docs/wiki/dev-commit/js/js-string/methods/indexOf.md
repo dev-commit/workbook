@@ -1,6 +1,8 @@
-# indexOf(), lastIndexOf() - поиск в строке совпадений с образцом
+# indexOf(), lastIndexOf()
 
 ## Информация
+
+- Поиск в строке совпадений с образцом
 
 ```js
 const pos = str.indexOf("name"); // С начала (-1 не найдено)
