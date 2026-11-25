@@ -2,7 +2,7 @@
 // import { getTopicSubtitle, getThemeMenu } from "docs/utils";
 // import { emoji } from "docs/constants";
 
-// import { rootPath } from "../../constants";
+// import { rootPath } from "docs/wiki/constants";
 
 // // TODO:
 // const path = rootPath + "frameworks/svelte/";

@@ -2,7 +2,7 @@ import { IBuildTopics, TThemeTopics, ISidebarTopics } from "docs/types";
 import { getThemeMenu } from "docs/utils";
 import { emoji } from "docs/constants";
 
-import { rootPath } from "../../constants";
+import { rootPath } from "docs/wiki/constants";
 
 const path = rootPath + "js/js/";
 const title = "JavaScript";

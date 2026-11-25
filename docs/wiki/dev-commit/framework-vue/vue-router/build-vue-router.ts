@@ -1,7 +1,7 @@
 import { IBuildTopics, TThemeTopics, ISidebarTopics } from "docs/types";
 import { getTopicSubtitle } from "docs/utils";
 
-import { rootPath } from "../../constants";
+import { rootPath } from "docs/wiki/constants";
 
 const path = rootPath + "framework-vue/vue-router/";
 const title = "Vue Router";

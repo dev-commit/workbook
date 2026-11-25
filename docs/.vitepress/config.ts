@@ -39,6 +39,11 @@ export default defineConfig({
   ignoreDeadLinks: true,
   // Адреса страниц без .html (GitHub Pages отдаёт /page как /page.html)
   cleanUrls: true,
+  // Адреса страниц без префикса wiki/<проект>/: файлы лежат в docs/wiki/dev-commit/...,
+  // а страница открывается как /js/js/... (ссылки меню строятся от rootPath в wiki/constants.ts)
+  rewrites: {
+    [`${AppConfig.RootDir}/${AppConfig.WikiDir}/:rest*`]: ":rest*",
+  },
   vite: {
     define: {
       // Абсолютный путь папки docs: для ссылки «открыть файл в редакторе» (OpenInEditor.vue)

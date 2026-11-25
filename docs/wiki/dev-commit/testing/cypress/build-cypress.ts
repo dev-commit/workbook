@@ -2,7 +2,7 @@ import { IBuildTopics, TThemeTopics, ISidebarTopics } from "docs/types";
 import { getTopicSubtitle, getThemeMenu } from "docs/utils";
 import { emoji } from "docs/constants";
 
-import { rootPath } from "../../constants";
+import { rootPath } from "docs/wiki/constants";
 
 const path = rootPath + "testing/cypress/";
 const title = "Cypress";
@@ -44,26 +44,37 @@ const topics: ISidebarTopics[] = [
   {
     title: "Библиотеки",
     children: [
-      ["libs/cypress-image-snapshot", getThemeMenu("method", ["cypress-image-snapshot"])],
+      [
+        "libs/cypress-image-snapshot",
+        getThemeMenu("method", ["cypress-image-snapshot"]),
+      ],
       ["libs/cypress-axe", getThemeMenu("method", ["cypress-axe", "axe-core"])],
       ["libs/mochawesome", getThemeMenu("method", ["mochawesome"])],
-      ["libs/mocha-allure-reporter", getThemeMenu("method", ["mocha-allure-reporter", "allure-commandline"])],
-      ["libs/cypress-mochawesome-reporter", getThemeMenu("method", ["cypress-mochawesome-reporter"])],
-      ["libs/cypress-visual-regression", getThemeMenu("method", ["cypress-visual-regression"])],
-      ["libs/cypress-file-upload", getThemeMenu("method", ["cypress-file-upload"])],
+      [
+        "libs/mocha-allure-reporter",
+        getThemeMenu("method", ["mocha-allure-reporter", "allure-commandline"]),
+      ],
+      [
+        "libs/cypress-mochawesome-reporter",
+        getThemeMenu("method", ["cypress-mochawesome-reporter"]),
+      ],
+      [
+        "libs/cypress-visual-regression",
+        getThemeMenu("method", ["cypress-visual-regression"]),
+      ],
+      [
+        "libs/cypress-file-upload",
+        getThemeMenu("method", ["cypress-file-upload"]),
+      ],
     ],
   },
   {
     title: "Guides",
-    children: [
-      ["guides/network-requests", emoji.star + "Network Requests"],
-    ],
+    children: [["guides/network-requests", emoji.star + "Network Requests"]],
   },
   {
     title: "Прочее",
-    children: [
-      ["other/trash", "Свалка"],
-    ],
+    children: [["other/trash", "Свалка"]],
   },
 ];
 

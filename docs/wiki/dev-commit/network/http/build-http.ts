@@ -1,7 +1,7 @@
 import { IBuildTopics, TThemeTopics, ISidebarTopics } from "docs/types";
 import { emoji } from "docs/constants";
 
-import { rootPath } from "../../constants";
+import { rootPath } from "docs/wiki/constants";
 
 const path = rootPath + "network/http/";
 const title = "HTTP | Протоколы";

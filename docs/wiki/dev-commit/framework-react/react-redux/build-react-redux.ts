@@ -2,7 +2,7 @@ import { IBuildTopics, TThemeTopics, ISidebarTopics } from "docs/types";
 import { getTopicSubtitle, getThemeMenu } from "docs/utils";
 import { emoji } from "docs/constants";
 
-import { rootPath } from "../../constants";
+import { rootPath } from "docs/wiki/constants";
 
 const path = rootPath + "framework-react/react-redux/";
 const title = "React Redux";

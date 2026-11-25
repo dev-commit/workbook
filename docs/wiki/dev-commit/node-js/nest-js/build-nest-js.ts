@@ -2,7 +2,7 @@ import { IBuildTopics, TThemeTopics, ISidebarTopics } from "docs/types";
 import { getTopicSubtitle, getThemeMenu } from "docs/utils";
 import { emoji } from "docs/constants";
 
-import { rootPath } from "../../constants";
+import { rootPath } from "docs/wiki/constants";
 
 const path = rootPath + "node-js/nest-js/";
 const title = "Nest.js";
@@ -18,9 +18,7 @@ const topics: ISidebarTopics[] = [
   },
   {
     title: "Элементы",
-    children: [
-      ["elements/structure", emoji.fire + "Структура"],
-    ],
+    children: [["elements/structure", emoji.fire + "Структура"]],
   },
   {
     title: "1. Controller",
@@ -33,15 +31,11 @@ const topics: ISidebarTopics[] = [
   },
   {
     title: "2. Service",
-    children: [
-      ["service/structure", emoji.star + "Структура"],
-    ],
+    children: [["service/structure", emoji.star + "Структура"]],
   },
   {
     title: "3. Module",
-    children: [
-      ["module/structure", emoji.star + "Структура"],
-    ],
+    children: [["module/structure", emoji.star + "Структура"]],
   },
   {
     title: "Инструменты",

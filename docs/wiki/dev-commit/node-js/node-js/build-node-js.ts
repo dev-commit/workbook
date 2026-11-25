@@ -2,7 +2,7 @@ import { IBuildTopics, TThemeTopics, ISidebarTopics } from "docs/types";
 import { getTopicSubtitle, getThemeMenu } from "docs/utils";
 import { emoji } from "docs/constants";
 
-import { rootPath } from "../../constants";
+import { rootPath } from "docs/wiki/constants";
 
 const path = rootPath + "node-js/node-js/";
 const title = "Node.js";
@@ -30,17 +30,21 @@ const topics: ISidebarTopics[] = [
     children: [
       ["module-fs/fs", "Команды"],
       ["module-fs/readFile", getThemeMenu("method", ["readFile", "writeFile"])],
-      ["module-fs/appendFile", getThemeMenu("method", ["appendFile", "unlink"])],
+      [
+        "module-fs/appendFile",
+        getThemeMenu("method", ["appendFile", "unlink"]),
+      ],
       ["module-fs/existsSync", getThemeMenu("method", ["existsSync"])],
       ["module-fs/mkdir", getThemeMenu("method", ["mkdir", "rmdir"])],
-      ["module-fs/createReadStream", getThemeMenu("method", ["createReadStream", "createWriteStream"])],
+      [
+        "module-fs/createReadStream",
+        getThemeMenu("method", ["createReadStream", "createWriteStream"]),
+      ],
     ],
   },
   {
     title: "Методы",
-    children: [
-      ["methods/pipe", getThemeMenu("method", [".pipe"])],
-    ],
+    children: [["methods/pipe", getThemeMenu("method", [".pipe"])]],
   },
   {
     title: "Встроенные модули",
@@ -50,7 +54,10 @@ const topics: ISidebarTopics[] = [
       ["nodejs-modules/events", getThemeMenu("method", ["events"])],
       ["nodejs-modules/util", getThemeMenu("method", ["util"])],
       ["nodejs-modules/os", getThemeMenu("method", ["os"])],
-      ["nodejs-modules/worker_threads", getThemeMenu("method", ["worker_threads"])],
+      [
+        "nodejs-modules/worker_threads",
+        getThemeMenu("method", ["worker_threads"]),
+      ],
     ],
   },
   {
@@ -64,14 +71,15 @@ const topics: ISidebarTopics[] = [
   },
   {
     title: "Модули",
-    children: [
-      ["modules/module-system", emoji.theory + "Модульная система"],
-    ],
+    children: [["modules/module-system", emoji.theory + "Модульная система"]],
   },
   {
     title: "ES6 Modules",
     children: [
-      ["modules/module-es6-command", getThemeMenu("method", ["import", "export"])],
+      [
+        "modules/module-es6-command",
+        getThemeMenu("method", ["import", "export"]),
+      ],
       ["modules/module-es6-use", "Usage Node.js, Browser"],
     ],
   },
@@ -79,7 +87,10 @@ const topics: ISidebarTopics[] = [
     title: "RequireJS",
     children: [
       ["modules/require-js-structure", emoji.theory + "Структура модуля"],
-      ["modules/require-js-command", getThemeMenu("method", ["require", "module.exports"])],
+      [
+        "modules/require-js-command",
+        getThemeMenu("method", ["require", "module.exports"]),
+      ],
     ],
   },
 ];

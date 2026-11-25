@@ -1,5 +1,5 @@
 import { IBuildTopics, TThemeTopics, ISidebarTopics } from "docs/types";
-import { rootPath } from "../../constants";
+import { rootPath } from "docs/wiki/constants";
 
 const path = rootPath + "backend/mysql/";
 const title = "MySQL";
