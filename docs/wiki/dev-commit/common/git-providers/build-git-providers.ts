@@ -6,7 +6,7 @@ import { rootPath } from "../../constants";
 
 const path = rootPath + "common/git-providers/";
 const title = "Git Providers";
-const theme: TThemeTopics = "actual";
+const theme: TThemeTopics = null;
 
 const topics: ISidebarTopics[] = [
   {

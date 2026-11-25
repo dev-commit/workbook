@@ -1,9 +1,13 @@
 # GitHub CLI
 
+## Информация
+
 ::: info
-https://cli.github.com/
-https://cli.github.com/manual/
-https://github.com/cli/cli/
+
+- https://cli.github.com/
+- https://cli.github.com/manual/
+- https://github.com/cli/cli/
+
 :::
 
 ## Команды
@@ -14,7 +18,7 @@ https://github.com/cli/cli/
 gh auth login                   # Аутентификация
 gh repo clone UserName/RepoName # Клонирование репозитория
 gh commands                     # Доступные команды
-code .                          # Открыват проект в редакторе по умолчанию
+code .                          # Открывает проект в редакторе по умолчанию
 ```
 
 ### Issue

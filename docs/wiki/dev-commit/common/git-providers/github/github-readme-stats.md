@@ -1,5 +1,7 @@
 # github-readme-stats
 
+## Информация
+
 ::: info
 
 - https://github.com/anuraghazra/github-readme-stats
