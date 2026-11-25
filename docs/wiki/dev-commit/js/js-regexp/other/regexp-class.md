@@ -1,6 +1,6 @@
 # Класс RegExp
 
-## Информация
+## Пример
 
 ```js
 const pattern = new RegExp("\\w+", "g"); // Конструктор
