@@ -151,14 +151,14 @@ for (let i = 0; i < elems.length; i++) {
 const numberSpan = document.querySelector(".num");
 
 // Ближайший элемент сверху подходящий под селектор li
-alert(numberSpan.closest("li").className); // subchapter
+console.log(numberSpan.closest("li").className); // subchapter
 
 // Ближайший элемент сверху подходящий под селектор .chapter
-alert(numberSpan.closest(".chapter").tagName); // LI
+console.log(numberSpan.closest(".chapter").tagName); // LI
 
 // Ближайший элемент сверху, подходящий под селектор span.
 // Это сам numberSpan, так как поиск включает в себя сам элемент
-alert(numberSpan.closest("span") === numberSpan); // true
+console.log(numberSpan.closest("span") === numberSpan); // true
 ```
 
 ### XPath
@@ -182,7 +182,7 @@ const result = document.evaluate(
 );
 
 for (let i = 0; i < result.snapshotLength; i++) {
-  alert(result.snapshotItem(i).outerHTML);
+  console.log(result.snapshotItem(i).outerHTML);
 }
 ```
 

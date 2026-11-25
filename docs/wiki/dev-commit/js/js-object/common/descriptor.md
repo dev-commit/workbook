@@ -98,7 +98,7 @@ Object.defineProperty(user, "fullName", {
 });
 
 user.fullName = "Петя Иванов";
-alert(user.fullName); // Петя Иванов
-alert(user.firstName); // Петя
-alert(user.surname); // Иванов
+console.log(user.fullName); // Петя Иванов
+console.log(user.firstName); // Петя
+console.log(user.surname); // Иванов
 ```

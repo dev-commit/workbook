@@ -45,7 +45,7 @@
 
 ```js
 function action() {
-  alert(1);
+  console.log(1);
 }
 const element = document.querySelector("#element");
 element.addEventListener("click", action);
@@ -57,18 +57,18 @@ element.removeEventListener("click", action);
 // Так removeEventListener не сработает.
 // В removeEventListener передана не та же функция, а другая, с одинаковым кодом
 element.addEventListener("click", function () {
-  alert("ok");
+  console.log("ok");
 });
 element.removeEventListener("click", function () {
-  alert("ok");
+  console.log("ok");
 });
 ```
 
 ```js
 // Добавление нескольких обработчиков на одно событие
-element.onclick = () => alert("Привет из onclick");
-element.addEventListener("click", () => alert("Привет"));
-element.addEventListener("click", () => alert("Привет Мир"));
+element.onclick = () => console.log("Привет из onclick");
+element.addEventListener("click", () => console.log("Привет"));
+element.addEventListener("click", () => console.log("Привет Мир"));
 ```
 
 ### Передача аргументов в addEventListener
@@ -113,11 +113,11 @@ element.addEventListener(
 
 ```js
 element.ontransitionend = function () {
-  alert("DOM property"); // Не сработает
+  console.log("DOM property"); // Не сработает
 };
 
 element.addEventListener("transitionend", function () {
-  alert("addEventListener"); // Сработает по окончании анимации
+  console.log("addEventListener"); // Сработает по окончании анимации
 });
 ```
 
@@ -153,9 +153,9 @@ element.addEventListener("click", listener);
 
 <!-- prettier-ignore -->
 ```html
-<button onclick="alert('action')">Action</button>
-<button onclick="alert(&quot;action&quot;)">Использование двойных кавычек</button>
-<button onclick="alert(this.innerHTML)">Вывести содержимое</button>
+<button onclick="console.log('action')">Action</button>
+<button onclick="console.log(&quot;action&quot;)">Использование двойных кавычек</button>
+<button onclick="console.log(this.innerHTML)">Вывести содержимое</button>
 <button onclick="action()">Action</button>
 ```
 
@@ -181,7 +181,7 @@ button.onclick = function () {
 ```js
 // Назначение новой функции
 element.onclick = function () {
-  alert(1);
+  console.log(1);
 };
 ```
 
@@ -190,7 +190,7 @@ element.onclick = function () {
 element.onclick = action;
 
 function action() {
-  alert(1);
+  console.log(1);
 }
 ```
 
@@ -205,16 +205,16 @@ element.onclick = null;
 // При нажатии на body будут ошибки,
 // атрибуты всегда строки, и функция станет строкой
 document.body.setAttribute("onclick", function () {
-  alert(1);
+  console.log(1);
 });
 ```
 
 ```js
 element.onclick = function () {
-  alert(1);
+  console.log(1);
 };
 // Заменит предыдущий обработчик
 element.onclick = function () {
-  alert(2);
+  console.log(2);
 };
 ```

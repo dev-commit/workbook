@@ -55,7 +55,7 @@ $0.style.backgroundColor = "red";
 const elems = document.documentElement.childNodes;
 
 [].forEach.call(elems, function (elem) {
-  alert(elem); // HEAD, текст, BODY
+  console.log(elem); // HEAD, текст, BODY
 });
 ```
 
@@ -68,7 +68,7 @@ let elems = document.documentElement.childNodes;
 elems = Array.prototype.slice.call(elems); // Теперь elems - массив
 
 elems.forEach(function (elem) {
-  alert(elem.tagName); // HEAD, undefined, BODY
+  console.log(elem.tagName); // HEAD, undefined, BODY
 });
 ```
 

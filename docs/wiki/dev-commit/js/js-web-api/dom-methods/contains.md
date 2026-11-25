@@ -68,7 +68,7 @@ const result = nodeA.compareDocumentPosition(nodeB);
   const li = document.body.children[0].children[0];
 
   if (body.compareDocumentPosition(li) & 16) {
-    alert(body + " содержит " + li);
+    console.log(body + " содержит " + li);
   }
 </script>
 ```

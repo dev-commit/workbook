@@ -9,7 +9,7 @@ function User() {
   this.userName = "userName";
 }
 User.prototype.userFunc = function () {
-  alert("userFunc");
+  console.log("userFunc");
 };
 User.prototype.userProp = "userProp";
 
@@ -36,7 +36,7 @@ const admin = Object.setPrototypeOf(new Admin(), User.prototype);
 ```js
 // Добавлять после Admin.prototype = Object.create(User.prototype), чтобы не перетерло
 Admin.prototype.adminFunc = function () {
-  alert("adminFunc");
+  console.log("adminFunc");
 };
 ```
 
@@ -44,7 +44,7 @@ Admin.prototype.adminFunc = function () {
 
 ```js
 Admin.prototype.userFunc = function () {
-  alert("not userFunc");
+  console.log("not userFunc");
 };
 ```
 
@@ -61,7 +61,7 @@ Admin.prototype.adminUserFunc = function () {
 ### 6. Обращение к методам и свойствам
 
 ```js
-admin.userFunc(); // => alert('userFunc')
+admin.userFunc(); // => console.log('userFunc')
 admin.userProp; // => 'userProp'
 ```
 

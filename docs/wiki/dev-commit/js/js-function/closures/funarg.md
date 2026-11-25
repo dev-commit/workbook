@@ -47,7 +47,7 @@ function testFn() {
   const localVar = 10;
 
   function innerFn(innerParam) {
-    alert(innerParam + localVar);
+    console.log(innerParam + localVar);
   }
 
   return innerFn;
@@ -69,7 +69,7 @@ someFn(20); // 30
 const x = 10;
 
 function someFn() {
-  alert(x);
+  console.log(x);
 }
 
 someFn(); // 10 - и при статической и при динамической Scope

@@ -9,16 +9,16 @@ const id = 3;
 
 switch (id) {
   case 1:
-    alert(id);
+    console.log(id);
     break;
   case 2:
-    alert(id);
+    console.log(id);
     break;
   case 3:
-    alert(id);
+    console.log(id);
     break;
   default:
-    alert("default");
+    console.log("default");
 }
 ```
 
@@ -29,16 +29,16 @@ const name = "name2";
 
 switch (name) {
   case "name1":
-    alert(name);
+    console.log(name);
     break;
   case "name2":
-    alert(name);
+    console.log(name);
     break;
   case "name3":
-    alert(name);
+    console.log(name);
     break;
   default:
-    alert("default");
+    console.log("default");
 }
 ```
 
@@ -57,10 +57,10 @@ switch (name) {
 
 ```js
 if (year < 2011) {
-  alert("Это слишком рано..");
+  console.log("Это слишком рано..");
 } else if (year > 2011) {
-  alert("Это поздновато..");
+  console.log("Это поздновато..");
 } else {
-  alert("Да, точно в этом году!");
+  console.log("Да, точно в этом году!");
 }
 ```

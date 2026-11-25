@@ -27,7 +27,7 @@ const a = id.toString().length;
 <!-- prettier-ignore -->
 ```js
 "\n"; // Перенос строки
-alert("привет \n мир"); // Вывод переноса строки
+console.log("привет \n мир"); // Вывод переноса строки
 "call me \"ziggy\" now"; // Экранирование кавычек
 ```
 

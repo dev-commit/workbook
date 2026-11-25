@@ -19,5 +19,5 @@ function pow(x, n) {
     return x;
   }
 }
-alert(pow(2, 3)); // 8
+console.log(pow(2, 3)); // 8
 ```

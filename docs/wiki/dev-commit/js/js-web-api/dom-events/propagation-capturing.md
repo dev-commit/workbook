@@ -8,8 +8,8 @@
 - Если аргумент _true_, то событие будет перехвачено при погружении
 
 ```js
-elem.addEventListener("click", () => alert("Привет"), { capture: true });
-elem.addEventListener("click", () => alert("Привет"), true);
+elem.addEventListener("click", () => console.log("Привет"), { capture: true });
+elem.addEventListener("click", () => console.log("Привет"), true);
 ```
 
 ### Чтобы убрать обработчик removeEventListener, нужна та же фаза

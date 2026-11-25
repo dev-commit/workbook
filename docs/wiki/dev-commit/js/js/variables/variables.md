@@ -13,7 +13,7 @@
 2. Переменная видна до объявления
 
 ```js
-alert(a); // undefined
+console.log(a); // undefined
 var a = 77;
 ```
 
@@ -44,7 +44,7 @@ user = 5; // Ошибка
 2. Переменная видна только после объявления
 
 ```js
-alert(a); // ReferenceError: a is not defined
+console.log(a); // ReferenceError: a is not defined
 let a = 77;
 ```
 

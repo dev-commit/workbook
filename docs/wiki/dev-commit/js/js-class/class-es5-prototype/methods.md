@@ -19,7 +19,7 @@ console.log(user); // => User {name: "Jack", avatar: null, __proto__: deleteAvat
 
 ```js
 Object.prototype.myFunc = function () {
-  alert("myFunc");
+  console.log("myFunc");
 };
 let obj = {};
 obj.myFunc(); // => 'myFunc'

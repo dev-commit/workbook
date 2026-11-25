@@ -15,11 +15,11 @@
 
 ```html
 <!-- 3 вложенных элемента FORM > DIV > P с обработчиком на каждом -->
-<form onclick="alert('form')">
+<form onclick="console.log('form')">
   FORM
-  <div onclick="alert('div')">
+  <div onclick="console.log('div')">
     DIV
-    <p onclick="alert('p')">P</p>
+    <p onclick="console.log('p')">P</p>
   </div>
 </form>
 ```
@@ -62,8 +62,8 @@
 <script>
   form.onclick = function (event) {
     event.target.style.backgroundColor = "yellow";
-    alert("event.target: " + event.target.tagName);
-    alert("this: " + this.tagName);
+    console.log("event.target: " + event.target.tagName);
+    console.log("this: " + this.tagName);
   };
 </script>
 ```
@@ -87,7 +87,7 @@
 :::
 
 ```html
-<body onclick="alert('Сюда всплытие не дойдёт')">
+<body onclick="console.log('Сюда всплытие не дойдёт')">
   <button onclick="event.stopPropagation()">Кнопка</button>
 </body>
 ```

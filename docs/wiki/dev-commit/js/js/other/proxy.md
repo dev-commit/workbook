@@ -88,7 +88,7 @@ dictionary = new Proxy(dictionary, {
   },
 });
 
-alert("BlaBlaBla" in dictionary); // true
+console.log("BlaBlaBla" in dictionary); // true
 ```
 
 <v-details title="">
@@ -113,11 +113,11 @@ let proxy = new Proxy(dictionary, {
 // Не удалит свойство
 delete proxy["Hello"];
 
-alert("Hello" in dictionary); // true
+console.log("Hello" in dictionary); // true
 
 // Будет то же самое, что и выше
 // так как нет ловушки has, операция in сработает на исходном объекте
-alert("Hello" in proxy); // true
+console.log("Hello" in proxy); // true
 ```
 
 </v-details>
@@ -145,14 +145,14 @@ function sum(a, b) {
 let proxy = new Proxy(sum, {
   // Передаст вызов в target, предварительно сообщив о нём
   apply: function (target, thisArg, argumentsList) {
-    alert(`Буду вычислять сумму: ${argumentsList}`);
+    console.log(`Буду вычислять сумму: ${argumentsList}`);
     return target.apply(thisArg, argumentsList);
   },
 });
 
 // Выведет сначала сообщение из прокси,
 // а затем уже сумму
-alert(proxy(1, 2));
+console.log(proxy(1, 2));
 ```
 
 </v-details>
@@ -172,14 +172,14 @@ function User(name, surname) {
 let UserProxy = new Proxy(User, {
   // Передаст вызов new User, предварительно сообщив о нём
   construct: function (target, argumentsList) {
-    alert(`Запуск new с аргументами: ${argumentsList}`);
+    console.log(`Запуск new с аргументами: ${argumentsList}`);
     return new target(...argumentsList);
   },
 });
 
 let user = new UserProxy("Tony", "Smith");
 
-alert(user.name); // Tony
+console.log(user.name); // Tony
 ```
 
 </v-details>

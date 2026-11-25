@@ -7,7 +7,7 @@
 
 ```js
 function User() {
-  alert(new.target);
+  console.log(new.target);
 }
 
 // Без "new":
@@ -30,5 +30,5 @@ function User(name) {
 }
 
 let vasya = User("Вася"); // Переадресовывает вызовы на new User
-alert(vasya.name); // Вася
+console.log(vasya.name); // Вася
 ```

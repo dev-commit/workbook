@@ -103,5 +103,5 @@ const scrollHeight = Math.max(
   document.body.clientHeight,
   document.documentElement.clientHeight,
 );
-alert("Высота с учетом прокрутки: " + scrollHeight);
+console.log("Высота с учетом прокрутки: " + scrollHeight);
 ```

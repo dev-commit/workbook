@@ -59,17 +59,17 @@ const mseconds = nowDate.getMilliseconds(); // Миллисекунды
 
 ```js
 const msUTC = Date.parse("2012-01-26T13:51:50.417Z"); // Зона UTC
-alert(msUTC); // 1327571510417 (число миллисекунд)
+console.log(msUTC); // 1327571510417 (число миллисекунд)
 
 const ms = Date.parse("2012-01-26T13:51:50.417-07:00"); // С таймзоной -07:00 GMT
-alert(ms); // 1327611110417 (число миллисекунд)
+console.log(ms); // 1327611110417 (число миллисекунд)
 ```
 
 **Строковое и численное преобразование**
 
 ```js
-alert(new Date()); // toString: Дата в виде читаемой строки
-alert(+new Date()); // valueOf: кол-во миллисекунд, прошедших с 01.01.1970
+console.log(new Date()); // toString: Дата в виде читаемой строки
+console.log(+new Date()); // valueOf: кол-во миллисекунд, прошедших с 01.01.1970
 ```
 
 ## Метод `toLocaleString`
@@ -89,8 +89,8 @@ const options = {
   second: "numeric",
 };
 
-alert(date.toLocaleString("ru", options)); // среда, 31 декабря 2014 г. от Рождества Христова в 12:30:00
-alert(date.toLocaleString("en-US", options)); // Wednesday, December 31, 2014 Anno Domini at 12:30:00 PM
+console.log(date.toLocaleString("ru", options)); // среда, 31 декабря 2014 г. от Рождества Христова в 12:30:00
+console.log(date.toLocaleString("en-US", options)); // Wednesday, December 31, 2014 Anno Domini at 12:30:00 PM
 ```
 
 ```js

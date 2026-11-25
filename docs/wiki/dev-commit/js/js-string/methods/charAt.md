@@ -10,6 +10,6 @@ const root = str.charCodeAt(2);
 ```
 
 ```js
-alert("".charAt(0)); // Пустая строка
-alert(""[0]); // undefined
+console.log("".charAt(0)); // Пустая строка
+console.log(""[0]); // undefined
 ```

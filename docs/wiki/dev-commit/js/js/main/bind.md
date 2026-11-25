@@ -89,7 +89,7 @@ for (let prop in user) {
 
 ```js
 function showFullName() {
-  alert(this.firstName + " " + this.lastName);
+  console.log(this.firstName + " " + this.lastName);
 }
 const user = {
   firstName: "Василий",
@@ -116,7 +116,7 @@ const max = Math.max.apply(Math, arr); // 77 (контекстом будет о
 
 ```js
 function f() {
-  alert(this); // null
+  console.log(this); // null
 }
 f.call(null);
 ```

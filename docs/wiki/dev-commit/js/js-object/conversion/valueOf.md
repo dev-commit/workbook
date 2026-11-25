@@ -13,7 +13,7 @@ const room = {
   number: 777,
 };
 
-alert(+room); // NaN
+console.log(+room); // NaN
 ```
 
 ```js
@@ -27,7 +27,7 @@ const room = {
   },
 };
 
-alert(+room); // 777, вызвался valueOf
+console.log(+room); // 777, вызвался valueOf
 delete room.valueOf; // valueOf удалён
-alert(+room); // 777, вызвался toString
+console.log(+room); // 777, вызвался toString
 ```

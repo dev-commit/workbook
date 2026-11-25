@@ -61,10 +61,12 @@
   for (let elem of document.querySelectorAll("*")) {
     elem.addEventListener(
       "click",
-      (e) => alert(`Погружение: ${elem.tagName}`),
+      (e) => console.log(`Погружение: ${elem.tagName}`),
       true,
     );
-    elem.addEventListener("click", (e) => alert(`Всплытие: ${elem.tagName}`));
+    elem.addEventListener("click", (e) =>
+      console.log(`Всплытие: ${elem.tagName}`),
+    );
   }
 </script>
 ```
@@ -81,6 +83,6 @@
 - Если несколько обработчиков одного события, назначенных addEventListener на один элемент, в рамках одной фазы, то их порядок срабатывания – тот же, в котором они установлены
 
 ```js
-element.addEventListener("click", (e) => alert(1)); // Всегда сработает перед следующим
-element.addEventListener("click", (e) => alert(2));
+element.addEventListener("click", (e) => console.log(1)); // Всегда сработает перед следующим
+element.addEventListener("click", (e) => console.log(2));
 ```

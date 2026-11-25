@@ -17,10 +17,10 @@
 
 ```js
 const f = function sayHi(name) {
-  alert(sayHi); // Изнутри функции - видно (выведет код функции)
+  console.log(sayHi); // Изнутри функции - видно (выведет код функции)
 };
 
-alert(sayHi); // Снаружи - не видно (ошибка: undefined variable 'sayHi')
+console.log(sayHi); // Снаружи - не видно (ошибка: undefined variable 'sayHi')
 ```
 
 <v-two>
@@ -34,7 +34,7 @@ function f(n) {
 const g = f;
 f = null;
 
-alert(g(5)); // Запуск функции с новым именем - ошибка при выполнении!
+console.log(g(5)); // Запуск функции с новым именем - ошибка при выполнении!
 // Функция из своего кода обращается к своему старому имени f.
 // Этой функции уже нет, f = null
 ```
@@ -50,7 +50,7 @@ let f = function factorial(n) {
 const g = f; // Скопировали ссылку на функцию-факториал в g
 f = null;
 
-alert(g(5)); // 120, работает!
+console.log(g(5)); // 120, работает!
 ```
 
 </template>

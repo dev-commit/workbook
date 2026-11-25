@@ -144,7 +144,7 @@ setTimeout(function () {
     prototype: {
       __proto__: HTMLElement.prototype,
       sayHi: function () {
-        alert("Привет!");
+        console.log("Привет!");
       },
     },
   });

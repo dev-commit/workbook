@@ -48,7 +48,7 @@ const task = new Task();
 ```js
 function sayHi() {
   // Создать функцию и поместить её в переменную sayHi
-  alert("Привет");
+  console.log("Привет");
 }
 
 const func = sayHi; // Копирование функции в новую переменную
@@ -93,10 +93,10 @@ function ask(question, yes, no) {
 ask(
   "Вы согласны?",
   function () {
-    alert("Вы согласились.");
+    console.log("Вы согласились.");
   },
   function () {
-    alert("Вы отменили выполнение.");
+    console.log("Вы отменили выполнение.");
   },
 );
 ```
@@ -123,5 +123,5 @@ func()();
 // Создание функции из строки
 const sum = new Function("a,b", "return a+b;");
 const result = sum(1, 2);
-alert(result); // 3
+console.log(result); // 3
 ```

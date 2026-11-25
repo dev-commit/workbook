@@ -10,12 +10,12 @@
 ### Проверка класса
 
 ```js
-alert(document.body); // [object HTMLBodyElement]
+console.log(document.body); // [object HTMLBodyElement]
 
-alert(document.body instanceof HTMLBodyElement); // true
-alert(document.body instanceof HTMLElement); // true
-alert(document.body instanceof Element); // true
-alert(document.body instanceof Node); // true
+console.log(document.body instanceof HTMLBodyElement); // true
+console.log(document.body instanceof HTMLElement); // true
+console.log(document.body instanceof Element); // true
+console.log(document.body instanceof Node); // true
 ```
 
 ## Свойства: tagName, nodeName, nodeType
@@ -54,8 +54,8 @@ NOTATION_NODE = 12;
 ### 2. nodeName и tagName
 
 ```js
-alert(document.body.nodeName); // BODY
-alert(document.body.tagName); // BODY
+console.log(document.body.nodeName); // BODY
+console.log(document.body.tagName); // BODY
 ```
 
 - У браузера есть два режима обработки документа: HTML и XML-режим. Обычно используется режим HTML

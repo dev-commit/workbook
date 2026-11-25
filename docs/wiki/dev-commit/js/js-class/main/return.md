@@ -12,7 +12,7 @@ function BigAnimal() {
   this.name = "Мышь";
   return { name: "Годзилла" }; // <-- возвратим объект
 }
-alert(new BigAnimal().name); // Годзилла, получили объект вместо this
+console.log(new BigAnimal().name); // Годзилла, получили объект вместо this
 ```
 
 ## 2. Возвращает примитивное значение
@@ -22,7 +22,7 @@ function BigAnimal() {
   this.name = "Мышь";
   return "Годзилла"; // <-- возвратим примитив
 }
-alert(new BigAnimal().name); // Мышь, получили this (а Годзилла пропала)
+console.log(new BigAnimal().name); // Мышь, получили this (а Годзилла пропала)
 ```
 
 ## 3. Возвращает пустое значение
@@ -33,5 +33,5 @@ function SmallAnimal() {
   return; // <-- возвращает this
 }
 
-alert(new SmallAnimal().name); // Мышь
+console.log(new SmallAnimal().name); // Мышь
 ```

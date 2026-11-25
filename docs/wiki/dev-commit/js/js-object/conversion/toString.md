@@ -11,7 +11,7 @@ const user = {
   name: "Tony",
 };
 
-alert(user); // [object Object]
+console.log(user); // [object Object]
 ```
 
 ```js
@@ -23,5 +23,5 @@ const obj = {
   },
 };
 
-alert(obj); // Tony
+console.log(obj); // Tony
 ```
