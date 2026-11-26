@@ -1,11 +1,15 @@
 <script lang="ts" setup>
 // FIXME: Проверить файл
 
-import { ref, watch } from "vue";
+import { computed, onMounted, ref, watch } from "vue";
 import { useSidebar } from "vitepress/theme";
 import VPSidebarGroup from "vitepress/dist/client/theme-default/components/VPSidebarGroup.vue";
 import VPLocalSearchBox from "vitepress/dist/client/theme-default/components/VPLocalSearchBox.vue";
 import VPNavBarSearchButton from "vitepress/dist/client/theme-default/components/VPNavBarSearchButton.vue";
+import {
+  SIDEBAR_COLLAPSED_CLASS,
+  SIDEBAR_COLLAPSED_STORAGE_KEY,
+} from "../sidebar-collapse";
 
 const { sidebarGroups, hasSidebar } = useSidebar();
 const groupKey = ref(0);
@@ -18,6 +22,47 @@ watch(
 );
 
 const showSearchModal = ref(false);
+
+// Свернуть / развернуть меню. Вид свёрнутого меню задаётся классом на <html> (стили ниже),
+// поэтому при загрузке он применяется сразу, до запуска Vue
+const isCollapsed = ref(false);
+const toggleTitle = computed(() =>
+  isCollapsed.value ? "Развернуть меню" : "Свернуть меню",
+);
+
+function applyCollapsedClass() {
+  document.documentElement.classList.toggle(
+    SIDEBAR_COLLAPSED_CLASS,
+    isCollapsed.value,
+  );
+}
+
+// Читаем localStorage сами, а не только класс: на dev-сервере скрипт из <head>
+// выполняется уже после запуска Vue
+onMounted(() => {
+  try {
+    isCollapsed.value =
+      localStorage.getItem(SIDEBAR_COLLAPSED_STORAGE_KEY) === "1";
+  } catch {
+    isCollapsed.value = document.documentElement.classList.contains(
+      SIDEBAR_COLLAPSED_CLASS,
+    );
+  }
+  applyCollapsedClass();
+});
+
+function toggleCollapsed() {
+  isCollapsed.value = !isCollapsed.value;
+  applyCollapsedClass();
+  try {
+    localStorage.setItem(
+      SIDEBAR_COLLAPSED_STORAGE_KEY,
+      isCollapsed.value ? "1" : "0",
+    );
+  } catch {
+    // localStorage недоступен (приватный режим) - состояние живёт до перезагрузки
+  }
+}
 </script>
 
 <template>
@@ -31,6 +76,30 @@ const showSearchModal = ref(false);
         class="vp-sidebar-search-trigger"
         @click="showSearchModal = true"
       />
+      <button
+        type="button"
+        class="vp-sidebar-toggle"
+        :title="toggleTitle"
+        :aria-label="toggleTitle"
+        :aria-expanded="!isCollapsed"
+        @click="toggleCollapsed"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          width="18"
+          height="18"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <rect width="18" height="18" x="3" y="3" rx="2" />
+          <path d="M9 3v18" />
+          <path class="vp-sidebar-toggle-chevron" d="m16 15-3-3 3-3" />
+        </svg>
+      </button>
     </div>
     <nav class="vp-sidebar-items" aria-labelledby="sidebar-aria-label">
       <span class="visually-hidden" id="sidebar-aria-label">
@@ -57,19 +126,49 @@ const showSearchModal = ref(false);
   scrollbar-width: thin;
   position: relative;
   padding-top: 12px;
+  transition: width 0.2s;
 }
 
 .vp-sidebar-search {
+  display: flex;
+  gap: 8px;
   padding: 0 16px 12px;
   position: relative;
 }
 .vp-sidebar-search-trigger {
-  width: 100%;
+  flex-grow: 1;
+  min-width: 0;
   height: 40px;
   border-radius: 8px;
 }
 .vp-sidebar-search-trigger :deep(.DocSearch-Button-Keys) {
   display: none;
+}
+
+/* Кнопка «свернуть / развернуть меню» - в стиле кнопки поиска */
+.vp-sidebar-toggle {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background-color: var(--vp-c-bg-alt);
+  color: var(--vp-c-text-2);
+  cursor: pointer;
+  transition:
+    border-color 0.25s,
+    color 0.25s;
+}
+.vp-sidebar-toggle:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+}
+.vp-sidebar-toggle-chevron {
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
 .vp-sidebar-items {
@@ -86,5 +185,41 @@ const showSearchModal = ref(false);
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+</style>
+
+<!-- Свёрнутое меню: класс sidebar-collapsed на <html> (sidebar-collapse.ts).
+     Без scoped - класс ставится вне компонента. Ширина 60px: кнопка 40px + отступы 10px из custom.css -->
+<style>
+html.sidebar-collapsed .vp-sidebar {
+  width: 60px;
+  overflow: hidden;
+}
+html.sidebar-collapsed .vp-sidebar .vp-sidebar-items {
+  display: none;
+}
+/* Кнопки друг под другом: сверху «развернуть», под ней поиск (только иконка) */
+html.sidebar-collapsed .vp-sidebar .vp-sidebar-search {
+  flex-direction: column;
+}
+html.sidebar-collapsed .vp-sidebar .vp-sidebar-toggle {
+  order: -1;
+}
+html.sidebar-collapsed .vp-sidebar .vp-sidebar-search-trigger {
+  flex-grow: 0;
+  justify-content: center;
+  width: 40px;
+  padding: 0;
+}
+html.sidebar-collapsed .vp-sidebar .DocSearch-Button-Placeholder {
+  display: none;
+}
+/* У иконки VitePress отступ справа до текста «Поиск» и сдвиг на 1px вниз - без текста иконка не по центру */
+html.sidebar-collapsed .vp-sidebar .DocSearch-Search-Icon {
+  top: 0;
+  margin-right: 0;
+}
+html.sidebar-collapsed .vp-sidebar .vp-sidebar-toggle-chevron {
+  transform: scaleX(-1);
 }
 </style>
