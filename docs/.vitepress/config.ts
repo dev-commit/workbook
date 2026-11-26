@@ -4,7 +4,7 @@ import AppConfig, { Projects } from "../app-config";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import type { IHeaderMenuNavChildren, IThemeConfigNav } from "../types";
-import { sidebarCollapsedHeadScript } from "./theme/sidebar-collapse";
+import { menuCollapsedHeadScript } from "./theme/menu-collapse";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -29,8 +29,8 @@ export default defineConfig({
       "meta",
       { name: "apple-mobile-web-app-status-bar-style", content: "black" },
     ],
-    // Свёрнутое левое меню (theme/sidebar-collapse.ts)
-    ["script", {}, sidebarCollapsedHeadScript],
+    // Свёрнутые левое и верхнее меню (theme/menu-collapse.ts)
+    ["script", {}, menuCollapsedHeadScript],
   ],
   srcDir: ".",
   srcExclude: Object.values(Projects)

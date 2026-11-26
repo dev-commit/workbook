@@ -1,11 +1,13 @@
 <script lang="ts" setup>
 // FIXME: Проверить файл
 
-import type { DefineComponent } from "vue";
+import { computed, type DefineComponent } from "vue";
 import { useData } from "vitepress";
 import { VPLink as VPLinkUntyped } from "vitepress/theme";
 import type { IThemeConfigNav } from "../../../types";
 import { NAV as RAW_NAV } from "../../../wiki/builder";
+import { NAVBAR_COLLAPSE } from "../menu-collapse";
+import { useMenuCollapse } from "../composables/useMenuCollapse";
 
 // В типах VitePress VPLink объявлен без пропсов: описываем их по VPLink.vue,
 // иначе проверка типов (checkUnknownProps) считает href неизвестным пропом
@@ -45,6 +47,22 @@ const isActive = (item: { link: string } | null) => {
   const n = norm(item.link);
   return current === n || (n !== "/" && current.startsWith(n + "/"));
 };
+
+// Свернуть / развернуть меню тем. Вид свёрнутого меню задаётся классом на <html> (стили ниже),
+// поэтому при загрузке он применяется сразу, до запуска Vue
+const { isCollapsed, toggleCollapsed } = useMenuCollapse(NAVBAR_COLLAPSE);
+const toggleTitle = computed(() =>
+  isCollapsed.value ? "Развернуть меню тем" : "Свернуть меню тем",
+);
+
+// Тема текущей страницы - видна, когда меню свёрнуто
+const activeTheme = computed(() => {
+  for (const group of rawGroups) {
+    const item = group.items.find(isActive);
+    if (item) return { group: group.text, item };
+  }
+  return null;
+});
 </script>
 
 <template>
@@ -76,6 +94,46 @@ const isActive = (item: { link: string } | null) => {
         </div>
       </fieldset>
     </nav>
+    <div v-if="groups.length && activeTheme" class="vp-navbar-current">
+      <span class="legend">{{ activeTheme.group }}</span>
+      <span class="item-link-wrapper">
+        <VPLink
+          :href="activeTheme.item.link"
+          :class="[
+            'link',
+            'theme-default',
+            activeTheme.item.theme && 'theme-' + activeTheme.item.theme,
+          ]"
+        >
+          {{ activeTheme.item.text }}
+        </VPLink>
+      </span>
+    </div>
+    <button
+      v-if="groups.length"
+      type="button"
+      class="vp-navbar-toggle"
+      :title="toggleTitle"
+      :aria-label="toggleTitle"
+      :aria-expanded="!isCollapsed"
+      @click="toggleCollapsed"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        width="16"
+        height="16"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <rect width="18" height="18" x="3" y="3" rx="2" />
+        <path d="M3 9h18" />
+        <path class="vp-navbar-toggle-chevron" d="m9 16 3-3 3 3" />
+      </svg>
+    </button>
   </div>
 </template>
 
@@ -104,6 +162,9 @@ const isActive = (item: { link: string } | null) => {
 }
 
 .vp-navbar {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
   padding: 10px;
   background-color: #f0f0f0;
 }
@@ -113,7 +174,43 @@ const isActive = (item: { link: string } | null) => {
   flex-direction: column;
   flex-wrap: wrap;
   gap: 5px;
-  width: 100%;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+/* Тема текущей страницы в свёрнутом меню (показывается стилями ниже) */
+.vp-navbar-current {
+  display: none;
+  flex-grow: 1;
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px;
+}
+
+/* Кнопка «свернуть / развернуть меню тем» - в стиле ссылок меню */
+.vp-navbar-toggle {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background-color: #fff;
+  color: var(--vp-c-text-2);
+  cursor: pointer;
+  transition:
+    border-color 0.25s,
+    color 0.25s;
+}
+.vp-navbar-toggle:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+}
+.vp-navbar-toggle-chevron {
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
 .fieldset {
@@ -244,5 +341,26 @@ const isActive = (item: { link: string } | null) => {
   background-color: #fff;
   border: 1px solid rgba(245, 224, 66, 1);
   outline: 1px solid rgba(245, 224, 66, 1);
+}
+</style>
+
+<!-- Свёрнутое меню тем: класс navbar-collapsed на <html> (menu-collapse.ts).
+     Без scoped - класс ставится вне компонента. Остаётся одна строка: тема текущей страницы и кнопка -->
+<style>
+html.navbar-collapsed .vp-navbar {
+  align-items: center;
+}
+html.navbar-collapsed .vp-navbar .navbar {
+  display: none;
+}
+html.navbar-collapsed .vp-navbar .vp-navbar-current {
+  display: flex;
+}
+/* Кнопка справа, даже если у страницы нет темы (н-р, главная) */
+html.navbar-collapsed .vp-navbar .vp-navbar-toggle {
+  margin-left: auto;
+}
+html.navbar-collapsed .vp-navbar .vp-navbar-toggle-chevron {
+  transform: scaleY(-1);
 }
 </style>

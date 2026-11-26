@@ -1,15 +1,13 @@
 <script lang="ts" setup>
 // FIXME: Проверить файл
 
-import { computed, onMounted, ref, watch } from "vue";
+import { computed, ref, watch } from "vue";
 import { useSidebar } from "vitepress/theme";
 import VPSidebarGroup from "vitepress/dist/client/theme-default/components/VPSidebarGroup.vue";
 import VPLocalSearchBox from "vitepress/dist/client/theme-default/components/VPLocalSearchBox.vue";
 import VPNavBarSearchButton from "vitepress/dist/client/theme-default/components/VPNavBarSearchButton.vue";
-import {
-  SIDEBAR_COLLAPSED_CLASS,
-  SIDEBAR_COLLAPSED_STORAGE_KEY,
-} from "../sidebar-collapse";
+import { SIDEBAR_COLLAPSE } from "../menu-collapse";
+import { useMenuCollapse } from "../composables/useMenuCollapse";
 
 const { sidebarGroups, hasSidebar } = useSidebar();
 const groupKey = ref(0);
@@ -25,44 +23,10 @@ const showSearchModal = ref(false);
 
 // Свернуть / развернуть меню. Вид свёрнутого меню задаётся классом на <html> (стили ниже),
 // поэтому при загрузке он применяется сразу, до запуска Vue
-const isCollapsed = ref(false);
+const { isCollapsed, toggleCollapsed } = useMenuCollapse(SIDEBAR_COLLAPSE);
 const toggleTitle = computed(() =>
   isCollapsed.value ? "Развернуть меню" : "Свернуть меню",
 );
-
-function applyCollapsedClass() {
-  document.documentElement.classList.toggle(
-    SIDEBAR_COLLAPSED_CLASS,
-    isCollapsed.value,
-  );
-}
-
-// Читаем localStorage сами, а не только класс: на dev-сервере скрипт из <head>
-// выполняется уже после запуска Vue
-onMounted(() => {
-  try {
-    isCollapsed.value =
-      localStorage.getItem(SIDEBAR_COLLAPSED_STORAGE_KEY) === "1";
-  } catch {
-    isCollapsed.value = document.documentElement.classList.contains(
-      SIDEBAR_COLLAPSED_CLASS,
-    );
-  }
-  applyCollapsedClass();
-});
-
-function toggleCollapsed() {
-  isCollapsed.value = !isCollapsed.value;
-  applyCollapsedClass();
-  try {
-    localStorage.setItem(
-      SIDEBAR_COLLAPSED_STORAGE_KEY,
-      isCollapsed.value ? "1" : "0",
-    );
-  } catch {
-    // localStorage недоступен (приватный режим) - состояние живёт до перезагрузки
-  }
-}
 </script>
 
 <template>
@@ -188,7 +152,7 @@ function toggleCollapsed() {
 }
 </style>
 
-<!-- Свёрнутое меню: класс sidebar-collapsed на <html> (sidebar-collapse.ts).
+<!-- Свёрнутое меню: класс sidebar-collapsed на <html> (menu-collapse.ts).
      Без scoped - класс ставится вне компонента. Ширина 60px: кнопка 40px + отступы 10px из custom.css -->
 <style>
 html.sidebar-collapsed .vp-sidebar {
