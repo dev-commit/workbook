@@ -1,11 +1,13 @@
 # Файлы и директории
 
-## Создание директории если ее нет
+## Создание директории, если ее нет
 
 ```php
 <?php
-    $dir = '../uploads/';
-    if( ! is_dir( $dir ) ) mkdir( $dir, 0777 );
+$dir = '../uploads/';
+if (!is_dir($dir)) {
+  mkdir($dir, 0777);
+}
 ?>
 ```
 
@@ -13,15 +15,20 @@
 
 ```php
 <?php
-    $dir = '../uploads/';
-    if( is_dir( $dir ) ) {
-        if ($objs = glob($dir."/*")) {
-            foreach($objs as $obj) {
-                is_dir($obj) ? removeDirectory($obj) : unlink($obj);
-            }
-        }
-        rmdir($dir);
+// Функция вызывает сама себя для каждой поддиректории
+function removeDirectory($dir) {
+  if ($objs = glob($dir . "/*")) {
+    foreach ($objs as $obj) {
+      is_dir($obj) ? removeDirectory($obj) : unlink($obj);
     }
+  }
+  rmdir($dir);
+}
+
+$dir = '../uploads/';
+if (is_dir($dir)) {
+  removeDirectory($dir);
+}
 ?>
 ```
 
@@ -29,11 +36,11 @@
 
 ```php
 <?php
-    $file_path = '../uploads/1.txt';
-    $file_content = 'Содержимое файла';
-    $file = fopen($file_path, 'w');
-    fwrite($file, $file_content);
-    fclose($file);
+$file_path = '../uploads/1.txt';
+$file_content = 'Содержимое файла';
+$file = fopen($file_path, 'w');
+fwrite($file, $file_content);
+fclose($file);
 ?>
 ```
 
@@ -41,23 +48,23 @@
 
 ```php
 <?php
-    $file = '../uploads/1.jpg';
-    if (file_exists($file)) {
-        echo "существует";
-    } else {
-        echo "не существует";
-    }
+$file = '../uploads/1.jpg';
+if (file_exists($file)) {
+  echo "существует";
+} else {
+  echo "не существует";
+}
 ?>
 ```
 
-## Удаление файла если он есть
+## Удаление файла, если он есть
 
 ```php
 <?php
-    $file = '../uploads/1.jpg';
-    if ( file_exists($file) ) {
-        unlink($file);
-    }
+$file = '../uploads/1.jpg';
+if (file_exists($file)) {
+  unlink($file);
+}
 ?>
 ```
 
@@ -65,10 +72,10 @@
 
 ```php
 <?php
-    $lines = file('file.txt');
+$lines = file('file.txt');
 
-    foreach ($lines as $line_num => $line) {
-        echo $line;
-    }
+foreach ($lines as $line_num => $line) {
+  echo $line;
+}
 ?>
 ```

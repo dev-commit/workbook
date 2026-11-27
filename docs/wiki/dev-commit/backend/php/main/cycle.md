@@ -4,7 +4,7 @@
 
 ```php
 for ($i = 1; $i <= 10; $i++) {
-    echo $i;
+  echo $i;
 }
 ```
 
@@ -12,27 +12,27 @@ for ($i = 1; $i <= 10; $i++) {
 
 ```php
 $page = 1;
-while($page <= 20) {
-    echo "Читаю $page страницу";
-    $page++;
+while ($page <= 20) {
+  echo "Читаю $page страницу";
+  $page++;
 }
 ```
 
 ```php
 $page = 1;
-do{
-    echo "Читаю $page страницу";
-    $page++;
-} while($page <= 20);
+do {
+  echo "Читаю $page страницу";
+  $page++;
+} while ($page <= 20);
 ```
 
 ## Цикл foreach (работа с массивами)
 
 ```php
-$country = array ("Russia", "Latvia", "Germany", "France");
+$country = array("Russia", "Latvia", "Germany", "France");
 // $item - переменная для получения доступа к элементам массива
-foreach($country as $item) {
-    echo "Страна: $item";
+foreach ($country as $item) {
+  echo "Страна: $item";
 }
 ```
 
@@ -41,7 +41,7 @@ foreach($country as $item) {
 ```php
 // $key - доступ к ключу элемента
 // $item - доступ к самому элементу
-foreach($country as $key => $item) {
-    echo "Страна, где был $key раз - $item";
+foreach ($country as $key => $item) {
+  echo "Страна, где был $key раз - $item";
 }
 ```

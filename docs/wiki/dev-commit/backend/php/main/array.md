@@ -1,21 +1,23 @@
 # Массивы
 
 ```php
-$forest = array("дуб", "клен", "береза", "елка");      // объявление
-$forest[] = "ель";                                     // добавление элемента
-$forest[22] = "липа";                                  // добавление элемента с заданным ключем
-print_r($forest);                                      // оператор вывода
-$country = array ("RU" => "Russia", "LV" => "Latvia"); // объявление с заданным ключем
-$a = $country["RU"];                                   // вывод элемента по ключу
-count($a);                                             // количество элементов массива $a
+$forest = array("дуб", "клен", "береза", "елка");     // Объявление
+$forest[] = "ель";                                    // Добавление элемента
+$forest[22] = "липа";                                 // Добавление элемента с заданным ключом
+print_r($forest);                                     // Оператор вывода
+$country = array("RU" => "Russia", "LV" => "Latvia"); // Объявление с заданным ключом
+$a = $country["RU"];                                  // Получение элемента по ключу
+count($forest);                                       // Количество элементов массива $forest
 ```
 
 ## Двумерные массивы
 
 ```php
-$world = array("country" => array ("RU" => "Russia", "LV" => "Latvia", "GER" => "Germany"),
-               "city" => array ("RU" => "Moscow", "LV" => "Riga", "GER" => "Berlin"));
-echo $world["country"]["LV"]; // обращение к элементам двумерного массива
+$world = array(
+  "country" => array("RU" => "Russia", "LV" => "Latvia", "GER" => "Germany"),
+  "city" => array("RU" => "Moscow", "LV" => "Riga", "GER" => "Berlin"),
+);
+echo $world["country"]["LV"]; // Обращение к элементам двумерного массива
 ```
 
 ## current(); next(); prev(); end();
@@ -30,9 +32,9 @@ $mode = end($transport);     // plane
 ```
 
 ```php
-// преобразование строки по разделителю в массив
+// Преобразование строки по разделителю в массив
 $arr = explode(",", $id);
 foreach ($arr as $value) {
-	$a = $value;
+  $a = $value;
 }
 ```

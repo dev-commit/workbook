@@ -2,5 +2,5 @@
 
 ```php
 $ip = $_SERVER['REMOTE_ADDR'];       // IP пользователя
-$brow = $_SERVER['HTTP_USER_AGENT']; // браузер пользователя
+$brow = $_SERVER['HTTP_USER_AGENT']; // Браузер пользователя
 ```
