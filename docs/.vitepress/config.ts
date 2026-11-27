@@ -1,4 +1,4 @@
-import { defineConfig } from "vitepress";
+import { defineConfig, type Plugin } from "vitepress";
 import { NAV, SIDEBAR } from "../wiki/builder";
 import AppConfig, { Projects } from "../app-config";
 import path from "node:path";
@@ -38,6 +38,50 @@ const customNavComposablePath = path.resolve(
   "composables",
   "nav.js",
 );
+
+// Подмена useNav темы VitePress своей копией (theme/composables/nav.js).
+// Опирается на внутренности VitePress: если после обновления подмена перестанет срабатывать
+// (файл переименован, изменился импорт в VPNav.vue), сборка остановится с ошибкой
+const customNavComposablePlugin = (): Plugin => {
+  let isBuild = false;
+  return {
+    name: "resolve-custom-nav-composable",
+    enforce: "pre",
+    configResolved(config) {
+      isBuild = config.command === "build";
+    },
+    resolveId(id, importer) {
+      const fromDefaultTheme =
+        importer && importer.replace(/\\/g, "/").includes("theme-default");
+      const isNavComposable =
+        id === "../composables/nav" ||
+        id.replace(/\\/g, "/").endsWith("composables/nav.js");
+      if (fromDefaultTheme && isNavComposable) {
+        return customNavComposablePath;
+      }
+    },
+    // Проверка по графу модулей каждой сборки (клиентской и SSR):
+    // в нём должна быть наша копия и не должно быть оригинала
+    buildEnd(error) {
+      if (!isBuild || error) return;
+      const ids = [...this.getModuleIds()].map((id) => id.replace(/\\/g, "/"));
+      const hasCustom = ids.includes(
+        customNavComposablePath.replace(/\\/g, "/"),
+      );
+      const hasOriginal = ids.some((id) =>
+        id.includes("/theme-default/composables/nav."),
+      );
+      if (!hasCustom || hasOriginal) {
+        this.error(
+          "Подмена composables/nav.js темы VitePress не сработала " +
+            "(плагин resolve-custom-nav-composable в docs/.vitepress/config.ts). " +
+            "Скорее всего, после обновления VitePress изменился файл composables/nav.js " +
+            "или его импорт в VPNav.vue (node_modules/vitepress/dist/client/theme-default)",
+        );
+      }
+    },
+  };
+};
 
 export default defineConfig({
   base: BASE,
@@ -90,27 +134,7 @@ export default defineConfig({
     ssr: {
       noExternal: ["mark.js"],
     },
-    plugins: [
-      ...(AppConfig.CustomLayout
-        ? [
-            {
-              name: "resolve-custom-nav-composable",
-              enforce: "pre" as const,
-              resolveId(id: string, importer?: string) {
-                const fromDefaultTheme =
-                  importer &&
-                  importer.replace(/\\/g, "/").includes("theme-default");
-                const isNavComposable =
-                  id === "../composables/nav" ||
-                  id.replace(/\\/g, "/").endsWith("composables/nav.js");
-                if (fromDefaultTheme && isNavComposable) {
-                  return customNavComposablePath;
-                }
-              },
-            },
-          ]
-        : []),
-    ],
+    plugins: AppConfig.CustomLayout ? [customNavComposablePlugin()] : [],
   },
   themeConfig: {
     logo: "/logo.png",

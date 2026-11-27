@@ -292,7 +292,7 @@ const activeTheme = computed(() => {
   border: 1px solid rgba(232, 212, 77, 0.9);
 }
 .link.theme-theory {
-  color: rgb(109, 40, 217);
+  color: rgb(117, 81, 175);
   background-color: rgba(139, 92, 246, 0.1);
   border: 1px solid rgba(139, 92, 246, 0.25);
 }
