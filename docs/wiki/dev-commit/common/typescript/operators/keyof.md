@@ -1,63 +1,82 @@
 # keyof
 
+## Информация
+
+::: tip Определение
+
 - **keyof** - проходится по интерфейсу и формирует новый тип из ключей интерфейса
 
-```js
+:::
+
+```ts
 interface Foo {
-	name: string
-	age: number
+  name: string;
+  age: number;
 }
 
-type FooKeys =keyofFoo; // => 'name' | 'age'
+type FooKeys = keyof Foo; // => 'name' | 'age'
 
-const a: FooKeys = 'name';  // ✅ Correct
-const b: FooKeys = 'count'; // 🅾️ Error: Нет такого поля в ключах Foo
+const a: FooKeys = "name"; // ✅ Correct
+const b: FooKeys = "count"; // 🅾️ Error: Нет такого поля в ключах Foo
 ```
 
 ## Примеры
 
+<v-two text>
+<template #first>
+
 - Нужно обратиться к ключу объекта, используя строку
-- При обращении obj[field] возникает ошибка: "Type 'string' can't be used to index type 'IObj'"
-- Причём obj['name'] работает корректно, т.к. нет конкретного указания, что 'name' строка
+- При обращении _obj[field]_ возникает ошибка: "Type 'string' can't be used to index type 'IObj'"
+- Причём _obj['name']_ работает корректно, т.к. нет конкретного указания, что 'name' строка
 
----
-- При использовании строки как ключа, она должа быть типа ключей объекта
-- Для этого можно использовать keyof
+</template>
+<template #last>
 
-#### 
+- При использовании строки как ключа, она должна быть типа ключей объекта
+- Для этого можно использовать _keyof_
 
-```js
+</template>
+</v-two>
+
+<v-two>
+<template #first>
+
+```ts
 interface IObj {
-    name: string;
-    age: number;
+  name: string;
+  age: number;
 }
 
-const field: string = 'name';
+const field: string = "name";
 
 const obj: IObj = {
-    name: '',
-    age: 23
-}
+  name: "",
+  age: 23,
+};
 
-obj[field];  // 🅾️ Error
-obj['name']; // ✅ Correct
+obj[field]; // 🅾️ Error
+obj["name"]; // ✅ Correct
 ```
 
-#### 
+</template>
+<template #last>
 
-```js
+```ts
 interface IObj {
-    name: string;
-    age: number;
+  name: string;
+  age: number;
 }
 
-const field:keyofIObj = 'name';
+const field: keyof IObj = "name";
 
 const obj: IObj = {
-    name: '',
-    age: 23
-}
+  name: "",
+  age: 23,
+};
 
-obj[field];  // ✅ Correct
-obj['name']; // ✅ Correct
+obj[field]; // ✅ Correct
+obj["name"]; // ✅ Correct
 ```
+
+</template>
+</v-two>

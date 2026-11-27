@@ -41,7 +41,7 @@ const topics: ISidebarTopics[] = [
       ["types/object", getThemeMenu("method", ["object"])],
       ["types/any", getThemeMenu("method", ["any"])],
       ["types/never", getThemeMenu("method", ["never"])],
-      ["types/typle", getThemeMenu("method", ["typle"])],
+      ["types/tuple", getThemeMenu("method", ["tuple"])],
       ["types/null", getThemeMenu("method", ["null", "undefined"])],
       ["types/number", getThemeMenu("method", ["number"])],
       ["types/boolean", getThemeMenu("method", ["boolean"])],
@@ -130,7 +130,7 @@ const topics: ISidebarTopics[] = [
       ],
       ["samples/generics-typing", "Типизация через Дженерики"],
       ["samples/array-of-objects", "Массив объектов"],
-      ["samples/type-argument", "Тип принимает агрумент"],
+      ["samples/type-argument", "Тип принимает аргумент"],
     ],
   },
   {

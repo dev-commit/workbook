@@ -2,46 +2,63 @@
 
 ## 1. Тип может быть примитивом
 
-- Интерфесы - только объекты
+- Интерфейсы - только объекты
 - Типы - объекты и примитивы
 
-#### type
+<v-two :title="['type', 'interface']">
+<template #first>
 
-```js
+```ts
 // Примитив
-type a: string;
+type a = string;
 
 // Объект
 type A = {
   id: number;
-}
+};
 ```
 
-#### interface
+</template>
+<template #last>
 
-```js
+```ts
 // Только объект
 interface A {
   id: number;
 }
 ```
 
-## 2. Возможностиtype
+</template>
+</v-two>
 
-```js
-type A = { x: number } | number; // альтернативные варианты
-type A = TypeB & TypeC;          // комбинация типов
-type A = TypeB;                  // присвоение другого типа
+## 2. Возможности `type`
+
+```ts
+type A = { x: number } | number; // Альтернативные варианты
+type A = TypeB & TypeC; // Комбинация типов
+type A = TypeB; // Присвоение другого типа
 ```
 
-## 3. Возможностиinterface
+## 3. Возможности `interface`
 
-```js
-interface A { x: number }
-interface B extends A { y: string } // Расширение
+```ts
+interface A {
+  x: number;
+}
+
+// Расширение
+interface B extends A {
+  y: string;
+}
 ```
 
-```js
-interface A { x: number }
-interface A { y: number } // Дополнение
+```ts
+interface A {
+  x: number;
+}
+
+// Дополнение
+interface A {
+  y: number;
+}
 ```

@@ -1,30 +1,29 @@
 # Services
 
-src/services/user/user.ts
-
-```js
-export const get = async (id: string): Promise => {}
-export const create = async (payload: any): Promise => {}
-export const update = async (id: string, payload: any): Promise => {}
-export const remove = async (id: string): Promise => {}
-export const getList = async (params: any = {}): Promise => {}
+```ts
+// src/services/user/user.ts
+export const get = async (id: string): Promise<IUserModel> => {};
+export const create = async (payload: any): Promise<any> => {};
+export const update = async (id: string, payload: any): Promise<any> => {};
+export const remove = async (id: string): Promise<void> => {};
+export const getList = async (params: any = {}): Promise<any> => {};
 ```
 
-src/services/user/types.ts
+## `src/services/user/types.ts`
 
-#### interfaces
+### interfaces
 
 - IUserModel
 - ICreatePayload
 - IUserProperties
 
-#### Responses
+### Responses
 
 - IGetResponse
 - ICreateResponse
 - IUpdateResponse
 
-#### Params
+### Params
 
 - IUserFilterParams
 - IUserSearchParams

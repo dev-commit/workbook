@@ -3,14 +3,18 @@
 ## 1. Клонирование ветки PR
 
 ```bash
-git clonehttps://github.com/Account/Repo.gitgit fetch origin
-git checkoutfeaturegit pull
+git clone https://github.com/Account/Repo.git
+git fetch origin
+git checkout feature
+git pull
 ```
 
 ## 2. Создание ветки на локальном репозитории и загрузка на удаленный репозиторий
 
 ```bash
-git clonehttps://github.com/Account/Repo.gitgit checkout -bfeaturegit add .
+git clone https://github.com/Account/Repo.git
+git checkout -b feature
+git add .
 git commit -m 'Message'
 git push origin HEAD
 ```
@@ -25,8 +29,9 @@ git push origin HEAD
 
 ## 4. Изменение регистра
 
-- На Windows при изменении регистра файла, Git не видит изменения (в отличие от Linux)
+- На Windows (и macOS) при изменении регистра имени файла Git не видит изменения (в отличие от Linux)
 
 ```bash
 # Изменить название файла для того, чтобы Git видел изменения
-git mv -fOldFileNameCasenewfilenamecase```
+git mv -f OldFileNameCase newfilenamecase
+```

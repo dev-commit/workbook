@@ -1,48 +1,48 @@
 # Передача строки для ключа объекта
 
-### Поля
+## Поля
 
-```js
+```ts
 interface IIcons {
-    [key: string]: IconDefenition;
+  [key: string]: IconDefinition;
 }
 
 const icon: IIcons = {
-    Icon1: faIcon1,
-    Icon2: faIcon2,
-}
+  Icon1: faIcon1,
+  Icon2: faIcon2,
+};
 
-icon['Icon1']
+icon["Icon1"];
 ```
 
-### Рефы
+## Рефы
 
-```js
+```ts
 interface ITooltipRefs {
-  [key: string]: HTMLDivElement | null
+  [key: string]: HTMLDivElement | null;
 }
 
-const tooltipRefs: ITooltipRefs = {}
+const tooltipRefs: ITooltipRefs = {};
 ```
 
-### as keyof
+## as keyof
 
-```js
+```ts
 export const MAP_ARROW_CODES: IMapArrowCodes = {
   ArrowUp: "⬆️",
   ArrowDown: "⬇️",
   ArrowRight: "➡️",
   ArrowLeft: "⬅️",
-}
+};
 
 export interface IMapArrowCodes {
-  ArrowUp: string
-  ArrowDown: string
-  ArrowRight: string
-  ArrowLeft: string
+  ArrowUp: string;
+  ArrowDown: string;
+  ArrowRight: string;
+  ArrowLeft: string;
 }
 
-const currentValue = MAP_ARROW_CODES.ArrowUp
+const currentValue: string = "ArrowUp";
 
-MAP_ARROW_CODES[currentValue as keyof IMapArrowCodes]
+MAP_ARROW_CODES[currentValue as keyof IMapArrowCodes];
 ```

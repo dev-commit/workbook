@@ -1,19 +1,19 @@
 # useState
 
-```js
-import { useState } from 'react';
+```ts
+import { useState } from "react";
 
 const App = () => {
-	const [value, setValue] = useState<number>(23);
-	const [value, setValue] = useState<number | string>();
-	const [show, setShow]   = useState<boolean>(true);
-}
+  const [value, setValue] = useState<number>(23);
+  const [value, setValue] = useState<number | string>();
+  const [show, setShow] = useState<boolean>(true);
+};
 ```
 
-### Callback
+## Callback
 
-```js
+```ts
 interface IAppProps {
-    setValue: React.Dispatch<React.SetStateAction<string>>;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
 }
 ```

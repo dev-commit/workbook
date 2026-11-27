@@ -1,7 +1,5 @@
 # Merge
 
-```js
-type ApplicationUpdateDto = Merge<
-	Type1, Type2
->;
+```ts
+type ApplicationUpdateDto = Merge<Type1, Type2>;
 ```

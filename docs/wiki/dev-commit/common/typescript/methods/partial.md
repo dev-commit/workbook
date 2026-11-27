@@ -1,30 +1,37 @@
 # Partial
 
-- **Partial** - создает тип со всеми свойствами Type, установленными как optional (необязательное поле). Эта утилита вернет тип, представляющий все подмножества данного типа.
+## Информация
+
+::: tip Определение
+
+- **Partial** - создает тип со всеми свойствами _Type_, установленными как _optional_ (необязательное поле). Эта утилита вернет тип, представляющий все подмножества данного типа.
+
+:::
 
 ## Определение типа
 
-```js
+<!-- prettier-ignore -->
+```ts
 Partial<Type>
 ```
 
 ## Примеры
 
-```js
+```ts
 interface Foo {
-    name: string;
-    age: number;
+  name: string;
+  age: number;
 }
 
-type Bar =Partial<Foo>;
+type Bar = Partial<Foo>;
 
 // 🅾️ Error: Требуется обязательное поле "age"
 const obj1: Foo = {
-    name: 'Tony',
-}
+  name: "Tony",
+};
 
 // ✅ Correct: Все поля необязательные
 const obj2: Bar = {
-    name: 'Tony',
-}
+  name: "Tony",
+};
 ```

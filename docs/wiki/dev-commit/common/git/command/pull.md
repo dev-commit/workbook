@@ -1,21 +1,33 @@
-Добавление новых файлов из Working Directory в систему контроля версий (в индекс Staging Area для последующего коммита). Индексирование файлов. Сборка слепка коммита. Получить изменения из удаленного git-репозитория в локальный репозиторий
+# `git pull`
+
+## Информация
+
+::: danger
+
+**`git pull`** - получить изменения из удаленного git-репозитория в локальный репозиторий
+
+:::
+
+## Использование
 
 ```bash
-git pull origin         # замерджить все ветки с удаленного репозитория
-git pull originmaster# замержить ветку master
-git pull origin HEAD    # замерджить текущую ветку
+git pull origin         # Скачать все ветки с "origin" и замерджить в текущую ветку ее отслеживаемую ветку
+git pull origin master  # Замержить ветку master в текущую ветку
+git pull origin HEAD    # Замерджить в текущую ветку ветку по умолчанию удаленного репозитория (HEAD на "origin")
 ```
 
 ## Варианты pull
 
-- git fetch - стягивает изменения, но не применят их
-- git merge - применяет изменения в текущую ветку. Мёржим из origin/develop в свой локальный develop
+_git pull_ состоит из:
+
+- _git fetch_ - стягивает изменения, но не применяет их
+- _git merge_ - применяет изменения в текущую ветку. Мёржим из _origin/develop_ в свой локальный _develop_
 
 ### Через merge (по умолчанию)
 
 ```bash
 git pull origin
-# или
+# Или
 git fetch origin
 git merge origin/master
 ```
@@ -24,7 +36,7 @@ git merge origin/master
 
 ```bash
 git pull --rebase origin master
-# или
+# Или
 git fetch origin
 git rebase origin/master
 ```

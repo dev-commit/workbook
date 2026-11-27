@@ -1,16 +1,16 @@
 # Взаимодействие с классами
 
-```js
+```ts
 interface IClock {
-	time: Date,
-	setTime(date: Date): void
+  time: Date;
+  setTime(date: Date): void;
 }
 
 class Clock implements IClock {
-	time: Date = new Date()
-	
-	setTime(date: Date): void {
-		//
-	}
+  time: Date = new Date();
+
+  setTime(date: Date): void {
+    //
+  }
 }
 ```

@@ -5,32 +5,32 @@
 ```js
 module.exports = {
   // ...
-  'rules': {
-    'quotes': ['error', 'single'],
-  }
+  rules: {
+    quotes: ["error", "single"],
+  },
 };
 ```
 
-#### quotes- кавычки
+### `quotes` - кавычки
 
 ```js
 'quotes': ['error', 'single'], // Одинарные
-'quotes': ['error', 'double '], // Двойные
+'quotes': ['error', 'double'], // Двойные
 ```
 
-#### semi- использование “;”
+### `semi` - использование “;”
 
 ```js
 'semi': ['error', 'always'], // Всегда
 ```
 
-#### indent- отступы
+### `indent` - отступы
 
 ```js
 'indent': ['error', 2], // Использование 2 пробелов для отступов
 ```
 
-#### no-multi-spaces- удаление дополнительны отступов
+### `no-multi-spaces` - удаление лишних пробелов
 
 ```js
 'no-multi-spaces': ['error']

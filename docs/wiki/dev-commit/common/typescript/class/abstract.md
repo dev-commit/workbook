@@ -1,21 +1,25 @@
 # Абстрактные классы
 
-- Описывают методы, которые будет реализованы у классов-наследников
-- Аналогия interface
+## Информация
 
-```js
+- Описывают методы, которые будут реализованы у классов-наследников
+- Аналогия `interface`
+
+## Пример
+
+```ts
 abstract class Component {
-	abstract render(): void
-	abstract info(): string
+  abstract render(): void;
+  abstract info(): string;
 }
 
 class AppComponent extends Component {
-	render(): void {
-		console.log('Component on render')
-	}
+  render(): void {
+    console.log("Component on render");
+  }
 
-	info(): string {
-		return 'This is info';
-	}
+  info(): string {
+    return "This is info";
+  }
 }
 ```

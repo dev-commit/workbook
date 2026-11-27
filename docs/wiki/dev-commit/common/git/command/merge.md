@@ -1,32 +1,50 @@
-Слияние веток
+# `git merge`
+
+## Информация
+
+::: danger
+
+**`git merge`** - слияние веток
+
+:::
+
+## Использование
 
 ```bash
-git mergedevelop# слияние "develop" в текущую ветку
-git mergefeaturedevelop# замёржить в "feature" из "develop"
-git merge --abort           # отменить merge (при наличии конфликтов merge)
-git merge --continue        # продолжить merge (при наличии конфликтов merge, после фикса)
-git merge --squashfeature# засквошить коммиты при merge
+git merge develop           # Слияние "develop" в текущую ветку
+git merge feature develop   # Слияние "feature" и "develop" в текущую ветку
+git merge --abort           # Отменить merge (при наличии конфликтов merge)
+git merge --continue        # Продолжить merge (при наличии конфликтов merge, после фикса)
+git merge --squash feature  # Засквошить коммиты при merge
 ```
-- При merge --squash не сработает merge --abort и merge --continue, т.к. не создается .git/MERGE_HEAD с идентификатором коммита с которым происходит слияние
 
----
+- При `merge --squash` не сработает `merge --abort` и `merge --continue`, т.к. не создается _.git/MERGE_HEAD_ с идентификатором коммита, с которым происходит слияние
+
+### Разрешение конфликтов
+
 - Разрешение конфликтов разницы "develop" и "feature"
 
 ```bash
-git checkoutdevelop# перейти в develop, если в ней есть обновления
-git pull              # обновить ветку develop
-git checkoutfeature# перейти в feature
-git mergedevelop# merge из develop в свою ветку. ветка feature станет актуальной
+git checkout develop  # Перейти в develop, если в ней есть обновления
+git pull              # Обновить ветку develop
+git checkout feature  # Перейти в feature
+git merge develop     # merge из develop в свою ветку. Ветка feature станет актуальной
 ```
+
 - Если появятся конфликты в файлах - поправить их
 
 ## Описание
 
-- При merge происходит создание нового merge-коммита в "feature" ветке
-- merge-коммит будет включать изменения в "develop" с момента откалывания "feature"
+- При `merge` происходит создание нового _merge-коммита_ в _"feature"_ ветке
+- _merge-коммит_ будет включать изменения в _"develop"_ с момента откалывания _"feature"_
 
 ## Плюсы и минусы
 
-- Merge не меняет историю: поверх всех коммитов, которые были в ветке, добавляется еще 1 коммит с изменениями из "develop". Если над "feature" веткой работают другие разработчики, то проблем не возникнет - над веткой могут работать много разработчиков
+**Плюсы**
+
+- Merge не меняет историю: поверх всех коммитов, которые были в ветке, добавляется еще 1 коммит с изменениями из _"develop"_. Если над _"feature"_ веткой работают другие разработчики, то проблем не возникнет - над веткой могут работать много разработчиков
+
+**Минусы**
+
 - Сложно проследить за ветками, как они обновлялись и т.д.
 - Добавляется merge-коммит

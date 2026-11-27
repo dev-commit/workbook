@@ -1,25 +1,32 @@
 # function
 
-#### Описание
+<v-two :title="['Описание', 'Вызов']">
+<template #first>
 
-```js
+```ts
 type Fields = {
-	onClick1: Function;
-	onClick2: VoidFunction;
-	onClick3: () => void;
-	onClick4: (cn: string) => void;
-	onClick5: (cn: string, isOpen?: boolean) => boolean;
+  onClick1: Function;
+  onClick2: VoidFunction;
+  onClick3: () => void;
+  onClick4: (cn: string) => void;
+  onClick5: (cn: string, isOpen?: boolean) => boolean;
 };
 ```
 
-#### Вызов
+</template>
+<template #last>
 
-```js
+```ts
 const a: Fields = {
-    onClick1: () => {},
-    onClick2: () => {},
-    onClick3: () => {},
-    onClick4: (cn) => {},
-    onClick5: (cn, isOpen) => { return true },
-}
+  onClick1: () => {},
+  onClick2: () => {},
+  onClick3: () => {},
+  onClick4: (cn) => {},
+  onClick5: (cn, isOpen) => {
+    return true;
+  },
+};
 ```
+
+</template>
+</v-two>

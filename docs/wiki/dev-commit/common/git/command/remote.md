@@ -1,8 +1,20 @@
-Работа с удаленным репозиторием
+# `git remote`
+
+## Информация
+
+::: danger
+
+**`git remote`** - работа с удаленным репозиторием
+
+:::
+
+## Использование
 
 ```bash
 # Добавление к локальному репозиторию ссылки на удаленный репозиторий
-git remote add originhttps://github.com/Account/Repo.git# список репозиториев
+git remote add origin https://github.com/Account/Repo.git
+
+# Список репозиториев
 git remote -v
 ```
 
@@ -17,6 +29,6 @@ git commit -m 'Comment'
 # 2. Добавляем ссылку на удаленный репозиторий GitHub
 git remote add origin https://github.com/Account/Repo.git
 
-# 3. Пушим изменения из локального репозиторий в удаленный
-git push origin head
+# 3. Пушим изменения из локального репозитория в удаленный
+git push origin HEAD
 ```

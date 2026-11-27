@@ -1,49 +1,59 @@
 # Наследование интерфейсов
 
-### Наследование от одного интерфейса
+## Наследование от одного интерфейса
 
-#### TS
+<v-two :title="['TS', 'Usage']">
+<template #first>
 
-```js
+```ts
 interface IAnimal {
-	name: string;
+  name: string;
 }
-interface ICatextendsIAnimal {
-	speed: number;
+interface ICat extends IAnimal {
+  speed: number;
 }
 ```
 
-#### Usage
+</template>
+<template #last>
 
-```js
+```ts
 const a: ICat = {
-	name: 'Tom',
-	speed: 10,
-}
+  name: "Tom",
+  speed: 10,
+};
 ```
 
-### Множественное наследование
+</template>
+</v-two>
 
-#### TS
+## Множественное наследование
 
-```js
+<v-two :title="['TS', 'Usage']">
+<template #first>
+
+```ts
 interface IAnimal {
-	name: string;
+  name: string;
 }
 interface IAction {
-	go: () => void;
+  go: () => void;
 }
-interface ICatextendsIAnimal, IAction {
-	speed: number;
+interface ICat extends IAnimal, IAction {
+  speed: number;
 }
 ```
 
-#### Usage
+</template>
+<template #last>
 
-```js
+```ts
 const a: ICat = {
-	name: 'Cat',
-	speed: 10,
-	go: () => null,
-}
+  name: "Cat",
+  speed: 10,
+  go: () => null,
+};
 ```
+
+</template>
+</v-two>

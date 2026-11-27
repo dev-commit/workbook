@@ -1,13 +1,20 @@
 # Any
 
+## Информация
+
+::: tip Определение
+
 - **Any** - описывает данные, тип которых может быть неизвестен
+
+:::
+
 - Можно переопределить тип данных
 
-```js
+```ts
 let variable: any = 42;
-variable = 'Hello';
+variable = "Hello";
 ```
 
-```js
-const someArray: any[] = [24, 'Tom', false];
+```ts
+const someArray: any[] = [24, "Tom", false];
 ```

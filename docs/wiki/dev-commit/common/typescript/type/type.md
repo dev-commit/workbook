@@ -1,37 +1,43 @@
 # Type
 
+## Информация
+
+::: tip Определение
+
 - **Type** - создание собственного типа
+
+:::
 
 ## Примитив
 
-```js
+```ts
 type Login = string;
 type ID = string | number;
 
-const login: Login = 'admin';
-const id1: ID = 42
-const id2: ID = 'Hello'
+const login: Login = "admin";
+const id1: ID = 42;
+const id2: ID = "Hello";
 ```
 
 ## Объект
 
-```js
+```ts
 type Props = {
-	name: string;
-	onClick: (cn: string, isOpen?: boolean) => boolean;
+  name: string;
+  onClick: (cn: string, isOpen?: boolean) => boolean;
 };
 
 const App = ({ name, onClick }: Props) => {
-	onClick('Hello '+name);
-}
+  onClick("Hello " + name);
+};
 
 const Props = {
-	name: 'Tony',
-	onClick: (cn: string) => {
-		console.log(cn); // => "Hello Tony"
-		return true;
-	}
-}
+  name: "Tony",
+  onClick: (cn: string) => {
+    console.log(cn); // => "Hello Tony"
+    return true;
+  },
+};
 
 App(Props);
 ```

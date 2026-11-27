@@ -2,6 +2,6 @@
 
 ## Импорт типа и значения в одной конструкции
 
-```js
+```ts
 import { type Foo, BarValue } from "./types";
 ```

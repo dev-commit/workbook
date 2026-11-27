@@ -1,6 +1,10 @@
 # Информация
 
+## Информация
+
 ::: info
-https://gitexplorer.com/
-https://git-scm.com/book/ru/v2
+
+- https://gitexplorer.com/ - GIT Explorer
+- https://git-scm.com/book/ru/v2 - Git Book
+
 :::

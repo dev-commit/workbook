@@ -1,41 +1,49 @@
-Список веток с указанием текущей
-    
+# `git branch`
+
+## Информация
+
+::: danger
+
+**`git branch`** - список веток с указанием текущей
+
+:::
 
 ## Команды
 
 ### Список веток
 
 ```bash
-git branch     # список веток с указанием текущей
-git branch -a  # список веток с указанием remotes/origin
+git branch     # Список веток с указанием текущей
+git branch -a  # Список веток с указанием remotes/origin
 ```
 
 ### Создание новой ветки
 
 ```bash
-git branchfeature# создание новой ветки (ответвиться от текущей)
-git checkout -bfeature# создание новой ветки и переключение на нее
+git branch feature       # Создание новой ветки (ответвиться от текущей)
+git checkout -b feature  # Создание новой ветки и переключение на нее
 ```
 
 ### Удаление ветки
 
 ```bash
 # Удаление ветки из локального репозитория
-git branch --deletefeature# удаление ветки (после мерджа)
-git branch -dfeature# удаление ветки (после мерджа)
-git branch -Dfeature# удаление ветки (тупиковая ветвь)
-```
+git branch --delete feature  # Удаление ветки (после мерджа)
+git branch -d feature        # Удаление ветки (после мерджа)
+git branch -D feature        # Удаление ветки (тупиковая ветвь)
 
-```bash
 # Удаление ветки из удаленного репозитория
-git push origin --deletefeaturegit push origin -dfeaturegit push origin :feature```
+git push origin --delete feature
+git push origin -d feature
+git push origin :feature
+```
 
 ### Переименование локальной ветки
 
-- -m происходит от слова move (или mv)
-- mv используется для переименования файлов в Linux
+- `-m` происходит от слова move (или mv)
+- `mv` используется для переименования файлов в Linux
 
 ```bash
-git branch -mNewName# если находимся на ветке для переименования
-git branch -mOldNameNewName# если находимся на другой ветке
+git branch -m NewName          # Если находимся на ветке для переименования
+git branch -m OldName NewName  # Если находимся на другой ветке
 ```

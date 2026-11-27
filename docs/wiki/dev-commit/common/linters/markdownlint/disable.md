@@ -1,7 +1,8 @@
 # Disable
 
-- Файл с расширемнием .md
+- Файл с расширением .md
 
+<!-- prettier-ignore -->
 ```markdown
 <!-- markdownlint-disable MD032 MD022 -->
 

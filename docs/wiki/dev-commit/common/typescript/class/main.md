@@ -1,37 +1,44 @@
-# Основы
+# Class
 
-```js
+```ts
 class Typescript {
-	version: string
+  version: string;
 
-	constructor(version: string) {
-		this.version = version
-	}
+  constructor(version: string) {
+    this.version = version;
+  }
 
-	info(name: string) {
-		return `[${name}]: Typescript version is ${this.version}`
-	}
+  info(name: string) {
+    return `[${name}]: Typescript version is ${this.version}`;
+  }
 }
 ```
 
-Аналогичные записи#### Короткий вариант
+## Аналогичные записи
 
-```js
+<v-two :title="['Короткий вариант', 'Длинный вариант']">
+<template #first>
+
+```ts
 class Car {
-	readonly numberOfWheels: number = 4
-	constructor(readonly model: string) {}
+  readonly numberOfWheels: number = 4;
+  constructor(readonly model: string) {}
 }
 ```
 
-#### Длинный вариант
+</template>
+<template #last>
 
-```js
+```ts
 class Car {
-	readonly model: string
-	readonly numberOfWheels: number = 4
+  readonly model: string;
+  readonly numberOfWheels: number = 4;
 
-	constructor(theModel: string) {
-		this.model = theModel
-	}
+  constructor(theModel: string) {
+    this.model = theModel;
+  }
 }
 ```
+
+</template>
+</v-two>

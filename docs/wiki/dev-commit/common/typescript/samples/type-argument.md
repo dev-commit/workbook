@@ -1,39 +1,41 @@
-# Тип принимает агрумент
+# Тип принимает аргумент
 
-AllowedValues строка
+```ts
+// AllowedValues строка
 
-```js
 // Объект с ключом "name" и разрешенными значениями "T"
 type FieldType<T = string> = {
-	name: T;
+  name: T;
 };
 
 // Разрешенные значения для ключа "name"
-type AllowedValues = 'name' | 'age' | 'count';
+type AllowedValues = "name" | "age" | "count";
 
 // Массив объектов
 type MyFields = FieldType<AllowedValues>[];
 
-// Результат: массив объетов с разрешенными значениями
+// Результат: массив объектов с разрешенными значениями
 const fields: MyFields = [
-	{ name: 'name' },
-	{ name: 'age' },
-	// { name: 'date' }, // error
+  { name: "name" },
+  { name: "age" },
+  // { name: 'date' }, // error
 ];
-```AllowedValues объект
+```
 
-```js
+```ts
+// AllowedValues объект
+
 type AllowedValues = {
-	id: string;
-	name?: string;
+  id: string;
+  name?: string;
 };
 
 const fields: MyFields = [
-	{
-		name: {
-			id: '1',
-			name: 'Jack'
-		}
-	},
+  {
+    name: {
+      id: "1",
+      name: "Jack",
+    },
+  },
 ];
 ```

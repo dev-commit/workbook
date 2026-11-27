@@ -1,48 +1,54 @@
 # Record
 
+## Информация
+
+::: tip Определение
+
 - **Record** - позволяет создать новый тип из объединения. Значения в объединении используются как атрибуты нового типа
+
+:::
 
 ## Определение типа
 
-```js
-type Record<K extends string, T> = {
-    [P in K]: T;
-}
+```ts
+type Record<K extends keyof any, T> = {
+  [P in K]: T;
+};
 ```
 
 ## Примеры
 
 ### Пример #1
 
-```js
+```ts
 type Dog = {
   id: number;
   name: string;
-}
+};
 
-type Doggy = Record<'prop1' | 'prop2' | 'prop3', Dog>;
+type Doggy = Record<"prop1" | "prop2" | "prop3", Dog>;
 
-// эквивалентно
+// Эквивалентно
 // type Doggy = {
-//     prop1: Dog;
-//     prop2: Dog;
-//     prop3: Dog;
+//   prop1: Dog;
+//   prop2: Dog;
+//   prop3: Dog;
 // }
 
 const obj: Doggy = {
-    prop1: {
-        id: 23,
-        name: 'Jack'
-    },
-    prop2: {
-        id: 23,
-        name: 'Jack'
-    },
-    prop3: {
-        id: 23,
-        name: 'Jack'
-    }
-}
+  prop1: {
+    id: 23,
+    name: "Jack",
+  },
+  prop2: {
+    id: 23,
+    name: "Jack",
+  },
+  prop3: {
+    id: 23,
+    name: "Jack",
+  },
+};
 ```
 
 ### Пример #2
@@ -51,14 +57,14 @@ const obj: Doggy = {
 - Если я добавлю кошку, которая не разрешена, я получу ошибку.
 - Если я позже изменю CatNames, я получу ошибку. Это особенно полезно, потому что CatNames, скорее всего, импортируется из другого файла и, вероятно, используется во многих местах.
 
-```js
+```ts
 type CatNames = "miffy" | "boris" | "mordred";
 
-type CatList = Record<CatNames, {age: number}>
+type CatList = Record<CatNames, { age: number }>;
 
-const cats:CatList = {
-    miffy: { age:99 },
-    boris: { age:16 },
-    mordred: { age:600 }
-}
+const cats: CatList = {
+  miffy: { age: 99 },
+  boris: { age: 16 },
+  mordred: { age: 600 },
+};
 ```

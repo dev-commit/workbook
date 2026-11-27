@@ -1,16 +1,18 @@
 # Never
 
-- Если функиця возвращает ошибку
+## Информация
+
+- Если функция выбрасывает ошибку
 - Если функция не завершает свое выполнение
 
-```js
+```ts
 function throwError(message: string): never {
-	throw new Error(message)
+  throw new Error(message);
 }
 ```
 
-```js
+```ts
 function infinite(): never {
-	while(true) {}
+  while (true) {}
 }
 ```

@@ -1,10 +1,17 @@
 # Установка и настройка
 
-Не используеся в конфиге и в проекте
+::: warning
+
+Не используется в конфиге и в проекте
+
+:::
+
+```bash
 npm i --save-dev stylelint stylelint-config-concentric-order stylelint-config-sass-guidelines
-package.json
+```
 
 ```js
+// package.json
 {
     "devDependencies": {
         // "stylelint": "^13.13.1",

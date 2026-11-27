@@ -1,21 +1,21 @@
 # React useRef setInterval
 
-```js
-import { useEffect, useRef } from "react"
+```tsx
+import { useEffect, useRef } from "react";
 
 const App = () => {
-  const refreshIntervalId = useRef<ReturnType<typeof setInterval> | null>(null)
+  const refreshIntervalId = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     refreshIntervalId.current = setInterval(() => {
       //
-    }, 1000)
+    }, 1000);
 
     return () => {
-      clearInterval(refreshIntervalId.current as NodeJS.Timeout)
-    }
-  }, [])
+      clearInterval(refreshIntervalId.current as NodeJS.Timeout);
+    };
+  }, []);
 
-  return ()
-}
+  return <div>...</div>;
+};
 ```

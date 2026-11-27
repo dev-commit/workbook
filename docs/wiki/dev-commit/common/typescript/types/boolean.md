@@ -1,5 +1,5 @@
 # boolean
 
-```js
-const bool: boolean = true
+```ts
+const bool: boolean = true;
 ```

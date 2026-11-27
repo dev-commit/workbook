@@ -2,37 +2,37 @@
 
 ## Расширение типов
 
-```js
+```ts
 type Props = {
-	header: string;
+  header: string;
 } & TabsProps;
 
 type TabsProps = {
-	count: number;
+  count: number;
 };
 
 const obj: Props = {
-	header: 'Hello',
-	count: 23,
-}
+  header: "Hello",
+  count: 23,
+};
 ```
 
 ## Использование одного типа в другом
 
-```js
+```ts
 type Props = {
-	header: string;
-	obj: TabsProps;
+  header: string;
+  obj: TabsProps;
 };
 
 type TabsProps = {
-	count: number;
+  count: number;
 };
 
 const obj: Props = {
-	header: 'Hello',
-	obj: {
-		count: 23
-	},
-}
+  header: "Hello",
+  obj: {
+    count: 23,
+  },
+};
 ```

@@ -1,9 +1,9 @@
 # Required
 
-```js
+```ts
 export type Document = Required<
-	Type1 & {
-		id: string;
-	}
->
+  Type1 & {
+    id: string;
+  }
+>;
 ```

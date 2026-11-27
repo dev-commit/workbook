@@ -1,30 +1,30 @@
 # Типы
 
-```js
+```ts
 // Для Input
 const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    const { value } = event.target;
+  const { value } = event.target;
 };
 ```
 
 ## Нужно проверить
 
-```js
+```ts
 const handleClick = (event: React.SyntheticEvent): void => {
-    //
-}
+  //
+};
 const handleClick = (event: SyntheticEvent<EventTarget>) => {
-    //
-}
+  //
+};
 ```
 
-```js
+```ts
 type Props = {
-    tooltip: React.ReactElement;
-    navTab: React.HTMLAttributes<HTMLButtonElement>;
-}
+  tooltip: React.ReactElement;
+  navTab: React.HTMLAttributes<HTMLButtonElement>;
+};
 ```
 
-```js
-const root: HTMLElement | null = document.querySelector(':root');
+```ts
+const root: HTMLElement | null = document.querySelector(":root");
 ```

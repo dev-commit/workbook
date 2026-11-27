@@ -1,35 +1,35 @@
 # Дженерик для объекта
 
-### Использованиеinterface
+## Использование `interface`
 
-```js
+```ts
 interface Admin<S> {
-    role: string;
-    user: S;
+  role: string;
+  user: S;
 }
 
 interface Person {
-    name: string;
+  name: string;
 }
 
 const user: Admin<Person> = {
-    role: 'admin',
-    user: {
-        name: 'Jack'
-    }
-}
+  role: "admin",
+  user: {
+    name: "Jack",
+  },
+};
 ```
 
-### Использование простого типа данных
+## Использование простого типа данных
 
-```js
+```ts
 interface Admin<S> {
-    role: string;
-    user: S;
+  role: string;
+  user: S;
 }
 
 const user: Admin<string> = {
-    role: 'admin',
-    user: 'Jack'
-}
+  role: "admin",
+  user: "Jack",
+};
 ```

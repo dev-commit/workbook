@@ -1,7 +1,18 @@
-Перемещение файлов
+# `git mv`
+
+## Информация
+
+::: danger
+
+**`git mv`** - перемещение файлов
+
+:::
+
+## Использование
 
 ```bash
-git mvOldNameFileNewNameFile# переименовать файл
-git mvFileName/src/FileName# переместить файл
+git mv OldNameFile NewNameFile # Переименовать файл
+git mv FileName src/FileName   # Переместить файл
 ```
-- При выполнении mv git автомтически выполняет add
+
+- При выполнении `mv` git автоматически выполняет `add`

@@ -59,6 +59,36 @@
   font-style: normal;
 }
 
+/* Горизонтальная прокрутка блоков кода. Системная полоса на macOS скрыта, пока не прокручиваешь,
+   а с мышью - толстая (~15px). Своя - тонкая и видна всегда, когда код шире блока.
+   Chrome и Safari - ::-webkit-scrollbar, Firefox - scrollbar-width / scrollbar-color.
+   Chrome (с 121) при scrollbar-width / scrollbar-color игнорирует ::-webkit-scrollbar,
+   поэтому стандартные свойства - только там, где ::-webkit-scrollbar не поддерживается */
+.vp-doc div[class*="language-"] pre::-webkit-scrollbar {
+  height: 10px;
+}
+.vp-doc div[class*="language-"] pre::-webkit-scrollbar-track {
+  /* Отступ от скруглённых углов блока */
+  margin: 0 12px;
+  background-color: transparent;
+}
+/* Прозрачная рамка - зазор вокруг полосы: видимая толщина 6px */
+.vp-doc div[class*="language-"] pre::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 5px;
+  background-clip: padding-box;
+  background-color: var(--vp-c-scrollbar);
+}
+.vp-doc div[class*="language-"] pre::-webkit-scrollbar-thumb:hover {
+  background-color: #7a7a7a;
+}
+@supports not selector(::-webkit-scrollbar) {
+  .vp-doc div[class*="language-"] pre {
+    scrollbar-width: thin;
+    scrollbar-color: var(--vp-c-scrollbar) transparent;
+  }
+}
+
 /*------------------------------------------
 ⭐️ VitePress Custom Containers
 ------------------------------------------*/

@@ -1,8 +1,8 @@
 # Примеры
 
-```js
-// описание функции через интерфейс
+```ts
+// Описание функции через интерфейс
 interface Foo {
-	(a: number, b: number): boolean;
+  (a: number, b: number): boolean;
 }
 ```
