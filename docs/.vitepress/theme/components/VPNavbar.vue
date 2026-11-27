@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-// FIXME: Проверить файл
+// Навбар тем (десктоп): выводится в слоте layout-top стандартного Layout VitePress (Layout.vue).
+// Данные - themeConfig.nav из config.ts (пункт с newRow начинается с новой строки)
 
 import { computed, type DefineComponent } from "vue";
 import { useData } from "vitepress";
-import { VPLink as VPLinkUntyped } from "vitepress/theme";
-import type { IThemeConfigNav } from "../../../types";
-import { NAV as RAW_NAV } from "../../../wiki/builder";
+import { VPLink as VPLinkUntyped, useSidebar } from "vitepress/theme";
+import type { TThemeConfigNav, TThemeConfigNavItem } from "../../../types";
 import { NAVBAR_COLLAPSE } from "../menu-collapse";
 import { useMenuCollapse } from "../composables/useMenuCollapse";
 
@@ -19,18 +19,10 @@ const VPLink = VPLinkUntyped as DefineComponent<{
   rel?: string;
 }>;
 
-const { theme: themeConfig, page } = useData();
+const { theme, page } = useData();
+const { hasSidebar } = useSidebar();
 
-const nav: IThemeConfigNav[] = themeConfig.value?.nav ?? [];
-
-const groups: IThemeConfigNav[] = nav.filter(
-  (item) => "items" in item && Array.isArray(item.items),
-);
-
-const rawGroups = RAW_NAV.map((group) => ({
-  text: group.text,
-  items: group.children,
-}));
+const groups = computed<TThemeConfigNav[]>(() => theme.value.nav ?? []);
 
 const currentPath = () =>
   "/" + page.value.relativePath.replace(/\.md$/, "").replace(/\/index$/, "");
@@ -41,8 +33,7 @@ const norm = (p: string) =>
     .replace(/(?:(^|\/)index)?\.(?:md|html)$/, "$1")
     .replace(/\/$/, "") || "/";
 
-const isActive = (item: { link: string } | null) => {
-  if (!item) return false;
+const isActive = (item: TThemeConfigNavItem) => {
   const current = currentPath();
   const n = norm(item.link);
   return current === n || (n !== "/" && current.startsWith(n + "/"));
@@ -57,7 +48,7 @@ const toggleTitle = computed(() =>
 
 // Тема текущей страницы - видна, когда меню свёрнуто
 const activeTheme = computed(() => {
-  for (const group of rawGroups) {
+  for (const group of groups.value) {
     const item = group.items.find(isActive);
     if (item) return { group: group.text, item };
   }
@@ -66,18 +57,14 @@ const activeTheme = computed(() => {
 </script>
 
 <template>
-  <div class="vp-navbar">
-    <nav
-      v-if="groups.length"
-      aria-labelledby="main-nav-aria-label"
-      class="navbar"
-    >
-      <fieldset v-for="(group, gKey) in rawGroups" :key="gKey" class="fieldset">
+  <div class="vp-navbar" :class="{ 'has-sidebar': hasSidebar }">
+    <nav v-if="groups.length" aria-label="Темы" class="navbar">
+      <fieldset v-for="(group, gKey) in groups" :key="gKey" class="fieldset">
         <legend class="legend">{{ group.text }}</legend>
         <div class="link-wrapper">
           <template v-for="(item, key) in group.items" :key="key">
-            <div v-if="item === null" class="link-splitter"></div>
-            <span v-else class="item-link-wrapper">
+            <div v-if="item.newRow" class="link-splitter"></div>
+            <span class="item-link-wrapper">
               <VPLink
                 :href="item.link"
                 :class="[
@@ -138,35 +125,23 @@ const activeTheme = computed(() => {
 </template>
 
 <style scoped>
-.colors-test {
-  color: rgb(34, 211, 238);
-  color: rgb(14, 165, 233);
-  color: rgb(45, 212, 191);
-  color: rgb(34, 211, 238);
-  color: rgb(74, 222, 128);
-  color: rgb(6, 182, 212);
-  color: rgb(56, 189, 248);
-  color: rgb(37, 99, 235);
-  color: rgb(56, 189, 248);
-  color: rgb(99, 102, 241);
-  color: rgb(168, 85, 247);
-  color: rgb(99, 102, 241);
-  color: rgb(217, 70, 239);
-  color: rgb(147, 51, 234);
-  color: rgb(252, 211, 77);
-  color: rgb(249, 115, 22);
-  color: rgb(251, 146, 60);
-  color: rgb(219, 39, 119);
-  color: rgb(236, 72, 153);
-  color: rgb(244, 63, 94);
-}
-
 .vp-navbar {
   display: flex;
   align-items: flex-start;
   gap: 8px;
   padding: 10px;
   background-color: #f0f0f0;
+}
+/* Левое меню на десктопе фиксированное (Layout.vue): навбар справа от него */
+.vp-navbar.has-sidebar {
+  margin-left: var(--vp-sidebar-width);
+  transition: margin-left 0.2s;
+}
+/* На мобильном навбара нет - там навигация VitePress */
+@media (max-width: 960px) {
+  .vp-navbar {
+    display: none;
+  }
 }
 
 .navbar {
@@ -242,13 +217,12 @@ const activeTheme = computed(() => {
   padding: 6px 8px;
   line-height: 1;
   font-size: 13px;
+  font-weight: 400;
   text-decoration: none;
   white-space: nowrap;
-  font-weight: 500;
   border-radius: 6px;
   transition: opacity 0.7s;
   cursor: pointer;
-  font-weight: 400;
 }
 .link:hover {
   opacity: 0.7;
@@ -256,18 +230,6 @@ const activeTheme = computed(() => {
 .link.route-link-active {
   background-color: rgba(0, 0, 0, 0.7) !important;
   color: #fff !important;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
 }
 </style>
 
@@ -328,6 +290,11 @@ const activeTheme = computed(() => {
   color: rgb(104, 95, 43);
   background-color: rgba(232, 212, 77, 0.3);
   border: 1px solid rgba(232, 212, 77, 0.9);
+}
+.link.theme-theory {
+  color: rgb(109, 40, 217);
+  background-color: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.25);
 }
 
 .link.theme-accent {

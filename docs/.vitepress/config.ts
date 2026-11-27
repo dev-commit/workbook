@@ -3,12 +3,34 @@ import { NAV, SIDEBAR } from "../wiki/builder";
 import AppConfig, { Projects } from "../app-config";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import type { IHeaderMenuNavChildren, IThemeConfigNav } from "../types";
+import type {
+  IHeaderMenuNavChildren,
+  TThemeConfigNav,
+  TThemeConfigNavItem,
+} from "../types";
 import { menuCollapsedHeadScript } from "./theme/menu-collapse";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const BASE = AppConfig.BasePath;
+
+// Пункты навбара тем (VPNavbar.vue): null в build-*.ts - перенос строки,
+// следующий за ним пункт получает флаг newRow
+const getNavItems = (
+  children: Array<IHeaderMenuNavChildren | null>,
+): TThemeConfigNavItem[] => {
+  const items: TThemeConfigNavItem[] = [];
+  let newRow = false;
+  for (const child of children) {
+    if (!child) {
+      newRow = items.length > 0;
+      continue;
+    }
+    items.push(newRow ? { ...child, newRow } : child);
+    newRow = false;
+  }
+  return items;
+};
 
 const customNavComposablePath = path.resolve(
   __dirname,
@@ -19,8 +41,14 @@ const customNavComposablePath = path.resolve(
 
 export default defineConfig({
   base: BASE,
+  lang: "ru-RU",
   title: AppConfig.Title,
   description: AppConfig.Description,
+  // Только светлая тема: стили справочника рассчитаны на светлый фон
+  appearance: false,
+  // Данные сайта (меню всех тем, карта страниц) - отдельным файлом, а не внутри каждой страницы:
+  // иначе это ~370 КБ в каждом HTML, и любой деплой меняет все страницы
+  metaChunk: true,
   head: [
     ["link", { rel: "icon", href: BASE + "favicon.svg" }],
     ["meta", { name: "theme-color", content: AppConfig.ThemeMobileColor }],
@@ -32,14 +60,15 @@ export default defineConfig({
     // Свёрнутые левое и верхнее меню (theme/menu-collapse.ts)
     ["script", {}, menuCollapsedHeadScript],
   ],
-  srcDir: ".",
   srcExclude: Object.values(Projects)
     .map((p) => p.WikiDir)
     .filter((d) => d !== AppConfig.WikiDir)
     .map((d) => `${AppConfig.RootDir}/${d}/**`),
-  outDir: ".vitepress/dist",
-  cacheDir: ".vitepress/cache",
-  ignoreDeadLinks: true,
+  // Битая ссылка - ошибка сборки. Кроме localhost: в примерах есть адреса локального сервера
+  ignoreDeadLinks: "localhostLinks",
+  // Отступ сверху при переходе к заголовку по якорю: 16px под локальной навигацией
+  // мобильной версии (VPLocalNav). На десктопе она скрыта (низ = 0) - отступ 16px от края
+  scrollOffset: { selector: [".VPLocalNav", ".VPNav"], padding: 16 },
   // Адреса страниц без .html (GitHub Pages отдаёт /page как /page.html)
   cleanUrls: true,
   // Адреса страниц без префикса wiki/<проект>/: файлы лежат в docs/wiki/dev-commit/...,
@@ -55,17 +84,9 @@ export default defineConfig({
     resolve: {
       alias: {
         docs: path.join(__dirname, ".."),
-        "mark.js/src/lib/mark": path.join(
-          __dirname,
-          "..",
-          "node_modules",
-          "mark.js",
-          "src",
-          "lib",
-          "mark.js",
-        ),
       },
     },
+    // mark.js (подсветка в поиске) - исходники ESM без "type": "module", при SSR их нужно собрать
     ssr: {
       noExternal: ["mark.js"],
     },
@@ -95,23 +116,50 @@ export default defineConfig({
     logo: "/logo.png",
     nav: NAV.map((group) => ({
       text: group.text,
-      items: group.children
-        .filter((c): c is IHeaderMenuNavChildren => Boolean(c))
-        .map((c) => ({
-          text: c.text,
-          link: c.link,
-          theme: c.theme,
-        })),
-    })) satisfies IThemeConfigNav[],
+      items: getNavItems(group.children),
+    })) satisfies TThemeConfigNav[],
     sidebar: SIDEBAR,
-    outline: { level: [2, 3] },
-    search: { provider: "local" },
+    outline: { level: [2, 3], label: "На этой странице" },
+    search: {
+      provider: "local",
+      options: {
+        translations: {
+          button: { buttonText: "Поиск", buttonAriaLabel: "Поиск" },
+          modal: {
+            displayDetails: "Подробный список",
+            resetButtonTitle: "Сбросить поиск",
+            backButtonTitle: "Закрыть поиск",
+            noResultsText: "Ничего не найдено по запросу",
+            footer: {
+              selectText: "выбрать",
+              selectKeyAriaLabel: "Enter",
+              navigateText: "перейти",
+              navigateUpKeyAriaLabel: "Стрелка вверх",
+              navigateDownKeyAriaLabel: "Стрелка вниз",
+              closeText: "закрыть",
+              closeKeyAriaLabel: "Esc",
+            },
+          },
+        },
+      },
+    },
     // Скрыть внизу страницы ссылки на предыдущую / следующую страницу
     docFooter: { prev: false, next: false },
+    // Подписи интерфейса VitePress (мобильная шапка, 404)
+    sidebarMenuLabel: "Меню",
+    returnToTopLabel: "Наверх",
+    skipToContentLabel: "Перейти к содержимому",
+    notFound: {
+      title: "Страница не найдена",
+      quote: "Возможно, страница переехала или в адресе опечатка",
+      linkLabel: "Перейти на главную",
+      linkText: "На главную",
+    },
   },
   markdown: {
     theme: "one-light",
     html: true,
+    codeCopyButtonTitle: "Скопировать код",
     codeTransformers: [
       // В теме one-light «недопустимые» токены (н-р, неизвестный HTML-тег <content>)
       // - белый текст на красном фоне. Фон VitePress не выводит, и текст не виден.

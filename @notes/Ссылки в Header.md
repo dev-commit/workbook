@@ -1,31 +1,23 @@
-# Boulder
+# Ссылки в Header
 
-> docs/.vuepress/builder.js
+> docs/wiki/dev-commit/builder.ts
+
+Навбар тем (верхнее меню на десктопе) строится из массива `NAV`: группа - подпись `text` и темы `children`. Тема - объект из `build-*.ts` (`title`, `path`, `theme`), `getNav` превращает темы в ссылки, `null` - перенос строки внутри группы.
 
 ```ts
-export const NAV = [
-  // Воводит 1 элемент в меню
-  getNav("Title", PATH),
-
-  // Выводит выпадающий список с элементами
+export const NAV: IHeaderMenuNav[] = [
   {
-    text: "Usage",
-    children: [
-      getNav("Title", PATH + "/"),
-      getNav("Title", PATH + "/"),
-      getNav("Title", PATH + "/"),
-    ],
-  },
-
-  // Выводит выпадающий список с элементами, но открывает только 1 страницу
-  {
-    text: "Roadmaps",
-    children: [
-      {
-        text: "React Frontend Developer",
-        link: "/posts/roadmaps/react-frontend-developer",
-      },
-    ],
+    text: "JavaScript",
+    children: getNav([
+      wikiEventLoop,
+      wikiCriticalRenderingPath,
+      null, // Следующие темы - с новой строки
+      wikiJavaScript,
+      wikiObject,
+    ]),
   },
 ];
 ```
+
+- Цвет кнопки темы - поле `theme` в `build-*.ts`, стили `.link.theme-*` в `docs/.vitepress/theme/components/VPNavbar.vue`
+- `docs/.vitepress/config.ts` передаёт `NAV` в `themeConfig.nav`: `null` становится флагом `newRow` у следующей темы

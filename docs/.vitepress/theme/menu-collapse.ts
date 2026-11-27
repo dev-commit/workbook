@@ -1,4 +1,4 @@
-// Сворачивание меню на десктопе: левого (components/VPSidebar.vue) и верхнего с темами (components/VPNavbar.vue).
+// Сворачивание меню на десктопе: левого (components/SidebarTop.vue) и верхнего с темами (components/VPNavbar.vue).
 // Состояние - класс на <html> + запись в localStorage. Классы ставит скрипт в <head>
 // ещё до отрисовки страницы (config.ts), чтобы свёрнутое меню не «мигало» при загрузке.
 // Переключение - composables/useMenuCollapse.ts

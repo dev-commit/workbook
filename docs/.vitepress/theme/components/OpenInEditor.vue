@@ -70,4 +70,10 @@ const href = computed(() => {
   color: var(--vp-c-brand-1);
   background-color: rgba(var(--color-violet-blue), 0.1);
 }
+/* Только на десктопной вёрстке */
+@media (max-width: 960px) {
+  .open-in-editor {
+    display: none;
+  }
+}
 </style>

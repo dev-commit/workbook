@@ -34,13 +34,16 @@
   padding: 0;
 }
 
-/* Переход к разделу по хэшу (Layout.vue, scrollIntoView): отступ заголовка от верха.
-   На мобильном шапка фиксированная (навбар 64px + локальная навигация 48px) */
+/* Отступ заголовка от верха, когда к якорю прокручивает сам браузер (открытие ссылки с #).
+   Переходы внутри сайта прокручивает VitePress (scrollOffset в config.ts).
+   На мобильном сверху шапка: навбар 64px + локальная навигация 48px */
 .vp-doc :is(h1, h2, h3, h4, h5, h6) {
   scroll-margin-top: 16px;
 }
-.vp-theme-container--mobile-only .vp-doc :is(h1, h2, h3, h4, h5, h6) {
-  scroll-margin-top: 128px;
+@media (max-width: 960px) {
+  .vp-doc :is(h1, h2, h3, h4, h5, h6) {
+    scroll-margin-top: 128px;
+  }
 }
 
 .vp-doc a {
@@ -80,7 +83,6 @@
 }
 .custom-block.info a {
   color: rgb(var(--color-violet-medium)) !important;
-  margin: 10px 0px;
   font-size: 16px;
   text-decoration: none;
   font-weight: 400;
@@ -94,19 +96,15 @@
 }
 
 .custom-block.details {
-  /* border: 1px solid #ccd6eb; */
-  /* padding: 2px 10px; */
-  padding: 0;
+  padding: 15px;
   font-size: 16px;
   background-color: #f5f5f5;
-  padding: 15px;
 }
 .custom-block.details summary {
   margin: 0;
   font-size: 16px;
   font-weight: 500;
   font-family: var(--vp-font-family-base);
-  /* color: #217bcf; */
 }
 /* Отступ между маркером и текстом */
 .custom-block.details summary::before {
@@ -131,7 +129,6 @@
 }
 
 .custom-block.tip {
-  border: none;
   background-color: #fff;
   border: 2px solid rgba(var(--color-violet-blue), 0.4);
   font-size: 16px;
@@ -141,9 +138,6 @@
   color: rgba(var(--color-violet-blue), 1);
   display: none;
 }
-/* .custom-block.tip .custom-block-title::before {
-  content: "📑 ";
-} */
 .custom-block.tip strong {
   background-color: rgba(var(--color-blue-light), 0.7);
   border-radius: 4px;
@@ -153,7 +147,6 @@
 
 .custom-block.danger {
   border: none;
-  background-color: #fff;
   border-left: 4px solid rgba(var(--color-violet-blue), 0.5);
   background-color: rgba(var(--color-violet-blue), 0.07);
   border-radius: 0;
@@ -173,41 +166,32 @@
 /*------------------------------------------
 ⭐️ Левое меню
 ------------------------------------------*/
-.vp-sidebar {
-  padding: 0 !important;
-  font-family: Roboto-Regular;
-  color: #000;
-  font-weight: 300;
-}
-.vp-sidebar-search {
-  background-color: #fff;
-  padding: 10px !important;
-  margin: 0 !important;
-}
-
-.vp-sidebar-items {
-  background-color: #fff;
-  padding: 10px !important;
-}
-.vp-sidebar-items .group {
-  width: 100%;
-  padding: 0 !important;
-  border: none !important;
-  margin-bottom: 10px;
-}
-
-.vp-sidebar-items .group:last-child {
-  margin-bottom: 0;
+/* Десктоп (от 961px): шрифт, заголовки групп, активный пункт.
+   Расположение и размеры меню - components/Layout.vue */
+@media (min-width: 961px) {
+  .workbook-layout aside.VPSidebar {
+    font-family: Roboto-Regular;
+    color: #000;
+    font-weight: 300;
+  }
+  .workbook-layout .VPSidebar .group h2 {
+    background-color: rgb(248, 248, 248);
+    border-radius: 8px;
+    font-family: Roboto-Medium;
+    padding: 4px 10px;
+    margin-bottom: 10px;
+  }
+  /* Активный пункт (переключение тем внутри категории): текст и полоска слева */
+  .workbook-layout .VPSidebar .VPSidebarItem.is-active > .item > .indicator {
+    background-color: var(--vp-c-sidebar-link-active) !important;
+    border: 2px solid var(--vp-c-sidebar-link-active) !important;
+  }
+  .workbook-layout .VPSidebar .VPSidebarItem.is-active > .item > .link > .text {
+    color: var(--vp-c-sidebar-link-active) !important;
+  }
 }
 
-.vp-sidebar-items .group h2 {
-  background-color: rgb(248, 248, 248);
-  border-radius: 8px;
-  font-family: Roboto-Medium;
-  padding: 4px 10px;
-  margin-bottom: 10px;
-}
-
+/* Пункты меню - и на десктопе, и в выдвижном меню на мобильном */
 .VPSidebarItem {
   padding: 0 !important;
   margin: 0;
@@ -224,123 +208,11 @@
   background-color: #f4f4f4;
 }
 
-/* FIXME: Проверить */
-
-/* Активная ссылка в навбаре (тема по умолчанию использует --vp-c-brand-1) */
-.VPNavBarMenuLink.active {
-  color: var(--vp-c-nav-link-active) !important;
-}
-/* Активный пункт в сайдбаре (переключение тем внутри категории): текст и полоска слева */
-.vp-sidebar .VPSidebarItem.is-active > .item > .indicator {
-  background-color: var(--vp-c-sidebar-link-active) !important;
-  border: 2px solid var(--vp-c-sidebar-link-active) !important;
-}
-.vp-sidebar .VPSidebarItem.is-active > .item > .link > .text {
-  color: var(--vp-c-sidebar-link-active) !important;
-}
-
+/*------------------------------------------
+⭐️ Страница и мобильная шапка
+------------------------------------------*/
 .VPDoc .container {
   max-width: 100%;
-}
-
-/* Десктоп: layout как в VuePress app-custom (vp-theme-container + vp-content + vp-sidebar) */
-.vp-theme-container--desktop {
-  display: flex;
-  height: 100vh;
-}
-
-.vp-theme-container--desktop .vp-content {
-  flex-grow: 1;
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-}
-
-/* На главной: убираем отрицательный margin у hero, чтобы контент не заходил под навбар */
-.vp-theme-container--desktop .VPHero {
-  margin-top: 0;
-}
-
-/* Сайдбар в потоке (не fixed), 300px как в VuePress VPSidebar.vue */
-.vp-theme-container--desktop .VPSidebar {
-  position: relative;
-  top: auto;
-  bottom: auto;
-  left: auto;
-  transform: none;
-  width: 300px;
-  max-width: 300px;
-  flex-shrink: 0;
-  padding-top: 32px;
-  padding-bottom: 96px;
-  opacity: 1;
-  visibility: visible;
-  box-shadow: none;
-  overflow-x: hidden;
-  overflow-y: auto;
-  border-right: 1px solid var(--vp-c-divider);
-}
-
-.vp-theme-container--desktop .VPSidebar .curtain {
-  display: none;
-}
-
-/* Контент без отступа под сайдбар (сайдбар уже в потоке) */
-.vp-theme-container--desktop .vp-content .VPContent {
-  padding-left: 0;
-  margin: 0;
-  padding-top: 0;
-}
-
-/* Навбар внутри vp-content — не фиксировать, как в VuePress */
-.vp-theme-container--desktop .vp-content .VPNav {
-  position: relative;
-  top: auto;
-}
-
-.vp-theme-container--desktop .vp-content .VPContent.has-sidebar {
-  padding-left: 0;
-}
-
-/* Страница без лишнего padding (как .vp-page в app-custom/index.scss) */
-.vp-theme-container--desktop .vp-doc .vp-doc-block-container,
-.vp-theme-container--desktop .vp-doc .container {
-  padding-top: 0;
-}
-
-/* Контент на всю ширину в кастомном layout на десктопе */
-.vp-theme-container--desktop .vp-content {
-  --vp-layout-max-width: none;
-}
-.vp-theme-container--desktop .vp-content .VPContent,
-.vp-theme-container--desktop .vp-content .VPContent .container,
-.vp-theme-container--desktop .vp-doc .vp-doc-block-container,
-.vp-theme-container--desktop .vp-doc .container {
-  max-width: none;
-}
-
-/* Убираем нижний отступ 128px у контента */
-.vp-theme-container--desktop .content {
-  padding: 20px 40px;
-}
-
-.vp-theme-container--desktop .content-container {
-  width: 100%;
-  max-width: 100% !important;
-}
-
-/* VPDoc: уменьшаем отступы на десктопе */
-.vp-theme-container--desktop .VPDoc.has-sidebar.has-aside {
-  padding: 10px;
-}
-
-/* Скрываем виджет «On this page» (outline) на десктопе */
-.vp-theme-container--desktop .vp-content .aside,
-.vp-theme-container--desktop .aside,
-.vp-theme-container--desktop .VPDocAside,
-.vp-theme-container--desktop .VPLocalNav.has-sidebar {
-  display: none !important;
 }
 
 /* До 960px: только бургер-меню (как с 767px в теме по умолчанию). Скрываем горизонтальное меню навбара. */

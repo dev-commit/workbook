@@ -1,281 +1,105 @@
 <script setup lang="ts">
-// FIXME: Проверить файл
+// Layout справочника - стандартный Layout VitePress со своими слотами:
+// - layout-top: навбар тем (VPNavbar);
+// - sidebar-nav-before: поиск и кнопка сворачивания над левым меню (SidebarTop);
+// - doc-before: кнопка «открыть файл страницы в редакторе» (OpenInEditor, только dev).
+// Страница рендерится один раз. Десктоп и мобильный различаются только CSS (стили ниже):
+// до 960px - стандартные шапка и выдвижное меню VitePress, от 961px - меню слева, навбар тем сверху,
+// страница прокручивается целиком (прокрутку, якоря и Escape обрабатывает VitePress)
 
-// Оба layout (desktop и mobile) рендерятся всегда; видимость только через CSS media,
-// чтобы при SSR/build и при гидрации на клиенте DOM совпадал (нет hydration mismatch).
-// Иначе при прямой загрузке на GitHub Pages пропадали заголовки и блоки кода.
-
-import { watch, computed, nextTick, onMounted, onBeforeUnmount } from "vue";
-import { useRoute, useData } from "vitepress";
 import DefaultTheme from "vitepress/theme";
-import { useSidebar } from "vitepress/theme";
-import VPBackdrop from "vitepress/dist/client/theme-default/components/VPBackdrop.vue";
-import VPLocalNav from "vitepress/dist/client/theme-default/components/VPLocalNav.vue";
-import VPContent from "vitepress/dist/client/theme-default/components/VPContent.vue";
-import VPFooter from "vitepress/dist/client/theme-default/components/VPFooter.vue";
-
 import VPNavbar from "./VPNavbar.vue";
-import VPSidebar from "./VPSidebar.vue";
+import SidebarTop from "./SidebarTop.vue";
 import OpenInEditor from "./OpenInEditor.vue";
 
 const DefaultLayout = DefaultTheme.Layout;
-
-const { frontmatter, theme: themeConfig } = useData();
-const {
-  isOpen: isSidebarOpen,
-  close: closeSidebar,
-  open: openSidebar,
-  hasSidebar,
-} = useSidebar();
-const route = useRoute();
-
-const touchStart = { x: 0, y: 0 };
-function onTouchStart(e: TouchEvent) {
-  touchStart.x = e.changedTouches[0].clientX;
-  touchStart.y = e.changedTouches[0].clientY;
-}
-function onTouchEnd(e: TouchEvent) {
-  const dx = e.changedTouches[0].clientX - touchStart.x;
-  const dy = e.changedTouches[0].clientY - touchStart.y;
-  if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
-    if (dx > 0 && touchStart.x <= 80) openSidebar();
-    else closeSidebar();
-  }
-}
-
-watch(() => route.path, closeSidebar);
-
-// Переход к разделу по хэшу (#id).
-// Встроенный scrollTo VitePress не работает в этом layout:
-// 1. на десктопе прокручивается не window, а .vp-content (overflow: auto);
-// 2. оба layout в DOM, поэтому id заголовков дублируются и getElementById
-//    находит первую копию, которая на мобильном скрыта.
-// Поэтому ищем видимую копию заголовка и прокручиваем к ней через scrollIntoView -
-// он сам находит нужный прокручиваемый контейнер.
-function findVisibleTarget(hash: string): HTMLElement | null {
-  if (!hash || hash === "#") return null;
-  let id: string;
-  try {
-    id = decodeURIComponent(hash.slice(1));
-  } catch {
-    return null;
-  }
-  const elements = document.querySelectorAll<HTMLElement>(
-    `[id="${CSS.escape(id)}"]`,
-  );
-  return [...elements].find((el) => el.offsetParent !== null) ?? null;
-}
-
-function scrollToHash(smooth = false) {
-  const target = findVisibleTarget(window.location.hash);
-  target?.scrollIntoView({
-    block: "start",
-    behavior: smooth ? "smooth" : "auto",
-  });
-}
-
-// Двойной requestAnimationFrame: выполняемся после встроенного scrollTo VitePress,
-// который тоже вызывается через requestAnimationFrame и иначе сбил бы позицию на мобильном
-function scrollToHashAfterRender(smooth = false) {
-  nextTick(() =>
-    requestAnimationFrame(() =>
-      requestAnimationFrame(() => scrollToHash(smooth)),
-    ),
-  );
-}
-
-const onHashChange = () => scrollToHashAfterRender(true);
-
-onMounted(() => {
-  scrollToHashAfterRender();
-  window.addEventListener("hashchange", onHashChange);
-});
-onBeforeUnmount(() => window.removeEventListener("hashchange", onHashChange));
-
-// Переход на другую страницу сразу к разделу (н-р, ссылка page.html#id)
-watch(
-  () => route.path,
-  () => scrollToHashAfterRender(),
-);
-
-const showLayout = computed(() => frontmatter.value.layout !== false);
-const shouldShowNavbar = computed(
-  () =>
-    frontmatter.value.navbar !== false &&
-    (themeConfig.value?.nav?.length ?? true),
-);
-const containerClass = computed(() => [
-  "vp-theme-container",
-  "vp-theme-container--desktop",
-  {
-    "no-navbar": !shouldShowNavbar.value,
-    "no-sidebar": !hasSidebar.value,
-    "sidebar-open": isSidebarOpen.value,
-  },
-  frontmatter.value.pageClass,
-]);
 </script>
 
 <template>
-  <template v-if="showLayout">
-    <!-- Десктоп: виден только при min-width: 961px (CSS) -->
-    <div
-      class="vp-theme-container--desktop-only"
-      :class="containerClass"
-      @touchstart.passive="onTouchStart"
-      @touchend.passive="onTouchEnd"
-    >
-      <VPBackdrop
-        class="backdrop vp-sidebar-mask"
-        :show="isSidebarOpen"
-        @click="closeSidebar"
-      />
-      <VPSidebar>
-        <template #sidebar-nav-before
-          ><slot name="sidebar-nav-before"
-        /></template>
-        <template #sidebar-nav-after
-          ><slot name="sidebar-nav-after"
-        /></template>
-      </VPSidebar>
-      <div class="vp-content">
-        <VPNavbar v-if="shouldShowNavbar" />
-        <VPLocalNav :open="isSidebarOpen" @open-menu="openSidebar" />
-        <VPContent :key="route.path">
-          <template #page-top><slot name="page-top" /></template>
-          <template #page-bottom><slot name="page-bottom" /></template>
-          <template #not-found><slot name="not-found" /></template>
-          <template #home-hero-before
-            ><slot name="home-hero-before"
-          /></template>
-          <template #home-hero-info-before
-            ><slot name="home-hero-info-before"
-          /></template>
-          <template #home-hero-info><slot name="home-hero-info" /></template>
-          <template #home-hero-info-after
-            ><slot name="home-hero-info-after"
-          /></template>
-          <template #home-hero-actions-after
-            ><slot name="home-hero-actions-after"
-          /></template>
-          <template #home-hero-image><slot name="home-hero-image" /></template>
-          <template #home-hero-after><slot name="home-hero-after" /></template>
-          <template #home-features-before
-            ><slot name="home-features-before"
-          /></template>
-          <template #home-features-after
-            ><slot name="home-features-after"
-          /></template>
-          <template #doc-footer-before
-            ><slot name="doc-footer-before"
-          /></template>
-          <template #doc-before>
-            <!-- Кнопка «открыть файл страницы в редакторе» (только dev) -->
-            <OpenInEditor />
-            <slot name="doc-before" />
-          </template>
-          <template #doc-after><slot name="doc-after" /></template>
-          <template #doc-top><slot name="doc-top" /></template>
-          <template #doc-bottom><slot name="doc-bottom" /></template>
-          <template #aside-top><slot name="aside-top" /></template>
-          <template #aside-outline-before
-            ><slot name="aside-outline-before"
-          /></template>
-          <template #aside-outline-after
-            ><slot name="aside-outline-after"
-          /></template>
-          <template #aside-ads-before
-            ><slot name="aside-ads-before"
-          /></template>
-          <template #aside-ads-after><slot name="aside-ads-after" /></template>
-          <template #aside-bottom><slot name="aside-bottom" /></template>
-        </VPContent>
-      </div>
-      <VPFooter />
-    </div>
-
-    <!-- Мобильный: виден только при max-width: 960px (CSS) -->
-    <div class="vp-theme-container--mobile-only">
-      <DefaultLayout>
-        <template #nav-bar-title-before
-          ><slot name="nav-bar-title-before"
-        /></template>
-        <template #nav-bar-title-after
-          ><slot name="nav-bar-title-after"
-        /></template>
-        <template #nav-bar-content-before
-          ><slot name="nav-bar-content-before"
-        /></template>
-        <template #nav-bar-content-after
-          ><slot name="nav-bar-content-after"
-        /></template>
-        <template #nav-screen-content-before
-          ><slot name="nav-screen-content-before"
-        /></template>
-        <template #nav-screen-content-after
-          ><slot name="nav-screen-content-after"
-        /></template>
-        <template #sidebar-nav-before
-          ><slot name="sidebar-nav-before"
-        /></template>
-        <template #sidebar-nav-after
-          ><slot name="sidebar-nav-after"
-        /></template>
-        <template #page-top><slot name="page-top" /></template>
-        <template #page-bottom><slot name="page-bottom" /></template>
-        <template #doc-before><slot name="doc-before" /></template>
-        <template #doc-after><slot name="doc-after" /></template>
-        <template #doc-top><slot name="doc-top" /></template>
-        <template #doc-bottom><slot name="doc-bottom" /></template>
-        <template #doc-footer-before
-          ><slot name="doc-footer-before"
-        /></template>
-        <template #aside-top><slot name="aside-top" /></template>
-        <template #aside-bottom><slot name="aside-bottom" /></template>
-        <template #aside-outline-before
-          ><slot name="aside-outline-before"
-        /></template>
-        <template #aside-outline-after
-          ><slot name="aside-outline-after"
-        /></template>
-        <template #layout-top><slot name="layout-top" /></template>
-        <template #layout-bottom><slot name="layout-bottom" /></template>
-      </DefaultLayout>
-    </div>
-  </template>
-  <Content v-else />
+  <DefaultLayout class="workbook-layout">
+    <template #layout-top><VPNavbar /></template>
+    <template #sidebar-nav-before><SidebarTop /></template>
+    <template #doc-before><OpenInEditor /></template>
+  </DefaultLayout>
 </template>
 
-<style scoped>
-/* Оба layout в DOM всегда; переключение только через media (без v-if), чтобы не было hydration mismatch при прямой загрузке. */
-.vp-theme-container--desktop-only {
-  display: none;
-}
-
-.vp-theme-container--mobile-only {
-  display: block;
-}
-
+<!-- Десктоп (от 961px). Селекторы с тегом (aside.VPSidebar, div.VPContent) - чтобы перебить
+     scoped-стили VitePress той же специфичности. Мобильный вид - стандартный VitePress -->
+<style>
 @media (min-width: 961px) {
-  .vp-theme-container--desktop-only {
-    display: flex;
-    height: 100vh;
+  .workbook-layout {
+    --vp-sidebar-width: 300px;
+  }
+  /* Свёрнутое меню - полоса 60px: кнопка 40px + отступы 10px (SidebarTop.vue) */
+  html.sidebar-collapsed .workbook-layout {
+    --vp-sidebar-width: 60px;
   }
 
-  .vp-theme-container--mobile-only {
-    display: none !important;
+  /* Шапка и локальная навигация («Меню», «На этой странице») - только на мобильном */
+  .workbook-layout .VPNav,
+  .workbook-layout .VPLocalNav {
+    display: none;
   }
-}
 
-.vp-theme-container--desktop {
-  height: 100vh;
-}
+  /* Левое меню: фиксированное, на всю высоту окна, прокручивается отдельно от страницы.
+     Белый блок - поиск и пункты меню, ниже - фон меню */
+  .workbook-layout aside.VPSidebar {
+    padding: 0;
+    width: var(--vp-sidebar-width);
+    border-right: 1px solid var(--vp-c-divider);
+    font-size: 15px;
+    scrollbar-color: var(--vp-c-scrollbar) var(--vp-c-scrollbar-divider);
+    scrollbar-width: thin;
+    transition: width 0.2s;
+  }
+  .workbook-layout .VPSidebar .curtain {
+    display: none;
+  }
+  /* flow-root - чтобы нижний отступ последней группы остался внутри белого блока */
+  .workbook-layout .VPSidebar .nav {
+    display: flow-root;
+    background-color: #fff;
+  }
+  .workbook-layout .VPSidebar .nav .group {
+    width: auto;
+    margin: 0 10px 10px;
+    padding: 0;
+    border: none;
+  }
+  .workbook-layout .VPSidebar .vp-sidebar-search + .group {
+    margin-top: 10px;
+  }
+  html.sidebar-collapsed .workbook-layout aside.VPSidebar {
+    overflow: hidden;
+  }
+  html.sidebar-collapsed .workbook-layout .VPSidebar .nav .group {
+    display: none;
+  }
 
-.vp-content {
-  flex-grow: 1;
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
+  /* Контент справа от меню (навбар тем сдвигается так же - VPNavbar.vue) */
+  .workbook-layout div.VPContent {
+    padding-top: 0;
+  }
+  .workbook-layout div.VPContent.has-sidebar {
+    margin: 0;
+    padding-right: 0;
+    padding-left: var(--vp-sidebar-width);
+    transition: padding-left 0.2s;
+  }
+
+  /* Страница на всю ширину, без оглавления справа */
+  .workbook-layout .VPDoc.has-sidebar.has-aside {
+    padding: 10px;
+  }
+  .workbook-layout .VPDoc div.aside {
+    display: none;
+  }
+  .workbook-layout .VPDoc .content {
+    padding: 20px 40px;
+  }
+  .workbook-layout .VPDoc .content div.content-container {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 </style>

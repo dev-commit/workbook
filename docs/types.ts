@@ -45,7 +45,13 @@ export type TThemeTopics =
   | "svelte"
   | null;
 
-export type IThemeConfigNav = {
+// Пункт навбара тем в themeConfig.nav (config.ts → VPNavbar.vue).
+// newRow - пункт начинается с новой строки (в build-*.ts перед ним стоит null)
+export type TThemeConfigNavItem = IHeaderMenuNavChildren & {
+  newRow?: boolean;
+};
+
+export type TThemeConfigNav = {
   text: string;
-  items: IHeaderMenuNavChildren[];
+  items: TThemeConfigNavItem[];
 };

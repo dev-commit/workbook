@@ -16,11 +16,6 @@ defineProps<Props>();
 </script>
 
 <style scoped>
-:root {
-  --color-violet-medium: 98, 65, 234; /* #6241ea */
-  --color-brown: 179, 183, 104; /* #b3b768 */
-}
-
 .v-details {
   font-size: 16px;
   background-color: #f5f5f5;
@@ -35,11 +30,10 @@ defineProps<Props>();
 .v-summary {
   margin: 0;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   font-family: var(--vp-font-family-base);
   cursor: pointer;
   user-select: none;
-  font-weight: 600;
 }
 
 .v-content {
@@ -47,7 +41,6 @@ defineProps<Props>();
 }
 
 .v-content :deep(pre) {
-  /* font-size: 14px; */
   background-color: #fff;
 }
 

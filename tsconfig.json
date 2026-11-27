@@ -18,7 +18,7 @@
     "baseUrl": ".",
     "paths": {
       "docs/*": ["docs/*"],
-      // Внутренние компоненты темы VitePress (импортируются в Layout.vue, VPSidebar.vue):
+      // Внутренние компоненты темы VitePress (кнопка и окно поиска в SidebarTop.vue):
       // без заглушки vue-tsc проверяет их исходники в node_modules и выдаёт ошибки
       "vitepress/dist/client/theme-default/components/*": [
         "docs/.vitepress/types/vitepress-theme-components.d.ts"

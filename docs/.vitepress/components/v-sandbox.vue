@@ -62,13 +62,4 @@ const getTitle = () => {
   color: inherit !important;
   font-weight: 400;
 }
-
-@media screen and (max-width: 950px) {
-  .v-two-wrapper {
-    flex-direction: column;
-  }
-  .v-two-column-half {
-    width: 100%;
-  }
-}
 </style>

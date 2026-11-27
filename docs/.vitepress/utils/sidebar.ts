@@ -5,40 +5,21 @@ import type {
   TSidebarTopicsItemStatus,
 } from "../../types";
 
-const checkIconColor = (
-  status: TSidebarTopicsItemStatus | undefined,
-): string => {
-  switch (status) {
-    case "done":
-      return "blue";
-    case "check":
-      return "red";
-    default:
-      return "inherit";
-  }
-};
+// Маркер «•» перед названием пункта. Статус красит маркер (стили - theme/styles/menu.css):
+// done - синий, check - красный, doit - сиреневый квадрат
+const getMarker = (status: TSidebarTopicsItemStatus | undefined): string =>
+  status ? `<span class="sidebar-marker-${status}">•</span>` : "•";
 
+// Текст пункта - без лишней разметки и пробелов: меню всех тем входит в данные сайта,
+// которые загружает каждая страница
 const getSidebarChildren = (
   children: TSidebarTopicsItem[],
   fullPath: string,
-): DefaultTheme.SidebarItem[] => {
-  return children.map(([path, title, status]) => {
-    const iconColor = checkIconColor(status);
-
-    const styleBorder =
-      status === "doit"
-        ? "border-radius: 2px; background-color: #d0bdf6ff; color: #d0bdf6ff"
-        : "";
-
-    return {
-      text: `
-        <span style="color: ${iconColor}; ${styleBorder}">•</span>
-        ${title}
-      `,
-      link: fullPath + path,
-    };
-  });
-};
+): DefaultTheme.SidebarItem[] =>
+  children.map(([path, title, status]) => ({
+    text: `${getMarker(status)} ${title}`,
+    link: fullPath + path,
+  }));
 
 const buildSidebarFor = (
   data: IBuildTopics,

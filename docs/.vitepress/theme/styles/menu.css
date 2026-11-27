@@ -1,7 +1,6 @@
-/* FIXME: */
+/* Пункты левого меню: метки getThemeMenu (docs/utils.ts) и маркеры статуса (utils/sidebar.ts) */
 .menu-code {
   padding: 2px 5px;
-  /* color: rgb(var(--color-black)); */
   line-height: 1;
   font-weight: 300;
   border-radius: 3px;
@@ -34,4 +33,17 @@
 }
 .menu-code-outline {
   border-color: rgb(var(--color-violet-medium));
+}
+
+/* Маркер «•» пункта со статусом */
+.sidebar-marker-done {
+  color: blue;
+}
+.sidebar-marker-check {
+  color: red;
+}
+.sidebar-marker-doit {
+  border-radius: 2px;
+  background-color: #d0bdf6ff;
+  color: #d0bdf6ff;
 }

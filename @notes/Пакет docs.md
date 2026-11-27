@@ -10,8 +10,8 @@
 
 1. Пакет docs (npm workspace)
 
-- В docs/package.json: "name": "docs", "exports": { "./_": "./_" }.
-- В корневом package.json: "workspaces": ["docs"].
+- В docs/package.json: `"name": "docs"`, `"exports": { "./*": "./*" }`.
+- В корневом package.json: `"workspaces": ["docs"]`.
 - После npm install в node_modules появляется симлинк docs → корневая папка docs, и импорты вида docs/utils, docs/types резолвятся как у обычного пакета при загрузке конфига.
 
 2. Загрузка .ts при старте
