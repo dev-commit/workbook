@@ -1,22 +1,30 @@
 # validationSchema
 
-```js
+<v-sandbox needcheck url="https://codesandbox.io/s/formik-yup-schemaof-iobrw" codesandbox />
+
+```ts
 type Person = {
-    userName: string | undefined;
+  userName: string | undefined;
 };
 ```
 
-```js
-import * as Yup from 'yup';
+```tsx
+import * as Yup from "yup";
 
 const getValidationSchema = (): Yup.SchemaOf<Person> =>
-    Yup.object({
-        userName: Yup.string()
-    });
+  Yup.object({
+    userName: Yup.string(),
+  });
 
 const App = () => {
-    const validationSchema = getValidationSchema();
+  const validationSchema = getValidationSchema();
 
-    return (...);
+  return <div>...</div>;
 };
 ```
+
+::: warning
+
+- В yup v1 тип `SchemaOf` удалён: вместо `Yup.SchemaOf<Person>` используется `Yup.ObjectSchema<Person>`
+
+:::

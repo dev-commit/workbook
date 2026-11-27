@@ -1,23 +1,19 @@
 # FormikProps
 
-```js
-interface Person = {
+```ts
+interface Person {
   userName: string | undefined;
-};
+}
 ```
 
-```js
-import { FormikProps } from 'formik';
+```tsx
+import { FormikProps } from "formik";
 
 const App = () => {
-    return (
-    	<Formik>
-			{(formikProps: FormikProps<Person>) => (
-				<Form>
-					//
-				</Form>
-			)}
-    	</Formik>
-    );
+  return (
+    <Formik>
+      {(formikProps: FormikProps<Person>) => <Form>{/* ... */}</Form>}
+    </Formik>
+  );
 };
 ```

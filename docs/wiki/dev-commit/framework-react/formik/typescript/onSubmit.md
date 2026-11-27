@@ -1,41 +1,47 @@
 # onSubmit
 
-```js
-interface Person = {
+```ts
+interface Person {
   userName: string | undefined;
-};
+}
 ```
 
-```js
-import { FormikHelpers } from 'formik';
+```tsx
+import { FormikHelpers } from "formik";
 
 const App = () => {
-    const handleSubmit = (
-        values: Person,
-        formik: FormikHelpers<Person>,
-    ): void => {
-        //
-    };
+  const handleSubmit = (
+    values: Person,
+    formik: FormikHelpers<Person>,
+  ): void => {
+    //
+  };
 
-    return (
-        <FormikWrapper onSubmit={handleSubmit}>
-            <Component />
-            <button type="submit">Submit</button>
-        </FormikWrapper>
-    );
+  return (
+    <FormikWrapper onSubmit={handleSubmit}>
+      <Component />
+      <button type="submit">Submit</button>
+    </FormikWrapper>
+  );
 };
 ```
 
-```js
+```tsx
 export interface IFormikWrapperProps {
-    onSubmit: FormikConfig<Person>['onSubmit'];
+  onSubmit: FormikConfig<Person>["onSubmit"];
 }
 
-const FormikWrapper: React.FC<IFormikWrapperProps> = props => {
-    return (
-        <Formik onSubmit={props.onSubmit}>
-            <Form>{props.children}</Form>
-        </Formik>
-    );
+const FormikWrapper: React.FC<IFormikWrapperProps> = (props) => {
+  return (
+    <Formik onSubmit={props.onSubmit}>
+      <Form>{props.children}</Form>
+    </Formik>
+  );
 };
 ```
+
+::: warning
+
+- С `@types/react` 18 тип `React.FC` не добавляет `children` в props: их нужно объявить в интерфейсе (`children?: React.ReactNode`)
+
+:::

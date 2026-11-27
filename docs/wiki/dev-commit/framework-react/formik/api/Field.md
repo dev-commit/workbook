@@ -1,16 +1,28 @@
 # `<Field />`
 
+## Информация
+
+<v-sandbox needcheck url="https://codesandbox.io/s/formik-field-21pnj" codesandbox />
+
 ::: info
-https://formik.org/docs/api/field
+
+- https://formik.org/docs/api/field - Документация
+
 :::
 
-Обёртка для элементов формы.
+::: danger
 
-- Используется внутри `<Form />`
+**`<Field />`** - обертка для элементов формы
+
+:::
+
+- Используется внутри `<Form>`
 - Помещаются поля для обработки
-- В минимальном варианте использование `<Form />` достаточно для обработки полей
+- В минимальном варианте, использование `<Form>` достаточно для обработки полей
 
-```js
+## Использование
+
+```jsx
 import { Formik, Form, Field } from "formik";
 
 const App = () => {
@@ -28,23 +40,26 @@ const App = () => {
 ## Использование нативного `<input />`
 
 - Вместо `<Field />` напрямую использовать `<input />` нельзя.
-- Т.к. для `<input />` нужно обработать событие onChange и записать это в Formik
+- Т.к. для `<input />` нужно обработать событие _onChange_ и записать это в Formik
 
-```html
+<!-- prettier-ignore -->
+```jsx
 <Field type="text" name="userName" />
 
-<!-- Не сработает -->
+{/* Не сработает */}
 <input type="text" name="userName" />
 ```
 
-2 варианта обработки:
+### 2 варианта обработки
 
 1. Обернуть `<input />` в `<Field />`
-2. Использовать дочерний компонент наподобие `<Field />` и в нём изменить значение через хук `useField()`
+2. Использовать дочерний компонент наподобие `<Field />` и в нём изменить значение через хук _useField()_
 
 ## Оборачивание в `<Field />`
 
-```html
+<v-sandbox needcheck url="https://codesandbox.io/s/formik-field-wrapper-e9wpo" codesandbox />
+
+```jsx
 <Field name="userName">
   {({ field, form }) => {
     return (
@@ -57,4 +72,3 @@ const App = () => {
   }}
 </Field>
 ```
-

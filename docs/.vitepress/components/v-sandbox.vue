@@ -18,6 +18,8 @@ interface Props {
   title?: string;
   codepen?: boolean;
   codesandbox?: boolean;
+  // Пометка автора: пример нужно перепроверить (перенесена из старого справочника). На вывод не влияет
+  needcheck?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {

@@ -1,8 +1,14 @@
 # `<Formik validate>`
 
+## Информация
+
+<v-sandbox needcheck url="https://codesandbox.io/s/formik-validate-gv4s5" codesandbox />
+
 - Кастомная валидация полей
 
-```js
+## Использование
+
+```jsx
 import { Formik } from "formik";
 
 const App = () => {
@@ -13,11 +19,6 @@ const App = () => {
     // ...
   };
 
-  return (
-    <Formik validate={validate}>
-      {/* ... */}
-    </Formik>
-  );
+  return <Formik validate={validate}>...</Formik>;
 };
 ```
-

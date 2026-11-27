@@ -1,54 +1,64 @@
-# useField()
+# `useField()`
+
+## Информация
+
+<v-sandbox needcheck url="https://codesandbox.io/s/formik-usefield-5z6lj" codesandbox />
 
 ::: info
-https://formik.org/docs/api/useField
+
+- https://formik.org/docs/api/useField - Документация
+
 :::
 
-Хук
+::: danger
+
+**`useField()`** - хук
+
+> - _return_ - Array
+
+:::
 
 - Автоматически подключает входные данные к Formik
-- Вызывается из дочернего компонента
+- _Вызывается из дочернего компонента_
 - Можно использовать для создания собственных пользовательских примитивов ввода
 
-Array
-
-### Array
+## Array
 
 ::: details field
 
-- name Имя элемента (атрибут name)
-- value Текущее value
-- onChange Function
-- onBlur Function
+- `name` - Имя элемента (атрибут name)
+- `value` - Текущее value
+- `onChange` - Function
+- `onBlur` - Function
 
 :::
 
 ::: details meta
 
-- value Текущее value
-- error undefined
-- touched false
-- initialValue value, заданное по умолчанию
-- initialTouched false
-- initialError undefined
+- `value` - Текущее value
+- `error` - undefined
+- `touched` - false
+- `initialValue` - value, заданное по умолчанию
+- `initialTouched` - false
+- `initialError` - undefined
 
 :::
 
 ::: details helpers
 
-- setValue Function
-- setTouched Function
-- setError Function
+- `setValue` - Function
+- `setTouched` - Function
+- `setError` - Function
 
 :::
 
-```js
+```jsx
 import { useField } from "formik";
 
-const Child = () => {
-  // простой вариант
+const Child = (props) => {
+  // Простой вариант
   const [field, meta, helpers] = useField(props);
-  // деструктуризация
+  // Деструктуризация
   const [, { value, touched, error }, { setTouched, setValue }] =
     useField(props);
 };
@@ -58,7 +68,7 @@ const Child = () => {
 
 ### Простой Input
 
-```js
+```jsx
 const Input = ({ name, type }) => {
   const [field] = useField(name);
 
@@ -74,14 +84,14 @@ const Input = ({ name, type }) => {
 };
 ```
 
-```html
-<!-- Вызов -->
-<input name="userName" type="text" />
+```jsx
+// Вызов
+<Input name="userName" type="text" />
 ```
 
 ### Input с onChange
 
-```js
+```jsx
 const Input = ({ name, type }) => {
   const [field, , { setValue }] = useField(name);
 
@@ -101,14 +111,14 @@ const Input = ({ name, type }) => {
 };
 ```
 
-```html
-<!-- Вызов -->
-<input name="userName" type="text" />
+```jsx
+// Вызов
+<Input name="userName" type="text" />
 ```
 
 ### Input с Label
 
-```js
+```jsx
 const Input = ({ label, name, ...props }) => {
   const [field] = useField(name);
 
@@ -121,14 +131,14 @@ const Input = ({ label, name, ...props }) => {
 };
 ```
 
-```html
-<!-- Вызов -->
-<input name="userName" type="text" label="Name" />
+```jsx
+// Вызов
+<Input name="userName" type="text" label="Name" />
 ```
 
 ### Input с обработкой ошибок
 
-```js
+```jsx
 const Input = ({ name, ...props }) => {
   const [field, meta] = useField(name);
   const hasError = Boolean(meta.touched) && Boolean(meta.error);
@@ -142,17 +152,17 @@ const Input = ({ name, ...props }) => {
 };
 ```
 
-```html
-<!-- Вызов -->
-<input name="userName" type="text" />
+```jsx
+// Вызов
+<Input name="userName" type="text" />
 ```
 
-### ИспользованиеsetValue
+### Использование `setValue`
 
-```js
+```jsx
 const Counter = ({ name }) => {
-  // вместо прямого использования значений в "field"
-  // используем "meta" и "helpers"
+  // Вместо прямого использования значений в "field"
+  // используем "helpers" (setValue)
   const [field, , { setValue }] = useField(name);
 
   // console.log(field.value);
@@ -166,18 +176,16 @@ const Counter = ({ name }) => {
 };
 ```
 
-```html
-<!-- Вызов -->
+```jsx
+// Вызов
 <Counter name="userCount" />
 ```
 
 ## Главный компонент
 
-```js
+```jsx
 import { Form, Formik } from "formik";
-```
 
-```js
 const App = () => {
   const initialFormData = {
     userName: "",
@@ -185,7 +193,7 @@ const App = () => {
   };
 
   const handleSubmit = (values, actions) => {
-    // может быть асинхронное дейсвие
+    // Может быть асинхронное действие
     console.log(values);
     actions.setSubmitting(false);
   };

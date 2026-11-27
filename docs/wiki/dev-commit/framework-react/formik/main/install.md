@@ -1,5 +1,5 @@
 # Установка и настройка
 
 ```bash
-npm i --save formik
+npm i formik
 ```

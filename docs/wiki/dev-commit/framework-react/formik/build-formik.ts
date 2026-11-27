@@ -30,7 +30,7 @@ const topics: ISidebarTopics[] = [
     ],
   },
   {
-    title: "Валидиция",
+    title: "Валидация",
     children: [
       ["validation/info", getTopicSubtitle("info")],
       ["validation/validate", getThemeMenu("method", ["validate"])],
