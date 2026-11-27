@@ -1,30 +1,30 @@
 # useStore
 
-### Простой вариант
+## Простой вариант
 
-```js
-import useStore from "../store/store"
+```ts
+import useStore from "../store/store";
 
 const App: React.FC = () => {
-  const nodes = useStore((state) => state.nodes)
-  const setNodes = useStore((state) => state.setNodes)
+  const nodes = useStore((state) => state.nodes);
+  const setNodes = useStore((state) => state.setNodes);
   //
-}
+};
 ```
 
-### Селектор
+## Селектор
 
-```js
-import { useShallow } from "zustand/react/shallow"
-import useStore, { RFState } from "../store/store"
+```ts
+import { useShallow } from "zustand/react/shallow";
+import useStore, { RFState } from "../store/store";
 
 const selector = (state: RFState) => ({
   nodes: state.nodes,
   setNodes: state.setNodes,
-})
+});
 
 const App: React.FC = () => {
-  const { nodes, setNodes } = useStore(useShallow(selector))
+  const { nodes, setNodes } = useStore(useShallow(selector));
   //
-}
+};
 ```

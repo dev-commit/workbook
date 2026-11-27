@@ -1,41 +1,44 @@
 # `<Handle />`
 
-```js
+::: warning
+
+- Код написан для React Flow v11. В v12 пакет `reactflow` переименован в `@xyflow/react`
+
+:::
+
+```jsx
 <Handle
   type="target" // "source" | "target"
   position={Position.Top}
   isConnectable={isConnectable}
   id={id + "-top"}
-  style={{ left: 50, background: "blue" }}/>;
+  style={{ left: 50, background: "blue" }}
+/>
 ```
 
 ## Пример
 
-<!-- <img src="../@img/handle-sample.png" width="400px"/> -->
+<img src="../@img/Handle/handle-sample.png" style="width: 400px" />
 
-```js
-import { NodeAction } from "./NodeAction"
-import { initialNodes, initialEdges } from "./initialState.tsx"
+::: code-group
+
+```tsx [App]
+import { NodeAction } from "./NodeAction";
+import { initialNodes, initialEdges } from "./initialState.tsx";
 
 const customNodes = {
   action: NodeAction,
-}
+};
 
 const App = () => {
   const [nodes] = useNodesState(initialNodes);
   const [edges] = useEdgesState(initialEdges);
 
-  return (
-      <ReactFlow
-        nodes={nodes}
-        edges={edges}
-        nodeTypes={customNodes}
-      />
-  )
-}
+  return <ReactFlow nodes={nodes} edges={edges} nodeTypes={customNodes} />;
+};
 ```
 
-```js
+```ts [initialState]
 export const initialNodes = [
   {
     id: "node1",
@@ -67,7 +70,7 @@ export const initialNodes = [
     position: { x: 450, y: 200 },
     data: { label: "Action Right" },
   },
-]
+];
 
 export const initialEdges = [
   {
@@ -98,10 +101,10 @@ export const initialEdges = [
     sourceHandle: "node2-right",
     targetHandle: "node5-left",
   },
-]
+];
 ```
 
-```js
+```tsx [NodeAction]
 import { Handle, Position } from "reactflow";
 
 enum NodeHandlersPositionPrefix {
@@ -148,3 +151,5 @@ const NodeAction = (props) => {
 
 export { NodeAction };
 ```
+
+:::

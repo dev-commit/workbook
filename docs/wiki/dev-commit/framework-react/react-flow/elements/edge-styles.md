@@ -1,7 +1,13 @@
 # Edge Styles
 
-```js
-import { ConnectionLineType } from "reactflow"
+::: warning
+
+- Код написан для React Flow v11. В v12 пакет `reactflow` переименован в `@xyflow/react`
+
+:::
+
+```jsx
+import { ConnectionLineType } from "reactflow";
 
 const connectionLineStyle = { stroke: "#c4c4c4" };
 
@@ -19,6 +25,6 @@ const App = () => {
       defaultEdgeOptions={edgeOptions}
       connectionLineType={ConnectionLineType.SmoothStep}
     />
-  )
-}
+  );
+};
 ```

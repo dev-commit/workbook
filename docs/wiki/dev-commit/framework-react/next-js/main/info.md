@@ -1,5 +1,9 @@
 # Информация
 
+## Информация
+
 ::: info
-https://nextjs.org/docs
+
+- https://nextjs.org/docs
+
 :::

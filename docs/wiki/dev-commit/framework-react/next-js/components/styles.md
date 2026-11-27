@@ -2,36 +2,36 @@
 
 ## CSS
 
-- Глобальные стили в app/globals.css
+- Глобальные стили в _app/globals.css_
 
 ### CSS Modules
 
-App.jsx
+::: code-group
 
-```js
-import styles from './App.module.css';
+```jsx [App.jsx]
+import styles from "./App.module.css";
 
 const App = () => {
-    return (
-        <h1 className={styles.header}>Header</h1>
-    )
-}
+  return <h1 className={styles.header}>Header</h1>;
+};
 
 export default App;
 ```
 
-App.module.css
-
-```css
+```css [App.module.css]
 .header {
-    color: yellowgreen;
+  color: yellowgreen;
 }
 ```
 
+:::
+
 ## Sass
 
+```bash
 npm i --save sass
+```
 
 ### CSS Modules
 
-- Аналогично с CSS Modules, только импортируется файл App.module.scss
+- Аналогично с CSS Modules, только импортируется файл _App.module.scss_

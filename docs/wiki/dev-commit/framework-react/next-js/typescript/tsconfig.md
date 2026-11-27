@@ -1,6 +1,6 @@
 # tsconfig.json
 
-tsconfig.json
+```json
 {
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -27,4 +27,4 @@ tsconfig.json
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
-&lt;
+```

@@ -1,22 +1,29 @@
 # Custom Edge
 
+::: warning
+
+- Код написан для React Flow v11. В v12 пакет `reactflow` переименован в `@xyflow/react`
+
+:::
+
 ## Элементы
 
-- **&lt;BaseEdge&gt;** - линия. Можно передать markerEnd
-- **&lt;EdgeLabelRenderer&gt;** - кастомные элементов на линии
+- `<BaseEdge>` - линия. Можно передать _markerEnd_
+- `<EdgeLabelRenderer>` - кастомные элементы на линии
 
 ## Тип линии
 
 ### ConnectionLineType
 
-Неизвестно что указать для "step". Нет "getStepPath"
-```js
+- Для "step" отдельной функции нет (`getStepPath` не существует): линия step - это `getSmoothStepPath` с `borderRadius: 0` (без скругления углов)
+
+```ts
 export declare enum ConnectionLineType {
-  Bezier = "default",           // => getBezierPath
-  Straight = "straight",        // => getStraightPath
-  Step = "step",                // => 
-  SmoothStep = "smoothstep",    // => getSmoothStepPath
-  SimpleBezier = "simplebezier" // => getSimpleBezierPath
+  Bezier = "default", // => getBezierPath
+  Straight = "straight", // => getStraightPath
+  Step = "step", // => getSmoothStepPath({ ..., borderRadius: 0 })
+  SmoothStep = "smoothstep", // => getSmoothStepPath
+  SimpleBezier = "simplebezier", // => getSimpleBezierPath
 }
 ```
 
@@ -24,27 +31,30 @@ export declare enum ConnectionLineType {
 
 ```js
 import {
-  getBezierPath
-  getSimpleBezierPath
-  getSmoothStepPath
-  getStraightPath
-} from "reactflow"
+  getBezierPath,
+  getSimpleBezierPath,
+  getSmoothStepPath,
+  getStraightPath,
+} from "reactflow";
 ```
 
 ## Пример
 
-```ts
-import { BaseEdge, EdgeLabelRenderer, getStraightPath } from "reactflow"
+::: code-group
 
-interface IEdgeLabelProps {
-  id: string
-  sourceX: number
-  sourceY: number
-  targetX: number
-  targetY: number
-  source: string
-  target: string
-  markerEnd?: string
+```tsx [CustomEdge.tsx]
+import cn from "classnames";
+import { BaseEdge, EdgeLabelRenderer, getStraightPath } from "reactflow";
+
+interface ICustomEdgeProps {
+  id: string;
+  sourceX: number;
+  sourceY: number;
+  targetX: number;
+  targetY: number;
+  source: string;
+  target: string;
+  markerEnd?: string;
 }
 
 const CustomEdge: React.FC<ICustomEdgeProps> = (props) => {
@@ -57,14 +67,23 @@ const CustomEdge: React.FC<ICustomEdgeProps> = (props) => {
     // source: nodeSource,
     // target: nodeTarget,
     markerEnd,
-  } = props
+  } = props;
 
-  const [edgePath] = getStraightPath({ sourceX, sourceY, targetX, targetY });
+  const [edgePath, labelX, labelY] = getStraightPath({
+    sourceX,
+    sourceY,
+    targetX,
+    targetY,
+  });
 
-  const styleCenter = {
-    transform: `translate(-50%, -50%) translate(${labelX}px,${labelY}px)`
-  }
-  const onClick = () => {}
+  // position: absolute - чтобы кнопка встала в центр линии,
+  // pointerEvents: all - чтобы по ней можно было кликнуть
+  const styleCenter: React.CSSProperties = {
+    position: "absolute",
+    transform: `translate(-50%, -50%) translate(${labelX}px,${labelY}px)`,
+    pointerEvents: "all",
+  };
+  const onClick = () => {};
 
   return (
     <>
@@ -77,47 +96,44 @@ const CustomEdge: React.FC<ICustomEdgeProps> = (props) => {
         />
       </EdgeLabelRenderer>
     </>
-  )
-}
+  );
+};
 
-export default CustomEdge
+export default CustomEdge;
 ```
 
-```js
-import CustomEdge from "./CustomEdge"
+```tsx [App.tsx]
+import CustomEdge from "./CustomEdge";
 
 const edgeTypes: EdgeTypes = {
-  'custom-edge': CustomEdge,
-}
+  "custom-edge": CustomEdge,
+};
 
 const edgeOptions = {
   // type: 'step',
-  type: 'custom-edge',
+  type: "custom-edge",
   markerEnd: {
     type: MarkerType.ArrowClosed,
     width: 25,
     height: 25,
     color: "#FF0072",
   },
-}
+};
 
-const App  = () => {
-  return (
-    <ReactFlow
-      edgeTypes={edgeTypes}
-      defaultEdgeOptions={edgeOptions}
-    />
-  )
-}
+const App = () => {
+  return <ReactFlow edgeTypes={edgeTypes} defaultEdgeOptions={edgeOptions} />;
+};
 ```
 
-```js
+```ts [initialState.ts]
 export const initialEdges = [
   {
     id: "edge-1",
     source: "node-1",
     target: "node-2",
-    type: 'custom-edge',
+    type: "custom-edge",
   },
-]
+];
 ```
+
+:::

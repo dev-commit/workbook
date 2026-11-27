@@ -1,22 +1,31 @@
 # usePathname
 
+## Информация
+
 ::: info
-https://nextjs.org/docs/app/api-reference/functions/use-pathname
+
+- https://nextjs.org/docs/app/api-reference/functions/use-pathname
+
 :::
 
-    Client Component hook, позволяющий получить путь текущего URL-адреса
-    
+::: danger
 
-- usePathname Client Component, поэтому в файле нужно использовать "use client"
+**`usePathname()`** - Client Component hook, позволяющий получить путь текущего URL-адреса
 
-```js
-"use client"
+:::
 
-import { usePathname } from 'next/navigation';
+- usePathname - Client Component hook, поэтому в файле нужно использовать `"use client"`
+
+## Пример
+
+```jsx
+"use client";
+
+import { usePathname } from "next/navigation";
 
 const App = (props) => {
-    const pathname =usePathname();
+  const pathname = usePathname();
 
-	return <p>Current pathname: {pathname}</p>
-}
+  return <p>Current pathname: {pathname}</p>;
+};
 ```

@@ -1,8 +1,8 @@
 # classNames
 
-- nodrag - запрет перетаскивания холста
-- nopan - ...
+- _nodrag_ - запрет перетаскивания узла
+- _nopan_ - запрет перетаскивания холста
 
-```html
+```jsx
 <div className="nodrag nopan" />
 ```

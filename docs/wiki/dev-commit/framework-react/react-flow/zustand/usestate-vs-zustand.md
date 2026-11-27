@@ -1,26 +1,33 @@
 # useState vs Zustand
 
-#### useState
+::: warning
 
-```js
-import { useCallback } from "react"
+- Код написан для React Flow v11. В v12 пакет `reactflow` переименован в `@xyflow/react`, компонент `ReactFlow` импортируется по имени: `import { ReactFlow } from "@xyflow/react"`
+
+:::
+
+<v-two :title="['useState', 'Zustand']">
+<template #first>
+
+```tsx
+import { useCallback } from "react";
 import ReactFlow, {
   addEdge,
   useEdgesState,
   useNodesState,
-  Connection
-} from "reactflow"
+  Connection,
+} from "reactflow";
 
 const App = () => {
-  const [nodes, setNodes, onNodesChange] = useNodesState([])
-  const [edges, setEdges, onEdgesChange] = useEdgesState([])
+  const [nodes, setNodes, onNodesChange] = useNodesState([]);
+  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 
   const onConnect = useCallback(
     (connection: Connection) => {
-      setEdges((eds) => addEdge(connection, eds))
+      setEdges((eds) => addEdge(connection, eds));
     },
     [setEdges],
-  )
+  );
 
   return (
     <ReactFlow
@@ -30,22 +37,19 @@ const App = () => {
       onEdgesChange={onEdgesChange}
       onConnect={onConnect}
     />
-  )
-}
+  );
+};
 ```
 
-#### Zustand
+</template>
+<template #last>
 
-```js
-import { useCallback } from "react"
-import ReactFlow, {
-  addEdge,
-  useEdgesState,
-  useNodesState,
-} from "reactflow"
+```tsx
+import { useCallback } from "react";
+import ReactFlow, { addEdge, useEdgesState, useNodesState } from "reactflow";
 
-import { useShallow } from "zustand/react/shallow"
-import useStore from "../store/store"
+import { useShallow } from "zustand/react/shallow";
+import useStore from "../store/store";
 
 const selector = (state) => ({
   nodes: state.nodes,
@@ -55,7 +59,7 @@ const selector = (state) => ({
   onConnect: state.onConnect,
   setNodes: state.setNodes,
   setEdges: state.setEdges,
-})
+});
 
 const App = () => {
   const {
@@ -66,7 +70,7 @@ const App = () => {
     onConnect,
     setNodes,
     setEdges,
-  } = useStore(useShallow(selector))
+  } = useStore(useShallow(selector));
 
   return (
     <ReactFlow
@@ -76,6 +80,9 @@ const App = () => {
       onEdgesChange={onEdgesChange}
       onConnect={onConnect}
     />
-  )
-}
+  );
+};
 ```
+
+</template>
+</v-two>

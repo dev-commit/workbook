@@ -1,76 +1,85 @@
 # Pages
 
+## Информация
+
 ::: info
-https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts
+
+- https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts
+
 :::
-- Next.js ищет имя page.js в директории app для формировани роутов
 
-<!-- <img src="../@img/pages.png" width="400px"/> -->
+- Next.js ищет имя _page.js_ в директории _app_ для формирования роутов
 
-```js
+<img src="../@img/pages/pages.png" style="width: 400px" />
+
+```tsx
 // `app/page.tsx` is the UI for the `/` URL
 export default function Page() {
-    return <h1>Hello, Home page!</h1>
+  return <h1>Hello, Home page!</h1>;
 }
 ```
 
-```js
+```tsx
 // `app/dashboard/page.tsx` is the UI for the `/dashboard` URL
 export default function Page() {
-    return <h1>Hello, Dashboard Page!</h1>
+  return <h1>Hello, Dashboard Page!</h1>;
 }
 ```
 
-## ИспользованиеPages Router
+## Использование _Pages Router_
 
 ::: info
-https://nextjs.org/docs/getting-started/installation#the-pages-directory-optional
+
+- https://nextjs.org/docs/getting-started/installation#the-pages-directory-optional
+
 :::
 
-- В Next.js поддерживается предыдущая версия роутинга, когда страницу можно размещать в директории pages
-- Для таких страниц будет недоступен Root Layout и нужно будет создавать собственный, которым нужно обернуть компонент
-- Если в собсвенном Layout использовать тег &lt;html&gt;, то будет ошибка
+::: warning
 
-#### Пример для страницы Dashboard
+- В Next.js поддерживается предыдущая версия роутинга, когда страницу можно размещать в директории _pages_
+- Для таких страниц будет недоступен _Root Layout_ и нужно будет создавать собственный, которым нужно обернуть компонент
+- Если в собственном Layout использовать тег `<html>`, то будет ошибка
 
-- Next.js увидит, что в директории "pages" есть директория "dashboard" и создаст роут /dashboard
+:::
 
-pages/dashboard/index.jsx
+### Пример для страницы Dashboard
 
-```js
-import LayoutDashboard from '../../layouts/LayoutDashboard';
+- Next.js увидит, что в директории _"pages"_ есть директория _"dashboard"_ и создаст роут _/dashboard_
+
+::: code-group
+
+```jsx [pages/dashboard/index.jsx]
+import LayoutDashboard from "../../layouts/LayoutDashboard";
 
 const DashboardPage = () => {
-    return (
-        <LayoutLinks>
-            <h1>Dashboard</h1>
-        </LayoutLinks>
-    )
-}
+  return (
+    <LayoutDashboard>
+      <h1>Dashboard</h1>
+    </LayoutDashboard>
+  );
+};
 
-export default LinksPage;
+export default DashboardPage;
 ```
 
-layouts/LayoutDashboard.jsx
-
-```js
-import Head from 'next/head';
+```jsx [layouts/LayoutDashboard.jsx]
+import Head from "next/head";
 
 const LayoutDashboard = (props) => {
-    const { children } = props;
+  const { children } = props;
 
-    return (
-        <>
-            <Head>
-                <title>Название</title>
-                <meta name="description" content="Описание"></meta>
-            </Head>
-            <main>
-                {children}
-            </main>
-        
-    )
-}
+  return (
+    <>
+      <Head>
+        <title>Название</title>
+        <meta name="description" content="Описание"></meta>
+      </Head>
+      <main>{children}</main>
+    </>
+  );
+};
 
 export default LayoutDashboard;
 ```
+
+:::

@@ -1,15 +1,11 @@
 # Установка и настройка
 
 ```bash
-npm i --save-dev
-  typescript
-  @types/node
-  @types/react
-  @types/react-dom
-  package.json
+npm i --save-dev typescript @types/node @types/react @types/react-dom
 ```
 
-```json
+```json{9-12}
+// package.json
 {
   "dependencies": {
     "react": "^18",
@@ -21,7 +17,6 @@ npm i --save-dev
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-
     "eslint": "^8",
     "eslint-config-next": "14.2.4"
   }

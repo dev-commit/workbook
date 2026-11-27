@@ -1,5 +1,9 @@
 # Информация
 
+## Информация
+
 ::: info
-https://reactflow.dev/learn
+
+- https://reactflow.dev/learn - Документация
+
 :::
