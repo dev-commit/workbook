@@ -55,3 +55,11 @@
   font-size: 15px;
   color: #000;
 }
+
+/* Превью меню целиком (заголовки групп и пункты) - ширина как у левого меню */
+.menu-preview-sidebar {
+  max-width: 280px;
+}
+.menu-preview-sidebar p {
+  margin: 0 0 10px;
+}

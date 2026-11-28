@@ -26,6 +26,8 @@ console.log(userService.getFilteredUsers());
 1. Без 'use strict' => _[]_
 2. 'use strict' => _Uncaught TypeError: Cannot read properties of undefined (reading 'currentStatus')_
 
+## Реализация
+
 ### Решение #1 - Стрелочная функция
 
 ```js
@@ -60,6 +62,8 @@ getFilteredUsers: function () {
 ```
 
 ## Вариации контекста
+
+## Реализация
 
 ```js
 function foo() {

@@ -1,6 +1,8 @@
 # Сумма произвольного количества скобок
 
-## #1
+## Реализация
+
+### #1
 
 ```js
 function sum() {
@@ -21,7 +23,7 @@ console.log(sum(10)(5)(5)(80)() === 100);
 console.log(typeof sum(100) === "function");
 ```
 
-## #2 Learn.Javascript.Ru
+### #2 Learn.Javascript.Ru
 
 ```js
 function sum(a) {
@@ -43,7 +45,7 @@ console.log(+sum(6)(-1)(-2)(-3)); // 0
 console.log(+sum(0)(1)(2)(3)(4)(5)); // 15
 ```
 
-## #3 Фиксированное окончание пустым значением
+### #3 Фиксированное окончание пустым значением
 
 ```js
 console.log(sum(1)(2)(3)()); // 6
@@ -60,7 +62,7 @@ function sum(arg) {
 }
 ```
 
-## #4 Добавление числа
+### #4 Добавление числа
 
 ```js
 console.log(sum(1)(2)(3) + 5); // 11
@@ -96,7 +98,7 @@ function sum(arg) {
 // a2.toString() + 5 - valueOf вернет саму функцию, поэтому вызывается toString
 ```
 
-## #5
+### #5
 
 ```js
 function sum(num) {

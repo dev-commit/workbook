@@ -39,26 +39,3 @@ function foo(a, b) {
 const bar = bind(foo, { name: "Tony" });
 const result = bar(2, 3); // => 2 3 "Tony"
 ```
-
-## 👿 Усложненный вариант
-
-```js
-Function.prototype.bind = function (context) {
-  const fun = this;
-  const arg1 = Array.prototype.slice.call(arguments, 1);
-  return function () {
-    const arg2 = Array.prototype.slice.call(arguments);
-    return fun.call(context, ...arg1.concat(arg2));
-  };
-};
-
-Function.prototype.bind = function (context) {
-  const arg1 = Array.prototype.slice.call(arguments, 1);
-  const fun = this;
-
-  return function () {
-    const arg2 = Array.prototype.slice.call(arguments);
-    return fun.apply(context, arg1.concat(arg2));
-  };
-};
-```

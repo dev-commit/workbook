@@ -27,10 +27,19 @@ const buildSidebarFor = (
   data: IBuildTopics,
 ): Record<string, DefaultTheme.SidebarItem[]> => {
   const result: DefaultTheme.SidebarItem[] = data.topics.map(
-    ({ title, children }) => ({
-      text: title,
-      items: getSidebarChildren(children, data.path),
-    }),
+    ({ title, children, child }) =>
+      // children: null - заголовок раздела, выглядит как заголовок группы.
+      // items: [] - отдельная группа: пункт верхнего уровня без items VitePress
+      // присоединяет к соседней группе
+      children === null
+        ? { text: title, items: [] }
+        : {
+            // child: true - подзаголовок (стили .sidebar-subtitle - theme/styles/custom.css)
+            text: child
+              ? `<span class="sidebar-subtitle">${title}</span>`
+              : title,
+            items: getSidebarChildren(children, data.path),
+          },
   );
   return { [data.path]: result };
 };

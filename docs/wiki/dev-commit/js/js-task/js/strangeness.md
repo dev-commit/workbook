@@ -17,16 +17,11 @@ console.log(z); // 1
 - `a: 10` - это объявление метки
 - https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/label
 
+<!-- prettier-ignore -->
 ```js
-{
-  var a = 1;
-}
-{
-  a: 10;
-}
-{
-  a = 3;
-}
+; { var a = 1 }
+; { a: 10 }
+; { a = 3 }
 
 console.log(a); // => 3
 ```

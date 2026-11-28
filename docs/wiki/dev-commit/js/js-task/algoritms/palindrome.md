@@ -8,7 +8,9 @@
 
 :::
 
-## Решение 1
+## Реализация
+
+### Решение 1
 
 ```js
 function isPalindrome(str) {
@@ -30,7 +32,7 @@ console.log(isPalindrome("дом")); // false
 console.log(isPalindrome("А луна канула")); // true
 ```
 
-## Решение 2
+### Решение 2
 
 - _for_ вероятно можно заменить на _every_
 

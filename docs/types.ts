@@ -14,7 +14,10 @@ export type TSidebarTopicsItem = [
 
 export interface ISidebarTopics {
   title: string;
-  children: TSidebarTopicsItem[];
+  // null - заголовок раздела без пунктов, над следующими группами
+  children: TSidebarTopicsItem[] | null;
+  // true - заголовок группы выводится как подзаголовок (группа внутри раздела)
+  child?: boolean;
 }
 
 export interface IHeaderMenuNav {

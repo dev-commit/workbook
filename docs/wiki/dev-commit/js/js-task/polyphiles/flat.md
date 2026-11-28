@@ -42,29 +42,3 @@ flattenDeep([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]); // => [1,2,3]
 ```
 
 - Проверку _!Array.isArray(element)_ можно заменить на _typeof element !== 'object'_
-
-## Решение 2
-
-- Ошибка: Uncaught RangeError: Maximum call stack size exceeded
-
-```js
-const deepArray = [1, 2, [3, 4, [5, 6, 7]]];
-
-const flatten = (deepArray) => {
-  const ans = [];
-
-  const innerFn = (el) => {
-    if (!Array.isArray(el)) {
-      ans.push(el);
-    } else {
-      innerFn(el);
-    }
-  };
-
-  deepArray.forEach(innerFn);
-
-  return ans;
-};
-
-flatten(deepArray); // => [1, 2, 3, 4, 5, 6, 7]
-```

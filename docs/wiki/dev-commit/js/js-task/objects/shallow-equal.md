@@ -19,7 +19,7 @@ const a1 = obj1 === obj2; // => false
 const a2 = shallowEqual(obj1, obj2); // => true
 ```
 
-## Решение
+## Реализация
 
 ```js
 const shallowEqual = (obj1, obj2) => {

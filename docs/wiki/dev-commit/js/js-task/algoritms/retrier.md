@@ -1,134 +1,42 @@
-# 👿 Retrier
+# Retrier
 
-## Постановка задачи
+::: warning
 
-- Есть Retrier, который должен делать запрос по URL
-- В случае неудачи, должен выполнить запрос указанное кол-во раз
-- Если не было результата после попыток, выбросить исключение
+- Проверить код
 
-## #1
+:::
+
+## Информация
+
+- _Задача_: написать Retrier, который делает запрос по URL
+- В случае неудачи он должен повторить запрос указанное количество раз
+- Если после всех попыток результата нет, выбросить исключение
+
+## Реализация
 
 ```js
-function retrier(url, n) {
-  if (n > 0) {
-    return fetch(url)
-      .then((data) => {
-        if (data.status >= 200 && data.status < 300) {
-          return data;
-        } else {
-          return retrier(url, n - 1);
-        }
-      })
-      .catch((err) => {
-        return retrier(url, n - 1);
-      });
-  } else {
-    throw Error("Error");
-  }
-}
-```
+const retrier = async (url, retryCount) => {
+  // Первая попытка + retryCount повторов
+  for (let attempt = 0; attempt <= retryCount; attempt++) {
+    try {
+      const response = await fetch(url);
 
-## #2
-
-```ts
-function retrier(url: string, times: number) {
-  let count = 0;
-
-  // Внимание: number не объявлен
-  if (count === number) {
-    return;
-  }
-
-  return new Promise(function (resolve, reject) {
-    function request(url) {
-      // Внимание: data не объявлен - в then нужно передать функцию
-      fetch(url).then(data, (error) => {
-        if (data) {
-          resolve(data);
-        }
-        if (error) {
-          count++;
-          request(url);
-          reject(error);
-        }
-      });
+      // fetch не выбрасывает ошибку на ответы 4xx / 5xx - проверяем статус сами
+      if (response.ok) return response;
+    } catch {
+      // Сетевая ошибка - пробуем ещё раз
     }
-  });
-
-  // Внимание: код после return недостижим, а request объявлена внутри Promise
-  for (let i = 0; i < times; i++) {
-    request(url);
   }
-}
-```
 
-## #3
-
-```js
-// retrier(url, retryCount): Promise
-
-function retrier(url, retryCount) {
-  let count = 1;
-  return new Promise((resolve, reject) => {
-    send(url);
-    function send(url) {
-      fetch(url)
-        .then((response) => resolve(response))
-        .catch((err) => {
-          if (count <= retryCount) {
-            count++;
-            send(url);
-          } else {
-            reject(err);
-          }
-        });
-    }
-  });
-}
-```
-
-## #4
-
-```js
-const retrier = (url, retryCount) =>
-  fetch(url).then(
-    (res) => {
-      if (res.ok) {
-        return res;
-      }
-      if (retryCount) {
-        return retrier(url, retryCount - 1);
-      }
-      throw res.error;
-    },
-    (res) => {
-      if (retryCount) {
-        return retrier(url, retryCount - 1);
-      }
-      throw res.error;
-    },
+  throw new Error(
+    `Не удалось выполнить запрос ${url}, попыток: ${retryCount + 1}`,
   );
+};
 
-retrier("https://some.api", 5) // url
-  .then((res) => console.log("Успешно"))
-  .catch((err) => console.log("Ошибка"));
+retrier("https://some.api", 3)
+  .then((response) => console.log("Успешно", response.status))
+  .catch((error) => console.log(error.message));
 ```
 
-## #5
-
-```ts
-function retrier(url, retryCount): Promise {
-  if (typeof retryCount === "number" && retryCount > 0) {
-    return fetch(url).catch((err) => {
-      if (retryCount === 1) {
-        return Promise.reject(err);
-      }
-      return retrier(url, retryCount - 1);
-    });
-  } else {
-    return Promise.reject("Failed");
-  }
-}
-
-retrier("https://ya.ru", 123).then((data) => console.log(data));
-```
+- Неудачей считается и сетевая ошибка (`fetch` выбрасывает исключение), и ответ с ошибочным статусом (`response.ok === false`)
+- `retrier(url, 3)` делает до 4 запросов: первый и 3 повтора

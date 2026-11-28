@@ -1,13 +1,17 @@
-# 👿 Магазин с кассами
+# Магазин с кассами
 
-## Постановка задачи
+::: warning
 
-- Магазин в котором N касс
-- Одна очередь, люди расходятся по нескольким разным кассам (базовый случай)
-- Написать функцию, которая принимает на вход массив времен и возвращает число через которое все люди будут обслужены
+- Проверить код
+
+:::
+
+## Информация
+
+- _Задача_: в магазине N касс и одна общая очередь. Следующий из очереди идёт на кассу, которая освободилась первой
+- Написать функцию, которая принимает массив времён обслуживания и количество касс и возвращает время, через которое будут обслужены все люди
 
 ```js
-function calculateTime(times) {}
 calculateTime([10, 4, 5], 2);
 
 // Первый человек проводит у кассы 10 минут
@@ -16,47 +20,26 @@ calculateTime([10, 4, 5], 2);
 // Кол-во касс: 2
 ```
 
-## Решение 1 (не доделано)
+## Решение
 
 ```js
-console.log(getTime([1, 2, 3, 4, 5]));
+function calculateTime(times, n) {
+  // Время, когда освободится каждая касса
+  const tills = new Array(n).fill(0);
 
-function getTime(times) {
-  let queue = [times[0], times[1], times[2]];
-
-  for (let i = 3; i < times.length; i++) {
-    const min = Math.min.apply(null, queue);
-    const pos = queue.indexOf(min);
-    queue[pos] += times[i];
+  for (const time of times) {
+    // Следующий из очереди идёт на кассу, которая освободится раньше всех
+    const index = tills.indexOf(Math.min(...tills));
+    tills[index] += time;
   }
 
-  console.log(queue);
-
-  const max = Math.max.apply(null, queue);
-
-  return max;
-}
-```
-
-## Решение 2 (не сделано)
-
-```js
-function calculateTime(times, N) {
-  let firstQueue = 0;
-  let secondQueue = 0;
-
-  for (let i = 0; i < times.length; i++) {
-    if (firstQueue > secondQueue) {
-      secondQueue += times[i];
-    } else {
-      firstQueue += times[i];
-    }
-  }
-
-  for (...) {}
-
-  return firstQueue > secondQueue ? firstQueue : secondQueue;
+  // Все обслужены, когда освободится последняя касса
+  return Math.max(...tills);
 }
 
-calculateTime([10, 3, 5, 7, 11, 6, 1], 2);
+calculateTime([10, 4, 5], 2); // 10
+calculateTime([2, 3, 10], 2); // 12
+calculateTime([5, 3, 4], 1); // 12
 ```
+
+- `[10, 4, 5]`, 2 кассы: первый встаёт на кассу 1 (10 мин), второй - на кассу 2 (4 мин), третий ждёт кассу 2 и уходит через 4 + 5 = 9 мин. Последней освобождается касса 1 - через 10 мин

@@ -22,7 +22,7 @@ const tree1 = {
 };
 ```
 
-## Решение
+## Реализация
 
 ```js
 const calcTreeSum = (tree) => {

@@ -1,7 +1,10 @@
 # for и setTimeout без let
 
+## Реализация
+
+### Простое решение 1
+
 ```js
-// Простое решение 1
 for (var i = 0; i < 10; i++) {
   setTimeout(
     (function (i) {
@@ -12,8 +15,11 @@ for (var i = 0; i < 10; i++) {
     i * 1000,
   );
 }
+```
 
-// Простое решение 2
+### Простое решение 2
+
+```js
 for (var i = 0; i < 10; i++) {
   (function (i) {
     setTimeout(function () {
@@ -21,8 +27,11 @@ for (var i = 0; i < 10; i++) {
     }, i * 1000);
   })(i);
 }
+```
 
-// Умное решение
+### Умное решение
+
+```js
 for (var i = 0; i < 10; i++) {
   setTimeout(
     function (i) {

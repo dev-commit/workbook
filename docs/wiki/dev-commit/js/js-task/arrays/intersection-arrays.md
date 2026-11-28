@@ -1,6 +1,8 @@
 # Array Intersection (Пересечение массивов)
 
-## reduce()
+## Реализация
+
+### reduce()
 
 ```js
 const arr1 = [1, 2, 3, 4, 5];
@@ -18,7 +20,7 @@ const data = intersection(arr1, arr2);
 console.log(data); // [4, 5]
 ```
 
-## forEach
+### forEach
 
 ```js
 const arr1 = [1, 2, 3, 4, 5];
@@ -39,7 +41,7 @@ arr1.forEach((element) => {
 console.log(arr3); // => [4, 5]
 ```
 
-## Set()
+### Set()
 
 ```js
 const a = new Set([1, 2, 3]);

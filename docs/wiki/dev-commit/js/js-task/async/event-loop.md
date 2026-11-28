@@ -1,6 +1,6 @@
 # Event Loop
 
-## _Async Await_ / _Promise_ / _setTimeout_
+## Async Await / Promise / setTimeout
 
 ```js
 setTimeout(() => console.log("setTimeout"), 0);
@@ -21,7 +21,7 @@ console.log(20);
 // setTimeout
 ```
 
-## _Promise_ / _setTimeout_
+## Promise / setTimeout
 
 ```js
 function a() {

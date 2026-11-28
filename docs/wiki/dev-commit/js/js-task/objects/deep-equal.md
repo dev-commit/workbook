@@ -1,72 +1,51 @@
 # Глубокое сравнение объектов
 
-## Недоделано 1
+::: warning
+
+- Проверить код
+
+:::
+
+## Информация
+
+- _Задача_: написать функцию `deepEqual(a, b)`, которая сравнивает два значения по содержимому, включая вложенные объекты и массивы
+
+## Реализация
 
 ```js
-let obj = { here: { is: "an" }, object: 2 };
+function deepEqual(a, b) {
+  // Одинаковые примитивы или одна и та же ссылка
+  if (a === b) return true;
 
-// deepEqual(obj, {here: {is: "an"}, object: 2}) // true
-// deepEqual(obj, {here: {is: "an"}, object: 3}) // false
-// deepEqual(obj, {here: 1, object: 2}) // false
-
-function deepEqual(obj1, obj2) {
-  for (let key in obj1) {
-    if (obj2[key] !== obj1[key]) {
-      if (typeof obj2[key] === "object") {
-        if (deepEqual(obj1[key], obj2[key])) {
-          return true;
-        }
-      }
-    }
-    // return true;
-  }
-  return true;
-}
-
-const obj1 = {
-  a: {
-    b: 1,
-  },
-};
-const obj2 = {
-  a: {
-    b: 1,
-  },
-};
-
-console.log("res1", deepEqual(obj1, obj2));
-```
-
-## Недоделано 2
-
-```js
-const obj1 = {
-  a: 23,
-  b: { g: 34, c: 235 },
-};
-const obj2 = {
-  a: 23,
-  b: { g: 34, c: 235 },
-};
-
-function shallowEqual(obj1, obj2) {
-  let res = true;
-  function check(obj1, obj2) {
-    console.log(obj1, obj2);
-    for (let key in obj1) {
-      if (obj1[key] !== obj2[key]) {
-        if (typeof obj1[key] === "object" && typeof obj2[key] === "object") {
-          check(obj1[key], obj2[key]);
-        } else {
-          res = false;
-        }
-      }
-    }
+  // Если одно из значений не объект (или null) - значения разные
+  if (
+    typeof a !== "object" ||
+    typeof b !== "object" ||
+    a === null ||
+    b === null
+  ) {
+    return false;
   }
 
-  check(obj1, obj2);
-  return res;
+  const keysA = Object.keys(a);
+  const keysB = Object.keys(b);
+
+  // Разное количество ключей - объекты разные
+  if (keysA.length !== keysB.length) return false;
+
+  // Каждый ключ есть в обоих объектах, и значения по нему глубоко равны
+  return keysA.every(
+    (key) => Object.hasOwn(b, key) && deepEqual(a[key], b[key]),
+  );
 }
 
-console.log(shallowEqual(obj1, obj2));
+const obj = { here: { is: "an" }, object: 2 };
+
+deepEqual(obj, { here: { is: "an" }, object: 2 }); // true
+deepEqual(obj, { here: { is: "an" }, object: 3 }); // false
+deepEqual(obj, { here: 1, object: 2 }); // false
+deepEqual([1, [2, 3]], [1, [2, 3]]); // true
 ```
+
+- Проверка `Object.hasOwn(b, key)` нужна для случая `{ x: undefined }` и `{ y: undefined }`: количество ключей одинаковое, значения - `undefined`, но ключи разные
+- Решение не различает массив и объект с теми же ключами (`[1]` и `{ 0: 1 }`) и не сравнивает содержимое `Date`, `Map`, `Set`

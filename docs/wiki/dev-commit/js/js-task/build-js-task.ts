@@ -5,17 +5,19 @@ import { emoji } from "docs/constants";
 import { rootPath } from "docs/wiki/constants";
 
 const path = rootPath + "js/js-task/";
-const title = "✅ Задачи";
-const theme: TThemeTopics = "actual";
+const title = "Задачи";
+const theme: TThemeTopics = "js";
 
 const topics: ISidebarTopics[] = [
   {
     title: "Полифилы",
-    children: [],
+    children: null,
   },
   {
     title: "Объекты и Контекст",
+    child: true,
     children: [
+      ["polyphiles/new", getThemeMenu("method", ["new"]), "done"],
       [
         "polyphiles/object-create",
         getThemeMenu("method", ["Object.create"]),
@@ -26,6 +28,7 @@ const topics: ISidebarTopics[] = [
   },
   {
     title: "Массивы",
+    child: true,
     children: [
       ["polyphiles/map", getThemeMenu("method", ["map"])],
       ["polyphiles/filter", getThemeMenu("method", ["filter"])],
@@ -35,12 +38,14 @@ const topics: ISidebarTopics[] = [
   },
   {
     title: "Асинхронность",
+    child: true,
     children: [
       ["polyphiles/promise-all", getThemeMenu("method", ["Promise.all"])],
     ],
   },
   {
     title: "Декораторы",
+    child: true,
     children: [
       ["decorators/debounce", getThemeMenu("method", ["debounce()"])],
       ["decorators/once", getThemeMenu("method", ["once()"])],

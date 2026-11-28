@@ -58,6 +58,40 @@
 | `["dir/file", "Тема НЕ проработана", "check"]` | <span class="menu-preview" v-html="item('Тема НЕ проработана', 'check')" /> |
 | `["dir/file", "doit", "doit"]`                 | <span class="menu-preview" v-html="item('doit', 'doit')" />                 |
 
+## Разделы и подзаголовки
+
+- Группа с `children: null` - заголовок раздела без пунктов. Выглядит как обычный заголовок группы
+- Группа с `child: true` - подзаголовок: группа внутри раздела. Шрифт как у заголовка, без фона, другой цвет текста (`.sidebar-subtitle` в `custom.css`)
+
+```ts
+const topics: ISidebarTopics[] = [
+  {
+    title: "Полифилы",
+    children: null,
+  },
+  {
+    title: "Массивы",
+    child: true,
+    children: [["polyphiles/map", getThemeMenu("method", ["map"])]],
+  },
+  {
+    title: "Асинхронность",
+    child: true,
+    children: [
+      ["polyphiles/promise-all", getThemeMenu("method", ["Promise.all"])],
+    ],
+  },
+];
+```
+
+<div class="menu-preview-sidebar">
+  <p class="menu-preview-group">Полифилы</p>
+  <p class="menu-preview-group"><span class="sidebar-subtitle">Массивы</span></p>
+  <p class="menu-preview" v-html="item(getThemeMenu('method', ['map']))" />
+  <p class="menu-preview-group"><span class="sidebar-subtitle">Асинхронность</span></p>
+  <p class="menu-preview" v-html="item(getThemeMenu('method', ['Promise.all']))" />
+</div>
+
 ## Шаблон build-\*.ts
 
 ```ts

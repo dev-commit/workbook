@@ -20,8 +20,9 @@ const objSecond = Object.create(objFirst); // => {} __proto__: name: "Tony"
 
 ## Запись в виде полифила
 
+**Через prototype**
+
 ```js
-// Через prototype
 if (!Object.create) {
   Object.create = function (proto) {
     function F() {}
@@ -31,8 +32,9 @@ if (!Object.create) {
 }
 ```
 
+**Через setPrototypeOf**
+
 ```js
-// Через setPrototypeOf
 if (!Object.create) {
   Object.create = function (proto) {
     const newObject = {};
@@ -42,8 +44,9 @@ if (!Object.create) {
 }
 ```
 
+**Через **proto****
+
 ```js
-// Через __proto__
 if (!Object.create) {
   Object.create = function (proto) {
     const newObject = {};
