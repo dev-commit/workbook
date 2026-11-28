@@ -28,12 +28,13 @@ pip install [gunicorn|uwsgi|waitress]
 
 :::
 
-## Simple Text
+## Примеры
+
+::: details Simple Text
 
 ```python
 import falcon
 from waitress import serve
-
 
 class ObjRes(object):
     def on_get(self, req, resp):
@@ -51,12 +52,13 @@ python app.py
 # http://127.0.0.1:8001/
 ```
 
-## HTML
+:::
+
+::: details HTML
 
 ```python
 import falcon
 from waitress import serve
-
 
 class ObjRes(object):
     def on_get(self, req, resp):
@@ -75,14 +77,15 @@ python app.py
 # http://127.0.0.1:8001/
 ```
 
-## Json (Object)
+:::
+
+::: details Json (Object)
 
 ```python
 import json
 
 import falcon
 from waitress import serve
-
 
 class ObjRes(object):
     def on_get(self, req, resp):
@@ -105,14 +108,15 @@ serve(api, host="127.0.0.1", port=8001)
 {"name": "Tony", "age": "25", "country": "Russia"}
 ```
 
-## Json (read URL)
+:::
+
+::: details Json (read URL)
 
 ```python
 import json
 
 import falcon
 from waitress import serve
-
 
 class ObjRes(object):
     def on_get(self, req, resp):
@@ -147,7 +151,9 @@ serve(api, host="127.0.0.1", port=8001)
 {"name": "Tony"}
 ```
 
-## Read Params
+:::
+
+::: details Read Params
 
 ```python
 # Read url params http://127.0.0.1:8001/?name=Tony
@@ -161,14 +167,15 @@ data = json.loads(req.stream.read())
 a = data['name']
 ```
 
-## HTTP-методы GET/POST/PUT/DELETE
+:::
+
+::: details HTTP-методы GET/POST/PUT/DELETE
 
 ```python
 import json
 
 import falcon
 from waitress import serve
-
 
 class ObjRes(object):
     def on_get(self, req, resp):
@@ -220,14 +227,15 @@ serve(api, host="127.0.0.1", port=8001)
 # Result { "msg": "x: 100 + y: 200 is equal to 300" }
 ```
 
-## Validated JSON input
+:::
+
+::: details Validated JSON input
 
 ```python
 import json
 
 import falcon
 from waitress import serve
-
 
 class ObjRes(object):
 
@@ -269,12 +277,13 @@ api.add_route('/', ObjRes())
 serve(api, host="127.0.0.1", port=8001)
 ```
 
-## Hooks
+:::
+
+::: details Hooks
 
 ```python
 import falcon
 from waitress import serve
-
 
 class Authorize(object):
     def __init__(self, roles):
@@ -312,7 +321,9 @@ api.add_route('/', ObjRes())
 serve(api, host="127.0.0.1", port=8001)
 ```
 
-## Basic Auth
+:::
+
+::: details Basic Auth
 
 ```python
 import base64
@@ -323,7 +334,6 @@ from waitress import serve
 user_accounts = {
     'admin': '123'
 }
-
 
 class Authorize(object):
     def __init__(self):
@@ -365,3 +375,5 @@ serve(api, host="127.0.0.1", port=8001)
 ```
 
 <v-breadcrumbs :items="['Insomnia', 'Basic Auth']" />
+
+:::

@@ -36,7 +36,7 @@ print(sqlalchemy.__version__)  # Посмотреть версию SQLAlchemy
 
 ## Работа с БД
 
-### Connect
+::: details Connect
 
 ```python
 from sqlalchemy import create_engine
@@ -47,7 +47,9 @@ engine = create_engine('mysql+pymysql://root:123@localhost/motmom')
 # motmom    - db name
 ```
 
-### Declarative creation of a table, class
+:::
+
+::: details Declarative creation of a table, class
 
 ```python
 from sqlalchemy import Column, Integer, String
@@ -77,7 +79,9 @@ class User(Base):
 Base.metadata.create_all(engine)
 ```
 
-### Session
+:::
+
+::: details Session
 
 ```python
 from sqlalchemy.orm import sessionmaker
@@ -108,7 +112,9 @@ session.commit()
 session.close()
 ```
 
-### Select Query
+:::
+
+::: details Select Query
 
 ```python
 query1 = session.query(User).filter_by(name='Tony').first()  # Выбрать 1 запись по совпадению поля name
@@ -117,3 +123,5 @@ query3 = session.query(User).filter(User.name == 'Tony').filter(User.fullname ==
 query4 = session.query(User).order_by(User.id)               # Выбрать все записи, все поля, сортировка по ID
 query5 = session.query(User.name).order_by(User.id)          # Выбрать все записи, поле name, сортировка по ID
 ```
+
+:::

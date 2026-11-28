@@ -1,5 +1,9 @@
 # Объекты (словари)
 
+## Варианты
+
+**Общее**
+
 ```python
 dic = {
     'name': 'Tony',
@@ -26,14 +30,14 @@ else:
     print('not exists')
 ```
 
-## Перебор значений словаря (value)
+**Перебор значений словаря (value)**
 
 ```python
 for value in dic.values():
     print(value)
 ```
 
-## Перебор значений словаря (value) и номера текущей итерации (index)
+**Перебор значений словаря (value) и номера текущей итерации (index)**
 
 ```python
 for index, value in enumerate(dic.values()):

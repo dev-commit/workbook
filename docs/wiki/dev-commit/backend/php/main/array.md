@@ -20,7 +20,7 @@ $world = array(
 echo $world["country"]["LV"]; // Обращение к элементам двумерного массива
 ```
 
-## current(); next(); prev(); end();
+## `current()` `next()` `prev()` `end()`
 
 ```php
 $transport = array('foot', 'bike', 'car', 'plane');

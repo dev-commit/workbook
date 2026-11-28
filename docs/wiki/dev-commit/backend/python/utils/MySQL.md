@@ -18,7 +18,9 @@ pip install mysql-connector
 
 :::
 
-## encoding_content.py
+## Пример кода
+
+::: details encoding_content.py
 
 ```python
 # Кодировка utf-8
@@ -29,7 +31,9 @@ sys.stdout.reconfigure(encoding='utf-8')
 print("Content-Type: text/html\n")
 ```
 
-## db_connect.py
+:::
+
+::: details db_connect.py
 
 ```python
 import mysql.connector
@@ -41,7 +45,9 @@ mydb = mysql.connector.connect(
 )
 ```
 
-## db_select.py
+:::
+
+::: details db_select.py
 
 ```python
 #!C:/Users/User/AppData/Local/Programs/Python/Python37-32/python.exe
@@ -58,7 +64,9 @@ for x in myresult:
 print(arr)
 ```
 
-## db_insert.py
+:::
+
+::: details db_insert.py
 
 ```python
 #!C:/Users/User/AppData/Local/Programs/Python/Python37-32/python.exe
@@ -73,7 +81,9 @@ db_connect.mydb.commit()
 print(mycursor.rowcount, "record inserted.")
 ```
 
-## db_update.py
+:::
+
+::: details db_update.py
 
 ```python
 #!C:/Users/User/AppData/Local/Programs/Python/Python37-32/python.exe
@@ -87,7 +97,9 @@ db_connect.mydb.commit()
 print(mycursor.rowcount, "record(s) affected")
 ```
 
-## db_delete.py
+:::
+
+::: details db_delete.py
 
 ```python
 #!C:/Users/User/AppData/Local/Programs/Python/Python37-32/python.exe
@@ -101,7 +113,9 @@ db_connect.mydb.commit()
 print(mycursor.rowcount, "record(s) deleted")
 ```
 
-## JavaScript Code (SELECT)
+:::
+
+::: details JavaScript Code (SELECT)
 
 ```js
 $.get("python/db_select.py", {}, function (data) {
@@ -116,3 +130,5 @@ $.get("python/db_select.py", {}, function (data) {
   $("body").append(result);
 });
 ```
+
+:::
