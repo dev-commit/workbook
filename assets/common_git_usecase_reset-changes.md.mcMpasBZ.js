@@ -1,0 +1,19 @@
+import{_ as a,o as n,c as l,aw as e}from"./chunks/framework.DLufY-ao.js";const d=JSON.parse('{"title":"Отмена изменений","description":"","frontmatter":{},"headers":[],"relativePath":"common/git/usecase/reset-changes.md","filePath":"wiki/dev-commit/common/git/usecase/reset-changes.md"}'),p={name:"common/git/usecase/reset-changes.md"};function t(o,s,c,i,r,y){return n(),l("div",null,[...s[0]||(s[0]=[e(`<h1 id="отмена-изменении" tabindex="-1">Отмена изменений <a class="header-anchor" href="#отмена-изменении" aria-label="Permalink to &quot;Отмена изменений&quot;">​</a></h1><div class="language-bash"><button title="Скопировать код" class="copy"></button><span class="lang">bash</span><pre class="shiki one-light vp-code" tabindex="0"><code><span class="line"><span style="color:#4078F2;">git</span><span style="color:#50A14F;"> checkout</span><span style="color:#986801;"> --</span><span style="color:#50A14F;"> file.txt</span><span style="color:#A0A1A7;font-style:italic;"> # Отмена изменений файла</span></span>
+<span class="line"><span style="color:#4078F2;">git</span><span style="color:#50A14F;"> reset</span><span style="color:#50A14F;"> HEAD</span><span style="color:#50A14F;"> file.txt</span><span style="color:#A0A1A7;font-style:italic;">  # Отмена индексации файла</span></span>
+<span class="line"><span style="color:#4078F2;">git</span><span style="color:#50A14F;"> commit</span><span style="color:#986801;"> --amend</span><span style="color:#A0A1A7;font-style:italic;">       # Изменение последнего коммита</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;"># Все три команды вместе дают один коммит - второй коммит заменяет результат первого</span></span>
+<span class="line"><span style="color:#4078F2;">git</span><span style="color:#50A14F;"> commit</span><span style="color:#986801;"> -m</span><span style="color:#50A14F;"> &#39;Message&#39;</span></span>
+<span class="line"><span style="color:#4078F2;">git</span><span style="color:#50A14F;"> add</span><span style="color:#50A14F;"> forgotten_file</span></span>
+<span class="line"><span style="color:#4078F2;">git</span><span style="color:#50A14F;"> commit</span><span style="color:#986801;"> --amend</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#4078F2;">git</span><span style="color:#50A14F;"> checkout</span><span style="color:#50A14F;"> .</span><span style="color:#A0A1A7;font-style:italic;">             # Восстановить все</span></span>
+<span class="line"><span style="color:#4078F2;">git</span><span style="color:#50A14F;"> checkout</span><span style="color:#50A14F;"> HashCommit</span><span style="color:#A0A1A7;font-style:italic;">    # Перейти к состоянию этого коммита (detached HEAD)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;"># Просмотреть, а затем удалить неотслеживаемые (untracked) файлы и папки</span></span>
+<span class="line"><span style="color:#4078F2;">git</span><span style="color:#50A14F;"> clean</span><span style="color:#986801;"> -nd</span></span>
+<span class="line"><span style="color:#4078F2;">git</span><span style="color:#50A14F;"> clean</span><span style="color:#986801;"> -fd</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A0A1A7;font-style:italic;"># Просмотреть, а затем удалить ВСЕ неотслеживаемые (untracked) файлы и папки, включая игнорируемые Git-ом</span></span>
+<span class="line"><span style="color:#4078F2;">git</span><span style="color:#50A14F;"> clean</span><span style="color:#986801;"> -ndx</span></span>
+<span class="line"><span style="color:#4078F2;">git</span><span style="color:#50A14F;"> clean</span><span style="color:#986801;"> -fdx</span></span></code></pre></div>`,2)])])}const F=a(p,[["render",t]]);export{d as __pageData,F as default};
