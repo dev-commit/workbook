@@ -17,10 +17,4 @@
 
 - NgRx на базе RxJS (Angular)
 - Redux (React.js)
-- Vuex (Vue.js)
-
-::: warning
-
-- Для Vue 3 официальная библиотека состояния - Pinia, Vuex только поддерживается и не развивается
-
-:::
+- Pinia (Vue.js)

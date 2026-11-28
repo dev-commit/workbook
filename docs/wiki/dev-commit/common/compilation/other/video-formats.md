@@ -2,8 +2,11 @@
 
 ## Информация
 
-- _SD_ - Standard Definition
-- _PAL_ - 720 x 576
-- _NTSC_ - 720 x 480
-- _HD720_ - 1280 x 720 (HD Ready)
-- _HD1080_ - 1920 x 1080 (Full HD)
+::: tip
+
+- **SD** - Standard Definition
+- **PAL** - 720 x 576
+- **NTSC** - 720 x 480
+- **HD720** - 1280 x 720 (HD Ready)
+- **HD1080** - 1920 x 1080 (Full HD)
+  :::

@@ -4,8 +4,8 @@ import { getTopicSubtitle, getThemeMenu } from "docs/utils";
 import { rootPath } from "docs/wiki/constants";
 
 const path = rootPath + "common/compilation/";
-const title = "✅ Общее";
-const theme: TThemeTopics = "actual";
+const title = "Общее";
+const theme: TThemeTopics = null;
 
 const topics: ISidebarTopics[] = [
   {
@@ -32,7 +32,6 @@ const topics: ISidebarTopics[] = [
       ["other/dictionary", "Словарь"],
       ["other/polyfill", "Полифиллы"],
       ["other/video-formats", "Видео форматы"],
-      ["other/trash", "Свалка"],
     ],
   },
 ];
