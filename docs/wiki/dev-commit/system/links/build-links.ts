@@ -6,7 +6,7 @@ import { rootPath } from "docs/wiki/constants";
 
 const path = rootPath + "system/links/";
 const title = "Ссылки";
-const theme: TThemeTopics = null;
+const theme: TThemeTopics = "theory";
 
 const topics: ISidebarTopics[] = [
   {

@@ -6,7 +6,7 @@ import { rootPath } from "docs/wiki/constants";
 
 const path = rootPath + "system/books/";
 const title = "Книги";
-const theme: TThemeTopics = null;
+const theme: TThemeTopics = "theory";
 
 const topics: ISidebarTopics[] = [
   {
