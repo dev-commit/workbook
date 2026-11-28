@@ -5,7 +5,7 @@ import { emoji } from "docs/constants";
 import { rootPath } from "docs/wiki/constants";
 
 const path = rootPath + "common/linters/";
-const title = "Linters";
+const title = "✅ Linters";
 const theme: TThemeTopics = "actual";
 
 const topics: ISidebarTopics[] = [

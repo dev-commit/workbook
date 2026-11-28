@@ -5,7 +5,7 @@ import { emoji } from "docs/constants";
 import { rootPath } from "docs/wiki/constants";
 
 const path = rootPath + "framework-react/next-js/";
-const title = "Next.js";
+const title = "✅ Next.js";
 const theme: TThemeTopics = "actual";
 
 const topics: ISidebarTopics[] = [

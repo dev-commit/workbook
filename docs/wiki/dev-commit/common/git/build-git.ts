@@ -5,7 +5,7 @@ import { emoji } from "docs/constants";
 import { rootPath } from "docs/wiki/constants";
 
 const path = rootPath + "common/git/";
-const title = "Git";
+const title = "✅ Git";
 const theme: TThemeTopics = "actual";
 
 const topics: ISidebarTopics[] = [

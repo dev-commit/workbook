@@ -5,7 +5,7 @@ import { emoji } from "docs/constants";
 import { rootPath } from "docs/wiki/constants";
 
 const path = rootPath + "framework-react/react-flow/";
-const title = "React Flow";
+const title = "✅ React Flow";
 const theme: TThemeTopics = "actual";
 
 const topics: ISidebarTopics[] = [

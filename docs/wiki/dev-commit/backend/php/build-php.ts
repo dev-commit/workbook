@@ -5,7 +5,7 @@ import { emoji } from "docs/constants";
 import { rootPath } from "docs/wiki/constants";
 
 const path = rootPath + "backend/php/";
-const title = "PHP";
+const title = "✅ PHP";
 const theme: TThemeTopics = "actual";
 
 const topics: ISidebarTopics[] = [

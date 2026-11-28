@@ -5,7 +5,7 @@ import { emoji } from "docs/constants";
 import { rootPath } from "docs/wiki/constants";
 
 const path = rootPath + "common/typescript/";
-const title = "TypeScript";
+const title = "✅ TypeScript";
 const theme: TThemeTopics = "actual";
 
 const topics: ISidebarTopics[] = [
@@ -23,7 +23,6 @@ const topics: ISidebarTopics[] = [
       ],
     ],
   },
-
   {
     title: "Типы данных",
     children: [
