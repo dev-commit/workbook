@@ -5,13 +5,16 @@ import { emoji } from "docs/constants";
 import { rootPath } from "docs/wiki/constants";
 
 const path = rootPath + "system/ui-kit/";
-const title = "Ui-Kit";
+const title = "⭐️";
 const theme: TThemeTopics = null;
 
 const topics: ISidebarTopics[] = [
   {
     title: "Основное",
-    children: [["main/symbols", "Символы"]],
+    children: [
+      ["main/symbols", "Символы"],
+      ["main/menu", "Пункты меню"],
+    ],
   },
   {
     title: "Компоненты",

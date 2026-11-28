@@ -47,3 +47,11 @@
   background-color: #d0bdf6ff;
   color: #d0bdf6ff;
 }
+
+/* Превью пунктов на странице system/ui-kit/main/menu.md: шрифт как в левом меню (custom.css) */
+.menu-preview {
+  font-family: Roboto-Regular;
+  font-weight: 300;
+  font-size: 15px;
+  color: #000;
+}

@@ -3,7 +3,6 @@ import { getNav } from "../../.vitepress/utils/nav";
 import type { IHeaderMenuNav } from "../../types";
 
 import wikiUiKit from "./system/ui-kit/build-ui-kit";
-import wikiMenu from "./system/menu/build-menu";
 import wikiHtml from "./layout/html/build-html";
 import wikiSvelte from "./framework-svelte/svelte/build-svelte";
 import wikiHttp from "./network/http/build-http";
@@ -109,6 +108,7 @@ export const NAV: IHeaderMenuNav[] = [
   {
     text: "Теория",
     children: getNav([
+      wikiUiKit,
       wikiAlgoritms,
       wikiDataStructures,
       wikiProgramming,
@@ -252,7 +252,7 @@ export const NAV: IHeaderMenuNav[] = [
     ]),
   },
   {
-    text: "Testing",
+    text: "Тестирование",
     children: getNav([
       wikiTesting,
       wikiJest,
@@ -262,16 +262,11 @@ export const NAV: IHeaderMenuNav[] = [
       wikiReactTesting,
     ]),
   },
-  {
-    text: "System",
-    children: getNav([wikiUiKit, wikiMenu]),
-  },
 ];
 
 export const SIDEBAR = getSidebar([
   wikiUiKit,
   wikiHtml,
-  wikiMenu,
   wikiSvelte,
   wikiHttp,
   wikiNetwork,

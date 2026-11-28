@@ -6,9 +6,11 @@ import type {
 } from "../../types";
 
 // Маркер «•» перед названием пункта. Статус красит маркер (стили - theme/styles/menu.css):
-// done - синий, check - красный, doit - сиреневый квадрат
-const getMarker = (status: TSidebarTopicsItemStatus | undefined): string =>
-  status ? `<span class="sidebar-marker-${status}">•</span>` : "•";
+// done - синий, check - красный, doit - сиреневый квадрат.
+// Экспорт - для превью пунктов на странице system/ui-kit/main/menu.md
+export const getMarker = (
+  status: TSidebarTopicsItemStatus | undefined,
+): string => (status ? `<span class="sidebar-marker-${status}">•</span>` : "•");
 
 // Текст пункта - без лишней разметки и пробелов: меню всех тем входит в данные сайта,
 // которые загружает каждая страница
