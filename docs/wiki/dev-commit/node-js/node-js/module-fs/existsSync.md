@@ -1,7 +1,7 @@
-# existsSync
+# `existsSync`
 
 ## Проверка существования файла или директории
 
 ```js
-fs.existsSync('stuffs');
+fs.existsSync("stuffs");
 ```

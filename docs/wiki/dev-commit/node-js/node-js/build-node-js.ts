@@ -5,7 +5,7 @@ import { emoji } from "docs/constants";
 import { rootPath } from "docs/wiki/constants";
 
 const path = rootPath + "node-js/node-js/";
-const title = "Node.js";
+const title = "✅ Node.js";
 const theme: TThemeTopics = "actual";
 
 const topics: ISidebarTopics[] = [

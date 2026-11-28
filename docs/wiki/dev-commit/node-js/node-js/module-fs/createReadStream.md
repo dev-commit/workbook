@@ -1,18 +1,18 @@
-# ПотокиcreateReadStreamcreateWriteStream
+# Потоки: `createReadStream`, `createWriteStream`
 
 ```js
-const fs = require('fs');
+const fs = require("fs");
 
-// поток на чтение
-const myReadShort = fs.createReadStream(__dirname + '/article.txt', 'utf8');
+// Поток на чтение
+const myReadShort = fs.createReadStream(__dirname + "/article.txt", "utf8");
 
-// поток на запись
-const myWriteShort = fs.createWriteStream(__dirname + '/news.txt');
+// Поток на запись
+const myWriteShort = fs.createWriteStream(__dirname + "/news.txt");
 
-// обработчик чтения данных
-myReadShort.on('data', (chunk) => {
-	console.log('Данные получены: \n' + chunk);
-	// записываем в новый файл
-	myWriteShort.write(chunk);
+// Обработчик чтения данных
+myReadShort.on("data", (chunk) => {
+  console.log("Данные получены: \n" + chunk);
+  // Записываем в новый файл
+  myWriteShort.write(chunk);
 });
 ```

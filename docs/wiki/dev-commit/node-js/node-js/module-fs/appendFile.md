@@ -1,31 +1,29 @@
-# appendFileunlink
+# `appendFile`, `unlink`
 
 ## Добавление в файл
 
 ```js
-// синхронно
-fs.appendFileSync('text.txt', '\n Hello Again!');
-```
+// Синхронно
+fs.appendFileSync("text.txt", "\n Hello Again!");
 
-```js
-// асинхронно
-fs.appendFile('text.txt', '\n Hello Again!', (err, data) => {
-    if (err) {
-        throw err;
-    }
+// Асинхронно
+fs.appendFile("text.txt", "\n Hello Again!", (err) => {
+  if (err) {
+    throw err;
+  }
 
-    console.log('Файл обновлен');
+  console.log("Файл обновлен");
 });
 ```
 
 ## Удаление файла
 
 ```js
-// синхронно
-fs.unlinkSync('file.txt'); 
+// Синхронно
+fs.unlinkSync("file.txt");
 
-// асинхронно
-fs.unlink('file.txt', () => {
-    //
+// Асинхронно
+fs.unlink("file.txt", () => {
+  //
 });
 ```

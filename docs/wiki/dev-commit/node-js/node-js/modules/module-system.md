@@ -2,27 +2,27 @@
 
 ## Стандарты
 
-### 1. Паттерн "Модуль"2003 год
+### 1. Паттерн "Модуль" _2003 год_
 
 - Немедленно вызываемая функция, образующая приватную область видимости
 
-### 2. CommonJS (CJS)2009 год
+### 2. CommonJS (CJS) _2009 год_
 
-- module.exports -> require
-- Реализация: Модульная система Node.js
+- `module.exports -> require`
+- Реализация: [Модульная система Node.js](https://nodejs.org/api/modules.html)
 - Предназначен для синхронной загрузки. Преимущественно используется на стороне сервера
 
-### 3. Asynchronous Module Definition (AMD)2009 год
+### 3. Asynchronous Module Definition (AMD) _2009 год_
 
-- define -> require
-- Реализация: RequireJS
+- `define -> require`
+- Реализация: [RequireJS](https://requirejs.org/)
 - Предназначен для асинхронной загрузки. Преимущественно используется на стороне клиента
 
-### 4. Universal Module Definition (UMD)2011 год
+### 4. Universal Module Definition (UMD) _2011 год_
 
 - Объединение AMD и CommonJS
-- Суть подхода: проверить существование функции define и если она есть определить модуль в формате AMD, а если нет, в формате CommonJS
+- Суть подхода: проверить существование функции define и, если она есть, определить модуль в формате AMD, а если нет - в формате CommonJS
 
-### 5. Модули ES62015 год
+### 5. Модули ES6 _2015 год_
 
-- export -> import
+- `export -> import`

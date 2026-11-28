@@ -1,29 +1,43 @@
-# util
+# `util`
 
-- **util** - модуль наследования событий для объекта
+## Информация
+
+::: tip Определение
+
+- **util** - модуль служебных функций: `inherits()`, `promisify()`, `format()` и др. На этой странице - наследование событий через `util.inherits()`
+
+:::
 
 ```js
-const events = require('events'); // модуль отслеживания событий
-const util = require('util');     // модуль наследования событий для объекта
+const events = require("events"); // Модуль отслеживания событий
+const util = require("util"); // Модуль служебных функций
 ```
+
+## Использование
 
 ```js
 class Cars {
-    constructor(model) {
-        this.model = model;
-    }
+  constructor(model) {
+    this.model = model;
+  }
 }
 
-// наследование событий для всех объектов, созданных на основе cars
+// Наследование событий для всех объектов, созданных на основе Cars
 util.inherits(Cars, events.EventEmitter);
 
-const car = new Cars('BMW');
+const car = new Cars("BMW");
 
-car.on('speed', (speed) => {
-    console.log(speed);
+car.on("speed", (speed) => {
+  console.log(speed);
 });
 
-car.emit('speed', '254km');
+car.emit("speed", "254km");
 
 // => 254km
 ```
+
+::: warning
+
+- `util.inherits()` - устаревший способ наследования (Legacy), документация Node.js не рекомендует его использовать. Вместо него - `class Cars extends EventEmitter`
+
+:::

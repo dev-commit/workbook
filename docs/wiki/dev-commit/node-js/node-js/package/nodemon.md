@@ -1,17 +1,26 @@
 # nodemon
 
+## Информация
+
+- Позволяет увидеть изменения без ручного перезапуска сервера, созданного через http.createServer(): nodemon сам перезапускает его при изменении файлов
+
+## Установка
+
+```bash
 npm i --save-dev nodemon
+```
 
-- Позволяет увидеть изменения без перезапуска сервера, созданного через http.createServer()
+## Использование
 
-```js
+```json
+// package.json
 {
-    "scripts": {
-        "start": "node index.js",
-        "dev": "nodemon index.js"
-    },
-    "devDependencies": {
-        "nodemon": "^2.0.19"
-    }
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
 }
 ```

@@ -3,7 +3,7 @@ import { IBuildTopics, TThemeTopics, ISidebarTopics } from "docs/types";
 import { rootPath } from "docs/wiki/constants";
 
 const path = rootPath + "backend/python/";
-const title = "Python";
+const title = "✅ Python";
 const theme: TThemeTopics = "actual";
 
 const topics: ISidebarTopics[] = [

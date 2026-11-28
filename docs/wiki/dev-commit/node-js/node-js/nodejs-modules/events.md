@@ -1,45 +1,53 @@
-# events
+# `events`
+
+## Информация
+
+::: tip Определение
 
 - **events** - модуль отслеживания событий
 
+:::
+
 ```js
-const EventEmitter = require('events');
+const EventEmitter = require("events");
 ```
+
+## Использование
 
 ```js
 const emitter = new EventEmitter();
 
 // Обработчик событий
-emitter.on('SomeEvent', (data) => {
-    console.log(data);
+emitter.on("SomeEvent", (data) => {
+  console.log(data);
 });
 
 // Вызов события
-emitter.emit('SomeEvent', 'Hello');
+emitter.emit("SomeEvent", "Hello");
 ```
 
-### Наследование
+## Наследование
 
 ```js
-const EventEmitter = require('events');
+const EventEmitter = require("events");
 
 class Dispatcher extends EventEmitter {
-    subscribe(eventName, callback) {
-        console.log('subscribe');
-        this.on(eventName, callback);
-    }
+  subscribe(eventName, callback) {
+    console.log("subscribe");
+    this.on(eventName, callback);
+  }
 
-    dispatch(eventName, data) {
-        console.log('dispatch');
-        this.emit(eventName, data);
-    }
+  dispatch(eventName, data) {
+    console.log("dispatch");
+    this.emit(eventName, data);
+  }
 }
 
 const dispatcher = new Dispatcher();
 
-dispatcher.subscribe('event1', data => {
-    console.log('on', data);
-})
+dispatcher.subscribe("event1", (data) => {
+  console.log("on", data);
+});
 
-dispatcher.dispatch('event1', 'Hello');
+dispatcher.dispatch("event1", "Hello");
 ```

@@ -1,51 +1,56 @@
 # Модули ES6
 
+## Информация
+
 ::: info
-https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/import
-https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/export
+
+- https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/import - import
+- https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/export - export
+
 :::
+
+### Особенности
+
 - Не блокируют парсинг html
 - Выполняются отложенно
-- Имею свою область видимости
+- Имеют свою область видимости
 - Код модуля всегда выполняется в строгом режиме
-- Для экспорта обязательно нужно имя
+- Для экспорта обязательно нужно имя (кроме `export default`)
 
 ## import
 
 ```js
-// Импорт сущности, экспортированной по-умолчанию
-import MyClass from './modules/lib'
+// Импорт сущности, экспортированной по умолчанию
+import MyClass from "./modules/lib";
 
 // Импорт одной сущности
-import { libFunction } from './modules/lib'
+import { libFunction } from "./modules/lib";
 
 // Импорт нескольких сущностей
-import { libFunction, libConst } from './modules/lib'
+import { libFunction, libConst } from "./modules/lib";
 
 // Совмещение различных сущностей
-import MyClass, { libFunction } from './modules/lib'
+import MyClass, { libFunction } from "./modules/lib";
 
 // Задание псевдонима для импортируемой сущности
-import { libConst as name } from './modules/lib'
+import { libConst as name } from "./modules/lib";
 
 // Если не указывать файл, то import index.js из "ui"
-import './ui'
+import "./ui";
 
-// Импорт модуля как объекта (импорт всего, что экспортирует модуль)
-import * as obj from './modules/lib'
-
-// Импорт модуля как объекта, значениями свойств которого будут экспортированные значения (obj.libConst)
-import './modules/lib' as obj                      
+// Импорт модуля как объекта (импорт всего, что экспортирует модуль).
+// Значениями свойств объекта будут экспортированные значения (obj.libConst)
+import * as obj from "./modules/lib";
 
 // Импорт всех данных (в "./modules/lib" нет "export"), запуск кода из модуля
-import './modules/lib'
+import "./modules/lib";
 ```
 
 ## export
 
 ```js
-// Экспорт сущности по-умолчанию
-export default MyClass
+// Экспорт сущности по умолчанию
+export default MyClass;
 
 // Экспорт одного значения
 export const a = 22;
@@ -54,11 +59,11 @@ export const a = 22;
 export { one, two };
 
 // Задание псевдонима при экспорте сущностей
-export { one as once, two as twice }
+export { one as once, two as twice };
 
 // Экспорт функции
 export function libFunction() {
-    console.log(libFunction);
+  console.log(libFunction);
 }
 ```
 
@@ -71,51 +76,59 @@ export function libFunction() {
 ```
 
 ```js
+// App
 const App = () => {
-	//
+  //
 };
 
 export default App;
 ```
 
 ```js
+// index.js
 // Вариант 1
-export { default } from './App';
+export { default } from "./App";
 
 // Вариант 2
-import App from './App';
+import App from "./App";
 export default App;
 ```
 
 ```js
-// не нужно указывать полный путь: ./src/components/App/App.js
-import App from '../App';
+// OtherComponent
+// Не нужно указывать полный путь: ./src/components/App/App.js
+import App from "../App";
 ```
 
 ## export default class
 
-#### Именованный класс
+<v-two :title="['Именованный класс', 'Анонимный класс']">
+<template #first>
 
 ```js
 export default class User {
-	constructor(name) {
-		this.name = name;
-	}
-};
+  constructor(name) {
+    this.name = name;
+  }
+}
 
-import User from './modules/lib';
-let user = new User('Jane'); // => User {name: "Jane"}
+import User from "./modules/lib";
+let user = new User("Jane"); // => User {name: "Jane"}
 ```
 
-#### Анонимный класс
+</template>
+<template #last>
 
 ```js
-export default class { 
-	constructor(name) {
-		this.name = name;
-	}
-};
+export default class {
+  constructor(name) {
+    this.name = name;
+  }
+}
 
-import User from './modules/lib';
-let user = new User('Jane'); // => _default {name: "Jane"}
+import User from "./modules/lib";
+let user = new User("Jane"); // => _default {name: "Jane"}
 ```
+
+</template>
+</v-two>

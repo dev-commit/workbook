@@ -1,17 +1,19 @@
 # Структура модуля
 
-- В основе модуля лежит функция
+## Информация
+
+- В основе модуля лежит _функция_
 
 ```js
-(function(exports, require, module, __dirname, __filename) {
-    // Code on Node.js
-})
+(function (exports, require, module, __dirname, __filename) {
+  // Code on Node.js
+});
 ```
 
-### Системные переменные
+## Системные переменные
 
-- exports - объект для экспорта
-- require - функция для импорта
-- module
-- __dirname - путь до текущей директории
-- __filename - путь до текущего файла
+- `exports` - объект для экспорта
+- `require` - функция для импорта
+- `module`
+- `__dirname` - путь до текущей директории
+- `__filename` - путь до текущего файла

@@ -1,12 +1,27 @@
 # Структура Node.js
 
+## Информация
+
 - Node.js является Middleware между нашим кодом и ОС
 
 ## Общая структура
 
-<!-- <img src="../@img/node-js-architecture.png" width="550px"/> -->
+<v-two text-right>
+<template #first>
 
-- Node.js API - Core JavaScript API + дополнения
-- Node.js Bindings (Нативные биндинги) - соединяют JS-код и C/C++ код более низкого уровня
+<img src="../@img/architecture/node-js-architecture.png" style="width: 550px" />
 
-- **libuv** - приносит абстракцию над системный Демультиплексором. Т.к. в каждой система свой Демультиплексор (Linux, Windows и т.д.)
+</template>
+<template #last>
+
+- _Node.js API_ - Core JavaScript API + дополнения
+- _Node.js Bindings_ (Нативные биндинги) - соединяют JS-код и C/C++ код более низкого уровня
+
+</template>
+</v-two>
+
+::: tip Определение
+
+- **libuv** - приносит абстракцию над системным Демультиплексором. Т.к. в каждой системе свой Демультиплексор (Linux, Windows и т.д.)
+
+:::
